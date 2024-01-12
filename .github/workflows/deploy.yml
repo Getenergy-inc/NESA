@@ -1,4 +1,4 @@
-Name: CI
+name: CI
 
 on:
         
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: 18.x
+        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v2
