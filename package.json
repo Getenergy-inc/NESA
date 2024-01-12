@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npx next test ./NESA/test"
+    "test": "npx next test ./test"
   },
   "dependencies": {
     "axios": "^1.6.2",
