@@ -1,3 +1,6 @@
 {
-  "/(main)/(home)/page": "app/(main)/(home)/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(main)/(home)/page": "app/(main)/(home)/page.js",
+  "/(account)/account/login/page": "app/(account)/account/login/page.js",
+  "/(auth)/(dashbaord)/dashboard/page": "app/(auth)/(dashbaord)/dashboard/page.js"
 }
