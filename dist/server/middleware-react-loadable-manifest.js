@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"node_modules\\\\@tanstack\\\\query-devtools\\\\build\\\\dev.js -> ./Devtools/Q436JGP5.js\":{\"id\":\"node_modules\\\\@tanstack\\\\query-devtools\\\\build\\\\dev.js -> ./Devtools/Q436JGP5.js\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_tanstack_query-devtools_build_Devtools_Q436JGP5_js.js\"]}}"

@@ -1,1 +1,0 @@
-.side-fade:before{left:0;background:linear-gradient(90deg,#fff5e0,transparent)}.side-fade:after,.side-fade:before{content:"";position:absolute;top:0;height:100%;width:80px}.side-fade:after{right:0;background:linear-gradient(270deg,#fff5e0,transparent)}

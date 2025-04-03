@@ -1,0 +1,231 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./components/Common/Slide/style.module.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes style_scroll__bd34f {
+  to {
+    transform: translateX(-100%);
+  }
+  from {
+    transform: translateX(0);
+  }
+}
+.style_scroll-con__XbWP0 {
+  position: relative;
+}
+@media (max-width: 768px) {
+  .style_scroll-con__XbWP0::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 50px;
+    z-index: 2;
+    right: 0;
+    background: linear-gradient(to left, #15110b 15%, rgba(21, 17, 11, 0.5058823529), rgba(0, 0, 0, 0));
+  }
+  .style_scroll-con__XbWP0::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 50px;
+    z-index: 2;
+    left: 0;
+    background: linear-gradient(to right, #15110b 15%, rgba(21, 17, 11, 0.5058823529), rgba(0, 0, 0, 0));
+  }
+}
+
+.style_head-scroll-con__LLprB {
+  position: relative;
+  white-space: nowrap;
+  padding: 8px 0;
+}
+.style_head-scroll-con__LLprB::-webkit-scrollbar {
+  display: none;
+}
+.style_head-scroll-con__LLprB .style_head-scroll-text__lqqp9 {
+  display: inline-block;
+  animation: style_scroll__bd34f 20s linear infinite;
+}
+
+.style_award_con__ZItU3::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 50px;
+  z-index: 2;
+  right: 0;
+  background: linear-gradient(to left, #141007, rgba(0, 0, 0, 0));
+}
+.style_award_con__ZItU3::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 50px;
+  z-index: 2;
+  left: 0;
+  background: linear-gradient(to right, #141007, rgba(0, 0, 0, 0));
+}
+.style_award_con__ZItU3:hover div {
+  animation-play-state: paused;
+}
+@media screen and (max-width: 768px) {
+  .style_award_con__ZItU3::after, .style_award_con__ZItU3::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 0px;
+    z-index: 2;
+  }
+}
+
+.style_scroll-el__lBVj1 {
+  animation: style_scroll__bd34f 80s linear infinite;
+}
+
+.style_scroll-right__HOSSh {
+  animation: style_scroll__bd34f 80s linear infinite reverse;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"lib\\utils\\font.ts","import":"Poppins","arguments":[{"weight":["100","300","500","800","900"],"subsets":["latin"]}],"variableName":"poppins"} ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* latin-ext */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(/_next/static/media/f54d3b402c212b9e-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(/_next/static/media/7108afb8b1381ad1-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/_next/static/media/6c9a125e97d835e1-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/_next/static/media/4c285fdca692ea22-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/_next/static/media/f10b8e9d91f3edcb-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/_next/static/media/8888a3826f4a3af4-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/_next/static/media/5fb25f343c7550ca-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/_next/static/media/7db6c35d839a711c-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/_next/static/media/b8442747db2a9bad-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: '__Poppins_12cc5b';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/_next/static/media/6245472ced48d3be-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@font-face {font-family: '__Poppins_Fallback_12cc5b';src: local("Arial");ascent-override: 93.62%;descent-override: 31.21%;line-gap-override: 8.92%;size-adjust: 112.16%
+}.__className_12cc5b {font-family: '__Poppins_12cc5b', '__Poppins_Fallback_12cc5b';font-style: normal
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib\\utils\\font.ts","import":"","arguments":[{"src":"../../assets/fonts/Raleway-VariableFont_wght.ttf","display":"swap"}],"variableName":"raleway"} ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__raleway_0535ce';
+src: url(/_next/static/media/1d8c655f89aebb8a-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__raleway_Fallback_0535ce';src: local("Arial");ascent-override: 92.39%;descent-override: 23.00%;line-gap-override: 0.00%;size-adjust: 101.74%
+}.__className_0535ce {font-family: '__raleway_0535ce', '__raleway_Fallback_0535ce'
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib\\utils\\font.ts","import":"","arguments":[{"src":"../../assets/fonts/Inter-VariableFont.ttf","display":"swap"}],"variableName":"inter"} ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__inter_d4e0c8';
+src: url(/_next/static/media/7385e8d9d3c5518f-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__inter_Fallback_d4e0c8';src: local("Arial");ascent-override: 90.00%;descent-override: 22.43%;line-gap-override: 0.00%;size-adjust: 107.64%
+}.__className_d4e0c8 {font-family: '__inter_d4e0c8', '__inter_Fallback_d4e0c8'
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib\\utils\\font.ts","import":"","arguments":[{"src":"../../assets/fonts/Manrope-VariableFont_wght.ttf","display":"swap"}],"variableName":"manrope"} ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__manrope_11a26c';
+src: url(/_next/static/media/3787d9a87cc64466-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__manrope_Fallback_11a26c';src: local("Arial");ascent-override: 106.45%;descent-override: 29.96%;line-gap-override: 0.00%;size-adjust: 100.14%
+}.__className_11a26c {font-family: '__manrope_11a26c', '__manrope_Fallback_11a26c'
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib\\utils\\font.ts","import":"","arguments":[{"src":"../../assets/fonts/Montserrat-VariableFont_wght.ttf","display":"swap"}],"variableName":"montserrat"} ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__montserrat_766d81';
+src: url(/_next/static/media/f595c38f5aaaeca5-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__montserrat_Fallback_766d81';src: local("Arial");ascent-override: 87.81%;descent-override: 22.77%;line-gap-override: 0.00%;size-adjust: 110.23%
+}.__className_766d81 {font-family: '__montserrat_766d81', '__montserrat_Fallback_766d81'
+}
+
