@@ -1,4 +1,4 @@
-// File: C:\Users\DELL\Documents\GitHub\NESA\app\(main)\layout.tsx
+// File: /Users/apple/Documents/GitHub/NESA/app/(main)/layout.tsx
 import * as entry from '../../../../app/(main)/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

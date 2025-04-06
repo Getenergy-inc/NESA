@@ -1,6 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/(main)/(home)/page": "app/(main)/(home)/page.js",
-  "/(account)/account/login/page": "app/(account)/account/login/page.js",
-  "/(auth)/(dashbaord)/dashboard/page": "app/(auth)/(dashbaord)/dashboard/page.js"
+  "/(main)/nomination/sub-categories/africa-lifetime-education-icon/page": "app/(main)/nomination/sub-categories/africa-lifetime-education-icon/page.js",
+  "/(main)/voting/page": "app/(main)/voting/page.js",
+  "/member/wallet/page": "app/member/wallet/page.js",
+  "/member/profile/page": "app/member/profile/page.js",
+  "/member/page": "app/member/page.js"
 }
