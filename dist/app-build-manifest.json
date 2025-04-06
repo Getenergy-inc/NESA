@@ -1,25 +1,20 @@
 {
   "pages": {
-    "/member/page": [
+    "/member/voting/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/member/page.js"
-    ],
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/app/member/voting/page.js"
     ],
     "/member/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/member/layout.js"
     ],
-    "/member/wallet/page": [
+    "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/member/wallet/page.js"
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/(main)/nomination/page": [
       "static/chunks/webpack.js",
@@ -32,27 +27,69 @@
       "static/css/app/(main)/layout.css",
       "static/chunks/app/(main)/layout.js"
     ],
-    "/(main)/nomination/sub-categories/africa-diaspora-impact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(main)/nomination/sub-categories/africa-diaspora-impact/page.css",
-      "static/chunks/app/(main)/nomination/sub-categories/africa-diaspora-impact/page.js"
-    ],
     "/(main)/nomination/sub-categories/africa-lifetime-education-icon/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(main)/nomination/sub-categories/africa-lifetime-education-icon/page.css",
       "static/chunks/app/(main)/nomination/sub-categories/africa-lifetime-education-icon/page.js"
     ],
-    "/member/profile/page": [
+    "/(main)/nomination/sub-categories/best-edutech-organization/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/member/profile/page.js"
+      "static/css/app/(main)/nomination/sub-categories/best-edutech-organization/page.css",
+      "static/chunks/app/(main)/nomination/sub-categories/best-edutech-organization/page.js"
+    ],
+    "/(main)/nomination/sub-categories/christian-education-champion/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(main)/nomination/sub-categories/christian-education-champion/page.css",
+      "static/chunks/app/(main)/nomination/sub-categories/christian-education-champion/page.js"
     ],
     "/(main)/voting/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/voting/page.js"
+    ],
+    "/member/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/member/page.js"
+    ],
+    "/member/wallet/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/member/wallet/page.js"
+    ],
+    "/member/referals/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/member/referals/page.js"
+    ],
+    "/member/profile/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/member/profile/page.js"
+    ],
+    "/(main)/nomination/sub-categories/africa-diaspora-impact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(main)/nomination/sub-categories/africa-diaspora-impact/page.css",
+      "static/chunks/app/(main)/nomination/sub-categories/africa-diaspora-impact/page.js"
+    ],
+    "/member/upgrade/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/member/upgrade/page.js"
+    ],
+    "/member/AccountSettings/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/member/AccountSettings/page.js"
+    ],
+    "/member/support/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/member/support/page.js"
     ]
   }
 }

@@ -1,7 +1,8 @@
 {
-  "/(main)/nomination/sub-categories/africa-lifetime-education-icon/page": "app/(main)/nomination/sub-categories/africa-lifetime-education-icon/page.js",
-  "/(main)/voting/page": "app/(main)/voting/page.js",
+  "/member/upgrade/page": "app/member/upgrade/page.js",
+  "/member/support/page": "app/member/support/page.js",
+  "/member/AccountSettings/page": "app/member/AccountSettings/page.js",
   "/member/wallet/page": "app/member/wallet/page.js",
-  "/member/profile/page": "app/member/profile/page.js",
-  "/member/page": "app/member/page.js"
+  "/(main)/nomination/sub-categories/africa-diaspora-impact/page": "app/(main)/nomination/sub-categories/africa-diaspora-impact/page.js",
+  "/(main)/nomination/page": "app/(main)/nomination/page.js"
 }

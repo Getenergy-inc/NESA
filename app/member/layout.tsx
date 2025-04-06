@@ -123,6 +123,27 @@ const profileItems = [
     icon: <IoSettingsOutline className="h-4 w-4" />
   },
   { 
+    label: "Wallet", 
+    href: "/member/wallet",
+    icon: <IoWalletOutline className="h-4 w-4" />
+  },
+  //inlcude the referals and upgrade account links
+  {
+    label: "Referrals", 
+    href: "/member/referrals",
+    icon: <IoPersonOutline className="h-4 w-4" />
+  },
+  { 
+    label: "Upgrade Account", 
+    href: "/member/upgrade",
+    icon: <IoStarOutline className="h-4 w-4" />
+  },
+  { 
+    label: "Support", 
+    href: "/member/support",
+    icon: <IoDocumentTextOutline className="h-4 w-4" />
+  },
+  { 
     label: "Logout", 
     onClick: () => console.log("Logging out..."),
     icon: <IoLogOutOutline className="h-4 w-4" />
