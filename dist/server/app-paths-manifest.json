@@ -1,8 +1,7 @@
 {
-  "/member/upgrade/page": "app/member/upgrade/page.js",
-  "/member/support/page": "app/member/support/page.js",
-  "/member/AccountSettings/page": "app/member/AccountSettings/page.js",
-  "/member/wallet/page": "app/member/wallet/page.js",
-  "/(main)/nomination/sub-categories/africa-diaspora-impact/page": "app/(main)/nomination/sub-categories/africa-diaspora-impact/page.js",
-  "/(main)/nomination/page": "app/(main)/nomination/page.js"
+  "/member/page": "app/member/page.js",
+  "/member/voting/page": "app/member/voting/page.js",
+  "/member/nominations/page": "app/member/nominations/page.js",
+  "/member/voting/stats/page": "app/member/voting/stats/page.js",
+  "/member/nominationstatus/page": "app/member/nominationstatus/page.js"
 }
