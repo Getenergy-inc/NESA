@@ -1,0 +1,35 @@
+.container{
+    background-color: #FFF5E0;
+    height: 50.33%;
+    width: 39.93%;
+    border-radius: 10px;
+}
+.details{
+    padding: 40px ;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.ii{
+        display: flex;
+    flex-direction: row;
+        align-items: center;
+    gap: 20px
+    
+}
+.text1{
+    font-size: 15px;
+    font-weight: 500;
+}
+.text2{
+    font-size: 10px;
+    font-weight: 300;
+}
+.text3{
+    font-size: 15px;
+    font-weight: 300;
+}

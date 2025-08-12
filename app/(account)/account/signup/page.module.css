@@ -1,0 +1,193 @@
+.pageBody {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  margin-top: 12px; /* Replace with actual navbar height */
+}
+
+.pageContainer {
+  flex: 1; /* Remove height definition */
+}
+
+.contentContainer {
+  display: flex;
+  flex: 1;
+}
+
+.leftColumn {
+  flex:0.5;
+  position: relative;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  margin-top: 65px;
+
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.rightColumn {
+  flex: 1;
+  padding: 2rem 4rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-top: 50px;
+  padding-top: 10px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.scefButton {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scefLogo {
+  margin-right: 0.5rem;
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+.orDivider {
+  text-align: center;
+  margin: 1rem 0;
+  color: #666;
+}
+
+.radioGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.radioLabel {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.accountType {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.radioLabel p {
+  font-size: 0.8rem;
+  margin: 0;
+  color: #666;
+}
+
+.continueButton {
+  width: 50%;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  background-color: #f0a500;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  position:center;
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+  }
+
+  .leftColumn, .rightColumn {
+    flex: 1;
+  }
+
+  .radioGroup {
+    grid-template-columns: 1fr;
+  }
+}
+
+.radioLabel {
+  background-color: #FFF9ED;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+  color: #666;
+}
+
+.orDivider::before,
+.orDivider::after {
+  content: '';
+  flex: 1;
+  border: 0.5px solid;
+  border-image-source: linear-gradient(90deg, #FFC247 -6.07%, #E48900 156.79%);
+  border-image-slice: 1;
+}
+
+.orDivider span {
+  padding: 0 10px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.continueButton {
+  width: auto;
+  padding: 0.75rem 2rem;
+  margin: 1rem 0;
+  background-color: #f0a500;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
