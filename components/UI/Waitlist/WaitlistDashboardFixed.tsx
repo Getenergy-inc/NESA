@@ -11,6 +11,8 @@ import {
   RefreshCw,
   Eye,
   Mail,
+  Phone,
+  Globe,
   Tag,
   ChevronLeft,
   ChevronRight,
@@ -27,6 +29,8 @@ interface WaitlistEntry {
   _id: string;
   name: string;
   email: string;
+  phone: string;
+  country: string;
   categories: string[];
   createdAt: string;
   syncedToSheets: boolean;
@@ -165,7 +169,9 @@ const WaitlistDashboardFixed: React.FC = () => {
 
   const filteredEntries = entries.filter(entry => {
     const matchesSearch = entry.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         entry.email.toLowerCase().includes(searchTerm.toLowerCase());
+                         entry.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         entry.phone?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         entry.country?.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesCategory = selectedCategory === 'all' || entry.categories.includes(selectedCategory);
     return matchesSearch && matchesCategory;
   });
@@ -439,6 +445,20 @@ const WaitlistDashboardFixed: React.FC = () => {
                         <Mail className="w-4 h-4 text-gray-400" />
                         <span className="text-sm text-gray-600">{entry.email}</span>
                       </div>
+
+                      {/* Add phone number */}
+
+                      <div className="flex items-center gap-2 mb-3">
+                        <Phone className="w-4 h-4 text-grey-400"/>
+                        <span className="text-sm text-grey-600">{entry.phone || "N/A"} </span>
+                      </div>
+
+                      {/* Add country */}
+
+                      <div className="flex items-center gap-2 mb-3">
+                        <Globe className="w-4 h-4 text-grey-400"/>
+                        <span className="text-sm text-grey-600">{entry.country || "N/A"} </span>
+                      </div>
                       
                       <div className="mb-3">
                         <div className="flex flex-wrap gap-1">
@@ -479,6 +499,12 @@ const WaitlistDashboardFixed: React.FC = () => {
                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Email
                         </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"> 
+                          Phone
+                        </th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"> 
+                         Country
+                        </th>
                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                           Categories
                         </th>
@@ -501,10 +527,17 @@ const WaitlistDashboardFixed: React.FC = () => {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div className="flex items-center">
-                              <Mail className="w-4 h-4 text-gray-400 mr-2" />
+                              <Phone className="w-4 h-4 text-gray-400 mr-2" />
                               <span className="text-sm text-gray-600">{entry.email}</span>
                             </div>
                           </td>
+                           <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="flex items-center">
+                              <Globe className="w-4 h-4 text-gray-400 mr-2" />
+                              <span className="text-sm text-gray-600">{entry.email}</span>
+                            </div>
+                          </td>
+
                           <td className="px-6 py-4">
                             <div className="flex flex-wrap gap-1">
                               {entry.categories.slice(0, 3).map((category) => (

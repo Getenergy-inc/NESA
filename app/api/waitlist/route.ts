@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     const bodyPromise = request.json();
     requestBody = await Promise.race([bodyPromise, timeoutPromise]);
     
-    const { name, email, categories } = requestBody;
+    const { name, email, phone, country, categories } = requestBody;
 
     // Connect to database with retry logic
     let dbConnected = false;
@@ -42,9 +42,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate required fields
-    if (!name || !email || !categories || !Array.isArray(categories)) {
+    if (!name || !email || !phone || !country || !categories || !Array.isArray(categories)) {
       return NextResponse.json(
-        { success: false, message: 'Name, email, and categories are required' },
+        { success: false, message: 'Name, email, phone, country, and categories are required' },
         { status: 400 }
       );
     }
@@ -59,8 +59,8 @@ export async function POST(request: NextRequest) {
       'join_local_chapter',
       'join_nesa_team',
       'apply_nrc_volunteer',
-      'get_gala_ticket',
       'buy_merchandise',
+      'get_gala_ticket',
       'donate'
     ];
 
@@ -92,6 +92,8 @@ export async function POST(request: NextRequest) {
       // Update existing entry
       try {
         existingEntry.name = name;
+        existingEntry.phone = phone;
+        existingEntry.country = country;
         existingEntry.categories = categories;
         await existingEntry.save();
       } catch (dbError) {
@@ -106,6 +108,8 @@ export async function POST(request: NextRequest) {
           await googleSheetsService.updateWaitlistEntry(existingEntry.sheetRowId, {
             name,
             email: email.toLowerCase(),
+            phone,
+            country,
             categories,
             timestamp: existingEntry.updatedAt
           });
@@ -123,6 +127,8 @@ export async function POST(request: NextRequest) {
           id: existingEntry._id,
           name: existingEntry.name,
           email: existingEntry.email,
+          phone: existingEntry.phone,
+          country: existingEntry.country,
           categories: existingEntry.categories,
           syncedToSheets: sheetsUpdateSuccess,
           isUpdate: true
@@ -136,6 +142,8 @@ export async function POST(request: NextRequest) {
       const waitlistEntry = new Waitlist({
         name: name.trim(),
         email: email.toLowerCase().trim(),
+        phone: phone.trim(),
+        country: country.trim(),
         categories
       });
 
@@ -162,6 +170,8 @@ export async function POST(request: NextRequest) {
       sheetRowId = await googleSheetsService.addWaitlistEntry({
         name: savedEntry.name,
         email: savedEntry.email,
+        phone: savedEntry.phone,
+        country: savedEntry.country,
         categories: savedEntry.categories,
         timestamp: savedEntry.createdAt
       });
@@ -191,6 +201,8 @@ export async function POST(request: NextRequest) {
         id: savedEntry._id,
         name: savedEntry.name,
         email: savedEntry.email,
+        phone: savedEntry.phone,
+        country: savedEntry.country,
         categories: savedEntry.categories,
         syncedToSheets: sheetsSuccess,
         isUpdate: false

@@ -3,6 +3,8 @@ import mongoose, { Document, Schema, Model } from 'mongoose';
 export interface IWaitlist extends Document {
   name: string;
   email: string;
+  phone: string;
+  country: string;
   categories: string[];
   createdAt: Date;
   updatedAt: Date;
@@ -30,6 +32,20 @@ const WaitlistSchema = new Schema<IWaitlist>({
     trim: true,
     match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
   },
+  phone: {
+    type: String,
+    required: [true, 'Phone number is required'],
+    trim: true,
+    minlength: [10, 'Phone number must be at least 10 characters'],
+    maxlength: [20, 'Phone number cannot exceed 20 characters']
+  },
+  country: {
+    type: String,
+    required: [true, 'Country is required'],
+    trim: true,
+    minlength: [2, 'Country code must be at least 2 characters'],
+    maxlength: [3, 'Country code cannot exceed 3 characters']
+  },
   categories: [{
     type: String,
     required: true,
@@ -42,8 +58,8 @@ const WaitlistSchema = new Schema<IWaitlist>({
       'join_local_chapter',
       'join_nesa_team',
       'apply_nrc_volunteer',
-      'get_gala_ticket',
       'buy_merchandise',
+      'get_gala_ticket',
       'donate'
     ]
   }],
@@ -65,6 +81,8 @@ const WaitlistSchema = new Schema<IWaitlist>({
 WaitlistSchema.index({ email: 1 }, { unique: true });
 WaitlistSchema.index({ createdAt: -1 });
 WaitlistSchema.index({ syncedToSheets: 1 });
+WaitlistSchema.index({ country: 1 });
+WaitlistSchema.index({ phone: 1 });
 
 // Virtual for formatted categories
 WaitlistSchema.virtual('formattedCategories').get(function() {
@@ -77,6 +95,7 @@ WaitlistSchema.virtual('formattedCategories').get(function() {
     'join_local_chapter': 'Join Local Chapter',
     'join_nesa_team': 'Join NESA Team',
     'apply_nrc_volunteer': 'Apply as NRC Volunteer',
+    'buy_merchandise': 'Buy Merchandise',
     'get_gala_ticket': 'Get Gala Ticket',
     'donate': 'Donate'
   };
@@ -109,7 +128,7 @@ WaitlistSchema.statics.getRecentSignups = async function(limit = 10) {
   return this.find({})
     .sort({ createdAt: -1 })
     .limit(limit)
-    .select('name email categories createdAt');
+    .select('name email phone country categories createdAt');
 };
 
 export default (mongoose.models.Waitlist as IWaitlistModel) || mongoose.model<IWaitlist, IWaitlistModel>('Waitlist', WaitlistSchema);

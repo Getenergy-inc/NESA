@@ -26,6 +26,7 @@
     "country-flag-icons": "^1.5.13",
     "express": "^5.1.0",
     "flag-icon-css": "^4.1.7",
+    "flag-icons": "^7.5.0",
     "framer-motion": "^10.16.16",
     "googleapis": "^155.0.1",
     "gsap": "^3.12.4",
@@ -43,6 +44,7 @@
     "react-international-phone": "^4.5.0",
     "react-loader-spinner": "^6.1.6",
     "react-phone-input-2": "^2.15.1",
+    "react-select": "^5.10.2",
     "react-toastify": "^11.0.5",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
@@ -52,6 +54,7 @@
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^1.0.0",
+    "world-countries": "^5.1.0",
     "zod": "^3.24.4",
     "zustand": "^4.4.7"
   },
