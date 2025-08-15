@@ -73,7 +73,7 @@ export async function GET(request: NextRequest) {
       // Try to get all data from Waitlist sheet
       const allDataResponse = await sheets.spreadsheets.values.get({
         spreadsheetId: process.env.GOOGLE_SHEET_ID,
-        range: 'Waitlist!A:O',
+        range: 'Waitlist!A:R',
       });
 
       debugInfo.tests.rawData = {
@@ -86,7 +86,7 @@ export async function GET(request: NextRequest) {
       // Try to get just headers
       const headersResponse = await sheets.spreadsheets.values.get({
         spreadsheetId: process.env.GOOGLE_SHEET_ID,
-        range: 'Waitlist!A1:O1',
+        range: 'Waitlist!A1:R1',
       });
 
       debugInfo.tests.headers = headersResponse.data.values?.[0] || [];
@@ -101,6 +101,8 @@ export async function GET(request: NextRequest) {
       const testEntry = {
         name: 'Test User',
         email: 'test@example.com',
+        phone: '+1234567890',
+        country: 'US',
         categories: ['vote_nominate'],
         timestamp: new Date()
       };

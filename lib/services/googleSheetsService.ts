@@ -121,6 +121,8 @@ class GoogleSheetsService {
       'Timestamp',
       'Name',
       'Email',
+      'Phone',
+      'Country',
       'Vote or Nominate',
       'Become Ambassador',
       'Join Webinar/Expo',
@@ -129,6 +131,7 @@ class GoogleSheetsService {
       'Join Local Chapter',
       'Join NESA Team',
       'Apply as NRC Volunteer',
+      'Buy Merchandise',
       'Get Gala Ticket',
       'Donate',
       'Total Categories',
@@ -139,7 +142,7 @@ class GoogleSheetsService {
       // Check if headers already exist
       const existingHeaders = await this.sheets.spreadsheets.values.get({
         spreadsheetId: GOOGLE_SHEET_ID,
-        range: 'Waitlist!A1:O1',
+        range: 'Waitlist!A1:R1',
       });
 
       const hasHeaders = existingHeaders.data.values && 
@@ -150,7 +153,7 @@ class GoogleSheetsService {
         // Add headers
         await this.sheets.spreadsheets.values.update({
           spreadsheetId: GOOGLE_SHEET_ID,
-          range: 'Waitlist!A1:O1',
+          range: 'Waitlist!A1:R1',
           valueInputOption: 'RAW',
           requestBody: {
             values: [headers],
@@ -217,6 +220,8 @@ class GoogleSheetsService {
   async addWaitlistEntry(data: {
     name: string;
     email: string;
+    phone: string;
+    country: string;
     categories: string[];
     timestamp: Date;
   }): Promise<number | null> {
@@ -244,6 +249,7 @@ class GoogleSheetsService {
         'join_nesa_team': 'Join NESA Team',
         'apply_nrc_volunteer': 'Apply as NRC Volunteer',
         'get_gala_ticket': 'Get Gala Ticket',
+        'buy_merchandise': 'Buy Merchandise',
         'donate': 'Donate'
       };
 
@@ -256,6 +262,7 @@ class GoogleSheetsService {
         'join_local_chapter',
         'join_nesa_team',
         'apply_nrc_volunteer',
+        'buy_merchandise',
         'get_gala_ticket',
         'donate'
       ];
@@ -264,6 +271,8 @@ class GoogleSheetsService {
         data.timestamp.toISOString(),
         data.name,
         data.email,
+        data.phone,
+        data.country,
         ...categoryColumns.map(cat => data.categories.includes(cat) ? 'Yes' : 'No'),
         data.categories.length.toString(),
         data.categories.map(cat => categoryMapping[cat] || cat).join(', ')
@@ -271,7 +280,7 @@ class GoogleSheetsService {
 
       const response = await this.sheets.spreadsheets.values.append({
         spreadsheetId: GOOGLE_SHEET_ID,
-        range: 'Waitlist!A:O',
+        range: 'Waitlist!A:R',
         valueInputOption: 'RAW',
         insertDataOption: 'INSERT_ROWS',
         requestBody: {
@@ -309,6 +318,8 @@ class GoogleSheetsService {
   async updateWaitlistEntry(rowId: number, data: {
     name: string;
     email: string;
+    phone: string;
+    country: string;
     categories: string[];
     timestamp: Date;
   }): Promise<void> {
@@ -341,6 +352,7 @@ class GoogleSheetsService {
         'join_local_chapter',
         'join_nesa_team',
         'apply_nrc_volunteer',
+        'buy_merchandise',
         'get_gala_ticket',
         'donate'
       ];
@@ -349,6 +361,8 @@ class GoogleSheetsService {
         data.timestamp.toISOString(),
         data.name,
         data.email,
+        data.phone,
+        data.country,
         ...categoryColumns.map(cat => data.categories.includes(cat) ? 'Yes' : 'No'),
         data.categories.length.toString(),
         data.categories.map(cat => categoryMapping[cat] || cat).join(', ')
@@ -356,7 +370,7 @@ class GoogleSheetsService {
 
       await this.sheets.spreadsheets.values.update({
         spreadsheetId: GOOGLE_SHEET_ID,
-        range: `Waitlist!A${rowId}:O${rowId}`,
+        range: `Waitlist!A${rowId}:R${rowId}`,
         valueInputOption: 'RAW',
         requestBody: {
           values: [row],
@@ -385,7 +399,7 @@ class GoogleSheetsService {
 
       const response = await this.sheets.spreadsheets.values.get({
         spreadsheetId: GOOGLE_SHEET_ID,
-        range: 'Waitlist!A2:O',
+        range: 'Waitlist!A2:R',
       });
 
       const rows = response.data.values || [];
@@ -404,6 +418,7 @@ class GoogleSheetsService {
         'join_nesa_team': 'Join NESA Team',
         'apply_nrc_volunteer': 'Apply as NRC Volunteer',
         'get_gala_ticket': 'Get Gala Ticket',
+        'buy_merchandise': 'Buy Merchandise',
         'donate': 'Donate'
       };
 
@@ -416,12 +431,13 @@ class GoogleSheetsService {
         'join_local_chapter',
         'join_nesa_team',
         'apply_nrc_volunteer',
+        'buy_merchandise',
         'get_gala_ticket',
         'donate'
       ];
 
       categoryColumns.forEach((categoryKey, index) => {
-        const count = rows.filter((row: any[]) => row[index + 3] === 'Yes').length;
+        const count = rows.filter((row: any[]) => row[index + 5] === 'Yes').length;
         categoryStats[categoryKey] = count;
       });
 

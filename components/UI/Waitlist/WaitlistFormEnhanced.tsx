@@ -18,12 +18,18 @@ import {
   Sparkles,
   Heart,
   Star,
-  ShoppingCart
+  ShoppingCart,
+  Phone,
+  Globe
 } from 'lucide-react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
+import Select from 'react-select';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import countries from 'world-countries';
 import {
   fetchWithTimeout,
   handleApiResponse,
@@ -35,17 +41,59 @@ import {
 } from '@/lib/utils/errorHandler';
 import styles from './waitlist.module.css';
 import { useScrollToTopOnMount } from '@/lib/hooks/useScrollToTop';
-import { id } from 'zod/v4/locales';
-import { Description } from '@headlessui/react';
+
+// Custom styles for phone input to match the design
+const phoneInputStyles = `
+  .react-tel-input .form-control {
+    width: 100% !important;
+    height: 56px !important;
+    padding-left: 48px !important;
+    border-radius: 12px !important;
+    border: 2px solid #e5e7eb !important;
+    font-size: 16px !important;
+    transition: all 0.2s ease !important;
+  }
+  .react-tel-input .form-control:focus {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2) !important;
+    transform: scale(1.01) !important;
+  }
+  .react-tel-input .form-control:hover {
+    border-color: #d1d5db !important;
+  }
+  .react-tel-input .flag-dropdown {
+    border-radius: 12px 0 0 12px !important;
+    border: 2px solid #e5e7eb !important;
+    border-right: none !important;
+    background: #f9fafb !important;
+  }
+  .react-tel-input .flag-dropdown:hover {
+    background: #f3f4f6 !important;
+  }
+  .react-tel-input .country-list {
+    border-radius: 12px !important;
+    border: 2px solid #e5e7eb !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  }
+`;
 
 // Validation schema
 const waitlistSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
+  phone: z.string().min(10, 'Please enter a valid phone number'),
+  country: z.string().min(1, 'Please select your country'),
   categories: z.array(z.string()).min(1, 'Please select at least one category'),
 });
 
 type WaitlistFormData = z.infer<typeof waitlistSchema>;
+
+// Country options for react-select
+const countryOptions = countries.map(country => ({
+  value: country.cca2,
+  label: country.name.common,
+  flag: country.flag
+})).sort((a, b) => a.label.localeCompare(b.label));
 
 const categories = [
   {
@@ -109,7 +157,7 @@ const categories = [
     label: 'Buy Merchandise',
     description: 'Get exclusive NESA-Africa merchandise',
     icon: <ShoppingCart className='w-5 h-5'/>,
-    color: 'from-indigo-500 to indigo-600'
+    color: 'from-indigo-500 to-indigo-600'
   },
   {
     id: 'get_gala_ticket',
@@ -147,12 +195,15 @@ const WaitlistFormEnhanced: React.FC = () => {
     handleSubmit,
     watch,
     setValue,
+    control,
     formState: { errors }
   } = useForm<WaitlistFormData>({
     resolver: zodResolver(waitlistSchema),
     defaultValues: {
       name: '',
       email: '',
+      phone: '',
+      country: '',
       categories: []
     }
   });
@@ -160,6 +211,8 @@ const WaitlistFormEnhanced: React.FC = () => {
   const selectedCategories = watch('categories') || [];
   const watchedName = watch('name');
   const watchedEmail = watch('email');
+  const watchedPhone = watch('phone');
+  const watchedCountry = watch('country');
 
   // Monitor connection status
   useEffect(() => {
@@ -270,12 +323,17 @@ const WaitlistFormEnhanced: React.FC = () => {
     const formData = {
       name: watchedName,
       email: watchedEmail,
+      phone: watchedPhone,
+      country: watchedCountry,
       categories: selectedCategories
     };
     await onSubmit(formData);
   };
 
-  const canProceedToStep2 = watchedName.length >= 2 && watchedEmail.includes('@');
+  const canProceedToStep2 = watchedName.length >= 2 && 
+                           watchedEmail.includes('@') && 
+                           watchedPhone.length >= 10 && 
+                           watchedCountry.length > 0;
 
   // Animation variants
   const containerVariants = {
@@ -375,6 +433,8 @@ const WaitlistFormEnhanced: React.FC = () => {
                   setIsSuccess(false);
                   setValue('name', '');
                   setValue('email', '');
+                  setValue('phone', '');
+                  setValue('country', '');
                   setValue('categories', []);
                   setCurrentStep(1);
                 }}
@@ -390,8 +450,10 @@ const WaitlistFormEnhanced: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-whiteGold via-white to-xlGold py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+    <>
+      <style dangerouslySetInnerHTML={{ __html: phoneInputStyles }} />
+      <div className="min-h-screen bg-gradient-to-br from-whiteGold via-white to-xlGold py-12 px-4">
+        <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -576,6 +638,113 @@ const WaitlistFormEnhanced: React.FC = () => {
                         </motion.p>
                       )}
                     </motion.div>
+
+                    {/* Phone Field */}
+                    <motion.div variants={itemVariants}>
+                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Phone Number *
+                      </label>
+                      <div className="relative">
+                        <Controller
+                          name="phone"
+                          control={control}
+                          render={({ field }) => (
+                            <PhoneInput
+                              {...field}
+                              country={'us'}
+                              enableSearch={true}
+                              searchPlaceholder="Search countries..."
+                              inputProps={{
+                                name: 'phone',
+                                required: true,
+                                className: `w-full pl-12 pr-4 py-4 border-2 rounded-xl focus:ring-2 focus:ring-primaryGold focus:border-transparent transition-all duration-200 focus:scale-[1.01] focus:shadow-lg ${
+                                  errors.phone ? 'border-red-500' : 'border-gray-200 hover:border-gray-300'
+                                }`
+                              }}
+                              containerClass="w-full"
+                              buttonClass="!border-r-2 !border-gray-200 !bg-gray-50 hover:!bg-gray-100 !rounded-l-xl"
+                              dropdownClass="!bg-white !border-2 !border-gray-200 !rounded-xl !shadow-lg"
+                            />
+                          )}
+                        />
+                      </div>
+                      {errors.phone && (
+                        <motion.p
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="mt-2 text-sm text-red-600 flex items-center gap-1"
+                        >
+                          <AlertCircle className="w-4 h-4" />
+                          {errors.phone.message}
+                        </motion.p>
+                      )}
+                    </motion.div>
+
+                    {/* Country Field */}
+                    <motion.div variants={itemVariants}>
+                      <label htmlFor="country" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Country *
+                      </label>
+                      <div className="relative">
+                        <Controller
+                          name="country"
+                          control={control}
+                          render={({ field }) => (
+                            <Select
+                              {...field}
+                              options={countryOptions}
+                              value={countryOptions.find(option => option.value === field.value)}
+                              onChange={(selectedOption) => field.onChange(selectedOption?.value || '')}
+                              placeholder="Select your country"
+                              isSearchable={true}
+                              formatOptionLabel={(option) => (
+                                <div className="flex items-center gap-2">
+                                  <span className="text-lg">{option.flag}</span>
+                                  <span>{option.label}</span>
+                                </div>
+                              )}
+                              styles={{
+                                control: (base, state) => ({
+                                  ...base,
+                                  minHeight: '56px',
+                                  border: `2px solid ${errors.country ? '#ef4444' : state.isFocused ? '#d4af37' : '#e5e7eb'}`,
+                                  borderRadius: '12px',
+                                  boxShadow: state.isFocused ? '0 0 0 2px rgba(212, 175, 55, 0.2)' : 'none',
+                                  '&:hover': {
+                                    borderColor: errors.country ? '#ef4444' : '#d1d5db'
+                                  },
+                                  transition: 'all 0.2s ease'
+                                }),
+                                option: (base, state) => ({
+                                  ...base,
+                                  backgroundColor: state.isSelected ? '#d4af37' : state.isFocused ? '#fef3c7' : 'white',
+                                  color: state.isSelected ? 'black' : '#374151',
+                                  '&:hover': {
+                                    backgroundColor: state.isSelected ? '#d4af37' : '#fef3c7'
+                                  }
+                                }),
+                                menu: (base) => ({
+                                  ...base,
+                                  borderRadius: '12px',
+                                  border: '2px solid #e5e7eb',
+                                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+                                })
+                              }}
+                            />
+                          )}
+                        />
+                      </div>
+                      {errors.country && (
+                        <motion.p
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="mt-2 text-sm text-red-600 flex items-center gap-1"
+                        >
+                          <AlertCircle className="w-4 h-4" />
+                          {errors.country.message}
+                        </motion.p>
+                      )}
+                    </motion.div>
                   </div>
 
                   <motion.div variants={itemVariants} className="mt-8 flex justify-end">
@@ -728,8 +897,9 @@ const WaitlistFormEnhanced: React.FC = () => {
             </AnimatePresence>
           </form>
         </motion.div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

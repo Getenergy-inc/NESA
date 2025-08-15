@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
     // Get all data from the sheet
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Waitlist!A:O',
+      range: 'Waitlist!A:R',
     });
 
     const rows = response.data.values || [];
@@ -33,18 +33,21 @@ export async function GET(request: NextRequest) {
       timestamp: row[0] || '',
       name: row[1] || '',
       email: row[2] || '',
-      voteNominate: row[3] || '',
-      becomeAmbassador: row[4] || '',
-      joinWebinarExpo: row[5] || '',
-      sponsorCSR: row[6] || '',
-      applyJudge: row[7] || '',
-      joinLocalChapter: row[8] || '',
-      joinNESATeam: row[9] || '',
-      applyNRCVolunteer: row[10] || '',
-      getGalaTicket: row[11] || '',
-      donate: row[12] || '',
-      totalCategories: row[13] || '',
-      categoriesList: row[14] || ''
+      phone: row[3] || '',
+      country: row[4] || '',
+      voteNominate: row[5] || '',
+      becomeAmbassador: row[6] || '',
+      joinWebinarExpo: row[7] || '',
+      sponsorCSR: row[8] || '',
+      applyJudge: row[9] || '',
+      joinLocalChapter: row[10] || '',
+      joinNESATeam: row[11] || '',
+      applyNRCVolunteer: row[12] || '',
+      buyMerchandise: row[13] || '',
+      getGalaTicket: row[14] || '',
+      donate: row[15] || '',
+      totalCategories: row[16] || '',
+      categoriesList: row[17] || ''
     }));
 
     return NextResponse.json({

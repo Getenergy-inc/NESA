@@ -34,6 +34,8 @@ export async function POST(request: NextRequest) {
       'Timestamp',
       'Name',
       'Email',
+      'Phone',
+      'Country',
       'Vote or Nominate',
       'Become Ambassador',
       'Join Webinar/Expo',
@@ -42,6 +44,7 @@ export async function POST(request: NextRequest) {
       'Join Local Chapter',
       'Join NESA Team',
       'Apply as NRC Volunteer',
+      'Buy Merchandise',
       'Get Gala Ticket',
       'Donate',
       'Total Categories',
@@ -50,7 +53,7 @@ export async function POST(request: NextRequest) {
 
     await sheets.spreadsheets.values.update({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Waitlist!A1:O1',
+      range: 'Waitlist!A1:R1',
       valueInputOption: 'RAW',
       requestBody: {
         values: [headers],
@@ -62,7 +65,10 @@ export async function POST(request: NextRequest) {
       new Date().toISOString(),
       'Test User',
       'test@example.com',
+      '+1234567890',
+      'US',
       'Yes',
+      'No',
       'No',
       'No',
       'No',
@@ -78,7 +84,7 @@ export async function POST(request: NextRequest) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Waitlist!A:O',
+      range: 'Waitlist!A:R',
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {

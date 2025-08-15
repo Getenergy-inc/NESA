@@ -47,12 +47,14 @@ export async function GET(request: NextRequest) {
       const sampleEntries = await Waitlist.find({})
         .sort({ createdAt: -1 })
         .limit(3)
-        .select('name email categories createdAt syncedToSheets');
+        .select('name email phone country categories createdAt syncedToSheets');
       
       debugInfo.database.sampleEntries = sampleEntries.map(entry => ({
         id: entry._id,
         name: entry.name,
         email: entry.email,
+        phone: entry.phone || 'Not set',
+        country: entry.country || 'Not set',
         categoriesCount: entry.categories.length,
         createdAt: entry.createdAt,
         syncedToSheets: entry.syncedToSheets
