@@ -18,51 +18,56 @@ import {
 import Image from 'next/image';
 import styles from './waitlist.module.css';
 import { useScrollToTopOnMount } from '@/lib/hooks/useScrollToTop';
+import { WaitlistLanguageProvider, useWaitlistLanguage } from '@/lib/i18n/WaitlistLanguageContext';
+import LanguageSelector from '@/components/UI/LanguageSelector/LanguageSelector';
+import ClientOnly from '@/components/UI/ClientOnly/ClientOnly';
 
-const WaitlistLanding: React.FC = () => {
+// Main content component that uses translations
+const WaitlistLandingContent: React.FC = () => {
   const router = useRouter();
-  
+  const { t } = useWaitlistLanguage();
+
   // Ensure page starts at the top
   useScrollToTopOnMount();
 
   const features = [
     {
       icon: <Award className="w-6 h-6" />,
-      title: "Vote & Nominate",
-      description: "Participate in recognizing outstanding educators across Africa"
+      title: t('waitlist.features.voteNominate.title'),
+      description: t('waitlist.features.voteNominate.description')
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Become Ambassador",
-      description: "Represent NESA in your community and earn exclusive rewards"
+      title: t('waitlist.features.becomeAmbassador.title'),
+      description: t('waitlist.features.becomeAmbassador.description')
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
-      title: "Join Webinars & Expos",
-      description: "Access exclusive educational events and professional development"
+      title: t('waitlist.features.joinWebinars.title'),
+      description: t('waitlist.features.joinWebinars.description')
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Sponsor & Partner",
-      description: "Support education through meaningful CSR partnerships"
+      title: t('waitlist.features.sponsorPartner.title'),
+      description: t('waitlist.features.sponsorPartner.description')
     },
     {
       icon: <Star className="w-6 h-6" />,
-      title: "Apply as Judge",
-      description: "Evaluate nominees and shape the future of African education"
+      title: t('waitlist.features.applyJudge.title'),
+      description: t('waitlist.features.applyJudge.description')
     },
     {
       icon: <Globe className="w-6 h-6" />,
-      title: "Join Local Chapters",
-      description: "Connect with like-minded educators in your region"
+      title: t('waitlist.features.joinChapters.title'),
+      description: t('waitlist.features.joinChapters.description')
     }
   ];
 
   const stats = [
-    { number: "54", label: "African Countries", suffix: "" },
-    { number: "10K+", label: "Educators Impacted", suffix: "" },
-    { number: "500+", label: "Awards Given", suffix: "" },
-    { number: "1M+", label: "Students Reached", suffix: "" }
+    { number: "54", label: t('waitlist.stats.africanCountries'), suffix: "" },
+    { number: "10K+", label: t('waitlist.stats.educatorsImpacted'), suffix: "" },
+    { number: "500+", label: t('waitlist.stats.awardsGiven'), suffix: "" },
+    { number: "1M+", label: t('waitlist.stats.studentsReached'), suffix: "" }
   ];
 
   const containerVariants = {
@@ -133,6 +138,13 @@ const WaitlistLanding: React.FC = () => {
           className={`absolute bottom-40 left-20 w-24 h-24 bg-whiteGold/30 rounded-full blur-xl ${styles.floatingElement}`}
         />
 
+        {/* Language Selector - Top Right */}
+        <div className="absolute top-8 right-8 z-20">
+          <ClientOnly fallback={<div className="w-24 h-10" />}>
+            <LanguageSelector />
+          </ClientOnly>
+        </div>
+
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <motion.div
@@ -143,7 +155,7 @@ const WaitlistLanding: React.FC = () => {
           >
             <div className="inline-flex items-center gap-2 bg-primaryGold/10 backdrop-blur-sm border border-primaryGold/20 rounded-full px-6 py-3 mb-8">
               <Sparkles className="w-5 h-5 text-primaryGold" />
-              <span className="text-primaryGold font-semibold">Transforming Education Across Africa</span>
+              <span className="text-primaryGold font-semibold">{t('waitlist.hero.badge')}</span>
             </div>
           </motion.div>
 
@@ -153,11 +165,11 @@ const WaitlistLanding: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Join the
+            {t('waitlist.hero.title')}
             <span className="bg-gradient-to-r from-primaryGold to-deepGold bg-clip-text text-transparent">
-              {" "}NESA{" "}
+              {" "}{t('waitlist.hero.titleHighlight')}{" "}
             </span>
-            Revolution
+            {t('waitlist.hero.titleEnd')}
           </motion.h1>
 
           <motion.p
@@ -166,9 +178,7 @@ const WaitlistLanding: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed"
           >
-            Be part of Africa's most prestigious education awards platform. 
-            Connect with visionary educators, celebrate excellence, and shape 
-            the future of education across the continent.
+            {t('waitlist.hero.description')}
           </motion.p>
 
           <motion.div
@@ -184,15 +194,15 @@ const WaitlistLanding: React.FC = () => {
               }}
               className={`group bg-gradient-to-r from-primaryGold to-deepGold hover:from-deepGold hover:to-primaryGold text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center gap-3 ${styles.primaryButton}`}
             >
-              Join Waitlist
+              {t('waitlist.hero.joinWaitlistButton')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
-            
+
             <button
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               className="group border-2 border-white/30 hover:border-primaryGold text-white hover:text-primaryGold px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 backdrop-blur-sm"
             >
-              Learn More
+              {t('waitlist.hero.learnMoreButton')}
             </button>
           </motion.div>
 
@@ -256,22 +266,19 @@ const WaitlistLanding: React.FC = () => {
             <motion.div variants={itemVariants} className="mb-6">
               <span className="inline-flex items-center gap-2 bg-primaryGold/10 text-primaryGold px-4 py-2 rounded-full text-sm font-semibold">
                 <TrendingUp className="w-4 h-4" />
-                About NESA
+                {t('waitlist.about.badge')}
               </span>
             </motion.div>
-            
+
             <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Celebrating Educational
+              {t('waitlist.about.title')}
               <span className="bg-gradient-to-r from-primaryGold to-deepGold bg-clip-text text-transparent">
-                {" "}Excellence
+                {" "}{t('waitlist.about.titleHighlight')}
               </span>
             </motion.h2>
-            
+
             <motion.p variants={itemVariants} className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              The Nigeria Education Sector Awards (NESA) is Africa's premier platform 
-              for recognizing and celebrating outstanding contributions to education. 
-              We connect educators, innovators, and stakeholders across the continent 
-              to drive positive change in African education.
+              {t('waitlist.about.description')}
             </motion.p>
           </motion.div>
 
@@ -293,7 +300,7 @@ const WaitlistLanding: React.FC = () => {
                 <div className="w-14 h-14 bg-gradient-to-br from-primaryGold to-deepGold rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primaryGold transition-colors duration-300">
                   {feature.title}
                 </h3>
@@ -317,12 +324,11 @@ const WaitlistLanding: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-              Ready to Make an Impact?
+              {t('waitlist.cta.title')}
             </h2>
-            
+
             <p className="text-xl text-black/80 mb-8 max-w-2xl mx-auto">
-              Join thousands of educators, innovators, and change-makers who are 
-              transforming African education. Your journey starts here.
+              {t('waitlist.cta.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -334,7 +340,7 @@ const WaitlistLanding: React.FC = () => {
                 className="group bg-black hover:bg-gray-900 text-primaryGold px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center gap-3"
               >
                 <CheckCircle className="w-5 h-5" />
-                Join the Waitlist
+                {t('waitlist.cta.joinButton')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
@@ -342,21 +348,30 @@ const WaitlistLanding: React.FC = () => {
             <div className="mt-8 flex items-center justify-center gap-8 text-black/60">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Free to Join</span>
+                <span>{t('waitlist.cta.benefits.freeToJoin')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Exclusive Access</span>
+                <span>{t('waitlist.cta.benefits.exclusiveAccess')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>Early Updates</span>
+                <span>{t('waitlist.cta.benefits.earlyUpdates')}</span>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
     </div>
+  );
+};
+
+// Main wrapper component with language provider
+const WaitlistLanding: React.FC = () => {
+  return (
+    <WaitlistLanguageProvider>
+      <WaitlistLandingContent />
+    </WaitlistLanguageProvider>
   );
 };
 

@@ -8,7 +8,8 @@ import {
   SignupContextType, 
   SignupResponse 
 } from '../types/signup';
-import { signupUser } from '../services/mockSignupService';
+import { signupFlow } from '../services/authService';
+import { validateBackendRequirements } from '../utils/signupMapping';
 
 // Default step order
 const STEP_ORDER: SignupStep[] = [
@@ -304,16 +305,18 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     try {
       // Validate that we have complete form data
-      if (!formData.accountType || !formData.email || !formData.password) {
-        throw new Error('Please complete all required fields');
+      const validationErrors = validateBackendRequirements(formData as SignupFormData);
+      if (validationErrors.length > 0) {
+        throw new Error(validationErrors[0]);
       }
 
-      const response = await signupUser(formData as SignupFormData);
-      
+      // Use real API service instead of mock
+      const response = await signupFlow(formData as SignupFormData);
+
       if (response.success) {
         // Clear form data on successful signup
         localStorage.removeItem(STORAGE_KEY);
-        
+
         // Move to completion step
         setStepProgress(prev => ({
           ...prev,

@@ -14,6 +14,9 @@ const nextConfig = {
   },
   // Reduce bundle size and fix SSR issues
   webpack: (config, { isServer, webpack }) => {
+    // Fix case sensitivity warnings
+    config.resolve.symlinks = false;
+
     // Client-side configuration
     if (!isServer) {
       config.resolve.fallback = {
@@ -33,6 +36,15 @@ const nextConfig = {
         })
       );
     }
+
+    // Suppress case sensitivity warnings
+    config.stats = {
+      ...config.stats,
+      warningsFilter: [
+        /There are multiple modules with names that only differ in casing/,
+        /This can lead to unexpected behavior when compiling on a filesystem with other case-semantic/,
+      ],
+    };
     
     // Optimize memory usage with smaller chunks
     config.optimization = {
