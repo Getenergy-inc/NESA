@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { CheckCircle, Wallet, Users, Gift, ArrowRight, Home } from 'lucide-react';
 import { useSignup } from '@/lib/context/SignupContext';
 import Button from '@/components/Common/Button';
+import { getPostSignupActions, getDashboardRoute } from '@/lib/utils/signupMapping';
 
 const CompletionStep: React.FC = () => {
   const { formData, resetForm } = useSignup();
@@ -39,9 +40,21 @@ const CompletionStep: React.FC = () => {
 
   const handleGoToDashboard = () => {
     resetForm();
-    // Redirect to the main dashboard - the DashboardRouter will handle role-based routing
-    router.push('/dashboard');
+
+    // Determine appropriate dashboard route based on user role and intents
+    const userRole = mockSignupData.user.role; // This would come from actual signup response
+    const dashboardRoute = getDashboardRoute(userRole, formData.intents);
+
+    router.push(dashboardRoute);
   };
+
+  const handleStartApplication = (applicationType: string) => {
+    resetForm();
+    router.push(`/applications/new?type=${applicationType}`);
+  };
+
+  // Get post-signup actions based on user intents
+  const postSignupActions = formData.intents ? getPostSignupActions(formData.intents) : [];
 
   const handleGoHome = () => {
     resetForm();
@@ -187,6 +200,49 @@ const CompletionStep: React.FC = () => {
           Please click the verification link to fully activate your account and unlock all features.
         </p>
       </div>
+
+      {/* Next Steps Based on User Intents */}
+      {postSignupActions.length > 0 && (
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Your Next Steps</h3>
+          <div className="space-y-3">
+            {postSignupActions.map((action, index) => (
+              <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium">
+                    {index + 1}
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-blue-900 font-medium mb-1">
+                      {action.type === 'application' ? 'Complete Application' :
+                       action.type === 'redirect' ? 'Get Started' : 'Welcome'}
+                    </p>
+                    <p className="text-blue-800 text-sm mb-3">
+                      {action.data?.message || action.action}
+                    </p>
+                    {action.type === 'application' && (
+                      <Button
+                        text="Start Application"
+                        size="small"
+                        onClick={() => handleStartApplication(action.data?.applicationType)}
+                        className="bg-blue-600 hover:bg-blue-700"
+                      />
+                    )}
+                    {action.type === 'redirect' && (
+                      <Button
+                        text="Continue"
+                        size="small"
+                        onClick={() => router.push(action.action)}
+                        className="bg-blue-600 hover:bg-blue-700"
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">

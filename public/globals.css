@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Google Fonts for Arabic support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
 /* Scroll restoration and smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -93,4 +96,34 @@ button:focus {
 }
 .overflow-x-auto::-webkit-scrollbar {
   display: none;
+}
+
+/* Language Support Styles */
+.font-arabic {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .gap-2 > *:not(:last-child) {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .gap-3 > *:not(:last-child) {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+/* Language selector specific RTL adjustments */
+[dir="rtl"] .language-selector {
+  left: 2rem;
+  right: auto;
 }

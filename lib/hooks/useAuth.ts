@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
-import { login, verifyOTP, signup, resetPassword as resetPasswordService } from "../services/authService";
+import { login, verifyOTP, signup, resetPassword as resetPasswordService, signupFlow, sendOTP, getMe } from "../services/authService";
 import { getUserById, updateUserById } from "../services/userService";
 
 interface Credentials {
   email: string;
   password: string;
+}
+
+interface OTPData {
+  email: string;
+  otp: string;
 }
 
 interface UserData {
@@ -20,87 +25,132 @@ interface UserData {
   [key: string]: any;
 }
 
+interface User {
+  id: string;
+  email: string;
+  name?: string;
+  fullName?: string;
+  firstName?: string;
+  lastName?: string;
+  role?: string;
+  accountType?: string;
+  emailVerified?: boolean;
+  [key: string]: any;
+}
+
+// Cookie utility functions
+const setCookie = (name: string, value: string, days: number) => {
+  if (typeof document === 'undefined') return;
+  
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+};
+
+const getCookie = (name: string): string | null => {
+  if (typeof document === 'undefined') return null;
+  
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+};
+
+const deleteCookie = (name: string) => {
+  if (typeof document === 'undefined') return;
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+};
+
 export const useAuth = () => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [userRole, setUserRole] = useState<string | null>(null);
-  const [accountType, setAccountType] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // Initialize auth state from cookies
   useEffect(() => {
-    const initializeAuth = async () => {
-      setIsLoading(true);
-      const token = getCookie("token");
-      const userId = getCookie("userId");
-      const isVerified = getCookie("emailVerified");
-
-      if (token && userId && isVerified === "true") {
-        try {
-          const userData = await getUserById(userId);
-          setUser(userData);
-          setIsAuthenticated(true);
-          setUserRole(userData.role || null);
-          setAccountType(userData.accountType || null);
-        } catch (err) {
-          if (err instanceof Error) setError(err.message);
-          // Clear invalid tokens
-          deleteCookie("token");
-          deleteCookie("userId");
-          deleteCookie("emailVerified");
-        }
-      }
-      setIsLoading(false);
-    };
-
-    initializeAuth();
+    const token = getCookie("token");
+    const userId = getCookie("userId");
+    const emailVerified = getCookie("emailVerified");
+    
+    if (token && userId) {
+      setIsAuthenticated(true);
+      // Try to get user data from cookie or fetch from API
+      const userData = {
+        id: userId,
+        emailVerified: emailVerified === "true"
+      };
+      setUser(userData as User);
+    }
   }, []);
 
+  // Utility functions
+  const getUserId = (): string => {
+    return getCookie("userId") || "";
+  };
+
+  const getToken = (): string | null => {
+    return getCookie("token");
+  };
+
+  const setAuthenticationState = (userData: User, token: string) => {
+    setUser(userData);
+    setIsAuthenticated(true);
+    setCookie("token", token, 7); // 7 days
+    setCookie("userId", userData.id, 7);
+    setCookie("emailVerified", userData.emailVerified ? "true" : "false", 7);
+  };
+
+  // Auth functions
   const signIn = async (credentials: Credentials) => {
+    setIsLoading(true);
+    setError(null);
+    
     try {
       const data = await login(credentials);
       if (data.token) {
-        // Store temporary login data, but don't set authenticated state yet
-        setCookie("tempToken", data.token, 1);
-        setCookie("tempUserId", data.user.id, 1);
-        setUser(data.user);
-        // Authentication state will be set after OTP verification
-        setIsAuthenticated(false);
+        setAuthenticationState(data.user, data.token);
       }
       return data;
     } catch (err: unknown) {
-      if (err instanceof Error) throw err;
-      throw new Error("Login failed");
+      const errorMessage = err instanceof Error ? err.message : "Login failed";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const verifyEmail = async (email: string, otp: string) => {
+    setIsLoading(true);
+    setError(null);
+    
     try {
       const data = await verifyOTP({ email, otp });
       if (data.token) {
-        // Clear temporary tokens and set permanent ones
+        setAuthenticationState(data.user, data.token);
+        // Clear temp cookies if they exist
         deleteCookie("tempToken");
         deleteCookie("tempUserId");
-
-        // Set permanent authentication tokens
-        setCookie("token", data.token, 7); // Store token for 7 days
-        setCookie("userId", data.user.id, 7);
-        setCookie("emailVerified", "true", 7);
-
-        // Set authentication state
-        setUser(data.user);
-        setIsAuthenticated(true);
-        setUserRole(data.user.role || null);
-        setAccountType(data.user.accountType || null);
       }
       return data;
     } catch (err: unknown) {
-      if (err instanceof Error) throw err;
-      throw new Error("OTP verification failed");
+      const errorMessage = err instanceof Error ? err.message : "OTP verification failed";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const register = async (userData: UserData) => {
+    setIsLoading(true);
+    setError(null);
+    
     try {
       const data = await signup(userData);
       if (data.token) {
@@ -110,79 +160,122 @@ export const useAuth = () => {
       }
       return data;
     } catch (err: unknown) {
-      if (err instanceof Error) throw err;
-      throw new Error("Registration failed");
+      const errorMessage = err instanceof Error ? err.message : "Registration failed";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Enhanced signup flow with comprehensive data
+  const registerWithFlow = async (userData: any) => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      const data = await signupFlow(userData);
+      if (data.token) {
+        // Don't set authenticated state yet - user needs email verification
+        setCookie("tempToken", data.token, 1);
+        setCookie("tempUserId", data.user?.id || "", 1);
+        setUser(data.user as User || null);
+        setIsAuthenticated(false); // Requires email verification
+      }
+      return data;
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "Registration failed";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Send OTP for various purposes
+  const sendOTPCode = async (email: string, purpose: 'LOGIN' | 'VERIFY_EMAIL' | 'PASSWORD_RESET' = 'LOGIN') => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      const data = await sendOTP(email, purpose);
+      return data;
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to send OTP";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Get enhanced user profile
+  const getEnhancedProfile = async () => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      const data = await getMe();
+      return data;
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to fetch profile";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const updateUser = async (userData: any) => {
+    setIsLoading(true);
+    setError(null);
+    
     try {
       const userId = getUserId(); // Use utility function
       const data = await updateUserById(userId, userData);
-      setUser(data);
+      setUser(data.user || data);
       return data;
     } catch (err: unknown) {
-      if (err instanceof Error) throw err;
-      throw new Error("Failed to update user details");
+      const errorMessage = err instanceof Error ? err.message : "Update failed";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
     }
-  };
-
-  const getUserId = (): string => {
-    const userId = getCookie("userId");
-    if (!userId) {
-      throw new Error("User ID not found"); // Handle null case
-    }
-    return userId;
-  };
-
-  const getToken = (): string => {
-    const token = getCookie("token");
-    if (!token) {
-      throw new Error("Token not found"); // Handle null case
-    }
-    return token;
   };
 
   const logout = () => {
-    // Clear all authentication cookies
+    setUser(null);
+    setIsAuthenticated(false);
+    setError(null);
+    
+    // Clear all auth cookies
     deleteCookie("token");
     deleteCookie("userId");
     deleteCookie("emailVerified");
     deleteCookie("tempToken");
     deleteCookie("tempUserId");
-
-    // Reset all authentication state
-    setUser(null);
-    setIsAuthenticated(false);
-    setUserRole(null);
-    setAccountType(null);
-    setError(null);
-
-    // Redirect to home page to show public layout
-    window.location.href = "/";
   };
 
   const resetPassword = async (email: string) => {
+    setIsLoading(true);
+    setError(null);
+    
     try {
       const data = await resetPasswordService(email);
       return data;
     } catch (err: unknown) {
-      if (err instanceof Error) throw err;
-      throw new Error("Failed to reset password");
+      const errorMessage = err instanceof Error ? err.message : "Password reset failed";
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  // Function to manually set authentication state (useful for signup flow)
-  const setAuthenticationState = (userData: any, authenticated: boolean) => {
-    setUser(userData);
-    setIsAuthenticated(authenticated);
-    setUserRole(userData?.role || null);
-    setAccountType(userData?.accountType || null);
-
-    if (authenticated && userData) {
-      setCookie("emailVerified", "true", 7);
-    }
-  };
+  // Computed properties
+  const userRole = user?.role || null;
+  const accountType = user?.accountType || null;
 
   return {
     user,
@@ -194,6 +287,9 @@ export const useAuth = () => {
     signIn,
     verifyEmail,
     register,
+    registerWithFlow,
+    sendOTPCode,
+    getEnhancedProfile,
     updateUser,
     getUserId,
     getToken,
@@ -201,25 +297,4 @@ export const useAuth = () => {
     resetPassword,
     setAuthenticationState
   };
-};
-
-const setCookie = (name: string, value: string, days: number) => {
-  const expires = new Date();
-  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-  document.cookie = `${name}=${value}; path=/; expires=${expires.toUTCString()}; secure`;
-};
-
-const getCookie = (name: string): string | null => {
-  const cookies = document.cookie.split("; ");
-  for (const cookie of cookies) {
-    const [key, value] = cookie.split("=");
-    if (key === name) {
-      return value;
-    }
-  }
-  return null;
-};
-
-const deleteCookie = (name: string) => {
-  document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure`;
 };

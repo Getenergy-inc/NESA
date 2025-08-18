@@ -17,7 +17,7 @@ interface AuthContextType {
   getToken: () => string | null;
   logout: () => void;
   updateUser: (userData: any) => Promise<any>;
-  setAuthenticationState: (user: any, isAuthenticated: boolean) => void;
+  setAuthenticationState: (userData: any, token: string) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
