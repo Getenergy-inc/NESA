@@ -52,7 +52,7 @@ const Page = () => {
       subCategoryPath: "/nomination/sub-categories/nigeria-ngo"
     },
     {
-      title: "Best CSR in Education (Nigeria)404",
+      title: "Best CSR in Education Nigeria",
       description: "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
       subCategoryPath: "/sub-categories/nigeria-csr"
     },

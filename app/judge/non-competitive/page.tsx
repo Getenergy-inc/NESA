@@ -43,7 +43,7 @@ const Page = () => {
     {
       title: "Best Political Leaders' Educational Support Services",
       description: "Recognizing philanthropy and leadership contributions for their outstanding contributions to education.",
-      subCategoryPath: "/sub-categories/best-political-leader"
+      subCategoryPath: "nomination/sub-categories/best-political-leader"
     },
     {
       title: "Best STEM Education Champion404",
@@ -53,7 +53,7 @@ const Page = () => {
     {
       title: "Diaspora Education Impact Awards404",
       description: "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
-      subCategoryPath: "/sub-categories/best-educational-state"
+      subCategoryPath: "nomination/sub-categories/best-educational-state"
     },
     {
       title: "Best International & Bilateral Contributors to Education404",
