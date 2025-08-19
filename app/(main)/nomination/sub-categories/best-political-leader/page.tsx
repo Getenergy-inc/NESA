@@ -116,7 +116,7 @@ const router = useRouter();
                   </div>
                   <div className="flex flex-col gap-3 mt-auto">
                     <button
-                      onClick={() => router.push(`/nominees?category=${encodeURIComponent("Best Political Leader in Education Support Recognition Award")}&subcategory=${encodeURIComponent(category.title)}`)}
+                      onClick={() => router.push(`/nominees?category=${encodeURIComponent("Political Leaders in Nigeria 2024 Recognition Award for the Best Educational Support Services")}&subcategory=${encodeURIComponent(category.title)}`)}
                       className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
                     >
                       <span className="mr-2 text-lg">👁️</span>
