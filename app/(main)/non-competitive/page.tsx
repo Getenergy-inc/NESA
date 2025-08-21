@@ -57,7 +57,7 @@ const Page = () => {
     {
       title: "Political Support for Education (Governors/Ministers)",
       description: "Recognizing philanthropy and leadership contributions for their outstanding contributions to education.",
-      subCategoryPath: "/sub-categories/best-political-leader"
+      subCategoryPath: "nomination/sub-categories/best-political-leader"
     },
   
     {

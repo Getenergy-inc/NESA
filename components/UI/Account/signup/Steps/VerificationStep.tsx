@@ -8,6 +8,7 @@ import { ArrowLeft, Mail, RefreshCw, CheckCircle, AlertCircle } from 'lucide-rea
 import { useSignup } from '@/lib/context/SignupContext';
 import { useAuthContext } from '@/lib/context/AuthContext';
 import { ERROR_MESSAGES, createAuthError } from '@/lib/types/errors';
+import { verifyOtp, resendOtp } from '@/lib/services/authService';
 import Button from '@/components/Common/Button';
 import ErrorDisplay, { SuccessMessage } from '@/components/Common/ErrorDisplay';
 
@@ -115,17 +116,8 @@ const VerificationStep: React.FC = () => {
     setNetworkError('');
 
     try {
-      // Mock API call - replace with real service
-      await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          // Simulate network errors occasionally
-          if (Math.random() < 0.1) {
-            reject(new Error('Network timeout'));
-          } else {
-            resolve(true);
-          }
-        }, 1500);
-      });
+      // Use real API service
+      await resendOtp(email, 'VERIFY_EMAIL');
 
       setResendSuccess(true);
       setTimeLeft(300); // Reset timer
@@ -166,40 +158,33 @@ const VerificationStep: React.FC = () => {
     try {
       setAttemptCount(prev => prev + 1);
 
-      // Mock verification - replace with real API call
-      await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          // Simulate network errors occasionally
-          if (Math.random() < 0.1) {
-            reject(new Error('Network timeout'));
-          } else {
-            resolve(true);
-          }
-        }, 1500);
-      });
+      // Use real API service
+      const response = await verifyOtp(email, data.verificationCode, 'VERIFY_EMAIL');
 
-      // Simulate verification logic
-      if (data.verificationCode === '123456') {
+      // Handle verification response
+      if (response.success) {
         // Success - update form data and set authentication state
         updateFormData({ emailVerified: true });
 
-        // Set authentication state with user data from signup
+        // Set authentication state with user data from response
         const userData = {
           ...formData,
           emailVerified: true,
-          id: 'mock-user-id', // This would come from the API
-          role: formData.intents?.includes('Become Ambassador') ? 'ambassador' :
-                formData.intents?.includes('Apply as Judge') ? 'judge' : 'user'
+          id: response.user?.id || 'verified-user',
+          role: response.user?.role || 'FREE_MEMBER',
+          accountType: response.user?.accountType || formData.accountType
         };
 
-        setAuthenticationState(userData, true);
+        setAuthenticationState(userData, response.token || 'verified-token');
 
         // Proceed to completion step
         nextStep();
-      } else if (timeLeft <= 0) {
-        setVerificationError(ERROR_MESSAGES.OTP_EXPIRED);
       } else {
-        setVerificationError(ERROR_MESSAGES.OTP_INVALID);
+        if (timeLeft <= 0) {
+          setVerificationError(ERROR_MESSAGES.OTP_EXPIRED);
+        } else {
+          setVerificationError(response.message || ERROR_MESSAGES.OTP_INVALID);
+        }
       }
     } catch (error) {
       if (error instanceof Error) {

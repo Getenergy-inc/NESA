@@ -1,0 +1,64 @@
+{
+  "waitlist": {
+    "hero": {
+      "badge": "Transformer l'Éducation à Travers l'Afrique",
+      "title": "Rejoignez la",
+      "titleHighlight": "NESA",
+      "titleEnd": "Révolution",
+      "description": "Faites partie de la plateforme de prix d'éducation la plus prestigieuse d'Afrique. Connectez-vous avec des éducateurs visionnaires, célébrez l'excellence et façonnez l'avenir de l'éducation à travers le continent.",
+      "joinWaitlistButton": "Rejoindre la Liste d'Attente",
+      "learnMoreButton": "En Savoir Plus"
+    },
+    "stats": {
+      "africanCountries": "Pays Africains",
+      "educatorsImpacted": "Éducateurs Impactés",
+      "awardsGiven": "Prix Décernés",
+      "studentsReached": "Étudiants Touchés"
+    },
+    "about": {
+      "badge": "À Propos de NESA",
+      "title": "Célébrer l'",
+      "titleHighlight": "Excellence Éducative",
+      "description": "Les Prix du Secteur de l'Éducation du Nigeria (NESA) sont la plateforme de premier plan en Afrique pour reconnaître et célébrer les contributions exceptionnelles à l'éducation. Nous connectons les éducateurs, innovateurs et parties prenantes à travers le continent pour conduire un changement positif dans l'éducation africaine."
+    },
+    "features": {
+      "voteNominate": {
+        "title": "Voter et Nominer",
+        "description": "Participez à la reconnaissance d'éducateurs exceptionnels à travers l'Afrique"
+      },
+      "becomeAmbassador": {
+        "title": "Devenir Ambassadeur",
+        "description": "Représentez NESA dans votre communauté et gagnez des récompenses exclusives"
+      },
+      "joinWebinars": {
+        "title": "Rejoindre Webinaires et Expositions",
+        "description": "Accédez à des événements éducatifs exclusifs et au développement professionnel"
+      },
+      "sponsorPartner": {
+        "title": "Parrainer et Partenaire",
+        "description": "Soutenez l'éducation grâce à des partenariats RSE significatifs"
+      },
+      "applyJudge": {
+        "title": "Postuler comme Juge",
+        "description": "Évaluez les candidats et façonnez l'avenir de l'éducation africaine"
+      },
+      "joinChapters": {
+        "title": "Rejoindre les Chapitres Locaux",
+        "description": "Connectez-vous avec des éducateurs partageant les mêmes idées dans votre région"
+      }
+    },
+    "cta": {
+      "title": "Prêt à Avoir un Impact ?",
+      "description": "Rejoignez des milliers d'éducateurs, d'innovateurs et d'agents de changement qui transforment l'éducation africaine. Votre voyage commence ici.",
+      "joinButton": "Rejoindre la Liste d'Attente",
+      "benefits": {
+        "freeToJoin": "Gratuit à Rejoindre",
+        "exclusiveAccess": "Accès Exclusif",
+        "earlyUpdates": "Mises à Jour Précoces"
+      }
+    },
+    "languageSelector": {
+      "label": "Langue"
+    }
+  }
+}

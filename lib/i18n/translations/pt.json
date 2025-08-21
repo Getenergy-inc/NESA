@@ -1,0 +1,64 @@
+{
+  "waitlist": {
+    "hero": {
+      "badge": "Transformando a Educação em Toda a África",
+      "title": "Junte-se à",
+      "titleHighlight": "NESA",
+      "titleEnd": "Revolução",
+      "description": "Faça parte da plataforma de prêmios educacionais mais prestigiosa da África. Conecte-se com educadores visionários, celebre a excelência e molde o futuro da educação em todo o continente.",
+      "joinWaitlistButton": "Entrar na Lista de Espera",
+      "learnMoreButton": "Saiba Mais"
+    },
+    "stats": {
+      "africanCountries": "Países Africanos",
+      "educatorsImpacted": "Educadores Impactados",
+      "awardsGiven": "Prêmios Concedidos",
+      "studentsReached": "Estudantes Alcançados"
+    },
+    "about": {
+      "badge": "Sobre a NESA",
+      "title": "Celebrando a",
+      "titleHighlight": "Excelência Educacional",
+      "description": "Os Prêmios do Setor Educacional da Nigéria (NESA) são a principal plataforma da África para reconhecer e celebrar contribuições excepcionais para a educação. Conectamos educadores, inovadores e partes interessadas em todo o continente para impulsionar mudanças positivas na educação africana."
+    },
+    "features": {
+      "voteNominate": {
+        "title": "Vote e Nomeie",
+        "description": "Participe no reconhecimento de educadores excepcionais em toda a África"
+      },
+      "becomeAmbassador": {
+        "title": "Torne-se Embaixador",
+        "description": "Represente a NESA na sua comunidade e ganhe recompensas exclusivas"
+      },
+      "joinWebinars": {
+        "title": "Participe de Webinars e Exposições",
+        "description": "Acesse eventos educacionais exclusivos e desenvolvimento profissional"
+      },
+      "sponsorPartner": {
+        "title": "Patrocine e Seja Parceiro",
+        "description": "Apoie a educação através de parcerias significativas de RSC"
+      },
+      "applyJudge": {
+        "title": "Candidate-se como Juiz",
+        "description": "Avalie nomeados e molde o futuro da educação africana"
+      },
+      "joinChapters": {
+        "title": "Junte-se aos Capítulos Locais",
+        "description": "Conecte-se com educadores com ideias semelhantes na sua região"
+      }
+    },
+    "cta": {
+      "title": "Pronto para Causar Impacto?",
+      "description": "Junte-se a milhares de educadores, inovadores e agentes de mudança que estão transformando a educação africana. Sua jornada começa aqui.",
+      "joinButton": "Entrar na Lista de Espera",
+      "benefits": {
+        "freeToJoin": "Grátis para Participar",
+        "exclusiveAccess": "Acesso Exclusivo",
+        "earlyUpdates": "Atualizações Antecipadas"
+      }
+    },
+    "languageSelector": {
+      "label": "Idioma"
+    }
+  }
+}

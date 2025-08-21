@@ -1,0 +1,64 @@
+{
+  "waitlist": {
+    "hero": {
+      "badge": "Transforming Education Across Africa",
+      "title": "Join the",
+      "titleHighlight": "NESA",
+      "titleEnd": "Revolution",
+      "description": "Be part of Africa's most prestigious education awards platform. Connect with visionary educators, celebrate excellence, and shape the future of education across the continent.",
+      "joinWaitlistButton": "Join Waitlist",
+      "learnMoreButton": "Learn More"
+    },
+    "stats": {
+      "africanCountries": "African Countries",
+      "educatorsImpacted": "Educators Impacted",
+      "awardsGiven": "Awards Given",
+      "studentsReached": "Students Reached"
+    },
+    "about": {
+      "badge": "About NESA",
+      "title": "Celebrating Educational",
+      "titleHighlight": "Excellence",
+      "description": "The Nigeria Education Sector Awards (NESA) is Africa's premier platform for recognizing and celebrating outstanding contributions to education. We connect educators, innovators, and stakeholders across the continent to drive positive change in African education."
+    },
+    "features": {
+      "voteNominate": {
+        "title": "Vote & Nominate",
+        "description": "Participate in recognizing outstanding educators across Africa"
+      },
+      "becomeAmbassador": {
+        "title": "Become Ambassador",
+        "description": "Represent NESA in your community and earn exclusive rewards"
+      },
+      "joinWebinars": {
+        "title": "Join Webinars & Expos",
+        "description": "Access exclusive educational events and professional development"
+      },
+      "sponsorPartner": {
+        "title": "Sponsor & Partner",
+        "description": "Support education through meaningful CSR partnerships"
+      },
+      "applyJudge": {
+        "title": "Apply as Judge",
+        "description": "Evaluate nominees and shape the future of African education"
+      },
+      "joinChapters": {
+        "title": "Join Local Chapters",
+        "description": "Connect with like-minded educators in your region"
+      }
+    },
+    "cta": {
+      "title": "Ready to Make an Impact?",
+      "description": "Join thousands of educators, innovators, and change-makers who are transforming African education. Your journey starts here.",
+      "joinButton": "Join the Waitlist",
+      "benefits": {
+        "freeToJoin": "Free to Join",
+        "exclusiveAccess": "Exclusive Access",
+        "earlyUpdates": "Early Updates"
+      }
+    },
+    "languageSelector": {
+      "label": "Language"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "waitlist": {
+    "hero": {
+      "badge": "Kubadilisha Elimu Kote Afrika",
+      "title": "Jiunge na",
+      "titleHighlight": "NESA",
+      "titleEnd": "Mapinduzi",
+      "description": "Kuwa sehemu ya jukwaa la tuzo za elimu zenye heshima zaidi Afrika. Unganisha na waalimu wenye maono, sherehekea ubora, na umbe mustakabali wa elimu kote bara.",
+      "joinWaitlistButton": "Jiunge na Orodha ya Kusubiri",
+      "learnMoreButton": "Jifunze Zaidi"
+    },
+    "stats": {
+      "africanCountries": "Nchi za Afrika",
+      "educatorsImpacted": "Waalimu Walioathiriwa",
+      "awardsGiven": "Tuzo Zilizotolewa",
+      "studentsReached": "Wanafunzi Waliofikwa"
+    },
+    "about": {
+      "badge": "Kuhusu NESA",
+      "title": "Kusherehekea",
+      "titleHighlight": "Ubora wa Kielimu",
+      "description": "Tuzo za Sekta ya Elimu ya Nigeria (NESA) ni jukwaa kuu la Afrika la kutambua na kusherehekea michango bora katika elimu. Tunaunganisha waalimu, wavumbuzi, na wadau kote bara ili kuendesha mabadiliko mazuri katika elimu ya Afrika."
+    },
+    "features": {
+      "voteNominate": {
+        "title": "Piga Kura na Pendekeza",
+        "description": "Shiriki katika kutambua waalimu bora kote Afrika"
+      },
+      "becomeAmbassador": {
+        "title": "Kuwa Balozi",
+        "description": "Wakilisha NESA katika jamii yako na upate zawadi za kipekee"
+      },
+      "joinWebinars": {
+        "title": "Jiunge na Semina na Maonyesho",
+        "description": "Pata ufikiaji wa matukio ya kielimu ya kipekee na maendeleo ya kitaaluma"
+      },
+      "sponsorPartner": {
+        "title": "Dhamini na Ushirikiano",
+        "description": "Unga mkono elimu kupitia ushirikiano wa maana wa CSR"
+      },
+      "applyJudge": {
+        "title": "Omba Kuwa Jaji",
+        "description": "Tathmini waliochaguliwa na umbe mustakabali wa elimu ya Afrika"
+      },
+      "joinChapters": {
+        "title": "Jiunge na Matawi ya Mitaa",
+        "description": "Unganisha na waalimu wenye mawazo sawa katika eneo lako"
+      }
+    },
+    "cta": {
+      "title": "Uko Tayari Kufanya Athari?",
+      "description": "Jiunge na maelfu ya waalimu, wavumbuzi, na wabadilishaji ambao wanabadilisha elimu ya Afrika. Safari yako inaanza hapa.",
+      "joinButton": "Jiunge na Orodha ya Kusubiri",
+      "benefits": {
+        "freeToJoin": "Bure Kujiunga",
+        "exclusiveAccess": "Ufikiaji wa Kipekee",
+        "earlyUpdates": "Masasisho ya Mapema"
+      }
+    },
+    "languageSelector": {
+      "label": "Lugha"
+    }
+  }
+}
