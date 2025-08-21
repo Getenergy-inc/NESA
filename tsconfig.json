@@ -36,7 +36,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "dist/types/**/*.ts"
-, "app/judge/all categories/allcategories", "app/(main)/get-involved/partner-with-us/FAQs"  ],
+, "app/judge/all categories/allcategories", "app/(main)/get-involved/partner/FAQs"  ],
   "exclude": [
     "node_modules"
   ]
