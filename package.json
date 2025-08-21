@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "set NODE_OPTIONS=--max-old-space-size=4096 && next build",
     "build:unix": "NODE_OPTIONS='--max-old-space-size=4096' next build",
     "export": "next export",
