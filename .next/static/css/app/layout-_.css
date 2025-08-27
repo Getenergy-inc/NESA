@@ -1,0 +1,57 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"lib/utils/font.ts","import":"Poppins","arguments":[{"weight":["100","300","500","800","900"],"subsets":["latin"]}],"variableName":"poppins"} ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: '__Poppins_Fallback_673c6b';
+  src: local("Arial");
+  ascent-override:93.62%;
+  descent-override:31.21%;
+  line-gap-override:8.92%;
+  size-adjust:112.16%;
+}@font-face {font-family: '__Poppins_Fallback_Fallback_673c6b';src: local("Arial");ascent-override: 93.62%;descent-override: 31.21%;line-gap-override: 8.92%;size-adjust: 112.16%
+}.__className_673c6b {font-family: '__Poppins_Fallback_673c6b', '__Poppins_Fallback_Fallback_673c6b';font-style: normal
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib/utils/font.ts","import":"","arguments":[{"src":"../../assets/fonts/Raleway-VariableFont_wght.ttf","display":"swap"}],"variableName":"raleway"} ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__raleway_0535ce';
+src: url(/_next/static/media/1d8c655f89aebb8a-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__raleway_Fallback_0535ce';src: local("Arial");ascent-override: 92.39%;descent-override: 23.00%;line-gap-override: 0.00%;size-adjust: 101.74%
+}.__className_0535ce {font-family: '__raleway_0535ce', '__raleway_Fallback_0535ce'
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib/utils/font.ts","import":"","arguments":[{"src":"../../assets/fonts/Inter-VariableFont.ttf","display":"swap"}],"variableName":"inter"} ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__inter_d4e0c8';
+src: url(/_next/static/media/7385e8d9d3c5518f-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__inter_Fallback_d4e0c8';src: local("Arial");ascent-override: 90.00%;descent-override: 22.43%;line-gap-override: 0.00%;size-adjust: 107.64%
+}.__className_d4e0c8 {font-family: '__inter_d4e0c8', '__inter_Fallback_d4e0c8'
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib/utils/font.ts","import":"","arguments":[{"src":"../../assets/fonts/Manrope-VariableFont_wght.ttf","display":"swap"}],"variableName":"manrope"} ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__manrope_11a26c';
+src: url(/_next/static/media/3787d9a87cc64466-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__manrope_Fallback_11a26c';src: local("Arial");ascent-override: 106.45%;descent-override: 29.96%;line-gap-override: 0.00%;size-adjust: 100.14%
+}.__className_11a26c {font-family: '__manrope_11a26c', '__manrope_Fallback_11a26c'
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib/utils/font.ts","import":"","arguments":[{"src":"../../assets/fonts/Montserrat-VariableFont_wght.ttf","display":"swap"}],"variableName":"montserrat"} ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__montserrat_766d81';
+src: url(/_next/static/media/f595c38f5aaaeca5-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__montserrat_Fallback_766d81';src: local("Arial");ascent-override: 87.81%;descent-override: 22.77%;line-gap-override: 0.00%;size-adjust: 110.23%
+}.__className_766d81 {font-family: '__montserrat_766d81', '__montserrat_Fallback_766d81'
+}
+

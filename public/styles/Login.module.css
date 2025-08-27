@@ -1,0 +1,42 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main {
+    display: flex;
+    flex: 1;
+  }
+  
+  .leftColumn {
+    flex: 1;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .rightColumn {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+  }
+  
+  .contactInfo {
+    margin-top: auto;
+  }
+  
+  .scefButton, .continueButton {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .radioGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }

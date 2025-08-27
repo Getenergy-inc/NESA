@@ -1,0 +1,207 @@
+/* FixedSignupLayout.module.css - Fixed left column with scrollable right column */
+
+.signupContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.fixedLeftColumn {
+  width: 33.333333%; /* w-1/3 equivalent */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.scrollableRightColumn {
+  width: 66.666667%; /* w-2/3 equivalent */
+  margin-left: 33.333333%; /* offset for fixed left column */
+  min-height: 100vh;
+  overflow-y: auto;
+  background-color: white;
+  position: relative;
+}
+
+.rightColumnContent {
+  padding: 3rem; /* p-12 equivalent */
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.formContainer {
+  max-width: 48rem; /* max-w-2xl equivalent */
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+/* Smooth scrolling for the right column */
+.scrollableRightColumn {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+.scrollableRightColumn::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollableRightColumn::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.scrollableRightColumn::-webkit-scrollbar-thumb {
+  background: #FFC247;
+  border-radius: 3px;
+}
+
+.scrollableRightColumn::-webkit-scrollbar-thumb:hover {
+  background: #E48900;
+}
+
+/* For Firefox */
+.scrollableRightColumn {
+  scrollbar-width: thin;
+  scrollbar-color: #FFC247 #f1f1f1;
+}
+
+/* Tablet responsive design */
+@media (max-width: 1024px) {
+  .signupContainer {
+    flex-direction: column;
+  }
+
+  .fixedLeftColumn {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+  }
+
+  .scrollableRightColumn {
+    width: 100%;
+    margin-left: 0;
+    min-height: calc(100vh - 200px);
+  }
+
+  .rightColumnContent {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .formContainer {
+    padding-bottom: 1rem;
+  }
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .fixedLeftColumn {
+    height: 150px;
+    padding: 1rem;
+  }
+
+  .scrollableRightColumn {
+    min-height: calc(100vh - 150px);
+  }
+
+  .rightColumnContent {
+    padding: 1rem;
+  }
+
+  .formContainer {
+    max-width: 100%;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 640px) {
+  .rightColumnContent {
+    padding: 0.75rem;
+  }
+}
+
+/* Utility classes for left column content positioning */
+.leftColumnContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  color: white;
+}
+
+.leftColumnLogo {
+  margin-bottom: 1rem;
+}
+
+.leftColumnBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.leftColumnContact {
+  font-size: 0.875rem;
+}
+
+.leftColumnContact p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.leftColumnContact svg {
+  margin-right: 0.5rem;
+}
+
+/* Mobile adjustments for left column content */
+@media (max-width: 1024px) {
+  .leftColumnContent {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .leftColumnLogo {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .leftColumnBadge {
+    flex-grow: 0;
+    margin: 0 1rem;
+  }
+
+  .leftColumnContact {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftColumnContent {
+    padding: 1rem;
+  }
+
+  .leftColumnBadge img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .leftColumnLogo img {
+    width: 120px !important;
+    height: 60px !important;
+  }
+}
