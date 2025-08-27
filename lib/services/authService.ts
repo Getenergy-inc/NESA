@@ -55,7 +55,17 @@ interface ResetPasswordResponse {
 
 export const login = async (credentials: Credentials): Promise<AuthResponse> => {
   try {
-    const response = await apiClient.post('/api/auths/login', credentials);
+    const response = await apiClient.post('/api/v1/auth/login', credentials);
+    
+    // Handle enhanced response structure
+    if (response.data.success && response.data.data) {
+      return {
+        message: response.data.message,
+        token: response.data.data.tokens?.accessToken,
+        user: response.data.data.user
+      };
+    }
+    
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Invalid email or password');
@@ -72,9 +82,9 @@ export const verifyOTP = async (data: OTPData): Promise<AuthResponse> => {
       purpose: 'LOGIN' // Default purpose for login flow
     };
     
-    const response = await apiClient.post('/api/auths/verify-otp', backendData);
+    const response = await apiClient.post('/api/v1/auth/otp/verify', backendData);
     
-    // Handle new backend response structure
+    // Handle enhanced response structure
     if (response.data.success && response.data.data) {
       return {
         message: response.data.message,
@@ -83,7 +93,6 @@ export const verifyOTP = async (data: OTPData): Promise<AuthResponse> => {
       };
     }
     
-    // Fallback for legacy response format
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'OTP verification failed');
@@ -93,9 +102,9 @@ export const verifyOTP = async (data: OTPData): Promise<AuthResponse> => {
 
 export const signup = async (userData: UserData): Promise<AuthResponse> => {
   try {
-    const response = await apiClient.post('/api/auths/signup', userData);
+    const response = await apiClient.post('/api/v1/auth/signup', userData);
     
-    // Handle new backend response structure
+    // Handle enhanced response structure
     if (response.data.success && response.data.data) {
       return {
         message: response.data.message,
@@ -104,7 +113,6 @@ export const signup = async (userData: UserData): Promise<AuthResponse> => {
       };
     }
     
-    // Fallback for legacy response format
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Registration failed');
@@ -114,7 +122,7 @@ export const signup = async (userData: UserData): Promise<AuthResponse> => {
 
 export const changePassword = async (data: ChangePasswordData): Promise<ChangePasswordResponse> => {
   try {
-    const response = await apiClient.post('/api/auths/change-password', data);
+    const response = await apiClient.post('/api/v1/auth/password/change', data);
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Password change failed');
@@ -124,7 +132,7 @@ export const changePassword = async (data: ChangePasswordData): Promise<ChangePa
 
 export const resetPassword = async (email: string): Promise<ResetPasswordResponse> => {
   try {
-    const response = await apiClient.post('/api/auths/reset-password', { email });
+    const response = await apiClient.post('/api/v1/auth/password-reset/request', { email });
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Failed to reset password');
@@ -134,12 +142,12 @@ export const resetPassword = async (email: string): Promise<ResetPasswordRespons
 
 // Legacy signup flow - removed duplicate, using the comprehensive one below
 
-// Send OTP for different purposes
+// Send OTP for different purposes - using enhanced endpoints
 export const sendOTP = async (email: string, purpose: 'LOGIN' | 'VERIFY_EMAIL' | 'PASSWORD_RESET' = 'LOGIN'): Promise<{ message: string }> => {
   try {
-    let endpoint = '/api/auths/send-otp'; // Default for login
+    // Use specific enhanced endpoints based on purpose
+    let endpoint = '/api/v1/auth/otp/send-login'; // Default for login
     
-    // Use specific endpoints based on purpose
     if (purpose === 'VERIFY_EMAIL') {
       endpoint = '/api/v1/auth/otp/send-verify-email';
     } else if (purpose === 'PASSWORD_RESET') {
@@ -195,8 +203,8 @@ export const signupFlow = async (userData: SignupFormData): Promise<SignupRespon
     // Map frontend data to backend format
     const backendData = mapFormDataToBackend(userData);
 
-    // Call backend signup-flow endpoint
-    const response = await apiClient.post('/auth/signup-flow', backendData);
+    // Call backend signup-flow endpoint with correct path
+    const response = await apiClient.post('/api/v1/auth/signup-flow', backendData);
 
     // Map backend response to frontend format
     return mapBackendResponseToFrontend(response);
@@ -206,10 +214,14 @@ export const signupFlow = async (userData: SignupFormData): Promise<SignupRespon
   }
 };
 
-// OTP verification for email verification
-export const verifyOtp = async (email: string, otp: string, type: string = 'VERIFY_EMAIL'): Promise<any> => {
+// OTP verification for email verification - using enhanced endpoint
+export const verifyOtp = async (email: string, otp: string, purpose: string = 'VERIFY_EMAIL'): Promise<any> => {
   try {
-    const response = await apiClient.post('/auth/verify-otp', { email, otp, type });
+    const response = await apiClient.post('/api/v1/auth/otp/verify', { 
+      email, 
+      code: otp, // Backend expects 'code' not 'otp'
+      purpose 
+    });
     return response;
   } catch (error) {
     console.error('OTP verification failed:', error);
@@ -217,10 +229,19 @@ export const verifyOtp = async (email: string, otp: string, type: string = 'VERI
   }
 };
 
-// Resend OTP
-export const resendOtp = async (email: string, type: string = 'VERIFY_EMAIL'): Promise<any> => {
+// Resend OTP - using enhanced endpoint
+export const resendOtp = async (email: string, purpose: string = 'VERIFY_EMAIL'): Promise<any> => {
   try {
-    const response = await apiClient.post('/auth/send-otp', { email, type });
+    // Select the appropriate endpoint based on purpose
+    let endpoint = '/api/v1/auth/otp/send-login'; // Default for login
+    
+    if (purpose === 'VERIFY_EMAIL') {
+      endpoint = '/api/v1/auth/otp/send-verify-email';
+    } else if (purpose === 'PASSWORD_RESET') {
+      endpoint = '/api/v1/auth/password-reset/send-otp';
+    }
+    
+    const response = await apiClient.post(endpoint, { email });
     return response;
   } catch (error) {
     console.error('Resend OTP failed:', error);
@@ -228,10 +249,10 @@ export const resendOtp = async (email: string, type: string = 'VERIFY_EMAIL'): P
   }
 };
 
-// Check email availability
+// Check email availability - using enhanced endpoint
 export const checkEmailAvailability = async (email: string): Promise<{ available: boolean }> => {
   try {
-    const response = await apiClient.post('/auth/check-email', { email });
+    const response = await apiClient.post('/api/v1/auth/check-email', { email });
     return response.data;
   } catch (error) {
     // If email check fails, assume it's available (graceful degradation)
