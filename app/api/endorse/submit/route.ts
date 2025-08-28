@@ -1,21 +1,109 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { v4 as uuidv4 } from 'uuid';
+import { sendVerificationEmail } from '@/lib/email/endorsementVerification';
+import crypto from 'crypto';
 
 // Route segment config - prevent static generation
 export const dynamic = 'force-dynamic';
 export const revalidate = false;
 
-
 // Mock database - In production, this would be replaced with actual database
-let endorsements: any[] = [];
+// This is shared with the showcase route
+export let endorsements: any[] = [
+  // Sample approved endorsements from showcase route
+  {
+    id: 'sample1',
+    organization_name: 'UNESCO Africa',
+    contact_person_name: 'Dr. Sarah Johnson',
+    email: 'sarah.johnson@unesco.org',
+    phone: '+254712345678',
+    country: 'Kenya',
+    endorser_category: 'multilateral_organization',
+    endorsement_type: 'paid',
+    endorsement_tier: 'platinum',
+    payment_method: 'bank_transfer',
+    payment_reference: 'UNESCO-2024-001',
+    payment_verified: true,
+    endorsement_headline: 'Supporting Educational Excellence Across Africa',
+    endorsement_statement: 'UNESCO Africa proudly endorses NESA-Africa 2025 as a transformative initiative that aligns perfectly with our mission to promote quality education for all. This continental movement represents the future of educational innovation and equity across Africa.',
+    logo_file: '/images/endorsers/unesco-logo.png',
+    consent_to_publish: true,
+    authorized_to_submit: true,
+    digital_signature: 'Dr. Sarah Johnson',
+    status: 'approved',
+    verified: true,
+    created_at: '2024-01-15T10:00:00Z',
+    approved_at: '2024-01-16T14:30:00Z',
+    updated_at: '2024-01-16T14:30:00Z',
+    certificate_generated: true,
+    featured: true
+  },
+  {
+    id: 'sample2',
+    organization_name: 'African Development Bank',
+    contact_person_name: 'Prof. Michael Adebayo',
+    email: 'michael.adebayo@afdb.org',
+    phone: '+22507654321',
+    country: 'Côte d\'Ivoire',
+    endorser_category: 'development_bank',
+    endorsement_type: 'paid',
+    endorsement_tier: 'gold',
+    payment_method: 'credit_card',
+    payment_verified: true,
+    endorsement_headline: 'Investing in Africa\'s Educational Future',
+    endorsement_statement: 'The African Development Bank recognizes NESA-Africa 2025 as a critical platform for celebrating and advancing educational excellence across our continent. We are proud to support this initiative that champions innovation, equity, and sustainable development in education.',
+    logo_file: '/images/endorsers/afdb-logo.png',
+    consent_to_publish: true,
+    authorized_to_submit: true,
+    digital_signature: 'Prof. Michael Adebayo',
+    status: 'approved',
+    verified: true,
+    created_at: '2024-01-20T09:15:00Z',
+    approved_at: '2024-01-21T11:45:00Z',
+    updated_at: '2024-01-21T11:45:00Z',
+    certificate_generated: true,
+    featured: true
+  },
+  {
+    id: 'sample3',
+    organization_name: 'Mastercard Foundation',
+    contact_person_name: 'Dr. Amina Hassan',
+    email: 'amina.hassan@mastercardfdn.org',
+    phone: '+16135551234',
+    country: 'Canada',
+    endorser_category: 'development_foundation',
+    endorsement_type: 'paid',
+    endorsement_tier: 'silver',
+    payment_method: 'bank_transfer',
+    payment_reference: 'MCF-2024-123',
+    payment_verified: true,
+    endorsement_headline: 'Empowering Young Africans Through Education',
+    endorsement_statement: 'Mastercard Foundation endorses NESA-Africa 2025 as an essential initiative that recognizes and celebrates the educators and innovators who are transforming lives across Africa. This aligns with our commitment to advancing education and economic inclusion for young people.',
+    logo_file: '/images/endorsers/mastercard-foundation-logo.png',
+    consent_to_publish: true,
+    authorized_to_submit: true,
+    digital_signature: 'Dr. Amina Hassan',
+    status: 'approved',
+    verified: true,
+    created_at: '2024-01-25T16:20:00Z',
+    approved_at: '2024-01-26T10:15:00Z',
+    updated_at: '2024-01-26T10:15:00Z',
+    certificate_generated: true,
+    featured: false
+  }
+];
+
+// Store verification tokens (in a real app, this would be in a database)
+const verificationTokens: Record<string, { token: string, endorsementId: string, expires: Date }> = {};
 
 // Generate unique ID
 function generateId(): string {
-  return Math.random().toString(36).substr(2, 9);
+  return uuidv4();
 }
 
 // Generate verification token
 function generateVerificationToken(): string {
-  return Math.random().toString(36).substr(2, 15);
+  return crypto.randomBytes(32).toString('hex');
 }
 
 export async function POST(request: NextRequest) {
@@ -60,7 +148,13 @@ export async function POST(request: NextRequest) {
     const existingEndorsement = endorsements.find(endorsement => endorsement.email === email);
     if (existingEndorsement) {
       return NextResponse.json(
-        { success: false, message: 'An endorsement with this email already exists' },
+        { 
+          success: false, 
+          error: 'email_exists',
+          message: 'An endorsement with this email already exists',
+          endorsementId: existingEndorsement.id,
+          status: existingEndorsement.status
+        },
         { status: 409 }
       );
     }
@@ -82,9 +176,26 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Generate a unique ID for the endorsement
+    const id = generateId();
+    
+    // Generate a verification token
+    const token = generateVerificationToken();
+    
+    // Set token expiration (24 hours)
+    const expires = new Date();
+    expires.setHours(expires.getHours() + 24);
+    
+    // Store the token
+    verificationTokens[email] = {
+      token,
+      endorsementId: id,
+      expires
+    };
+
     // Create new endorsement
     const newEndorsement = {
-      id: generateId(),
+      id,
       organization_name,
       contact_person_name,
       email,
@@ -107,9 +218,8 @@ export async function POST(request: NextRequest) {
       digital_signature,
       user_id: user_id || null,
       submitted_by: submitted_by || null,
-      status: 'pending_review',
+      status: 'pending_verification',
       verified: false,
-      verification_token: generateVerificationToken(),
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
       approved_at: null,
@@ -120,16 +230,24 @@ export async function POST(request: NextRequest) {
     // Add to mock database
     endorsements.push(newEndorsement);
 
+    // Send verification email
+    await sendVerificationEmail({
+      email,
+      name: contact_person_name,
+      organization: organization_name,
+      token,
+      endorsementId: id
+    });
+
     // Return success response
     return NextResponse.json({
       success: true,
-      message: 'Endorsement submitted successfully',
+      message: 'Endorsement submitted successfully. Please check your email to verify.',
       endorsement: {
         id: newEndorsement.id,
         organization_name: newEndorsement.organization_name,
         email: newEndorsement.email,
         status: newEndorsement.status,
-        verification_token: newEndorsement.verification_token,
         created_at: newEndorsement.created_at
       }
     });
@@ -148,39 +266,100 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const email = searchParams.get('email');
+    const token = searchParams.get('token');
 
-    if (!email) {
-      return NextResponse.json(
-        { success: false, message: 'Email parameter is required' },
-        { status: 400 }
-      );
-    }
-
-    const endorsement = endorsements.find(endorsement => endorsement.email === email);
-    
-    if (!endorsement) {
-      return NextResponse.json(
-        { success: false, message: 'Endorsement not found' },
-        { status: 404 }
-      );
-    }
-
-    return NextResponse.json({
-      success: true,
-      endorsement: {
-        id: endorsement.id,
-        organization_name: endorsement.organization_name,
-        email: endorsement.email,
-        status: endorsement.status,
-        verified: endorsement.verified,
-        created_at: endorsement.created_at,
-        endorsement_type: endorsement.endorsement_type,
-        endorsement_tier: endorsement.endorsement_tier
+    // If token is provided, this is a verification request
+    if (email && token) {
+      // Check if token exists and is valid
+      const tokenData = verificationTokens[email];
+      if (!tokenData || tokenData.token !== token) {
+        return NextResponse.json(
+          { success: false, message: 'Invalid or expired token' },
+          { status: 400 }
+        );
       }
-    });
+      
+      // Check if token is expired
+      if (new Date() > tokenData.expires) {
+        return NextResponse.json(
+          { success: false, message: 'Token has expired' },
+          { status: 400 }
+        );
+      }
+      
+      // Find the endorsement
+      const endorsementIndex = endorsements.findIndex(e => e.id === tokenData.endorsementId);
+      if (endorsementIndex === -1) {
+        return NextResponse.json(
+          { success: false, message: 'Endorsement not found' },
+          { status: 404 }
+        );
+      }
+      
+      // Update the endorsement
+      endorsements[endorsementIndex] = {
+        ...endorsements[endorsementIndex],
+        status: 'pending_review',
+        verified: true,
+        updated_at: new Date().toISOString()
+      };
+      
+      // Remove the token
+      delete verificationTokens[email];
+      
+      // Return success
+      return NextResponse.json({
+        success: true,
+        message: 'Email verified successfully',
+        endorsement: {
+          id: endorsements[endorsementIndex].id,
+          organization_name: endorsements[endorsementIndex].organization_name,
+          status: endorsements[endorsementIndex].status
+        }
+      });
+    }
+    
+    // If only email is provided, this is a status check
+    if (email && !token) {
+      if (!email) {
+        return NextResponse.json(
+          { success: false, message: 'Email parameter is required' },
+          { status: 400 }
+        );
+      }
+
+      const endorsement = endorsements.find(endorsement => endorsement.email === email);
+      
+      if (!endorsement) {
+        return NextResponse.json(
+          { success: false, message: 'Endorsement not found' },
+          { status: 404 }
+        );
+      }
+
+      return NextResponse.json({
+        success: true,
+        endorsement: {
+          id: endorsement.id,
+          organization_name: endorsement.organization_name,
+          email: endorsement.email,
+          status: endorsement.status,
+          verified: endorsement.verified,
+          created_at: endorsement.created_at,
+          endorsement_type: endorsement.endorsement_type,
+          endorsement_tier: endorsement.endorsement_tier
+        }
+      });
+    }
+    
+    // If neither email nor token is provided
+    return NextResponse.json(
+      { success: false, message: 'Email parameter is required' },
+      { status: 400 }
+    );
 
   } catch (error) {
-    console.error('Error retrieving endorsement:', error);
+    console.error('Error processing request:', error);
     return NextResponse.json(
       { success: false, message: 'Internal server error' },
       { status: 500 }

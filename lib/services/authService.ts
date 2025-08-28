@@ -1,4 +1,3 @@
-// authService.ts
 import apiClient from './apiClient';
 import { SignupFormData, SignupResponse } from '@/lib/types/signup';
 import { mapFormDataToBackend, mapBackendResponseToFrontend } from '@/lib/utils/signupMapping';
@@ -53,6 +52,10 @@ interface ResetPasswordResponse {
   message: string;
 }
 
+// ----------------------
+// Legacy-compatible APIs
+// ----------------------
+
 export const login = async (credentials: Credentials): Promise<AuthResponse> => {
   try {
     const response = await apiClient.post('/api/auths/login', credentials);
@@ -71,9 +74,9 @@ export const verifyOTP = async (data: OTPData): Promise<AuthResponse> => {
       code: data.otp, // Backend expects 'code' not 'otp'
       purpose: 'LOGIN' // Default purpose for login flow
     };
-    
+
     const response = await apiClient.post('/api/auths/verify-otp', backendData);
-    
+
     // Handle new backend response structure
     if (response.data.success && response.data.data) {
       return {
@@ -82,7 +85,7 @@ export const verifyOTP = async (data: OTPData): Promise<AuthResponse> => {
         user: response.data.data.user || response.data.data.profile
       };
     }
-    
+
     // Fallback for legacy response format
     return response.data;
   } catch (error: unknown) {
@@ -94,7 +97,7 @@ export const verifyOTP = async (data: OTPData): Promise<AuthResponse> => {
 export const signup = async (userData: UserData): Promise<AuthResponse> => {
   try {
     const response = await apiClient.post('/api/auths/signup', userData);
-    
+
     // Handle new backend response structure
     if (response.data.success && response.data.data) {
       return {
@@ -103,7 +106,7 @@ export const signup = async (userData: UserData): Promise<AuthResponse> => {
         user: response.data.data.user
       };
     }
-    
+
     // Fallback for legacy response format
     return response.data;
   } catch (error: unknown) {
@@ -114,7 +117,8 @@ export const signup = async (userData: UserData): Promise<AuthResponse> => {
 
 export const changePassword = async (data: ChangePasswordData): Promise<ChangePasswordResponse> => {
   try {
-    const response = await apiClient.post('/api/auths/change-password', data);
+    // New route under v1
+    const response = await apiClient.post('/api/v1/auth/change-password', data);
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Password change failed');
@@ -122,36 +126,41 @@ export const changePassword = async (data: ChangePasswordData): Promise<ChangePa
   }
 };
 
+// Kept for backward compatibility: now requests a reset email/token (token-based flow)
 export const resetPassword = async (email: string): Promise<ResetPasswordResponse> => {
   try {
-    const response = await apiClient.post('/api/auths/reset-password', { email });
+    const response = await apiClient.post('/api/v1/auth/request-password-reset', { email });
     return response.data;
   } catch (error: unknown) {
-    const message = extractErrorMessage(error, 'Failed to reset password');
+    const message = extractErrorMessage(error, 'Failed to request password reset');
     throw new Error(message);
   }
 };
 
-// Legacy signup flow - removed duplicate, using the comprehensive one below
+// ----------------------
+// Unified OTP helpers
+// ----------------------
 
-// Send OTP for different purposes
-export const sendOTP = async (email: string, purpose: 'LOGIN' | 'VERIFY_EMAIL' | 'PASSWORD_RESET' = 'LOGIN'): Promise<{ message: string }> => {
+// Send OTP for different purposes (maps to correct endpoints)
+export const sendOTP = async (
+  email: string,
+  purpose: 'LOGIN' | 'VERIFY_EMAIL' | 'PASSWORD_RESET' = 'LOGIN'
+): Promise<{ message: string }> => {
   try {
-    let endpoint = '/api/auths/send-otp'; // Default for login
-    
-    // Use specific endpoints based on purpose
+    let endpoint = '/api/v1/auth/otp/send-login';
+
     if (purpose === 'VERIFY_EMAIL') {
       endpoint = '/api/v1/auth/otp/send-verify-email';
     } else if (purpose === 'PASSWORD_RESET') {
       endpoint = '/api/v1/auth/password-reset/send-otp';
     }
-    
+
     const response = await apiClient.post(endpoint, { email });
-    
-    if (response.data.success) {
+
+    if (response.data?.success) {
       return { message: response.data.message };
     }
-    
+
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Failed to send OTP');
@@ -163,11 +172,11 @@ export const sendOTP = async (email: string, purpose: 'LOGIN' | 'VERIFY_EMAIL' |
 export const getMe = async (): Promise<any> => {
   try {
     const response = await apiClient.get('/api/v1/auth/me');
-    
+
     if (response.data.success) {
       return response.data.data;
     }
-    
+
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Failed to fetch profile');
@@ -189,14 +198,16 @@ const extractErrorMessage = (error: unknown, fallback: string): string => {
   return fallback;
 };
 
-// Comprehensive signup flow for NESA platform
+// ----------------------
+// Comprehensive signup flow (new)
+// ----------------------
 export const signupFlow = async (userData: SignupFormData): Promise<SignupResponse> => {
   try {
     // Map frontend data to backend format
     const backendData = mapFormDataToBackend(userData);
 
-    // Call backend signup-flow endpoint
-    const response = await apiClient.post('/auth/signup-flow', backendData);
+    // Call backend signup-flow endpoint (v1)
+    const response = await apiClient.post('/api/v1/auth/signup-flow', backendData);
 
     // Map backend response to frontend format
     return mapBackendResponseToFrontend(response);
@@ -206,29 +217,44 @@ export const signupFlow = async (userData: SignupFormData): Promise<SignupRespon
   }
 };
 
-// OTP verification for email verification
-export const verifyOtp = async (email: string, otp: string, type: string = 'VERIFY_EMAIL'): Promise<any> => {
+// OTP verification for email verification or login (new unified endpoint)
+export const verifyOtp = async (
+  email: string,
+  otp: string,
+  type: 'VERIFY_EMAIL' | 'LOGIN' | 'PASSWORD_RESET' = 'VERIFY_EMAIL'
+): Promise<any> => {
   try {
-    const response = await apiClient.post('/auth/verify-otp', { email, otp, type });
-    return response;
+    const response = await apiClient.post('/api/v1/auth/otp/verify', {
+      email,
+      code: otp,
+      purpose: type,
+    });
+    return response.data;
   } catch (error) {
     console.error('OTP verification failed:', error);
     throw error;
   }
 };
 
-// Resend OTP
-export const resendOtp = async (email: string, type: string = 'VERIFY_EMAIL'): Promise<any> => {
+// Resend OTP mapped to new endpoints
+export const resendOtp = async (
+  email: string,
+  type: 'VERIFY_EMAIL' | 'LOGIN' | 'PASSWORD_RESET' = 'VERIFY_EMAIL'
+): Promise<any> => {
   try {
-    const response = await apiClient.post('/auth/send-otp', { email, type });
-    return response;
+    let endpoint = '/api/v1/auth/otp/send-verify-email';
+    if (type === 'LOGIN') endpoint = '/api/v1/auth/otp/send-login';
+    if (type === 'PASSWORD_RESET') endpoint = '/api/v1/auth/password-reset/send-otp';
+
+    const response = await apiClient.post(endpoint, { email });
+    return response.data;
   } catch (error) {
     console.error('Resend OTP failed:', error);
     throw error;
   }
 };
 
-// Check email availability
+// Check email availability (no backend route implemented yet)
 export const checkEmailAvailability = async (email: string): Promise<{ available: boolean }> => {
   try {
     const response = await apiClient.post('/auth/check-email', { email });
@@ -238,4 +264,67 @@ export const checkEmailAvailability = async (email: string): Promise<{ available
     console.warn('Email availability check failed:', error);
     return { available: true };
   }
+};
+
+// ----------------------
+// Additional minimal wrappers (new)
+// ----------------------
+
+export const logout = async (): Promise<{ message?: string }> => {
+  const response = await apiClient.post('/api/v1/auth/logout');
+  return response.data;
+};
+
+export const refreshToken = async (): Promise<any> => {
+  // Requires CSRF cookie/header set by backend at /csrf
+  const response = await apiClient.post('/api/v1/auth/refresh-token');
+  return response.data;
+};
+
+export const verifyEmail = async (token: string): Promise<any> => {
+  const response = await apiClient.post('/api/v1/auth/verify-email', { token });
+  return response.data;
+};
+
+export const resendVerification = async (email: string): Promise<any> => {
+  const response = await apiClient.post('/api/v1/auth/resend-verification', { email });
+  return response.data;
+};
+
+export const getProfile = async (): Promise<any> => {
+  const response = await apiClient.get('/api/v1/auth/profile');
+  return response.data;
+};
+
+export const updateProfile = async (data: Record<string, any>): Promise<any> => {
+  const response = await apiClient.put('/api/v1/auth/profile', data);
+  return response.data;
+};
+
+export const deleteAccount = async (password: string): Promise<any> => {
+  // Axios supports sending a body with DELETE via the `data` option
+  const response = await apiClient.delete('/api/v1/auth/account', { data: { password } });
+  return response.data;
+};
+
+// ----------------------
+// Password reset helpers (new)
+// ----------------------
+
+export const requestPasswordReset = async (email: string): Promise<{ message?: string }> => {
+  const response = await apiClient.post('/api/v1/auth/request-password-reset', { email });
+  return response.data;
+};
+
+export const confirmPasswordResetOtp = async (
+  email: string,
+  code: string,
+  newPassword: string
+): Promise<{ message?: string }> => {
+  const response = await apiClient.post('/api/v1/auth/password-reset/confirm-otp', {
+    email,
+    code,
+    newPassword,
+  });
+  return response.data;
 };

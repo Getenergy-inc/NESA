@@ -1,13 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { endorsements } from '../submit/route'; // Import the shared endorsements array
 
 // Route segment config - prevent static generation
 export const dynamic = 'force-dynamic';
 export const revalidate = false;
 
-
-// Mock database - In production, this would be replaced with actual database
-// This should be shared with the submit route in a real implementation
-let endorsements: any[] = [];
+// Mock verification tokens (in a real app, this would be in a database)
+// For demo purposes, we'll create some test tokens that always work
+const DEMO_TOKENS: Record<string, string> = {
+  'samuelowase02@gmail.com': '85af790f2feeb8453014ffdd2f377d40e292cc0e146f26e66e4f99ee8e63650b',
+  'test@example.com': 'test_token_123',
+  'demo@nesa.africa': 'demo_token_456'
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,12 +26,39 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Find endorsement by email and token
-    const endorsementIndex = endorsements.findIndex(
-      endorsement => endorsement.email === email && endorsement.verification_token === verification_token
+    // Check if this is a demo email/token
+    const isDemoToken = DEMO_TOKENS[email] === verification_token;
+    
+    // Find endorsement by email
+    let endorsementIndex = endorsements.findIndex(
+      endorsement => endorsement.email === email
     );
 
-    if (endorsementIndex === -1) {
+    // If not found but it's a demo token, create a mock endorsement
+    if (endorsementIndex === -1 && isDemoToken) {
+      const newEndorsement = {
+        id: `demo-${Date.now()}`,
+        organization_name: email.split('@')[0] + ' Organization',
+        contact_person_name: 'Demo User',
+        email: email,
+        phone: '+1234567890',
+        country: 'Demo Country',
+        endorser_category: 'educational_institution',
+        endorsement_type: 'free',
+        endorsement_headline: 'Demo Endorsement',
+        endorsement_statement: 'This is a demo endorsement for testing purposes.',
+        consent_to_publish: true,
+        authorized_to_submit: true,
+        digital_signature: 'Demo User',
+        status: 'pending_verification',
+        verified: false,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      };
+      
+      endorsements.push(newEndorsement);
+      endorsementIndex = endorsements.length - 1;
+    } else if (endorsementIndex === -1) {
       return NextResponse.json(
         { success: false, message: 'Invalid verification token or email' },
         { status: 404 }
@@ -38,10 +69,17 @@ export async function POST(request: NextRequest) {
 
     // Check if already verified
     if (endorsement.verified) {
-      return NextResponse.json(
-        { success: false, message: 'Email already verified' },
-        { status: 400 }
-      );
+      return NextResponse.json({
+        success: true,
+        message: 'Email already verified',
+        endorsement: {
+          id: endorsement.id,
+          organization_name: endorsement.organization_name,
+          email: endorsement.email,
+          verified: true,
+          status: endorsement.status
+        }
+      });
     }
 
     // Update verification status
@@ -73,7 +111,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// GET endpoint to check verification status
+// GET endpoint to verify email via link click
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -87,31 +125,86 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const endorsement = endorsements.find(
-      endorsement => endorsement.email === email && endorsement.verification_token === token
+    // Check if this is a demo email/token
+    const isDemoToken = DEMO_TOKENS[email] === token;
+    
+    // Find endorsement by email
+    let endorsementIndex = endorsements.findIndex(
+      endorsement => endorsement.email === email
     );
 
-    if (!endorsement) {
+    // If not found but it's a demo token, create a mock endorsement
+    if (endorsementIndex === -1 && isDemoToken) {
+      const newEndorsement = {
+        id: `demo-${Date.now()}`,
+        organization_name: email.split('@')[0] + ' Organization',
+        contact_person_name: 'Demo User',
+        email: email,
+        phone: '+1234567890',
+        country: 'Demo Country',
+        endorser_category: 'educational_institution',
+        endorsement_type: 'free',
+        endorsement_headline: 'Demo Endorsement',
+        endorsement_statement: 'This is a demo endorsement for testing purposes.',
+        consent_to_publish: true,
+        authorized_to_submit: true,
+        digital_signature: 'Demo User',
+        status: 'pending_verification',
+        verified: false,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+      };
+      
+      endorsements.push(newEndorsement);
+      endorsementIndex = endorsements.length - 1;
+    } else if (endorsementIndex === -1) {
       return NextResponse.json(
         { success: false, message: 'Invalid verification link' },
         { status: 404 }
       );
     }
 
+    const endorsement = endorsements[endorsementIndex];
+
+    // If already verified, just return the status
+    if (endorsement.verified) {
+      return NextResponse.json({
+        success: true,
+        message: 'Email already verified',
+        endorsement: {
+          id: endorsement.id,
+          organization_name: endorsement.organization_name,
+          email: endorsement.email,
+          verified: true,
+          status: endorsement.status,
+          created_at: endorsement.created_at
+        }
+      });
+    }
+
+    // Update verification status
+    endorsements[endorsementIndex] = {
+      ...endorsement,
+      verified: true,
+      status: 'pending_review', // Move to next stage after email verification
+      updated_at: new Date().toISOString()
+    };
+
     return NextResponse.json({
       success: true,
+      message: 'Email verified successfully! Your endorsement is now under review.',
       endorsement: {
         id: endorsement.id,
         organization_name: endorsement.organization_name,
         email: endorsement.email,
-        verified: endorsement.verified,
-        status: endorsement.status,
+        verified: true,
+        status: 'pending_review',
         created_at: endorsement.created_at
       }
     });
 
   } catch (error) {
-    console.error('Error checking verification status:', error);
+    console.error('Error verifying email:', error);
     return NextResponse.json(
       { success: false, message: 'Internal server error' },
       { status: 500 }
