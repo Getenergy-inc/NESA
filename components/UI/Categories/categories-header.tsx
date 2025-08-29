@@ -132,7 +132,7 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
   return (
     <header>
       <div
-        className={`max-w-screen bg-[#191307CC] text-white ${styles.homeHeader}`}
+        className={`relative h-[80vh] max-w-screen bg-[#191307CC] text-white ${styles.homeHeader}`}
       >
         {Slides.map((slide, index) => {
           const bgImage =
@@ -143,7 +143,7 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
           return (
             <section
               key={index}
-              className={`relative h-[30vh] w-full overflow-hidden transition-opacity duration-500 ${
+              className={`relative h-[80vh] w-full overflow-hidden transition-opacity duration-500 ${
                 currentSlide === index ? "opacity-100" : "opacity-0 hidden"
               } z-0`}
             >
@@ -151,19 +151,20 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
                 src={bgImage}
                 alt={`Slide ${index}`}
                 fill
-                className="object-cover -z-10"
+                className="object-cover -z-10 h-[80vh]"
                 priority={index === 0}
                 sizes="100vw"
               />
 
               <div className="absolute inset-0 bg-[#191307]/70 pointer-events-none z-0" />
 
-              <div className="relative z-10 h-full flex items-center justify-center">
+              <div className="relative z-10  h-[80vh] flex items-center justify-center">
                 {slide}
               </div>
             </section>
           );
         })}
+
         {/* Scroll Feature */}
         <div className="absolute bottom-4 right-0 left-0 pb-8 md:pb-4 pt-6 flex items-center justify-between md:px-4 px-2">
           {/* Dots */}
