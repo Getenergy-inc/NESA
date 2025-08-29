@@ -16,6 +16,7 @@ export interface CategoryCardProps {
     title: string;
     description: string;
     subCategoryPath: string;
+    backgroundImage: string;
   }[];
   type?: "competitive" | "non-competitive"; // add type prop
 }
@@ -131,17 +132,35 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
   return (
     <header>
       <div
-        className={`min-h-screen max-w-screen bg-[#191307CC] text-white ${styles.homeHeader}`}
+        className={`max-w-screen bg-[#191307CC] text-white ${styles.homeHeader}`}
       >
         {Slides.map((slide, index) => {
+          const bgImage =
+            index === 0
+              ? "/images/overview-bg.jpg"
+              : categoryData[index - 1].backgroundImage;
+
           return (
             <section
               key={index}
-              className={` h-[80] w-full bg-opacity-80  md:pt-16  transition-opacity duration-500 ${
+              className={`relative h-[30vh] w-full overflow-hidden transition-opacity duration-500 ${
                 currentSlide === index ? "opacity-100" : "opacity-0 hidden"
-              }`}
+              } z-0`}
             >
-              {slide}
+              <Image
+                src={bgImage}
+                alt={`Slide ${index}`}
+                fill
+                className="object-cover -z-10"
+                priority={index === 0}
+                sizes="100vw"
+              />
+
+              <div className="absolute inset-0 bg-[#191307]/70 pointer-events-none z-0" />
+
+              <div className="relative z-10 h-full flex items-center justify-center">
+                {slide}
+              </div>
             </section>
           );
         })}
