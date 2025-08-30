@@ -35,25 +35,22 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
       <div className="col-span-2 mt-8 rounded-xl shadow-lg p-6 md:p-10 text-white">
         <div className="flex items-center gap-3 mb-4">
           <span className="text-2xl md:text-3xl">🟦</span>
-          <h2 className="text-xl md:text-2xl font-bold">
+          <h2 className="text-xl md:text-4xl font-bold text-primaryGold">
             NESA-Africa 2025 – Platinum Certificate of Recognition
           </h2>
         </div>
-        <div className="mb-2 flex items-center gap-2">
-          <span className="text-lg">🌍</span>
-          <span className="font-semibold text-primaryGold">Overview</span>
-        </div>
-        <p className="mb-4 text-base md:text-lg">
+
+        <p className="mb-4 text-base md:text-2xl mt-7">
           Honoring Africa’s Unsung Heroes in Education with a Global Voice
         </p>
-        <p className="mb-4 text-base md:text-lg">
+        <p className="mb-4 text-base md:text-2xl">
           The Platinum Certificate of Recognition is a semi-competitive honorary
           award introduced by NESA-Africa 2025 to uplift silent
           changemakers—everyday individuals and lesser-known contributors whose
           dedication to educational transformation spans across schools,
           communities, civil society, and institutions.
         </p>
-        <p className="mb-4 text-base md:text-lg">
+        <p className="mb-4 text-base md:text-2xl">
           Unlike the high-profile Blue Garnet categories, the Platinum
           Certificate allows global public nominations, but final awardees are
           selected through a careful judge-led validation process emphasizing
@@ -64,25 +61,25 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
       <div className="col-span-2 mt-8 rounded-xl shadow-lg p-10 md:p-20 text-white">
         <div className="flex items-center gap-3 mb-7">
           {/* <span className="text-2xl md:text-3xl">🟦</span> */}
-          <h2 className="text-xl md:text-3xl font-bold text-primaryGold">
+          <h2 className="text-xl md:text-4xl font-bold text-primaryGold">
             NESA-Africa 2025 – Competitive Awards Framework
           </h2>
         </div>
-        <p className="mb-4 text-base md:text-lg mt-7">
+        <p className="mb-4 text-base md:text-2xl mt-7">
           NESA-Africa 2025 is honoring excellence in education through 8
           Competitive Blue Garnet Awards, each representing a major category.
           Within each, multiple sub-categories (101 in total) will be recognized
           with Gold Certificates, with top performers competing for the
           prestigious Blue Garnet Award in their main category.
         </p>
-        <p className="mb-4 text-base md:text-lg">
+        <p className="mb-4 text-base md:text-2xl">
           Each nominee first competes at the sub-category level for a Gold
           Certificate, and winners of each sub-category are elevated to contend
           for the Blue Garnet Award in their main category. The award evaluation
           process aligns with SDG 4, Africa Agenda 2063, and ESG principles to
           ensure that excellence is judged by both impact and sustainability.
         </p>
-        <p className="mb-4 text-base md:text-lg">
+        <p className="mb-4 text-base md:text-2xl">
           Nominees are celebrated across a wide spectrum, from grassroots
           education projects to tech-based learning platforms and creative
           initiatives—ensuring that innovation, equity, and scale are recognized
@@ -128,7 +125,7 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
   return (
     <header>
       <div
-        className={`relative h-[80vh] max-w-screen bg-[#191307CC] text-white ${styles.homeHeader}`}
+        className={`relative h-[80vh] md:text-2xl max-w-screen bg-[#191307CC] text-white ${styles.homeHeader}`}
       >
         {Slides.map((slide, index) => {
           const bgImage =
