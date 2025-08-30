@@ -1,0 +1,320 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"lib/utils/font.ts","import":"Poppins","arguments":[{"weight":["100","300","500","800","900"],"subsets":["latin"]}],"variableName":"poppins"} ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: '__Poppins_Fallback_673c6b';
+  src: local("Arial");
+  ascent-override:93.62%;
+  descent-override:31.21%;
+  line-gap-override:8.92%;
+  size-adjust:112.16%;
+}@font-face {font-family: '__Poppins_Fallback_Fallback_673c6b';src: local("Arial");ascent-override: 93.62%;descent-override: 31.21%;line-gap-override: 8.92%;size-adjust: 112.16%
+}.__className_673c6b {font-family: '__Poppins_Fallback_673c6b', '__Poppins_Fallback_Fallback_673c6b';font-style: normal
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib/utils/font.ts","import":"","arguments":[{"src":"../../assets/fonts/Raleway-VariableFont_wght.ttf","display":"swap"}],"variableName":"raleway"} ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__raleway_0535ce';
+src: url(/_next/static/media/1d8c655f89aebb8a-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__raleway_Fallback_0535ce';src: local("Arial");ascent-override: 92.39%;descent-override: 23.00%;line-gap-override: 0.00%;size-adjust: 101.74%
+}.__className_0535ce {font-family: '__raleway_0535ce', '__raleway_Fallback_0535ce'
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib/utils/font.ts","import":"","arguments":[{"src":"../../assets/fonts/Inter-VariableFont.ttf","display":"swap"}],"variableName":"inter"} ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__inter_d4e0c8';
+src: url(/_next/static/media/7385e8d9d3c5518f-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__inter_Fallback_d4e0c8';src: local("Arial");ascent-override: 90.00%;descent-override: 22.43%;line-gap-override: 0.00%;size-adjust: 107.64%
+}.__className_d4e0c8 {font-family: '__inter_d4e0c8', '__inter_Fallback_d4e0c8'
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib/utils/font.ts","import":"","arguments":[{"src":"../../assets/fonts/Manrope-VariableFont_wght.ttf","display":"swap"}],"variableName":"manrope"} ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__manrope_11a26c';
+src: url(/_next/static/media/3787d9a87cc64466-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__manrope_Fallback_11a26c';src: local("Arial");ascent-override: 106.45%;descent-override: 29.96%;line-gap-override: 0.00%;size-adjust: 100.14%
+}.__className_11a26c {font-family: '__manrope_11a26c', '__manrope_Fallback_11a26c'
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"lib/utils/font.ts","import":"","arguments":[{"src":"../../assets/fonts/Montserrat-VariableFont_wght.ttf","display":"swap"}],"variableName":"montserrat"} ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+font-family: '__montserrat_766d81';
+src: url(/_next/static/media/f595c38f5aaaeca5-s.p.ttf) format('truetype');
+font-display: swap;
+}@font-face {font-family: '__montserrat_Fallback_766d81';src: local("Arial");ascent-override: 87.81%;descent-override: 22.77%;line-gap-override: 0.00%;size-adjust: 110.23%
+}.__className_766d81 {font-family: '__montserrat_766d81', '__montserrat_Fallback_766d81'
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./styles/nrc-hero.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+/* NRC Hero Section Enhanced Styles */
+
+/* Background Image Optimizations */
+.nrc-hero-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+/* Mobile optimizations - disable fixed attachment for better performance */
+@media (max-width: 768px) {
+  .nrc-hero-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* High DPI displays */
+@media (min-resolution: 192dpi) {
+  .nrc-hero-bg {
+    /* Use higher resolution image if available */
+    background-image: url('/images/bg/education.png');
+  }
+}
+
+/* Preload critical background image */
+.nrc-hero-preload {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  background-image: url('/images/bg/education.png');
+}
+
+/* Enhanced text shadows for better readability without overlay */
+.nrc-hero-text-shadow {
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    4px 4px 8px rgba(0, 0, 0, 0.6),
+    6px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Backdrop blur fallback for older browsers */
+.nrc-hero-backdrop {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  .nrc-hero-backdrop {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Smooth scroll behavior for the scroll indicator */
+.nrc-hero-scroll-indicator {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nrc-hero-scroll-indicator:hover {
+  opacity: 0.8;
+}
+
+/* Enhanced button hover effects */
+.nrc-hero-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nrc-hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.nrc-hero-button:hover::before {
+  left: 100%;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 640px) {
+  .nrc-hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .nrc-hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .nrc-hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+  
+  .nrc-hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 1025px) {
+  .nrc-hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+  }
+  
+  .nrc-hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+}
+
+/* Loading state for background image */
+.nrc-hero-loading {
+  background-color: #f3f4f6;
+  background-image: none;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .nrc-hero-scroll-indicator {
+    animation: none;
+  }
+  
+  .nrc-hero-button {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .nrc-hero-text {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    color: #ffffff !important;
+  }
+
+  .nrc-hero-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .nrc-hero-container > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Print styles */
+@media print {
+  .nrc-hero-bg {
+    background-image: none !important;
+    background-color: #ffffff !important;
+  }
+
+  .nrc-hero-scroll-indicator {
+    display: none !important;
+  }
+
+  .nrc-hero-container {
+    color: #000000 !important;
+  }
+
+  .nrc-hero-container * {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.nrc-hero-button:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Enhanced glass morphism effect */
+.nrc-hero-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Gradient text effect for headings */
+.nrc-hero-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (-webkit-background-clip: text) {
+  .nrc-hero-gradient-text {
+    color: #ffffff;
+  }
+}
+
+/* Optimized animations */
+@keyframes nrc-hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nrc-hero-scroll-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.nrc-hero-animate-in {
+  animation: nrc-hero-fade-in 0.8s ease-out;
+}
+
+.nrc-hero-scroll-bounce {
+  animation: nrc-hero-scroll-bounce 2s infinite;
+}
+
+/* Performance optimizations */
+.nrc-hero-container {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* GPU acceleration for smooth animations */
+.nrc-hero-gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
