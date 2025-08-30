@@ -61,18 +61,14 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
         </p>
       </div>
     ) : (
-      <div className="col-span-2 mt-8 rounded-xl shadow-lg p-6 md:p-10 text-white">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-2xl md:text-3xl">🟦</span>
-          <h2 className="text-xl md:text-2xl font-bold">
+      <div className="col-span-2 mt-8 rounded-xl shadow-lg p-10 md:p-20 text-white">
+        <div className="flex items-center gap-3 mb-7">
+          {/* <span className="text-2xl md:text-3xl">🟦</span> */}
+          <h2 className="text-xl md:text-3xl font-bold text-primaryGold">
             NESA-Africa 2025 – Competitive Awards Framework
           </h2>
         </div>
-        <div className="mb-2 flex items-center gap-2">
-          <span className="text-lg">🌍</span>
-          <span className="font-semibold text-primaryGold">Overview</span>
-        </div>
-        <p className="mb-4 text-base md:text-lg">
+        <p className="mb-4 text-base md:text-lg mt-7">
           NESA-Africa 2025 is honoring excellence in education through 8
           Competitive Blue Garnet Awards, each representing a major category.
           Within each, multiple sub-categories (101 in total) will be recognized
@@ -137,7 +133,7 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
         {Slides.map((slide, index) => {
           const bgImage =
             index === 0
-              ? "/images/overview-bg.jpg"
+              ? "/images/about1.png"
               : categoryData[index - 1].backgroundImage;
 
           return (
@@ -166,7 +162,7 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
         })}
 
         {/* Scroll Feature */}
-        <div className="absolute bottom-4 right-0 left-0 pb-8 md:pb-4 pt-6 flex items-center justify-between md:px-4 px-2">
+        <div className="absolute bottom-4 right-0 left-0 pb-8 md:pb-4 pt-6 flex items-center justify-between md:px-10 px-5">
           {/* Dots */}
           <div className="flex items-center md:space-x-2 space-x-1">
             {Array.from({ length: totalSlides }).map((_, id) => (
@@ -190,7 +186,7 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
                 prevSlide();
                 setActiveDot((prev) => (prev - 1 + totalSlides) % totalSlides);
               }}
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-black text-white shadow-lg hover:bg-gray-800 transition"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-black border-[1px] border-white text-white shadow-lg hover:bg-gray-800 transition"
             >
               <span className="material-icons">&lt;</span>
             </button>
