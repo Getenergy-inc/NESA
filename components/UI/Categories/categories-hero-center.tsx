@@ -41,9 +41,9 @@ const CategoryHeroCenter = ({
       </div>
       <div className="grid md:grid-cols-2 items-center gap-2  md:container min-h-full  py-20 pb-2">
         <div className="md:space-y-5 space-y-2.5  md:text-left text-center">
-          <div className="flex px-3.5 items-center justify-center md:justify-start gap-2 text-primaryGold">
+          <div className="flex px-3.5 items-center -mt-10 justify-center md:justify-start gap-2 text-primaryGold">
             <FaStar />
-            <p className="text-lg px-3.5">Category {index}</p>
+            <p className="text-2xl px-3.5 font-bold">Category {index}</p>
             <FaStar />
           </div>
 
