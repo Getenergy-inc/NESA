@@ -1,20 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendApprovalEmail, sendRejectionEmail } from '@/lib/email/endorsementVerification';
+import { prisma } from '@/lib/prisma';
 
 // Route segment config - prevent static generation
 export const dynamic = 'force-dynamic';
 export const revalidate = false;
 
-// Reference to the endorsements array (in a real app, this would be a database)
-// This is just for demonstration - in a real app, you'd use a proper database
-import { endorsements } from '../../endorse/submit/route';
-
-// Admin authentication middleware (simplified for demo)
+// Admin authentication middleware (uses env token)
 const isAdmin = (request: NextRequest): boolean => {
-  // In a real app, you would check for admin authentication
-  // For now, we'll just check for a mock admin token
+  // Expect the Authorization header to carry the admin token
   const authHeader = request.headers.get('authorization');
-  return authHeader === 'Bearer admin-token-123';
+  const expectedToken = process.env.ADMIN_TOKEN || 'admin-token-123';
+  return authHeader === `Bearer ${expectedToken}`;
 };
 
 // GET all endorsements (admin only)
@@ -31,27 +28,37 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status');
     
-    let filteredEndorsements = [...endorsements];
-    
-    // Filter by status if provided
+    // Build where clause for filtering
+    const whereClause: any = {};
     if (status) {
-      filteredEndorsements = filteredEndorsements.filter(e => e.status === status);
+      whereClause.status = status;
     }
     
-    // Sort by creation date (newest first)
-    filteredEndorsements.sort((a, b) => 
-      new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-    );
+    // Get all endorsements with filter
+    const endorsements = await prisma.endorsement.findMany({
+      where: whereClause,
+      orderBy: {
+        created_at: 'desc'
+      }
+    });
+    
+    // Get counts for each status
+    const statusCounts = await prisma.$transaction([
+      prisma.endorsement.count({ where: { status: 'pending_verification' } }),
+      prisma.endorsement.count({ where: { status: 'pending_review' } }),
+      prisma.endorsement.count({ where: { status: 'approved' } }),
+      prisma.endorsement.count({ where: { status: 'rejected' } })
+    ]);
     
     return NextResponse.json({
       success: true,
-      endorsements: filteredEndorsements,
-      total: filteredEndorsements.length,
+      endorsements,
+      total: endorsements.length,
       statuses: {
-        pending_verification: endorsements.filter(e => e.status === 'pending_verification').length,
-        pending_review: endorsements.filter(e => e.status === 'pending_review').length,
-        approved: endorsements.filter(e => e.status === 'approved').length,
-        rejected: endorsements.filter(e => e.status === 'rejected').length
+        pending_verification: statusCounts[0],
+        pending_review: statusCounts[1],
+        approved: statusCounts[2],
+        rejected: statusCounts[3]
       }
     });
     
@@ -86,16 +93,18 @@ export async function POST(request: NextRequest) {
     }
     
     // Find the endorsement
-    const endorsementIndex = endorsements.findIndex(e => e.id === id);
+    const endorsement = await prisma.endorsement.findUnique({
+      where: { id }
+    });
     
-    if (endorsementIndex === -1) {
+    if (!endorsement) {
       return NextResponse.json(
         { success: false, message: 'Endorsement not found' },
         { status: 404 }
       );
     }
     
-    const endorsement = endorsements[endorsementIndex];
+    let updatedEndorsement;
     
     // Process the action
     switch (action) {
@@ -109,12 +118,14 @@ export async function POST(request: NextRequest) {
         }
         
         // Update the endorsement
-        endorsements[endorsementIndex] = {
-          ...endorsement,
-          status: 'approved',
-          approved_at: new Date().toISOString(),
-          updated_at: new Date().toISOString()
-        };
+        updatedEndorsement = await prisma.endorsement.update({
+          where: { id },
+          data: {
+            status: 'approved',
+            approved_at: new Date(),
+            updated_at: new Date()
+          }
+        });
         
         // Send approval email
         await sendApprovalEmail({
@@ -143,12 +154,14 @@ export async function POST(request: NextRequest) {
         }
         
         // Update the endorsement
-        endorsements[endorsementIndex] = {
-          ...endorsement,
-          status: 'rejected',
-          rejection_reason: reason,
-          updated_at: new Date().toISOString()
-        };
+        updatedEndorsement = await prisma.endorsement.update({
+          where: { id },
+          data: {
+            status: 'rejected',
+            rejection_reason: reason,
+            updated_at: new Date()
+          }
+        });
         
         // Send rejection email
         await sendRejectionEmail({
@@ -171,21 +184,25 @@ export async function POST(request: NextRequest) {
         }
         
         // Update the endorsement
-        endorsements[endorsementIndex] = {
-          ...endorsement,
-          featured: true,
-          updated_at: new Date().toISOString()
-        };
+        updatedEndorsement = await prisma.endorsement.update({
+          where: { id },
+          data: {
+            featured: true,
+            updated_at: new Date()
+          }
+        });
         
         break;
         
       case 'unfeature':
         // Update the endorsement
-        endorsements[endorsementIndex] = {
-          ...endorsement,
-          featured: false,
-          updated_at: new Date().toISOString()
-        };
+        updatedEndorsement = await prisma.endorsement.update({
+          where: { id },
+          data: {
+            featured: false,
+            updated_at: new Date()
+          }
+        });
         
         break;
         
@@ -199,7 +216,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: `Endorsement ${action}d successfully`,
-      endorsement: endorsements[endorsementIndex]
+      endorsement: updatedEndorsement
     });
     
   } catch (error) {

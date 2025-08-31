@@ -36,14 +36,24 @@ const EmailVerificationPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Use a ref to track if verification has been attempted
+  const verificationAttempted = React.useRef(false);
+  
   useEffect(() => {
-    if (email && token) {
+    // Only verify if we haven't attempted verification yet
+    if (email && token && !verificationAttempted.current) {
+      verificationAttempted.current = true;
       verifyEmail();
-    } else {
+    } else if (!email || !token) {
       setLoading(false);
       setError('Missing verification parameters. Please check your email link.');
     }
-  }, [email, token]);
+    
+    // Cleanup function to prevent memory leaks
+    return () => {
+      // This will run when the component unmounts
+    };
+  }, []); // Empty dependency array to ensure it only runs once
 
   const verifyEmail = async () => {
     try {
@@ -91,19 +101,41 @@ const EmailVerificationPage = () => {
   }
 
   if (!verificationResult?.success) {
+    // Check if the error message indicates the token was already used
+    const isAlreadyVerifiedError = verificationResult?.message?.toLowerCase().includes('invalid') || 
+                                  verificationResult?.message?.toLowerCase().includes('expired');
+    
+    const errorTitle = isAlreadyVerifiedError ? "Already Verified or Invalid Link" : "Verification Failed";
+    const errorMessage = isAlreadyVerifiedError 
+      ? "This verification link has already been used or is invalid. If you've already verified your email, you can check your endorsement status."
+      : (verificationResult?.message || 'Invalid verification link. Please check your email and try again.');
+    
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8 text-center">
           <XCircle className="w-16 h-16 text-red-500 mx-auto mb-6" />
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Verification Failed</h1>
-          <p className="text-gray-600 mb-6">{verificationResult?.message || 'Invalid verification link. Please check your email and try again.'}</p>
-          <Link href="/get-involved/endorse-nesa-africa">
-            <Button
-              text="Back to Endorsements"
-              variant="filled"
-              className="bg-[#ea580c] hover:bg-[#dc2626] text-white"
-            />
-          </Link>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">{errorTitle}</h1>
+          <p className="text-gray-600 mb-6">{errorMessage}</p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/get-involved/endorse-nesa-africa">
+              <Button
+                text="Back to Endorsements"
+                variant="filled"
+                className="bg-[#ea580c] hover:bg-[#dc2626] text-white"
+              />
+            </Link>
+            
+            {isAlreadyVerifiedError && (
+              <Link href="/get-involved/endorse-nesa-africa/status">
+                <Button
+                  text="Check Status"
+                  variant="outline"
+                  className="border-gray-300 text-gray-700 hover:bg-gray-50"
+                />
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     );

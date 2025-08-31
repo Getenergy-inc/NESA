@@ -1,8 +1,26 @@
 'use client';
 
+// Define global for browser environment
+if (typeof window !== 'undefined' && typeof global === 'undefined') {
+  (window as any).global = window;
+}
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  Input,
+  VStack,
+  Text,
+  Flex
+} from '@chakra-ui/react';
+
+// Import custom icons
+import { ViewIcon, ViewOffIcon } from '@/lib/icons';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -10,12 +28,20 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  // Color values consistent with the app's theme
+  const bgColor = 'white';
+  const borderColor = 'gray.200';
 
   // Check if already logged in
   useEffect(() => {
-    const token = localStorage.getItem('adminToken');
-    if (token) {
-      router.push('/admin/dashboard');
+    // Only access localStorage in the browser environment
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('adminToken');
+      if (token) {
+        router.push('/admin/dashboard');
+      }
     }
   }, [router]);
 
@@ -39,8 +65,11 @@ export default function AdminLoginPage() {
         throw new Error(data.message || 'Login failed');
       }
 
-      // Store token in localStorage
+      // Store token in localStorage for client-side access
       localStorage.setItem('adminToken', data.token);
+      
+      // Store token in cookies for server-side middleware
+      document.cookie = `adminToken=${data.token}; path=/; max-age=86400; SameSite=Strict`;
       
       // Redirect to admin dashboard
       router.push('/admin/dashboard');
@@ -52,83 +81,113 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div className="text-center">
-          <div className="flex justify-center">
-            <Image
-              src="/images/nesa-logo.png"
-              alt="NESA-Africa Logo"
-              width={150}
-              height={60}
-              className="h-16 w-auto"
-            />
-          </div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Admin Login
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Enter your credentials to access the admin dashboard
-          </p>
-        </div>
+    <Container maxW="md" py={12}>
+      <VStack gap={8} align="center">
+        <Flex justifyContent="center">
+          <Image
+            src="/images/logo.png"
+            alt="NESA-Africa Logo"
+            width={150}
+            height={60}
+            priority
+          />
+        </Flex>
         
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative" role="alert">
-              <span className="block sm:inline">{error}</span>
-            </div>
-          )}
-          
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="username" className="sr-only">Username</label>
-              <input
-                id="username"
-                name="username"
-                type="text"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">Password</label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-            >
-              {isLoading ? (
-                <span className="flex items-center">
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Signing in...
-                </span>
-              ) : (
-                'Sign in'
-              )}
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+        <Heading as="h1" size="xl" textAlign="center" color="orange.500">
+          Admin Login
+        </Heading>
+        
+        <Text textAlign="center" color="gray.600">
+          Enter your credentials to access the admin dashboard
+        </Text>
+        
+        <Box 
+          width="100%" 
+          borderWidth="1px" 
+          borderRadius="lg" 
+          boxShadow="md"
+          bg="white"
+        >
+          <Box p={8}>
+            {error && (
+              <Box 
+                p={3} 
+                mb={4} 
+                bg="red.100" 
+                color="red.700" 
+                borderRadius="md"
+                display="flex"
+                alignItems="center"
+              >
+                <Box mr={2}>⚠️</Box>
+                {error}
+              </Box>
+            )}
+            
+            <form onSubmit={handleSubmit}>
+              <VStack gap={4}>
+                <Box width="100%">
+                  <Text fontWeight="medium" mb={1}>Username</Text>
+                  <Input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Enter your username"
+                    borderColor="orange.400"
+                    _focus={{ borderColor: "orange.400" }}
+                    required
+                  />
+                </Box>
+                
+                <Box width="100%">
+                  <Text fontWeight="medium" mb={1}>Password</Text>
+                  <Box position="relative">
+                    <Input
+                      type={showPassword ? 'text' : 'password'}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter your password"
+                      borderColor="orange.400"
+                      _focus={{ borderColor: "orange.400" }}
+                      required
+                      pr="2.5rem"
+                    />
+                    <Button
+                      position="absolute"
+                      right="0"
+                      top="0"
+                      h="100%"
+                      variant="ghost"
+                      onClick={() => setShowPassword(!showPassword)}
+                      size="sm"
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    >
+                      {showPassword ? <ViewOffIcon /> : <ViewIcon />}
+                    </Button>
+                  </Box>
+                </Box>
+                
+                <Button
+                  type="submit"
+                  bg="orange.500"
+                  color="white"
+                  _hover={{ bg: "orange.600" }}
+                  size="lg"
+                  width="full"
+                  mt={4}
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Signing in..." : "Sign in"}
+                </Button>
+              </VStack>
+            </form>
+          </Box>
+        </Box>
+        
+        <Text fontSize="sm" color="gray.500">
+          This area is restricted to authorized administrators only.
+        </Text>
+      </VStack>
+    </Container>
   );
 }

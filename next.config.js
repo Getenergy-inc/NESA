@@ -12,11 +12,8 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Reduce bundle size and fix SSR issues
+  // Simplified webpack config
   webpack: (config, { isServer, webpack }) => {
-    // Fix case sensitivity warnings
-    config.resolve.symlinks = false;
-
     // Client-side configuration
     if (!isServer) {
       config.resolve.fallback = {
@@ -25,18 +22,23 @@ const nextConfig = {
         net: false,
         tls: false,
       };
-    }
-    
-    // Server-side configuration to fix "self is not defined"
-    if (isServer) {
+
+      // Normalize module casing to avoid duplicate modules on Windows
+      config.resolve = config.resolve || {};
+      config.resolve.alias = {
+        ...(config.resolve.alias || {}),
+        globalThis: require.resolve('globalthis'),
+      };
+      
+      // Provide global polyfill using normalized module name
       config.plugins = config.plugins || [];
       config.plugins.push(
-        new webpack.DefinePlugin({
-          'self': 'global',
+        new webpack.ProvidePlugin({
+          global: require.resolve('globalthis'),
         })
       );
     }
-
+    
     // Suppress case sensitivity warnings
     config.stats = {
       ...config.stats,
@@ -44,30 +46,6 @@ const nextConfig = {
         /There are multiple modules with names that only differ in casing/,
         /This can lead to unexpected behavior when compiling on a filesystem with other case-semantic/,
       ],
-    };
-    
-    // Optimize memory usage with smaller chunks
-    config.optimization = {
-      ...config.optimization,
-      splitChunks: {
-        chunks: 'all',
-        minSize: 20000,
-        maxSize: 200000,
-        cacheGroups: {
-          default: {
-            minChunks: 2,
-            priority: -20,
-            reuseExistingChunk: true,
-          },
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            priority: -10,
-            chunks: 'all',
-            maxSize: 200000,
-          },
-        },
-      },
     };
     
     return config;
