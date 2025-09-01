@@ -7,12 +7,12 @@ export default function NominateFormPage() {
   const searchParams = useSearchParams()
 
   const category = {
-    title: searchParams.get('title') || '',
-    description: searchParams.get('description') || '',
-    image: searchParams.get('image') || '',
+    title: searchParams?.get('title') ?? '',
+    description: searchParams?.get('description') ?? '',
+    image: searchParams?.get('image') ?? '',
   }
 
-  const type = searchParams.get('type') || 'Default Type'
+  const type = searchParams?.get('type') ?? 'Default Type'
 
   return (
     <NominationPage type={type} category={category} />

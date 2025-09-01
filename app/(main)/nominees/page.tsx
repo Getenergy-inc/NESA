@@ -5,8 +5,8 @@ import SeeAll from "@/components/UI/SeeAll/seeall";
 
 const NomineesPage = () => {
   const searchParams = useSearchParams();
-  const category = searchParams.get('category');
-  const subcategory = searchParams.get('subcategory');
+  const category = searchParams?.get('category')?? "";
+  const subcategory = searchParams?.get('subcategory')?? "";
 
   return (
     <div>

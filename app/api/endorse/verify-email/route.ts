@@ -1,13 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import { verifyToken } from '@/lib/auth/tokens';
 
 // Route segment config - prevent static generation
 export const dynamic = 'force-dynamic';
 export const revalidate = false;
-
-
-// Mock database - In production, this would be replaced with actual database
-// This should be shared with the submit route in a real implementation
-let endorsements: any[] = [];
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,45 +19,66 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Find endorsement by email and token
-    const endorsementIndex = endorsements.findIndex(
-      endorsement => endorsement.email === email && endorsement.verification_token === verification_token
-    );
+    // Find endorsement by email
+    const endorsement = await prisma.endorsement.findUnique({
+      where: { email }
+    });
 
-    if (endorsementIndex === -1) {
+    if (!endorsement) {
       return NextResponse.json(
-        { success: false, message: 'Invalid verification token or email' },
+        { success: false, message: 'Endorsement not found' },
         { status: 404 }
       );
     }
 
-    const endorsement = endorsements[endorsementIndex];
+    // Verify the token
+    const isValidToken = await verifyToken({
+      token: verification_token,
+      type: 'email_verification',
+      identifier: email
+    });
 
-    // Check if already verified
-    if (endorsement.verified) {
+    if (!isValidToken) {
       return NextResponse.json(
-        { success: false, message: 'Email already verified' },
+        { success: false, message: 'Invalid verification token' },
         { status: 400 }
       );
     }
 
+    // Check if already verified
+    if (endorsement.verified) {
+      return NextResponse.json({
+        success: true,
+        message: 'Email already verified',
+        endorsement: {
+          id: endorsement.id,
+          organization_name: endorsement.organization_name,
+          email: endorsement.email,
+          verified: true,
+          status: endorsement.status
+        }
+      });
+    }
+
     // Update verification status
-    endorsements[endorsementIndex] = {
-      ...endorsement,
-      verified: true,
-      status: 'pending_approval', // Move to next stage after email verification
-      updated_at: new Date().toISOString()
-    };
+    const updatedEndorsement = await prisma.endorsement.update({
+      where: { id: endorsement.id },
+      data: {
+        verified: true,
+        status: 'pending_approval',
+        updated_at: new Date()
+      }
+    });
 
     return NextResponse.json({
       success: true,
       message: 'Email verified successfully',
       endorsement: {
-        id: endorsement.id,
-        organization_name: endorsement.organization_name,
-        email: endorsement.email,
-        status: 'pending_approval',
-        verified: true
+        id: updatedEndorsement.id,
+        organization_name: updatedEndorsement.organization_name,
+        email: updatedEndorsement.email,
+        status: updatedEndorsement.status,
+        verified: updatedEndorsement.verified
       }
     });
 
@@ -73,7 +91,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// GET endpoint to check verification status
+// GET endpoint to verify email via link click
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -87,31 +105,102 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const endorsement = endorsements.find(
-      endorsement => endorsement.email === email && endorsement.verification_token === token
-    );
+    // Find the endorsement with matching email
+    const endorsement = await prisma.endorsement.findUnique({
+      where: { email }
+    });
 
     if (!endorsement) {
+      // Check if this is a valid token in the verification_tokens table
+      const tokenRecord = await prisma.verificationToken.findFirst({
+        where: {
+          token,
+          identifier: email,
+          expires: { gt: new Date() }
+        }
+      });
+
+      if (!tokenRecord) {
+        return NextResponse.json(
+          { success: false, message: 'Invalid verification link' },
+          { status: 404 }
+        );
+      }
+
+      // Token exists but endorsement doesn't - this shouldn't happen in production
+      // but we'll handle it gracefully
       return NextResponse.json(
-        { success: false, message: 'Invalid verification link' },
+        { 
+          success: false, 
+          message: 'Endorsement not found. Please submit your endorsement first.' 
+        },
         { status: 404 }
       );
     }
 
+    // Verify the token
+    const isValidToken = await verifyToken({
+      token,
+      type: 'email_verification',
+      identifier: email
+    });
+
+    if (!isValidToken) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid or expired verification link' },
+        { status: 400 }
+      );
+    }
+
+    // If already verified, just return the status
+    if (endorsement.verified) {
+      return NextResponse.json({
+        success: true,
+        message: 'Email already verified',
+        endorsement: {
+          id: endorsement.id,
+          organization_name: endorsement.organization_name,
+          email: endorsement.email,
+          verified: true,
+          status: endorsement.status,
+          created_at: endorsement.created_at
+        }
+      });
+    }
+
+    // Update verification status
+    const updatedEndorsement = await prisma.endorsement.update({
+      where: { id: endorsement.id },
+      data: {
+        verified: true,
+        status: 'pending_review',
+        updated_at: new Date()
+      }
+    });
+
+    // Delete the used token
+    await prisma.verificationToken.deleteMany({
+      where: {
+        identifier: email,
+        token
+      }
+    });
+
     return NextResponse.json({
       success: true,
+      message: 'Email verified successfully! Your endorsement is now under review.',
       endorsement: {
-        id: endorsement.id,
-        organization_name: endorsement.organization_name,
-        email: endorsement.email,
-        verified: endorsement.verified,
-        status: endorsement.status,
-        created_at: endorsement.created_at
+        id: updatedEndorsement.id,
+        organization_name: updatedEndorsement.organization_name,
+        email: updatedEndorsement.email,
+        verified: true,
+        status: updatedEndorsement.status,
+        created_at: updatedEndorsement.created_at
       }
     });
 
   } catch (error) {
-    console.error('Error checking verification status:', error);
+    console.error('Error verifying email:', error);
     return NextResponse.json(
       { success: false, message: 'Internal server error' },
       { status: 500 }

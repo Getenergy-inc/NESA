@@ -4,8 +4,8 @@ import "../public/globals.css";
 import Providers from "@/lib/providers/providers";
 import { AuthProvider } from "@/lib/context/AuthContext";
 import { LoadingProvider } from "@/lib/context/LoadingContext";
-import Modal from "@/components/UI/Modal"; // Import the Modal component
 import { GlobalPageLoader } from "@/components/UI/Loading"; // Import the GlobalPageLoader
+import ModalWrapper from "@/components/UI/Common/ModalWrapper";
 
 export const metadata: Metadata = {
   title: "NESA 2025",
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <LoadingProvider>
               <GlobalPageLoader /> {/* Global page loading spinner */}
               {children}
-              <Modal /> {/* Render the Modal globally */}
+              <ModalWrapper />
             </LoadingProvider>
           </Providers>
         </AuthProvider>

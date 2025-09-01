@@ -38,8 +38,8 @@ const JudgeSignupPage: React.FC = () => {
   const router = useRouter();
   const { register: registerUser } = useAuth();
 
-  const email = searchParams.get('email');
-  const token = searchParams.get('token');
+  const email = searchParams?.get('email') ?? '';
+  const token = searchParams?.get('token') ?? '';
 
   const {
     register,
@@ -62,7 +62,7 @@ const JudgeSignupPage: React.FC = () => {
 
   const checkVerification = async () => {
     try {
-      const verification = await checkApplicationVerification(email!);
+      const verification = await checkApplicationVerification(email);
       
       if (!verification.exists) {
         setVerificationError('No judge application found for this email. Please submit an application first.');

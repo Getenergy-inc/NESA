@@ -314,6 +314,13 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       const response = await signupFlow(formData as SignupFormData);
 
       if (response.success) {
+        // Persist response so CompletionStep can show real data
+        try {
+          localStorage.setItem('nesa-signup-result', JSON.stringify(response));
+        } catch (e) {
+          console.warn('Unable to persist signup result', e);
+        }
+
         // Clear form data on successful signup
         localStorage.removeItem(STORAGE_KEY);
 

@@ -13,6 +13,8 @@ import { IoLogOut } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import styles from "./style.module.scss";
 
+
+
 const Navbar = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -83,7 +85,7 @@ const Navbar = () => {
 
                 {/* Main Navigation - Desktop Only - Moved closer to logo */}
                 <div className="hidden lg:flex items-center">
-                  <HorizontalNavLinks links={navlinks} pathname={pathname} layer="layer-1" />
+                  <HorizontalNavLinks links={navlinks} pathname={pathname?? "/"} layer="layer-1" />
                 </div>
               </div>
 
@@ -115,14 +117,14 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.3 }}
             >
-              <HorizontalNavLinks links={secondaryNavlinks} pathname={pathname} layer="layer-2" />
+              <HorizontalNavLinks links={secondaryNavlinks} pathname={pathname?? "/"} layer="layer-2" />
             </motion.div>
           </div>
         </div>
       </nav>
 
       {/* Mobile Sidebar */}
-      <MobileSidebar sidebarOpen={sidebarOpen} controlMenu={controlMenu} user={user} pathname={pathname} />
+      <MobileSidebar sidebarOpen={sidebarOpen} controlMenu={controlMenu} user={user} pathname={pathname ?? "/"} />
     </>
   );
 };

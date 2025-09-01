@@ -7,8 +7,8 @@ export default function NomineeSignupPart2() {
   const searchParams = useSearchParams()
 
   const [formData, setFormData] = useState({
-    nomineeCategory: searchParams.get('category') || '',
-    nomineeSubCategory: searchParams.get('subCategory') || '',
+    nomineeCategory: searchParams?.get('category') || '',
+    nomineeSubCategory: searchParams?.get('subCategory') || '',
     achievements: '',
     contributionImage: null as File | null,
   })

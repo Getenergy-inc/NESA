@@ -1,0 +1,261 @@
+Conversation opened. 1 read message.
+
+Skip to content
+Using Gmail with screen readers
+
+3 of 1,531
+Technology Overview – NESA-Africa Platform
+Inbox
+
+Santos Aderibigbe <vincsantos@gmail.com>
+Jul 23, 2025, 12:53 PM (1 day ago)
+to queenix281, Santos, me, Johnsonoluwabusayo
+
+Here is a comprehensive analysis of the technology behind NESA-Africa, with a breakdown by architecture, systems, flows, risks, and scaling potential:
+
+🧠 Technology Overview – NESA-Africa Platform
+NESA-Africa is powered by a multi-layered digital infrastructure that integrates:
+
+A public-facing web portal and mobile-friendly UI
+
+A robust backend/API system
+
+Secure, traceable wallet infrastructure (GFA Wallet)
+
+Modular micro-sites for local chapters, judges, ambassadors, and events
+
+End-to-end nomination, voting, certification, and donation flows
+
+It is not a single website, but a networked platform with dynamic dashboards and flows for different user types.
+
+🧱 1. Platform Architecture
+Layer	Description
+Frontend	42+ user-facing pages (HTML/React/Vue), mobile-responsive with multilingual toggle (EN, FR, AR, PT)
+Backend	RESTful/GraphQL API with microservices architecture handling logic, wallets, voting, uploads
+Database	Relational (PostgreSQL or MySQL) + NoSQL (MongoDB) for activity logs and wallet transactions
+CMS	Custom or Headless CMS (Strapi/Directus) to manage nominations, articles, video replays
+Wallet Engine	GetFinance Africa (GFA) wallet integration with AfriGold Coin (AGC) for payments, donations, voting
+Security Layer	JWT auth, SSL encryption, audit trail, wallet hash protection, and role-based access control (RBAC)
+Hosting/DevOps	Cloud-based deployment (AWS, Vercel, Netlify, or DigitalOcean), CI/CD pipeline, GitHub repo, Docker containers
+👤 2. User Roles & Dashboards
+The system has differentiated login-based dashboards:
+
+User Role	Dashboard Features
+Public Users	View awards, vote, donate, nominate, register
+Ambassadors	Track referrals, chapter activities, wallet, marketing tasks
+Nominee Researchers (NRC)	Upload nominees, validate info, manage leads
+Judges	Access nominee files, vote, submit scores, view ranking
+Sponsors/Partners	Download branded materials, track ROI, submit funding
+Chapter Leaders	Manage microsite, local events, ambassadors, funds
+Admins	Full control over backend operations, reporting, moderation, wallet disbursement, certificate generation
+💸 3. GFA Wallet & AfriGold Coin Integration
+A central innovation is the GFA Wallet, embedded across all modules. Features include:
+
+Feature	Description
+Non-custodial	GFA does not hold funds; all flows routed via partner banks or fintech APIs
+AfriGold Coin (AGC)	Internal currency for voting, donations, rewards
+Escrow Logic	Secures sponsorship or donation funds until verification or milestone
+Multi-Wallet Setup	Each chapter/project has a subwallet with permissions and ledger
+FX/Insurance	Real-time AGC-to-USD/NGN/EUR conversion with markup & optional micro-insurance
+Referral Earnings	Ambassadors earn in AGC or fiat for successful tasks or referrals
+Whitelabel APIs	Integration with external fintech/remittance services for scalability
+🔁 4. Core Flows & Systems
+Flow	Description
+Nomination System	6000+ nominees uploaded by NRC team via secure portal with validation logic
+Voting System	Public and judge voting (weighted), backed by AGC tokens and secured endpoints
+Certificate Engine	Auto-generates award certificates post-approval, with blockchain hash (optional)
+Donation/CSR Flow	Donors/sponsors give via wallet, choose project/category, receive branded receipt
+Event System	Webinar/expo registration, session tracking, speaker dashboards, replay access
+Volunteer Management	Application forms, screening, role assignment, KPI tracking in dashboards
+Notification System	Email, SMS, WhatsApp, and in-app alerts for updates, deadlines, and events
+⚠️ 5. Risks & Considerations
+Risk	Mitigation Strategy
+Voting fraud/spam	AGC-based voting + CAPTCHA + IP/device checks
+Data breach	JWT + hashed storage + role-based access control
+High traffic crashes	Auto-scaling + load balancing via CDN/Cloudflare
+Wallet misuse	Audit trail, fund lock logic, disbursement approval queues
+Regulatory pushback on crypto	AGC used as voting token only, not speculative asset; localized FX wallet routes
+Volunteer dashboard overload	Simplified UI/UX per role + task calendar integration (Asana/Notion API)
+Cross-country legal compliance	Local hosting mirrors + chapter MoUs + chapter wallet KYC policies
+🚀 6. Scalability & Growth Potential
+Feature	Scalable Element
+Modular Flows	More award categories, new projects, local chapters can plug in via same tech stack
+Cloud-Based	Elastic infrastructure allows traffic surges during nomination/voting windows
+APIs for Partners	Fintech, EdTech, and institutional partners can access sandbox for integrations
+Microsite Architecture	Each country, project, or school can have its own skin (like “NESA Ghana” or “EduAid Nigeria”) managed by HQ
+Unified Wallet System	Any project in the SCEF ecosystem can use the same GFA wallet (e.g., EduAid, Rebuild My School)
+AI/ML for Impact Tracking (future)	Evaluate nominee impact via NLP on uploads, automate shortlist scoring, predict chapter performance
+🛠️ Technology Stack (Recommended or In Use)
+Layer	Tools/Technologies
+Frontend	React.js, Next.js, TailwindCSS, Framer Motion
+Backend	Node.js, Express.js, GraphQL, Nest.js
+Database	PostgreSQL, Redis (cache), MongoDB (media/meta)
+DevOps	GitHub Actions, Docker, Vercel/AWS/DigitalOcean, Cloudflare CDN
+CMS/Media	Strapi, Sanity, Firebase for storage/CDN
+Wallet	Custom GFA backend + Flutterwave/TransactPay/YellowCard integrations
+Comms	SendGrid, Twilio, WhatsApp Business API
+Analytics	Plausible, Amplitude, Firebase, custom dashboards
+Security	JWT, bcrypt, SSL, webhook signature validation
+✅ Conclusion: Why This Tech Stack Matters
+NESA-Africa’s platform is not just built to host an awards event—it is an ecosystem tech infrastructure designed for:
+
+Pan-African scalability
+
+Hyper-local customization
+
+Full ecosystem finance transparency
+
+Impact documentation
+
+Long-term digital community growth
+
+Here is the Technology Product Requirements Document (Tech PRD) for the NESA-Africa Platform, structured professionally for engineering, UI/UX, DevOps, and stakeholder teams.
+
+📄 Technology Product Requirements Document (PRD)
+📌 Project Name: NESA-Africa 2025 Platform
+🏢 Client: Santos Creations Educational Foundation (SCEF)
+🧠 Platform Powered by: GetFinance Africa (GFA) Wallet Infrastructure
+📆 Version: v1.0
+📅 Date: July 23, 2025
+1. 🎯 Executive Summary
+The NESA-Africa platform is a digital ecosystem that powers the New Education Standard Awards Africa, a multi-country educational recognition program. It enables public participation, nomination, ambassador engagement, chapter governance, digital voting, and financial transactions through a wallet system (AfriGold Coin) embedded within the broader SCEF ecosystem. The platform will support over 7 unique user roles, 42+ dynamic pages, and 10+ connected backend modules across local chapters, events, media, and governance workflows.
+
+2. 🧱 Core Features and Modules
+Module	Functionality
+Frontend Portal	Award showcase, search nominees, voting, donations, registration
+Nomination System	6,000+ nominees, NRC upload dashboard, category tagging
+Voting System	AGC-based voting (public + judge voting), transparent logs
+Wallet System (GFA)	AfriGold Coin transactions, referrals, ambassador rewards, donations
+User Dashboards	Role-based: Admin, Judge, Ambassador, Researcher, Nominee, Sponsor
+Certification Engine	Auto-generates recognition certificates after validation
+Chapter Microsites	Localized admin portals with member/ambassador control
+Event Portal	Webinars, EduAid Expo, registration, ticketing, content replay
+CMS & Media	NESA TV, article publishing, image/video/document repository
+Compliance & Logs	Voting logs, KYC info, audit trails, data privacy layer
+Analytics Dashboard	Engagement metrics, wallet reports, referrals, KPI tracking
+3. 🏗️ Technical Architecture
+a. Frontend Stack
+Framework: React.js (Next.js optional)
+
+Styling: TailwindCSS, Framer Motion
+
+Localization: i18n with EN, FR, AR, PT
+
+Form Handling: React Hook Form + Zod/Yup Validation
+
+b. Backend & API
+Framework: Node.js with Express.js or Nest.js
+
+Authentication: JWT, OAuth2, 2FA (admin-level)
+
+Wallet: RESTful API (Custom + GFA)
+
+Voting Logic: Weighted (public + judge), rate-limited per IP/device
+
+PDF Generation: Puppeteer/Node HTML-to-PDF
+
+c. Database Layer
+Primary: PostgreSQL (users, nominees, wallets, activity)
+
+Secondary: MongoDB (media assets, session logs)
+
+Cache/Queue: Redis + BullMQ for voting and email queue
+
+d. DevOps & Hosting
+Containerization: Docker
+
+CI/CD: GitHub Actions or GitLab CI
+
+Hosting: Vercel (frontend), DigitalOcean/AWS (backend + DB)
+
+CDN: Cloudflare
+
+SSL: Let's Encrypt or Cloudflare TLS
+
+4. 🔐 Security & Compliance
+Area	Standard
+Authentication	JWT, password hash (bcrypt), IP/device logging
+Authorization	RBAC with dashboard-level permission sets
+Data Protection	AES-encrypted sensitive data, GDPR-aligned
+Voting Security	Captcha, device ID, AGC consumption, backend verification
+Audit & Logs	API audit logs, wallet activity logs, download/report logs
+Backup	Nightly PostgreSQL + weekly full image backup
+5. 👥 User Roles & Access
+Role	Dashboard	Key Functions
+Public User	Web portal	Nominate, vote, register, donate
+NRC Volunteer	NRC Dashboard	Upload nominees, verify data, submit backups
+Ambassador	Campaign Dashboard	Track referrals, campaigns, rewards
+Sponsor/Partner	Sponsor Dashboard	Download kit, upload proof, track impact
+Judge	Voting Dashboard	Score nominees, access bios, submit votes
+Admin	Super Admin Panel	Full platform control, reporting, compliance
+Chapter Leader	Microsite Admin	Manage ambassadors, local nominations, wallet funds
+6. 🔁 Key System Flows
+🔸 Nomination Flow:
+NRC logs in → uploads nominee profile
+
+System tags category → Notifies Admin → Status: Pending Review
+
+Admin verifies → Marks “Approved” → Published to frontend
+
+🔸 Voting Flow:
+User logs in → Buys AGC via GFA Wallet
+
+Enters voting area → Selects nominee → Votes → AGC deducted
+
+Vote registered with timestamp, wallet log, and anonymized public trail
+
+🔸 Certificate Issuance:
+Admin selects winner → Confirms criteria met
+
+System generates certificate → Email + dashboard download available
+
+🔸 Chapter Microsite Management:
+Chapter Leader logs in → Updates events, members
+
+Manages ambassadors → Triggers wallet requests → Tracks approvals
+
+7. ⚙️ Third-Party Integrations
+Purpose	Provider
+Wallet/Payments	GFA Wallet (via TransactPay, Flutterwave, etc.)
+Email/SMS	SendGrid, Twilio, WhatsApp Cloud API
+File Upload	Cloudinary / Firebase Storage
+Analytics	Plausible, Amplitude, or Firebase
+Certificates	HTML-to-PDF (via Puppeteer)
+CAPTCHA	Google reCAPTCHA v3 or hCaptcha
+8. 📈 KPIs & Success Metrics
+Category	Metric
+Engagement	5M votes, 100k site visits/month, 10M video views
+Wallet	$1M in wallet flows, 200k+ AGC transactions
+Security	<1% voting fraud, 99.99% uptime
+Performance	Page loads <3s, backend response time <500ms
+Growth	50 chapters onboarded, 2000+ ambassadors active
+9. 🗓️ Development Timeline (4 Weeks)
+Week	Deliverables
+Week 1	UI/UX Design Finalization, DB Schema, Backend Scaffolding
+Week 2	API Development, Frontend Integration Begins
+Week 3	Wallet + Voting Logic, Dashboards, Chapter Subsites
+Week 4	Testing, Bug Fixes, Deployment, Admin Training
+10. 📋 Documentation & Handoff
+Figma UI Files (with annotations)
+
+API Docs (Postman or Swagger)
+
+Admin Manual (PDF + Wiki format)
+
+Dev Guide (README.md with project setup, code structure)
+
+Launch Kit (for SCEF HQ team and ambassadors)
+
+11. 📌 Future Expansion Modules (Post MVP)
+Mobile App (React Native / Flutter)
+
+AI Shortlisting for Nominations
+
+Blockchain Certificate Verification
+
+Donor Impact Dashboard (for CSR reports)
+
+Live Video Chat for Chapter Events
+
+
+

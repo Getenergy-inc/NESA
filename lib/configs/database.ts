@@ -19,10 +19,17 @@ declare global {
   var mongoose: MongooseCache | undefined;
 }
 
-let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
+// Initialize cached connection
+let cached: MongooseCache = { conn: null, promise: null };
 
-if (!global.mongoose) {
-  global.mongoose = cached;
+// Use globalThis for caching in server environment
+// This works in both Node.js and browser environments
+if (typeof globalThis !== 'undefined') {
+  cached = (globalThis as any).mongoose || cached;
+  
+  if (!(globalThis as any).mongoose) {
+    (globalThis as any).mongoose = cached;
+  }
 }
 
 async function connectDB(): Promise<typeof mongoose> {

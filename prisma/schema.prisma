@@ -1,0 +1,560 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Endorsement {
+  id                   String    @id @default(uuid())
+  organization_name    String
+  contact_person_name  String
+  email                String    @unique
+  phone                String
+  country              String
+  website              String?
+  endorser_category    String
+  endorsement_type     String
+  endorsement_tier     String?
+  payment_method       String?
+  payment_reference    String?
+  payment_verified     Boolean   @default(false)
+  endorsement_headline String
+  endorsement_statement String
+  logo_file            String?
+  video_file           String?
+  video_link           String?
+  consent_to_publish   Boolean
+  authorized_to_submit Boolean
+  digital_signature    String
+  user_id              String?
+  submitted_by         String?
+  status               String    @default("pending_verification")
+  verified             Boolean   @default(false)
+  rejection_reason     String?
+  created_at           DateTime  @default(now())
+  updated_at           DateTime  @updatedAt
+  approved_at          DateTime?
+  certificate_generated Boolean  @default(false)
+  featured             Boolean   @default(false)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  type       String
+  expires    DateTime
+
+  @@unique([identifier, type])
+  @@index([token])
+}
+
+model admin_invitations {
+  id                                       String            @id
+  email                                    String
+  invitationToken                          String            @unique
+  sections                                 PlatformSection[]
+  permissions                              AdminPermission[]
+  status                                   InvitationStatus  @default(PENDING)
+  invitedBy                                String
+  invitedAt                                DateTime          @default(now())
+  expiresAt                                DateTime
+  acceptedAt                               DateTime?
+  userId                                   String?
+  users_admin_invitations_invitedByTousers users             @relation("admin_invitations_invitedByTousers", fields: [invitedBy], references: [id])
+  users_admin_invitations_userIdTousers    users?            @relation("admin_invitations_userIdTousers", fields: [userId], references: [id])
+}
+
+model admin_sections {
+  id          String            @id
+  userId      String
+  section     PlatformSection
+  permissions AdminPermission[]
+  assignedAt  DateTime          @default(now())
+  assignedBy  String
+  users       users             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, section])
+}
+
+model audit_logs {
+  id         String   @id
+  userId     String?
+  action     String
+  resource   String
+  resourceId String?
+  details    Json?
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime @default(now())
+  users      users?   @relation(fields: [userId], references: [id])
+}
+
+model chapter_memberships {
+  id        String   @id
+  userId    String   @unique
+  chapterId String
+  joinedAt  DateTime @default(now())
+  chapters  chapters @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  users     users    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model chapters {
+  id                  String                @id
+  name                String
+  country             String
+  region              String
+  type                ChapterType           @default(ONLINE)
+  leaderId            String?
+  memberCount         Int                   @default(0)
+  isActive            Boolean               @default(true)
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime
+  chapter_memberships chapter_memberships[]
+}
+
+model dashboard_configs {
+  id         String   @id
+  role       UserRole
+  layout     String
+  widgets    Json
+  navigation Json
+  theme      Json?
+  isDefault  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime
+
+  @@unique([role, layout])
+  @@index([layout])
+  @@index([role])
+}
+
+model judge_applications {
+  id                String            @id
+  userId            String            @unique
+  fullName          String
+  email             String
+  phone             String
+  state             String
+  education         String
+  experience        String
+  motivation        String
+  documentsUrl      String?
+  profileImageUrl   String?
+  status            ApplicationStatus @default(PENDING)
+  verificationToken String?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime
+  users             users             @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model nominations {
+  id                  String        @id
+  nominatorId         String
+  fullName            String
+  organizationName    String?
+  email               String?
+  phone               String?
+  country             String
+  region              String
+  website             String?
+  linkedinProfile     String?
+  awardCategory       String
+  subcategory         String
+  achievementSummary  String
+  impactMetrics       String
+  beneficiariesCount  String?
+  yearsOfImpact       String?
+  sdgAlignment        String[]
+  agendaAlignment     String?
+  esgAlignment        String?
+  verificationLinks   String?
+  mediaLinks          String?
+  additionalNotes     String?
+  supportingDocuments String[]
+  profileImageUrl     String?
+  status              NomineeStatus @default(DRAFT)
+  completionScore     Float         @default(0)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime
+  users               users         @relation(fields: [nominatorId], references: [id], onDelete: Cascade)
+  votes               votes[]
+}
+
+model nominee_profiles {
+  id                  String         @id
+  volunteerId         String
+  fullName            String
+  organizationName    String?
+  country             String
+  region              String
+  email               String?
+  phone               String?
+  website             String?
+  linkedinProfile     String?
+  awardCategory       String
+  subcategory         String
+  achievementSummary  String
+  impactMetrics       String
+  beneficiariesCount  String?
+  yearsOfImpact       String?
+  sdgAlignment        String[]
+  agendaAlignment     String
+  esgAlignment        String
+  verificationLinks   String?
+  mediaLinks          String?
+  additionalNotes     String?
+  supportingDocuments String[]
+  profileImageUrl     String?
+  status              NomineeStatus  @default(DRAFT)
+  completionScore     Float          @default(0)
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime
+  nrc_volunteers      nrc_volunteers @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+}
+
+model notifications {
+  id        String           @id
+  userId    String
+  type      NotificationType
+  title     String
+  message   String
+  read      Boolean          @default(false)
+  actionUrl String?
+  createdAt DateTime         @default(now())
+  users     users            @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model nrc_applications {
+  id             String            @id
+  userId         String            @unique
+  fullName       String
+  email          String
+  phone          String
+  country        String
+  motivation     String
+  experience     String
+  availability   String
+  skills         String[]
+  commitment     Boolean           @default(false)
+  terms          Boolean           @default(false)
+  cvUrl          String?
+  status         ApplicationStatus @default(PENDING)
+  reviewedBy     String?
+  reviewDate     DateTime?
+  reviewNotes    String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime
+  users          users             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nrc_volunteers nrc_volunteers?
+}
+
+model nrc_volunteers {
+  id               String             @id
+  applicationId    String             @unique
+  userId           String             @unique
+  fullName         String
+  email            String
+  country          String
+  approvalDate     DateTime
+  nomineesUploaded Int                @default(0)
+  targetNominees   Int                @default(10)
+  completionRate   Float              @default(0)
+  lastActive       DateTime           @default(now())
+  status           VolunteerStatus    @default(ACTIVE)
+  nominee_profiles nominee_profiles[]
+  nrc_applications nrc_applications   @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  users            users              @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model role_permissions {
+  id         String   @id
+  role       UserRole
+  resource   String
+  action     String
+  conditions Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime
+
+  @@unique([role, resource, action])
+  @@index([resource, action])
+  @@index([role])
+}
+
+model user_permissions {
+  id                                      String    @id
+  userId                                  String
+  resource                                String
+  action                                  String
+  granted                                 Boolean   @default(true)
+  conditions                              Json?
+  grantedBy                               String?
+  grantedAt                               DateTime  @default(now())
+  expiresAt                               DateTime?
+  users_user_permissions_grantedByTousers users?    @relation("user_permissions_grantedByTousers", fields: [grantedBy], references: [id])
+  users_user_permissions_userIdTousers    users     @relation("user_permissions_userIdTousers", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, resource, action])
+  @@index([expiresAt])
+  @@index([resource, action])
+  @@index([userId])
+}
+
+model users {
+  id                                                   String               @id
+  email                                                String               @unique
+  password                                             String
+  role                                                 UserRole             @default(FREE_MEMBER)
+  accountType                                          AccountType          @default(INDIVIDUAL)
+  firstName                                            String?
+  lastName                                             String?
+  fullName                                             String?
+  phone                                                String?
+  dateOfBirth                                          DateTime?
+  gender                                               Gender?
+  country                                              String?
+  state                                                String?
+  city                                                 String?
+  address                                              String?
+  organizationName                                     String?
+  organizationType                                     String?
+  organizationRole                                     String?
+  profileImage                                         String?
+  bio                                                  String?
+  website                                              String?
+  linkedinProfile                                      String?
+  preferredLanguage                                    Language             @default(EN)
+  intents                                              UserIntent[]
+  division                                             Division?
+  functions                                            String[]
+  referrerId                                           String?
+  referralCode                                         String?
+  isVerified                                           Boolean              @default(false)
+  isActive                                             Boolean              @default(true)
+  emailVerifiedAt                                      DateTime?
+  lastLoginAt                                          DateTime?
+  passwordResetToken                                   String?
+  passwordResetExpires                                 DateTime?
+  emailVerificationToken                               String?
+  emailVerificationExpires                             DateTime?
+  refreshToken                                         String?
+  refreshTokenExpires                                  DateTime?
+  loginAttempts                                        Int                  @default(0)
+  lockUntil                                            DateTime?
+  otpCode                                              String?
+  otpExpires                                           DateTime?
+  otpPurpose                                           OtpPurpose?
+  invitedBy                                            String?
+  invitedAt                                            DateTime?
+  lastDashboardAccess                                  DateTime?
+  dashboardPreferences                                 Json?
+  createdAt                                            DateTime             @default(now())
+  updatedAt                                            DateTime
+  admin_invitations_admin_invitations_invitedByTousers admin_invitations[]  @relation("admin_invitations_invitedByTousers")
+  admin_invitations_admin_invitations_userIdTousers    admin_invitations[]  @relation("admin_invitations_userIdTousers")
+  admin_sections                                       admin_sections[]
+  audit_logs                                           audit_logs[]
+  chapter_memberships                                  chapter_memberships?
+  judge_applications                                   judge_applications?
+  nominations                                          nominations[]
+  notifications                                        notifications[]
+  nrc_applications                                     nrc_applications?
+  nrc_volunteers                                       nrc_volunteers?
+  user_permissions_user_permissions_grantedByTousers   user_permissions[]   @relation("user_permissions_grantedByTousers")
+  user_permissions_user_permissions_userIdTousers      user_permissions[]   @relation("user_permissions_userIdTousers")
+  users                                                users?               @relation("usersTousers", fields: [referrerId], references: [id])
+  other_users                                          users[]              @relation("usersTousers")
+  votes                                                votes[]
+  wallets                                              wallets?
+}
+
+model votes {
+  id           String      @id
+  voterId      String
+  nominationId String
+  agcAmount    Float
+  weight       Float       @default(1.0)
+  ipAddress    String?
+  userAgent    String?
+  createdAt    DateTime    @default(now())
+  nominations  nominations @relation(fields: [nominationId], references: [id], onDelete: Cascade)
+  users        users       @relation(fields: [voterId], references: [id], onDelete: Cascade)
+
+  @@unique([voterId, nominationId])
+}
+
+model wallet_transactions {
+  id          String                  @id
+  walletId    String
+  type        WalletTransactionType
+  amount      Float
+  reason      String
+  description String?
+  referenceId String?
+  status      WalletTransactionStatus @default(PENDING)
+  createdAt   DateTime                @default(now())
+  wallets     wallets                 @relation(fields: [walletId], references: [id], onDelete: Cascade)
+}
+
+model wallets {
+  id                        String                @id
+  userId                    String                @unique
+  agcWithdrawableBalance    Float                 @default(0)
+  agcLockedBalance          Float                 @default(0)
+  currencyEquivalentBalance Float                 @default(0)
+  lastUpdated               DateTime
+  wallet_transactions       wallet_transactions[]
+  users                     users                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum AccountType {
+  INDIVIDUAL
+  NGO
+  CORPORATION
+  GOVERNMENT
+  SCHOOL
+  DIASPORA_GROUP
+}
+
+enum AdminPermission {
+  READ
+  WRITE
+  DELETE
+  MANAGE_USERS
+  MANAGE_PERMISSIONS
+  VIEW_ANALYTICS
+  SYSTEM_CONFIG
+  FULL_ACCESS
+}
+
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  UNDER_REVIEW
+}
+
+enum ChapterType {
+  ONLINE
+  HYBRID
+  PHYSICAL
+}
+
+enum Division {
+  SOBCD
+  OMBDD
+  TDSD
+  LSC
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  EXPIRED
+  REVOKED
+}
+
+enum Language {
+  EN
+  FR
+  AR
+  PT
+}
+
+enum NomineeStatus {
+  DRAFT
+  SUBMITTED
+  APPROVED
+  REJECTED
+  SHORTLISTED
+}
+
+enum NotificationType {
+  APPLICATION_SUBMITTED
+  APPLICATION_APPROVED
+  APPLICATION_REJECTED
+  NOMINEE_SUBMITTED
+  SYSTEM_UPDATE
+  VOTING_OPENED
+  VOTING_CLOSED
+  WALLET_TRANSACTION
+  ADMIN_INVITATION_SENT
+  ADMIN_INVITATION_ACCEPTED
+}
+
+enum OtpPurpose {
+  LOGIN
+  VERIFY_EMAIL
+  PASSWORD_RESET
+}
+
+enum PlatformSection {
+  USER_MANAGEMENT
+  NRC_VOLUNTEERS
+  NOMINATIONS
+  JUDGES
+  VOTING_SYSTEM
+  WALLET_MANAGEMENT
+  CHAPTER_MANAGEMENT
+  FILE_MANAGEMENT
+  NOTIFICATIONS
+  ANALYTICS
+  SYSTEM_SETTINGS
+  ALL_SECTIONS
+}
+
+enum UserIntent {
+  VOTE_OR_NOMINATE
+  APPLY_FOR_EDUAID_SCHOLARSHIP
+  BECOME_AMBASSADOR
+  JOIN_WEBINAR_EXPO
+  SPONSOR_OR_CSR_PARTNER
+  APPLY_AS_JUDGE
+  JOIN_LOCAL_CHAPTER
+  JOIN_NESA_TEAM
+  GET_GALA_TICKET
+  DONATE
+  APPLY_AS_NRC_VOLUNTEER
+}
+
+enum UserRole {
+  FREE_MEMBER
+  STANDARD_MEMBER
+  AMBASSADOR
+  JUDGE
+  VOLUNTEER
+  NRC_VOLUNTEER
+  INTERN
+  NOMINEE
+  SPONSOR
+  CHAPTER_LEADER
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum VolunteerStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum WalletTransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+enum WalletTransactionType {
+  CREDIT
+  DEBIT
+}

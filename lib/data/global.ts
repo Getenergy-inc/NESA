@@ -199,7 +199,7 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
   
   {
     label: "Buy Merchandise",
-    path: "/voting",
+    path: "/buy_merchandise",
     description: "Wallet-linked voting system",
   },
   {
@@ -209,17 +209,17 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
   },
   {
     label: "Join the Local chapters",
-    path: "/local-chapters",
+    path: "/join-local-chapters",
     description: "Local chapter platform",
   },
   {
     label: "Vote with AfriGoldcoin",
-    path: "/vote",
+    path: "/vote-with-afrigold",
     description: "GFA Wallet donation",
   },
   {
     label: "Apply as an Ambassador",
-    path: "/nesatv",
+    path: "/ambassador",
     description: "NESA TV platform",
   }
 ];

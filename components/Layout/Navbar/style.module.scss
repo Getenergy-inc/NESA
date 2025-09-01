@@ -44,6 +44,7 @@
   z-index: 1000;
   min-width: 280px;
   padding: 12px 0;
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   border-top: 3px solid #ea580c;
 
@@ -236,6 +237,19 @@
   }
 }
 
+.layer-3 {
+  font-weight: 500;
+
+  .nav-item a {
+    font-size: 0.975rem;
+    letter-spacing: 0.015em;
+    padding: 0.5rem 0.6rem;
+
+    &:hover {
+      text-shadow: 0 0 8px rgba(255, 185, 46, 0.3);
+    }
+  }
+}
 
 
 /* Responsive adjustments */
@@ -408,6 +422,7 @@
     border-radius: 12px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
@@ -601,6 +616,7 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     opacity: 0;
     visibility: hidden;

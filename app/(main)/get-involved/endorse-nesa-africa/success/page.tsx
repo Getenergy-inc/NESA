@@ -25,7 +25,7 @@ interface EndorsementData {
 
 const EndorsementSuccessPage = () => {
   const searchParams = useSearchParams();
-  const endorsementId = searchParams.get('id');
+  const endorsementId = searchParams?.get('id') ?? null;
   const [endorsementData, setEndorsementData] = useState<EndorsementData | null>(null);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);

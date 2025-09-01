@@ -11,38 +11,43 @@ const CompletionStep: React.FC = () => {
   const { formData, resetForm } = useSignup();
   const router = useRouter();
 
-  // Mock data that would come from the signup response
-  const mockSignupData = {
-    user: {
-      id: 'user_123456',
-      name: (formData.accountType === 'Individual'
-        ? (formData as any).fullName
-        : (formData as any).contactPersonName) || 'User',
-      email: (formData.accountType === 'Individual'
-        ? formData.email
-        : (formData as any).contactEmail) || '',
-      role: 'Free Member'
-    },
-    chapter: {
-      name: `NESA Online Chapter – ${formData.country || 'Nigeria'} (${formData.state || 'Lagos'})`,
-      memberCount: 247
-    },
-    wallet: {
-      id: 'wallet_123456',
-      agcBalance: 3
-    },
-    agcBonus: {
-      amount: 3,
-      type: 'non-withdrawable' as const,
-      reason: 'Welcome bonus for new members'
-    }
+  // Prefer real data from signup result if available
+  let signupResult: any | null = null;
+  if (typeof window !== 'undefined') {
+    try { signupResult = JSON.parse(localStorage.getItem('nesa-signup-result') || 'null'); } catch {}
+  }
+
+  const realUser = signupResult?.user;
+  const realChapter = signupResult?.chapter;
+  const realWallet = signupResult?.wallet;
+  const realBonus = signupResult?.agcBonus;
+
+  // If no real data, derive minimal display from form as a last resort
+  const fallbackUser = {
+    id: 'temp',
+    name: (formData.accountType === 'Individual'
+      ? (formData as any).fullName
+      : (formData as any).contactPersonName) || 'User',
+    email: (formData.accountType === 'Individual'
+      ? formData.email
+      : (formData as any).contactEmail) || '',
+    role: 'Free Member'
   };
+
+  const fallbackChapter = {
+    name: `NESA Online Chapter – ${formData.country || 'Nigeria'} (${formData.state || 'Lagos'})`
+  } as any;
+
+  const displayUser = realUser || fallbackUser;
+  const displayChapter = realChapter || fallbackChapter;
+  const displayWallet = realWallet || null;
+  const displayBonus = realBonus || null;
 
   const handleGoToDashboard = () => {
     resetForm();
 
     // Determine appropriate dashboard route based on user role and intents
-    const userRole = mockSignupData.user.role; // This would come from actual signup response
+    const userRole = (displayUser.role as string) || 'Free Member';
     const dashboardRoute = getDashboardRoute(userRole, formData.intents);
 
     router.push(dashboardRoute);
@@ -79,7 +84,7 @@ const CompletionStep: React.FC = () => {
           Your account has been created successfully
         </p>
         <p className="text-lg text-gray-500">
-          Hello {mockSignupData.user.name}, you're now part of the NESA community!
+          Hello {displayUser.name || 'User'}, you're now part of the NESA community!
         </p>
       </div>
 
@@ -92,8 +97,8 @@ const CompletionStep: React.FC = () => {
           </div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Account Created</h3>
           <p className="text-sm text-gray-600 mb-1">Account Type: {formData.accountType}</p>
-          <p className="text-sm text-gray-600 mb-1">Role: {mockSignupData.user.role}</p>
-          <p className="text-sm text-gray-600">Email: {mockSignupData.user.email}</p>
+          <p className="text-sm text-gray-600 mb-1">Role: {displayUser.role || 'Free Member'}</p>
+          <p className="text-sm text-gray-600">Email: {displayUser.email}</p>
         </div>
 
         {/* Chapter Assignment */}
@@ -102,8 +107,10 @@ const CompletionStep: React.FC = () => {
             <Users className="w-6 h-6 text-purple-600" />
           </div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Chapter Assigned</h3>
-          <p className="text-sm text-gray-600 mb-1 font-medium">{mockSignupData.chapter.name}</p>
-          <p className="text-sm text-gray-600">{mockSignupData.chapter.memberCount} members</p>
+          <p className="text-sm text-gray-600 mb-1 font-medium">{displayChapter?.name}</p>
+          {displayChapter?.memberCount && (
+            <p className="text-sm text-gray-600">{displayChapter.memberCount} members</p>
+          )}
         </div>
 
         {/* Wallet & Bonus */}
@@ -113,7 +120,7 @@ const CompletionStep: React.FC = () => {
           </div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">GFA Wallet Active</h3>
           <p className="text-sm text-gray-600 mb-1">
-            <span className="font-semibold text-orange-600">{mockSignupData.wallet.agcBalance} AGC</span> bonus earned
+            <span className="font-semibold text-orange-600">{(displayBonus?.amount ?? displayWallet?.agcBalance ?? 0)} AGC</span> bonus earned
           </p>
           <p className="text-xs text-gray-500">Ready for voting & nominations</p>
         </div>
@@ -196,7 +203,7 @@ const CompletionStep: React.FC = () => {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
         <h3 className="text-lg font-semibold text-blue-900 mb-2">📧 Check Your Email</h3>
         <p className="text-blue-800 text-sm">
-          We've sent a verification email to <strong>{mockSignupData.user.email}</strong>. 
+          We've sent a verification email to <strong>{displayUser.email}</strong>.
           Please click the verification link to fully activate your account and unlock all features.
         </p>
       </div>
