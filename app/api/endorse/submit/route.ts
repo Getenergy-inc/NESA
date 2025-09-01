@@ -1,12 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { v4 as uuidv4 } from 'uuid';
-import { sendVerificationEmail } from '@/lib/email/endorsementVerification';
-import { prisma } from '@/lib/prisma';
-import { generateToken } from '@/lib/auth/tokens';
 
 // Route segment config - prevent static generation
 export const dynamic = 'force-dynamic';
 export const revalidate = false;
+
+
+// Mock database - In production, this would be replaced with actual database
+let endorsements: any[] = [];
+
+// Generate unique ID
+function generateId(): string {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+// Generate verification token
+function generateVerificationToken(): string {
+  return Math.random().toString(36).substr(2, 15);
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -47,19 +57,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if endorsement already exists
-    const existingEndorsement = await prisma.endorsement.findUnique({
-      where: { email }
-    });
-    
+    const existingEndorsement = endorsements.find(endorsement => endorsement.email === email);
     if (existingEndorsement) {
       return NextResponse.json(
-        { 
-          success: false, 
-          error: 'email_exists',
-          message: 'An endorsement with this email already exists',
-          endorsementId: existingEndorsement.id,
-          status: existingEndorsement.status
-        },
+        { success: false, message: 'An endorsement with this email already exists' },
         { status: 409 }
       );
     }
@@ -81,70 +82,54 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Generate a unique ID for the endorsement
-    const id = uuidv4();
-    
-    // Create new endorsement in the database
-    const newEndorsement = await prisma.endorsement.create({
-      data: {
-        id,
-        organization_name,
-        contact_person_name,
-        email,
-        phone,
-        country,
-        website: website || null,
-        endorser_category,
-        endorsement_type,
-        endorsement_tier: endorsement_type === 'paid' ? endorsement_tier : null,
-        payment_method: endorsement_type === 'paid' ? payment_method : null,
-        payment_reference: payment_reference || null,
-        payment_verified: false,
-        endorsement_headline,
-        endorsement_statement,
-        logo_file: logo_file || null,
-        video_file: video_file || null,
-        video_link: video_link || null,
-        consent_to_publish,
-        authorized_to_submit,
-        digital_signature,
-        user_id: user_id || null,
-        submitted_by: submitted_by || null,
-        status: 'pending_verification',
-        verified: false,
-        created_at: new Date(),
-        updated_at: new Date(),
-        approved_at: null,
-        certificate_generated: false,
-        featured: false
-      }
-    });
-
-    // Generate a verification token
-    const token = await generateToken({
-      identifier: email,
-      type: 'email_verification',
-      expiresInHours: 24
-    });
-
-    // Send verification email
-    await sendVerificationEmail({
+    // Create new endorsement
+    const newEndorsement = {
+      id: generateId(),
+      organization_name,
+      contact_person_name,
       email,
-      name: contact_person_name,
-      organization: organization_name,
-      token,
-      endorsementId: id
-    });
+      phone,
+      country,
+      website: website || null,
+      endorser_category,
+      endorsement_type,
+      endorsement_tier: endorsement_type === 'paid' ? endorsement_tier : null,
+      payment_method: endorsement_type === 'paid' ? payment_method : null,
+      payment_reference: payment_reference || null,
+      payment_verified: false,
+      endorsement_headline,
+      endorsement_statement,
+      logo_file: logo_file || null,
+      video_file: video_file || null,
+      video_link: video_link || null,
+      consent_to_publish,
+      authorized_to_submit,
+      digital_signature,
+      user_id: user_id || null,
+      submitted_by: submitted_by || null,
+      status: 'pending_review',
+      verified: false,
+      verification_token: generateVerificationToken(),
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      approved_at: null,
+      certificate_generated: false,
+      featured: false
+    };
+
+    // Add to mock database
+    endorsements.push(newEndorsement);
 
     // Return success response
     return NextResponse.json({
       success: true,
-      message: 'Endorsement submitted successfully. Please check your email to verify.',
+      message: 'Endorsement submitted successfully',
       endorsement: {
         id: newEndorsement.id,
         organization_name: newEndorsement.organization_name,
         email: newEndorsement.email,
         status: newEndorsement.status,
+        verification_token: newEndorsement.verification_token,
         created_at: newEndorsement.created_at
       }
     });
@@ -163,7 +148,7 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const email = searchParams.get('email');
-    
+
     if (!email) {
       return NextResponse.json(
         { success: false, message: 'Email parameter is required' },
@@ -171,9 +156,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const endorsement = await prisma.endorsement.findUnique({
-      where: { email }
-    });
+    const endorsement = endorsements.find(endorsement => endorsement.email === email);
     
     if (!endorsement) {
       return NextResponse.json(
@@ -197,7 +180,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Error processing request:', error);
+    console.error('Error retrieving endorsement:', error);
     return NextResponse.json(
       { success: false, message: 'Internal server error' },
       { status: 500 }

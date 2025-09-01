@@ -1,6 +1,6 @@
-import type { Variants, Easing } from "framer-motion";
-import { easeInOut } from "framer-motion"; 
-export const transition = { ease: easeInOut, duration: 0.3 };
+import type { Variants } from "framer-motion";
+
+export const transition = { ease: "easeInOut", duration: 0.3 };
 
 export const parentV: Variants = {
   initial: { opacity: 0 },

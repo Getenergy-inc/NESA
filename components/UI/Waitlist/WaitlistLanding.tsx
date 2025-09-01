@@ -88,7 +88,7 @@ const WaitlistLandingContent: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -99,7 +99,7 @@ const WaitlistLandingContent: React.FC = () => {
       transition: {
         duration: 6,
         repeat: Infinity,
-        ease: "easeInOut" as const
+        ease: "easeInOut"
       }
     }
   };
