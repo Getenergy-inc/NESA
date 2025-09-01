@@ -335,7 +335,7 @@ const NRCLandingPage: React.FC = () => {
         {/* Preload background image */}
         <div className="nrc-hero-preload" aria-hidden="true" />
 
-        {/* Optimized Background Image without Overlay */}
+        {/* Optimized Background Image */}
         <div className="absolute inset-0 z-0">
           <OptimizedHeroBackground
             src="/images/bg/education.png"
@@ -346,13 +346,16 @@ const NRCLandingPage: React.FC = () => {
           />
         </div>
 
+        {/* Color Overlay */}
+        <div className="absolute inset-0 z-0 bg-black/50"></div>
+
         {/* Content */}
         <div className="relative z-10 w-full container mx-auto px-4 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center text-white nrc-hero-animate-in"
+            className="max-w-4xl mx-auto flex flex-col items-center text-center text-white nrc-hero-animate-in"
           >
             <div className="flex items-center justify-center gap-2 mb-4" role="banner">
               <Users className="w-8 h-8 text-white drop-shadow-2xl" aria-hidden="true" />
@@ -443,15 +446,12 @@ const NRCLandingPage: React.FC = () => {
                 : "Apply to join the NESA Nominee Research Corps volunteer program"
               }
             />
-          </motion.div>
-        </div>
-
-        {/* Enhanced Scroll Indicator */}
+                              {/* Enhanced Scroll Indicator */}
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 nrc-hero-scroll-indicator focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2"
+          className="z-10 mt-8 -mb-12 self-center nrc-hero-scroll-indicator focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2"
           onClick={() => {
             const nextSection = document.querySelector('#about-section');
             nextSection?.scrollIntoView({ behavior: 'smooth' });
@@ -482,6 +482,8 @@ const NRCLandingPage: React.FC = () => {
             </motion.div>
           </div>
         </motion.button>
+          </motion.div>
+        </div>
       </section>
 
       {/* Program Overview */}

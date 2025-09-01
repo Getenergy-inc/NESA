@@ -1,0 +1,24 @@
+NESA Nominee Research Corps (NESA NRC) - Strategic Analysis
+1. Purpose & Strategic Role
+The NESA NRC is a taskforce under NESA-Africa 2025 to identify and profile 6,000+ nominees
+across Africa, the diaspora, and global educational partners. It supports SDG 4, ESG, and AU
+Agenda 2063 goals.
+2. Integration Points
+NRC integrates with the nomination platform, judging workflow, GFA Wallet, admin dashboard, and
+media platforms such as NESA TV and It's In Me Radio.
+3. NRC Volunteer Structure
+Includes NRC Volunteers, Team Leads, Coordinators, and Admin Validators. Total volunteer target:
+30-50 covering all regions.
+4. Nominee Data Fields Collected
+Name, category, country, bio, contact, photo, documents/media, institutional affiliation.
+5. NRC Platform Features
+Volunteer dashboard with secure login, upload tracker, AGC tracker, task assignments, and
+media/document upload modules.
+6. AGC Wallet Incentives for NRC
+First 10 uploads: 5 AGC total (partial withdrawable); Weekly best researcher: 3 AGC; Verified entry:
+0.5 AGC (non-withdrawable).
+7. Timeline & Metrics
+Launch: July 20, 2025 | Deadline: August 20, 2025 | Nominees Target: 6,000+ | Verified: 90%+ |
+Coverage: 54 African countries + diaspora.
+8. Impact & Value
+Ensures credible nominee data, expands visibility for African education contributors, builds asustainable impact database.
