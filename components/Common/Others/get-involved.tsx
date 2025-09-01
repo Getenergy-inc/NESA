@@ -6,13 +6,14 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import Modal from "../Modal";
 
-const transition = { duration: 0.1, ease: "easeInOut" };
+// Framer Motion transition (keep types simple for compatibility)
+const transition = { duration: 0.2 } as const;
 
 export const step1Variant = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
-    transition: { ...transition, delay: 1 },
+    transition: { ...transition, delay: 0.1 },
   },
   exit: { opacity: 0 },
 };
@@ -21,7 +22,7 @@ export const step2Variant = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
-    transition,
+    transition: { ...transition },
   },
   exit: { opacity: 0 },
 };

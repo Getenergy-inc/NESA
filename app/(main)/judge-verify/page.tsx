@@ -16,8 +16,8 @@ const JudgeEmailVerification: React.FC = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   
-  const email = searchParams.get('email');
-  const token = searchParams.get('token');
+  const email = searchParams?.get('email') ?? '';
+  const token = searchParams?.get('token') ?? '';
 
   useEffect(() => {
     if (!email || !token) {
@@ -32,8 +32,8 @@ const JudgeEmailVerification: React.FC = () => {
   const verifyEmail = async () => {
     try {
       const response = await verifyJudgeEmail({
-        email: email!,
-        verification_token: token!
+        email: email,
+        verification_token: token
       });
 
       if (response.success) {
@@ -41,7 +41,7 @@ const JudgeEmailVerification: React.FC = () => {
         setApplicantName(response.application?.full_name || '');
         
         // Generate signup link
-        const signupData = await generateJudgeSignupLink(email!);
+        const signupData = await generateJudgeSignupLink(email);
         setSignupUrl(signupData.signup_url);
       } else {
         setVerificationStatus('error');
@@ -61,7 +61,7 @@ const JudgeEmailVerification: React.FC = () => {
     if (signupUrl) {
       router.push(signupUrl);
     } else {
-      router.push(`/account/signup/judgesignup?email=${encodeURIComponent(email!)}`);
+      router.push(`/account/signup/judgesignup?email=${encodeURIComponent(email)}`);
     }
   };
 

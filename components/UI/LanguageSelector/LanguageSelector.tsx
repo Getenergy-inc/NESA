@@ -41,7 +41,7 @@ const LanguageSelector: React.FC = () => {
       y: -10,
       transition: {
         duration: 0.2,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     },
     visible: {
@@ -50,7 +50,7 @@ const LanguageSelector: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.2,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     }
   };

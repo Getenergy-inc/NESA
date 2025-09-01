@@ -12,7 +12,8 @@
     "lint": "next lint",
     "devnext": "next",
     "migrate": "node scripts/run-migration.js",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "tsc": "set NODE_OPTIONS=--max-old-space-size=4096 && tsc --noEmit"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
@@ -37,6 +38,7 @@
     "flag-icon-css": "^4.1.7",
     "flag-icons": "^7.5.0",
     "framer-motion": "^12.23.12",
+    "globalthis": "^1.0.4",
     "googleapis": "^155.0.1",
     "gsap": "^3.12.4",
     "headlessui": "^0.0.0",
@@ -58,6 +60,7 @@
     "react-phone-input-2": "^2.15.1",
     "react-select": "^5.10.2",
     "react-toastify": "^11.0.5",
+    "sass": "^1.91.0",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "stream-chat": "^9.10.0",
@@ -87,7 +90,6 @@
     "eslint-config-next": "14.0.4",
     "jest": "^30.0.5",
     "postcss": "^8",
-    "sass": "^1.69.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

@@ -8,7 +8,7 @@ import ErrorDisplay, { SuccessMessage } from '@/components/Common/ErrorDisplay';
 
 const OTPPage: React.FC = () => {
   const searchParams = useSearchParams();
-  const email = searchParams.get("email") || ""; // Get email from query params
+  const email = searchParams?.get("email") || ""; // Get email from query params
   const { verifyEmail } = useAuthContext();
 
   const [otp, setOtp] = useState<string[]>(["", "", "", "", "", ""]); // 6-digit OTP

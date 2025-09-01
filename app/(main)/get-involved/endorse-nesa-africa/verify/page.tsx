@@ -29,8 +29,8 @@ interface VerificationResult {
 
 const EmailVerificationPage = () => {
   const searchParams = useSearchParams();
-  const email = searchParams.get('email');
-  const token = searchParams.get('token');
+  const email = searchParams?.get('email') ?? '';
+  const token = searchParams?.get('token') ?? '';
   
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
   const [loading, setLoading] = useState(true);
@@ -57,7 +57,7 @@ const EmailVerificationPage = () => {
 
   const verifyEmail = async () => {
     try {
-      const response = await fetch(`/api/endorse/verify-email?email=${encodeURIComponent(email!)}&token=${encodeURIComponent(token!)}`);
+      const response = await fetch(`/api/endorse/verify-email?email=${encodeURIComponent(email)}&token=${encodeURIComponent(token)}`);
       const data = await response.json();
       
       setVerificationResult(data);

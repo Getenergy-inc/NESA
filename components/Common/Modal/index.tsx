@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import type { Variants, Transition } from "framer-motion";
 import { useModal } from "@/lib/store/modal";
 
 interface Modal {
@@ -8,20 +9,20 @@ interface Modal {
   visible: boolean;
 }
 
-const transition = { duration: 0.3, ease: "easeInOut" };
+const transition: Transition = { duration: 0.3, ease: [0.42, 0, 0.58, 1]  };
 
-const variants = {
+const variants: Variants = {
   initial: {
-    scale: "50%",
+    scale: 0.5,
     opacity: 0,
   },
   animate: {
-    scale: "100%",
+    scale: 1,
     opacity: 1,
     transition,
   },
   exit: {
-    scale: "50%",
+    scale: 0.5,
     opacity: 0,
     transition,
   },
@@ -54,12 +55,19 @@ const Modal: React.FC<Modal> = ({ onClose, visible }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
             className="fixed top-0 left-0 w-screen h-screen bg-black/40"
             onClick={onClose}
           ></motion.div>
           {/* modal */}
-          <motion.div ref={ref} key="modal-content" {...variants}>
+          <motion.div
+            ref={ref}
+            key="modal-content"
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
             {content}
           </motion.div>
         </div>

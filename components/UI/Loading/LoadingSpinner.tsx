@@ -54,7 +54,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
       rotate: 360,
       transition: {
         duration: 2,
-        ease: "linear",
+        ease: "linear" as const,
         repeat: Infinity,
       }
     }
@@ -66,7 +66,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
       opacity: [0.8, 1, 0.8],
       transition: {
         duration: 2,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         repeat: Infinity,
       }
     }
@@ -77,7 +77,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
       opacity: [0.5, 1, 0.5],
       transition: {
         duration: 1.5,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         repeat: Infinity,
       }
     }
