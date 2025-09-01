@@ -98,12 +98,15 @@ const SpecialRecognitionPage = () => {
   };
 
   const handleNominate = (category: Category) => {
+      const description = typeof category.description === "string" 
+      ? category.description 
+      : category.title; // Use title as fallback if description is a ReactNode
     router.push(
       `/nominateform?type=${encodeURIComponent(
         "Africa Lifetime Education Icon Recognition"
       )}` +
         `&title=${encodeURIComponent(category.title)}` +
-        `&description=${encodeURIComponent(category.description)}` +
+        `&description=${encodeURIComponent(description)}` +
         `&image=${encodeURIComponent(category.image)}`
     );
   };
