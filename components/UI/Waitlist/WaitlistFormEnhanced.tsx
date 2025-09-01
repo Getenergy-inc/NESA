@@ -354,7 +354,7 @@ const WaitlistFormEnhanced: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };
@@ -366,7 +366,7 @@ const WaitlistFormEnhanced: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as const
+        ease: "easeOut"
       }
     }
   };

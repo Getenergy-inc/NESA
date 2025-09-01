@@ -76,7 +76,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ onTimeUpdate, targetDat
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as const,
+        ease: "easeOut",
       },
     },
   };
