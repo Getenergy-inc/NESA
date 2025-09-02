@@ -88,26 +88,20 @@ export function mapFormDataToBackend(frontendData: SignupFormData): any {
 
 // Map backend response to frontend format
 export function mapBackendResponseToFrontend(backendResponse: any): any {
-  // Accept either Axios response or raw JSON
-  const body = backendResponse?.data ?? backendResponse;
   return {
-    success: body?.success,
-    message: body?.message,
-    user: body?.data?.user ? {
-      id: body.data.user.id,
-      email: body.data.user.email,
-      role: body.data.user.role,
-      accountType: body.data.user.accountType,
-      isVerified: body.data.user.isVerified,
-      fullName: body.data.user.fullName,
-      firstName: body.data.user.firstName,
-      lastName: body.data.user.lastName
+    success: backendResponse.success,
+    message: backendResponse.message,
+    user: backendResponse.data?.user ? {
+      id: backendResponse.data.user.id,
+      email: backendResponse.data.user.email,
+      role: backendResponse.data.user.role,
+      accountType: backendResponse.data.user.accountType,
+      isVerified: backendResponse.data.user.isVerified,
+      fullName: backendResponse.data.user.fullName,
+      firstName: backendResponse.data.user.firstName,
+      lastName: backendResponse.data.user.lastName
     } : undefined,
-    tokens: body?.data?.tokens,
-    chapter: body?.data?.chapter,
-    wallet: body?.data?.wallet,
-    agcBonus: body?.data?.agcBonus,
-    postSignupActions: body?.data?.postSignupActions || body?.data?.nextSteps
+    tokens: backendResponse.data?.tokens
   };
 }
 

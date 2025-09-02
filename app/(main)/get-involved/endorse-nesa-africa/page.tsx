@@ -188,7 +188,7 @@ const EndorseNesaAfricaPage = () => {
                   className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-8 py-4 text-lg"
                 />
               </Link>
-              <Link href="/sponsor">
+              <Link href="/get-involved/sponsor">
                 <Button
                   text="Become a Sponsor"
                   variant="outline"
