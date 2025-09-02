@@ -167,7 +167,7 @@ const PartnerFAQs = () => {
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">NESA-Africa 2025 Partnership and Sponsorship Questions Answered.</h1>
         <p className="mb-8 text-sm sm:text-base md:text-lg text-center md:text-left">Here you can find answers to frequently asked questions about partnering with us.</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
         {FAQs.map((faq, idx) => (
           <motion.div
             key={idx}
