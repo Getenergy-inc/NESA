@@ -1,5 +1,5 @@
 node_modules
-.next
+.next/
 .env
 .env.local
 FRONTEND_BACKEND_INTEGRATION_GUIDE.md
