@@ -43,7 +43,7 @@ const FAQPage: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as const,
+        ease: "easeOut",
       },
     },
   };
@@ -55,14 +55,14 @@ const FAQPage: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.4,
-        ease: "easeOut" as const,
+        ease: "easeOut",
       },
     },
     hover: {
       scale: 1.02,
       transition: {
         duration: 0.2,
-        ease: "easeInOut" as const,
+        ease: "easeInOut",
       },
     },
   };
