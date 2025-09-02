@@ -1,4 +1,5 @@
 {
-  "/admin/endorsements/page": "app/admin/endorsements/page.js",
-  "/(main)/get-involved/endorse-nesa-africa/showcase/page": "app/(main)/get-involved/endorse-nesa-africa/showcase/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(main)/get-involved/endorse-nesa-africa/upload/page": "app/(main)/get-involved/endorse-nesa-africa/upload/page.js",
+  "/(main)/non-competitive/page": "app/(main)/non-competitive/page.js"
 }

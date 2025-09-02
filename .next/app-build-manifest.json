@@ -5,17 +5,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/global-error.js"
     ],
-    "/(main)/get-involved/endorse-nesa-africa/showcase/page": [
+    "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(main)/get-involved/endorse-nesa-africa/showcase/page.css",
-      "static/chunks/app/(main)/get-involved/endorse-nesa-africa/showcase/page.js"
+      "static/chunks/app/not-found.js"
     ],
-    "/(main)/layout": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(main)/layout.css",
-      "static/chunks/app/(main)/layout.js"
+      "static/chunks/app/_not-found/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -28,15 +26,23 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/not-found": [
+    "/(main)/get-involved/endorse-nesa-africa/upload/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/css/app/(main)/get-involved/endorse-nesa-africa/upload/page.css",
+      "static/chunks/app/(main)/get-involved/endorse-nesa-africa/upload/page.js"
     ],
-    "/admin/endorsements/page": [
+    "/(main)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/endorsements/page.js"
+      "static/css/app/(main)/layout.css",
+      "static/chunks/app/(main)/layout.js"
+    ],
+    "/(main)/non-competitive/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(main)/non-competitive/page.css",
+      "static/chunks/app/(main)/non-competitive/page.js"
     ]
   }
 }
