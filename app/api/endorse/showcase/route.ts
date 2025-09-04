@@ -89,8 +89,9 @@ export async function GET(request: NextRequest) {
       }
     });
 
-    const categories = categoriesData.map(c => c.endorser_category);
-    const countries = countriesData.map(c => c.country);
+    // Explicitly define the type for the `c` parameter
+    const categories = categoriesData.map((c: { endorser_category: string | null }) => c.endorser_category);
+    const countries = countriesData.map((c: { country: string | null }) => c.country);
 
     return NextResponse.json({
       success: true,
