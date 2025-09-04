@@ -16,7 +16,6 @@ export interface CategoryCardProps {
     title: string;
     description: string;
     subCategoryPath: string;
-    backgroundImage: string;
   }[];
   type?: "competitive" | "non-competitive"; // add type prop
 }
@@ -128,10 +127,7 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
         className={`relative h-[80vh] md:text-2xl max-w-screen bg-[#191307CC] text-white ${styles.homeHeader}`}
       >
         {Slides.map((slide, index) => {
-          const bgImage =
-            index === 0
-              ? "/images/about1.png"
-              : categoryData[index - 1].backgroundImage;
+          const bgImage = index === 0 ? "/images/about1.png" : "";
 
           return (
             <section
