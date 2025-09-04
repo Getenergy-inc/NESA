@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 interface Category {
   title: string;
-  description: ReactNode | string;
+  description: ReactNode;
   image: string;
 }
 
@@ -98,12 +98,15 @@ const SpecialRecognitionPage = () => {
   };
 
   const handleNominate = (category: Category) => {
+    const descriptionValue =
+      typeof category.description === "string" ? category.description : "";
+
     router.push(
       `/nominateform?type=${encodeURIComponent(
         "Africa Lifetime Education Icon Recognition"
       )}` +
         `&title=${encodeURIComponent(category.title)}` +
-        `&description=${encodeURIComponent(category.description)}` +
+        `&description=${encodeURIComponent(descriptionValue)}` +
         `&image=${encodeURIComponent(category.image)}`
     );
   };
