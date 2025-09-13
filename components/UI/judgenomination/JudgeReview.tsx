@@ -4,11 +4,13 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 interface NomineeProps {
-  id: number;
-  name: string;
+  id: string;
   title: string;
+  name: string;
+  category: string;
+  bio: string;
   achievements: string;
-  imageURL: string
+  imageURL: string;
 }
 
 interface ReviewCardProps {
@@ -19,7 +21,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ nominee }) => {
   const router = useRouter();
 
   const handleReview = () => {
-    const slug = nominee.name.toLowerCase().replace(/\s+/g, '-');
+    const slug = nominee.id
 router.push(`/judge/review/${slug}`);
   };
 
@@ -35,7 +37,7 @@ router.push(`/judge/review/${slug}`);
         />
       </div>
       <h2 className="text-white text-xl font-bold">{nominee.name}</h2>
-      <p className="text-gray-300 text-sm mb-2">{nominee.title}</p>
+      <p className="text-gray-300 text-sm mb-6">{nominee.title}</p>
       <p className="text-white text-sm mb-2">Achievements:</p>
       <p className="text-gray-300 text-sm mb-auto">{nominee.achievements}</p>
       <button

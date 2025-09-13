@@ -58,11 +58,11 @@ const CategoryHeroCenter = ({ index, title, description, subCategoryPath }: Prop
             </p>
 
             <div className="flex pt-1 items-center px-1 gap-1 md:gap-3 justify-center md:justify-start">
-              <Button
+              {/* <Button
               text="View Categories"
               className="rounded-md md:px-8 py-2 text-center hover:bg-[#E48900] hover:text-black sm:w-auto w-1/2 text-sm md:text-base"
               onClick={() => router.push('/categories')}
-              />
+              /> */}
               <Button
               text="Nominate Now"
               variant="filled"
