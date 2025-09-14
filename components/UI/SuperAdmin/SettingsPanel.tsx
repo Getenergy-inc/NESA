@@ -10,12 +10,6 @@ interface ApiLog {
   timestamp: string;
 }
 
-const integrations = [
-  { id: 1, name: "Slack", status: "Connected" },
-  { id: 2, name: "Mailgun", status: "Connected" },
-  { id: 3, name: "Twilio", status: "Disconnected" },
-];
-
 const auditLogs = [
   { id: 1, action: "Create Nominee", user: "Admin #12", time: "1h ago", status: "Success" },
   { id: 2, action: "Update Judge", user: "Admin #03", time: "3h ago", status: "Failed" },
@@ -47,42 +41,44 @@ const SystemSettings: React.FC = () => {
   };
 
   return (
-    <div className="p-6 space-y-6"
-          style={{
-          backgroundImage: "url('/images/bg/about_.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}>
+    <div
+      className="p-6 space-y-6"
+      style={{
+        backgroundImage: "url('/images/bg/about_.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <h2 className="text-2xl font-bold text-white dark:text-gray-100">
         ⚙️ System Settings & Integrations
       </h2>
 
       {/* Voting Period */}
       <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow space-y-4">
-        <h3 className="font-semibold text-[#17120a dark:text-gray-200">🗳️ Voting Period</h3>
+        <h3 className="font-semibold text-[#17120a] dark:text-gray-200">🗳️ Voting Period</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
-            className="p-2 rounded-lg border dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100"
+            className="p-2 rounded-lg border dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 w-full"
           />
           <input
             type="date"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
-            className="p-2 rounded-lg border dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100"
+            className="p-2 rounded-lg border dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 w-full"
           />
         </div>
         <button
           onClick={() => alert(`Voting period set: ${startDate} → ${endDate}`)}
-          className="px-4 py-2 bg-[#f59e0b] text-white rounded-lg hover:bg-indigo-700"
+          className="px-4 py-2 bg-[#f59e0b] text-white rounded-lg hover:bg-indigo-700 w-full md:w-auto"
         >
           Save Voting Period
         </button>
       </div>
 
-            {/* Organization Preferences */}
+      {/* Organization Preferences */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow p-6 space-y-4">
         <h3 className="text-lg font-semibold text-[#17120a] dark:text-gray-200">
           Organization Preferences
@@ -99,7 +95,7 @@ const SystemSettings: React.FC = () => {
               className="w-full p-2 rounded-lg border dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
             />
           </div>
-                    <div>
+          <div>
             <label className="block text-sm font-medium text-[#1a140b] dark:text-gray-300">
               Voting End
             </label>
@@ -118,7 +114,7 @@ const SystemSettings: React.FC = () => {
             onChange={() => setBonusCampaign(!bonusCampaign)}
             className="h-4 w-4"
           />
-          <span className="text-gray-400 dark:text-gray-300">
+          <span className="text-gray-600 dark:text-gray-300">
             Enable Bonus Campaigns
           </span>
         </div>
@@ -127,7 +123,7 @@ const SystemSettings: React.FC = () => {
       {/* Bonus Campaigns */}
       <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow space-y-4">
         <h3 className="font-semibold text-[#17120a] dark:text-gray-200">🎁 Bonus Campaigns</h3>
-        <div className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row gap-4">
           <input
             type="text"
             placeholder="Campaign Name"
@@ -142,13 +138,15 @@ const SystemSettings: React.FC = () => {
                 setCampaignName("");
               }
             }}
-            className="px-4 py-2 bg-[#f59e0b] text-white rounded-lg hover:bg-green-700"
+            className="px-4 py-2 bg-[#f59e0b] text-white rounded-lg hover:bg-green-700 w-full md:w-auto"
           >
             Create Campaign
           </button>
         </div>
         <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg">
-          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Active Campaign: “Double Votes Week”</p>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+            Active Campaign: “Double Votes Week”
+          </p>
           <div className="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2">
             <div className="bg-green-500 h-2 rounded-full" style={{ width: "65%" }}></div>
           </div>
@@ -159,26 +157,6 @@ const SystemSettings: React.FC = () => {
       {/* Integrations */}
       <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow space-y-4">
         <h3 className="font-semibold text-gray-800 dark:text-gray-200">🔌 Integrations</h3>
-        {/* <ul className="space-y-2">
-          {integrations.map((int) => (
-            <li
-              key={int.id}
-              className="flex justify-between items-center p-3 rounded-lg border dark:border-gray-700"
-            >
-              <span className="text-gray-800 dark:text-gray-200">{int.name}</span>
-              <span
-                className={`px-2 py-1 rounded-lg text-xs font-medium ${
-                  int.status === "Connected"
-                    ? "bg-green-100 text-green-700 dark:bg-green-700 dark:text-green-100"
-                    : "bg-red-100 text-red-700 dark:bg-red-700 dark:text-red-100"
-                }`}
-              >
-                {int.status}
-              </span>
-            </li>
-          ))}
-        </ul> */}
-
         <div className="space-y-3">
           {Object.entries(integrations).map(([key, value]) => (
             <div
@@ -198,34 +176,30 @@ const SystemSettings: React.FC = () => {
               </button>
             </div>
           ))}
-          </div>
+        </div>
       </div>
 
       {/* API Audit Logs */}
-      <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow">
-        <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-4">📜 API Audit Logs</h3>
-                <div className="overflow-x-auto">
-          <table className="min-w-full border dark:border-gray-700">
+      <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow space-y-6">
+        <h3 className="font-semibold text-gray-800 dark:text-gray-200">📜 API Audit Logs</h3>
+
+        {/* API Logs */}
+        <div className="overflow-x-auto">
+          <table className="min-w-full border dark:border-gray-700 text-sm">
             <thead>
               <tr className="bg-gray-100 dark:bg-gray-700 text-left">
-                <th className="px-4 py-2 text-sm font-semibold text-gray-800 dark:text-gray-200">
-                  Endpoint
-                </th>
-                <th className="px-4 py-2 text-sm font-semibold text-gray-800 dark:text-gray-200">
-                  Status
-                </th>
-                <th className="px-4 py-2 text-sm font-semibold text-gray-800 dark:text-gray-200">
-                  Timestamp
-                </th>
+                <th className="px-4 py-2 font-semibold">Endpoint</th>
+                <th className="px-4 py-2 font-semibold">Status</th>
+                <th className="px-4 py-2 font-semibold">Timestamp</th>
               </tr>
             </thead>
-                        <tbody>
+            <tbody>
               {mockApiLogs.map((log) => (
                 <tr
                   key={log.id}
                   className="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
                 >
-                  <td className="px-4 py-2 text-gray-800 dark:text-gray-200">{log.endpoint}</td>
+                  <td className="px-4 py-2">{log.endpoint}</td>
                   <td
                     className={`px-4 py-2 font-medium ${
                       log.status.includes("200")
@@ -240,40 +214,43 @@ const SystemSettings: React.FC = () => {
               ))}
             </tbody>
           </table>
-        <table className="w-full text-left">
-          <thead>
-            <tr className="text-gray-500 dark:text-gray-400 text-sm">
-              <th className="p-2">Action</th>
-              <th className="p-2">User</th>
-              <th className="p-2">Time</th>
-              <th className="p-2">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {auditLogs.map((log) => (
-              <tr key={log.id} className="border-t dark:border-gray-700">
-                <td className="p-2 text-gray-800 dark:text-gray-200">{log.action}</td>
-                <td className="p-2 text-gray-800 dark:text-gray-200">{log.user}</td>
-                <td className="p-2 text-gray-600 dark:text-gray-400">{log.time}</td>
-                <td className="p-2">
-                  <span
-                    className={`px-2 py-1 rounded-lg text-xs font-medium ${
-                      log.status === "Success"
-                        ? "bg-green-100 text-green-700 dark:bg-green-700 dark:text-green-100"
-                        : "bg-red-100 text-red-700 dark:bg-red-700 dark:text-red-100"
-                    }`}
-                  >
-                    {log.status}
-                  </span>
-                </td>
+        </div>
+
+        {/* Audit Logs */}
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-sm">
+            <thead>
+              <tr className="text-gray-500 dark:text-gray-400">
+                <th className="p-2">Action</th>
+                <th className="p-2">User</th>
+                <th className="p-2">Time</th>
+                <th className="p-2">Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {auditLogs.map((log) => (
+                <tr key={log.id} className="border-t dark:border-gray-700">
+                  <td className="p-2">{log.action}</td>
+                  <td className="p-2">{log.user}</td>
+                  <td className="p-2 text-gray-600 dark:text-gray-400">{log.time}</td>
+                  <td className="p-2">
+                    <span
+                      className={`px-2 py-1 rounded-lg text-xs font-medium ${
+                        log.status === "Success"
+                          ? "bg-green-100 text-green-700 dark:bg-green-700 dark:text-green-100"
+                          : "bg-red-100 text-red-700 dark:bg-red-700 dark:text-red-100"
+                      }`}
+                    >
+                      {log.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-    </div>
-    
   );
 };
 

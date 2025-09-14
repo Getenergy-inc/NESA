@@ -18,12 +18,17 @@ export const navlinks: NavLink[] = [
       {
         label: "About NESA-Africa 2025 Judges",
         path: "/about-judges",
-        icon: "scale",
+        icon: "Scale",
       },
       {
         label: "About NESA Africa/Nigeria 2025 Awards",
         path: "/about/awards-2025",
         icon: "Award",
+      },
+      {
+        label: "About NESA Advisory Board",
+        path: "/about/about-nesa-boa",
+        icon: "Users",
       },
       {
         label: "About SECF",
@@ -94,7 +99,11 @@ export const navlinks: NavLink[] = [
         path: "/get-involved/partner",
         icon: "Handshake",
       },
-     
+      {
+        label: "Apply As A Fundraiser",
+        path: "/get-involved/apply-as-fundraiser",
+        icon: "Handshake",
+      },
     ],
   },
   {

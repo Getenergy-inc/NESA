@@ -1,9 +1,16 @@
-// app/components/admin/ChapterAmbassadorTracker.tsx
 "use client";
 
 import React from "react";
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, CartesianGrid,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  CartesianGrid,
 } from "recharts";
 
 interface Ambassador {
@@ -47,62 +54,65 @@ const chapterStats = [
   { region: "Central Africa", chapters: 5 },
 ];
 
-
-const ChapterTracker: React.FC = () => {  const totalChapters = chapterStats.reduce((sum, c) => sum + c.chapters, 0);
+const ChapterTracker: React.FC = () => {
+  const totalChapters = chapterStats.reduce((sum, c) => sum + c.chapters, 0);
   const activeAmbassadors = ambassadors.filter((a) => a.status === "Active").length;
   const topRegion = chapterStats.reduce((max, c) =>
     c.chapters > max.chapters ? c : max
   ).region;
 
   return (
-    <div className="p-6 space-y-6"
-          style={{
-          backgroundImage: "url('/images/bg/about_.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}>
-      <h2 className="text-2xl font-bold text-white dark:text-gray-100">
+    <div
+      className="p-4 sm:p-6 space-y-6"
+      style={{
+        backgroundImage: "url('/images/bg/about_.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <h2 className="text-xl sm:text-2xl font-bold text-white dark:text-gray-100">
         🌍 Chapter & Ambassador Tracker
       </h2>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-whiteGold dark:bg-gray-800 p-4 rounded-2xl shadow">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-white/60 dark:bg-gray-800 p-4 rounded-2xl shadow">
           <p className="text-sm text-[#17120a] dark:text-gray-400">Active Chapters</p>
-          <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">15</p>
+          <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">15</p>
         </div>
-        <div className="bg-whiteGold dark:bg-gray-800 p-4 rounded-2xl shadow">
+        <div className="bg-white/60 dark:bg-gray-800 p-4 rounded-2xl shadow">
           <p className="text-sm text-[#17120a] dark:text-gray-400">Ambassadors</p>
-          <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">147</p>
+          <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">147</p>
         </div>
-        <div className="bg-whiteGold dark:bg-gray-800 p-4 rounded-2xl shadow">
+        <div className="bg-white/60 dark:bg-gray-800 p-4 rounded-2xl shadow">
           <p className="text-sm text-[#17120a] dark:text-gray-400">Events (YTD)</p>
-          <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">71</p>
+          <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">71</p>
         </div>
-        <div className="bg-whiteGold dark:bg-gray-800 p-4 rounded-2xl shadow">
+        <div className="bg-white/60 dark:bg-gray-800 p-4 rounded-2xl shadow">
           <p className="text-sm text-[#17120a] dark:text-gray-400">Avg. Engagement Rate</p>
-          <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">82%</p>
+          <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">82%</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-4 bg-whiteGold dark:bg-gray-800 rounded-2xl shadow">
-          <h3 className="text-lg font-semibold">Total Chapters</h3>
-          <p className="text-2xl font-bold text-blue-600">{totalChapters}</p>
+      {/* Extra Stats */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="p-4 bg-white/60 dark:bg-gray-800 rounded-2xl shadow">
+          <h3 className="text-base sm:text-lg font-bold">Total Chapters</h3>
+          <p className="text-xl font-bold text-blue-600">{totalChapters}</p>
         </div>
-        <div className="p-4 bg-whiteGold dark:bg-gray-800 rounded-2xl shadow">
-          <h3 className="text-lg font-semibold">Active Ambassadors</h3>
-          <p className="text-2xl font-bold text-green-600">{activeAmbassadors}</p>
+        <div className="p-4 bg-white/60 dark:bg-gray-800 rounded-2xl shadow">
+          <h3 className="text-base sm:text-lg font-bold">Active Ambassadors</h3>
+          <p className="text-xl font-bold text-green-600">{activeAmbassadors}</p>
         </div>
-        <div className="p-4 bg-whiteGold dark:bg-gray-800 rounded-2xl shadow">
-          <h3 className="text-lg font-semibold">Top Region</h3>
-          <p className="text-2xl font-bold text-purple-600">{topRegion}</p>
+        <div className="p-4 bg-white/60 dark:bg-gray-800 rounded-2xl shadow">
+          <h3 className="text-base sm:text-lg font-bold">Top Region</h3>
+          <p className="text-xl font-bold text-purple-600">{topRegion}</p>
         </div>
       </div>
 
-      {/* Charts Grid */}
-      <div className="grid md:grid-cols-2 gap-6">
-        {/* Bar Chart: Ambassadors per Chapter */}
+      {/* Charts & Table Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Ambassadors by Chapter */}
         <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow">
           <h3 className="font-semibold text-[#17120a] dark:text-gray-200 mb-4">
             👥 Ambassadors by Chapter
@@ -116,24 +126,28 @@ const ChapterTracker: React.FC = () => {  const totalChapters = chapterStats.red
             </BarChart>
           </ResponsiveContainer>
         </div>
-      {/* Bar Chart */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow px-6 py-10">
-            <h3 className="text-lg [#17120a] font-semibold mb-4">Chapters per Region</h3>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={chapterStats}>
-            <CartesianGrid strokeDasharray="3 3" className="stroke-gray-300 dark:stroke-gray-700" />
-            <XAxis dataKey="region" stroke="#8884d8" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="chapters" fill="#[#2a1f15]" radius={[6, 6, 0, 0]} />
-          </BarChart>  
-        </ResponsiveContainer>
+
+        {/* Chapters per Region */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
+          <h3 className="text-base sm:text-lg font-semibold text-[#17120a] dark:text-gray-200 mb-4">
+            📊 Chapters per Region
+          </h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={chapterStats}>
+              <CartesianGrid strokeDasharray="3 3" className="stroke-gray-300 dark:stroke-gray-700" />
+              <XAxis dataKey="region" stroke="#8884d8" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="chapters" fill="#2a1f15" radius={[6, 6, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
       {/* Ambassadors Table */}
-      <div className="overflow-x-auto bg-whiteGold dark:bg-gray-800 rounded-2xl shadow">
-        <table className="min-w-full text-sm">
-          <thead className="bg-whiteGold text-[#17120a] dark:bg-gray-700">
+      <div className="overflow-x-auto bg-white dark:bg-gray-800 rounded-2xl shadow">
+        <table className="min-w-full text-sm sm:text-base">
+          <thead className="bg-gray-100 dark:bg-gray-700 text-[#17120a] dark:text-gray-200">
             <tr>
               <th className="px-4 py-2 text-left">Name</th>
               <th className="px-4 py-2 text-left">Chapter</th>
@@ -174,22 +188,21 @@ const ChapterTracker: React.FC = () => {  const totalChapters = chapterStats.red
         )}
       </div>
 
-        {/* Line Chart: Engagement Trends */}
-        <div className="bg-whiteGold dark:bg-gray-800 p-4 rounded-2xl shadow">
-          <h3 className="font-semibold text-[#17120a] dark:text-gray-200 mb-4">
-            📈 Events & Engagement Trends
-          </h3>
-          <ResponsiveContainer width="100%" height={250}>
-            <LineChart data={engagementData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
-              <XAxis dataKey="month" stroke="#888" />
-              <YAxis />
-              <Tooltip />
-              <Line type="monotone" dataKey="events" stroke="#3B82F6" strokeWidth={2} />
-              <Line type="monotone" dataKey="engagement" stroke="#10B981" strokeWidth={2} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+      {/* Events & Engagement Trends */}
+      <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow">
+        <h3 className="font-semibold text-[#17120a] dark:text-gray-200 mb-4">
+          📈 Events & Engagement Trends
+        </h3>
+        <ResponsiveContainer width="100%" height={250}>
+          <LineChart data={engagementData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
+            <XAxis dataKey="month" stroke="#888" />
+            <YAxis />
+            <Tooltip />
+            <Line type="monotone" dataKey="events" stroke="#3B82F6" strokeWidth={2} />
+            <Line type="monotone" dataKey="engagement" stroke="#10B981" strokeWidth={2} />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );

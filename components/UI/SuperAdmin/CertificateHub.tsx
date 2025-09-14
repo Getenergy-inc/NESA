@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -26,37 +25,40 @@ const CertificateHub: React.FC = () => {
   };
 
   return (
-    <div className="p-6 space-y-6"
-          style={{
-          backgroundImage: "url('/images/bg/about_.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}>
-      <h2 className="text-2xl font-bold text-white dark:text-gray-100">
+    <div
+      className="p-4 sm:p-6 space-y-6"
+      style={{
+        backgroundImage: "url('/images/bg/about_.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Header */}
+      <h2 className="text-xl sm:text-2xl font-bold text-white dark:text-gray-100">
         🏆 Digital Certificate Hub
       </h2>
 
-      {/* Issue Certificate */}
+      {/* Issue Certificate Button */}
       <div className="flex justify-end">
-        <button className="px-4 py-2 bg-[#f59e0b] text-white rounded-lg">
+        <button className="px-3 sm:px-4 py-2 bg-[#f59e0b] text-white rounded-lg text-sm sm:text-base">
           + Issue New Certificate
         </button>
       </div>
 
-      {/* Verification */}
-      <div className="bg-whiteGold dark:bg-gray-800 p-4 rounded-2xl shadow space-y-4">
+      {/* Verification Section */}
+      <div className="bg-white/50 p-4 rounded-2xl shadow-lg space-y-4">
         <h3 className="font-semibold text-[#17120a] dark:text-gray-200">🔍 Verify Certificate</h3>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <input
             type="text"
             placeholder="Enter Certificate ID..."
             value={searchId}
             onChange={(e) => setSearchId(e.target.value)}
-            className="flex-1 rounded-lg dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+            className="flex-1 rounded-lg border px-3 py-2 text-sm sm:text-base dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
           />
           <button
             onClick={verifyCertificate}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+            className="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm sm:text-base"
           >
             Verify
           </button>
@@ -67,8 +69,8 @@ const CertificateHub: React.FC = () => {
       </div>
 
       {/* Certificates Table */}
-      <div className=" dark:bg-gray-800 rounded-2xl shadow overflow-x-auto">
-        <table className="w-full text-left text-gray-700 dark:text-gray-200">
+      <div className="dark:bg-gray-800 rounded-2xl shadow overflow-x-auto">
+        <table className="min-w-full text-left text-gray-700 dark:text-gray-200 text-sm sm:text-base">
           <thead>
             <tr className="border-b text-white border-gray-200 dark:border-gray-700">
               <th className="p-2">Certificate ID</th>
@@ -80,22 +82,25 @@ const CertificateHub: React.FC = () => {
           </thead>
           <tbody>
             {certificates.map((c, idx) => (
-              <tr key={idx} className="border-b text-whiteGold border-gray-100 dark:border-gray-700">
+              <tr
+                key={idx}
+                className="border-b text-whiteGold border-gray-100 dark:border-gray-700"
+              >
                 <td className="p-2">{c.id}</td>
                 <td className="p-2">{c.name}</td>
                 <td className="p-2">{c.award}</td>
                 <td className="p-2">
                   <span
-                    className={`px-2 py-1 rounded-lg text-xs font-medium ${statusColors[c.status]}`}
+                    className={`px-2 py-1 rounded-lg text-xs sm:text-sm font-medium ${statusColors[c.status]}`}
                   >
                     {c.status}
                   </span>
                 </td>
                 <td className="p-2 space-x-2">
-                  <button className="px-3 py-1  text-deepGold rounded-lg text-sm">
+                  <button className="px-2 sm:px-3 py-1 text-deepGold rounded-lg text-xs sm:text-sm">
                     View
                   </button>
-                  <button className="px-3 py-1 bg-[#ea580c] text-white rounded-lg text-sm">
+                  <button className="px-2 sm:px-3 py-1 bg-[#ea580c] text-white rounded-lg text-xs sm:text-sm">
                     Revoke
                   </button>
                 </td>
@@ -103,7 +108,10 @@ const CertificateHub: React.FC = () => {
             ))}
             {certificates.length === 0 && (
               <tr>
-                <td colSpan={5} className="p-4 text-center text-gray-500 dark:text-gray-400">
+                <td
+                  colSpan={5}
+                  className="p-4 text-center text-gray-500 dark:text-gray-400"
+                >
                   No certificates issued yet
                 </td>
               </tr>

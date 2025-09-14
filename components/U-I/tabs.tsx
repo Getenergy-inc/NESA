@@ -1,156 +1,139 @@
-// // "use client";
 
-// // import React from "react";
+// "use client";
 
-// // export interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
-// //   defaultValue?: string;
-// // }
-
-// // export function Tabs({ defaultValue, className = "", children, ...props }: TabsProps) {
-// //   const [activeTab, setActiveTab] = React.useState(defaultValue);
-
-// //   return (
-// //     <div className={`w-full ${className}`} {...props}>
-// //       {React.Children.map(children, (child: any) =>
-// //         React.cloneElement(child, { activeTab, setActiveTab })
-// //       )}
-// //     </div>
-// //   );
-// // }
-
-// // export function TabsList({
-// //   className = "",
-// //   children,
-// //   ...props
-// // }: React.HTMLAttributes<HTMLDivElement>) {
-// //   return (
-// //     <div
-// //       className={`inline-flex h-10 items-center justify-center rounded-md bg-gray-100 p-1 text-gray-600 dark:bg-gray-800 dark:text-gray-300 ${className}`}
-// //       {...props}
-// //     >
-// //       {children}
-// //     </div>
-// //   );
-// // }
-
-// // export function TabsTrigger({
-// //   value,
-// //   active,
-// //   setActive,
-// //   className = "",
-// //   children,
-// //   ...props
-// // }: {
-// //   value: string;
-// //   active?: string;
-// //   setActive?: (val: string) => void;
-// //   className?: string;
-// //   children: React.ReactNode;
-// // }) {
-// //   const isActive = active === value;
-// //   return (
-// //     <button
-// //       className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all ${
-// //         isActive
-// //           ? "bg-white text-gray-900 shadow-sm dark:bg-gray-700 dark:text-white"
-// //           : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
-// //       } ${className}`}
-// //       onClick={() => setActive && setActive(value)}
-// //       {...props}
-// //     >
-// //       {children}
-// //     </button>
-// //   );
-// // }
-
-// // export function TabsContent({
-// //   value,
-// //   active,
-// //   className = "",
-// //   children,
-// //   ...props
-// // }: {
-// //   value: string;
-// //   active?: string;
-// //   className?: string;
-// //   children: React.ReactNode;
-// // }) {
-// //   if (active !== value) return null;
-// //   return (
-// //     <div
-// //       className={`mt-2 rounded-md border border-gray-200 p-4 dark:border-gray-700 ${className}`}
-// //       {...props}
-// //     >
-// //       {children}
-// //     </div>
-// //   );
-// // }
-
-
-// // components/ui/tabs.tsx
 // import * as React from "react";
 
+// interface TabsContextProps {
+//   value: string;
+//   setValue: (val: string) => void;
+// }
+
+// const TabsContext = React.createContext<TabsContextProps | null>(null);
+
 // interface TabsProps {
-//   value: string;
-//   onValueChange: (value: string) => void;
+//   defaultValue: string;
+//   value?: string;
+//   onValueChange?: (val: string) => void;
 //   children: React.ReactNode;
+//   className?: string;
 // }
 
-// export function Tabs({ value, onValueChange, children }: TabsProps) {
-//   return <div>{children}</div>;
+// export function Tabs({ defaultValue, value: controlledValue, onValueChange, children, className }: TabsProps) {
+//   const [value, setValue] = React.useState(defaultValue);
+
+//   const currentValue = controlledValue !== undefined ? controlledValue : value;
+
+//   const handleChange = (val: string) => {
+//     if (controlledValue === undefined) {
+//       setValue(val);
+//     }
+//     onValueChange?.(val);
+//   };
+
+//   return (
+//     <TabsContext.Provider value={{ value: currentValue, setValue: handleChange }}>
+//       <div className={className}>{children}</div>
+//     </TabsContext.Provider>
+//   );
 // }
 
-// export function TabsList({
-//   className = "",
-//   ...props
-// }: React.HTMLAttributes<HTMLDivElement>) {
-//   return <div className={`flex gap-2 ${className}`} {...props} />;
+// export function TabsList({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+//   return <div className={`flex gap-2 ${className}`}>{children}</div>;
 // }
 
-// interface TabsTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-//   value: string;
-//   isActive?: boolean;
-//   onClick?: () => void;
-// }
+// export function TabsTrigger({ value, children, className = "" }: { value: string; children: React.ReactNode; className?: string }) {
+//   const ctx = React.useContext(TabsContext);
+//   if (!ctx) throw new Error("TabsTrigger must be used inside <Tabs>");
 
-// export function TabsTrigger({
-//   children,
-//   value,
-//   isActive,
-//   onClick,
-//   className = "",
-//   ...props
-// }: TabsTriggerProps) {
+//   const isActive = ctx.value === value;
+
 //   return (
 //     <button
-//       className={`px-3 py-1 rounded-md ${
-//         isActive ? "bg-blue-600 text-white" : "bg-gray-200 dark:bg-gray-700"
+//       onClick={() => ctx.setValue(value)}
+//       className={`px-4 py-2 rounded-md border text-sm ${
+//         isActive ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
 //       } ${className}`}
-//       onClick={onClick}
-//       {...props}
 //     >
 //       {children}
 //     </button>
 //   );
 // }
 
-// interface TabsContentProps
-//   extends React.HTMLAttributes<HTMLDivElement> {
-//   value: string;
-//   activeValue?: string; // 👈 NEW prop
-// }
+// export function TabsContent({ value, children, className = "" }: { value: string; children: React.ReactNode; className?: string }) {
+//   const ctx = React.useContext(TabsContext);
+//   if (!ctx) throw new Error("TabsContent must be used inside <Tabs>");
 
-// export function TabsContent({
-//   children,
-//   value,
-//   activeValue,
-//   className = "",
-//   ...props
-// }: TabsContentProps) {
-//   if (value !== activeValue) return null; // only render if active
-//   return (
-//     <div className={`mt-2 ${className}`} {...props}>
-//       {children}
-//     </div>
-//   );
+//   if (ctx.value !== value) return null;
+
+//   return <div className={`mt-4 ${className}`}>{children}</div>;
 // }
+"use client";
+
+import * as React from "react";
+
+interface TabsContextProps {
+  value: string;
+  setValue: (val: string) => void;
+}
+
+const TabsContext = React.createContext<TabsContextProps | null>(null);
+
+interface TabsProps {
+  defaultValue?: string; // make optional
+  value?: string; // for controlled mode
+  onValueChange?: (val: string) => void;
+  children: React.ReactNode;
+  className?: string;
+}
+
+export function Tabs({ defaultValue, value: controlledValue, onValueChange, children, className }: TabsProps) {
+  const [value, setValue] = React.useState(defaultValue ?? ""); // safe default
+
+  const currentValue = controlledValue !== undefined ? controlledValue : value;
+
+  const handleChange = (val: string) => {
+    if (controlledValue === undefined) {
+      setValue(val); // uncontrolled mode
+    }
+    onValueChange?.(val); // notify parent
+  };
+
+  return (
+    <TabsContext.Provider value={{ value: currentValue, setValue: handleChange }}>
+      <div className={className}>{children}</div>
+    </TabsContext.Provider>
+  );
+}
+
+export function TabsList({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return <div className={`flex gap-2 border-b pb-2 ${className}`}>{children}</div>;
+}
+
+export function TabsTrigger({ value, children, className = "" }: { value: string; children: React.ReactNode; className?: string }) {
+  const ctx = React.useContext(TabsContext);
+  if (!ctx) throw new Error("TabsTrigger must be used inside <Tabs>");
+
+  const isActive = ctx.value === value;
+
+  return (
+    <button
+      onClick={() => ctx.setValue(value)}
+      className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+        isActive
+          ? "bg-blue-600 text-white shadow"
+          : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+      } ${className}`}
+    >
+      {children}
+    </button>
+  );
+}
+
+export function TabsContent({ value, children, className = "" }: { value: string; children: React.ReactNode; className?: string }) {
+  const ctx = React.useContext(TabsContext);
+  if (!ctx) throw new Error("TabsContent must be used inside <Tabs>");
+
+  if (ctx.value !== value) return null;
+
+  return <div className={`mt-4 ${className}`}>{children}</div>;
+}

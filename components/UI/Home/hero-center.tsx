@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/components/Common/Slide/style.module.scss";
@@ -8,12 +8,43 @@ import { opacityTrans } from "@/lib/utils/transitions";
 import HeroCarousel from "@/components/UI/Carousel/HeroCarousel";
 import ReadMoreModal from "@/components/UI/Modal/ReadMoreModal";
 import { FaUserFriends, FaTrophy, FaTicketAlt, FaPlay } from "react-icons/fa";
+import PopupSlider from "@/components/UI/Common/PopupSlider";
+
 
 const HeroCenter = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
+ 
+
+  // Animation variants
+
+
+  const videoVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  
+
+  // Optionally auto-close after a few seconds
+  useEffect(() => {
+    if (!showPopup) return;
+    const timer = setTimeout(() => setShowPopup(false), 30000); // 30 seconds
+    return () => clearTimeout(timer);
+  }, [showPopup]);
+
 
   return (
     <>
+      <PopupSlider open={showPopup} onClose={() => setShowPopup(false)} />
+
       <div className="absolute inset-0 min-h-full w-full pointer-events-none">
         <Image
           src={"/images/headhero.png"}
@@ -46,6 +77,9 @@ const HeroCenter = () => {
         </motion.div>
       </div>
 
+ 
+
+
       {/* Main hero content with new structure - moved up */}
       <div className="text-white relative md:px-10 px-2 pt-6 pb-4 sm:pt-8 sm:pb-4 md:pt-10 md:pb-6 lg:pt-12 lg:pb-6">
         <motion.div
@@ -55,6 +89,7 @@ const HeroCenter = () => {
           variants={{
             visible: { transition: { staggerChildren: 0.25 } },
           }}
+          
         >
           {/* Left Column - Text Content */}
           <motion.div
@@ -66,23 +101,31 @@ const HeroCenter = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-deepGold font-raleway leading-tight flex items-center justify-center md:justify-start"
+              className="text-xl md:text-4xl lg:text-5xl font-bold text-deepGold font-raleway leading-tight flex items-center justify-center md:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             >
               {/* <FaStar className="text-deepGold animate-pulse" /> */}
-              <span>Honoring African Champions in Education</span>
+              <span>🏆 Honoring Africa's Changemakers – Building the Future of Education Across the Continent</span>
               {/* <FaStar className="text-deepGold animate-pulse" /> */}
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-gray-300 leading-relaxed font-poppins"
+              className="text-sm md:text-xl text-white leading-relaxed font-poppins"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
             >
-              Celebrating unsung heroes, innovative changemakers, and bold institutions shaping Africa's education future.
+              After 15 years of vision, setbacks, and unwavering commitment — NESA-Africa 2025 emerges as the continent’s highest platform for honoring those rebuilding African education from the ground up.
+            </motion.p>
+            <motion.p
+              className="text-sm md:text-xl text-deepGold leading-relaxed font-poppins"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            >
+              The NESA Africa Awards 2025 is a flagship initiative of the Santos Creations Educational Foundation (SCEF) — recognizing visionaries across NGOs, corporations, policy, media, EdTech, philanthropy, creative sectors, and the diaspora who are architecting Africa’s education systems. Santos Creations Educational Foundation
             </motion.p>
 
             <motion.p
@@ -92,6 +135,14 @@ const HeroCenter = () => {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
             >
               From classrooms to boardrooms — if they move education forward, they deserve recognition.
+            </motion.p>
+            <motion.p
+              className="text-base md:text-lg text-white leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+            >
+              🛑 This is not a teacher or student award. It celebrates builders of systems, advocates of change, and funders of futures.
             </motion.p>
 
             <motion.div
@@ -142,7 +193,7 @@ const HeroCenter = () => {
           <motion.div className="group">
             <motion.button
               onClick={() => console.log("Refer a friend")}
-              className="w-full bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3"
+              className="w-[80%] bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3"
               whileHover={{
                 scale: 1.05,
                 y: -3,
@@ -161,7 +212,7 @@ const HeroCenter = () => {
           <motion.div className="group">
             <Link href="/get-involved/nomination">
               <motion.div
-                className="w-full bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 ring-2 ring-primaryGold/20 hover:ring-primaryGold/40 cursor-pointer"
+                className="w-[80%] bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 ring-2 ring-primaryGold/20 hover:ring-primaryGold/40 cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   y: -3,
@@ -181,7 +232,7 @@ const HeroCenter = () => {
           <motion.div className="group">
             <motion.button
               onClick={() => console.log("Get Gala Tickets")}
-              className="w-full bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 hover:bg-primaryGold hover:text-darkBrown"
+              className="w-[80%] bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 hover:bg-primaryGold hover:text-darkBrown"
               whileHover={{
                 scale: 1.05,
                 y: -3,
@@ -199,7 +250,7 @@ const HeroCenter = () => {
           <motion.div className="group">
             <motion.button
               onClick={() => console.log("Watch NESA TV")}
-              className="w-full bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 hover:bg-primaryGold hover:text-darkBrown"
+              className="w-[80%] bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 hover:bg-primaryGold hover:text-darkBrown"
               whileHover={{
                 scale: 1.05,
                 y: -3,
