@@ -7,9 +7,14 @@ export const navlinks: NavLink[] = [
   },
   {
     label: "About",
-    path: "/about",
-    icon: "Info",
+    path: "",
+    icon: "",
     children: [
+      {
+        label: "About NESA",
+        path: "/about",
+        icon: "Info",
+      },
       {
         label: "NESA Vision",
         path: "/about/vision",
@@ -18,7 +23,7 @@ export const navlinks: NavLink[] = [
       {
         label: "About NESA-Africa 2025 Judges",
         path: "/about-judges",
-        icon: "scale",
+        icon: "Scale",
       },
       {
         label: "About NESA Africa/Nigeria 2025 Awards",
@@ -39,14 +44,14 @@ export const navlinks: NavLink[] = [
   },
   {
     label: "Awards",
-    path: "/awards",
-    icon: "Trophy",
+    path: "",
+    icon: "",
     children: [
-      // {
-      //   label: "Awards",
-      //   path: "/awards",
-      //   icon: "Scale",
-      // },
+      {
+        label: "Overview",
+        path: "/awards",
+        icon: "ChartNoAxesGantt",
+      },
       {
         label: "Africa Icon Blue Garnet Award",
         path: "/nomination/sub-categories/africa-lifetime-education-icon",
@@ -71,9 +76,14 @@ export const navlinks: NavLink[] = [
   },
   {
     label: "Get Involved",
-    path: "/get-involved",
-    icon: "Users",
+    path: "",
+    icon: "",
     children: [
+      {
+        label: "Engage",
+        path: "/get-involved",
+        icon: "Users",
+      },
       {
         label: "Nominate Now",
         path: "/nomination",
@@ -99,17 +109,22 @@ export const navlinks: NavLink[] = [
   },
   {
     label: "Media",
-    path: "/media",
-    icon: "Play",
+    path: "",
+    icon: "",
     children: [
       {
+        label: "NESA Media",
+        path: "/nesa-media",
+        icon: "Play",
+      },
+      {
         label: "NESA TV",
-        path: "/media/nesa-tv",
+        path: "/nesatv",
         icon: "Tv",
       },
       {
         label: "It's In Me Radio",
-        path: "/media/its-in-me-radio",
+        path: "/radio-podcast",
         icon: "Radio",
       },
     ],
@@ -128,7 +143,7 @@ export const navlinks: NavLink[] = [
   },
   {
     label: "Support",
-    path: "/support",
+    path: "", // path: "/support",
     icon: "HelpCircle",
     children: [
       {
@@ -151,7 +166,7 @@ export const navlinks: NavLink[] = [
   },
   {
     label: "Language",
-    path: "/language",
+    path: "", //path: /language
     icon: "Languages",
     children: [
       {
@@ -198,7 +213,7 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
   },
   
   {
-    label: "Buy Merchandise",
+    label: "Vote with AfriGoldcoin",
     path: "/voting",
     description: "Wallet-linked voting system",
   },
@@ -213,13 +228,13 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
     description: "Local chapter platform",
   },
   {
-    label: "Vote with AfriGoldcoin",
-    path: "/vote",
+    label: "Buy Merchandise",
+    path: "/merchandise",
     description: "GFA Wallet donation",
   },
   {
     label: "Apply as an Ambassador",
-    path: "/nesatv",
+    path: "/ambassador",
     description: "NESA TV platform",
   }
 ];

@@ -23,6 +23,7 @@ import {
   UserRound,
   Globe,
   Languages,
+  ChartNoAxesGantt,
 } from 'lucide-react';
 
 // Icon mapping for navigation items
@@ -48,6 +49,7 @@ const iconMap = {
   Tv,
   Radio,
   ChevronDown,
+  ChartNoAxesGantt,
   // Language icons (using Globe as alternative for country flags)
   EN: Globe, // English
   FR: Globe, // French
