@@ -1,8 +1,0 @@
-.next
-node_modules
-.env.local
-.env
-*.log
-.DS_Store
-.vscode
-.git

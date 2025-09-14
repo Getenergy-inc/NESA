@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 interface CommentProps {
-  id: number;
+  id: string;
   name: string;
   title: string;
   comment: string;
