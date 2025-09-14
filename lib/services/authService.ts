@@ -1,4 +1,3 @@
-// authService.ts
 import apiClient from './apiClient';
 import { SignupFormData, SignupResponse } from '@/lib/types/signup';
 import { mapFormDataToBackend, mapBackendResponseToFrontend } from '@/lib/utils/signupMapping';
@@ -208,9 +207,25 @@ export const signupFlow = async (userData: SignupFormData): Promise<SignupRespon
 
     // Map backend response to frontend format
     return mapBackendResponseToFrontend(response);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Signup flow failed:', error);
-    throw new Error(error instanceof Error ? error.message : 'Signup failed');
+    
+    // Handle 409 conflict (user already exists)
+    if (error.response?.status === 409) {
+      return {
+        success: false,
+        message: 'User already exists. Please verify your email or try logging in.',
+        user: undefined
+      };
+    }
+    
+    // Handle other errors
+    const errorMessage = error.response?.data?.message || error.message || 'Signup failed';
+    return {
+      success: false,
+      message: errorMessage,
+      user: undefined
+    };
   }
 };
 

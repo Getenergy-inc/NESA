@@ -16,7 +16,13 @@ export function mapAccountType(frontendType: string): string {
 }
 
 // Map frontend intents to backend enum format
-export function mapIntents(frontendIntents: string[]): string[] {
+export function mapIntents(frontendIntents: string[] | any): string[] {
+  // Ensure we have an array
+  if (!Array.isArray(frontendIntents)) {
+    console.warn('mapIntents received non-array:', frontendIntents);
+    return [];
+  }
+  
   const mapping: Record<string, string> = {
     'Vote or Nominate': 'VOTE_OR_NOMINATE',
     'Apply for Eduaid Scholarship': 'APPLY_FOR_EDUAID_SCHOLARSHIP',
@@ -53,15 +59,31 @@ export function mapLanguage(frontendLanguage: string): string {
 
 // Main mapping function to convert frontend form data to backend format
 export function mapFormDataToBackend(frontendData: SignupFormData): any {
+  console.log('=== SIGNUP DATA MAPPING ===');
+  console.log('Frontend data received:', frontendData);
+  console.log('Email being used:', frontendData.email);
+  console.log('Account Type:', frontendData.accountType);
+  console.log('Intents:', frontendData.intents, 'Type:', typeof frontendData.intents, 'IsArray:', Array.isArray(frontendData.intents));
+  console.log('Full Name:', frontendData.fullName);
+  console.log('Country:', frontendData.country);
+  console.log('State:', frontendData.state);
+  
   const baseData = {
     email: frontendData.email,
     password: frontendData.password,
     country: frontendData.country,
     state: frontendData.state,
     accountType: mapAccountType(frontendData.accountType),
-    intents: frontendData.intents ? mapIntents(frontendData.intents) : undefined,
+    intents: (() => {
+      if (!frontendData.intents) return [];
+      if (Array.isArray(frontendData.intents)) return mapIntents(frontendData.intents);
+      console.warn('Intents is not an array, converting:', frontendData.intents);
+      return [];
+    })(),
     preferredLanguage: frontendData.preferredLanguage ? mapLanguage(frontendData.preferredLanguage) : 'EN'
   };
+  
+  console.log('Mapped base data:', baseData);
 
   // Add account-type specific fields
   if (frontendData.accountType === 'Individual') {
@@ -88,21 +110,27 @@ export function mapFormDataToBackend(frontendData: SignupFormData): any {
 
 // Map backend response to frontend format
 export function mapBackendResponseToFrontend(backendResponse: any): any {
-  return {
-    success: backendResponse.success,
-    message: backendResponse.message,
-    user: backendResponse.data?.user ? {
-      id: backendResponse.data.user.id,
-      email: backendResponse.data.user.email,
-      role: backendResponse.data.user.role,
-      accountType: backendResponse.data.user.accountType,
-      isVerified: backendResponse.data.user.isVerified,
-      fullName: backendResponse.data.user.fullName,
-      firstName: backendResponse.data.user.firstName,
-      lastName: backendResponse.data.user.lastName
+  console.log('Backend response received:', backendResponse);
+  console.log('Response data:', backendResponse.data);
+  
+  const mappedResponse = {
+    success: backendResponse.data?.success ?? backendResponse.success,
+    message: backendResponse.data?.message ?? backendResponse.message,
+    user: backendResponse.data?.data?.user ? {
+      id: backendResponse.data.data.user.id,
+      email: backendResponse.data.data.user.email,
+      role: backendResponse.data.data.user.role,
+      accountType: backendResponse.data.data.user.accountType,
+      isVerified: backendResponse.data.data.user.isVerified,
+      fullName: backendResponse.data.data.user.fullName,
+      firstName: backendResponse.data.data.user.firstName,
+      lastName: backendResponse.data.data.user.lastName
     } : undefined,
-    tokens: backendResponse.data?.tokens
+    tokens: backendResponse.data?.data?.tokens
   };
+  
+  console.log('Mapped response:', mappedResponse);
+  return mappedResponse;
 }
 
 // Determine expected dashboard route based on role and intents

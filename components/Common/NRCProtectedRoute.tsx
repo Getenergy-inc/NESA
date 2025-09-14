@@ -16,10 +16,6 @@ const NRCProtectedRoute: React.FC<NRCProtectedRouteProps> = ({ children }) => {
   const { loading, canAccessDashboard, isPending, isRejected, hasApplication } = useNRCStatus();
   const router = useRouter();
 
-  // TODO: Re-enable authentication protection when backend is ready
-  // Authentication temporarily disabled for testing purposes
-
-  /* ORIGINAL AUTHENTICATION LOGIC - COMMENTED FOR TESTING
   // Show loading state
   if (loading || !isAuthenticated) {
     return (
@@ -42,11 +38,6 @@ const NRCProtectedRoute: React.FC<NRCProtectedRouteProps> = ({ children }) => {
   if (canAccessDashboard) {
     return <>{children}</>;
   }
-  */
-
-  // For testing: Direct access to protected content
-  console.log('NRCProtectedRoute - Testing mode: Allowing direct access');
-  return <>{children}</>;
 
   /* REMAINING AUTHENTICATION LOGIC - COMMENTED FOR TESTING
   // User has pending application

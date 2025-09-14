@@ -17,7 +17,8 @@ import {
   X
 } from 'lucide-react';
 import Button from '@/components/Common/Button';
-import { submitNRCApplication } from '@/lib/services/mockNRCService';
+import { useNRCRegistration } from '@/lib/hooks/useNRCRegistration';
+import { useAuthContext } from '@/lib/context/AuthContext';
 
 // Form validation schema
 const nrcApplicationSchema = z.object({
@@ -49,7 +50,8 @@ type NRCApplicationData = z.infer<typeof nrcApplicationSchema>;
 
 const NRCApplicationForm: React.FC = () => {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const { user } = useAuthContext();
+  const { loading, error, success, registerVolunteer, clearError, clearSuccess } = useNRCRegistration();
   const [showSuccess, setShowSuccess] = useState(false);
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [cvFile, setCvFile] = useState<File | null>(null);
@@ -114,23 +116,40 @@ const NRCApplicationForm: React.FC = () => {
   };
 
   const onSubmit = async (data: NRCApplicationData) => {
-    setLoading(true);
-    try {
-      // Simulating a submission delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // For testing, we'll just show success immediately
-      console.log('Form data submitted:', {
-        ...data,
-        skills: selectedSkills,
-        cv: cvFile || undefined
-      });
-      
+    clearError();
+    clearSuccess();
+
+    if (!user?.id) {
+      alert('You must be logged in to register as an NRC volunteer');
+      return;
+    }
+
+    if (!data.commitment || !data.terms) {
+      alert('Please accept the commitment and terms to continue');
+      return;
+    }
+
+    if (selectedSkills.length === 0) {
+      alert('Please select at least one skill');
+      return;
+    }
+
+    const registrationData = {
+      userId: user.id,
+      region: 'Africa', // Default to Africa for now
+      country: data.country,
+      coordinator: undefined, // Will be assigned later by admin
+      displayName: data.fullName,
+      badge: undefined
+    };
+
+    const success = await registerVolunteer(registrationData);
+    
+    if (success) {
       setShowSuccess(true);
-    } catch (error) {
-      console.error('Application submission error:', error);
-    } finally {
-      setLoading(false);
+      // Reset form
+      setSelectedSkills([]);
+      setCvFile(null);
     }
   };
 

@@ -61,7 +61,7 @@ const accountTypeOptions = [
 ];
 
 const AccountTypeStep: React.FC = () => {
-  const { formData, updateFormData, nextStep, isLoading, error: contextError } = useSignup();
+  const { formData, updateFormData, nextStep, isLoading, error: contextError, clearCache } = useSignup();
   const [submitError, setSubmitError] = React.useState<string>('');
 
   const {
@@ -167,11 +167,10 @@ const AccountTypeStep: React.FC = () => {
                   </div>
 
                   <div className="flex-shrink-0">
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
-                      isSelected
-                        ? 'bg-orange-500 border-orange-500'
-                        : 'border-gray-300 group-hover:border-orange-300'
-                    }`}>
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${isSelected
+                      ? 'bg-orange-500 border-orange-500'
+                      : 'border-gray-300 group-hover:border-orange-300'
+                      }`}>
                       {isSelected && (
                         <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -190,7 +189,7 @@ const AccountTypeStep: React.FC = () => {
           className="text-center"
         />
 
-        <div className="flex justify-center pt-8">
+        <div className="flex justify-center pt-8 space-x-4">
           <Button
             type="submit"
             text="Continue to Next Step"
@@ -199,6 +198,27 @@ const AccountTypeStep: React.FC = () => {
             disabled={!isValid || isLoading}
             loading={isLoading}
             className="px-12 py-4 text-lg font-semibold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+          />
+          <Button
+            type="button"
+            text="Reset Form"
+            variant="outline"
+            size="large"
+            onClick={() => {
+              if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+                // Clear localStorage
+                localStorage.removeItem('nesa-signup-form-data');
+
+                // Clear authentication cookies
+                document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                document.cookie = 'userId=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                document.cookie = 'emailVerified=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+                // Reload page
+                window.location.reload();
+              }
+            }}
+            className="px-6 py-4 text-sm"
           />
         </div>
       </form>
