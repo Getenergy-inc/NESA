@@ -33,7 +33,7 @@ const Page = () => {
                       Facilisi viverra dictum augue eu lobortis elit. In et donec habitasse lacus mi commodo elementum.
                     </p>
                   </div>
-         z   </div>
+            </div>
               </div>
 
               <div className="md:grid flex flex-col-reverse md:grid-cols-2 items-center">
