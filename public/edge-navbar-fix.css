@@ -30,7 +30,7 @@
 /* Match the main navbar's logo */
 .edge-navbar .h-10 {
   height: auto !important;
-  min-width: 120px !important;
+  /* min-width: 120px !important; */
 }
 
 /* Match the main navbar's nav items */
@@ -133,6 +133,21 @@
   background-color: #f59e0b !important;
 }
 
+/* Apply existing button styling classes to button elements */
+.edge-navbar button.bg-deepGold {
+  background-color: #FFB92E !important;
+}
+.edge-navbar button:hover.hover\:bg-amber-500 {
+  background-color: #f59e0b !important;
+}
+.edge-navbar button.text-deepGold {
+  color: #FFB92E !important;
+}
+.edge-navbar button:hover.hover\:text-deepGold {
+  color: #FFB92E !important;
+  text-shadow: 0 0 8px rgba(255, 185, 46, 0.3) !important;
+}
+
 /* Force hardware acceleration */
 .edge-navbar .group,
 .edge-navbar .absolute,
@@ -150,6 +165,12 @@
 .edge-navbar .bg-gray-900 {
   background-color: #1a140b !important;
   background-image: linear-gradient(to right, #1a140b, #1d170e) !important;
+}
+
+/* Add consistent padding and border-radius to buttons */
+.edge-navbar button {
+  padding: 0.5rem 1rem !important; /* Example padding */
+  border-radius: 0.5rem !important; /* Example border-radius */
 }
 
 /* Mobile menu styling */

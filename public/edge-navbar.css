@@ -11,7 +11,7 @@
 
 /* Ensure proper spacing for navbar */
 .edge-navbar {
-  padding-top: 80px; /* Space for fixed navbar */
+  padding-top: 0; /* Space for fixed navbar */
 }
 
 /* Dropdown styling */

@@ -4,12 +4,12 @@
 
 /* Add padding to the body to account for the two-layer navbar */
 body {
-  padding-top: 140px !important;
+  padding-top: 0 !important;
 }
 
 @media (max-width: 1024px) {
   body {
-    padding-top: 80px !important;
+    padding-top: 0 !important;
   }
 }
 
