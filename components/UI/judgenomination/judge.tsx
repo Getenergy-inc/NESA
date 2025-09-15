@@ -13,44 +13,56 @@ const JudgePage: React.FC = () => {
 
 const nominees = [
   {
-    id: 1,
+    id: "1", // Changed to string
     name: "Mr Joseph Johnson",
     title: "Brothers Building Futures (BBF)",
+    category: "Education", // Added category
+    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: 2,
+    id: "2", // Changed to string
     name: "Mr Joseph Johnson",
     title: "Brothers Building Futures (BBF)",
+    category: "Education", // Added category
+    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: 3,
+    id: "3", // Changed to string
     name: "Mr Joseph Johnson",
     title: "Brothers Building Futures (BBF)",
+    category: "Education", // Added category
+    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: 4,
+    id: "4", // Changed to string
     name: "Mr Joseph Johnson",
     title: "Brothers Building Futures (BBF)",
+    category: "Education", // Added category
+    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: 5,
+    id: "5", // Changed to string
     name: "Mr Joseph Johnson",
     title: "Brothers Building Futures (BBF)",
+    category: "Education", // Added category
+    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: 6,
+    id: "6", // Changed to string
     name: "Mr Joseph Johnson",
     title: "Brothers Building Futures (BBF)",
+    category: "Education", // Added category
+    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
@@ -122,7 +134,7 @@ return(
 {/* second section */}
           <div className='bg-[#FFF5E0] p-20 pl-[50px] md:pl-[8%] '>
 
-            <div className='flex items-center gap-10 px-auto flex flex-col md:flex-row'>
+            <div className='flex items-center gap-10 px-auto flex-col md:flex-row'>
 
               <div className=' flex-shrink-0'>
                 <Image
