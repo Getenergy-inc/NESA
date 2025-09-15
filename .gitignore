@@ -8,8 +8,11 @@ docs/
 scripts/
 tsconfig.tsbuildinfo
 
-.env
+.env*
 /dist
 package-lock.json
 .next/
 
+.env.local
+.env.local
+tsconfig.tsbuildinfo
