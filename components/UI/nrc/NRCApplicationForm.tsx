@@ -182,7 +182,7 @@ const NRCApplicationForm: React.FC = () => {
             <Button
               text="Go to Dashboard (Testing)"
               onClick={() => router.push('/get-involved/nrc-volunteer/dashboard')}
-              variant="outline"
+              variant="outlined"
               className="w-full border-[#ea580c] text-[#ea580c] hover:bg-orange-50"
             />
           </div>

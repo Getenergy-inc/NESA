@@ -646,7 +646,7 @@ const NRCDashboard: React.FC = () => {
             <Button
               text="View All Nominees"
               onClick={() => setActiveTab('nominees')}
-              variant="outline"
+              variant="outlined"
               className="flex-1 border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white"
             />
             <Button
@@ -972,7 +972,7 @@ const NRCDashboard: React.FC = () => {
                       <div className="flex gap-2">
                         <Button
                           text="Edit"
-                          variant="outline"
+                          variant="outlined"
                           className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-3 py-1 text-sm"
                         />
                         <Button

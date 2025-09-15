@@ -127,7 +127,7 @@ const VolunteerDashboard: React.FC = () => {
             <div className="flex gap-3">
               <Button
                 text="Team Chat"
-                variant="outline"
+                variant="outlined"
                 className="flex items-center gap-2"
                 icon={<MessageSquare className="w-4 h-4" />}
               />
@@ -250,19 +250,19 @@ const VolunteerDashboard: React.FC = () => {
               <div className="space-y-3">
                 <Button
                   text="Join Team Meeting"
-                  variant="outline"
+                  variant="outlined"
                   className="w-full justify-start"
                   icon={<Users className="w-4 h-4 mr-2" />}
                 />
                 <Button
                   text="Submit Time Report"
-                  variant="outline"
+                  variant="outlined"
                   className="w-full justify-start"
                   icon={<FileText className="w-4 h-4 mr-2" />}
                 />
                 <Button
                   text="View Recognition"
-                  variant="outline"
+                  variant="outlined"
                   className="w-full justify-start"
                   icon={<Award className="w-4 h-4 mr-2" />}
                 />

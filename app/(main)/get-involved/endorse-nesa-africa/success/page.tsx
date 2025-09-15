@@ -313,7 +313,7 @@ const EndorsementSuccessPage = () => {
           <Link href="/get-involved/sponsor">
             <Button
               text="Become a Sponsor"
-              variant="outline"
+              variant="outlined"
               size="large"
               className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-8 py-4"
             />
@@ -322,7 +322,7 @@ const EndorsementSuccessPage = () => {
           <Link href="/">
             <Button
               text="Back to Home"
-              variant="outline"
+              variant="outlined"
               size="large"
               className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4"
             />

@@ -1,5 +1,3 @@
-// Frontend to Backend data mapping utilities for NESA signup flow
-
 import { SignupFormData } from '@/lib/types/signup';
 
 // Map frontend account types to backend enum format
@@ -64,7 +62,7 @@ export function mapFormDataToBackend(frontendData: SignupFormData): any {
   console.log('Email being used:', frontendData.email);
   console.log('Account Type:', frontendData.accountType);
   console.log('Intents:', frontendData.intents, 'Type:', typeof frontendData.intents, 'IsArray:', Array.isArray(frontendData.intents));
-  console.log('Full Name:', frontendData.fullName);
+  // console.log('Full Name:', frontendData.fullName); // Accessing fullName conditionally below
   console.log('Country:', frontendData.country);
   console.log('State:', frontendData.state);
   
@@ -87,6 +85,7 @@ export function mapFormDataToBackend(frontendData: SignupFormData): any {
 
   // Add account-type specific fields
   if (frontendData.accountType === 'Individual') {
+    // console.log('Full Name:', frontendData.fullName); // Log fullName only for Individual accounts
     return {
       ...baseData,
       fullName: frontendData.fullName,

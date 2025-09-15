@@ -202,7 +202,7 @@ const AccountTypeStep: React.FC = () => {
           <Button
             type="button"
             text="Reset Form"
-            variant="outline"
+            variant="outlined"
             size="large"
             onClick={() => {
               if (confirm('Are you sure you want to reset the form? All data will be lost.')) {

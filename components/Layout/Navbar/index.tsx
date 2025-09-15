@@ -83,7 +83,8 @@ const Navbar = () => {
 
                 {/* Main Navigation - Desktop Only - Moved closer to logo */}
                 <div className="hidden lg:flex items-center">
-                  <HorizontalNavLinks links={navlinks} pathname={pathname} layer="layer-1" />
+                  {/* Conditionally render navlinks, excluding Login/Sign Up if user is logged in */}
+                  <HorizontalNavLinks links={user ? navlinks.filter(link => link.label !== 'Login' && link.label !== 'Sign Up') : navlinks} pathname={pathname} layer="layer-1" />
                 </div>
               </div>
 
@@ -252,33 +253,67 @@ const HorizontalNavLink = ({
 
 const AuthButtons = ({ user }: { user: any }) => {
   const { logout } = useAuthContext();
-
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+ 
+  // Effect to close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+ 
   if (user) {
-    // If the user is logged in, show the profile icon and logout button
+    // If the user is logged in, show a dropdown menu on desktop
     const handleLogout = () => {
       logout();
       window.location.href = '/login';
     };
-
+ 
     return (
-      <div className="flex flex-col space-y-3 w-full">
-        <Link href="/ProfileSetting">
-          <motion.div className="flex items-center justify-center space-x-3 cursor-pointer bg-gradient-to-r from-[#17120a]/60 to-[#1a140b]/60 border border-[#ea580c]/15 rounded-lg p-4 hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5 transition-all duration-200 min-h-[56px]">
-            <User className="text-gray-300 w-5 h-5" />
-            <span className="text-gray-200 font-medium text-base">My Account</span>
-          </motion.div>
-        </Link>
-        <button
-          onClick={handleLogout}
-          className="flex items-center justify-center space-x-3 bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 hover:bg-gradient-to-r hover:from-[#ea580c]/25 hover:to-[#ea580c]/15 rounded-lg p-4 transition-all duration-200 min-h-[56px] border border-[#FFB92E]/30"
+      <div className="relative" ref={dropdownRef}> {/* Use relative positioning for dropdown */}
+        {/* Trigger element - User icon */}
+        <motion.div
+          className="flex items-center space-x-3 cursor-pointer p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+          whileTap={{ scale: 0.95 }}
         >
-          <IoLogOut size={20} className="text-[#FFB92E]" />
-          <span className="text-[#FFB92E] font-medium text-base">Log Out</span>
-        </button>
+          <User className="text-gray-300 w-5 h-5" />
+          <span className="text-gray-200 font-medium text-base">My Account</span>
+          {/* Optional: Add a chevron icon to indicate dropdown */}
+          <motion.span animate={{ rotate: dropdownOpen ? 180 : 0 }} className="ml-1">
+            {renderIcon({ name: 'ChevronDown', size: 16 })}
+          </motion.span>
+        </motion.div>
+ 
+        {/* Dropdown Menu */}
+        {dropdownOpen && (
+          <div className="absolute right-0 mt-2 w-48 bg-black border border-deepGold/20 rounded-lg shadow-lg py-2 px-3 z-50 backdrop-blur-sm">
+            <Link href="/ProfileSetting">
+              <motion.div className="flex items-center space-x-3 cursor-pointer p-3 rounded-md hover:bg-white/5 transition-all duration-200">
+                <User className="text-gray-300 w-5 h-5" />
+                <span className="text-gray-200 font-medium text-base">My Account</span>
+              </motion.div>
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="w-full flex items-center space-x-3 p-3 rounded-md hover:bg-gradient-to-r hover:from-[#ea580c]/25 hover:to-[#ea580c]/15 transition-all duration-200 border-t border-[#ea580c]/10"
+            >
+              <IoLogOut size={20} className="text-[#FFB92E]" />
+              <span className="text-[#FFB92E] font-medium text-base">Log Out</span>
+            </button>
+          </div>
+        )}
       </div>
     );
   }
-
+ 
   // If the user is not logged in, return null since Login/Sign Up are now in main nav
   return null;
 };
