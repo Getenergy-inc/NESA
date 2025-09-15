@@ -1,0 +1,233 @@
+/**
+ * Edge-specific navbar styles to match the main navbar
+ */
+
+/* Base styles for the edge navbar */
+.edge-navbar {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Match the main navbar's two-layer structure */
+.edge-navbar .bg-black {
+  background-color: #17120a !important;
+  background-image: linear-gradient(to right, #17120a, #1a140b) !important;
+}
+
+/* Match the main navbar's container */
+.edge-navbar .container {
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Match the main navbar's height */
+.edge-navbar .h-20 {
+  height: 5rem !important;
+}
+
+/* Match the main navbar's logo */
+.edge-navbar .h-10 {
+  height: auto !important;
+  min-width: 120px !important;
+}
+
+/* Match the main navbar's nav items */
+.edge-navbar .group {
+  position: relative !important;
+  transition: transform 0.3s ease !important;
+}
+
+.edge-navbar .group:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Match the main navbar's links */
+.edge-navbar .text-gray-200,
+.edge-navbar .text-gray-300 {
+  font-weight: 500 !important;
+  padding: 0.5rem 0.7rem !important;
+}
+
+.edge-navbar .text-gray-200 {
+  font-size: 1.025rem !important;
+  letter-spacing: 0.015em !important;
+}
+
+.edge-navbar .text-gray-300 {
+  font-size: 0.9rem !important;
+  letter-spacing: 0.015em !important;
+}
+
+/* Match the main navbar's dropdowns */
+.edge-navbar .absolute {
+  position: absolute !important;
+  top: 100% !important;
+  background-color: rgba(23, 18, 10, 0.9) !important;
+  border: 1px solid rgba(234, 88, 12, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-15px) scale(0.95) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 1000 !important;
+  min-width: 280px !important;
+  padding: 12px 0 !important;
+  border-top: 3px solid #ea580c !important;
+}
+
+/* Match the main navbar's dropdown items */
+.edge-navbar .flex.items-center.px-4.py-3 {
+  display: flex !important;
+  align-items: center !important;
+  padding: 16px 20px !important;
+  color: #e5e7eb !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+  min-height: 52px !important;
+}
+
+/* Match the main navbar's dropdown item hover */
+.edge-navbar .flex.items-center.px-4.py-3:hover {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.2) 0%, rgba(234, 88, 12, 0.3) 100%) !important;
+  color: #fbbf24 !important;
+  transform: translateX(4px) !important;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3) !important;
+}
+
+/* Match the main navbar's dropdown visibility on hover */
+.edge-navbar .group:hover .absolute {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Match the main navbar's chevron rotation */
+.edge-navbar .group:hover svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Match the main navbar's active link */
+.edge-navbar .text-deepGold {
+  color: #FFB92E !important;
+}
+
+/* Match the main navbar's hover color */
+.edge-navbar .hover\:text-deepGold:hover {
+  color: #FFB92E !important;
+  text-shadow: 0 0 8px rgba(255, 185, 46, 0.3) !important;
+}
+
+/* Match the main navbar's button */
+.edge-navbar .bg-deepGold {
+  background-color: #FFB92E !important;
+}
+
+.edge-navbar .hover\:bg-amber-500:hover {
+  background-color: #f59e0b !important;
+}
+
+/* Force hardware acceleration */
+.edge-navbar .group,
+.edge-navbar .absolute,
+.edge-navbar .flex.items-center.px-4.py-3 {
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+/* Add second layer styling */
+.edge-navbar .bg-gray-900 {
+  background-color: #1a140b !important;
+  background-image: linear-gradient(to right, #1a140b, #1d170e) !important;
+}
+
+/* Mobile menu styling */
+.edge-navbar .fixed.inset-0 {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 50 !important;
+}
+
+.edge-navbar .fixed.top-0.right-0 {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 20rem !important;
+  height: 100% !important;
+  background-color: #17120a !important;
+}
+
+/* Ensure proper transitions */
+.edge-navbar .transition-opacity {
+  transition-property: opacity !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 300ms !important;
+}
+
+.edge-navbar .transition-transform {
+  transition-property: transform !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 300ms !important;
+}
+
+.edge-navbar .transition-all {
+  transition-property: all !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 300ms !important;
+}
+
+/* Ensure proper transforms */
+.edge-navbar .translate-x-0 {
+  transform: translateX(0) !important;
+}
+
+.edge-navbar .translate-x-full {
+  transform: translateX(100%) !important;
+}
+
+/* Ensure proper opacity */
+.edge-navbar .opacity-0 {
+  opacity: 0 !important;
+}
+
+.edge-navbar .opacity-100 {
+  opacity: 1 !important;
+}
+
+/* Ensure proper visibility */
+.edge-navbar .invisible {
+  visibility: hidden !important;
+}
+
+.edge-navbar .visible {
+  visibility: visible !important;
+}
+
+/* Ensure proper pointer events */
+.edge-navbar .pointer-events-none {
+  pointer-events: none !important;
+}
+
+/* Ensure proper z-index */
+.edge-navbar .z-50 {
+  z-index: 50 !important;
+}
+
+.edge-navbar .z-\[1000\] {
+  z-index: 1000 !important;
+}

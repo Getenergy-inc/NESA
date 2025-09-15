@@ -13,13 +13,27 @@ import { IoLogOut } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import styles from "./style.module.scss";
 
+// Import Edge-specific navbar
+import EdgeNavbar from "./EdgeNavbar";
+
 const Navbar = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { user } = useAuthContext();
   const pathname = usePathname();
+  const [isEdgeBrowser, setIsEdgeBrowser] = useState(false);
 
   const controlMenu = (action: boolean) => setSidebarOpen(action);
+  
+  // Detect Edge browser on client side
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isEdge = 
+        navigator.userAgent.indexOf('Edg') !== -1 || 
+        navigator.userAgent.indexOf('Edge') !== -1;
+      setIsEdgeBrowser(isEdge);
+    }
+  }, []);
 
   useEffect(() => {
     if (sidebarOpen) {
@@ -48,7 +62,53 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  
+  // Edge browser detection and compatibility fixes
+  useEffect(() => {
+    const isEdgeBrowser = () => {
+      if (typeof window === 'undefined' || !window.navigator) return false;
+      return (
+        navigator.userAgent.indexOf('Edg') !== -1 || 
+        navigator.userAgent.indexOf('Edge') !== -1
+      );
+    };
+    
+    if (isEdgeBrowser() && ref.current) {
+      // Apply Edge-specific styles directly to DOM elements for maximum compatibility
+      const dropdowns = ref.current.querySelectorAll(`.${styles.dropdown}`);
+      const navItems = ref.current.querySelectorAll(`.${styles['nav-item']}`);
+      const dropdownItems = ref.current.querySelectorAll(`.${styles['dropdown-item']}`);
+      const chevrons = ref.current.querySelectorAll(`.${styles['dropdown-chevron']} svg`);
+      
+      // Apply styles to dropdowns
+      dropdowns.forEach((dropdown: Element) => {
+        const el = dropdown as HTMLElement;
+        el.style.backgroundColor = 'rgba(23, 18, 10, 0.95)';
+        el.style.backdropFilter = 'none';
+        el.style.backdropFilter = 'none';
+        el.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.4)';
+      });
+      
+      // Apply styles to dropdown items
+      dropdownItems.forEach((item: Element) => {
+        const el = item as HTMLElement;
+        el.style.transition = 'all 0.3s ease';
+      });
+      
+      // Apply styles to chevrons
+      chevrons.forEach((chevron: Element) => {
+        const el = chevron as HTMLElement;
+        el.style.transition = 'transform 0.3s ease';
+      });
+    }
+  }, []);
 
+  // If Edge browser is detected, render the simplified Edge-specific navbar
+  if (isEdgeBrowser) {
+    return <EdgeNavbar user={user} pathname={pathname} sidebarOpen={sidebarOpen} controlMenu={controlMenu} />;
+  }
+  
+  // Otherwise render the standard navbar with all features
   return (
     <>
       {/* Two-Layer Horizontal Navigation Layout */}
@@ -333,6 +393,14 @@ const MobileSidebar = ({
     className={`${
       sidebarOpen ? "translate-x-0" : "translate-x-full"
     } fixed top-0 right-0 w-full h-full bg-black text-white select-none flex duration-300 ease-out items-start justify-center z-[2000] overflow-y-auto lg:hidden`}
+    style={{
+      WebkitTransition: 'transform 0.3s ease-out',
+      msTransition: 'transform 0.3s ease-out',
+      transition: 'transform 0.3s ease-out',
+      WebkitTransform: sidebarOpen ? 'translateX(0)' : 'translateX(100%)',
+      msTransform: sidebarOpen ? 'translateX(0)' : 'translateX(100%)',
+      transform: sidebarOpen ? 'translateX(0)' : 'translateX(100%)'
+    }}
   >
     <motion.div
       className="absolute right-6 top-6 cursor-pointer p-2 rounded-full hover:bg-white/10 transition-colors duration-200"

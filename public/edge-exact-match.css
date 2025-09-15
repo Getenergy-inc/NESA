@@ -1,0 +1,195 @@
+/**
+ * Edge-specific exact matching styles for the navbar
+ * These styles ensure the Edge navbar looks identical to the Chrome navbar
+ */
+
+/* Exact background colors */
+.edge-navbar nav {
+  background-color: #17120a !important;
+}
+
+.edge-navbar .lg\:border-b {
+  background-image: linear-gradient(to right, #17120a, #1a140b) !important;
+  border-bottom: 1px solid rgba(255, 185, 46, 0.2) !important;
+}
+
+.edge-navbar .hidden.lg\:block {
+  background-image: linear-gradient(to right, #1a140b, #1d170e) !important;
+}
+
+/* Exact logo styling */
+.edge-navbar .min-w-\[120px\] {
+  min-width: 120px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.edge-navbar .hover\:scale-105:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Exact nav item styling */
+.edge-navbar .font-normal {
+  font-weight: 500 !important;
+}
+
+.edge-navbar .py-2.px-3 {
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.edge-navbar .hover\:bg-white\/5:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Exact dropdown styling */
+.edge-navbar .absolute.left-0 {
+  top: 100% !important;
+  left: 0 !important;
+  background-color: rgba(23, 18, 10, 0.9) !important;
+  border: 1px solid rgba(234, 88, 12, 0.3) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+  min-width: 280px !important;
+  padding: 0.75rem 0 !important;
+  border-top: 3px solid #ea580c !important;
+  z-index: 1000 !important;
+}
+
+.edge-navbar .absolute.right-0 {
+  top: 100% !important;
+  right: 0 !important;
+  background-color: rgba(23, 18, 10, 0.9) !important;
+  border: 1px solid rgba(234, 88, 12, 0.3) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+  min-width: 280px !important;
+  padding: 0.75rem 0 !important;
+  border-top: 3px solid #ea580c !important;
+  z-index: 1000 !important;
+}
+
+/* Exact dropdown item styling */
+.edge-navbar .px-4.py-3 {
+  display: flex !important;
+  align-items: center !important;
+  padding: 1rem 1.25rem !important;
+  color: #e5e7eb !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  min-height: 52px !important;
+  transition: all 0.3s ease !important;
+}
+
+.edge-navbar .hover\:bg-gray-800:hover {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.2) 0%, rgba(234, 88, 12, 0.3) 100%) !important;
+  color: #fbbf24 !important;
+  transform: translateX(4px) !important;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3) !important;
+}
+
+/* Exact chevron styling */
+.edge-navbar .ml-1 svg,
+.edge-navbar .dropdown-chevron svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.edge-navbar .group:hover .ml-1 svg,
+.edge-navbar .group:hover .dropdown-chevron svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Exact active link styling */
+.edge-navbar .absolute.bottom-0 {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background-color: #FFB92E !important;
+}
+
+/* Exact button styling */
+.edge-navbar .bg-deepGold {
+  background-color: #FFB92E !important;
+  color: #000 !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.375rem !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.edge-navbar .hover\:bg-amber-500:hover {
+  background-color: #f59e0b !important;
+}
+
+/* Exact mobile menu styling */
+.edge-navbar .lg\:hidden {
+  cursor: pointer !important;
+  padding: 0.5rem !important;
+  border-radius: 0.375rem !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.edge-navbar .hover\:bg-white\/10:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Exact mobile sidebar styling */
+.edge-navbar .fixed.inset-0 {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.edge-navbar .fixed.top-0.right-0 {
+  background-color: #17120a !important;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Exact mobile sidebar header styling */
+.edge-navbar .p-5 {
+  padding: 1.25rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Exact mobile sidebar item styling */
+.edge-navbar .px-4.py-2 {
+  padding: 0.5rem 1rem !important;
+}
+
+.edge-navbar .text-gray-200.font-medium {
+  color: #e5e7eb !important;
+  font-weight: 500 !important;
+}
+
+.edge-navbar .pl-4.border-l {
+  padding-left: 1rem !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.edge-navbar .py-2.text-gray-400 {
+  padding: 0.5rem 0 !important;
+  color: #9ca3af !important;
+  transition: color 0.3s ease !important;
+}
+
+.edge-navbar .hover\:text-deepGold:hover {
+  color: #FFB92E !important;
+}
+
+/* Exact mobile sidebar section styling */
+.edge-navbar .border-t.border-gray-800 {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  margin-top: 1rem !important;
+  padding-top: 1rem !important;
+}
+
+/* Exact mobile sidebar button styling */
+.edge-navbar .block.w-full {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.375rem !important;
+  transition: background-color 0.3s ease !important;
+}
