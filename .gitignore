@@ -5,3 +5,4 @@ node_modules
 FRONTEND_BACKEND_INTEGRATION_GUIDE.md
 docs/
 scripts/
+tsconfig.tsbuildinfo
