@@ -7,7 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DefaultToastOptions, Toaster } from "react-hot-toast";
 import ModalProvider from "./modal-provider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+// Temporarily comment out the ReactQueryDevtools import to fix build error
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 // register gsap basic plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +32,8 @@ const Providers: React.FC<PropsWithChildren> = ({ children }) => {
         <ModalProvider>{children}</ModalProvider>
       </AuthProvider>
 
-      <ReactQueryDevtools client={queryClient} />
+      {/* Temporarily comment out ReactQueryDevtools to fix build error */}
+      {/* <ReactQueryDevtools client={queryClient} /> */}
     </QueryClientProvider>
   );
 };

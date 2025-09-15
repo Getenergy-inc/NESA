@@ -615,44 +615,6 @@ const MobileSideMenu = ({
         </div>
       )}
 
-      {/* Secondary Navigation */}
-      {activeTab === 'secondary' && (
-        <div className="w-full">
-          <h3 className="text-deepGold font-semibold text-lg mb-4 text-center">Quick Access</h3>
-          <div className="flex flex-col space-y-3 w-full">
-            {secondaryNavlinks && secondaryNavlinks.length > 0 ? (
-              secondaryNavlinks.map((link, id) => {
-                const isActive = pathname === link.path;
-                return (
-                  <motion.div
-                    key={id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: id * 0.05 }}
-                  >
-                    <Link
-                      href={link.path}
-                      className={`font-normal duration-200 relative block py-3 px-4 rounded-md transition-all ${
-                        isActive
-                          ? 'text-deepGold bg-deepGold/10 border-l-4 border-deepGold'
-                          : 'text-white hover:text-deepGold hover:bg-white/5'
-                      }`}
-                      onClick={() => controlMenu(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                );
-              })
-            ) : (
-              <div className="text-white text-center py-4">
-                <p>No secondary navigation items available</p>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
 
     </motion.div>
   );
