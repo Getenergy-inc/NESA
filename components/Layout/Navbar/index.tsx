@@ -13,13 +13,27 @@ import { IoLogOut } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import styles from "./style.module.scss";
 
+// Import Edge-specific navbar
+import EdgeNavbar from "./EdgeNavbar";
+
 const Navbar = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { user } = useAuthContext();
   const pathname = usePathname();
+  const [isEdgeBrowser, setIsEdgeBrowser] = useState(false);
 
   const controlMenu = (action: boolean) => setSidebarOpen(action);
+  
+  // Detect Edge browser on client side
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isEdge = 
+        navigator.userAgent.indexOf('Edg') !== -1 || 
+        navigator.userAgent.indexOf('Edge') !== -1;
+      setIsEdgeBrowser(isEdge);
+    }
+  }, []);
 
   useEffect(() => {
     if (sidebarOpen) {
@@ -48,7 +62,53 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  
+  // Edge browser detection and compatibility fixes
+  useEffect(() => {
+    const isEdgeBrowser = () => {
+      if (typeof window === 'undefined' || !window.navigator) return false;
+      return (
+        navigator.userAgent.indexOf('Edg') !== -1 || 
+        navigator.userAgent.indexOf('Edge') !== -1
+      );
+    };
+    
+    if (isEdgeBrowser() && ref.current) {
+      // Apply Edge-specific styles directly to DOM elements for maximum compatibility
+      const dropdowns = ref.current.querySelectorAll(`.${styles.dropdown}`);
+      const navItems = ref.current.querySelectorAll(`.${styles['nav-item']}`);
+      const dropdownItems = ref.current.querySelectorAll(`.${styles['dropdown-item']}`);
+      const chevrons = ref.current.querySelectorAll(`.${styles['dropdown-chevron']} svg`);
+      
+      // Apply styles to dropdowns
+      dropdowns.forEach((dropdown: Element) => {
+        const el = dropdown as HTMLElement;
+        el.style.backgroundColor = 'rgba(23, 18, 10, 0.95)';
+        el.style.backdropFilter = 'none';
+        el.style.backdropFilter = 'none';
+        el.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.4)';
+      });
+      
+      // Apply styles to dropdown items
+      dropdownItems.forEach((item: Element) => {
+        const el = item as HTMLElement;
+        el.style.transition = 'all 0.3s ease';
+      });
+      
+      // Apply styles to chevrons
+      chevrons.forEach((chevron: Element) => {
+        const el = chevron as HTMLElement;
+        el.style.transition = 'transform 0.3s ease';
+      });
+    }
+  }, []);
 
+  // If Edge browser is detected, render the simplified Edge-specific navbar
+  if (isEdgeBrowser) {
+    return <EdgeNavbar user={user} pathname={pathname} sidebarOpen={sidebarOpen} controlMenu={controlMenu} />;
+  }
+  
+  // Otherwise render the standard navbar with all features
   return (
     <>
       {/* Two-Layer Horizontal Navigation Layout */}
@@ -83,7 +143,8 @@ const Navbar = () => {
 
                 {/* Main Navigation - Desktop Only - Moved closer to logo */}
                 <div className="hidden lg:flex items-center">
-                  <HorizontalNavLinks links={navlinks} pathname={pathname} layer="layer-1" />
+                  {/* Conditionally render navlinks, excluding Login/Sign Up if user is logged in */}
+                  <HorizontalNavLinks links={user ? navlinks.filter(link => link.label !== 'Login' && link.label !== 'Sign Up') : navlinks} pathname={pathname} layer="layer-1" />
                 </div>
               </div>
 
@@ -252,33 +313,67 @@ const HorizontalNavLink = ({
 
 const AuthButtons = ({ user }: { user: any }) => {
   const { logout } = useAuthContext();
-
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+ 
+  // Effect to close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+ 
   if (user) {
-    // If the user is logged in, show the profile icon and logout button
+    // If the user is logged in, show a dropdown menu on desktop
     const handleLogout = () => {
       logout();
       window.location.href = '/login';
     };
-
+ 
     return (
-      <div className="flex flex-col space-y-3 w-full">
-        <Link href="/ProfileSetting">
-          <motion.div className="flex items-center justify-center space-x-3 cursor-pointer bg-gradient-to-r from-[#17120a]/60 to-[#1a140b]/60 border border-[#ea580c]/15 rounded-lg p-4 hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5 transition-all duration-200 min-h-[56px]">
-            <User className="text-gray-300 w-5 h-5" />
-            <span className="text-gray-200 font-medium text-base">My Account</span>
-          </motion.div>
-        </Link>
-        <button
-          onClick={handleLogout}
-          className="flex items-center justify-center space-x-3 bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 hover:bg-gradient-to-r hover:from-[#ea580c]/25 hover:to-[#ea580c]/15 rounded-lg p-4 transition-all duration-200 min-h-[56px] border border-[#FFB92E]/30"
+      <div className="relative" ref={dropdownRef}> {/* Use relative positioning for dropdown */}
+        {/* Trigger element - User icon */}
+        <motion.div
+          className="flex items-center space-x-3 cursor-pointer p-2 rounded-md hover:bg-white/10 transition-colors duration-200"
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+          whileTap={{ scale: 0.95 }}
         >
-          <IoLogOut size={20} className="text-[#FFB92E]" />
-          <span className="text-[#FFB92E] font-medium text-base">Log Out</span>
-        </button>
+          <User className="text-gray-300 w-5 h-5" />
+          <span className="text-gray-200 font-medium text-base">My Account</span>
+          {/* Optional: Add a chevron icon to indicate dropdown */}
+          <motion.span animate={{ rotate: dropdownOpen ? 180 : 0 }} className="ml-1">
+            {renderIcon({ name: 'ChevronDown', size: 16 })}
+          </motion.span>
+        </motion.div>
+ 
+        {/* Dropdown Menu */}
+        {dropdownOpen && (
+          <div className="absolute right-0 mt-2 w-48 bg-black border border-deepGold/20 rounded-lg shadow-lg py-2 px-3 z-50 backdrop-blur-sm">
+            <Link href="/ProfileSetting">
+              <motion.div className="flex items-center space-x-3 cursor-pointer p-3 rounded-md hover:bg-white/5 transition-all duration-200">
+                <User className="text-gray-300 w-5 h-5" />
+                <span className="text-gray-200 font-medium text-base">My Account</span>
+              </motion.div>
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="w-full flex items-center space-x-3 p-3 rounded-md hover:bg-gradient-to-r hover:from-[#ea580c]/25 hover:to-[#ea580c]/15 transition-all duration-200 border-t border-[#ea580c]/10"
+            >
+              <IoLogOut size={20} className="text-[#FFB92E]" />
+              <span className="text-[#FFB92E] font-medium text-base">Log Out</span>
+            </button>
+          </div>
+        )}
       </div>
     );
   }
-
+ 
   // If the user is not logged in, return null since Login/Sign Up are now in main nav
   return null;
 };
@@ -298,6 +393,14 @@ const MobileSidebar = ({
     className={`${
       sidebarOpen ? "translate-x-0" : "translate-x-full"
     } fixed top-0 right-0 w-full h-full bg-black text-white select-none flex duration-300 ease-out items-start justify-center z-[2000] overflow-y-auto lg:hidden`}
+    style={{
+      WebkitTransition: 'transform 0.3s ease-out',
+      msTransition: 'transform 0.3s ease-out',
+      transition: 'transform 0.3s ease-out',
+      WebkitTransform: sidebarOpen ? 'translateX(0)' : 'translateX(100%)',
+      msTransform: sidebarOpen ? 'translateX(0)' : 'translateX(100%)',
+      transform: sidebarOpen ? 'translateX(0)' : 'translateX(100%)'
+    }}
   >
     <motion.div
       className="absolute right-6 top-6 cursor-pointer p-2 rounded-full hover:bg-white/10 transition-colors duration-200"

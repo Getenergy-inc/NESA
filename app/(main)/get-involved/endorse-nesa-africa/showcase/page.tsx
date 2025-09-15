@@ -420,7 +420,7 @@ const EndorserShowcasePage = () => {
               <Link href="/get-involved/endorse-nesa-africa">
                 <Button
                   text="Learn More"
-                  variant="outline"
+                  variant="outlined"
                   size="large"
                   className="border-white text-white hover:bg-white hover:text-[#17120a] px-8 py-4 text-lg"
                 />
