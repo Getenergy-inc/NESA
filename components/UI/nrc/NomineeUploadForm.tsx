@@ -181,7 +181,7 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
             <Button
               text="Upload Another"
               onClick={() => setShowSuccess(false)}
-              variant="outline"
+              variant="outlined"
               className="flex-1 border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white"
             />
             <Button
@@ -525,7 +525,7 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
               <Button
                 text="Save as Draft"
                 type="button"
-                variant="outline"
+                variant="outlined"
                 className="flex-1 border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white"
               />
               <Button

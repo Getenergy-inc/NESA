@@ -1,5 +1,15 @@
 node_modules
+
+.next/
+.env
+.env.local
+FRONTEND_BACKEND_INTEGRATION_GUIDE.md
+docs/
+scripts/
+tsconfig.tsbuildinfo
+
 .env
 /dist
 package-lock.json
 .next/
+

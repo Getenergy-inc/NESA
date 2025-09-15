@@ -28,10 +28,7 @@ const NRCLandingPage: React.FC = () => {
   const { loading, hasApplication, isApproved, isPending, isRejected, canAccessDashboard } = useNRCStatus();
 
   const handleApplyNow = () => {
-    // TODO: Re-enable authentication when backend is ready
-    // Authentication temporarily disabled for testing purposes
-
-    /* ORIGINAL AUTHENTICATION LOGIC - COMMENTED FOR TESTING
+    // Check authentication and redirect accordingly
     if (!isAuthenticated) {
       router.push('/account/login');
       return;
@@ -46,25 +43,18 @@ const NRCLandingPage: React.FC = () => {
       // User already has an application, show status
       return;
     }
-    */
 
-    // For testing: Direct access to application form
+    // Direct access to application form
     router.push('/get-involved/nrc-volunteer/apply');
   };
 
   const getButtonText = () => {
-    // TODO: Re-enable dynamic button text when backend is ready
-    // Authentication-based button text temporarily disabled for testing
-
-    /* ORIGINAL AUTHENTICATION-BASED LOGIC - COMMENTED FOR TESTING
+    // Dynamic button text based on authentication and status
     if (!isAuthenticated) return 'Login to Apply';
     if (canAccessDashboard) return 'Go to Dashboard';
     if (isPending) return 'Application Pending';
     if (isRejected) return 'Application Not Approved';
     if (hasApplication) return 'View Application Status';
-    */
-
-    // For testing: Simple button text
     return 'Apply Now';
   };
 
