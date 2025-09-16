@@ -1,11 +1,9 @@
 import MediaAndLiveWrapper from "@/components/UI/MediaAndLiveWrapper";
 
 const NesaTV = () => {
-
   return (
     <>
-    <MediaAndLiveWrapper />
-
+      <MediaAndLiveWrapper />
     </>
   );
 };

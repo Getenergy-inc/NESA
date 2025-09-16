@@ -94,7 +94,6 @@ export const navlinks: NavLink[] = [
         path: "/get-involved/partner",
         icon: "Handshake",
       },
-     
     ],
   },
   {
@@ -104,7 +103,7 @@ export const navlinks: NavLink[] = [
     children: [
       {
         label: "NESA TV",
-        path: "/media/nesa-tv",
+        path: "/nesa-media",
         icon: "Tv",
       },
       {
@@ -146,7 +145,6 @@ export const navlinks: NavLink[] = [
         path: "/help",
         icon: "LifeBuoy",
       },
-      
     ],
   },
   {
@@ -179,11 +177,9 @@ export const navlinks: NavLink[] = [
         path: "/language/pt",
         icon: "PT",
       },
-    ]
-
-  }, 
+    ],
+  },
 ];
-
 
 export const secondaryNavlinks: SecondaryNavLink[] = [
   {
@@ -196,7 +192,7 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
     path: "/sponsor",
     description: "Sponsorship application",
   },
-  
+
   {
     label: "Buy Merchandise",
     path: "/voting",
@@ -221,7 +217,7 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
     label: "Apply as an Ambassador",
     path: "/nesatv",
     description: "NESA TV platform",
-  }
+  },
 ];
 
 // Level 3 CTA Navigation - Floating/Sticky Elements
@@ -273,8 +269,11 @@ export const legacyNavlinks = [
     label: "Awards",
     path: "/awards",
     children: [
-      { label: "Awards", path: "/awards"},
-      { label: "African Icon", path: "/nomination/sub-categories/africa-lifetime-education-icon" },
+      { label: "Awards", path: "/awards" },
+      {
+        label: "African Icon",
+        path: "/nomination/sub-categories/africa-lifetime-education-icon",
+      },
       { label: "Competitive", path: "/competitive" },
       { label: "Non-Competitive", path: "/non-competitive" },
       { label: "Nomination Process", path: "/nomination" },
