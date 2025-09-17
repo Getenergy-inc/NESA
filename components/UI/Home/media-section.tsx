@@ -149,6 +149,7 @@ const MediaSection = () => {
                   controls
                   preload="metadata"
                   muted
+                  autoplay
                   playsInline
                   aria-label="NESA Africa promotional video - Learn about our mission and impact"
                   onError={(e) => {
