@@ -5,8 +5,12 @@ import { Download } from "lucide-react";
 
 export default function Spotlight() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#1a140b] via-[#2a1f15] to-[#17120a] text-white px-6 py-12">
-      {/* Hero Section */}
+    <div
+      className="relative min-h-screen flex flex-col items-center justify-center text-white px-6 py-12 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/images/headhero.png')" }} 
+    >
+      {/* <div className="absolute inset-0 bg-black/20" /> */}
+   
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -47,31 +51,33 @@ export default function Spotlight() {
         className="mt-12 flex flex-wrap gap-4 justify-center"
       >
         <Link
-          href="/apply"
+          href="/about/about-nesa-boa/eoi-form"
           className="px-6 py-3 rounded-full bg-[#ea580c] hover:bg-[#f59e0b] text-black font-semibold shadow-md hover:shadow-[#f59e0b]/50 transition-all duration-300"
         >
           Apply to the Board
         </Link>
-        <Link
-          href="/nominate"
-          className="px-6 py-3 rounded-full bg-[#17120a] hover:bg-[#2a1f15] border border-[#f59e0b] text-[#f59e0b] font-semibold shadow-md hover:shadow-[#f59e0b]/30 transition-all duration-300"
-        >
-          Nominate an Advisor
-        </Link>
+     
         {/* Tertiary Download Button */}
-        <Link
-            href="/charter.pdf"
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-transparent  text-[#ea580c] font-medium shadow-sm hover:bg-[#1a140b] hover:text-[#f59e0b] hover:border-[#f59e0b] transition-all duration-300"
-        >
-            <Download className="w-5 h-5" />
-            Download Advisory Charter
-        </Link>
+        {/* Download Advisory Charter button */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    
+         </div> 
         <Link
           href="/advisors"
-          className="px-6 py-3 rounded-full bg-gradient-to-r from-[#ea580c] to-[#f59e0b] text-black font-bold shadow-md hover:shadow-[#f59e0b]/50 transition-all duration-300"
+          className="px-6 py-3 rounded-full border border-[#f59e0b] text-[#f59e0b] font-bold shadow-md hover:shadow-[#f59e0b]/50 transition-all duration-300"
         >
           View Current Advisors
         </Link>
+              <Link
+            href="/files/NESA.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 text-[#f59e0b] text-sm font-medium rounded-full hover:text-[#ea580c] "
+          >
+            <Download className="w-4 h-4" />
+            Download Advisory Charter
+          </Link>
       </motion.div>
     </div>
   );

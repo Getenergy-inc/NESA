@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FileSignature, ClipboardCheck, Mail, UserPlus } from "lucide-react";
 
 const steps = [
@@ -95,16 +96,16 @@ export default function ApplyNominate() {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             {/* Apply Button */}
-            <a
-              href="#"
+           <Link
+               href="/about/about-nesa-boa/eoi-form"
               className="inline-block px-8 py-3 text-lg font-medium rounded-xl bg-gradient-to-r from-[#ea580c] via-[#f59e0b] to-[#ea580c] text-white shadow-[0_0_15px_rgba(245,158,11,0.45)] hover:shadow-[0_0_25px_rgba(245,158,11,0.7)] transition-all duration-300"
             >
               Open the Advisor EOI Form
-            </a>
+            </Link>
 
             {/* Nominate Button */}
             <a
-              href="#"
+              href="/about/about-nesa-boa/nominate"
               className="inline-block px-8 py-3 text-lg font-medium rounded-xl border border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-white shadow-[0_0_12px_rgba(245,158,11,0.3)] hover:shadow-[0_0_22px_rgba(245,158,11,0.55)] transition-all duration-300"
             >
               Nominate an Advisor
