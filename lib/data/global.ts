@@ -31,6 +31,11 @@ export const navlinks: NavLink[] = [
         icon: "Award",
       },
       {
+        label: "About NESA Advisory Board",
+        path: "/about/about-nesa-boa",
+        icon: "Users",
+      },
+      {
         label: "About SECF",
         path: "/about/secf",
         icon: "Building2",
@@ -104,7 +109,11 @@ export const navlinks: NavLink[] = [
         path: "/get-involved/partner",
         icon: "Handshake",
       },
-     
+      {
+        label: "Apply As A Fundraiser",
+        path: "/get-involved/apply-as-fundraiser",
+        icon: "Handshake",
+      },
     ],
   },
   {

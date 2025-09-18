@@ -1,6 +1,35 @@
-node_modules
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-.next/
+# Build output
+/.next
+/out
+/build
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env*.local
+
+# Editor settings
+.vscode
+.idea
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
 .env
 .env.local
 FRONTEND_BACKEND_INTEGRATION_GUIDE.md
@@ -16,3 +45,5 @@ package-lock.json
 .env.local
 .env.local
 tsconfig.tsbuildinfo
+
+
