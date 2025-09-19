@@ -65,21 +65,31 @@ const PartnerLanguageSelector: React.FC = () => {
       {/* Language Selector Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="group flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-white/30 rounded-full px-4 py-2 transition-all duration-300"
+        className="group flex items-center gap-2 bg-deepGold hover:bg-deepGold/90 backdrop-blur-sm border-2 border-white shadow-lg rounded-full px-6 py-3 transition-all duration-300"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        initial={{ scale: 1 }}
+        animate={{ 
+          scale: [1, 1.05, 1],
+          boxShadow: ["0px 0px 0px rgba(0,0,0,0.1)", "0px 0px 20px rgba(255,185,46,0.8)", "0px 0px 0px rgba(0,0,0,0.1)"]
+        }}
+        transition={{ 
+          repeat: Infinity, 
+          duration: 2,
+          repeatType: "reverse"
+        }}
       >
-        <Globe className="w-4 h-4 text-white/80 group-hover:text-white transition-colors duration-300" />
+        <Globe className="w-5 h-5 text-black group-hover:text-black transition-colors duration-300" />
         
         <div className="flex items-center gap-2">
           <span className="text-lg">{currentLang.flag}</span>
-          <span className="text-white/90 group-hover:text-white font-medium text-sm transition-colors duration-300">
+          <span className="text-black font-bold text-sm transition-colors duration-300">
             {currentLang.code.toUpperCase()}
           </span>
         </div>
         
         <ChevronDown 
-          className={`w-4 h-4 text-white/80 group-hover:text-white transition-all duration-300 ${
+          className={`w-4 h-4 text-black group-hover:text-black transition-all duration-300 ${
             isOpen ? 'rotate-180' : ''
           }`} 
         />

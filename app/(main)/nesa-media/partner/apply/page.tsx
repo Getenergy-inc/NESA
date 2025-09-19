@@ -185,7 +185,10 @@ const PartnerApplicationContent = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            ...formData,
+            language: currentLanguage // Include the selected language in the submission
+          }),
         });
         
         // Race the fetch against a timeout
@@ -204,11 +207,11 @@ const PartnerApplicationContent = () => {
         ? await retryWithBackoff(submitWithRetry, 3, 1000)
         : await submitWithRetry();
 
-      // Success
-      setIsSuccess(true);
+      // Success - ensure we set these states in the correct order
       setIsSubmitting(false);
       setIsRetrying(false);
       setRetryCount(0);
+      setIsSuccess(true); // Set success state last to ensure UI updates properly
     } catch (err: any) {
       console.error("Partner application error:", err);
       
@@ -309,6 +312,7 @@ const PartnerApplicationContent = () => {
                 transition={{ duration: 0.6 }}
                 className="py-8"
               >
+                {/* Language selector remains visible on success page */}
                 <div className="min-h-[60vh] bg-gradient-to-br from-whiteGold via-white to-xlGold flex items-center justify-center">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -470,7 +474,7 @@ const PartnerApplicationContent = () => {
 
                   <motion.div custom={3} variants={formFieldVariants} className="relative">
                     <label htmlFor="brandName" className="block text-sm font-medium text-gray-700 mb-1">
-                      Brand/Company Name *
+                      {t('partner.apply.form.brandName')} *
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -482,7 +486,7 @@ const PartnerApplicationContent = () => {
                         value={formData.brandName}
                         onChange={(e) => handleInputChange("brandName", e.target.value)}
                         className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-deepGold focus:border-transparent transition-all"
-                        placeholder="Enter your brand/company name"
+                        placeholder={t('partner.apply.form.brandNamePlaceholder')}
                       />
                     </div>
                   </motion.div>
@@ -490,7 +494,7 @@ const PartnerApplicationContent = () => {
 
                 <motion.div custom={4} variants={formFieldVariants} className="relative">
                   <label htmlFor="brandLink" className="block text-sm font-medium text-gray-700 mb-1">
-                    Brand/Company Website *
+                    {t('partner.apply.form.brandLink')} *
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -502,14 +506,14 @@ const PartnerApplicationContent = () => {
                       value={formData.brandLink}
                       onChange={(e) => handleInputChange("brandLink", e.target.value)}
                       className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-deepGold focus:border-transparent transition-all"
-                      placeholder="https://yourbrand.com"
+                      placeholder={t('partner.apply.form.brandLinkPlaceholder')}
                     />
                   </div>
                 </motion.div>
 
                 <motion.div custom={5} variants={formFieldVariants} className="relative">
                   <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
-                    Brand/Company Description *
+                    {t('partner.apply.form.description')} *
                   </label>
                   <div className="relative">
                     <div className="absolute top-3 left-3 flex items-start pointer-events-none">
@@ -520,14 +524,14 @@ const PartnerApplicationContent = () => {
                       value={formData.description}
                       onChange={(e) => handleInputChange("description", e.target.value)}
                       className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-deepGold focus:border-transparent transition-all min-h-[100px]"
-                      placeholder="Briefly describe your brand/company and what you do"
+                      placeholder={t('partner.apply.form.descriptionPlaceholder')}
                     />
                   </div>
                 </motion.div>
 
                 <motion.div custom={6} variants={formFieldVariants} className="relative">
                   <label htmlFor="partnershipGoals" className="block text-sm font-medium text-gray-700 mb-1">
-                    Partnership Goals *
+                    {t('partner.apply.form.partnershipGoals')} *
                   </label>
                   <div className="relative">
                     <div className="absolute top-3 left-3 flex items-start pointer-events-none">
@@ -538,7 +542,7 @@ const PartnerApplicationContent = () => {
                       value={formData.partnershipGoals}
                       onChange={(e) => handleInputChange("partnershipGoals", e.target.value)}
                       className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-deepGold focus:border-transparent transition-all min-h-[100px]"
-                      placeholder="What are your goals for this partnership? How do you envision working with us?"
+                      placeholder={t('partner.apply.form.partnershipGoalsPlaceholder')}
                     />
                   </div>
                 </motion.div>

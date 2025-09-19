@@ -55,7 +55,52 @@
       "button": "Postulez Maintenant"
     },
     "languageSelector": {
-      "label": "Langue"
+      "label": "Langue",
+      "chooseLanguage": "Choisir la Langue"
+    },
+    "apply": {
+      "backLink": "Retour à la Page Partenaire",
+      "title": "Demande de Partenariat",
+      "description": "Remplissez le formulaire ci-dessous pour demander un partenariat avec NESA Media. Nous examinerons votre candidature et vous répondrons dans un délai de 3 à 5 jours ouvrables.",
+      "form": {
+        "name": "Votre Nom",
+        "namePlaceholder": "Entrez votre nom complet",
+        "email": "Adresse Email",
+        "emailPlaceholder": "Entrez votre adresse email",
+        "phone": "Numéro de Téléphone",
+        "phonePlaceholder": "Entrez votre numéro de téléphone",
+        "brandName": "Nom de la Marque/Entreprise",
+        "brandNamePlaceholder": "Entrez le nom de votre marque/entreprise",
+        "brandLink": "Site Web de la Marque/Entreprise",
+        "brandLinkPlaceholder": "https://votremarque.com",
+        "description": "Description de la Marque/Entreprise",
+        "descriptionPlaceholder": "Décrivez brièvement votre marque/entreprise et ce que vous faites",
+        "partnershipGoals": "Objectifs du Partenariat",
+        "partnershipGoalsPlaceholder": "Quels sont vos objectifs pour ce partenariat? Comment envisagez-vous de travailler avec nous?",
+        "submit": "Soumettre la Candidature",
+        "submitting": "Soumission en cours..."
+      },
+      "success": {
+        "title": "Candidature Soumise avec Succès",
+        "message1": "Merci pour votre intérêt à devenir partenaire de NESA Media!",
+        "message2": "Nous avons reçu votre candidature et l'examinerons dans un délai de",
+        "days": "3 à 5 jours ouvrables",
+        "message3": "et vous contacterons via l'adresse email que vous avez fournie.",
+        "backButton": "Retourner à la Page Partenaire",
+        "submitAnother": "Soumettre une Autre Candidature"
+      },
+      "errors": {
+        "nameRequired": "Veuillez entrer votre nom",
+        "emailRequired": "Veuillez entrer votre adresse email",
+        "invalidEmail": "Veuillez entrer une adresse email valide",
+        "phoneRequired": "Veuillez entrer votre numéro de téléphone",
+        "brandNameRequired": "Veuillez entrer le nom de votre marque/entreprise",
+        "brandLinkRequired": "Veuillez entrer le site web de votre marque/entreprise",
+        "invalidUrl": "Veuillez entrer une URL de site web valide",
+        "descriptionRequired": "Veuillez fournir une description de votre marque/entreprise",
+        "goalsRequired": "Veuillez décrire vos objectifs de partenariat",
+        "noConnection": "Pas de connexion Internet. Veuillez vérifier votre connexion et réessayer."
+      }
     }
   }
 }

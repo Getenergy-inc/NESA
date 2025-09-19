@@ -17,6 +17,7 @@ export interface IPartner extends Document {
   brandLink: string;
   description: string;
   partnershipGoals: string;
+  language?: string; // Add language field
   createdAt: Date;
   updatedAt: Date;
   syncedToSheets: boolean;
@@ -77,6 +78,11 @@ try {
       trim: true,
       minlength: [10, 'Partnership goals must be at least 10 characters']
     },
+    language: {
+      type: String,
+      enum: ['en', 'fr', 'ar', 'sw', 'pt'],
+      default: 'en'
+    },
     syncedToSheets: {
       type: Boolean,
       default: false
@@ -116,7 +122,7 @@ export async function POST(request: NextRequest) {
     const bodyPromise = request.json();
     requestBody = await Promise.race([bodyPromise, timeoutPromise]);
     
-    const { name, email, phone, brandName, brandLink, description, partnershipGoals } = requestBody;
+    const { name, email, phone, brandName, brandLink, description, partnershipGoals, language } = requestBody;
 
     // Connect to database with retry logic
     let dbConnected = false;
@@ -163,6 +169,7 @@ export async function POST(request: NextRequest) {
         existingEntry.brandLink = brandLink;
         existingEntry.description = description;
         existingEntry.partnershipGoals = partnershipGoals;
+        existingEntry.language = language || existingEntry.language || 'en';
         await existingEntry.save();
       } catch (dbError) {
         console.error('Database update error:', dbError);
@@ -190,6 +197,7 @@ export async function POST(request: NextRequest) {
           id: existingEntry._id,
           name: existingEntry.name,
           email: existingEntry.email,
+          language: existingEntry.language,
           syncedToSheets: sheetsUpdateSuccess,
           isUpdate: true
         }
@@ -206,7 +214,8 @@ export async function POST(request: NextRequest) {
         brandName: brandName.trim(),
         brandLink: brandLink.trim(),
         description: description.trim(),
-        partnershipGoals: partnershipGoals.trim()
+        partnershipGoals: partnershipGoals.trim(),
+        language: language || 'en'
       });
 
       // Save to database
@@ -256,6 +265,7 @@ export async function POST(request: NextRequest) {
         id: savedEntry._id,
         name: savedEntry.name,
         email: savedEntry.email,
+        language: savedEntry.language,
         syncedToSheets: sheetsSuccess,
         isUpdate: false
       }

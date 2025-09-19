@@ -55,7 +55,52 @@
       "button": "Apply Now"
     },
     "languageSelector": {
-      "label": "Language"
+      "label": "Language",
+      "chooseLanguage": "Choose Language"
+    },
+    "apply": {
+      "backLink": "Back to Partner Page",
+      "title": "Partner Application",
+      "description": "Complete the form below to apply for a partnership with NESA Media. We'll review your application and get back to you within 3-5 business days.",
+      "form": {
+        "name": "Your Name",
+        "namePlaceholder": "Enter your full name",
+        "email": "Email Address",
+        "emailPlaceholder": "Enter your email address",
+        "phone": "Phone Number",
+        "phonePlaceholder": "Enter your phone number",
+        "brandName": "Brand/Company Name",
+        "brandNamePlaceholder": "Enter your brand/company name",
+        "brandLink": "Brand/Company Website",
+        "brandLinkPlaceholder": "https://yourbrand.com",
+        "description": "Brand/Company Description",
+        "descriptionPlaceholder": "Briefly describe your brand/company and what you do",
+        "partnershipGoals": "Partnership Goals",
+        "partnershipGoalsPlaceholder": "What are your goals for this partnership? How do you envision working with us?",
+        "submit": "Submit Application",
+        "submitting": "Submitting..."
+      },
+      "success": {
+        "title": "Application Submitted Successfully",
+        "message1": "Thank you for your interest in partnering with NESA Media!",
+        "message2": "We've received your application and will review it within",
+        "days": "3-5 business days",
+        "message3": "and contact you via the email address you provided.",
+        "backButton": "Return to Partner Page",
+        "submitAnother": "Submit Another Application"
+      },
+      "errors": {
+        "nameRequired": "Please enter your name",
+        "emailRequired": "Please enter your email address",
+        "invalidEmail": "Please enter a valid email address",
+        "phoneRequired": "Please enter your phone number",
+        "brandNameRequired": "Please enter your brand/company name",
+        "brandLinkRequired": "Please enter your brand/company website",
+        "invalidUrl": "Please enter a valid website URL",
+        "descriptionRequired": "Please provide a description of your brand/company",
+        "goalsRequired": "Please describe your partnership goals",
+        "noConnection": "No internet connection. Please check your connection and try again."
+      }
     }
   }
 }

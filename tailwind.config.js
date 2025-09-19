@@ -106,6 +106,9 @@ module.exports = {
       transitionTimingFunction: {
         'bounce-in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
+      animation: {
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
     },
   },
   plugins: [

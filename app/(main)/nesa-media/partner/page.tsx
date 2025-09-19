@@ -13,9 +13,9 @@ const PartnersPageContent = () => {
   const { t } = usePartnerLanguage();
   
   return (
-    <>
-      {/* Language Selector - Top Right */}
-      <div className="absolute top-8 right-8 z-20">
+    <div className="relative">
+      {/* Language Selector - Top Right (positioned below navbar) */}
+      <div className="absolute top-24 md:top-32 right-8 z-[100]">
         <ClientOnly fallback={<div className="w-24 h-10" />}>
           <PartnerLanguageSelector />
         </ClientOnly>
@@ -52,6 +52,7 @@ const PartnersPageContent = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col md:flex-row gap-4 items-center justify-center"
             >
               <Link href="/nesa-media/partner/apply">
                 <button className="bg-deepGold hover:bg-darkGold text-black font-bold px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105">
@@ -391,7 +392,7 @@ const PartnersPageContent = () => {
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
