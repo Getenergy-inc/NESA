@@ -1,0 +1,82 @@
+/**
+ * Font rendering improvements for cross-browser consistency
+ * Ensures text appears similar in Chrome and Edge
+ */
+
+/* Base font rendering settings */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+/* Edge-specific font rendering */
+@supports (-ms-ime-align:auto) {
+  html {
+    text-rendering: optimizeLegibility !important;
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+}
+
+/* Ensure consistent font weight rendering */
+b, strong, h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Use specific weight instead of 'bold' */
+}
+
+/* Fix for inconsistent letter-spacing in Edge */
+.nav-item a, 
+.dropdown-item,
+.mobile-nav-link,
+.mobile-nav-item-link,
+.mobile-dropdown-toggle {
+  letter-spacing: 0.015em !important; /* Force consistent letter spacing */
+}
+
+/* Fix for font rendering in Edge */
+@supports (-ms-ime-align:auto) {
+  .nav-item a, 
+  .dropdown-item,
+  .mobile-nav-link,
+  .mobile-nav-item-link,
+  .mobile-dropdown-toggle {
+    text-shadow: 0 0 0.01px rgba(0,0,0,0.1); /* Subtle text shadow to improve rendering */
+  }
+}
+
+/* Fix for font weight inconsistencies */
+@supports (-ms-ime-align:auto) {
+  .font-medium {
+    font-weight: 500 !important;
+  }
+  
+  .font-semibold {
+    font-weight: 600 !important;
+  }
+  
+  .font-bold {
+    font-weight: 700 !important;
+  }
+}
+
+/* Fix for text color inconsistencies */
+@supports (-ms-ime-align:auto) {
+  .text-deepGold {
+    color: #FFB92E !important;
+  }
+  
+  .text-white {
+    color: #FFFFFF !important;
+  }
+}
+
+/* Fix for hover text color in Edge */
+@supports (-ms-ime-align:auto) {
+  .hover\:text-deepGold:hover {
+    color: #FFB92E !important;
+  }
+}

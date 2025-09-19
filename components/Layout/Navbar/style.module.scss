@@ -1,9 +1,14 @@
 /* Horizontal Navigation Styles */
 .nav-item {
   position: relative;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  will-change: transform;
 
   &:hover {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
     transform: translateY(-2px);
   }
 
@@ -19,7 +24,10 @@
       bottom: -2px;
       left: 0;
       background-color: #FFB92E;
+      -webkit-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
       transition: width 0.3s ease;
+      will-change: width;
     }
 
     &:hover::after {
@@ -33,19 +41,46 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(23, 18, 10, 0.95);
+  background: rgba(23, 18, 10, 0.9); /* Slightly adjusted opacity */
   border: 1px solid rgba(234, 88, 12, 0.3);
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15); /* Simplified shadow */
   opacity: 0;
   visibility: hidden;
+  -webkit-transform: translateY(-15px) scale(0.95);
+  -ms-transform: translateY(-15px) scale(0.95);
   transform: translateY(-15px) scale(0.95);
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
   min-width: 280px;
   padding: 12px 0;
+  /* Ensure backdrop-filter is applied consistently across browsers */
+  -webkit-backdrop-filter: blur(15px); /* For Safari and Edge compatibility */
   backdrop-filter: blur(15px);
   border-top: 3px solid #ea580c;
+  /* Fix for Edge backdrop-filter rendering */
+  will-change: transform, opacity;
+  
+  /* Edge-specific backdrop-filter fix */
+  @supports (-ms-ime-align:auto) {
+    background-color: rgba(23, 18, 10, 0.95);
+    /* Use a pseudo-element for Edge to improve backdrop-filter */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+      z-index: -1;
+      border-radius: 12px;
+      pointer-events: none;
+    }
+  }
 
   .dropdown-item {
     display: flex;
@@ -55,10 +90,13 @@
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     min-height: 52px;
+    will-change: transform, background, color;
 
     &:last-child {
       border-bottom: none;
@@ -67,6 +105,8 @@
     &:hover {
       background: linear-gradient(135deg, rgba(234, 88, 12, 0.2) 0%, rgba(234, 88, 12, 0.3) 100%);
       color: #fbbf24;
+      -webkit-transform: translateX(4px);
+      -ms-transform: translateX(4px);
       transform: translateX(4px);
       box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
 
@@ -96,9 +136,12 @@
       height: 18px;
       margin-right: 12px;
       margin-top: -1px; // Fine-tune vertical alignment with text baseline
+      -webkit-transition: color 0.3s ease;
+      -ms-transition: color 0.3s ease;
       transition: color 0.3s ease;
       color: #9ca3af;
       flex-shrink: 0;
+      will-change: color;
 
       svg {
         display: block; // Prevent inline spacing issues
@@ -120,6 +163,8 @@
 .nav-item:hover .dropdown {
   opacity: 1;
   visibility: visible;
+  -webkit-transform: translateY(0) scale(1);
+  -ms-transform: translateY(0) scale(1);
   transform: translateY(0) scale(1);
 }
 
@@ -132,15 +177,21 @@
   justify-content: center;
   width: 16px;
   height: 16px;
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #9ca3af;
   flex-shrink: 0;
+  will-change: color;
 
   svg {
+    -webkit-transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     width: 16px;
     height: 16px;
     display: block; // Prevent inline spacing issues
+    will-change: transform;
   }
 }
 
@@ -149,6 +200,8 @@
   color: #FFB92E;
 
   svg {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 }
@@ -157,6 +210,8 @@
   color: #FFB92E;
 
   svg {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 }
@@ -165,6 +220,8 @@
 .nav-item:focus-within .dropdown {
   opacity: 1;
   visibility: visible;
+  -webkit-transform: translateY(0) scale(1);
+  -ms-transform: translateY(0) scale(1);
   transform: translateY(0) scale(1);
 }
 
@@ -288,7 +345,10 @@
     max-height: 0;
     opacity: 0;
     visibility: hidden;
+    -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: max-height, opacity, visibility;
 
     &.expanded {
       max-height: 500px;
@@ -386,7 +446,11 @@
   .mobile-nav-item:active,
   .mobile-dropdown-toggle:active,
   .mobile-nav-item-link:active {
+    -webkit-transform: scale(0.98);
+    -ms-transform: scale(0.98);
     transform: scale(0.98);
+    -webkit-transition: transform 0.1s ease;
+    -ms-transition: transform 0.1s ease;
     transition: transform 0.1s ease;
   }
 
@@ -426,6 +490,8 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 56px;
 
@@ -433,6 +499,8 @@
     &:focus {
       background: linear-gradient(135deg, rgba(234, 88, 12, 0.1) 0%, rgba(234, 88, 12, 0.15) 100%);
       color: #fbbf24;
+      -webkit-transform: translateX(2px);
+      -ms-transform: translateX(2px);
       transform: translateX(2px);
       outline: none;
     }
@@ -452,6 +520,8 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 56px;
     border-radius: 12px;
@@ -460,11 +530,15 @@
     &:focus {
       background: linear-gradient(135deg, rgba(234, 88, 12, 0.1) 0%, rgba(234, 88, 12, 0.15) 100%);
       color: #fbbf24;
+      -webkit-transform: translateX(2px);
+      -ms-transform: translateX(2px);
       transform: translateX(2px);
       outline: none;
     }
 
     &:active {
+      -webkit-transform: translateX(1px) scale(0.98);
+      -ms-transform: translateX(1px) scale(0.98);
       transform: translateX(1px) scale(0.98);
       background: linear-gradient(135deg, rgba(234, 88, 12, 0.15) 0%, rgba(234, 88, 12, 0.2) 100%);
     }
@@ -510,6 +584,8 @@
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 56px; // Enhanced touch-friendly height
     position: relative;
@@ -519,6 +595,8 @@
       background: linear-gradient(135deg, rgba(234, 88, 12, 0.1) 0%, rgba(234, 88, 12, 0.15) 100%);
       color: #fbbf24;
       outline: none;
+      -webkit-transform: translateX(2px);
+      -ms-transform: translateX(2px);
       transform: translateX(2px);
     }
 
@@ -527,6 +605,8 @@
     }
 
     &:active {
+      -webkit-transform: translateX(1px) scale(0.98);
+      -ms-transform: translateX(1px) scale(0.98);
       transform: translateX(1px) scale(0.98);
       background: linear-gradient(135deg, rgba(234, 88, 12, 0.15) 0%, rgba(234, 88, 12, 0.2) 100%);
     }
@@ -598,9 +678,12 @@
   .mobile-dropdown-content {
     background: linear-gradient(135deg, rgba(23, 18, 10, 0.9) 0%, rgba(29, 23, 14, 0.9) 100%);
     border-top: 1px solid rgba(234, 88, 12, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
     max-height: 0;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Ensure backdrop-filter is applied consistently across browsers */
     backdrop-filter: blur(8px);
     opacity: 0;
     visibility: hidden;

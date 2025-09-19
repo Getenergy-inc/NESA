@@ -69,7 +69,7 @@ const EndorseNesaAfricaPage = () => {
         "Newsletter Feature Possibility"
       ],
       buttonText: "Submit Free Endorsement",
-      buttonVariant: "outline" as const,
+      buttonVariant: "outlined" as const,
       popular: false
     },
     {
@@ -183,7 +183,7 @@ const EndorseNesaAfricaPage = () => {
               <Link href="/get-involved/endorse-nesa-africa/showcase">
                 <Button
                   text="View All Endorsers"
-                  variant="outline"
+                  variant="outlined"
                   size="large"
                   className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-8 py-4 text-lg"
                 />
@@ -191,7 +191,7 @@ const EndorseNesaAfricaPage = () => {
               <Link href="/get-involved/sponsor">
                 <Button
                   text="Become a Sponsor"
-                  variant="outline"
+                  variant="outlined"
                   size="large"
                   className="border-white text-white hover:bg-white hover:text-[#17120a] px-8 py-4 text-lg"
                 />
@@ -396,7 +396,7 @@ const EndorseNesaAfricaPage = () => {
                 <Link href="/get-involved/endorse-nesa-africa/upload" className="block">
                   <Button
                     text={tier.buttonText}
-                    variant={tier.buttonVariant}
+                    variant={tier.buttonVariant === "outlined" ? "outlined" : tier.buttonVariant}
                     size="medium"
                     fullWidth
                     className={
@@ -442,7 +442,7 @@ const EndorseNesaAfricaPage = () => {
               <Link href="/get-involved/endorse-nesa-africa/showcase">
                 <Button
                   text="View Current Endorsers"
-                  variant="outline"
+                  variant="outlined"
                   size="large"
                   className="border-white text-white hover:bg-white hover:text-[#17120a] px-8 py-4 text-lg"
                 />

@@ -21,6 +21,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import Image from "next/image";
+import AboutHeader2 from "@/components/UI/About/AboutHeader";
 
 const Page = () => {
   const { sliderRef: ref, moveLeft, moveRight } = useSlider();
@@ -29,6 +30,7 @@ const Page = () => {
   return (
     <>
       <AboutHeader />
+      <AboutHeader2/>
       <NESAAfrica />
       <NesaJourney />
       <WhatWeDo />

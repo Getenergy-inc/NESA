@@ -296,7 +296,7 @@ const JudgePage: React.FC<JudgePageProps> = ({
           )}
           {(selectedCategory || selectedRegion || selectedSubCategory) && (
             <div className="mb-8 mt-12 sm:mt-0">
-              <button
+              {/* <button
                 onClick={handleBack}
                 className="flex items-center justify-center"
                 style={{
@@ -307,7 +307,7 @@ const JudgePage: React.FC<JudgePageProps> = ({
                 }}
               >
                 <IoIosArrowBack size={24} color="white" />
-              </button>
+              </button> */}
             </div>
           )}
           <div className={`mt-8 ${!selectedCategory && !selectedRegion && !selectedSubCategory ? 'text-center' : 'text-left'}`}>
