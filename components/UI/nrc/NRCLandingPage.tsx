@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useAuthContext } from '@/lib/context/AuthContext';
