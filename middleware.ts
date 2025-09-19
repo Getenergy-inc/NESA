@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+// Polyfill global for edge runtime
+if (typeof global === 'undefined') {
+  (globalThis as any).global = globalThis;
+}
+
 export function middleware(request: NextRequest) {
   // Get the token from cookies
   const token = request.cookies.get("token")?.value;

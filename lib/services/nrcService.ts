@@ -62,9 +62,26 @@ class NRCService {
   async registerVolunteer(data: NRCVolunteerRegistration): Promise<any> {
     try {
       const response = await apiClient.post(`${this.baseUrl}/volunteers/register`, data);
-      return response.data.data; // Return the volunteer data directly
+      
+      // Check if the response indicates success
+      if (response.data.success) {
+        return response.data.data; // Return the volunteer data
+      } else {
+        throw new Error(response.data.message || 'Registration failed');
+      }
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to register volunteer');
+      console.error('NRC Registration Error:', error);
+      
+      // Handle specific error cases
+      if (error.response?.status === 409) {
+        throw new Error('Volunteer already registered');
+      }
+      
+      if (error.response?.status === 429) {
+        throw new Error('Too many requests. Please wait a moment and try again.');
+      }
+      
+      throw new Error(error.response?.data?.message || error.message || 'Failed to register volunteer');
     }
   }
 
@@ -318,8 +335,16 @@ class NRCService {
   async checkVolunteerStatus(): Promise<any> {
     try {
       const response = await apiClient.get(`${this.baseUrl}/volunteers/check-status`);
-      return response.data.data;
+      return response.data; // Return the full response including success flag
     } catch (error: any) {
+      // If volunteer not found (404), return a structured response
+      if (error.response?.status === 404) {
+        return {
+          success: false,
+          message: 'Volunteer not found',
+          data: null
+        };
+      }
       throw new Error(error.response?.data?.message || 'Failed to check volunteer status');
     }
   }
