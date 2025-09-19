@@ -32,12 +32,12 @@ export const navlinks: NavLink[] = [
       },
       {
         label: "About NESA Advisory Board",
-        path: "/about/about-nesa-boa",
+        path: "/about/boa",
         icon: "Users",
       },
       {
-        label: "About SECF",
-        path: "/about/secf",
+        label: "About SCEF",
+        path: "/about/scef",
         icon: "Building2",
       },
       {

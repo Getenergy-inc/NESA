@@ -51,7 +51,7 @@ export default function Spotlight() {
         className="mt-12 flex flex-wrap gap-4 justify-center"
       >
         <Link
-          href="/about/about-nesa-boa/eoi-form"
+          href="/about/boa/eoi-form"
           className="px-6 py-3 rounded-full bg-[#ea580c] hover:bg-[#f59e0b] text-black font-semibold shadow-md hover:shadow-[#f59e0b]/50 transition-all duration-300"
         >
           Apply to the Board
