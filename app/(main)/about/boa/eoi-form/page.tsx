@@ -4,15 +4,19 @@
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import { useState } from "react";
 
 type FormValues = {
   fullName: string;
   title: string;
+  email: string;      
+  phone: string;
   organization: string;
   country: string;
   category: string;
   bio: string;
   cv: FileList;
+  image: FileList;
   references: string;
   coi: string;
   consent: boolean;
@@ -25,12 +29,16 @@ export default function AdvisorEOIForm() {
     formState: { errors },
   } = useForm<FormValues>();
 
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
   const onSubmit = (data: FormValues) => {
     console.log("Form Submitted:", data);
     alert("✅ Expression of Interest submitted!");
   };
 
   return (
+    
+    
     <section
       className="relative bg-[#ffffff] text-white py-20 px-6"
       style={{
@@ -86,6 +94,32 @@ export default function AdvisorEOIForm() {
               className="w-full p-3 rounded-lg bg-[#ffffff]/70 text-gray-800 border border-[#f59e0b]/40 focus:ring-2 focus:ring-[#f59e0b] focus:border-transparent outline-none transition"
               placeholder="e.g., Professor, Director, CEO"
             />
+          </div>
+
+                    {/* Email */}
+          <div>
+            <label className="block mb-2 font-semibold text-gray-800">Email Address</label>
+            <input
+              type="email"
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+              className="w-full p-3 rounded-lg bg-[#ffffff]/70 text-gray-800 border border-[#f59e0b]/40 
+              focus:ring-2 focus:ring-[#f59e0b] outline-none transition"
+              placeholder="yourname@example.com"
+            />
+            {errors.email && <span className="text-red-400 text-sm">Valid email is required</span>}
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label className="block mb-2 font-semibold text-gray-800">Phone Number (WhatsApp)</label>
+            <input
+              type="tel"
+              {...register("phone", { required: true })}
+              className="w-full p-3 rounded-lg bg-[#ffffff]/70 text-gray-800 border border-[#f59e0b]/40 
+              focus:ring-2 focus:ring-[#f59e0b] outline-none transition"
+              placeholder="+234 801 234 5678"
+            />
+            {errors.phone && <span className="text-red-400 text-sm">Phone number is required</span>}
           </div>
 
           {/* Organization */}
@@ -155,6 +189,40 @@ export default function AdvisorEOIForm() {
               className="block w-full text-sm text-gray-800 border border-[#f59e0b]/40 rounded-lg cursor-pointer focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-[#ea580c] file:to-[#f59e0b] file:text-[#1a140b] hover:file:opacity-90 transition"
             />
           </div>
+          {/* Profile Image Upload with Preview */}
+          <div>
+            <label className="block mb-2 font-semibold text-gray-800">Upload Profile Image</label>
+            <input
+              type="file"
+              accept="image/*"
+              {...register("image", { required: true })}
+              onChange={(e) => {
+                if (e.target.files && e.target.files[0]) {
+                  setPreviewImage(URL.createObjectURL(e.target.files[0]));
+                }
+              }}
+              className="block w-full text-sm text-gray-800 border border-[#f59e0b]/40 rounded-lg cursor-pointer focus:outline-none 
+                file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 
+                file:text-sm file:font-semibold 
+                file:bg-gradient-to-r file:from-[#ea580c] file:to-[#f59e0b] 
+                file:text-[#1a140b] hover:file:opacity-90 transition"
+            />
+            {errors.image && (
+              <span className="text-red-400 text-sm">Profile image is required</span>
+            )}
+
+            {/* Preview */}
+            {previewImage && (
+              <div className="mt-4 flex justify-center">
+                <img
+                  src={previewImage}
+                  alt="Preview"
+                  className="w-32 h-32 object-cover rounded-full border-4 border-[#f59e0b] shadow-lg"
+                />
+              </div>
+            )}
+          </div>
+
 
           {/* References */}
           <div>
