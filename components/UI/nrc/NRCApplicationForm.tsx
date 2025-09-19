@@ -1,17 +1,17 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useRouter } from 'next/navigation';
-import { 
-  User, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  FileText, 
-  CheckCircle, 
+import {
+  User,
+  Mail,
+  Phone,
+  MapPin,
+  FileText,
+  CheckCircle,
   ArrowLeft,
   Upload,
   X
@@ -34,7 +34,7 @@ const nrcApplicationSchema = z.object({
   commitment: z.boolean().refine(val => val === true, 'You must commit to completing 200+ profiles'),
   terms: z.boolean().refine(val => val === true, 'You must agree to the terms and conditions'),
   cv: z.any().optional(),
-  
+
   // Category specific fields
   department: z.string().optional(),
   role: z.string().optional(),
@@ -51,7 +51,7 @@ type NRCApplicationData = z.infer<typeof nrcApplicationSchema>;
 const NRCApplicationForm: React.FC = () => {
   const router = useRouter();
   const { user } = useAuthContext();
-  const { loading, error, success, registerVolunteer, clearError, clearSuccess } = useNRCRegistration();
+  const { loading, error, registerVolunteer, clearError, clearSuccess } = useNRCRegistration();
   const [showSuccess, setShowSuccess] = useState(false);
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [cvFile, setCvFile] = useState<File | null>(null);
@@ -62,7 +62,6 @@ const NRCApplicationForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
   } = useForm<NRCApplicationData>({
     resolver: zodResolver(nrcApplicationSchema),
     defaultValues: {
@@ -97,7 +96,7 @@ const NRCApplicationForm: React.FC = () => {
     const updatedSkills = selectedSkills.includes(skill)
       ? selectedSkills.filter(s => s !== skill)
       : [...selectedSkills, skill];
-    
+
     setSelectedSkills(updatedSkills);
     setValue('skills', updatedSkills);
   };
@@ -116,40 +115,54 @@ const NRCApplicationForm: React.FC = () => {
   };
 
   const onSubmit = async (data: NRCApplicationData) => {
+    console.log('Form submission started', { data, user });
     clearError();
     clearSuccess();
 
     if (!user?.id) {
+      console.error('User not authenticated:', user);
       alert('You must be logged in to register as an NRC volunteer');
       return;
     }
 
     if (!data.commitment || !data.terms) {
+      console.error('Missing commitment or terms acceptance');
       alert('Please accept the commitment and terms to continue');
       return;
     }
 
     if (selectedSkills.length === 0) {
+      console.error('No skills selected');
       alert('Please select at least one skill');
       return;
     }
 
+    // Use the logged-in user's email, not the form email
     const registrationData = {
       userId: user.id,
       region: 'Africa', // Default to Africa for now
       country: data.country,
       coordinator: undefined, // Will be assigned later by admin
       displayName: data.fullName,
-      badge: undefined
+      badge: undefined,
+      // Use authenticated user's email to prevent multiple accounts
+      fullName: data.fullName,
+      email: user.email // Use logged-in user's email
     };
 
+    console.log('Sending registration data:', registrationData);
+
     const success = await registerVolunteer(registrationData);
-    
+    console.log('Registration result:', success);
+
     if (success) {
+      console.log('Registration successful (or already registered), showing success screen');
       setShowSuccess(true);
       // Reset form
       setSelectedSkills([]);
       setCvFile(null);
+    } else {
+      console.log('Registration failed with error:', error);
     }
   };
 
@@ -167,10 +180,10 @@ const NRCApplicationForm: React.FC = () => {
           className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center"
         >
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Application Submitted!</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome to NRC!</h2>
           <p className="text-gray-600 mb-6">
-            Thank you for applying to the NESA NRC program. We'll review your application
-            and contact you by July 15, 2025.
+            You're all set! You're now part of the NESA Nominee Research Corps.
+            Access your dashboard to start contributing to Africa's education future.
           </p>
           <div className="space-y-4">
             <Button
@@ -371,11 +384,10 @@ const NRCApplicationForm: React.FC = () => {
                 {availableSkills.map((skill) => (
                   <label
                     key={skill}
-                    className={`flex items-center p-3 border rounded-lg cursor-pointer transition-colors ${
-                      selectedSkills.includes(skill)
-                        ? 'border-[#ea580c] bg-orange-50'
-                        : 'border-gray-300 hover:border-gray-400'
-                    }`}
+                    className={`flex items-center p-3 border rounded-lg cursor-pointer transition-colors ${selectedSkills.includes(skill)
+                      ? 'border-[#ea580c] bg-orange-50'
+                      : 'border-gray-300 hover:border-gray-400'
+                      }`}
                   >
                     <input
                       type="checkbox"
@@ -383,11 +395,10 @@ const NRCApplicationForm: React.FC = () => {
                       onChange={() => handleSkillToggle(skill)}
                       className="sr-only"
                     />
-                    <div className={`w-4 h-4 rounded border-2 mr-3 flex items-center justify-center ${
-                      selectedSkills.includes(skill)
-                        ? 'border-[#ea580c] bg-[#ea580c]'
-                        : 'border-gray-300'
-                    }`}>
+                    <div className={`w-4 h-4 rounded border-2 mr-3 flex items-center justify-center ${selectedSkills.includes(skill)
+                      ? 'border-[#ea580c] bg-[#ea580c]'
+                      : 'border-gray-300'
+                      }`}>
                       {selectedSkills.includes(skill) && (
                         <CheckCircle className="w-3 h-3 text-white" />
                       )}
@@ -474,6 +485,24 @@ const NRCApplicationForm: React.FC = () => {
                 <p className="text-red-500 text-sm">{errors.terms.message}</p>
               )}
             </div>
+
+            {/* Error Display */}
+            {error && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                <p className="text-red-600 text-sm font-medium">Registration Error:</p>
+                <p className="text-red-600 text-sm">{error}</p>
+                {error.includes('Too many requests') && (
+                  <p className="text-red-500 text-xs mt-2">
+                    You've made too many registration attempts. Please wait a few minutes before trying again.
+                  </p>
+                )}
+                {!error.includes('Too many requests') && (
+                  <p className="text-red-500 text-xs mt-2">
+                    Please check the browser console for more details and try again.
+                  </p>
+                )}
+              </div>
+            )}
 
             {/* Submit Button */}
             <div className="pt-6">

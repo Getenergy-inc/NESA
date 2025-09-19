@@ -26,6 +26,19 @@ const NRCLandingPage: React.FC = () => {
   const router = useRouter();
   const { isAuthenticated } = useAuthContext();
   const { loading, hasApplication, isApproved, isPending, isRejected, canAccessDashboard } = useNRCStatus();
+  
+  // Debug logs
+  useEffect(() => {
+    console.log('NRC Landing Page - Auth Status:', { isAuthenticated });
+    console.log('NRC Landing Page - Volunteer Status:', { 
+      loading, 
+      hasApplication, 
+      isApproved, 
+      isPending, 
+      isRejected, 
+      canAccessDashboard 
+    });
+  }, [isAuthenticated, loading, hasApplication, isApproved, isPending, isRejected, canAccessDashboard]);
 
   const handleApplyNow = () => {
     // Check authentication and redirect accordingly
@@ -40,7 +53,8 @@ const NRCLandingPage: React.FC = () => {
     }
 
     if (hasApplication) {
-      // User already has an application, show status
+      // User already has an application, redirect to dashboard
+      router.push('/get-involved/nrc-volunteer/dashboard');
       return;
     }
 
@@ -59,15 +73,8 @@ const NRCLandingPage: React.FC = () => {
   };
 
   const getButtonDisabled = () => {
-    // TODO: Re-enable button state logic when backend is ready
-    // Button state temporarily enabled for testing
-
-    /* ORIGINAL AUTHENTICATION-BASED LOGIC - COMMENTED FOR TESTING
+    // Re-enable button state logic
     return isPending || isRejected;
-    */
-
-    // For testing: Button always enabled
-    return false;
   };
 
   const benefits = [

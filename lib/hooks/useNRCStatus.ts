@@ -76,52 +76,44 @@ export const useNRCStatus = (): NRCStatus => {
       // Use the dedicated checkVolunteerStatus endpoint
       const statusResponse = await nrcService.checkVolunteerStatus();
 
-      if (statusResponse.success && statusResponse.data) {
-        const status = statusResponse.data;
+      if (statusResponse.success && statusResponse.data && statusResponse.data.profile) {
+        const profile = statusResponse.data.profile;
 
-        if (status.isVolunteer && status.profile) {
-          setHasApplication(true);
-          setIsApproved(status.status === "active");
+        setHasApplication(true);
+        setIsApproved(profile.status === "ACTIVE");
 
-          setVolunteer({
-            id: status.profile.id,
-            applicationId: status.profile.id, // Using volunteer ID as application ID
-            fullName: status.profile.fullName,
-            email: status.profile.email,
-            country: status.profile.country,
-            approvalDate: status.profile.joinedAt,
-            nomineesUploaded: status.profile.totalUploads,
-            targetNominees: 200, // Default target
-            completionRate: status.profile.completionRate,
-            lastActive: status.profile.lastActiveAt,
-            status: status.profile.isActive ? "active" : "inactive",
-          });
+        setVolunteer({
+          id: profile.id,
+          applicationId: profile.applicationId || profile.id,
+          fullName: profile.fullName,
+          email: profile.email,
+          country: profile.country,
+          approvalDate: profile.approvalDate,
+          nomineesUploaded: profile.nomineesUploaded || 0,
+          targetNominees: profile.targetNominees || 200,
+          completionRate: profile.completionRate || 0,
+          lastActive: profile.lastActive,
+          status: profile.status === "ACTIVE" ? "active" : "inactive",
+        });
 
-          // Create application data from profile
-          setApplication({
-            id: status.profile.id,
-            fullName: status.profile.fullName,
-            email: status.profile.email,
-            phone: status.profile.phone,
-            country: status.profile.country,
-            motivation: "NRC Volunteer Application",
-            experience: "Approved volunteer",
-            availability: "Active",
-            skills: ["Research", "Data Collection"],
-            commitment: true,
-            terms: true,
-            applicationDate: status.profile.joinedAt,
-            status: status.profile.isActive ? "approved" : "rejected",
-          });
-        } else {
-          // User is not an NRC volunteer
-          setHasApplication(false);
-          setIsApproved(false);
-          setApplication(undefined);
-          setVolunteer(undefined);
-        }
+        // Create application data from profile
+        setApplication({
+          id: profile.applicationId || profile.id,
+          fullName: profile.fullName,
+          email: profile.email,
+          phone: profile.phone || "",
+          country: profile.country,
+          motivation: "NRC Volunteer Application",
+          experience: "Approved volunteer",
+          availability: "Active",
+          skills: ["Research", "Data Collection"],
+          commitment: true,
+          terms: true,
+          applicationDate: profile.approvalDate,
+          status: profile.status === "ACTIVE" ? "approved" : "rejected",
+        });
       } else {
-        // API call failed or returned no data
+        // User is not an NRC volunteer
         setHasApplication(false);
         setIsApproved(false);
         setApplication(undefined);

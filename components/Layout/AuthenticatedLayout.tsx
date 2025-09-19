@@ -1,8 +1,8 @@
 "use client";
  
 import React from 'react';
-import Navbar from './Navbar'; // Assuming Navbar is in the same directory
-import Footer from './Footer'; // Assuming Footer is in the same directory
+import Navbar from './Navbar'
+
  
 interface AuthenticatedLayoutProps {
   children: React.ReactNode;
@@ -19,8 +19,6 @@ const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({ children }) =
         {children}
       </main>
       
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
