@@ -222,6 +222,7 @@ const PartnersPage = () => {
           >
             Apply Now
           </button>
+          +
         </div>
       </section>
 
