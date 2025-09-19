@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import Image from 'next/image';
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
 import NominationPage from '@/components/UI/nomination/nominate';
@@ -8,11 +8,7 @@ import { useRouter } from 'next/navigation';
 
 interface Category {
   title: string;
-
-  description: ReactNode;
-
-//   description: string;
-
+  description: string | ReactNode;
   image: string;
 }
 
@@ -70,23 +66,13 @@ const SpecialRecognitionPage = () => {
   };
 
   const handleNominate = (category: Category) => {
-    const descriptionValue =
-      typeof category.description === "string" ? category.description : "";
-
     router.push(
-
       `/nominateform?type=${encodeURIComponent(
         "Africa Lifetime Education Icon Recognition"
       )}` +
         `&title=${encodeURIComponent(category.title)}` +
-        `&description=${encodeURIComponent(descriptionValue)}` +
+        `&description=${encodeURIComponent(typeof category.description === 'string' ? category.description : 'Complex description')}` +
         `&image=${encodeURIComponent(category.image)}`
-
-//       `/nominateform?type=${encodeURIComponent('Africa Lifetime Education Icon Recognition')}` +
-//       `&title=${encodeURIComponent(category.title)}` +
-//       `&description=${encodeURIComponent(category.description)}` +
-//       `&image=${encodeURIComponent(category.image)}`
-
     );
   };
 

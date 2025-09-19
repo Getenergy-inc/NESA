@@ -124,16 +124,8 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
       <div
         className={`min-h-screen max-w-screen bg-[#191307CC] text-white ${styles.homeHeader} relative flex flex-col`}
       >
-
-        {Slides.map((slide, index) => {
-          const bgImage = index === 0 ? "/images/about1.png" : "";
-
-          return (
-
-//         {/* Slides */}
-//         <div className="flex-1">
-//           {Slides.map((slide, index) => (
-
+        <div className="flex-1">
+          {Slides.map((slide, index) => (
             <section
               key={index}
               className={`w-full transition-opacity duration-500 ${

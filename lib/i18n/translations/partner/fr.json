@@ -1,0 +1,61 @@
+{
+  "partner": {
+    "hero": {
+      "title": "Devenez Partenaire de NESA Media",
+      "description": "Rejoignez la principale plateforme médiatique éducative d'Afrique mettant en valeur l'excellence à travers des documentaires, des interviews et des récits percutants",
+      "button": "Devenir Partenaire"
+    },
+    "about": {
+      "badge": "À Propos de NESA Media",
+      "title": "La Principale Plateforme Médiatique Éducative d'Afrique",
+      "description1": "NESA Media se consacre à mettre en valeur l'excellence éducative à travers l'Afrique par le biais de documentaires captivants, d'interviews exclusives et de récits percutants. Notre plateforme met en lumière le travail transformateur des éducateurs, des institutions et des organisations qui façonnent l'avenir de l'éducation sur le continent.",
+      "description2": "Grâce à nos documentaires \"Rues d'Afrique\", nos histoires d'impact éducatif et notre couverture des cérémonies de remise de prix, nous amplifions les voix et les innovations qui révolutionnent l'éducation africaine.",
+      "button": "Explorer NESA Media"
+    },
+    "benefits": {
+      "title": "Avantages du Partenariat avec NESA Media",
+      "description": "Associez-vous à NESA Media pour amplifier l'impact de votre marque dans le secteur éducatif à travers l'Afrique et connectez-vous avec notre public engagé d'éducateurs, d'institutions et d'acteurs du changement.",
+      "benefit1": {
+        "title": "Visibilité Médiatique",
+        "description": "Bénéficiez d'une couverture dans nos documentaires, interviews et contenus éducatifs atteignant des milliers de spectateurs à travers l'Afrique."
+      },
+      "benefit2": {
+        "title": "Collaboration de Contenu",
+        "description": "Co-créez du contenu éducatif captivant qui met en valeur l'engagement de votre marque à faire progresser l'éducation en Afrique."
+      },
+      "benefit3": {
+        "title": "Engagement du Public",
+        "description": "Connectez-vous avec notre réseau de leaders éducatifs, d'institutions et d'innovateurs qui façonnent l'avenir de l'éducation africaine."
+      }
+    },
+    "process": {
+      "title": "Parcours de Partenariat NESA Media",
+      "description": "Notre processus rationalisé garantit que votre partenariat avec NESA Media s'aligne sur la vision éducative de votre marque et crée un impact significatif à travers l'Afrique.",
+      "step1": {
+        "title": "Candidature",
+        "description": "Partagez l'histoire et la vision éducative de votre marque avec notre équipe de partenariat"
+      },
+      "step2": {
+        "title": "Planification du Contenu",
+        "description": "Collaborez avec nos experts médias pour développer un contenu éducatif captivant"
+      },
+      "step3": {
+        "title": "Production",
+        "description": "Notre équipe produit des médias de haute qualité mettant en valeur l'impact éducatif de votre marque"
+      },
+      "step4": {
+        "title": "Distribution",
+        "description": "Votre histoire atteint notre public à travers de multiples plateformes et événements"
+      }
+    },
+    "cta": {
+      "title": "Rejoignez le Mouvement NESA Media",
+      "description1": "Associez-vous à NESA Media pour mettre en valeur l'engagement de votre marque envers l'excellence éducative à travers l'Afrique grâce à des récits captivants et à un contenu percutant.",
+      "description2": "Ensemble, nous pouvons amplifier les histoires de réussite éducative et inspirer la prochaine génération de leaders africains.",
+      "button": "Postulez Maintenant"
+    },
+    "languageSelector": {
+      "label": "Langue"
+    }
+  }
+}
