@@ -30,7 +30,7 @@ const ScefPage = () => {
       {/* Hero Section */}
       <section className="min-h-screen relative">
         <Image
-          src="/images/about/scef-hero.jpg" // Replace with a relevant hero image for SCEF
+          src="/images/bg/back_.jpeg"
           alt="SCEF Background"
           layout="fill"
           objectFit="cover"
@@ -45,7 +45,7 @@ const ScefPage = () => {
               className="mb-4"
             >
               <Image
-                src="/images/logos/scef-logo.png" // Replace with SCEF logo
+                src="/images/logos/logos_5.jpg"  
                 alt="SCEF Logo"
                 width={150}
                 height={150}
@@ -131,7 +131,7 @@ const ScefPage = () => {
               className="rounded-xl overflow-hidden"
             >
               <Image
-                src="/images/about/scef-about.jpg" // Replace with a relevant image
+                src="/images/santos.png" 
                 alt="SCEF Team in action"
                 width={600}
                 height={400}
