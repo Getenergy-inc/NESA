@@ -56,6 +56,7 @@ export interface ApiResponse<T> {
 }
 
 class NRCService {
+  // Updated to match the backend route structure
   private baseUrl = '/api/v1/nrc';
 
   // Volunteer Management

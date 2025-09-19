@@ -3,14 +3,43 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Medal, Award, Star, TrendingUp } from 'lucide-react';
 
+// Define the volunteer type
+interface Volunteer {
+  rank: number;
+  name: string;
+  country: string;
+  avatar: string;
+  uploads: number;
+  verified: number;
+  agc: number;
+}
+
 export default function LeaderboardPage() {
   const [timeframe, setTimeframe] = useState<'weekly' | 'monthly' | 'allTime'>('monthly');
 
-  // Real leaderboard data - will be fetched from API
-  const leaderboardData = {
-    weekly: [],
-    monthly: [],
-    allTime: []
+  // Sample leaderboard data - will be fetched from API
+  const leaderboardData: Record<string, Volunteer[]> = {
+    weekly: [
+      { rank: 1, name: 'John Doe', country: 'Kenya', avatar: '👨🏾‍💻', uploads: 120, verified: 110, agc: 550 },
+      { rank: 2, name: 'Jane Smith', country: 'Nigeria', avatar: '👩🏾‍🔬', uploads: 105, verified: 98, agc: 490 },
+      { rank: 3, name: 'David Osei', country: 'Ghana', avatar: '👨🏿‍🎓', uploads: 95, verified: 90, agc: 450 },
+      { rank: 4, name: 'Amina Hassan', country: 'Tanzania', avatar: '👩🏽‍🏫', uploads: 85, verified: 80, agc: 400 },
+      { rank: 5, name: 'Michael Abebe', country: 'Ethiopia', avatar: '👨🏾‍🔧', uploads: 75, verified: 70, agc: 350 }
+    ],
+    monthly: [
+      { rank: 1, name: 'Sarah Kimani', country: 'Kenya', avatar: '👩🏾‍💼', uploads: 320, verified: 290, agc: 1450 },
+      { rank: 2, name: 'Emmanuel Adeyemi', country: 'Nigeria', avatar: '👨🏿‍🚀', uploads: 280, verified: 260, agc: 1300 },
+      { rank: 3, name: 'Fatima Diallo', country: 'Senegal', avatar: '👩🏿‍⚕️', uploads: 250, verified: 230, agc: 1150 },
+      { rank: 4, name: 'Robert Mensah', country: 'Ghana', avatar: '👨🏾‍🍳', uploads: 220, verified: 200, agc: 1000 },
+      { rank: 5, name: 'Zainab Mohammed', country: 'Egypt', avatar: '👩🏽‍🔧', uploads: 190, verified: 170, agc: 850 }
+    ],
+    allTime: [
+      { rank: 1, name: 'Daniel Mwangi', country: 'Kenya', avatar: '👨🏾‍🎨', uploads: 1200, verified: 1100, agc: 5500 },
+      { rank: 2, name: 'Chioma Okonkwo', country: 'Nigeria', avatar: '👩🏿‍🏭', uploads: 1100, verified: 1000, agc: 5000 },
+      { rank: 3, name: 'Kwame Asante', country: 'Ghana', avatar: '👨🏿‍✈️', uploads: 1000, verified: 900, agc: 4500 },
+      { rank: 4, name: 'Aisha Juma', country: 'Tanzania', avatar: '👩🏾‍🌾', uploads: 900, verified: 800, agc: 4000 },
+      { rank: 5, name: 'Tewodros Haile', country: 'Ethiopia', avatar: '👨🏾‍🏫', uploads: 800, verified: 700, agc: 3500 }
+    ]
   };
 
   const currentData = leaderboardData[timeframe];
@@ -104,6 +133,7 @@ export default function LeaderboardPage() {
             </div>
           ))}
         </motion.div>
+        ) : null}
 
         {/* Full Leaderboard Table */}
         <motion.div

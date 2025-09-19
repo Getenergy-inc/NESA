@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiClient = axios.create({
   baseURL: process.env.NEXT_PUBLIC_NODE_ENV === 'development' 
-    ? 'http://localhost:3001' // Use local backend for development
+    ? 'http://localhost:3001' // Use local backend for development (port 3001 from server config)
     : process.env.NEXT_PUBLIC_API_BASE_URL || 'https://nesa-africa-backend-7sio.onrender.com',
   headers: {
     "Content-Type": "application/json",
