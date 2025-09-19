@@ -285,7 +285,7 @@ export const legacyNavlinks = [
     label: "Media",
     path: "nesatv",
     children: [
-      { label: "NESA-TV", path: "/nesatv" },
+      { label: "NESA-TV", path: "/nesa-media" },
       { label: "it's in me Radio", path: "/radio-podcast" },
     ],
   },
