@@ -107,7 +107,7 @@ const NRCRegistrationForm: React.FC = () => {
             You need to be logged in to apply as an NRC volunteer.
           </p>
           <button
-            onClick={() => window.location.href = '/login'}
+            onClick={() => window.location.href = '/account/login'}
             className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
           >
             Login

@@ -24,15 +24,25 @@ export const useNRCRegistration = (): NRCRegistrationHook => {
     try {
       const response = await nrcService.registerVolunteer(data);
       
-      if (response.success) {
+      // The service returns the volunteer data directly, not wrapped in success response
+      if (response && response.id) {
         setSuccess(true);
         return true;
       } else {
-        setError(response.message || 'Registration failed');
+        setError('Registration failed - invalid response');
         return false;
       }
     } catch (err: any) {
-      setError(err.message || 'Registration failed');
+      const errorMessage = err.message || 'Registration failed';
+      
+      // If user is already registered, treat it as success
+      if (errorMessage.includes('already registered')) {
+        console.log('User already registered, treating as success in hook');
+        setSuccess(true);
+        return true;
+      }
+      
+      setError(errorMessage);
       return false;
     } finally {
       setLoading(false);

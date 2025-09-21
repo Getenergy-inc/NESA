@@ -109,11 +109,13 @@ export const navlinks: NavLink[] = [
         path: "/get-involved/partner",
         icon: "Handshake",
       },
+
       {
         label: "Apply As A Fundraiser",
         path: "/get-involved/apply-as-fundraiser",
         icon: "Handshake",
       },
+
     ],
   },
   {
@@ -128,7 +130,11 @@ export const navlinks: NavLink[] = [
       },
       {
         label: "NESA TV",
-        path: "/nesatv",
+
+        path: "/nesa-media",
+
+//         path: "/nesatv",
+
         icon: "Tv",
       },
       {
@@ -170,7 +176,6 @@ export const navlinks: NavLink[] = [
         path: "/help",
         icon: "LifeBuoy",
       },
-      
     ],
   },
   {
@@ -203,11 +208,9 @@ export const navlinks: NavLink[] = [
         path: "/language/pt",
         icon: "PT",
       },
-    ]
-
-  }, 
+    ],
+  },
 ];
-
 
 export const secondaryNavlinks: SecondaryNavLink[] = [
   {
@@ -220,7 +223,7 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
     path: "/sponsor",
     description: "Sponsorship application",
   },
-  
+
   {
     label: "Vote with AfriGoldcoin",
     path: "/voting",
@@ -245,7 +248,7 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
     label: "Apply as an Ambassador",
     path: "/ambassador",
     description: "NESA TV platform",
-  }
+  },
 ];
 
 // Level 3 CTA Navigation - Floating/Sticky Elements
@@ -297,8 +300,11 @@ export const legacyNavlinks = [
     label: "Awards",
     path: "/awards",
     children: [
-      { label: "Awards", path: "/awards"},
-      { label: "African Icon", path: "/nomination/sub-categories/africa-lifetime-education-icon" },
+      { label: "Awards", path: "/awards" },
+      {
+        label: "African Icon",
+        path: "/nomination/sub-categories/africa-lifetime-education-icon",
+      },
       { label: "Competitive", path: "/competitive" },
       { label: "Non-Competitive", path: "/non-competitive" },
       { label: "Nomination Process", path: "/nomination" },
@@ -310,7 +316,7 @@ export const legacyNavlinks = [
     label: "Media",
     path: "nesatv",
     children: [
-      { label: "NESA-TV", path: "/nesatv" },
+      { label: "NESA-TV", path: "/nesa-media" },
       { label: "it's in me Radio", path: "/radio-podcast" },
     ],
   },

@@ -27,15 +27,24 @@ const nextConfig = {
       };
     }
     
-    // Server-side configuration to fix "self is not defined"
+    // Server-side configuration to fix "self is not defined" and global issues
     if (isServer) {
       config.plugins = config.plugins || [];
       config.plugins.push(
         new webpack.DefinePlugin({
           'self': 'global',
+          'global': 'globalThis',
         })
       );
     }
+
+    // Fix global reference in middleware/edge runtime
+    config.plugins = config.plugins || [];
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'global': 'globalThis',
+      })
+    );
 
     // Suppress case sensitivity warnings
     config.stats = {

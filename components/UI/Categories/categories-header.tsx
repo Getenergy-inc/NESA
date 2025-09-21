@@ -124,7 +124,6 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
       <div
         className={`min-h-screen max-w-screen bg-[#191307CC] text-white ${styles.homeHeader} relative flex flex-col`}
       >
-        {/* Slides */}
         <div className="flex-1">
           {Slides.map((slide, index) => (
             <section

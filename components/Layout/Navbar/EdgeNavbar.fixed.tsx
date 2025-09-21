@@ -200,7 +200,7 @@ const EdgeNavbar = ({
                   </div>
                 ) : (
                   <Link
-                    href="/login"
+                    href="/account/login"
                     className="bg-deepGold hover:bg-amber-500 text-black font-medium py-2 px-4 rounded-md text-sm transition-colors"
                   >
                     Login
