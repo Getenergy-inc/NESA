@@ -86,64 +86,64 @@ export interface Category {
           "title": "Best Educational Infrastructure Initiative By An NGO",
           "description": "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
           "nominees": [
-            { "name": "Teach For Nigeria", "image": "/images/ngo/teach-for-nigeria.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Slum2School Africa", "image": "/images/ngo/slum2school.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "ActionAid Nigeria", "image": "/images/ngo/actionaid.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Plan International Nigeria", "image": "/images/ngo/plan-international-nigeria.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Malala Fund Nigeria", "image": "/images/ngo/malala-fund.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Girl Child Education Initiative", "image": "/images/ngo/girl-child-initiative.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Universal Learning Solutions", "image": "/images/ngo/universal-learning-solutions.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Bridge International Academies", "image": "/images/ngo/bridge.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Save the Children Nigeria", "image": "/images/ngo/save-the-children.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "UNICEF Nigeria", "image": "/images/ngo/unicef.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." }
+            { "name": "Teach For Nigeria", "image": "/images/ngo/teach-for-nigeria.png", "achievement": "Implemented teaching fellowships in undeserved communities to improve access to uality education." },
+            { "name": "Slum2School Africa", "image": "/images/ngo/slum2school.png", "achievement": "Provided educational scholarships and support services to children in slums and remote communities." },
+            { "name": "ActionAid Nigeria", "image": "/images/ngo/actionaid.png", "achievement": "Launched the 'Education for all' campaign, focusing on reducing gender disparities in education and increasing school enrollment." },
+            { "name": "Plan International Nigeria", "image": "/images/ngo/plan-international-nigeria.png", "achievement": "Implemented programs targeting the education of girls and children in conflict-affected regions." },
+            { "name": "Malala Fund Nigeria", "image": "/images/ngo/malala-fund.png", "achievement": "Advocated for girls' education and supported initiatives that provided educational opportunitiesto girls in northern Nigeria." },
+            { "name": "Girl Child Education Initiative", "image": "/images/ngo/girl-child-initiative.png", "achievement": "Focused on enrolling and retaining girls in schools, especially in northern Nigeria." },
+            { "name": "Universal Learning Solutions", "image": "/images/ngo/universal-learning-solutions.png", "achievement": "Implemented the Jolly Phonics program, which improves literacy through phonics education in public schools." },
+            { "name": "Bridge International Academies", "image": "/images/ngo/bridge.png", "achievement": "Established low-cost high-quality schools in undeserved communities across Nigeria." },
+            { "name": "Save the Children Nigeria", "image": "/images/ngo/save-the-children.png", "achievement": "Focused on ensuring that children in conflict-affected areas have access to safe and uality education." },
+            { "name": "UNICEF Nigeria", "image": "/images/ngo/unicef.png", "achievement": "Led initiatives to improve access to education for the most vulnerable children, including those in emergency settings." }
           ]
         },
         {
           "title": "Exceptional Donation Of Educational Materials By An NGO",
           "description": "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
           "nominees": [
-            { "name": "Nigeria Youth Futures Fund", "image": "/images/ngo/nigeria-youth-futures-fund.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "One Million Teachers", "image": "/images/ngo/one-million-teachers.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "The Education Partnership (TEP)", "image": "/images/ngo/the-education-partnership.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Street Child Nigeria", "image": "/images/ngo/street-child.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Educate Nigeria Initiative", "image": "/images/ngo/educate-nigeria-initiative.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "LEAP Africa", "image": "/images/ngo/leap-africa.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Young Educators Foundation", "image": "/images/ngo/young-educators-foundation.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "The Tony Elumelu Foundation", "image": "/images/ngo/the-tony-elumelu-foundation.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "YEDBC (Yaba Educators Centre for In)", "image": "/images/ngo/yedbc.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Oando Foundation", "image": "/images/ngo/oando-foundation.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." }
+            { "name": "Nigeria Youth Futures Fund", "image": "/images/ngo/nigeria-youth-futures-fund.png", "achievement": "Provided grants and support for youth-led educational initiatives that enhance learning outcomes." },
+            { "name": "One Million Teachers", "image": "/images/ngo/one-million-teachers.png", "achievement": "Trained thousands of teachers nationwide; improved quality of education for over 1 million students through better teaching practices." },
+            { "name": "The Education Partnership (TEP)", "image": "/images/ngo/the-education-partnership.png", "achievement": "Led research and development of quality education programs, including policy advocacy; influenced education policy, impacting 100,000+ student." },
+            { "name": "Street Child Nigeria", "image": "/images/ngo/street-child.png", "achievement": "Trained teachers and provided resources in conflict-affected regions; improved education for over 50,000 children. ." },
+            { "name": "Educate Nigeria Initiative", "image": "/images/ngo/educate-nigeria-initiative.png", "achievement": "mproved quality of education in public schools; impacted over 200,000 students. ." },
+            { "name": "LEAP Africa", "image": "/images/ngo/leap-africa.png", "achievement": "Provided leadership and ethics education; reached 30,000 secondary school students. ." },
+            { "name": "Young Educators Foundation", "image": "/images/ngo/young-educators-foundation.png", "achievement": "mproved literacy and numeracy via competitions; impacted 500,000+ students. ." },
+            { "name": "The Tony Elumelu Foundation", "image": "/images/ngo/the-tony-elumelu-foundation.png", "achievement": "Supported entrepreneurship education; trained 10,000 young people." },
+            { "name": "WSJCI (Wole Soyinka Centre for Investigative Journalism) ", "image": "/images/ngo/yedbc.png", "achievement": "Focused on journalism and critical thinking education; trained over 1,500 students. ." },
+            { "name": "Oando Foundation", "image": "/images/ngo/oando-foundation.png", "achievement": "Improved quality of public education through infrastructure, teacher training, and resources; impacted 300,000+ students. ." }
           ]
         },
         {
           "title": "Outstanding Donation Of Education Aid By NGO",
           "description": "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
           "nominees": [
-            { "name": "Paradigm Initiative", "image": "/images/ngo/paradigm-initiative.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "MANI (Maternal and Child Survival Program)", "image": "/images/ngo/mani.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "STEM Nigeria Direct", "image": "/images/ngo/stem-nigeria-direct.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Tech4Dev (Technology for Social G)", "image": "/images/ngo/tech4dev.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "REACH Initiative International", "image": "/images/ngo/reach-initiative-international.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "KnowledgeAid Initiative", "image": "/images/ngo/knowledgeaid-initiative.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "YISA (Youth Initiative for Sustain)", "image": "/images/ngo/yisa.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "SkillNG", "image": "/images/ngo/saind.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "AYECI (African Youth Initiative on)", "image": "/images/ngo/save-the-children.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "EVA (The Education As A Vaccine In)", "image": "/images/ngo/eva.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." }
+            { "name": "Paradigm Initiative", "image": "/images/ngo/paradigm-initiative.png", "achievement": "Developed digital literacy and skills programs for youth; empowered over 10,000 young people with technology skills. ." },
+            { "name": "MANI (Mentally Aware Nigeria Initiative) ", "image": "/images/ngo/mani.png", "achievement": "Launched mental health education in schools; reached over 50,000 students with mental wellness support. " },
+            { "name": "STEMi Makers Africa ", "image": "/images/ngo/stem-nigeria-direct.png", "achievement": "Promoted STEM education through maker spaces and hands-on learning; enhanced STEM skills for over 20,000 students." },
+            { "name": "Tech4Dev (Technology for Social G)", "image": "/images/ngo/tech4dev.png", "achievement": "Developed tech-based programs for coding and digital literacy; trained over 30,000 students." },
+            { "name": "REACH Initiative International", "image": "/images/ngo/reach-initiative-international.png", "achievement": "mplemented e-learning platforms in rural areas; reached 15,000 students during COVID-19 school closures." },
+            { "name": "KnowledgeAid Initiative", "image": "/images/ngo/knowledgeaid-initiative.png", "achievement": "Developed mobile education units for remote communities; educated over 8,000 students." },
+            { "name": "YISA (Youth Initiative for Sustain)", "image": "/images/ngo/yisa.png", "achievement": "Integrated agricultural education into curriculum; trained 10,000+ students in sustainable farming." },
+            { "name": "SkillNG", "image": "/images/ngo/saind.png", "achievement": "Offered vocational training; trained over 15,000 young people." },
+            { "name": "AYICC  (African Youth Initiative on)", "image": "/images/ngo/save-the-children.png", "achievement": "Educated students on climate change and sustainability; reached 25,000 students. ." },
+            { "name": "EVA (The Education As A Vaccine In)", "image": "/images/ngo/eva.png", "achievement": "Used technology to provide sexual and reproductive health education; reached 100,000+ students. ." }
           ]
         },
         {
           "title": "Youth Empowerment Through Educational Services By An NGO In Nigeria",
           "description": "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
           "nominees": [
-            { "name": "Youth for Technology Foundation", "image": "/images/ngo/youth-for-technology.png", "achievement": "Provided technology training and entrepreneurship education to young people in Nigeria. Empowered over 20,000 youths wi..." },
-            { "name": "Junior Achievement Nigeria (JAN)", "image": "/images/ngo/junior-achievement.png", "achievement": "Implemented educational programs that empowered youths with financial literacy and workforce readiness for youths, reache..." },
-            { "name": "YALI Network Nigeria", "image": "/images/ngo/yali-network.png", "achievement": "Provided leadership and professional development opportunities for young Nigerians through the Young African Leaders Initiative..." },
-            { "name": "AIESEC Nigeria", "image": "/images/ngo/aiesec.png", "achievement": "Offered international exchange programs that provide young people with leadership opportunities, global internships, and socia..." },
-            { "name": "Girls Education Mission International (GEM)", "image": "/images/ngo/girls-education-mission.png", "achievement": "Focused on empowering young girls through education, providing scholarships, mentorship, and advocacy for girls' rights. I..." },
-            { "name": "Rise Network", "image": "/images/ngo/rise-network.png", "achievement": "Facilitated career development, mentorship, and skills training for young people in Nigeria. Supported over 35,000 young Nige..." },
-            { "name": "Jobberman Nigeria", "image": "/images/ngo/jobberman.png", "achievement": "Offered job training and placement services for young Nigerians, bridging the gap between job seekers and employers. Trained..." },
-            { "name": "Young African Leadership Initiative (YALI) Nigeria", "image": "/images/ngo/yali.png", "achievement": "Empowered young Nigerians through leadership training, civic engagement, and professional development programs. Impac..." },
-            { "name": "YouthHubAfrica", "image": "/images/ngo/youthhub-africa.png", "achievement": "Supported youth-driven initiatives for social change and education, providing platforms for young voices to be heard in Nigeri..." },
-            { "name": "Youth Mentoring Initiative for Youth Empowerment (MIYE)", "image": "/images/ngo/youth-mentoring-initiative.png", "achievement": "Guided young people through mentorship and educational programs, focusing on leadership and personal development. Ment..." }
+            { "name": "Youth for Technology Foundation", "image": "/images/ngo/youth-for-technology.png", "achievement": "Provided technology training and entrepreneurship education to young people in Nigeria. Empowered over 20,000 youths with digital and entrepreneurial skills. " },
+            { "name": "Junior Achievement Nigeria (JAN)", "image": "/images/ngo/junior-achievement.png", "achievement": "Delivered entrepreneurship, financial literacy, and workforce readiness programs; reached 500,000 students. ." },
+            { "name": "YALI Network Nigeria", "image": "/images/ngo/yali-network.png", "achievement": "Provided leadership and professional development opportunities for young Nigerians through the Young African Leaders Initiative. Engaged over 100,000 young leaders." },
+            { "name": "AIESEC Nigeria", "image": "/images/ngo/aiesec.png", "achievement": "Offered international exchange programs that provide young people with leadership opportunities, global internships. Impacted 10,000 youths" },
+            { "name": "Girls Education Mission International (GEM)", "image": "/images/ngo/girls-education-mission.png", "achievement": "Focused on empowering young girls through education, providing scholarships, mentorship, and advocacy for girls' rights. Supported 5,000+ girls. " },
+            { "name": "Rise Network", "image": "/images/ngo/rise-network.png", "achievement": "Facilitated career development, mentorship, and skills training for young people in Nigeria. Supported over 35,000 young Nigerians." },
+            { "name": "Jobberman Nigeria", "image": "/images/ngo/jobberman.png", "achievement": "Offered job training and placement services for young Nigerians, bridging the gap between job seekers and employers. " },
+            { "name": "Young African Leadership Initiative (YALI) Nigeria", "image": "/images/ngo/yali.png", "achievement": "Empowered young Nigerians through leadership training, civic engagement, and professional development programs. " },
+            { "name": "YouthHubAfrica", "image": "/images/ngo/youthhub-africa.png", "achievement": "Supported youth-driven initiatives for social change and education, providing platforms for young voices to be heard in Nigeria. Engaged 30,000+ youths. " },
+            { "name": "Youth Mentoring Initiative for Youth Empowerment (MIYE)", "image": "/images/ngo/youth-mentoring-initiative.png", "achievement": "Mentored over 5,000 youths through educational programs focusing on leadership and personal development. " }
           ]
         },
         {
@@ -203,46 +203,52 @@ export interface Category {
                 "image": "/images/diaspora/Ethiopian_Diaspora_Fellowship.png"
               },
               {
-                "name": "South African Diaspora United",
-                "achievement": "Funded the construction of a multi-purpose education and sports complex in Soweto, South Africa. Provided a safe space for learning and recreation.",
+                "name": "African Diaspora Network (ADN)",
+                "achievement": "Developed an e-learning platform offering free STEM courses across Africa; trained 5,000 teachers, improving teaching quality and student performance in under-resourced schools.",
+                "state": "Lagos, Nigeria",
+                "country": "Nigeria",
+                "image": "/images/diaspora/Ethiopian_Diaspora_Fellowship.png"
+              },
+              {
+                "name": "South African Diaspora United ",
+                "achievement": "Funded a multi-purpose education and sports complex in Soweto; provided academic and extracurricular space for 1,200 students, reducing dropouts. ",
                 "state": "Lagos, Nigeria",
                 "country": "Nigeria",
                 "image": "/images/diaspora/South_African_Diaspora_United.png"
               },
               {
-                "name": "Ugandan North American Association",
-                "achievement": "Built a secondary school in Gulu, Uganda, focusing on regions recovering from conflict. Provided quality education to over 500 students.",
+                "name": "Ugandan North American Association ",
+                "achievement": "Built a secondary school in Gulu, Uganda; provided quality education to over 800 students in post-conflict regions, increasing access to secondary education.  ",
                 "state": "Lagos, Nigeria",
                 "country": "Nigeria",
                 "image": "/images/diaspora/Ugandan_North_American_Association.png"
               },
               {
-                "name": "Zimbabwean Diaspora Network",
-                "achievement": "Led the refurbishment of schools in Matabeleland, Zimbabwe, including the installation of computer labs and solar power systems.",
+                "name": "Zimbabwean Diaspora Network ",
+                "achievement": "Refurbished schools in Matabeleland, including computer labs and solar power; improved digital literacy for over 1,000 students. ",
                 "state": "Lagos, Nigeria",
                 "country": "Nigeria",
                 "image": "/images/diaspora/Zimbabwean_Diaspora_Network.png"
               },
               {
-                "name": "Senegalese Association in France",
-                "achievement": "Funded the construction of a vocational training center in Dakar, Senegal, focusing on trades such as carpentry, plumbing, and electrical work.",
-                "state": "Lagos, Nigeria",
+                "name": "Senegalese Association in France  ",
+                "achievement": "Constructed a vocational training center in Dakar, equipping 500 youths with trade skills, increasing employability. ",
                 "country": "Nigeria",
                 "image": "/images/diaspora/Senegalese_Association_in_France.png"
               },
               {
-                "name": "Tanzanian Community in the USA",
-                "achievement": "Established digital learning hubs in rural Tanzania, providing internet access and e-learning tools to underserved communities.",
+                "name": "Tanzanian Community in the USA ",
+                "achievement": "Established digital learning hubs in rural Tanzania; provided internet access and e-learning tools for 2,500 students, reducing the education gap.",
                 "state": "Lagos, Nigeria",
                 "country": "Nigeria",
                 "image": "/images/diaspora/Tanzanian_Community_in_the_USA.png"
               },
               {
-                "name": "Congolese Diaspora Impact Group",
-                "achievement": "Built a school complex in Kinshasa, Democratic Republic of the Congo, including classrooms, a library, and a computer lab.",
+                "name": "Congolese Diaspora Impact Group ",
+                "achievement": "Built a school complex in Kinshasa with classrooms, library, and computer lab; provided comprehensive education to 2,000 students. ",
                 "state": "Lagos, Nigeria",
                 "country": "Nigeria",
-                "image": "/images/diaspora/Congolese_Diaspora_Impact_Group.png"
+                "image": "/images/diaspora/Tanzanian_Community_in_the_USA.png"
               }
             ]
           },
@@ -3993,16 +3999,16 @@ export interface Category {
                     "title": "Best Advocacy for Educational Reforms and Awareness Campaigns by a Christian Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
                     "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
                     "nominees": [
-                      { name: "RCCG (Redeemed Christian Chur)", image: "/images/christain/RCCG.png", achievement: "Led nationwide campaigns for education reform, including initiatives to improve access to education in rural areas. Successfully..." },
-                      { name: "Deeper Life Bible Church", image: "/images/christain/Deeper_Life_Bible_Church.png", achievement: "Advocated for educational reforms through community outreach and partnerships with government agencies. Increased community..." },
-                      { name: "Living Faith Church Worldwide", image: "/images/christain/Living_Faith_Church_Worldwide.png", achievement: "Through the Education Commission, led efforts to reform educational policies and improve school curricula nationwide. Contri..." },
-                      { name: "Christ Embassy", image: "/images/christain/Christ_Embassy.png", achievement: "Conducted awareness campaigns focused on digital education and the integration of technology in schools. Increased adoption o..." },
+                      { name: "RCCG (Redeemed Christian Chur)", image: "/images/christain/RCCG.png", achievement: "Led nationwide campaigns for education reform, including initiatives to improve access to education in rural areas. Influenced policy changes, increased public awareness, benefiting millions. " },
+                      { name: "Deeper Life Bible Church", image: "/images/christain/Deeper_Life_Bible_Church.png", achievement: "Advocated for educational reforms through community outreach and partnerships with government agencies. Improved local educational policies. " },
+                      { name: "Living Faith Church Worldwide", image: "/images/christain/Living_Faith_Church_Worldwide.png", achievement: "Through the Education Commission, led efforts to reform educational policies and improve school curricula nationwide. Provided holistic education through schools and universities, benefiting over 25,000 students annually. " },
+                      { name: "Christ Embassy", image: "/images/christain/Christ_Embassy.png", achievement: "Through the Education Commission, reformed school curricula and contributed to policy changes improving quality education." },
                       { name: "Catholic Church Nigeria", image: "/images/christain/Catholic_Church_Nigeria.png", achievement: "Led advocacy campaigns for inclusive education and the rights of children with disabilities to receive quality education. Pro..." },
                       { name: "Methodist Church Nigeria", image: "/images/christain/Methodist_Church_Nigeria.png", achievement: "Engaged in campaigns for educational equity and the improvement of public school systems. Enhanced public school infrastr..." },
-                      { name: "Anglican Church Nigeria", image: "/images/christain/Anglican_Church_Nigeria.png", achievement: "Advocated for educational reforms, focusing on curriculum development and teacher training programs. Influenced curriculum..." },
-                      { name: "The Apostolic Church Nigeria", image: "/images/christain/The_Apostolic_Church_Nigeria.png", achievement: "Launched campaigns for educational access in underserved regions, particularly in the northern states. Increased educational o..." },
+                      { name: "Anglican Church Nigeria", image: "/images/christain/Anglican_Church_Nigeria.png", achievement: "Advocated for inclusive education and rights of children with disabilities; promoted policy changes improving access for marginalized groups. " },
+                      { name: "The Apostolic Church Nigeria", image: "/images/christain/The_Apostolic_Church_Nigeria.png", achievement: "Engaged in campaigns for educational equity and public school improvements; enhanced infrastructure and increased funding." },
                       { name: "Assemblies of God Nigeria", image: "/images/christain/Assemblies_of_God_Nigeria.png", achievement: "Led advocacy for improved educational standards in rural schools, focusing on teacher quality and infrastructure developm..." },
-                      { name: "The Lord's Chosen Charismatic", image: "/images/christain/The_Lord's_Chosen_Charismatic.png", achievement: "Promoted campaigns for adult education and literacy, particularly among women and vulnerable groups. Increased literacy rates..." }
+                      { name: "The Lord's Chosen Charismatic", image: "/images/christain/The_Lord's_Chosen_Charismatic.png", achievement: "Promoted campaigns for adult education and literacy, particularly among women and vulnerable groups. Increased literacy rates and participation." }
                     ]
                   },
                   {
@@ -4221,8 +4227,8 @@ export interface Category {
           title: "Best Literature and Art Works for Education Award",
           description: "Recognizes writers, literary organizations, and visual artists whose work has significantly contributed to education, particularly in promoting reading, historical understanding, and cultural awareness.",
           nominees: [
-            { name: "Chimamanda Ngozi Adichie", image: "/images/creativeart/Chimamanda_Ngozi_Adichie.png", achievement: "Authored a novel that educates readers about the Nigerian Civil War and its impact on society. Used literature to foster a deeper understanding of history." },
             { name: "Wole Soyinka", image: "/images/creativeart/Wole_Soyinka.png", achievement: "Wrote plays that explore African culture, colonialism, and the role of education in societal change. Educated global audiences about Nigerian history and culture." },
+            { name: "Chimamanda Ngozi Adichie", image: "/images/creativeart/Chimamanda_Ngozi_Adichie.png", achievement: "Authored a novel that educates readers about the Nigerian Civil War and its impact on society. Used literature to foster a deeper understanding of history." },
             { name: "Chinelo Okparanta", image: "/images/creativeart/Chinelo_Okparanta.png", achievement: "Authored a novel that addresses issues of identity, education, and social change in Nigeria. Promoted critical thinking about the role of education in society." },
             { name: "Helon Habila", image: "/images/creativeart/Helon_Habila.png", achievement: "Wrote a novel that discusses environmental degradation and its impact on education in the Niger Delta. Used storytelling to raise awareness about environmental issues." },
             { name: "Sefi Atta", image: "/images/creativeart/Sefi_Atta.png", achievement: "Authored a novel that explores gender roles, education, and personal growth in Nigeria. Encouraged discussions about the importance of education for women." },
@@ -4312,7 +4318,7 @@ export interface Category {
             { "name": "Covenant University", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Covenant_University.png", "achievement": "Introduced an innovative engineering curriculum integrating industry practices. Prepared over 3,000 students for careers in engineering." },
             { "name": "Lagos State Model College", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Lagos_State_Model_College.png", "achievement": "Implemented a specialized STEM program for secondary students, emphasizing real-world problem-solving. Improved student performance in STEM subjects." },
             { "name": "Federal Government College Enugu", "state": "Enugu", "country": "Nigeria", "image": "/images/stem/Federal_Government_College_Enugu.png", "achievement": "Developed a STEM curriculum with a focus on renewable energy and environmental sciences. Trained over 2,500 students in sustainable technologies." },
-            { "name": "Nigerian Turkish International Coll", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Nigerian_Turkish_International_Coll.png", "achievement": "Introduced advanced STEM subjects, including robotics and coding, into the school curriculum. Achieved top rankings in international STEM competitions." },
+            { "name": "Nigerian Turkish International College", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Nigerian_Turkish_International_Coll.png", "achievement": "Introduced advanced STEM subjects, including robotics and coding, into the school curriculum. Achieved top rankings in international STEM competitions." },
             { "name": "British International School Lagos", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/British_International_School_Lagos.png", "achievement": "Integrated STEM across all grade levels, with an emphasis on technology and engineering. Produced high-achieving students in STEM fields internationally." },
             { "name": "University of Nigeria, Nsukka", "state": "Enugu", "country": "Nigeria", "image": "/images/stem/University_of_Nigeria_Nsukka.png", "achievement": "Developed a comprehensive STEM curriculum with a strong research component. Facilitated groundbreaking research in various STEM fields." },
             { "name": "STEM Nigeria Initiative", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/STEM_Nigeria_Initiative.png", "achievement": "Designed a national STEM curriculum that incorporates local context and resources. Benefited over 10,000 students across multiple schools." },
