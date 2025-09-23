@@ -91,66 +91,77 @@ const HeroCenter = () => {
           }}
           
         >
+          
           {/* Left Column - Text Content */}
           <motion.div
-            className="space-y-6 text-center md:text-left"
+            className="space-y-8 text-center md:text-left max-w-2xl"
             variants={{
               hidden: { opacity: 0, x: -40 },
               visible: { opacity: 1, x: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
+            {/* Headline */}
             <motion.h1
-              className="text-xl md:text-4xl lg:text-5xl font-bold text-deepGold font-raleway leading-tight flex items-center justify-center md:justify-start"
+              className="text-2xl md:text-5xl lg:text-4xl font-extrabold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] text-transparent bg-clip-text text-transparent bg-clip-text font-raleway leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
             >
-              {/* <FaStar className="text-deepGold animate-pulse" /> */}
-              <span>🏆 Honoring Africa's Changemakers – Building the Future of Education Across the Continent</span>
-              {/* <FaStar className="text-deepGold animate-pulse" /> */}
+             Honoring Africa's Changemakers <br />
+              <span className="text-white">Building the Future of Education Across the Continent</span>
             </motion.h1>
 
+            {/* Divider / Accent */}
+            <div className="w-24 h-1 mx-auto md:mx-0 bg-gradient-to-r from-primaryGold to-deepGold rounded-full shadow-lg"></div>
+
+            {/* Paragraphs */}
             <motion.p
-              className="text-sm md:text-xl text-white leading-relaxed font-poppins"
+              className="text-base md:text-lg text-gray-200 leading-relaxed font-poppins"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             >
-              After 15 years of vision, setbacks, and unwavering commitment — NESA-Africa 2025 emerges as the continent’s highest platform for honoring those rebuilding African education from the ground up.
-            </motion.p>
-            <motion.p
-              className="text-sm md:text-xl text-deepGold leading-relaxed font-poppins"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            >
-              The NESA Africa Awards 2025 is a flagship initiative of the Santos Creations Educational Foundation (SCEF) — recognizing visionaries across NGOs, corporations, policy, media, EdTech, philanthropy, creative sectors, and the diaspora who are architecting Africa’s education systems. Santos Creations Educational Foundation
+              After <span className="text-[#ea580c] font-semibold">15 years</span> of vision, setbacks, 
+              and unwavering commitment — <strong className="text-[#ea580c]">NESA-Africa 2025 </strong> 
+              emerges as the continent’s highest platform for honoring those rebuilding African education from the ground up.
             </motion.p>
 
             <motion.p
-              className="text-base md:text-lg text-gray-400 leading-relaxed"
+              className="text-base md:text-sm text-deepGold italic border-l-4 border-deepGold pl-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+            >
+              "The NESA Africa Awards 2025 is a flagship initiative of the Santos Creations Educational Foundation (SCEF) — recognizing visionaries across NGOs, corporations, policy, media, EdTech, philanthropy, creative sectors, and the diaspora who are architecting Africa’s education systems. Santos Creations Educational Foundation"
+            </motion.p>
+
+            <motion.p
+              className="text-base md:text-sm text-gray-300 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
             >
-              From classrooms to boardrooms — if they move education forward, they deserve recognition.
-            </motion.p>
-            <motion.p
-              className="text-base md:text-lg text-white leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-            >
-              🛑 This is not a teacher or student award. It celebrates builders of systems, advocates of change, and funders of futures.
+              From classrooms to boardrooms — if they <span className="text-primaryGold font-semibold">move education forward</span>, they deserve recognition.
             </motion.p>
 
+            <motion.p
+              className="text-base md:text-sm text-white font-semibold bg-red-600/20 px-4 py-2 rounded-lg inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
+            >
+              🛑 Not a teacher or student award — it celebrates <span className="text-primaryGold">builders of systems</span>, 
+              <span className="text-primaryGold"> advocates of change</span>, and <span className="text-primaryGold">funders of futures</span>.
+            </motion.p>
+
+            {/* Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
             >
-              <motion.button
+               <motion.button
                 onClick={() => setIsModalOpen(true)}
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
                 whileHover={{
@@ -167,6 +178,7 @@ const HeroCenter = () => {
             </motion.div>
           </motion.div>
 
+
           {/* Right Column - Interactive Carousel */}
           <motion.div
             className="flex justify-center"
@@ -182,7 +194,7 @@ const HeroCenter = () => {
       </div>
 
       {/* Third Navigation Bar */}
-      <div className="relative md:px-10 px-2 pt-12 pb-6 md:pt-16 md:pb-8 lg:pt-20">
+      <div className="relative md:px-10 px-2 pt-12 pb-6 md:pt-16 md:pb-8 lg:pt-20 ">
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
           initial={{ opacity: 0, y: 30 }}
@@ -271,6 +283,7 @@ const HeroCenter = () => {
     </>
   );
 };
+
 
 export default HeroCenter;
    
