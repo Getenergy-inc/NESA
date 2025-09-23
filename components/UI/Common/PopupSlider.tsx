@@ -6,50 +6,39 @@ import Image from "next/image";
 const messages = [
   {
     title:"Engr. (Dr.) Babashola-Santos V. A. Aderibigbe, Chief Visionary Officer (CVO), SCEF",
-    image:"/images/santos.png"},
+    image:"/images/santos.png"
+  },
 
   {title: "Message from the CVO",
-    message:`Dear Changemakers of Africa and the World,
+    message:`"Dear Changemakers of Africa and the World,
 
-Welcome to NESA-Africa 2025—New Education Standard Award Africa, a pan-African celebration of educational transformation, social impact, and legacy. This isn’t just an awards platform. This is a movement. A rallying call for everyone—from students and teachers, to policymakers, philanthropists, corporate sponsors, and diaspora communities—committed to shaping the future of learning in Africa.
-
-This year, we are proud to launch three distinct but united award pathways, all centered around one purpose: recognizing and amplifying excellence in education.`,
-    image:"/images/logos/logos_5.jpg"
+Welcome to NESA-Africa 2025—New Education Standard Award Africa, a pan-African celebration of educational transformation, social impact, and legacy. 
+This year, we are proud to launch three distinct but united award pathways, all centered around one purpose: recognizing and amplifying excellence in education."`,
+    image:"/images/santos.png"
   },
 
   {
     title: "Our Three Super Levels",
-    message: `• 🔷 Blue Garnet Competitive Awards — 9 continental categories and 101 sub-categories, fully competitive with independent jury + audited public voting (published criteria and weights).
-• 💠 Africa Icon Lifetime Education Awards (Blue Garnet Tier) — one-in-a-lifetime recognition of Decade Legends (2005–2025) whose contributions have reshaped policy, systems, and futures.
-• 🥈 Platinum Recognition Awards — celebrating institutions, states, NGOs, faith-based bodies, diaspora associations, and leaders whose grassroots work often goes unseen.`,
-    image: "/images/logos/logos_5.jpg"
+    message: `• 🔷 Blue Garnet Competitive Awards .
+• 💠 Africa Icon Lifetime Education Awards (Blue Garnet Tier).
+• 🥈 Platinum Recognition Awards.`,
+    image: "/images/santos.png"
   },
 
-  {
-    title:"How We Safeguard Trust",
-    message:`Independence. Transparency. Inclusion.
-An independent jury applies published rubrics; conflicts of interest require disclosure and recusal; voting is audited. Funding or sponsorship never influences nominations, judging, or winners.`,
-    image: "/images/logos/logos_5.jpg"
-  },
+{
+  title: "Your Invitation",
+  message: `"I invite you to be more than spectators. Be nominators. Be endorsers and advisors. Be technology, legal, media, and data partners. Be sponsors. Be diaspora champions. Be part of a continental legacy that accelerates Education for All."`,
+  image: "/images/santos.png"
+},
 
   {
     title: "Your Invitation",
-    message: `As we approach the Week of Impact (13–18 December 2025, Lagos — WAT)—from EduAid Expo and policy micro-sessions to the grand gala—I invite you to be more than spectators.
-Be nominators. Be endorsers and advisors. Be technology, legal, media, and data partners. Be sponsors. Be diaspora champions. Be part of a continental legacy that accelerates Education for All.
-
-Welcome to history in the making.
-
-With Vision and Commitment.`,
-    image: "/images/logos/logos_5.jpg"
+    message: `"As we approach the Week of Impact (13–18 December 2025, Lagos — WAT)—from EduAid Expo and policy micro-sessions to the grand gala, I welcome you to history in the making".
+`,
+    image: "/images/santos.png"
   },
 
-  {
-    title: "Contact Us",
-    message:`📩 General: info@nesa.africa • Endorsements/Advisory: endorsements@nesa.africa / governance@nesa.africa
-🤝 Partnerships/Sponsorships: partnerships@nesa.africa • Secretariat/Scheduling: secretariat@nesa.africa
-🌐 Website: www.nesa.africa`,
-    image: "/images/logos/logos_5.jpg"
-  }
+
 ];
 
 const PopupSlider = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
