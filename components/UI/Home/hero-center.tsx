@@ -103,7 +103,7 @@ const HeroCenter = () => {
           >
             {/* Headline */}
             <motion.h1
-              className="text-2xl md:text-5xl lg:text-4xl font-extrabold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] text-transparent bg-clip-text text-transparent bg-clip-text font-raleway leading-tight"
+              className="text-2xl md:text-5xl lg:text-4xl font-extrabold bg-gradient-to-r from-[#f59e0b] to-[#ea580c]  text-transparent bg-clip-text font-raleway leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
