@@ -220,7 +220,7 @@ const PartnersPage = () => {
             onClick={() => setIsFormOpen(true)}
             className="bg-deepGold hover:bg-darkGold text-black font-bold px-8 py-4 text-lg rounded-xl transition-all duration-300 hover:scale-105"
           >
-            Apply Now
+            Partner with us
           </button>
           +
         </div>
@@ -337,7 +337,7 @@ const PartnersPage = () => {
                   type="submit"
                   className="w-full bg-deepGold hover:bg-darkGold text-black font-bold py-3 rounded-xl transition-colors"
                 >
-                  Submit Application
+                  Partner
                 </button>
               </form>
             )}
