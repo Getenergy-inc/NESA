@@ -32,7 +32,7 @@ export default function AdvisorEOIForm() {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   const onSubmit = (data: FormValues) => {
-    console.log("Form Submitted:", data);
+    
     alert("✅ Expression of Interest submitted!");
   };
 

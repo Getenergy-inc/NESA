@@ -59,6 +59,17 @@ interface ResetPasswordResponse {
 export const login = async (credentials: Credentials): Promise<AuthResponse> => {
   try {
     const response = await apiClient.post('/api/auths/login', credentials);
+    
+    // Handle new unified response format
+    if (response.data.success && response.data.data) {
+      return {
+        message: response.data.message,
+        token: response.data.data.tokens?.accessToken,
+        user: response.data.data.user
+      };
+    }
+    
+    // Fallback for legacy response format
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Invalid email or password');
