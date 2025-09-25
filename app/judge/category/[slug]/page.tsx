@@ -14,8 +14,10 @@ export default function CategoryPage() {
   // Find the category object based on slug which capares to the mock data category
   const category = MOCK_CATEGORIES.find((c) => c.slug === slug);
 
-  // Filter nominees that belong to this category using to the mockdata nominees category
-  const nominees = MOCK_NOMINEES.filter((n) => n.category === slug);
+  // Filter nominees that belong to this category using to the nominees category and matching with the category title
+const nominees = category
+  ? MOCK_NOMINEES.filter((n) => n.category === category.title)
+  : [];
 
 
   if (!category) {
