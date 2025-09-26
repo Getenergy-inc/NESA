@@ -2,6 +2,7 @@
 
 import { PropsWithChildren } from "react";
 import AuthProvider from "./auth-provider";
+import NextAuthProvider from "./next-auth-provider";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DefaultToastOptions, Toaster } from "react-hot-toast";
@@ -27,10 +28,12 @@ const Providers: React.FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <Toaster toastOptions={toastOptions} />
-        <ModalProvider>{children}</ModalProvider>
-      </AuthProvider>
+      <NextAuthProvider>
+        <AuthProvider>
+          <Toaster toastOptions={toastOptions} />
+          <ModalProvider>{children}</ModalProvider>
+        </AuthProvider>
+      </NextAuthProvider>
 
       {/* Temporarily comment out ReactQueryDevtools to fix build error */}
       {/* <ReactQueryDevtools client={queryClient} /> */}

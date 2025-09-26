@@ -16,9 +16,13 @@
     "health-check-full": "node scripts/health-check.js"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@gsap/react": "^2.1.1",
     "@headlessui/react": "^2.2.4",
     "@hookform/resolvers": "^3.0.1",
+    "@mui/icons-material": "^7.3.2",
+    "@mui/material": "^7.3.2",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/postcss": "^4.1.12",
     "@tanstack/query-devtools": "^5.87.3",

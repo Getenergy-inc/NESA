@@ -219,11 +219,22 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
     description: "Regional form/interactive map",
   },
   {
-    label: "Become a sponsor",
-    path: "/sponsor",
-    description: "Sponsorship application",
+    label: "Sponsors",
+    path: "",
+    description: "Sponsorship information",
+    children: [
+      {
+        label: "Our Sponsors",
+        path: "/sponsors",
+        icon: "Users",
+      },
+      {
+        label: "Become a Sponsor",
+        path: "/sponsor",
+        icon: "Handshake",
+      }
+    ]
   },
-
   {
     label: "Vote with AfriGoldcoin",
     path: "/voting",

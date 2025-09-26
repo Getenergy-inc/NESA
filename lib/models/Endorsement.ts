@@ -12,6 +12,8 @@ export interface IEndorsement extends Document {
   endorsement_tier?: string;
   payment_method?: string;
   payment_reference?: string;
+  payment_verified: boolean;
+  payment_date?: string;
   endorsement_headline: string;
   endorsement_statement: string;
   logo_file?: string;
@@ -44,9 +46,10 @@ const EndorsementSchema: Schema<IEndorsement> = new Schema({
   endorsement_tier: { type: String },
   payment_method: { type: String },
   payment_reference: { type: String },
+  payment_verified: { type: Boolean, default: false },
+  payment_date: { type: String },
   endorsement_headline: { type: String, required: true },
   endorsement_statement: { type: String, required: true },
-  logo_file: { type: String },
   video_file: { type: String },
   video_link: { type: String },
   consent_to_publish: { type: Boolean, required: true },
