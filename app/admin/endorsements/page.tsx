@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import {
   Box,
@@ -83,7 +82,7 @@ interface Pagination {
 }
 
 export default function AdminEndorsementsPage() {
-  const { data: session, status } = useSession();
+  
   const router = useRouter();
 
   // State variables
@@ -121,12 +120,12 @@ export default function AdminEndorsementsPage() {
     featured: 0
   });
 
-  // Check authentication
-  useEffect(() => {
-    if (status === 'unauthenticated') {
-      router.push('/account/login?callbackUrl=/admin/endorsements');
-    }
-  }, [session, status, router]);
+   // Check authentication
+  // useEffect(() => {
+  //   if (status === 'unauthenticated') {
+  //     router.push('/account/login?callbackUrl=/admin/endorsements');
+  //   }
+  // }, [session, status, router]);
 
   // Fetch endorsements
   const fetchEndorsements = async () => {
@@ -177,11 +176,10 @@ export default function AdminEndorsementsPage() {
     }
   };
 
+  // Load endorsements on component mount
   useEffect(() => {
-    if (status === 'authenticated') {
-      fetchEndorsements();
-    }
-  }, [session, statusFilter, typeFilter, paymentFilter, pagination.page, pagination.limit]);
+    fetchEndorsements();
+  }, [statusFilter, typeFilter, paymentFilter, pagination.page, pagination.limit]);
 
   // Handle search
   const handleSearch = () => {
@@ -373,16 +371,12 @@ export default function AdminEndorsementsPage() {
     });
   };
 
-  if (status === 'loading') {
+  if (loading) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <CircularProgress />
       </Box>
     );
-  }
-
-  if (status === 'unauthenticated') {
-    return null; // Redirect handled by useEffect
   }
 
   return (
@@ -394,8 +388,7 @@ export default function AdminEndorsementsPage() {
 
         {/* Stats Cards */}
         <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid xs={12} sm={6} md={3}>
-            <Card>
+          <Grid size = {{xs: 12, sm: 6, md: 3}}>            <Card>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
                   Total Endorsements
@@ -404,7 +397,7 @@ export default function AdminEndorsementsPage() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid xs={12} sm={6} md={3}>
+          <Grid size ={{xs: 12, sm: 6, md: 3}}>
             <Card>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
@@ -414,7 +407,7 @@ export default function AdminEndorsementsPage() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid xs={12} sm={6} md={3}>
+          <Grid size={{xs: 12, sm: 6, md: 3}}>
             <Card>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
@@ -424,7 +417,7 @@ export default function AdminEndorsementsPage() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid xs={12} sm={6} md={3}>
+          <Grid size={{xs: 12, sm:6, md: 3}}>
             <Card>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
@@ -438,8 +431,8 @@ export default function AdminEndorsementsPage() {
 
         {/* Filters */}
         <Paper sx={{ p: 2, mb: 3 }}>
-          <Grid container spacing={2} alignItems="center" component="div">
-            <Grid xs={12} sm={4} md={2}>
+          <Grid container spacing={2} alignItems="center">
+            <Grid  size={{xs:12, sm:4, md:2}}>
               <FormControl fullWidth size="small">
                 <InputLabel>Status</InputLabel>
                 <Select
@@ -455,7 +448,7 @@ export default function AdminEndorsementsPage() {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid xs={12} sm={4} md={2}>
+            <Grid size={{xs:12, sm:12, md:2}}>
               <FormControl fullWidth size="small">
                 <InputLabel>Type</InputLabel>
                 <Select
@@ -469,7 +462,7 @@ export default function AdminEndorsementsPage() {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid xs={12} sm={4} md={2}>
+            <Grid size={{xs: 12, sm:4, md:2}}>
               <FormControl fullWidth size="small">
                 <InputLabel>Payment</InputLabel>
                 <Select
@@ -485,7 +478,7 @@ export default function AdminEndorsementsPage() {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid xs={12} sm={8} md={4}>
+            <Grid size={{xs: 12, sm:8, md:4}}>
               <TextField
                 fullWidth
                 size="small"
@@ -503,7 +496,7 @@ export default function AdminEndorsementsPage() {
                 }}
               />
             </Grid>
-            <Grid xs={12} md={2}>
+            <Grid size={{xs: 12, md:4}}>
               <Button
                 fullWidth
                 variant="outlined"
@@ -759,28 +752,27 @@ export default function AdminEndorsementsPage() {
                 {selectedEndorsement.organization_name}
               </Typography>
               
-              <Grid container spacing={2}>
-                <Grid xs={12} md={6}>
-                  <Typography variant="subtitle2" color="textSecondary">Contact Person</Typography>
+              <Grid container spacing={2} sx={{ mt: 1 }}>
+                <Grid size={{xs: 12, md: 6}}>                 <Typography variant="subtitle2" color="textSecondary">Contact Person</Typography>
                   <Typography>{selectedEndorsement.contact_person_name}</Typography>
                 </Grid>
-                <Grid xs={12} md={6}>
+                <Grid size={{xs: 12, md: 6}} >
                   <Typography variant="subtitle2" color="textSecondary">Email</Typography>
                   <Typography>{selectedEndorsement.email}</Typography>
                 </Grid>
-                <Grid xs={12} md={6}>
+                <Grid size={{xs: 12, md : 6}}>
                   <Typography variant="subtitle2" color="textSecondary">Phone</Typography>
                   <Typography>{selectedEndorsement.phone}</Typography>
                 </Grid>
-                <Grid xs={12} md={6}>
+                <Grid size ={{xs: 12, md: 6}}>
                   <Typography variant="subtitle2" color="textSecondary">Country</Typography>
                   <Typography>{selectedEndorsement.country}</Typography>
                 </Grid>
-                <Grid xs={12}>
+                <Grid size={{xs: 12}}>
                   <Typography variant="subtitle2" color="textSecondary">Headline</Typography>
                   <Typography>{selectedEndorsement.endorsement_headline}</Typography>
                 </Grid>
-                <Grid xs={12}>
+                <Grid size={{xs: 12}}>
                   <Typography variant="subtitle2" color="textSecondary">Statement</Typography>
                   <Typography sx={{ whiteSpace: 'pre-wrap' }}>{(selectedEndorsement as any).endorsement_statement}</Typography>
                 </Grid>

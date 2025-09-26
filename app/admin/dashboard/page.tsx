@@ -20,15 +20,18 @@ import {
   Avatar,
   CircularProgress,
   Alert,
-  Chip
+  Chip,
+
 } from '@mui/material';
 import {
   Business as BusinessIcon,
   Handshake as HandshakeIcon,
   People as PeopleIcon,
-  Event as EventIcon,
-  School as SchoolIcon,
-  ArrowForward as ArrowForwardIcon
+  ArrowForward as ArrowForwardIcon,
+  Newspaper as NewspaperIcon,
+  Description as DescriptionIcon,
+  Groups as GroupsIcon,
+  Event as EventIcon
 } from '@mui/icons-material';
 import AdminLayout from '@/components/UI/AdminLayout';
 import Link from 'next/link';
@@ -50,7 +53,16 @@ interface DashboardStats {
     total: number;
     active: number;
   };
-  programs: {
+  mediaPartners: {
+    total: number;
+    active: number;
+  };
+  nrcApplications: {
+    total: number;
+    pending: number;
+    approved: number;
+  };
+  partners: {
     total: number;
     active: number;
   };
@@ -77,28 +89,24 @@ export default function AdminDashboard() {
     sponsors: { total: 0, pending: 0, approved: 0, rejected: 0 },
     endorsers: { total: 0, pending: 0, approved: 0 },
     students: { total: 0, active: 0 },
-    programs: { total: 0, active: 0 },
+    mediaPartners: { total: 0, active: 0 },
+    nrcApplications: { total: 0, pending: 0, approved: 0 },
+    partners: { total: 0, active: 0 },
     events: { total: 0, upcoming: 0 }
   });
   const [recentItems, setRecentItems] = useState<RecentItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   
-  // Check authentication
+  // No authentication check needed
   useEffect(() => {
-    if (status === 'unauthenticated') {
-      router.push('/account/login?callbackUrl=/admin/dashboard');
-    } else if (status === 'authenticated' && !(session?.user as any)?.isAdmin) {
-      // If user is logged in but not an admin
-      router.push('/');
-    }
-  }, [session, status, router]);
+    // Allow access to the dashboard without authentication
+  }, []);
   
   // Fetch dashboard data
   useEffect(() => {
     const fetchDashboardData = async () => {
-      if (status !== 'authenticated' || !session?.user?.isAdmin) return;
-      
+      // No authentication check needed
       try {
         setLoading(true);
         
@@ -140,8 +148,10 @@ export default function AdminDashboard() {
           ...prev,
           endorsers: { total: 24, pending: 5, approved: 19 },
           students: { total: 156, active: 132 },
-          programs: { total: 8, active: 5 },
-          events: { total: 12, upcoming: 3 }
+          mediaPartners: { total: 15, active: 12 },
+          nrcApplications: { total: 45, pending: 8, approved: 37 },
+          partners: { total: 18, active: 15 },
+          events: { total: 10, upcoming: 3 }
         }));
         
       } catch (err) {
@@ -174,17 +184,7 @@ export default function AdminDashboard() {
     }
   };
   
-  if (status === 'loading' || (status === 'authenticated' && !session?.user?.isAdmin)) {
-    return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <CircularProgress />
-      </Box>
-    );
-  }
-  
-  if (status === 'unauthenticated') {
-    return null; // Redirect handled by useEffect
-  }
+  // No authentication checks needed
   
   return (
     <AdminLayout>
@@ -208,7 +208,7 @@ export default function AdminDashboard() {
             {/* Stats Cards */}
             <Grid container spacing={3} sx={{ mb: 4 }}>
               {/* Sponsors Card */}
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid  size = {{xs:12, sm:6, md:4}}>
                 <Card>
                   <CardContent>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -223,7 +223,7 @@ export default function AdminDashboard() {
                     </Typography>
                     
                     <Grid container spacing={1}>
-                      <Grid item xs={4}>
+                      <Grid  size = {{xs: 4}}>
                         <Typography variant="body2" color="text.secondary">
                           Pending
                         </Typography>
@@ -231,7 +231,7 @@ export default function AdminDashboard() {
                           {stats.sponsors.pending}
                         </Typography>
                       </Grid>
-                      <Grid item xs={4}>
+                      <Grid  size = {{xs: 4}}>
                         <Typography variant="body2" color="text.secondary">
                           Approved
                         </Typography>
@@ -239,7 +239,7 @@ export default function AdminDashboard() {
                           {stats.sponsors.approved}
                         </Typography>
                       </Grid>
-                      <Grid item xs={4}>
+                      <Grid  size = {{xs: 4}}>
                         <Typography variant="body2" color="text.secondary">
                           Rejected
                         </Typography>
@@ -264,7 +264,7 @@ export default function AdminDashboard() {
               </Grid>
               
               {/* Endorsers Card */}
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid size = {{xs:12, sm:12, md:12}}>
                 <Card>
                   <CardContent>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -279,7 +279,7 @@ export default function AdminDashboard() {
                     </Typography>
                     
                     <Grid container spacing={1}>
-                      <Grid item xs={6}>
+                      <Grid size = {{xs: 6}}>
                         <Typography variant="body2" color="text.secondary">
                           Pending
                         </Typography>
@@ -287,7 +287,7 @@ export default function AdminDashboard() {
                           {stats.endorsers.pending}
                         </Typography>
                       </Grid>
-                      <Grid item xs={6}>
+                      <Grid size = {{xs: 6}}>
                         <Typography variant="body2" color="text.secondary">
                           Approved
                         </Typography>
@@ -312,7 +312,7 @@ export default function AdminDashboard() {
               </Grid>
               
               {/* Students Card */}
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid  size = {{xs:12, sm:6, md:4}}>
                 <Card>
                   <CardContent>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -327,7 +327,7 @@ export default function AdminDashboard() {
                     </Typography>
                     
                     <Grid container spacing={1}>
-                      <Grid item xs={6}>
+                      <Grid  size = {{xs: 6}}>
                         <Typography variant="body2" color="text.secondary">
                           Active
                         </Typography>
@@ -335,7 +335,7 @@ export default function AdminDashboard() {
                           {stats.students.active}
                         </Typography>
                       </Grid>
-                      <Grid item xs={6}>
+                      <Grid  size = {{xs: 6}}>
                         <Typography variant="body2" color="text.secondary">
                           Inactive
                         </Typography>
@@ -359,36 +359,36 @@ export default function AdminDashboard() {
                 </Card>
               </Grid>
               
-              {/* Programs Card */}
-              <Grid item xs={12} sm={6} md={4}>
+              {/* Media Partners Card */}
+              <Grid  size = {{xs: 12, sm: 6, md: 4}}>
                 <Card>
                   <CardContent>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                       <Avatar sx={{ bgcolor: 'info.main', mr: 2 }}>
-                        <SchoolIcon />
+                        <NewspaperIcon />
                       </Avatar>
-                      <Typography variant="h6">Programs</Typography>
+                      <Typography variant="h6">Media Partners</Typography>
                     </Box>
                     
                     <Typography variant="h3" component="div" gutterBottom>
-                      {stats.programs.total}
+                      {stats.mediaPartners.total}
                     </Typography>
                     
                     <Grid container spacing={1}>
-                      <Grid item xs={6}>
+                      <Grid  size = {{xs: 6}}>
                         <Typography variant="body2" color="text.secondary">
                           Active
                         </Typography>
                         <Typography variant="h6" color="success.main">
-                          {stats.programs.active}
+                          {stats.mediaPartners.active}
                         </Typography>
                       </Grid>
-                      <Grid item xs={6}>
+                      <Grid  size = {{xs: 6}}>
                         <Typography variant="body2" color="text.secondary">
                           Inactive
                         </Typography>
                         <Typography variant="h6">
-                          {stats.programs.total - stats.programs.active}
+                          {stats.mediaPartners.total - stats.mediaPartners.active}
                         </Typography>
                       </Grid>
                     </Grid>
@@ -397,18 +397,18 @@ export default function AdminDashboard() {
                   <CardActions>
                     <Button 
                       component={Link}
-                      href="/admin/programs"
+                      href="/admin/media-partners"
                       size="small" 
                       endIcon={<ArrowForwardIcon />}
                     >
-                      Manage Programs
+                      Manage Media Partners
                     </Button>
                   </CardActions>
                 </Card>
               </Grid>
               
               {/* Events Card */}
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid  size = {{xs:12, sm:6, md:4}}>
                 <Card>
                   <CardContent>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -423,7 +423,7 @@ export default function AdminDashboard() {
                     </Typography>
                     
                     <Grid container spacing={1}>
-                      <Grid item xs={6}>
+                      <Grid  size = {{xs: 6}}>
                         <Typography variant="body2" color="text.secondary">
                           Upcoming
                         </Typography>
@@ -431,7 +431,7 @@ export default function AdminDashboard() {
                           {stats.events.upcoming}
                         </Typography>
                       </Grid>
-                      <Grid item xs={6}>
+                      <Grid  size = {{xs: 6}}>
                         <Typography variant="body2" color="text.secondary">
                           Past
                         </Typography>

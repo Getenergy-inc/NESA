@@ -160,15 +160,15 @@ export async function POST(request: NextRequest) {
 
       const amount = endorsement.endorsement_tier ? tierPricing[endorsement.endorsement_tier as keyof typeof tierPricing] || 0 : 0;
 
-      await sendEmail({
-        to: endorsement.email,
-        subject: 'Payment Confirmed - NESA-Africa 2025 Endorsement',
-        html: paymentConfirmationEmailTemplate(
+      await sendEmail(
+        endorsement.email,
+        paymentConfirmationEmailTemplate(
           endorsement.organization_name,
           endorsement.endorsement_tier || 'Unknown',
           amount
-        )
-      });
+        ),
+        'Payment Confirmed - NESA-Africa 2025 Endorsement'
+      );
 
       console.log('✅ Payment confirmation email sent to:', endorsement.email);
     } catch (emailError) {

@@ -117,10 +117,10 @@ export async function POST(request: NextRequest) {
     // Note: user_id and submitted_by are now optional
 
     // Check if endorsement already exists
-    const existingEndorsement = await Endorsement.findOne({ email });
+    const existingEndorsement = await Endorsement.findOne({ organization_name, email });
     if (existingEndorsement) {
       return NextResponse.json(
-        { success: false, message: 'An endorsement with this email already exists' },
+        { success: false, message: 'An endorsement for this organization with this email already exists.' },
         { status: 409 }
       );
     }
@@ -230,11 +230,7 @@ export async function POST(request: NextRequest) {
           verificationUrl
         });
 
-        await sendEmail({
-          to: email,
-          subject: 'Verify Your NESA-Africa 2025 Endorsement',
-          html: emailHtml
-        });
+        await sendEmail(email, emailHtml, 'Verify Your NESA-Africa 2025 Endorsement');
 
         console.log('✅ Verification email sent to:', email);
         nextStep = 'email_verification';

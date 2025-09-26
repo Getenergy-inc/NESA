@@ -37,7 +37,7 @@ export async function PATCH(
     if (status) {
       endorsement.status = status;
       if (status === 'approved') {
-        endorsement.approved_at = new Date();
+        endorsement.approved_at = new Date().toISOString();
       }
     }
 

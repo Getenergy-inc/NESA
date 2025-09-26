@@ -333,7 +333,7 @@ const AuthButtons = ({ user }: { user: any }) => {
     // If the user is logged in, show a dropdown menu on desktop
     const handleLogout = () => {
       logout();
-      window.location.href = '/account/login';
+      window.location.href = '/login';
     };
  
     return (

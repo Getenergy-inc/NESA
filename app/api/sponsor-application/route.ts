@@ -73,7 +73,10 @@ export async function POST(request: NextRequest) {
     // Check if email already exists
     let existingEntry;
     try {
-      existingEntry = await Sponsor.findOne({ email: requestBody.email.toLowerCase() });
+      existingEntry = await Sponsor.findOne({ 
+        email: requestBody.email.toLowerCase(),
+        company_name: requestBody.company_name 
+      });
     } catch (dbError) {
       console.error('Database query error:', dbError);
       throw new Error('Database query failed');
@@ -106,6 +109,13 @@ export async function POST(request: NextRequest) {
       } catch (dbError) {
         console.error('Database update error:', dbError);
         throw new Error('Failed to update existing entry');
+      }
+
+      // Check if a different application with the same email already exists
+      const otherEntry = await Sponsor.findOne({ email: requestBody.email.toLowerCase() });
+      if (otherEntry && otherEntry.company_name !== requestBody.company_name) {
+        // This case is now handled by creating a new entry, so this block is for logging/awareness.
+        console.warn(`Sponsor with email ${requestBody.email} also exists for company ${otherEntry.company_name}. A new record was created for ${requestBody.company_name}.`);
       }
 
       // Update in Google Sheets if it was previously synced
@@ -224,11 +234,7 @@ export async function POST(request: NextRequest) {
         <p>Thank you for your interest in supporting NESA-Africa 2025!</p>
       `;
 
-      await sendEmail({
-        to: requestBody.email,
-        subject: 'NESA-Africa 2025 Sponsorship Application Received',
-        html: emailHtml
-      });
+      await sendEmail(requestBody.email, emailHtml, 'NESA-Africa 2025 Sponsorship Application Received');
 
       console.log('✅ Confirmation email sent to:', requestBody.email);
     } catch (emailError) {

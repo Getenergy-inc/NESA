@@ -5,33 +5,33 @@ declare module "next-auth" {
   interface Session {
     user: {
       id: string;
-      name: string;
+      name?: string;
       email: string;
-      isAdmin: boolean;
-      role: string;
-      token?: string;
-      accessToken?: string;
+      image?: string | null;
+      isAdmin?: boolean;
+      role?: string;
     };
     accessToken?: string;
   }
 
   interface User {
     id: string;
-    name: string;
+    name?: string;
     email: string;
-    isAdmin: boolean;
-    role: string;
-    token?: string;
-    accessToken?: string;
+    image?: string | null;
+    isAdmin?: boolean;
+    role?: string;
   }
 }
 
 declare module "next-auth/jwt" {
   interface JWT {
     id: string;
-    isAdmin: boolean;
-    role: string;
-    token?: string;
+    name?: string;
+    email?: string;
+    picture?: string;
+    isAdmin?: boolean;
+    role?: string;
     accessToken?: string;
   }
 }

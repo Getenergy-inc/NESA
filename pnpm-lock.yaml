@@ -80,6 +80,9 @@ importers:
       goober:
         specifier: ^2.1.16
         version: 2.1.16(csstype@3.1.3)
+      google-auth-library:
+        specifier: ^10.3.0
+        version: 10.3.0
       googleapis:
         specifier: ^155.0.1
         version: 155.0.1
@@ -89,6 +92,9 @@ importers:
       headlessui:
         specifier: ^0.0.0
         version: 0.0.0
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       lucide-react:
         specifier: ^0.528.0
         version: 0.528.0(react@18.3.1)
@@ -195,6 +201,9 @@ importers:
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
+      '@types/lodash':
+        specifier: ^4.17.20
+        version: 4.17.20
       '@types/mongoose':
         specifier: ^5.11.96
         version: 5.11.97
@@ -216,6 +225,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.6)
+      case-sensitive-paths-webpack-plugin:
+        specifier: ^2.4.0
+        version: 2.4.0
       eslint:
         specifier: ^8
         version: 8.57.1
@@ -1579,6 +1591,9 @@ packages:
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
 
+  '@types/lodash@4.17.20':
+    resolution: {integrity: sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==}
+
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
 
@@ -2095,6 +2110,10 @@ packages:
 
   cards@2.0.3:
     resolution: {integrity: sha512-Mm2Pr2O8retq7ipkzlekPvoDdGVl7hX23PYMRHgFkHl+0gJ218n0EDkeNB4uPgx0PuG+LKR5rdQb0sOGGqcDiA==}
+
+  case-sensitive-paths-webpack-plugin@2.4.0:
+    resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
+    engines: {node: '>=4'}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -3612,6 +3631,9 @@ packages:
 
   lodash.uniqby@4.7.0:
     resolution: {integrity: sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==}
+
+  lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
@@ -7073,6 +7095,8 @@ snapshots:
     dependencies:
       '@types/node': 20.19.17
 
+  '@types/lodash@4.17.20': {}
+
   '@types/mdast@4.0.4':
     dependencies:
       '@types/unist': 3.0.3
@@ -7618,6 +7642,8 @@ snapshots:
   caniuse-lite@1.0.30001743: {}
 
   cards@2.0.3: {}
+
+  case-sensitive-paths-webpack-plugin@2.4.0: {}
 
   ccount@2.0.1: {}
 
@@ -9491,6 +9517,8 @@ snapshots:
   lodash.throttle@4.1.1: {}
 
   lodash.uniqby@4.7.0: {}
+
+  lodash@4.17.21: {}
 
   longest-streak@3.1.0: {}
 

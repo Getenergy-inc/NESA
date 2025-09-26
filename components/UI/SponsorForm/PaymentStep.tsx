@@ -57,7 +57,7 @@ export default function PaymentStep({
 }: {
   formData: SponsorFormData;
   onBack: () => void;
-  onSubmit: () => void;
+  onSubmit: (paymentData?: any) => void;
   isSubmitting?: boolean;
   error?: string | null;
 }) {

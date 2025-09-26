@@ -75,7 +75,7 @@ const EnhancedHero = () => {
             />
           </div>
 
-    <header className="relative w-full overflow-hidden pt-6 bg-darkBrown" ref={heroRef}>
+    <header className="relative w-full overflow-hidden pt-0 mt-0 bg-darkBrown" ref={heroRef} style={{ marginTop: '-1px', zIndex: 0 }}>
       {/* Background Image with Parallax Effect */}
       <div className="absolute inset-0 w-full h-full">
         {isMounted ? (
@@ -127,7 +127,7 @@ const EnhancedHero = () => {
         </div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pt-12 md:pb-24">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16 md:pt-8 md:pb-24">
         <motion.div 
           className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center"
           initial={isMounted ? "hidden" : false}
@@ -235,16 +235,18 @@ const EnhancedHero = () => {
           <div className={styles.quickActionGrid}>
             {/* Refer a Friend */}
             <div className="group flex-1 px-2">
-              <motion.button
-                className={`${styles.quickActionButton} ${styles.quickActionPrimary}`}
-                aria-label="Refer a friend to NESA Africa"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FaUserFriends className="h-4 w-4 md:h-5 md:w-5" />
-                <span className="hidden md:inline">Refer a Friend</span>
-                <span className="md:hidden">Refer</span>
-              </motion.button>
+              <Link href="/get-involved/refer" passHref>
+                <motion.button
+                  className={`${styles.quickActionButton} ${styles.quickActionPrimary}`}
+                  aria-label="Refer a friend to NESA Africa"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FaUserFriends className="h-4 w-4 md:h-5 md:w-5" />
+                  <span className="hidden md:inline">Refer a Friend</span>
+                  <span className="md:hidden">Refer</span>
+                </motion.button>
+              </Link>
             </div>
             
             {/* Nominate Now */}
@@ -265,30 +267,34 @@ const EnhancedHero = () => {
             
             {/* Get Gala Tickets */}
             <div className="group flex-1 px-2">
-              <motion.button
-                className={`${styles.quickActionButton} ${styles.quickActionSecondary}`}
-                aria-label="Get tickets for NESA Africa gala"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FaTicketAlt className="h-4 w-4 md:h-5 md:w-5" />
-                <span className="hidden md:inline">Get Gala Tickets</span>
-                <span className="md:hidden">Tickets</span>
-              </motion.button>
+              <Link href="/events/gala-tickets" passHref>
+                <motion.button
+                  className={`${styles.quickActionButton} ${styles.quickActionSecondary}`}
+                  aria-label="Get tickets for NESA Africa gala"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FaTicketAlt className="h-4 w-4 md:h-5 md:w-5" />
+                  <span className="hidden md:inline">Get Gala Tickets</span>
+                  <span className="md:hidden">Tickets</span>
+                </motion.button>
+              </Link>
             </div>
             
             {/* Watch NESA TV */}
             <div className="group flex-1 px-2">
-              <motion.button
-                className={`${styles.quickActionButton} ${styles.quickActionSecondary}`}
-                aria-label="Watch NESA TV content"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FaPlay className="h-4 w-4 md:h-5 md:w-5" />
-                <span className="hidden md:inline">Watch NESA TV</span>
-                <span className="md:hidden">Watch</span>
-              </motion.button>
+              <Link href="/media/nesa-tv" passHref>
+                <motion.button
+                  className={`${styles.quickActionButton} ${styles.quickActionSecondary}`}
+                  aria-label="Watch NESA TV content"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FaPlay className="h-4 w-4 md:h-5 md:w-5" />
+                  <span className="hidden md:inline">Watch NESA TV</span>
+                  <span className="md:hidden">Watch</span>
+                </motion.button>
+              </Link>
             </div>
           </div>
         </motion.div>

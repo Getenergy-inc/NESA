@@ -10,7 +10,7 @@ export const authOptions: NextAuthOptions = {
         email: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials) {
+      async authorize(credentials, req) {
         if (!credentials?.email || !credentials.password) {
           return null;
         }
@@ -33,17 +33,31 @@ export const authOptions: NextAuthOptions = {
             id: 'admin-user',
             name: 'Admin User',
             email: adminUsername,
+            image: null,
             isAdmin: true,
             role: 'admin',
-            accessToken: 'nesa-admin-token-2025'
+            accessToken: 'admin-token' // Dummy token for admin
           };
         }
 
         // For non-admin users, try the regular login
         try {
-          const { user, token } = await login(credentials);
+          const response = await login(credentials);
+          const { user, token } = response;
+          
           if (user && token) {
-            return { ...user, accessToken: token };
+            // Ensure we return a valid User object that matches NextAuth's User type
+            // Store only the properties expected by NextAuth User type
+            return {
+              id: user.id,
+              name: user.name || user.email.split('@')[0],
+              email: user.email,
+              image: user.image || null,
+              // Add these properties so they can be stored in the JWT
+              accessToken: token,
+              isAdmin: user.isAdmin || false,
+              role: user.role || 'user'
+            };
           }
           return null;
         } catch (error) {
@@ -57,12 +71,26 @@ export const authOptions: NextAuthOptions = {
     strategy: 'jwt',
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
       if (user) {
+        // Store user information in the token
         token.id = user.id;
-        token.isAdmin = (user as any).isAdmin || (user as any).role === 'admin';
-        token.accessToken = (user as any).accessToken;
-        token.role = (user as any).role;
+        
+        // Handle admin-specific properties
+        if ((user as any).isAdmin) {
+          token.isAdmin = true;
+          token.role = 'admin';
+        } else if ((user as any).role) {
+          token.role = (user as any).role;
+          token.isAdmin = (user as any).role === 'admin';
+        }
+        
+        // Store access token if available
+        if ((user as any).accessToken) {
+          token.accessToken = (user as any).accessToken;
+        } else if (account?.access_token) {
+          token.accessToken = account.access_token;
+        }
         
         // Log token creation for debugging
         console.log('JWT token created:', { 
@@ -75,16 +103,23 @@ export const authOptions: NextAuthOptions = {
     },
     async session({ session, token }) {
       if (session.user) {
-        (session.user as any).id = token.id as string;
-        (session.user as any).isAdmin = token.isAdmin as boolean;
-        (session.user as any).role = token.role as string;
-        (session as any).accessToken = token.accessToken;
+        // Add custom properties to the session user object
+        session.user.id = token.id as string;
+        
+        // Add admin and role information
+        session.user.isAdmin = !!token.isAdmin;
+        session.user.role = token.role as string || 'user';
+        
+        // Add access token to the session
+        if (token.accessToken) {
+          session.accessToken = token.accessToken;
+        }
         
         // Log session creation for debugging
         console.log('Session created:', { 
-          id: (session.user as any).id,
-          isAdmin: (session.user as any).isAdmin,
-          role: (session.user as any).role
+          id: session.user.id,
+          isAdmin: session.user.isAdmin,
+          role: session.user.role
         });
       }
       return session;
@@ -92,7 +127,7 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/account/login',
-    error: '/account/login',
+    error: '/api/auth/error',
   },
   secret: 'nesa-nextauth-secret-key-2025',
 };

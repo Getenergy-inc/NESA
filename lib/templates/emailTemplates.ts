@@ -3,6 +3,8 @@ import { sendEmail as sendEmailWithNodemailer } from '@/lib/services/emailServic
 export interface EmailTemplateParams {
   name: string;
   verificationUrl: string;
+  email?: string;
+  signupUrl?: string;
 }
 
 export const endorsementVerificationEmailTemplate = ({ name, verificationUrl }: EmailTemplateParams): string => {
@@ -138,7 +140,75 @@ export const judgeVerificationEmailTemplate = ({ name, verificationUrl }: EmailT
   `;
 };
 
+export const judgeApprovalEmailTemplate = ({ name, signupUrl }: EmailTemplateParams): string => {
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Judge Application Approved - NESA-Africa 2025</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: linear-gradient(135deg, #ea580c 0%, #fb923c 100%); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+            .content { background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; }
+            .footer { background: #f9fafb; padding: 20px; text-align: center; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none; }
+            .button { display: inline-block; background: linear-gradient(135deg, #ea580c 0%, #fb923c 100%); color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 20px 0; }
+            .highlight { background: #fef3c7; padding: 15px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #f59e0b; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>NESA Awards 2025</h1>
+                <h2>Judge Application Approved!</h2>
+            </div>
+            
+            <div class="content">
+                <h3>Dear ${name},</h3>
+                
+                <p>Congratulations! Your application to become a judge for the New Education Standard Awards 2025 has been approved.</p>
+                
+                <div class="highlight">
+                    <strong>Next Step:</strong> Please click the button below to create your judge account and access the judging platform.
+                </div>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="${signupUrl}" class="button">Create My Judge Account</a>
+                </div>
+                
+                <p><strong>What to expect:</strong></p>
+                <ul>
+                    <li>You'll be able to create your judge profile and set up your account.</li>
+                    <li>You'll receive access to the judging platform where you can review nominations.</li>
+                    <li>You'll be notified when the judging period begins.</li>
+                </ul>
+                
+                <p>We're excited to have you join our distinguished panel of judges for this prestigious event!</p>
+                
+                <p>Best regards,<br>
+                <strong>The NESA-Africa Team</strong></p>
+            </div>
+            
+            <div class="footer">
+                <p style="margin: 0; font-size: 12px; color: #6b7280;">
+                    📍 54, Fajolu Street, Surulere, Lagos<br>
+                    📞 +234-907-962-1110 | +234-810-926-5897<br>
+                    ✉️ nesa.africa@gmail.com
+                </p>
+            </div>
+        </div>
+    </body>
+    </html>
+  `;
+};
+
 // Email service integration helper
-export const sendEmail = async (options: { to: string; subject: string; html: string; }) => {
-  return sendEmailWithNodemailer(options);
+export const sendEmail = async (to: string, html: string, subject: string = "NESA Africa - Important Information") => {
+  return sendEmailWithNodemailer({
+    to,
+    subject,
+    html
+  });
 };

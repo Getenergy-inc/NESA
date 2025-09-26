@@ -20,7 +20,7 @@ import Link from 'next/link';
 const LoginPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || (searchParams.get('redirect') || '/dashboard');
+  const callbackUrl = searchParams?.get('callbackUrl') || (searchParams?.get('redirect') || '/dashboard');
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -139,7 +139,7 @@ const LoginPage = () => {
             </Button>
             
             <Grid container justifyContent="center">
-              <Grid size={{ xs: 12, sm: 12 }}>
+              <Grid size={{xs:12, sm:12}} >
                 <Box textAlign="center">
                   <MuiLink component={Link} href="/" variant="body2">
                     Return to Home Page

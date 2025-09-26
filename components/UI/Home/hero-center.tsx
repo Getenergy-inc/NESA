@@ -203,6 +203,7 @@ const HeroCenter = () => {
         >
           {/* Refer a friend */}
           <motion.div className="group">
+            <Link href="/get-involved/refer-a-friend">
             <motion.button
               onClick={() => console.log("Refer a friend")}
               className="w-[80%] bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3"
@@ -217,6 +218,7 @@ const HeroCenter = () => {
               <FaUserFriends size={20} />
               Refer a Friend
             </motion.button>
+            </Link>
           </motion.div>
 
           {/* Nominate Now */}
@@ -242,6 +244,7 @@ const HeroCenter = () => {
 
           {/* Get Gala Tickets */}
           <motion.div className="group">
+            <Link href="/get-involved/tickets">
             <motion.button
               onClick={() => console.log("Get Gala Tickets")}
               className="w-[80%] bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 hover:bg-primaryGold hover:text-darkBrown"
@@ -256,10 +259,12 @@ const HeroCenter = () => {
               <FaTicketAlt size={20} />
               Get Gala Tickets
             </motion.button>
+            </Link>
           </motion.div>
 
           {/* Watch NESA TV */}
           <motion.div className="group">
+            <Link href={"/nesa-media"}>
             <motion.button
               onClick={() => console.log("Watch NESA TV")}
               className="w-[80%] bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 hover:bg-primaryGold hover:text-darkBrown"
@@ -274,6 +279,7 @@ const HeroCenter = () => {
               <FaPlay size={20} />
               Watch NESA TV
             </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

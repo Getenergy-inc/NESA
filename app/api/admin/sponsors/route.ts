@@ -135,11 +135,7 @@ export async function PATCH(request: NextRequest) {
           <p>If you would like more information, please contact us at partnerships@nesaafrica.org</p>
         `;
       
-      await sendEmail({
-        to: sponsor.email,
-        subject: emailSubject,
-        html: emailContent
-      });
+      await sendEmail(sponsor.email, emailContent, emailSubject);
     }
     
     return NextResponse.json({
