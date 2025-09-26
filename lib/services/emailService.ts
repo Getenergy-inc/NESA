@@ -7,18 +7,18 @@ interface EmailOptions {
 }
 
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for other ports
+  host: process.env.EMAIL_HOST,
+  port: Number(process.env.EMAIL_PORT),
+  secure: Number(process.env.EMAIL_PORT) === 465, // true for 465, false for other ports
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
 export const sendEmail = async (options: EmailOptions) => {
   const mailOptions = {
-    from: `"${process.env.FROM_NAME}" <${process.env.FROM_EMAIL}>`,
+    from: `"${process.env.EMAIL_FROM || 'NESA-Africa'}" <${process.env.EMAIL_USER}>`,
     to: options.to,
     subject: options.subject,
     html: options.html,
@@ -35,5 +35,5 @@ export const sendEmail = async (options: EmailOptions) => {
 };
 
 export const isEmailServiceConfigured = () => {
-  return !!process.env.SMTP_HOST && !!process.env.SMTP_USER && !!process.env.SMTP_PASS;
+  return !!process.env.EMAIL_HOST && !!process.env.EMAIL_USER && !!process.env.EMAIL_PASS;
 };

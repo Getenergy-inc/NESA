@@ -173,7 +173,7 @@ const EndorseNesaAfricaPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/get-involved/endorse-nesa-africa/upload">
                 <Button
-                  text="Sign Up to Endorse"
+                  text="Endorse"
                   variant="filled"
                   size="large"
                   className="bg-[#ea580c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg"
@@ -185,7 +185,7 @@ const EndorseNesaAfricaPage = () => {
                   text="View All Endorsers"
                   variant="outlined"
                   size="large"
-                  className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-8 py-4 text-lg"
+                  className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-black px-8 py-4 text-lg"
                 />
               </Link>
               <Link href="/get-involved/sponsor">
@@ -276,7 +276,7 @@ const EndorseNesaAfricaPage = () => {
           >
             <Link href="/get-involved/endorse-nesa-africa/upload">
               <Button
-                text="Sign Up to Endorse Now"
+                text="Endorse Now"
                 variant="filled"
                 size="large"
                 className="bg-[#ea580c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg"
