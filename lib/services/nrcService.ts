@@ -353,10 +353,39 @@ class NRCService {
   // Nominee Management
   async createNominee(nomineeData: any): Promise<ApiResponse<any>> {
     try {
-      const response = await apiClient.post(`${this.baseUrl}/nominees`, nomineeData);
+      console.log('Creating nominee with FormData...');
+      
+      // Log FormData entries for debugging
+      if (nomineeData instanceof FormData) {
+        console.log('FormData entries:');
+        for (let pair of nomineeData.entries()) {
+          const value = pair[1] instanceof File 
+            ? `File: ${(pair[1] as File).name} (${(pair[1] as File).size} bytes)` 
+            : pair[1];
+          console.log(`${pair[0]}: ${value}`);
+        }
+      } else {
+        console.warn('nomineeData is not FormData!', typeof nomineeData);
+      }
+      
+      // Use apiClient to send FormData. Axios will correctly set the
+      // 'Content-Type': 'multipart/form-data' header with the boundary.
+      console.log(`Sending request to ${this.baseUrl}/nominees...`);
+      const response = await apiClient.post(`${this.baseUrl}/nominees`, nomineeData, {
+        headers: {
+          // Let Axios set the Content-Type for FormData
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      
+      console.log('Response status:', response.status);
+      console.log('Response data:', response.data);
+      
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to create nominee');
+      console.error('Create nominee error:', error);
+      // Propagate a more informative error message from the server if available
+      throw new Error(error.response?.data?.message || error.message || 'Failed to create nominee');
     }
   }
 

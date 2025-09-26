@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false, // Disable strict mode to prevent double-rendering in development
   images: {
     unoptimized: true,
   },
   experimental: {
     scrollRestoration: true,
+    // Add these experimental features to improve App Router stability
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
+    serverComponentsExternalPackages: ['mongoose'],
   },
   // Optimize build performance
   swcMinify: true,
@@ -81,6 +86,7 @@ const nextConfig = {
     
     return config;
   },
+  
 }
 
 module.exports = nextConfig

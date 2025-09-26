@@ -361,7 +361,7 @@ const EdgeNavbar = ({
                   </>
                 ) : (
                   <Link
-                    href="/login"
+                    href="/account/login"
                     className="block w-full bg-deepGold hover:bg-amber-500 text-black font-medium py-2 px-4 rounded-md text-center"
                     onClick={() => controlMenu(false)}
                   >

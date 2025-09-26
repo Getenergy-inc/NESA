@@ -16,11 +16,10 @@ const sendVerificationEmail = async (email: string, name: string, token: string)
 
   const emailTemplate = judgeVerificationEmailTemplate({
     name,
-    email,
     verificationUrl
   });
 
-  await sendEmail(email, emailTemplate);
+  await sendEmail(email, emailTemplate, "NESA Africa - Judge Application Verification");
   return true;
 };
 
