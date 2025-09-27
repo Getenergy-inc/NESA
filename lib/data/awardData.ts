@@ -4898,7 +4898,7 @@ export const categories: Category[] = [
             nominees: [
               {
                 name: "Ecobank",
-                image: "/images/csricons/ecobank.png",
+                image: "/images/bestcsr/Ecobank.png",
                 achievement:
                   "Empowering youth through scholarships and financial literacy programs.",
                 state: "Lagos",
@@ -4906,7 +4906,7 @@ export const categories: Category[] = [
               },
               {
                 name: "UBA",
-                image: "/images/csricons/uba.png",
+                image: "/images/bestcsr/UBA.png",
                 achievement:
                   "Supporting school infrastructure and digital learning.",
                 state: "Lagos",
@@ -4914,23 +4914,23 @@ export const categories: Category[] = [
               },
               {
                 name: "Zenith Bank",
-                image: "/images/csricons/zenith.png",
+                image: "/images/bestcsr/Zenith Bank.png",
                 achievement:
                   "Providing scholarships and supporting school development.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "GTBank",
-                image: "/images/csricons/gtbank.png",
+                name: "Guaranty Trust Bank",
+                image: "/images/bestcsr/Guaranty Trust Bank.png",
                 achievement:
                   "Supporting STEM education and leadership initiatives.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "FirstBank",
-                image: "/images/csricons/firstbank.png",
+                name: "First Bank of Nigeria",
+                image: "/images/bestcsr/First Bank of Nigeria.png",
                 achievement:
                   "Providing scholarships and digital learning resources.",
                 state: "Lagos",
@@ -4938,7 +4938,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Access Bank",
-                image: "/images/csricons/accessbank.png",
+                image: "/images/bestcsr/Access Bank.png",
                 achievement:
                   "Empowering youth through financial education programs.",
                 state: "Lagos",
@@ -4946,14 +4946,14 @@ export const categories: Category[] = [
               },
               {
                 name: "Fidelity Bank",
-                image: "/images/csricons/fidelity.png",
+                image: "/images/bestcsr/Fidelity Bank.png",
                 achievement: "Providing educational support and scholarships.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Union Bank",
-                image: "/images/csricons/unionbank.png",
+                name: "Union Bank of Nigeria",
+                image: "/images/bestcsr/Union Bank of Nigeria.png",
                 achievement:
                   "Funding school infrastructure and technology programs.",
                 state: "Lagos",
@@ -4961,7 +4961,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Stanbic IBTC",
-                image: "/images/csricons/stanbicibtc.png",
+                image: "/images/bestcsr/Stanbic IBTC.png",
                 achievement:
                   "Supporting digital literacy and financial education.",
                 state: "Lagos",
@@ -4969,11 +4969,19 @@ export const categories: Category[] = [
               },
               {
                 name: "United Bank of Africa",
-                image: "/images/csricons/uba.png",
+                image: "/images/bestcsr/United Bank of Africa.png",
                 achievement:
                   "Providing scholarships and supporting school development.",
                 state: "Lagos",
                 country: "Nigeria",
+              },
+              {
+                name: "Societe Generale Ghana",
+                image: "/images/bestcsr/Societe Generale Ghana.png",
+                achievement:
+                  "Providing scholarships and supporting school development.",
+                state: "",
+                country: "",
               },
             ],
           },
@@ -4984,31 +4992,39 @@ export const categories: Category[] = [
             nominees: [
               {
                 name: "MTN",
-                image: "/images/csricons/mtn.png",
+                image: "/images/bestcsr/MTN.png",
                 achievement:
                   "Digital education platforms and school connectivity programs.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Airtel",
-                image: "/images/csricons/airtel.png",
+                name: "Airtel Nigeria",
+                image: "/images/bestcsr/Airtel.png",
                 achievement:
                   "Supporting e-learning and digital skills training.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Vodacom",
-                image: "/images/csricons/vodacom.png",
+                name: "Glo Mobile",
+                image: "/images/bestcsr/Glo.png",
                 achievement:
                   "Providing digital resources and supporting school technology.",
                 state: "Accra",
                 country: "Ghana",
               },
               {
-                name: "Orange",
-                image: "/images/csricons/orange.png",
+                name: "Vodafone Ghana",
+                image: "/images/bestcsr/Vodafone.png",
+                achievement:
+                  "Providing digital resources and supporting school technology.",
+                state: "Accra",
+                country: "Ghana",
+              },
+              {
+                name: "Orange Senegal",
+                image: "/images/bestcsr/Orange.png",
                 achievement:
                   "Empowering schools with internet and digital learning.",
                 state: "Abidjan",
@@ -5016,38 +5032,38 @@ export const categories: Category[] = [
               },
               {
                 name: "9mobile",
-                image: "/images/csricons/9mobile.png",
+                image: "/images/bestcsr/9mobile.png",
                 achievement:
                   "Providing digital resources and supporting school technology.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Expresso",
-                image: "/images/csricons/expresso.png",
+                name: "Expresso Senegal",
+                image: "/images/bestcsr/Expresso.png",
                 achievement:
                   "Supporting online learning and school connectivity.",
                 state: "Dakar",
                 country: "Senegal",
               },
               {
-                name: "Moov Africa",
-                image: "/images/csricons/moovafrica.png",
+                name: "Moov Benin",
+                image: "/images/bestcsr/Moov.png",
                 achievement:
                   "Connecting schools and supporting STEM education.",
                 state: "Lomé",
                 country: "Togo",
               },
               {
-                name: "Airtel Nigeria",
-                image: "/images/csricons/airtel.png",
+                name: "Airtel Burkina Faso",
+                image: "/images/bestcsr/airtel.png",
                 achievement: "Providing digital infrastructure for education.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "MTN Project Fame",
-                image: "/images/csricons/mtn.png",
+                name: "MTN Ivory Coast",
+                image: "/images/bestcsr/MTN.png",
                 achievement: "Providing internet access for schools.",
                 state: "Lagos",
                 country: "Nigeria",
@@ -5061,71 +5077,71 @@ export const categories: Category[] = [
             nominees: [
               {
                 name: "Flutterwave",
-                image: "/images/csricons/flutterwave.png",
+                image: "/images/bestcsr/Flutterwave.png",
                 achievement: "Supporting coding and robotics education.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
                 name: "Paystack",
-                image: "/images/csricons/paystack.png",
+                image: "/images/bestcsr/Paystack.png",
                 achievement: "Providing digital skills training and resources.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
                 name: "MainOne",
-                image: "/images/csricons/mainone.png",
+                image: "/images/bestcsr/MainOne.png",
                 achievement: "Empowering schools with technology solutions.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
                 name: "Andela",
-                image: "/images/csricons/andela.png",
+                image: "/images/bestcsr/Andela.png",
                 achievement: "Supporting ICT infrastructure for schools.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
                 name: "Interswitch",
-                image: "/images/csricons/interswitch.png",
+                image: "/images/bestcsr/Interswitch.png",
                 achievement: "Providing software solutions for education.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
                 name: "Jumia",
-                image: "/images/csricons/jumia.png",
+                image: "/images/bestcsr/Jumia.png",
                 achievement: "Supporting digital transformation in schools.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
                 name: "Kobo360",
-                image: "/images/csricons/kobo360.png",
+                image: "/images/bestcsr/Kobo360.png",
                 achievement: "Empowering schools with technology solutions.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
                 name: "TradeDepot",
-                image: "/images/csricons/tradedepot.png",
+                image: "/images/bestcsr/TradeDepot.png",
                 achievement: "Providing internet connectivity for schools.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
                 name: "GIG Logistics",
-                image: "/images/csricons/giglogistics.png",
+                image: "/images/bestcsr/GIG Logistics.png",
                 achievement:
                   "Supporting digital literacy and teacher training.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "e-Settlement",
-                image: "/images/csricons/esettlement.png",
+                name: "E-Settlement Limited",
+                image: "/images/bestcsr/E-Settlement Limited.png",
                 achievement:
                   "Promoting e-commerce education and entrepreneurship.",
                 state: "Lagos",
@@ -5140,75 +5156,98 @@ export const categories: Category[] = [
               "Honoring agriculture and agribusiness companies making significant educational contributions in West Africa",
             nominees: [
               {
-                name: "Olam",
-                image: "/images/csricons/olam.png",
+                name: "Olam International",
+                image: "/images/bestcsr/Olam International.png",
                 achievement:
-                  "Supporting agricultural education and rural development.",
+                  "Agri-Education – Providing training programs and scholarships for agricultural studies, supporting sustainable farming practices in Nigeria. Year of Support: 2014-Present",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Nestle",
-                image: "/images/csricons/nestle.png",
+                name: "Nestlé Nigeria (Nigeria)",
+                image: "/images/bestcsr/Nestlé Nigeria.png",
                 achievement:
-                  "Providing scholarships and supporting school development.",
+                  "Nestlé Healthy Kids – Promoting nutritional education and sustainable agriculture practices in schools across Nigeria. Year       of Support: 2010-Present",
                 state: "Accra",
                 country: "Ghana",
               },
               {
-                name: "Dangote Sugar",
-                image: "/images/csricons/dangotesugar.png",
+                name: "Cocoa Processing Company (Ghana)",
+                image: "/images/bestcsr/Cocoa Processing Company.png",
                 achievement:
-                  "Supporting STEM education and school infrastructure.",
-                state: "Lagos",
-                country: "Nigeria",
-              },
-              {
-                name: "FMN",
-                image: "/images/csricons/fmn.png",
-                achievement:
-                  "Providing scholarships and supporting school development.",
-                state: "Lagos",
-                country: "Nigeria",
-              },
-              {
-                name: "Tropingo Foods",
-                image: "/images/csricons/tropingo.png",
-                achievement:
-                  "Supporting vocational training and educational partnerships.",
+                  "Cocoa Academy – Educating farmers on sustainable practices and new technologies in cocoa farming in Ghana. Year of Support: 2012-Present",
                 state: "Accra",
                 country: "Ghana",
               },
               {
-                name: "Cargill",
-                image: "/images/csricons/cargill.png",
+                name: "Dangote Sugar Refinery (Nigeria)",
+                image: "/images/bestcsr/Dangote Sugar Refinery.png",
                 achievement:
-                  "Supporting technical education and infrastructure support.",
+                  "Dangote Sugar Scholars – Offering scholarships in agricultural science and technology, supporting education in the sugar industry in Nigeria. Year of Support: 2015-Present",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Cocoa Processing Company Ltd.",
-                image: "/images/csricons/cocoaprocessing.png",
+                name: "Flour Mills of Nigeria (Nigeria)",
+                image: "/images/bestcsr/Flour Mills of Nigeria.png",
                 achievement:
-                  "Supporting sustainable development education and scholarships.",
+                  "Golden Fertilizer Academy – Focusing on agricultural education and training, enhancing farming practices in Nigeria. Year of Support: 2013-Present",
+                state: "Lagos",
+                country: "Nigeria",
+              },
+              {
+                name: "Guinness Ghana (Ghana)",
+                image: "/images/bestcsr/Guinness Ghana.png",
+                achievement:
+                  "Guinness Farming Initiative – Supporting small-scale farmers with education and resources to improve agricultural productivity in Ghana. Year of Support: 2011-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Tropingo Foods (Gambia)",
+                image: "/images/bestcsr/Tropingo Foods.png",
+                achievement:
+                  "Tropingo Agri-Schools – Providing agricultural training for rural youth, promoting sustainable farming practices in Gambia. Year of Support: 2014-Present",
                 state: "Accra",
                 country: "Ghana",
               },
               {
-                name: "Guinness",
-                image: "/images/csricons/guinness.png",
+                name: "Sierra Leone Produce Marketing Company (SLPMC)",
+                image: "/images/bestcsr/Sierra Leone Produce Marketing Company (SLPMC).png",
                 achievement:
-                  "Supporting technical education and training programs.",
+                  "SLPMC Education Fund – Supporting agricultural education and promoting sustainable farming practices in Sierra Leone. Year of Support: 2015-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Société des Plantations de Mbanga",
+                image: "/images/bestcsr/cargill.png",
+                achievement:
+                  "Cultivating Learning – Focusing on agricultural skills and education, enhancing farming techniques in Cameroon. Year of Support: 2013-Present",
                 state: "Lagos",
                 country: "Nigeria",
+              },
+              {
+                name: "Cargill (Cameroon)",
+                image: "/images/bestcsr/Cargill.png",
+                achievement:
+                  "Cargill Classroom – Promoting educational outreach on sustainable agricultural practices, supporting cocoa farming communities in Cameroon. Year of Support: 2012-Present",
+                state: "",
+                country: "",
               },
               {
                 name: "S.A.H.",
-                image: "/images/csricons/sah.png",
+                image: "/images/bestcsr/sah.png",
                 achievement: "Promoting agricultural innovation and education.",
                 state: "Abidjan",
                 country: "Ivory Coast",
+              },
+              {
+                name: "Cement de l’Afrique (CEMAF)",
+                image: "/images/bestcsr/Cement de l’Afrique .png",
+                achievement: "Build a Future – school construction & renovations (2013–Present)..",
+                state: "",
+                country: "Cameroon",
               },
             ],
           },
@@ -5220,80 +5259,80 @@ export const categories: Category[] = [
             nominees: [
               {
                 name: "Dangote Group",
-                image: "/images/csricons/dangotegroup.png",
+                image: "/images/bestcsr/Dangote Group.png",
                 achievement:
-                  "Supporting engineering education and providing scholarships.",
+                  "Dangote Academy – Providing vocational training and scholarships in industrial skills,       aiming to develop a skilled workforce in Nigeria. Year of Support: 2010-Present",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Lafarge",
-                image: "/images/csricons/lafarge.png",
+                name: "Lafarge Africa (Nigeria)",
+                image: "/images/bestcsr/Lafarge Africa.png",
                 achievement:
-                  "Supporting STEM education and school infrastructure.",
+                  "Lafarge Education Programme – Focusing on construction skills and safety training in schools across Nigeria, promoting careers in construction. Year of Support: 2012-Present",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Nestle",
-                image: "/images/csricons/nestle.png",
+                name: "Nestlé Nigeria (Nigeria)",
+                image: "/images/bestcsr/Nestlé Nigeria.png",
                 achievement:
-                  "Providing scholarships and supporting school development.",
+                  "Nestlé Healthy Kids – Promoting nutritional education in schools across Nigeria, supporting healthier lifestyles for children. Year of Support: 2011-Present",
                 state: "Accra",
                 country: "Ghana",
               },
               {
-                name: "FMN",
-                image: "/images/csricons/fmn.png",
+                name: "Flour Mills of Nigeria (Nigeria)",
+                image: "/images/bestcsr/Flour Mills of Nigeria.png",
                 achievement:
-                  "Supporting vocational training and educational partnerships.",
+                  "FMN Golden Penny STEM Initiative – Supporting STEM education in schools through educational programs and scholarships in Nigeria. Year of Support: 2015-Present",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "CIMAF",
-                image: "/images/csricons/cimaf.png",
+                name: "Cement de l’Afrique (CEMAF) (Cameroon)",
+                image: "/images/bestcsr/Cement de l’Afrique (CEMAF).png",
                 achievement:
-                  "Supporting technical education and training programs.",
+                  "Build a Future – Constructing and renovating educational facilities to improve learning environments in Cameroon. Year of Support: 2013-Present",
                 state: "Abidjan",
                 country: "Ivory Coast",
               },
               {
-                name: "Guinness",
-                image: "/images/csricons/guinness.png",
+                name: "Guinness Nigeria (Nigeria)",
+                image: "/images/bestcsr/Guinness Nigeria.png",
                 achievement:
-                  "Supporting sustainable development education and scholarships.",
+                  "Guinness Nigeria Scholarship Scheme – Providing scholarships for vocational education to support skill development in Nigeria. Year of Support: 2014-Present",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Unilever",
-                image: "/images/csricons/unilever.png",
+                name: "Unilever Ghana (Ghana)",
+                image: "/images/bestcsr/Unilever Ghana.png",
                 achievement:
                   "Supporting technical education and infrastructure support.",
                 state: "Lagos",
                 country: "Nigeria",
               },
               {
-                name: "Cocoa Processing Company Ltd.",
-                image: "/images/csricons/cocoaprocessing.png",
+                name: "Cocoa Processing Company (Ghana)",
+                image: "/images/bestcsr/Cocoa Processing Company.png",
                 achievement:
-                  "Supporting technical education and training programs.",
+                  "Cocoa Academy – Educating farmers on sustainable practices and new technologies in cocoa farming in Ghana. Year of Support: 2012-Present",
                 state: "Accra",
                 country: "Ghana",
               },
               {
-                name: "Bolloré",
-                image: "/images/csricons/bollore.png",
+                name: "Bolloré Transport & Logistics (Cameroon)",
+                image: "/images/bestcsr/Bolloré Transport & Logistics.png",
                 achievement: "Promoting industrial innovation and education.",
                 state: "Abidjan",
                 country: "Ivory Coast",
               },
               {
-                name: "Olam",
-                image: "/images/csricons/olam.png",
+                name: "Olam International (Nigeria)",
+                image: "/images/bestcsr/Olam International.png",
                 achievement:
-                  "Supporting engineering education and providing scholarships.",
+                  "Olam Agri-Schools – Providing agricultural education and vocational training to enhance farming practices in Nigeria. Year of Support: 2014-Present",
                 state: "Lagos",
                 country: "Nigeria",
               },
@@ -5305,84 +5344,84 @@ export const categories: Category[] = [
               "Recognizing social media influencers making substantial educational impacts in West Africa",
             nominees: [
               {
-                name: "Nominee 1",
-                image: "/images/influencers/nominee1.png",
+                name: "Yemi Alade (Nigeria)",
+                image: "/images/bestcsr/Yemi Alade.png",
                 achievement:
-                  "Promoting education and empowerment through social media advocacy.",
-                state: "Lagos",
-                country: "Nigeria",
+                  "#EducationForAll Campaign – Advocating for and fundraising for school supplies and scholarships, supporting underprivileged students in Nigeria. Year of Support: 2016-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 2",
-                image: "/images/influencers/nominee2.png",
+                name: "Samuel Eto'o (Cameroon)",
+                image: "/images/bestcsr/Samuel Eto'o.png",
                 achievement:
-                  "Supporting girls' education and empowerment through social media.",
+                  "Samuel Eto'o Foundation – Building schools and providing educational materials, improving access to education in Cameroon. Year of Support: 2006-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Davido (Nigeria)",
+                image: "/images/bestcsr/Davido.png",
+                achievement:
+                  "Davido Education Fund – Supporting underprivileged students with scholarships and learning materials, enhancing educational opportunities in Nigeria. Year of Support: 2018-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Omotola Jalade Ekeinde (Nigeria)",
+                image: "/images/bestcsr/Omotola Jalade Ekeinde.png",
+                achievement:
+                  "Omotola Youth Empowerment Program – Focusing on education and skills development for youth in Nigeria. Year of Support: 2010-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Sarkodie (Ghana)",
+                image: "/images/bestcsr/Sarkodie.png",
+                achievement:
+                  "Sark Nation Foundation – Providing scholarships and educational support for students in need in Ghana. Year of Support: 2014-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Tiwa Savage (Nigeria)",
+                image: "/images/bestcsr/Tiwa Savage.png",
+                achievement:
+                  "Savage Foundation – Supporting girls' education and providing scholarships, empowering young women in Nigeria. Year of Support: 2017-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Genevieve Nnaji (Nigeria)",
+                image: "/images/bestcsr/Genevieve Nnaji.png",
+                achievement:
+                  "Genevieve Foundation – Offering scholarships and mentorship for young women in education, promoting female empowerment in Nigeria. Year of Support: 2013-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Cuppy (Florence Ifeoluwa Otedola) (Nigeria)",
+                image: "/images/bestcsr/Cuppy (Florence Ifeoluwa Otedola).png",
+                achievement:
+                  "Cuppy Foundation – Focusing on education and providing scholarships, supporting youth education in Nigeria. Year of Support: 2018-Present",
                 state: "Accra",
                 country: "Ghana",
               },
               {
-                name: "Nominee 3",
-                image: "/images/influencers/nominee3.png",
-                achievement:
-                  "Promoting literacy and education awareness through social media campaigns.",
-                state: "Abidjan",
-                country: "Ivory Coast",
-              },
-              {
-                name: "Nominee 4",
-                image: "/images/influencers/nominee4.png",
-                achievement:
-                  "Supporting youth education and entrepreneurship through online mentoring and resources.",
-                state: "Lagos",
-                country: "Nigeria",
-              },
-              {
-                name: "Nominee 5",
-                image: "/images/influencers/nominee5.png",
-                achievement:
-                  "Promoting health education and awareness through social media campaigns.",
-                state: "Accra",
-                country: "Ghana",
-              },
-              {
-                name: "Nominee 6",
-                image: "/images/influencers/nominee6.png",
-                achievement:
-                  "Supporting sustainable living education through online content and community initiatives.",
-                state: "Abidjan",
-                country: "Ivory Coast",
-              },
-              {
-                name: "Nominee 7",
-                image: "/images/influencers/nominee7.png",
-                achievement:
-                  "Promoting technology education and digital literacy through social media tutorials.",
-                state: "Lagos",
-                country: "Nigeria",
-              },
-              {
-                name: "Nominee 8",
-                image: "/images/influencers/nominee8.png",
-                achievement:
-                  "Supporting women's education and entrepreneurship through online courses and mentorship.",
-                state: "Accra",
-                country: "Ghana",
-              },
-              {
-                name: "Nominee 9",
-                image: "/images/influencers/nominee9.png",
+                name: "Magasco (Cameroon): Magasco Education Fund",
+                image: "/images/bestcsr/Magasco.png",
                 achievement:
                   "Promoting educational comedy and literacy through social media content.",
-                state: "Abidjan",
-                country: "Ivory Coast",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 10",
-                image: "/images/influencers/nominee10.png",
+                name: "Charlotte Dipanda (Cameroon)",
+                image: "/images/bestcsr/Charlotte Dipanda.png",
                 achievement:
-                  "Promoting arts education and cultural awareness through online platforms.",
-                state: "Lagos",
-                country: "Nigeria",
+                  "Dipanda's Learning Initiative – Supporting girls' education and empowerment through scholarships and mentoring in Cameroon. Year of Support: 2016-Present",
+                state: "",
+                country: "",
               },
             ],
           },
@@ -5393,84 +5432,84 @@ export const categories: Category[] = [
               "Honoring West African international sports stars making significant educational contributions in West Africa",
             nominees: [
               {
-                name: "Nominee 1",
-                image: "/images/sports/nominee1.png",
+                name: "Didier Drogba (Ivory Coast)",
+                image: "/images/bestcsr/Didier Drogba.png",
                 achievement:
-                  "Supporting youth education and sports development through scholarships and community programs.",
-                state: "Lagos",
-                country: "Nigeria",
+                  "Didier Drogba Foundation – Funding schools and providing educational grants, supporting educational development in Ivory Coast. Year of Support: 2007-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 2",
-                image: "/images/sports/nominee2.png",
+                name: "Asisat Oshoala (Nigeria)",
+                image: "/images/bestcsr/Asisat Oshoala.png",
                 achievement:
-                  "Promoting education and sports opportunities for underprivileged youth.",
-                state: "Accra",
-                country: "Ghana",
+                  "Asisat Oshoala Academy – Promoting education and sports for girls, empowering young women in Nigeria. Year of Support: 2015-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 3",
-                image: "/images/sports/nominee3.png",
+                name: "Michael Essien (Ghana)",
+                image: "/images/bestcsr/Michael Essien.png",
                 achievement:
-                  "Supporting educational initiatives and sports academies in West Africa.",
-                state: "Abidjan",
-                country: "Ivory Coast",
+                  "Michael Essien Foundation – Supporting education through scholarships and school infrastructure development in Ghana. Year of Support: 2010-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 4",
-                image: "/images/sports/nominee4.png",
+                name: "Jay-Jay Okocha (Nigeria)",
+                image: "/images/bestcsr/Jay-Jay Okocha.png",
                 achievement:
-                  "Promoting education and sports development in rural areas of West Africa.",
-                state: "Lagos",
-                country: "Nigeria",
+                  "Jay-Jay Okocha Foundation – Providing educational resources and scholarships for underprivileged youth in Nigeria. Year of Support: 2011-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 5",
-                image: "/images/sports/nominee5.png",
+                name: "Sadio Mané (Senegal)",
+                image: "/images/bestcsr/Sadio Mané.png",
                 achievement:
-                  "Supporting educational programs and sports facilities in underprivileged communities.",
-                state: "Accra",
-                country: "Ghana",
+                  "Sadio Mané Education Project – Funding schools and providing scholarships in Senegal, enhancing educational access in rural areas. Year of Support: 2018-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 6",
-                image: "/images/sports/nominee6.png",
+                name: "Thomas Partey (Ghana)",
+                image: "/images/bestcsr/Thomas Partey.png",
                 achievement:
-                  "Promoting goalkeeper training programs and educational support for aspiring athletes.",
-                state: "Abidjan",
-                country: "Ivory Coast",
+                  "Partey Foundation – Supporting education and sports development in rural communities in Ghana. Year of Support: 2017-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 7",
-                image: "/images/sports/nominee7.png",
+                name: "Samuel Eto'o (Cameroon)",
+                image: "/images/bestcsr/Samuel Eto'o.png",
                 achievement:
-                  "Supporting education and sports infrastructure development in West Africa.",
-                state: "Lagos",
-                country: "Nigeria",
+                  "Samuel Eto'o Foundation – Building schools and providing educational materials, improving educational infrastructure in Cameroon. Year of Support: 2006-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 8",
-                image: "/images/sports/nominee8.png",
+                name: "Emmanuel Adebayor (Togo)",
+                image: "/images/bestcsr/Emmanuel Adebayor.png",
                 achievement:
-                  "Promoting youth education and football development programs in West Africa.",
-                state: "Accra",
-                country: "Ghana",
+                  "SEA Foundation – Focusing on education and youth empowerment through sports in Togo. Year of Support: 2014-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 9",
-                image: "/images/sports/nominee9.png",
+                name: "Kolo Touré (Ivory Coast)",
+                image: "/images/bestcsr/Kolo Touré.png",
                 achievement:
-                  "Supporting educational initiatives and sports academies in West Africa.",
-                state: "Abidjan",
-                country: "Ivory Coast",
+                  "Touré Brothers Foundation – Supporting education and sports development for youth in Ivory Coast. Year of Support: 2011-Present",
+                state: "",
+                country: "",
               },
               {
-                name: "Nominee 10",
-                image: "/images/sports/nominee10.png",
+                name: "Yaya Touré (Ivory Coast)",
+                image: "/images/bestcsr/Yaya Touré.png",
                 achievement:
-                  "Promoting education and sports opportunities for youth in West Africa.",
-                state: "Lagos",
-                country: "Nigeria",
+                  "Yaya Touré Foundation – Providing scholarships and supporting educational initiatives in Ivory Coast. Year of Support: 2013-Present",
+                state: "",
+                country: "",
               },
             ],
           },
@@ -5487,8 +5526,8 @@ export const categories: Category[] = [
               "Recognizing outstanding contributions in the banking and finance sector to education in Central Africa",
             nominees: [
               {
-                name: "Ecobank",
-                image: "/images/csricons/ecobank.png",
+                name: "Afriland First Bank",
+                image: "/images/bestcsr/Afriland First Bank.png",
                 achievement:
                   "Empowering youth through scholarships and financial literacy programs.",
                 state: "Douala",
@@ -5496,39 +5535,47 @@ export const categories: Category[] = [
               },
               {
                 name: "BGFI Bank",
-                image: "/images/csricons/bgfibank.png",
+                image: "/images/bestcsr/BGFI Bank.png",
                 achievement:
                   "Supporting school infrastructure and digital learning.",
                 state: "Libreville",
                 country: "Gabon",
               },
               {
+                name: "Ecobank",
+                image: "/images/bestcsr/Ecobank.png",
+                achievement:
+                  "Empowering youth through scholarships and financial literacy programs.",
+                state: "Douala",
+                country: "Cameroon",
+              },
+              {
                 name: "Standard Chartered",
-                image: "/images/csricons/standardchartered.png",
+                image: "/images/bestcsr/Standard Chartered.png",
                 achievement:
                   "Providing scholarships and supporting school development.",
                 state: "Kinshasa",
                 country: "DR Congo",
               },
               {
-                name: "UBA",
-                image: "/images/csricons/uba.png",
+                name: "United Bank for Africa Cameroon",
+                image: "/images/bestcsr/United Bank for Africa.png",
                 achievement:
                   "Supporting STEM education and leadership initiatives.",
                 state: "Douala",
                 country: "Cameroon",
               },
               {
-                name: "Afriland First Bank",
-                image: "/images/csricons/afriland.png",
+                name: "Attijariwafa Bank",
+                image: "/images/bestcsr/Attijariwafa Bank.png",
                 achievement:
                   "Providing scholarships and digital learning resources.",
                 state: "Yaoundé",
                 country: "Cameroon",
               },
               {
-                name: "Commercial Bank",
-                image: "/images/csricons/commercialbank.png",
+                name: "Commercial Bank of Cameroon",
+                image: "/images/bestcsr/Commercial Bank of Cameroon.png",
                 achievement:
                   "Empowering youth through financial education programs.",
                 state: "Douala",
@@ -5536,14 +5583,14 @@ export const categories: Category[] = [
               },
               {
                 name: "BICEC",
-                image: "/images/csricons/bicec.png",
+                image: "/images/bestcsr/BICEC.png",
                 achievement: "Providing educational support and scholarships.",
                 state: "Douala",
                 country: "Cameroon",
               },
               {
                 name: "Société Générale Congo",
-                image: "/images/csricons/societegenerale.png",
+                image: "/images/bestcsr/Societe Generale.png",
                 achievement:
                   "Funding school infrastructure and technology programs.",
                 state: "Brazzaville",
@@ -5551,7 +5598,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Ecobank Congo",
-                image: "/images/csricons/ecobank.png",
+                image: "/images/bestcsr/Ecobank.png",
                 achievement:
                   "Supporting digital literacy and financial education.",
                 state: "Brazzaville",
@@ -5559,7 +5606,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Tigo Chad",
-                image: "/images/csricons/tigo.png",
+                image: "/images/bestcsr/tigo.png",
                 achievement:
                   "Providing scholarships and supporting school development.",
                 state: "N'Djamena",
@@ -5574,7 +5621,7 @@ export const categories: Category[] = [
             nominees: [
               {
                 name: "MTN Cameroon",
-                image: "/images/csricons/mtn.png",
+                image: "/images/bestcsr/MTN.png",
                 achievement:
                   "Digital education platforms and school connectivity programs.",
                 state: "Douala",
@@ -5582,7 +5629,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Airtel Congo",
-                image: "/images/csricons/airtel.png",
+                image: "/images/bestcsr/Airtel.png",
                 achievement:
                   "Supporting e-learning and digital skills training.",
                 state: "Brazzaville",
@@ -5590,7 +5637,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Orange Central Africa",
-                image: "/images/csricons/orange.png",
+                image: "/images/bestcsr/Orange.png",
                 achievement:
                   "Providing digital resources and supporting school technology.",
                 state: "Bangui",
@@ -5598,7 +5645,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Camtel",
-                image: "/images/csricons/camtel.png",
+                image: "/images/bestcsr/Camtel.png",
                 achievement:
                   "Empowering schools with internet and digital learning.",
                 state: "Yaoundé",
@@ -5606,7 +5653,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Moov Africa",
-                image: "/images/csricons/moovafrica.png",
+                image: "/images/bestcsr/Moov.png",
                 achievement:
                   "Providing digital resources and supporting school technology.",
                 state: "Libreville",
@@ -5614,7 +5661,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Africell",
-                image: "/images/csricons/africell.png",
+                image: "/images/bestcsr/Africell.png",
                 achievement:
                   "Supporting online learning and school connectivity.",
                 state: "Kinshasa",
@@ -5622,7 +5669,7 @@ export const categories: Category[] = [
               },
               {
                 name: "Vodacom Congo",
-                image: "/images/csricons/vodacom.png",
+                image: "/images/bestcsr/Vodacom.png",
                 achievement:
                   "Connecting schools and supporting STEM education.",
                 state: "Kinshasa",
@@ -5630,17 +5677,65 @@ export const categories: Category[] = [
               },
               {
                 name: "Unitel Angola",
-                image: "/images/csricons/unitel.png",
+                image: "/images/bestcsr/Unitel.png",
                 achievement: "Providing digital infrastructure for education.",
                 state: "Luanda",
                 country: "Angola",
               },
               {
-                name: "GITGE",
-                image: "/images/csricons/gitge.png",
+                name: "Equatorial Guinea Telecom",
+                image: "/images/bestcsr/Equatorial Guinea Telecom.png",
                 achievement: "Providing internet access for schools.",
                 state: "Malabo",
                 country: "Equatorial Guinea",
+              },
+              {
+                name: "Tigo Chad",
+                image: "/images/bestcsr/tigo.png",
+                achievement:
+                  "Providing scholarships and supporting school development.",
+                state: "N'Djamena",
+                country: "Chad",
+              },
+              {
+                name: "Liquid Telecom Central Africa",
+                image: "/images/bestcsr/Liquid Telecom.png",
+                achievement:
+                  "Providing scholarships and supporting school development.",
+                state: "N'Djamena",
+                country: "Chad",
+              },
+              {
+                name: "SES Networks",
+                image: "/images/bestcsr/SES Networks.png",
+                achievement:
+                  "Providing scholarships and supporting school development.",
+                state: "N'Djamena",
+                country: "Chad",
+              },
+              {
+                name: "iWayAfrica",
+                image: "/images/bestcsr/iWayAfrica.png",
+                achievement:
+                  "Providing scholarships and supporting school development.",
+                state: "N'Djamena",
+                country: "Chad",
+              },
+              {
+                name: "Ringo",
+                image: "/images/bestcsr/Ringo.png",
+                achievement:
+                  "Providing scholarships and supporting school development.",
+                state: "N'Djamena",
+                country: "Chad",
+              },
+              {
+                name: "Africom",
+                image: "/images/bestcsr/Africom.png",
+                achievement:
+                  "Providing scholarships and supporting school development.",
+                state: "N'Djamena",
+                country: "Chad",
               },
             ],
           },
@@ -5651,71 +5746,71 @@ export const categories: Category[] = [
             nominees: [
               {
                 name: "Huawei Central Africa",
-                image: "/images/csricons/huawei.png",
+                image: "/images/bestcsr/Huawei Central Africa.png",
                 achievement: "Supporting coding and robotics education.",
                 state: "Yaoundé",
                 country: "Cameroon",
               },
               {
                 name: "Ericsson Central Africa",
-                image: "/images/csricons/ericsson.png",
+                image: "/images/bestcsr/Ericsson.png",
                 achievement: "Providing digital skills training and resources.",
                 state: "Douala",
                 country: "Cameroon",
               },
               {
                 name: "ZTE Central Africa",
-                image: "/images/csricons/zte.png",
+                image: "/images/bestcsr/ZTE.png",
                 achievement: "Empowering schools with technology solutions.",
                 state: "Kinshasa",
                 country: "DR Congo",
               },
               {
                 name: "Camtel",
-                image: "/images/csricons/camtel.png",
+                image: "/images/bestcsr/Camtel.png",
                 achievement: "Supporting ICT infrastructure for schools.",
                 state: "Yaoundé",
                 country: "Cameroon",
               },
               {
                 name: "Liquid Telecom Central Africa",
-                image: "/images/csricons/liquidtelecom.png",
+                image: "/images/bestcsr/Liquid Telecom.png",
                 achievement: "Providing software solutions for education.",
                 state: "Libreville",
                 country: "Gabon",
               },
               {
-                name: "SES Central Africa",
-                image: "/images/csricons/ses.png",
+                name: "SES Networks",
+                image: "/images/bestcsr/SES Networks.png",
                 achievement: "Supporting digital transformation in schools.",
                 state: "Douala",
                 country: "Cameroon",
               },
               {
-                name: "1WayAfrica",
-                image: "/images/csricons/1wayafrica.png",
+                name: "iWayAfrica",
+                image: "/images/bestcsr/iWayAfrica.png",
                 achievement: "Empowering schools with technology solutions.",
                 state: "Malabo",
                 country: "Equatorial Guinea",
               },
               {
                 name: "Ringo",
-                image: "/images/csricons/ringo.png",
+                image: "/images/bestcsr/Ringo.png",
                 achievement: "Providing internet connectivity for schools.",
                 state: "Yaoundé",
                 country: "Cameroon",
               },
               {
                 name: "Africom",
-                image: "/images/csricons/africom.png",
+                image: "/images/bestcsr/Africom.png",
                 achievement:
                   "Supporting digital literacy and teacher training.",
                 state: "Kinshasa",
                 country: "DR Congo",
               },
               {
-                name: "Hi-Tech Solutions Central Africa",
-                image: "/images/csricons/hitech.png",
+                name: "Internet Solutions Central Africa",
+                image: "/images/bestcsr/Internet Solutions.png",
                 achievement:
                   "Promoting e-commerce education and entrepreneurship.",
                 state: "Douala",
@@ -5730,83 +5825,106 @@ export const categories: Category[] = [
               "Recognizing outstanding contributions in the manufacturing and industrial sector to education in Central Africa",
             nominees: [
               {
-                name: "CBG",
-                image: "/images/csricons/cbg.png",
+                name: "Compagnie des Bauxites de Guinée (Guinea)",
+                image: "/images/bestcsr/Compagnie des Bauxites de Guinée.png",
                 achievement:
-                  "Supporting engineering education and providing scholarships.",
+                  "Mining Skills Education – Funding educational programs in mining and geology, supporting the mining industry in Guinea. Year       of Support: 2013-Present",
                 state: "Conakry",
                 country: "Guinea",
               },
               {
-                name: "Alucam",
-                image: "/images/csricons/alucam.png",
+                name: "Alucam (Cameroon)",
+                image: "/images/bestcsr/Alucam.png",
                 achievement:
-                  "Supporting STEM education and school infrastructure.",
+                  "Alucam Technical School – Providing training in metallurgy and industrial skills, supporting technical education in Cameroon. Year of Support: 2012-Present",
                 state: "Douala",
                 country: "Cameroon",
               },
               {
-                name: "Ciment de l'Afrique (CIMAF)",
-                image: "/images/csricons/cimaf.png",
+                name: "Cement de l’Afrique (CEMAC) (Gabon)",
+                image: "/images/bestcsr/Cement de l’Afrique.png",
                 achievement:
-                  "Providing scholarships and supporting school development.",
+                  "Skills for Tomorrow – Offering vocational training in construction and engineering, promoting careers in these fields in Gabon. Year       of Support: 2015-Present",
                 state: "Abidjan",
                 country: "Ivory Coast",
               },
               {
                 name: "Total Gabon",
-                image: "/images/csricons/totalgabon.png",
+                image: "/images/bestcsr/Total Gabon.png",
                 achievement:
-                  "Supporting vocational training and educational partnerships.",
+                  "Total Education Fund – Supporting STEM education and vocational training in the oil and gas sector in Gabon. Year of Support: 2011-Present",
                 state: "Libreville",
                 country: "Gabon",
               },
               {
-                name: "CIB",
-                image: "/images/csricons/cib.png",
+                name: "Congolaise Industrielle des Bois (CIB) (Congo)",
+                image: "/images/bestcsr/Congolaise Industrielle des Bois.png",
                 achievement:
-                  "Supporting technical education and infrastructure support.",
+                  "CIB Education Initiative – Providing educational support in forestry and environmental studies, promoting sustainable practices in Congo. Year of Support: 2014-Present",
                 state: "Brazzaville",
                 country: "Congo",
               },
               {
-                name: "Perenco",
-                image: "/images/csricons/perenco.png",
+                name: "Perenco (Gabon)",
+                image: "/images/bestcsr/Perenco.png",
                 achievement:
                   "Supporting sustainable development education and scholarships.",
                 state: "Libreville",
                 country: "Gabon",
               },
               {
-                name: "Heidelberg Materials",
-                image: "/images/csricons/heidelberg.png",
-                achievement:
-                  "Supporting technical education and training programs.",
+                name: "Heidelberg Cement (Central African Republic)",
+                image: "/images/bestcsr/Heidelberg Cement.png",
+                achievement: "Cementing Education – Supporting technical schools and vocational training in construction and engineering in the Central African Republic. Year of Support: 2014-Present",
                 state: "Douala",
                 country: "Cameroon",
               },
               {
-                name: "Glencore",
-                image: "/images/csricons/glencore.png",
-                achievement: "Promoting industrial innovation and education.",
+                name: "Glencore (Congo)",
+                image: "/images/bestcsr/Glencore.png",
+                achievement: "Glencore Academy – Providing vocational training in mining and industrial skills, supporting education in the mining sector in Congo. Year of Support: 2012-Present",
                 state: "Kinshasa",
                 country: "DR Congo",
               },
               {
-                name: "SNPC",
-                image: "/images/csricons/snpc.png",
+                name: "Société Nationale des Pétroles du Congo (SNPC) (Congo)",
+                image: "/images/bestcsr/Société Nationale des Pétroles du Congo.png",
                 achievement:
-                  "Supporting engineering education and providing scholarships.",
+                  "SNPC Educational Support – Funding scholarships and technical training, particularly in the oil and gas industry in Congo. Year of Support: 2013-Present",
                 state: "Brazzaville",
                 country: "Congo",
               },
               {
-                name: "ExxonMobil",
-                image: "/images/csricons/exxonmobil.png",
+                name: "ExxonMobil (Chad)",
+                image: "/images/bestcsr/ExxonMobil.png",
                 achievement:
-                  "Supporting engineering education and providing scholarships.",
+                  "ExxonMobil Education Initiative – Providing STEM education and vocational training support in the energy sector in Chad. Year of Support: 2015-Present",
                 state: "Malabo",
                 country: "Equatorial Guinea",
+              },
+              {
+                name: "Comilog",
+                image: "/images/bestcsr/Comilog.png",
+                achievement:
+                  "Supporting agricultural education in mining communities since 2015.",
+                state: "",
+                country: "Gabon",
+              },
+              {
+                name: "Cocoa Processing Company",
+                image: "/images/bestcsr/Cocoa Processing Company.png",
+                achievement:
+                  "Dedication to improving rural education, particularly for girls.",
+                state: "",
+                country: "Ghana",
+              },
+              {
+                name: "Société Sucrière du Cameroun",
+                image: "/images/bestcsr/Société Sucrière du Cameroun.png",
+                achievement:
+                  "Vocational training in sugarcane farming since 2013.",
+                state: "",
+                country: "Cameroon",
               },
             ],
           },
@@ -5817,73 +5935,89 @@ export const categories: Category[] = [
               "Honoring agriculture and agribusiness companies making significant educational contributions in Central Africa",
             nominees: [
               {
-                name: "PALMCI",
-                image: "/images/csricons/palmci.png",
+                name: "PALMCI (Ivory Coast)",
+                image: "/images/bestcsr/PALMCI.png",
                 achievement:
-                  "Supporting agricultural education and rural development.",
+                  "Providing training in sustainable palm oil production, supporting agricultural education in Ivory Coast. Year of Support: 2015-Present",
                 state: "Abidjan",
                 country: "Ivory Coast",
               },
               {
+                name: "Huileries du Congo Belge (DR Congo)",
+                image: "/images/bestcsr/Huileries du Congo Belge.png",
+                achievement:
+                  "Supporting education in sustainable agriculture, promoting farming       education in the Democratic Republic of the Congo. Year of Support: 2014-Present",
+                state: "Libreville",
+                country: "Gabon",
+              },
+              {
+                name: "Gabon Rubber (Gabon)",
+                image: "/images/bestcsr/Gabon Rubber.png",
+                achievement:
+                  "Offering training and education in rubber farming and processing, supporting the agricultural sector in Gabon. Year of Support: 2013-Present",
+                state: "Libreville",
+                country: "Gabon",
+              },
+              {
                 name: "Gabon Maize",
-                image: "/images/csricons/gabonmaize.png",
+                image: "/images/bestcsr/gabonmaize.png",
                 achievement:
                   "Providing scholarships and supporting school development.",
                 state: "Libreville",
                 country: "Gabon",
               },
               {
-                name: "SEEG",
-                image: "/images/csricons/seeg.png",
+                name: "Société Nationale des Eaux du Gabon (Gabon)",
+                image: "/images/bestcsr/Société Nationale des Eaux du Gabon.png",
                 achievement:
-                  "Supporting STEM education and school infrastructure.",
+                  "Focusing on sustainable water use in agriculture, supporting farming practices in Gabon. Year of Support: 2015-Present",
                 state: "Libreville",
                 country: "Gabon",
               },
               {
-                name: "Feronia",
-                image: "/images/csricons/feronia.png",
+                name: "Feronia (DR Congo)",
+                image: "/images/bestcsr/Feronia.png",
                 achievement:
-                  "Providing scholarships and supporting school development.",
+                  "Providing agricultural education and vocational training, supporting sustainable farming practices in the Democratic Republic of the Congo. Year of Support: 2013-Present",
                 state: "Kinshasa",
                 country: "DR Congo",
               },
               {
-                name: "CotonTchad",
-                image: "/images/csricons/cotontchad.png",
+                name: "CotonChad (Chad)",
+                image: "/images/bestcsr/CotonChad.png",
                 achievement:
-                  "Supporting vocational training and educational partnerships.",
+                  "Promoting sustainable cotton farming education, supporting agricultural education in Chad. Year of Support: 2014-Present",
                 state: "N'Djamena",
                 country: "Chad",
               },
               {
-                name: "COMILOG",
-                image: "/images/csricons/comilog.png",
+                name: "Comilog (Gabon)",
+                image: "/images/bestcsr/Comilog.png",
                 achievement:
-                  "Supporting technical education and infrastructure support.",
+                  "Supporting agricultural education in mining communities, promoting sustainable farming practices in Gabon. Year of Support: 2015-Present",
                 state: "Moanda",
                 country: "Gabon",
               },
               {
-                name: "Cocoa Processing Company Ltd.",
-                image: "/images/csricons/cocoaprocessing.png",
+                name: "Cocoa Processing Company (Ghana)",
+                image: "/images/bestcsr/Cocoa Processing Company.png",
                 achievement:
-                  "Supporting sustainable development education and scholarships.",
+                  "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
                 state: "Libreville",
                 country: "Gabon",
               },
               {
-                name: "SOSUCAM",
-                image: "/images/csricons/sosucam.png",
+                name: "Société Sucrière du Cameroun (Cameroon)",
+                image: "/images/bestcsr/Société Sucrière du Cameroun.png",
                 achievement:
-                  "Supporting technical education and training programs.",
+                  "Providing vocational training in sugarcane farming, supporting       agricultural education in Cameroon. Year of Support: 2013-Present",
                 state: "Yaoundé",
                 country: "Cameroon",
               },
               {
-                name: "CIB",
-                image: "/images/csricons/cib.png",
-                achievement: "Promoting agricultural innovation and education.",
+                name: "Congolaise Industrielle des Bois (CIB) (Congo)",
+                image: "/images/bestcsr/Congolaise Industrielle des Bois.png",
+                achievement: "Providing educational support in forestry and environmental studies, promoting sustainable practices in Congo. Year of Support: 2014-Present",
                 state: "Brazzaville",
                 country: "Congo",
               },
@@ -5897,28 +6031,92 @@ export const categories: Category[] = [
             nominees: [
               {
                 name: "Fally Ipupa",
-                image: "/images/influencers/fallyipupa.png",
+                image: "/images/bestcsr/Fally Ipupa.png",
                 achievement:
-                  "Promoting education and empowerment through social media advocacy.",
+                  "Investing in music schools and arts education, supporting cultural       education in the Democratic Republic of the Congo. Year of Support: 2012-Present",
                 state: "Kinshasa",
                 country: "DR Congo",
               },
               {
                 name: "Awilo Longomba",
-                image: "/images/influencers/awilolongomba.png",
+                image: "/images/bestcsr/Awilo Longomba.png",
                 achievement:
-                  "Supporting girls' education and empowerment through social media.",
+                  "Longomba Education Project – Providing educational resources and scholarships, supporting education in DR Congo. Year of Support: 2013-Present",
                 state: "Brazzaville",
                 country: "Congo",
               },
               {
                 name: "Innoss'B",
-                image: "/images/influencers/innossb.png",
+                image: "/images/bestcsr/Innoss'B.png",
                 achievement:
-                  "Promoting literacy and education awareness through social media campaigns.",
+                  "Innoss'B Foundation – Focusing on youth education and empowerment through music, supporting       education in DR Congo. Year of Support: 2015-Present",
                 state: "Kinshasa",
                 country: "DR Congo",
               },
+              {
+                name: "Koffi Olomidé",
+                image: "/images/bestcsr/Koffi Olomidé.png",
+                achievement:
+                   "Olomidé Education Initiative – Supporting education in rural areas through music and arts, enhancing  education in DR Congo. Year of Support: 2014-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Ferre Gola",
+                image: "/images/bestcsr/Ferre Gola.png",
+                achievement:
+                  "Gola’s Education Drive– Providing school supplies and scholarships for underprivileged       children, supporting education in DR Congo. Year of Support: 2016-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Werrason",
+                image: "/images/bestcsr/Werrason.png",
+                achievement:
+                  "Werrason Foundation – Focusing on education and youth development through music, supporting       education in DR Congo. Year of Support: 2013-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Shan'L (Gabon)",
+                image: "/images/bestcsr/Shan'L.png",
+                achievement:
+                  "Shan'L Education Initiative – Promoting education and youth development through arts, supporting education in Gabon. Year of Support: 2014-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Annie Anzouer (Cameroon)",
+                image: "/images/bestcsr/Annie Anzouer.png",
+                achievement:
+                  "Anzouer Education Fund– Supporting education and youth empowerment initiatives, promoting education in Cameroon. Year  of Support: 2016-Present",
+                state: "Kinhasa",
+                country: "",
+              },
+              {
+                name: "Serge Beynaud (Ivory Coast)",
+                image: "/images/bestcsr/Serge Beynaud.png",
+                achievement:
+                  "Beynaud Foundation– Focusing on education through music and entertainment, supporting youth       education in Ivory Coast. Year of Support: 2015-Present",
+                state: "",
+                country: "",
+              },
+              {
+                name: "Fabrice Muamba",
+                image: "/images/bestcsr/Fabrice Muamba.png",
+                achievement:
+                  "Muamba Scholars– Providing scholarships and support for education in sports, supporting education in DR Congo. Year of Support: 2014-Present",
+                state: "",
+                country: "",
+              },
+            ],
+          },
+          {
+            title:
+              "African International Sports Stars CSR For Education in West Africa",
+            description:
+              "Honoring West African international sports stars making significant educational contributions in West Africa",
+            nominees: [
             ],
           },
         ],
