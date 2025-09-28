@@ -10,24 +10,21 @@ const messages = [
   },
 
   {title: "Message from the CVO",
-    message:`"Dear Changemakers of Africa and the World,
-
-Welcome to NESA-Africa 2025—New Education Standard Award Africa, a pan-African celebration of educational transformation, social impact, and legacy. 
-This year, we are proud to launch three distinct but united award pathways, all centered around one purpose: recognizing and amplifying excellence in education."`,
+    message:`"Welcome to NESA-Africa 2025—New Education Standard Award Africa, a pan-African celebration of educational transformation, social impact, and legacy."`,
     image:"/images/santos.png"
   },
 
-  {
-    title: "Our Three Super Levels",
-    message: `• 🔷 Blue Garnet Competitive Awards .
-• 💠 Africa Icon Lifetime Education Awards (Blue Garnet Tier).
-• 🥈 Platinum Recognition Awards.`,
-    image: "/images/santos.png"
-  },
+//   {
+//     title: "Our Three Super Levels",
+//     message: `• 🔷 Blue Garnet Competitive Awards .
+// • 💠 Africa Icon Lifetime Education Awards (Blue Garnet Tier).
+// • 🥈 Platinum Recognition Awards.`,
+//     image: "/images/santos.png"
+//   },
 
 {
   title: "Your Invitation",
-  message: `"I invite you to be more than spectators. Be nominators. Be endorsers and advisors. Be technology, legal, media, and data partners. Be sponsors. Be diaspora champions. Be part of a continental legacy that accelerates Education for All."`,
+  message: `"I invite you to be more than spectators. Be nominators. Be endorsers and advisors."`,
   image: "/images/santos.png"
 },
 
@@ -52,18 +49,20 @@ const PopupSlider = ({ open, onClose }: { open: boolean; onClose: () => void }) 
     return () => clearInterval(interval);
   }, [open]);
 
-  if (!open) return null;
+  // Safety check to prevent runtime errors
+  if (typeof open === 'undefined' || !open) return null;
 
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 px-4"
+        className="fixed inset-0 z-[3000] flex items-center justify-center pt-10 bg-black/50 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        style={{ paddingTop: "0", marginTop: "0" }}
       >
         <motion.div
-          className="bg-white w-full sm:w-[90%] md:w-[70%] lg:w-[50%] rounded-xl shadow-lg p-4 sm:p-6 md:p-8 text-center relative max-h-[90vh] overflow-y-auto"
+          className="bg-white w-full sm:w-[90%] md:w-[70%] lg:w-[50%] rounded-xl shadow-lg p-4 sm:p-6 md:p-8 text-center relative max-h-[80vh] overflow-y-auto mt-16"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}

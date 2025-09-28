@@ -1,23 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import {
-  CheckCircle,
-  ArrowRight,
-  Copy,
-  Share2
-} from 'lucide-react';
-import Button from '@/components/Common/Button';
+import { motion } from 'framer-motion';
+import { CheckCircle, Clock, Share2, Copy } from 'lucide-react';
+import Link from 'next/link';
 
 interface EndorsementData {
   id: string;
   organization_name: string;
   email: string;
-  status: string;
-  verification_token: string;
+  status: 'pending_review' | 'pending_approval' | 'approved' | 'rejected';
   created_at: string;
   endorsement_type: string;
   endorsement_tier?: string;
@@ -25,33 +18,32 @@ interface EndorsementData {
 
 const EndorsementSuccessPage = () => {
   const searchParams = useSearchParams();
-  const endorsementId = searchParams.get('id');
+  const id = searchParams.get('id');
+  const email = searchParams.get('email');
   const [endorsementData, setEndorsementData] = useState<EndorsementData | null>(null);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    if (endorsementId) {
+    if (id || email) {
       fetchEndorsementData();
     }
-  }, [endorsementId]);
+  }, [id, email]);
 
   const fetchEndorsementData = async () => {
     try {
-      // In a real implementation, you'd fetch by ID
-      // For now, we'll create mock data
-      const mockData: EndorsementData = {
-        id: endorsementId || 'mock-id',
-        organization_name: 'Sample Organization',
-        email: 'contact@example.org',
-        status: 'pending_review',
-        verification_token: 'mock-token',
-        created_at: new Date().toISOString(),
-        endorsement_type: 'paid',
-        endorsement_tier: 'silver'
-      };
-      
-      setEndorsementData(mockData);
+      // Prioritize fetching by ID if available, otherwise fall back to email.
+      const fetchIdentifier = id ? `id=${id}` : `email=${encodeURIComponent(email!)}`;
+      const response = await fetch(`/api/endorse/submit?${fetchIdentifier}`);
+
+      if (!id && !email) {
+        throw new Error("No identifier (ID or email) found in URL.");
+      }
+      const data = await response.json();
+      if (!data.success) {
+        throw new Error(data.message || 'Failed to fetch endorsement data.');
+      }
+      setEndorsementData(data.endorsement);
     } catch (error) {
       console.error('Error fetching endorsement data:', error);
     } finally {
@@ -66,285 +58,97 @@ const EndorsementSuccessPage = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const shareUrls = {
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin + '/get-involved/endorse-nesa-africa')}`,
-    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent('We proudly endorse NESA-Africa 2025 — Africa\'s leading education transformation movement.')}&url=${encodeURIComponent(window.location.origin + '/get-involved/endorse-nesa-africa')}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin + '/get-involved/endorse-nesa-africa')}`
-  };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#ea580c] mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!endorsementData) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Endorsement Not Found</h1>
-          <p className="text-gray-600 mb-6">The endorsement you're looking for could not be found.</p>
-          <Link href="/get-involved/endorse-nesa-africa">
-            <Button
-              text="Back to Endorsements"
-              variant="filled"
-              className="bg-[#ea580c] hover:bg-[#dc2626] text-white"
-            />
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Success Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-12 h-12 text-green-600" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Thank You for Your Endorsement!
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Your endorsement has been successfully submitted and is now under review. 
-            You'll receive a confirmation email shortly.
-          </p>
-        </motion.div>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="max-w-4xl w-full bg-white rounded-xl shadow-lg p-8 md:p-12">
+        <div className="text-center">
+          <CheckCircle className="mx-auto h-16 w-16 text-green-500" />
+          <h1 className="mt-4 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Submission Received!</h1>
+          <p className="mt-2 text-lg text-gray-600">Thank you for endorsing NESA-Africa 2025. Your support is vital.</p>
+        </div>
 
-        {/* Endorsement Details */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white rounded-xl shadow-lg p-8 mb-8"
-        >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Endorsement Details</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Endorsement ID
-              </label>
-              <p className="text-gray-900 font-mono text-sm bg-gray-50 px-3 py-2 rounded">
-                {endorsementData.id}
-              </p>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Status
-              </label>
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                Pending Review
-              </span>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Submission Date
-              </label>
-              <p className="text-gray-900">
-                {new Date(endorsementData.created_at).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
-                })}
-              </p>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Endorsement Type
-              </label>
-              <p className="text-gray-900 capitalize">
-                {endorsementData.endorsement_type === 'paid' 
-                  ? `Paid Endorsement (${endorsementData.endorsement_tier})` 
-                  : 'Free Endorsement'
-                }
-              </p>
-            </div>
-          </div>
-        </motion.div>
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">What Happens Next?</h2>
+          <ul className="space-y-4">
+            <li className="flex items-start">
+              <div className="flex-shrink-0"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-orange-500 text-white font-bold text-sm">1</span></div>
+              <div className="ml-4">
+                <h3 className="text-lg font-medium text-gray-900">Email Verification</h3>
+                <p className="text-gray-600">We've sent a verification link to your email. Please click it to confirm your submission. This link is valid for 24 hours.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex-shrink-0"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-orange-500 text-white font-bold text-sm">2</span></div>
+              <div className="ml-4">
+                <h3 className="text-lg font-medium text-gray-900">Review Process</h3>
+                <p className="text-gray-600">Once verified, our team will review your endorsement. We'll notify you upon approval.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="flex-shrink-0"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-orange-500 text-white font-bold text-sm">3</span></div>
+              <div className="ml-4">
+                <h3 className="text-lg font-medium text-gray-900">Public Showcase</h3>
+                <p className="text-gray-600">Approved endorsements will be featured in our official showcase. Thank you for being a part of this movement!</p>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-        {/* Next Steps */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-white rounded-xl shadow-lg p-8 mb-8"
-        >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">What Happens Next?</h2>
-          
-          <div className="space-y-6">
-            <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#ea580c] text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-semibold">
-                1
+        {loading ? (
+          <div className="mt-8 text-center text-gray-500">Loading submission details...</div>
+        ) : endorsementData ? (
+          <div className="mt-8 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Your Submission Summary</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 bg-gray-50 p-6 rounded-lg">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Organization</label>
+                <p className="text-gray-900 font-semibold">{endorsementData.organization_name}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Email Verification</h3>
-                <p className="text-gray-600">
-                  Check your email for a verification link. Click it to verify your email address.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#ea580c] text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-semibold">
-                2
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <p className="text-gray-900">{endorsementData.email}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Review Process</h3>
-                <p className="text-gray-600">
-                  Our team will review your endorsement within 24-72 hours. You'll receive an email update on the status.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#ea580c] text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-semibold">
-                3
+                <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 capitalize">
+                  Pending Review
+                </span>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Approval & Certificate</h3>
-                <p className="text-gray-600">
-                  Once approved, you'll receive your digital certificate and endorsement badge for your website.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#ea580c] text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-semibold">
-                4
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Public Display</h3>
-                <p className="text-gray-600">
-                  Your endorsement will appear on our Wall of Endorsers and may be featured in NESA TV and newsletters.
+                <label className="block text-sm font-medium text-gray-700 mb-1">Endorsement Type</label>
+                <p className="text-gray-900 capitalize">
+                  {endorsementData.endorsement_type === 'paid' 
+                    ? `Paid Endorsement (${endorsementData.endorsement_tier || 'N/A'})` 
+                    : 'Free Endorsement'
+                  }
                 </p>
               </div>
             </div>
           </div>
-        </motion.div>
+        ) : null}
 
-        {/* Share Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-white rounded-xl shadow-lg p-8 mb-8"
-        >
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Share Your Support</h2>
-          <p className="text-gray-600 mb-6">
-            Let your network know about your endorsement of NESA-Africa 2025.
-          </p>
-          
-          <div className="flex flex-wrap gap-4">
-            <button
-              onClick={handleCopyLink}
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              {copied ? <CheckCircle className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
-              <span>{copied ? 'Copied!' : 'Copy Link'}</span>
-            </button>
-            
-            <a
-              href={shareUrls.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              <Share2 className="w-4 h-4" />
-              <span>Facebook</span>
-            </a>
-
-            <a
-              href={shareUrls.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors"
-            >
-              <Share2 className="w-4 h-4" />
-              <span>Twitter</span>
-            </a>
-
-            <a
-              href={shareUrls.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors"
-            >
-              <Share2 className="w-4 h-4" />
-              <span>LinkedIn</span>
-            </a>
+        <div className="mt-10 text-center">
+          <h3 className="text-lg font-semibold text-gray-800">Share Your Support!</h3>
+          <p className="mt-1 text-gray-600">Encourage others to join the movement.</p>
+          <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+            <div className="relative w-full sm:w-auto">
+              <input
+                type="text"
+                readOnly
+                value={`${typeof window !== 'undefined' ? window.location.origin : ''}/get-involved/endorse-nesa-africa`}
+                className="w-full sm:w-80 bg-gray-100 border border-gray-300 rounded-md py-2 pl-3 pr-10 text-gray-700"
+              />
+              <button onClick={handleCopyLink} className="absolute inset-y-0 right-0 flex items-center pr-3">
+                {copied ? <CheckCircle className="h-5 w-5 text-green-500" /> : <Copy className="h-5 w-5 text-gray-500" />}
+              </button>
+            </div>
+            <Link href={`https://twitter.com/intent/tweet?text=I've%20just%20endorsed%20NESA-Africa%202025!%20Join%20me%20in%20supporting%20this%20continental%20movement%20for%20educational%20excellence.%20%23NESA2025%20%23EduExcellence&url=${typeof window !== 'undefined' ? window.location.origin : ''}/get-involved/endorse-nesa-africa`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600">
+              <Share2 className="h-5 w-5" /> Share on X
+            </Link>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Link href="/get-involved/endorse-nesa-africa/showcase">
-            <Button
-              text="View All Endorsers"
-              variant="filled"
-              size="large"
-              className="bg-[#ea580c] hover:bg-[#dc2626] text-white px-8 py-4"
-              icon={<ArrowRight className="w-5 h-5" />}
-            />
-          </Link>
-          
-          <Link href="/get-involved/sponsor">
-            <Button
-              text="Become a Sponsor"
-              variant="outlined"
-              size="large"
-              className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-8 py-4"
-            />
-          </Link>
-          
-          <Link href="/">
-            <Button
-              text="Back to Home"
-              variant="outlined"
-              size="large"
-              className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4"
-            />
-          </Link>
-        </motion.div>
-
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          className="text-center mt-12 text-gray-600"
-        >
-          <p className="mb-2">
-            Questions about your endorsement? Contact us:
-          </p>
-          <p>
-            Email: <a href="mailto:endorse@nesa.africa" className="text-[#ea580c] hover:underline">endorse@nesa.africa</a> | 
-            Phone: <a href="tel:+2349079621110" className="text-[#ea580c] hover:underline">+234-907-962-1110</a>
-          </p>
-        </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };

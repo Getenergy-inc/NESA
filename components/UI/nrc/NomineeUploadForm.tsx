@@ -165,6 +165,11 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
         ];
       case 'Faith-Based Educational Champion of the Decade':
         return [
+          'Christian Faith Organization Educational Champion',
+          'Islamic Faith Organization Educational Champion',
+          'Faith-Based Educational Institution Excellence',
+          'Faith-Based Educational Outreach Program',
+          'Faith-Based Educational Innovation',
           'Best Faith-Based Organization for Educational Support',
           'Best Faith-Based Organization for Community Education',
           'Best Faith-Based Organization for Educational Infrastructure',
@@ -172,13 +177,62 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
         ];
       case 'Government Educational Champion of the Decade':
         return [
+          'Best Educational Friendly State in Nigeria',
+          'Best State Ministry of Education',
+          'Best Local Government Educational Initiative',
+          'Best Government Educational Policy Implementation',
+          'Best Government Educational Infrastructure Development',
           'Best Government Agency for Educational Policy',
           'Best Government Initiative for Educational Access',
           'Best Government Program for Educational Quality',
           'Best Government Support for Educational Innovation'
         ];
+      case 'Public School Champion of the Decade':
+        return [
+          'Best Public Primary School',
+          'Best Public Secondary School',
+          'Best Public School Administrator',
+          'Best Public School Teacher',
+          'Best Public School Innovation'
+        ];
+      case 'Private School Champion of the Decade':
+        return [
+          'Best Private Primary School',
+          'Best Private Secondary School',
+          'Best Private School Administrator',
+          'Best Private School Teacher',
+          'Best Private School Innovation'
+        ];
+      case 'Global Partnership in Education Champion of the Decade':
+        return [
+          'Best International Educational Partnership',
+          'Best Cross-Border Educational Initiative',
+          'Best Global Educational Exchange Program',
+          'Best International Educational Funding'
+        ];
+      case 'Diaspora Educational Impact Champion of the Decade':
+        return [
+          'Best Diaspora Educational Initiative',
+          'Best Diaspora Educational Funding',
+          'Best Diaspora Knowledge Transfer Program',
+          'Best Diaspora Educational Advocacy'
+        ];
+      case 'Political Leadership in Education Champion of the Decade':
+        return [
+          'Best Political Leader for Educational Policy',
+          'Best Political Leader for Educational Funding',
+          'Best Political Leader for Educational Innovation',
+          'Best Political Leader for Educational Advocacy'
+        ];
       case 'TERTIARY Education Champion of the Decade':
         return [
+          'Best University in Nigeria',
+          'Best Polytechnic in Nigeria',
+          'Best College of Education',
+          'Best Private University',
+          'Best Federal University',
+          'Best State University',
+          'Best University Library',
           'Best University for Academic Excellence',
           'Best Polytechnic for Technical Education',
           'Best College of Education for Teacher Training',
@@ -197,7 +251,9 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
           'Best STEM Education Program',
           'Best STEM Education Institution',
           'Best STEM Education Innovation',
-          'Best STEM Education Advocate'
+          'Best STEM Education Advocate',
+          'Best STEM Education Outreach',
+          'Best STEM Education Research'
         ];
       case 'CREATIVE ARTS IN EDUCATION CHAMPION OF THE DECADE':
         return [
@@ -208,8 +264,12 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
         ];
       case 'MEDIA AND EDUCATION CHAMPION OF THE DECADE':
         return [
-          'Best Media Coverage of Education',
+          'Best Print Media in Education Coverage',
+          'Best Broadcast Media in Education Coverage',
+          'Best Online Media in Education Coverage',
           'Best Educational Content Creator',
+          'Best Educational Documentary',
+          'Best Media Coverage of Education',
           'Best Educational Broadcasting',
           'Best Educational Journalism'
         ];
@@ -249,47 +309,40 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
           'Best Educational Digital Platform',
           'Best Educational Resource Development'
         ];
-      case 'Faith-Based Educational Champion of the Decade':
+      case 'Lifetime Achievement in Education':
         return [
-          'Christian Faith Organization Educational Champion',
-          'Islamic Faith Organization Educational Champion',
-          'Faith-Based Educational Institution Excellence',
-          'Faith-Based Educational Outreach Program',
-          'Faith-Based Educational Innovation'
+          'Lifetime Achievement in Educational Leadership',
+          'Lifetime Achievement in Educational Innovation',
+          'Lifetime Achievement in Educational Research',
+          'Lifetime Achievement in Educational Advocacy'
         ];
-      case 'Government Educational Champion of the Decade':
+      case 'Pioneer in Educational Innovation':
         return [
-          'Best Educational Friendly State in Nigeria',
-          'Best State Ministry of Education',
-          'Best Local Government Educational Initiative',
-          'Best Government Educational Policy Implementation',
-          'Best Government Educational Infrastructure Development'
+          'Pioneer in Educational Technology',
+          'Pioneer in Educational Methodology',
+          'Pioneer in Educational Access',
+          'Pioneer in Educational Inclusion'
         ];
-      case 'TERTIARY Education Champion of the Decade':
+      case 'Legacy Builder in African Education':
         return [
-          'Best University in Nigeria',
-          'Best Polytechnic in Nigeria',
-          'Best College of Education',
-          'Best Private University',
-          'Best Federal University',
-          'Best State University',
-          'Best University Library'
+          'Legacy in Educational Institution Building',
+          'Legacy in Educational Policy Development',
+          'Legacy in Educational Research',
+          'Legacy in Educational Philanthropy'
         ];
-      case 'STEM EDUCATION CHAMPION OF THE DECADE':
+      case 'Educational Leadership Legacy':
         return [
-          'Best STEM Education Program',
-          'Best STEM Education Institution',
-          'Best STEM Education Innovation',
-          'Best STEM Education Outreach',
-          'Best STEM Education Research'
+          'Leadership Legacy in Educational Administration',
+          'Leadership Legacy in Educational Policy',
+          'Leadership Legacy in Educational Innovation',
+          'Leadership Legacy in Educational Advocacy'
         ];
-      case 'MEDIA AND EDUCATION CHAMPION OF THE DECADE':
+      case 'Transformational Education Impact':
         return [
-          'Best Print Media in Education Coverage',
-          'Best Broadcast Media in Education Coverage',
-          'Best Online Media in Education Coverage',
-          'Best Educational Content Creator',
-          'Best Educational Documentary'
+          'Transformational Impact in Educational Access',
+          'Transformational Impact in Educational Quality',
+          'Transformational Impact in Educational Innovation',
+          'Transformational Impact in Educational Equity'
         ];
       default:
         return ['Please select a category first'];
@@ -344,45 +397,132 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
     setValue('profileImage', undefined);
   };
 
-  const onSubmit = async (data: NomineeUploadData) => {
+  // Track submission type (draft or review)
+  const [submissionType, setSubmissionType] = useState<'DRAFT' | 'REVIEW'>('REVIEW');
+
+  const submitForm = async (data: NomineeUploadData, status: 'DRAFT' | 'REVIEW') => {
+    console.log('submitForm called with status:', status);
     setLoading(true);
     setError(null);
     
     try {
       console.log('Nominee Upload Data:', data);
+      console.log('Submission status:', status);
+      
+      // Check for required fields based on status
+      if (status === 'REVIEW') {
+        // For REVIEW, we need to ensure all required fields are present
+        const requiredFields = [
+          'fullName', 'country', 'region', 'awardCategory', 'subcategory',
+          'achievementSummary', 'impactMetrics', 'sdgAlignment', 'profileImage',
+          'agendaAlignment', 'esgAlignment'
+        ];
+        
+        const missingFields = requiredFields.filter(field => {
+          if (field === 'sdgAlignment') {
+            return !data.sdgAlignment || (Array.isArray(data.sdgAlignment) && data.sdgAlignment.length === 0);
+          }
+          if (field === 'profileImage') {
+            return !profileImage;
+          }
+          // Use type assertion to fix TypeScript error
+          return !data[field as keyof typeof data];
+        });
+        
+        if (missingFields.length > 0) {
+          console.error('Missing required fields for REVIEW submission:', missingFields);
+          throw new Error(`Please fill in all required fields: ${missingFields.join(', ')}`);
+        }
+      }
       
       if (!user?.id) {
+        console.error('User not authenticated');
         throw new Error('User not authenticated. Please log in and try again.');
       }
       
-      // Prepare data for API
-      const nomineeData = {
-        ...data,
-        volunteerId: user.id,
-        // Format data as needed for the API
-        sdgAlignment: data.sdgAlignment.join(','),
-        // Include the super award category
-        superAwardCategory: data.superAwardCategory,
-        // Add any additional fields required by the API
-        status: 'DRAFT',
-        dateCreated: new Date().toISOString(),
-      };
+      // Create FormData for file uploads
+      const formData = new FormData();
       
-      // Call the API service
-      const response = await nrcService.createNominee(nomineeData);
+      // Add all text fields to FormData
+      Object.entries(data).forEach(([key, value]) => {
+        // Skip file fields, they'll be handled separately
+        if (key !== 'profileImage' && key !== 'supportingDocuments') {
+          if (key === 'sdgAlignment' && Array.isArray(value)) {
+            formData.append(key, value.join(','));
+          } else if (value !== undefined && value !== null) {
+            formData.append(key, value.toString());
+          }
+        }
+      });
       
-      console.log('Nominee creation response:', response);
+      // Add additional fields
+      formData.append('volunteerId', user.id);
+      formData.append('status', status);
+      formData.append('dateCreated', new Date().toISOString());
       
-      if (onSave) {
-        onSave(data);
+      // Add profile image if exists
+      if (profileImage) {
+        console.log('Adding profile image to FormData:', profileImage.name);
+        formData.append('profileImage', profileImage);
+      } else {
+        console.warn('No profile image found!');
+        if (status === 'REVIEW') {
+          throw new Error('Profile image is required for submission.');
+        }
       }
       
-      setShowSuccess(true);
+      // Add supporting documents if any
+      if (uploadedFiles.length > 0) {
+        console.log(`Adding ${uploadedFiles.length} supporting documents`);
+        uploadedFiles.forEach((file, index) => {
+          console.log(`Adding document ${index}: ${file.name}`);
+          // Change to use the same field name for all files
+          formData.append('supportingDocuments', file);
+        });
+      }
+      
+      // Log FormData (for debugging)
+      console.log('FormData entries:');
+      for (let pair of formData.entries()) {
+        console.log(pair[0] + ': ' + (pair[1] instanceof File ? `File: ${(pair[1] as File).name}` : pair[1]));
+      }
+      
+      console.log('Sending form data to server...');
+      
+      try {
+        // Use the service method which is now properly configured for file uploads
+        const result = await nrcService.createNominee(formData);
+        console.log('Nominee creation response:', result);
+        
+        if (onSave) {
+          onSave(data);
+        }
+        
+        setShowSuccess(true);
+      } catch (apiError: any) {
+        console.error('API call failed:', apiError);
+        // Check if we have a detailed error message from the server
+        const errorMessage = apiError.message || 'Server error while creating nominee';
+        console.error('Error details:', errorMessage);
+        throw new Error(errorMessage);
+      }
     } catch (error: any) {
       console.error('Nominee upload error:', error);
       setError(error.message || 'Failed to create nominee. Please try again.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  // Handle form submission
+  const onSubmit = async (data: NomineeUploadData) => {
+    console.log('Form submitted with type:', submissionType);
+    try {
+      console.log('Starting form submission...');
+      await submitForm(data, submissionType);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setError(error instanceof Error ? error.message : 'An unknown error occurred');
     }
   };
 
@@ -799,6 +939,44 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
               )}
             </div>
 
+            {/* AU Agenda 2063 Alignment */}
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                AU Agenda 2063 Alignment *
+              </h2>
+              <p className="text-sm text-gray-600 mb-4">
+                Describe how the nominee's work aligns with the African Union's Agenda 2063:
+              </p>
+              <textarea
+                {...register('agendaAlignment')}
+                rows={4}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ea580c] focus:border-transparent"
+                placeholder="Explain how the nominee's work contributes to Africa's Agenda 2063 goals (minimum 20 characters)"
+              />
+              {errors.agendaAlignment && (
+                <p className="text-red-500 text-sm mt-1">{errors.agendaAlignment.message?.toString()}</p>
+              )}
+            </div>
+
+            {/* ESG Alignment */}
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                ESG Alignment *
+              </h2>
+              <p className="text-sm text-gray-600 mb-4">
+                Describe how the nominee's work aligns with Environmental, Social, and Governance (ESG) principles:
+              </p>
+              <textarea
+                {...register('esgAlignment')}
+                rows={4}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ea580c] focus:border-transparent"
+                placeholder="Explain how the nominee's work addresses ESG principles (minimum 20 characters)"
+              />
+              {errors.esgAlignment && (
+                <p className="text-red-500 text-sm mt-1">{errors.esgAlignment.message?.toString()}</p>
+              )}
+            </div>
+
             {/* Profile Image - IMPORTANT */}
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
@@ -906,19 +1084,62 @@ const NomineeUploadForm: React.FC<NomineeUploadFormProps> = ({ onBack, onSave })
 
             {/* Submit Buttons */}
             <div className="flex gap-4 pt-6">
-              <Button
-                text="Save as Draft"
+              <button
                 type="button"
-                variant="outlined"
-                className="flex-1 border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white"
-              />
-              <Button
-                text={loading ? "Submitting..." : "Submit for Review"}
-                type="submit"
+                onClick={() => {
+                  console.log('Save as Draft clicked');
+                  setSubmissionType('DRAFT');
+                  // Use setTimeout to ensure state is updated before form submission
+                  setTimeout(() => {
+                    console.log('Submitting as DRAFT');
+                    // Log form errors to help debug validation issues
+                    console.log('Form errors:', errors);
+                    // Use handleSubmit with a callback that logs and then calls submitForm
+                    handleSubmit(
+                      (data) => {
+                        console.log('Form validation passed for DRAFT');
+                        return submitForm(data, 'DRAFT');
+                      },
+                      (errors) => {
+                        console.error('Form validation failed:', errors);
+                        setError('Please fill in all required fields before saving.');
+                      }
+                    )();
+                  }, 0);
+                }}
+                className="flex-1 px-4 py-2 border border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white rounded-lg font-medium transition-colors"
                 disabled={loading}
-                variant="filled"
-                className="flex-1 bg-[#ea580c] hover:bg-[#dc2626] text-white"
-              />
+              >
+                {loading ? "Saving..." : "Save as Draft"}
+              </button>
+              <button
+                type="button" // Changed from submit to button for consistent handling
+                className="flex-1 px-4 py-2 bg-[#ea580c] hover:bg-[#dc2626] text-white rounded-lg font-medium transition-colors"
+                disabled={loading}
+                onClick={() => {
+                  console.log('Submit for Review clicked');
+                  setSubmissionType('REVIEW');
+                  // Use setTimeout to ensure state is updated before form submission
+                  setTimeout(() => {
+                    console.log('Submitting as REVIEW');
+                    // Log form errors to help debug validation issues
+                    console.log('Form errors:', errors);
+                    // Use handleSubmit with a callback that logs and then calls submitForm
+                    handleSubmit(
+                      (data) => {
+                        console.log('Form validation passed for REVIEW');
+                        return submitForm(data, 'REVIEW');
+                      },
+                      (errors) => {
+                        console.error('Form validation failed:', errors);
+                        setError('Please fill in all required fields before submitting.');
+                      }
+                    )();
+                  }, 0);
+                }}
+              >
+                {loading ? "Submitting..." : "Submit for Review"}
+              </button>
             </div>
           </form>
         </motion.div>

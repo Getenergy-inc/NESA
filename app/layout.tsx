@@ -7,6 +7,7 @@ import { AuthProvider } from "@/lib/context/AuthContext";
 import { LoadingProvider } from "@/lib/context/LoadingContext";
 import Modal from "@/components/UI/Modal"; // Import the Modal component
 import { GlobalPageLoader } from "@/components/UI/Loading"; // Import the GlobalPageLoader
+import { ActionQueueProvider } from "@/lib/providers/action-queue-provider"; // Add this import
 
 export const metadata: Metadata = {
   title: "NESA 2025",
@@ -115,15 +116,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: edgeDetectionScript }} />
       </head>
       <body className={poppins.className}>
-        <AuthProvider>
-          <Providers>
-            <LoadingProvider>
-              <GlobalPageLoader /> {/* Global page loading spinner */}
-              {children}
-              <Modal /> {/* Render the Modal globally */}
-            </LoadingProvider>
-          </Providers>
-        </AuthProvider>
+        <ActionQueueProvider>
+          <AuthProvider>
+            <Providers>
+              <LoadingProvider>
+                <GlobalPageLoader /> {/* Global page loading spinner */}
+                {children}
+                <Modal /> {/* Render the Modal globally */}
+              </LoadingProvider>
+            </Providers>
+          </AuthProvider>
+        </ActionQueueProvider>
       </body>
     </html>
   );

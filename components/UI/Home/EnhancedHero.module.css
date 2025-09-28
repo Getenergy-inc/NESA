@@ -1,0 +1,310 @@
+/* Enhanced Hero Section Styles */
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+.heroGradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, 
+    rgba(25, 19, 7, 0.8) 0%,
+    rgba(25, 19, 7, 0.7) 50%,
+    rgba(25, 19, 7, 0.9) 100%);
+}
+
+.gradientText {
+  background: linear-gradient(to right, #f3a928, #FFB92E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.accentLine {
+  width: 6rem;
+  height: 0.25rem;
+  background: linear-gradient(to right, #f3a928, #FFB92E);
+  border-radius: 9999px;
+  box-shadow: 0 0 15px rgba(243, 169, 40, 0.5);
+}
+
+.quoteBlock {
+  border-left: 4px solid #f3a928;
+  padding-left: 1rem;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.warningBlock {
+  background: linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(185, 28, 28, 0.2));
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.primaryButton {
+  background: linear-gradient(to right, #f3a928, #FFB92E);
+  color: #191307;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(243, 169, 40, 0.3);
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(243, 169, 40, 0.4);
+}
+
+.secondaryButton {
+  background: transparent;
+  border: 2px solid #f3a928;
+  color: #f3a928;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(243, 169, 40, 0.1);
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #f3a928;
+  color: #191307;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(243, 169, 40, 0.2);
+}
+
+.carouselContainer {
+  position: relative;
+  height: 450px;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .carouselContainer {
+    height: 500px;
+  }
+}
+
+.carouselWrapper {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(25, 19, 7, 0.2), rgba(25, 19, 7, 0.1));
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(243, 169, 40, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+.quickActionGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 767px) {
+  .quickActionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+.quickActionButton {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 767px) {
+  .quickActionButton {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.7rem;
+    gap: 0.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .quickActionButton {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.quickActionPrimary {
+  background: linear-gradient(to right, rgba(243, 169, 40, 0.9), rgba(255, 185, 46, 0.9));
+  color: #191307;
+  box-shadow: 0 10px 15px -3px rgba(243, 169, 40, 0.2);
+}
+
+.quickActionPrimary:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(243, 169, 40, 0.3);
+}
+
+.quickActionSecondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 2px solid #f3a928;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(243, 169, 40, 0.1);
+}
+
+.quickActionSecondary:hover {
+  background-color: #f3a928;
+  color: #191307;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(243, 169, 40, 0.2);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+}
+
+.scrollText {
+  color: #f3a928;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.scrollIcon {
+  color: #f3a928;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.bounceAnimation {
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bounceAnimation {
+    animation: none;
+  }
+}
+
+/* Announcement Banner */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.marqueeContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.75rem 0;
+  z-index: 50;
+  background-color: transparent;
+  display: flex;
+}
+
+.marqueeContent {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 120s linear infinite;
+  flex-shrink: 0;
+  min-width: 100%;
+  padding-right: 100px; /* Add spacing between repeated content */
+}
+
+.announcementTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background-color: #f3a928;
+  color: #191307;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.announcementText {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.mobileHidden {
+  display: inline;
+}
+
+@media (max-width: 767px) {
+  .mobileHidden {
+    display: none;
+  }
+  
+  .announcementText {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .announcementText {
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeContent {
+    animation: none;
+    padding-left: 0;
+    text-align: center;
+  }
+}
