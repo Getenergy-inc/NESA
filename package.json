@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "set NODE_OPTIONS=--max-old-space-size=4096 && next build",
     "build:unix": "NODE_OPTIONS='--max-old-space-size=4096' next build",
-    "build:netlify": "NODE_OPTIONS='--max-old-space-size=4096' NEXT_TELEMETRY_DISABLED=1 next build",
+    "build:netlify": "node scripts/netlify-build.js",
     "build:netlify-win": "set NODE_OPTIONS=--max-old-space-size=4096 && set NEXT_TELEMETRY_DISABLED=1 && next build",
     "export": "next export",
     "start": "node server.js",
