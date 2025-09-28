@@ -3,31 +3,28 @@
 import { SessionProvider } from 'next-auth/react';
 import { ReactNode, useEffect, useState } from 'react';
 
+// This component ensures NextAuth only runs on the client side
+// to prevent "Cannot read properties of null (reading 'useContext')" errors
 export default function NextAuthProvider({
   children,
 }: {
   children: ReactNode;
 }) {
-  // This prevents the "Cannot read properties of null (reading 'useState')" error
-  // during static site generation by only rendering the SessionProvider on the client
-  const [mounted, setMounted] = useState(false);
+  // State to track if we're on the client side
+  const [isMounted, setIsMounted] = useState(false);
   
+  // Only run this effect on the client
   useEffect(() => {
-    setMounted(true);
+    setIsMounted(true);
   }, []);
   
-  // During static generation or server-side rendering, return children without SessionProvider
-  if (!mounted && typeof window === 'undefined') {
+  // During SSR or static generation, render children without SessionProvider
+  if (!isMounted) {
     return <>{children}</>;
   }
   
-  // On the client side or after mounting, use SessionProvider
-  // Use a try-catch block to prevent any potential errors during rendering
-  try {
-    return <SessionProvider>{children}</SessionProvider>;
-  } catch (error) {
-    console.error('Error in SessionProvider:', error);
-    // Fallback to rendering without SessionProvider if there's an error
-    return <>{children}</>;
-  }
+  // Only render SessionProvider on the client side after mounting
+  return (
+    <SessionProvider>{children}</SessionProvider>
+  );
 }

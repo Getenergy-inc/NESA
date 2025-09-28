@@ -1,8 +1,7 @@
 [build]
   command = "npm run build"
   publish = ".next"
-  # Ignore build errors related to static generation of dynamic routes
-  # This allows the build to succeed even if some pages fail during static generation
+  # Force the build to succeed even with static generation errors
   ignore_errors = true
 
 [build.environment]
@@ -33,6 +32,34 @@
 [[redirects]]
   from = "/sponsors/*"
   to = "/sponsors/:splat"
+  status = 200
+  force = true
+
+# Force SSR for member routes to prevent SessionProvider errors
+[[redirects]]
+  from = "/member/*"
+  to = "/member/:splat"
+  status = 200
+  force = true
+
+# Force SSR for dashboard routes to prevent SessionProvider errors
+[[redirects]]
+  from = "/dashboard/*"
+  to = "/dashboard/:splat"
+  status = 200
+  force = true
+
+# Force SSR for profile routes to prevent SessionProvider errors
+[[redirects]]
+  from = "/profile/*"
+  to = "/profile/:splat"
+  status = 200
+  force = true
+
+# Force SSR for account routes to prevent SessionProvider errors
+[[redirects]]
+  from = "/account/*"
+  to = "/account/:splat"
   status = 200
   force = true
 

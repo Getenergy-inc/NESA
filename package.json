@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/build-helper.js",
     "build:unix": "NODE_OPTIONS='--max-old-space-size=4096' next build",
     "build:win": "set NODE_OPTIONS=--max-old-space-size=4096 && next build",
     "export": "next export",
