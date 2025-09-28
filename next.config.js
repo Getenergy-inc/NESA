@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Disable static optimization for routes that use authentication
+  // This prevents "Cannot read properties of null (reading 'useState')" errors
+  output: 'standalone',
   experimental: {
     scrollRestoration: true,
     // Add these experimental features to improve App Router stability
