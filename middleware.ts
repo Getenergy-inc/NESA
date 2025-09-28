@@ -15,13 +15,29 @@ export function middleware(request: NextRequest) {
   console.log("NextAuth token in middleware:", nextAuthToken ? "Found" : "Not found");
 
   // For NextAuth routes, just let them pass through
+  // Add a header to prevent caching for these dynamic routes
   if (request.nextUrl.pathname.startsWith('/api/auth')) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set('x-middleware-cache', 'no-cache');
+    response.headers.set('Cache-Control', 'no-store, max-age=0');
+    return response;
   }
 
   // For admin routes, allow access without authentication
+  // But add a header to prevent caching for these routes
   if (request.nextUrl.pathname.startsWith('/admin')) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set('x-middleware-cache', 'no-cache');
+    response.headers.set('Cache-Control', 'no-store, max-age=0');
+    return response;
+  }
+
+  // For sponsor routes, add no-cache headers
+  if (request.nextUrl.pathname.startsWith('/sponsors')) {
+    const response = NextResponse.next();
+    response.headers.set('x-middleware-cache', 'no-cache');
+    response.headers.set('Cache-Control', 'no-store, max-age=0');
+    return response;
   }
 
   // For member routes, check if the user is authenticated
@@ -40,9 +56,10 @@ export function middleware(request: NextRequest) {
 // Apply middleware only to routes below
 export const config = {
   matcher: [
+    "/api/auth/:path*",
+    "/admin/:path*",
+    "/sponsors/:path*",
     "/member/:path*", 
     "/ProfileSetting"
-    // Admin routes are no longer protected
-    // Exclude "/api/auth/:path*" to avoid edge runtime issues
   ],
 };
