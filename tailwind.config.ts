@@ -42,7 +42,7 @@ import type { Config } from "tailwindcss";
 import type { PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
-  mode: "jit", // Enable JIT
+  // mode: "jit", // Enable JIT
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",

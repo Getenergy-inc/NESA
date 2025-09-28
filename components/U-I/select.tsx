@@ -37,7 +37,7 @@ export function SelectTrigger({ children, className = "" }: { children?: React.R
   return (
     <button
       type="button"
-      className={`px-3 py-2 border rounded-md bg-white dark:bg-gray-800 flex justify-between items-center w-full ${className}`}
+      className={`px-3 py-2 border rounded-md bg-white flex justify-between items-center w-full ${className}`}
     >
       {ctx.value || children || <span className="text-gray-400">Select...</span>}
       <span className="ml-2">▾</span>
@@ -59,7 +59,7 @@ export function SelectItem({ value, children, className = "" }: { value: string;
 
   return (
     <div
-      className={`px-3 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 rounded ${className}`}
+      className={`px-3 py-2 cursor-pointer hover:bg-gray-100 rounded ${className}`}
       onClick={() => ctx.onChange(value)}
     >
       {children}

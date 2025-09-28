@@ -36,7 +36,7 @@ export function Badge({ children, variant = "default", className }: BadgeProps) 
       break;
     case "outline":
       colorClasses =
-        "border border-gray-300 text-gray-800 bg-transparent dark:text-gray-200 dark:border-gray-600";
+        "border border-gray-300 text-gray-800 bg-transparent dark:text-gray-200 ";
       break;
     default:
       colorClasses = "bg-blue-100 text-blue-800";
