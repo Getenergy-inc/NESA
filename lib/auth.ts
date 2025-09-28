@@ -129,5 +129,5 @@ export const authOptions: NextAuthOptions = {
     signIn: '/account/login',
     error: '/api/auth/error',
   },
-  secret: 'nesa-nextauth-secret-key-2025',
+  secret: process.env.NEXTAUTH_SECRET || 'nesa-nextauth-secret-key-2025',
 };

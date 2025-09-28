@@ -1,0 +1,24 @@
+[build]
+  command = "npm run build:netlify"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18.17.0"
+  NPM_FLAGS = "--no-audit --production=false"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Force SSR for auth routes to prevent build-time errors
+[[redirects]]
+  from = "/api/auth/*"
+  to = "/api/auth/:splat"
+  status = 200
+  force = true
+
+# Handle 404s
+[[redirects]]
+  from = "/*"
+  to = "/_error"
+  status = 404
