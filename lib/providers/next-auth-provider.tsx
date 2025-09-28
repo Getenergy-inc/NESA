@@ -22,5 +22,12 @@ export default function NextAuthProvider({
   }
   
   // On the client side or after mounting, use SessionProvider
-  return <SessionProvider>{children}</SessionProvider>;
+  // Use a try-catch block to prevent any potential errors during rendering
+  try {
+    return <SessionProvider>{children}</SessionProvider>;
+  } catch (error) {
+    console.error('Error in SessionProvider:', error);
+    // Fallback to rendering without SessionProvider if there's an error
+    return <>{children}</>;
+  }
 }
