@@ -10,7 +10,7 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '2mb',
     },
-    serverComponentsExternalPackages: ['mongoose'],
+    serverComponentsExternalPackages: ['mongoose', 'next-auth'],
   },
   // Optimize build performance
   swcMinify: true,
