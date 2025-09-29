@@ -131,9 +131,7 @@ export const navlinks: NavLink[] = [
       {
         label: "NESA TV",
 
-        path: "/nesa-media",
-
-//         path: "/nesatv",
+        path: "/nesatv",
 
         icon: "Tv",
       },
