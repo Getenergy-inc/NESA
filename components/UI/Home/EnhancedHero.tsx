@@ -75,7 +75,7 @@ const EnhancedHero = () => {
             />
           </div>
 
-    <header className="relative w-full overflow-hidden pt-0 mt-0 bg-darkBrown" ref={heroRef} style={{ marginTop: '-1px', zIndex: 0 }}>
+    <header className="relative w-full overflow-hidden pt-10 mt-0 bg-darkBrown" ref={heroRef} style={{ marginTop: '-1px', zIndex: 0 }}>
       {/* Background Image with Parallax Effect */}
       <div className="absolute inset-0 w-full h-full">
         {isMounted ? (
