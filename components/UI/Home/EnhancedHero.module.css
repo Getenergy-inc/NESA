@@ -136,15 +136,24 @@
 
 .carouselContainer {
   position: relative;
-  height: 450px;
+  height: 350px;
   width: 100%;
   max-width: 36rem;
   margin: 0 auto;
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .carouselContainer {
     height: 500px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .carouselContainer {
+    height: 300px;
+    max-width: 90%;
   }
 }
 
@@ -157,6 +166,14 @@
   border: 1px solid rgba(243, 169, 40, 0.2);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(4px);
+}
+
+@media (max-width: 767px) {
+  .carouselWrapper {
+    border-radius: 0.75rem;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(243, 169, 40, 0.3);
+  }
 }
 
 .quickActionGrid {

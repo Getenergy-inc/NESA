@@ -122,7 +122,7 @@ const EnhancedHero = () => {
 
       <div className="relative z-10 container mx-auto px-4 pt-4 pb-12 md:pt-8 md:pb-24">
         <motion.div 
-          className="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center"
           initial={isMounted ? "hidden" : false}
           animate={isMounted ? "visible" : false}
           variants={isMounted ? containerVariants : undefined}
@@ -189,9 +189,9 @@ const EnhancedHero = () => {
             </motion.div>
           </div>
           
-          {/* Right Column - Enhanced Carousel - Hidden on mobile */}
+          {/* Right Column - Enhanced Carousel - Responsive on all devices */}
           <motion.div
-            className={`${styles.carouselContainer} hidden md:block`}
+            className={`${styles.carouselContainer}`}
             variants={itemVariants}
           >
             <div className={styles.carouselWrapper}>
