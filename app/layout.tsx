@@ -54,6 +54,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         edgeNavbarFixStylesheet.id = 'edge-navbar-fix-styles';
         document.head.appendChild(edgeNavbarFixStylesheet);
         
+        var edgeNavbarDropdownFixStylesheet = document.createElement('link');
+        edgeNavbarDropdownFixStylesheet.rel = 'stylesheet';
+        edgeNavbarDropdownFixStylesheet.href = '/edge-navbar-dropdown-fix.css';
+        edgeNavbarDropdownFixStylesheet.id = 'edge-navbar-dropdown-fix-styles';
+        document.head.appendChild(edgeNavbarDropdownFixStylesheet);
+        
         var edgeSpacingStylesheet = document.createElement('link');
         edgeSpacingStylesheet.rel = 'stylesheet';
         edgeSpacingStylesheet.href = '/edge-spacing.css';
@@ -71,9 +77,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         style.textContent = \`
           /* Critical Edge fixes applied directly */
           .dropdown {
-            background-color: rgba(23, 18, 10, 0.95) !important;
+            background-color: #17120a !important; /* Fully opaque solid color */
             -webkit-backdrop-filter: none !important;
             backdrop-filter: none !important;
+            z-index: 6000 !important; /* Higher z-index to overlay second navbar */
           }
           
           .nav-item:hover .dropdown {
@@ -82,10 +89,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             transform: translateY(0) !important;
           }
           
+          .dropdown-item {
+            background-color: #1a140b !important; /* Fully opaque solid color */
+            z-index: 6001 !important; /* Higher z-index than dropdown container */
+          }
+          
           .dropdown-item:hover {
-            background: rgba(234, 88, 12, 0.3) !important;
+            background-color: #231b0f !important; /* Fully opaque solid color */
             color: #fbbf24 !important;
             transform: translateX(4px) !important;
+          }
+          
+          /* Disable pointer events on the second navbar when dropdown is open */
+          .navRoot:has(.nav-item:hover .dropdown) > div:nth-of-type(2),
+          .navRoot:has(.dropdown:hover) > div:nth-of-type(2) {
+            pointer-events: none !important;
           }
           
           .nav-item:hover .dropdown-chevron svg {
@@ -113,6 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <script dangerouslySetInnerHTML={{ __html: edgeDetectionScript }} />
+        <link rel="stylesheet" href="/navbar-fix.css" /> {/* Add the navbar fix CSS */}
       </head>
       <body className={poppins.className}>
         <ActionQueueProvider>

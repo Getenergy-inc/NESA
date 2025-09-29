@@ -53,9 +53,9 @@
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  /* Use solid gradient to avoid transparent appearance */
+  /* Use solid color to ensure full opacity */
   background-color: #17120a !important;
-  background: linear-gradient(135deg, #17120a 0%, #1d170e 100%) !important;
+  background: #17120a !important; /* Removed gradient for solid color */
   border: 1px solid rgba(234, 88, 12, 0.3);
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15); /* Simplified shadow */
@@ -68,7 +68,7 @@
   -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   -ms-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 5000;
+  z-index: 6000; /* Increased z-index to be higher than nav-item */
   min-width: 280px;
   padding: 12px 0;
   /* Ensure background stays opaque */
@@ -112,15 +112,16 @@
     position: relative;
     min-height: 52px;
     will-change: transform, background, color;
-    background-color: #1a140b;
+    background-color: #1a140b !important; /* Added !important to ensure solid color */
     gap: 12px;
+    z-index: 6001; /* Higher z-index than dropdown container */
 
     &:last-child {
       border-bottom: none;
     }
 
     &:hover {
-      background-color: #231b0f;
+      background-color: #231b0f !important; /* Added !important to ensure solid color */
       color: #fbbf24;
       -webkit-transform: translateX(4px);
       -ms-transform: translateX(4px);

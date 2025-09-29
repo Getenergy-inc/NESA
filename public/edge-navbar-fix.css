@@ -64,7 +64,7 @@
 .edge-navbar .absolute {
   position: absolute !important;
   top: 100% !important;
-  background-color: rgba(23, 18, 10, 0.9) !important;
+  background-color: rgba(23, 18, 10, 1) !important; /* Changed to fully opaque */
   border: 1px solid rgba(234, 88, 12, 0.3) !important;
   border-radius: 12px !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
