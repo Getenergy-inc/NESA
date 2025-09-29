@@ -6,10 +6,7 @@ const nextConfig = {
   },
   // Disable static optimization for routes that use authentication
   // This prevents "Cannot read properties of null (reading 'useState')" errors
-  // On Windows, creating the standalone output requires creating many
-  // filesystem symlinks which often fail with EPERM. Disable standalone
-  // on Windows to avoid symlink errors when building locally.
-  output: process.platform === 'win32' ? undefined : 'standalone',
+  output: 'standalone',
   // Skip static generation for certain paths
   skipTrailingSlashRedirect: true,
   // Skip type checking during build for faster builds
