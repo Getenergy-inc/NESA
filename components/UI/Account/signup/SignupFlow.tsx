@@ -24,7 +24,7 @@ const NavigationButtons: React.FC = () => {
   const router = useRouter();
 
   const handleGoBack = () => {
-    if (window.history.length > 1) {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
       router.back();
     } else {
       router.push('/');
@@ -239,7 +239,7 @@ class SignupErrorBoundary extends React.Component<
               We encountered an error while processing your signup. Please try refreshing the page.
             </p>
             <button
-              onClick={() => window.location.reload()}
+              onClick={() => typeof window !== 'undefined' && window.location.reload()}
               className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors"
             >
               Refresh Page
