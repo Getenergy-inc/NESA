@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import {
   Box,
@@ -66,7 +65,7 @@ interface Pagination {
 }
 
 export default function AdminSponsorsPage() {
-  const { data: session, status } = useSession();
+  // const { user, isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
   
   // State variables
@@ -148,10 +147,9 @@ export default function AdminSponsorsPage() {
   };
   
   useEffect(() => {
-    if (session?.user?.isAdmin) {
-      fetchSponsors();
-    }
-  }, [session, statusFilter, planFilter, pagination.page, pagination.limit]);
+    // No authentication check needed for admin routes
+    fetchSponsors();
+  }, [statusFilter, planFilter, pagination.page, pagination.limit]);
   
   // Handle search
   const handleSearch = () => {

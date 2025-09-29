@@ -1,23 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/models/connectDB';
 import Sponsor from '@/lib/models/Sponsor';
-import { getServerSession } from 'next-auth';
 import { authenticateAdmin } from '@/lib/auth/admin';
-import authOptions from '@/lib/utils/auth-options';
 import { sendEmail } from '@/lib/templates/emailTemplates';
 
 // Get all sponsors with optional filtering
 export async function GET(request: NextRequest) {
   try {
-    // Check admin authentication
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email || !session?.user?.isAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
-
+    // Admin routes don't require authentication as per requirements
     await connectDB();
     
     // Get query parameters
@@ -73,14 +63,9 @@ export async function GET(request: NextRequest) {
 // Update sponsor status
 export async function PATCH(request: NextRequest) {
   try {
-    // Check admin authentication
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email || !session?.user?.isAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+    // Admin routes don't require authentication as per requirements
+    // Using the authenticateAdmin function for future implementation
+    await authenticateAdmin(request);
 
     const body = await request.json();
     const { id, status, adminNotes } = body;
@@ -155,14 +140,9 @@ export async function PATCH(request: NextRequest) {
 // Delete sponsor
 export async function DELETE(request: NextRequest) {
   try {
-    // Check admin authentication
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email || !session?.user?.isAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+    // Admin routes don't require authentication as per requirements
+    // Using the authenticateAdmin function for future implementation
+    await authenticateAdmin(request);
 
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');

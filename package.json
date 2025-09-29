@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node script/netlify-build.js",
     "build:unix": "NODE_OPTIONS='--max-old-space-size=4096' next build",
     "build:win": "set NODE_OPTIONS=--max-old-space-size=4096 && next build",
     "export": "next export",
@@ -50,7 +50,6 @@
     "lucide-react": "^0.528.0",
     "mongoose": "^8.17.1",
     "next": "^14.2.5",
-    "next-auth": "^4.24.7",
     "nodemailer": "^7.0.6",
     "normalize.css": "^8.0.1",
     "react": "^18.3.1",

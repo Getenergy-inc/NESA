@@ -46,4 +46,5 @@ package-lock.json
 .env.local
 tsconfig.tsbuildinfo
 
-
+NETLIFY-DEPLOYMENT.md
+REMOVE-NEXTAUTH-PLAN.md
