@@ -75,7 +75,7 @@ const EnhancedHero = () => {
             />
           </div>
 
-    <header className="relative w-full overflow-hidden pt-10 mt-0 bg-darkBrown" ref={heroRef} style={{ marginTop: '-1px', zIndex: 0 }}>
+    <header className="relative w-full overflow-hidden pt-6 mt-0 bg-darkBrown" ref={heroRef} style={{ marginTop: '-1px', zIndex: 0 }}>
       {/* Background Image with Parallax Effect */}
       <div className="absolute inset-0 w-full h-full">
         {isMounted ? (
@@ -102,32 +102,25 @@ const EnhancedHero = () => {
       {/* Announcement Banner */}
       <div className="relative z-50 w-full overflow-hidden border-t border-b border-primaryGold/30 backdrop-blur-sm bg-gradient-to-r from-darkBrown/40 via-darkBrown/30 to-darkBrown/40">
         <div className={styles.marqueeContainer}>
-          <div className={styles.marqueeContent}>
-            <div className="flex items-center space-x-3 whitespace-nowrap">
-              <span className={styles.announcementTag}>
-                ANNOUNCEMENT
-              </span>
+          {/* We create just 3 instances with carefully calculated delays to ensure continuous flow without overlap */}
+          {[0, 13.33, 26.66].map((delay, index) => (
+            <div 
+              key={index}
+              className={styles.marqueeContent} 
+              aria-hidden={index !== 0 ? "true" : undefined}
+              style={{ animationDelay: `${delay}s` }}
+            >
+              <span className={styles.announcementTag}>ANNOUNCEMENT</span>
               <p className={styles.announcementText}>
                 Honoring Africa's Changemakers Building the Future of Education
                 <span className={styles.mobileHidden}> — Nomination Starts from May 1st, 2025</span>
               </p>
             </div>
-          </div>
-          <div className={styles.marqueeContent} aria-hidden="true" style={{ animationDelay: "40s" }}>
-            <div className="flex items-center space-x-3 whitespace-nowrap">
-              <span className={styles.announcementTag}>
-                ANNOUNCEMENT
-              </span>
-              <p className={styles.announcementText}>
-                Honoring Africa's Changemakers Building the Future of Education
-                <span className={styles.mobileHidden}> — Nomination Starts from May 1st, 2025</span>
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16 md:pt-8 md:pb-24">
+      <div className="relative z-10 container mx-auto px-3 sm:px-6 lg:px-8 pt-3 pb-12 md:pt-8 md:pb-24">
         <motion.div 
           className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center"
           initial={isMounted ? "hidden" : false}
@@ -136,28 +129,28 @@ const EnhancedHero = () => {
         >
           {/* Left Column - Text Content */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
-            {/* Headline with animated reveal */}
+            {/* Headline with animated reveal - optimized for mobile */}
             <motion.h1 
-              className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight"
+              className="text-[2.75rem] md:text-5xl font-extrabold leading-[1.15] md:leading-tight tracking-tight px-2 md:px-0"
               variants={itemVariants}
             >
               <span className={styles.gradientText}>
                 Honoring Africa's Changemakers
               </span>
-              <span className="block text-white mt-2">
+              <span className="block text-white mt-3 md:mt-2">
                 Building the Future of Education
               </span>
             </motion.h1>
             
             {/* Accent Line */}
             <motion.div 
-              className={styles.accentLine}
+              className={`${styles.accentLine} mx-auto lg:mx-0`}
               variants={itemVariants}
             ></motion.div>
             
-            {/* Description with improved readability */}
+            {/* Description - Desktop only */}
             <motion.p
-              className="text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto lg:mx-0 md:block hidden"
+              className="text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-center lg:text-left hidden md:block"
               variants={itemVariants}
             >
               After <span className="text-primaryGold font-semibold">15 years</span> of vision and unwavering commitment — <strong className="text-primaryGold">NESA-Africa 2025</strong> emerges as the continent's highest platform for honoring those rebuilding African education from the ground up.
@@ -180,13 +173,13 @@ const EnhancedHero = () => {
               <span className="text-primaryGold"> advocates of change</span>, and <span className="text-primaryGold"> funders of futures</span>.
             </motion.div> */}
             
-            {/* CTA Buttons with improved layout */}
+            {/* CTA Buttons with professional mobile layout */}
             <motion.div 
-              className="flex flex-wrap gap-4 justify-center lg:justify-start mt-8"
+              className="flex flex-row flex-wrap gap-4 justify-center lg:justify-start mt-8 md:mt-8"
               variants={itemVariants}
             >
               <motion.button 
-                className={`${styles.primaryButton} text-sm md:text-base`}
+                className={`${styles.primaryButton} text-base md:text-base min-w-[140px] md:min-w-[130px]`}
                 onClick={() => setIsModalOpen(true)}
                 aria-label="Read more about NESA Africa"
                 variants={buttonVariants}
@@ -200,7 +193,7 @@ const EnhancedHero = () => {
               
               <Link href="/get-involved/nomination" passHref>
                 <motion.button 
-                  className={`${styles.secondaryButton} text-sm md:text-base`}
+                  className={`${styles.secondaryButton} text-base md:text-base min-w-[140px] md:min-w-[130px]`}
                   aria-label="Nominate someone for NESA Africa awards"
                   variants={buttonVariants}
                   whileHover="hover"
@@ -225,76 +218,78 @@ const EnhancedHero = () => {
           </motion.div>
         </motion.div>
         
-        {/* Quick Action Buttons */}
+        {/* Quick Action Buttons - fixed for both mobile and desktop */}
         <motion.div 
-          className="w-full bg-darkBrown/90 backdrop-blur-sm border-t border-b border-primaryGold/20 py-3 mt-8 relative z-40"
+          className="w-full bg-darkBrown/90 backdrop-blur-sm border-t border-b border-primaryGold/20 py-3 md:py-4 mt-6 md:mt-8 relative z-40"
           variants={isMounted ? quickActionVariants : undefined}
           initial={isMounted ? "hidden" : false}
           animate={isMounted ? "visible" : false}
         >
-          <div className={styles.quickActionGrid}>
-            {/* Refer a Friend */}
-            <div className="group flex-1 px-2">
-              <Link href="/get-involved/refer" passHref>
-                <motion.button
-                  className={`${styles.quickActionButton} ${styles.quickActionPrimary}`}
-                  aria-label="Refer a friend to NESA Africa"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaUserFriends className="h-4 w-4 md:h-5 md:w-5" />
-                  <span className="hidden md:inline">Refer a Friend</span>
-                  <span className="md:hidden">Refer</span>
-                </motion.button>
-              </Link>
-            </div>
-            
-            {/* Nominate Now */}
-            <div className="group flex-1 px-2">
-              <Link href="/get-involved/nomination" passHref>
-                <motion.button
-                  className={`${styles.quickActionButton} ${styles.quickActionPrimary} ring-2 ring-primaryGold/20`}
-                  aria-label="Nominate someone for NESA Africa awards"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaTrophy className="h-4 w-4 md:h-5 md:w-5" />
-                  <span className="hidden md:inline">Nominate Now</span>
-                  <span className="md:hidden">Nominate</span>
-                </motion.button>
-              </Link>
-            </div>
-            
-            {/* Get Gala Tickets */}
-            <div className="group flex-1 px-2">
-              <Link href="/events/gala-tickets" passHref>
-                <motion.button
-                  className={`${styles.quickActionButton} ${styles.quickActionSecondary}`}
-                  aria-label="Get tickets for NESA Africa gala"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaTicketAlt className="h-4 w-4 md:h-5 md:w-5" />
-                  <span className="hidden md:inline">Get Gala Tickets</span>
-                  <span className="md:hidden">Tickets</span>
-                </motion.button>
-              </Link>
-            </div>
-            
-            {/* Watch NESA TV */}
-            <div className="group flex-1 px-2">
-              <Link href="/media/nesa-tv" passHref>
-                <motion.button
-                  className={`${styles.quickActionButton} ${styles.quickActionSecondary}`}
-                  aria-label="Watch NESA TV content"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaPlay className="h-4 w-4 md:h-5 md:w-5" />
-                  <span className="hidden md:inline">Watch NESA TV</span>
-                  <span className="md:hidden">Watch</span>
-                </motion.button>
-              </Link>
+          <div className="container mx-auto px-2">
+            <div className="grid grid-cols-4 gap-2 md:gap-4">
+              {/* Refer a Friend */}
+              <div className="col-span-1">
+                <Link href="/get-involved/refer" passHref className="block w-full">
+                  <motion.button
+                    className={`${styles.quickActionButton} ${styles.quickActionPrimary} w-full`}
+                    aria-label="Refer a friend to NESA Africa"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaUserFriends className="h-4 w-4 md:h-5 md:w-5" />
+                    <span className="hidden md:inline">Refer a Friend</span>
+                    <span className="md:hidden">Refer</span>
+                  </motion.button>
+                </Link>
+              </div>
+              
+              {/* Nominate Now */}
+              <div className="col-span-1">
+                <Link href="/get-involved/nomination" passHref className="block w-full">
+                  <motion.button
+                    className={`${styles.quickActionButton} ${styles.quickActionPrimary} ring-2 ring-primaryGold/20 w-full`}
+                    aria-label="Nominate someone for NESA Africa awards"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaTrophy className="h-4 w-4 md:h-5 md:w-5" />
+                    <span className="hidden md:inline">Nominate Now</span>
+                    <span className="md:hidden">Nominate</span>
+                  </motion.button>
+                </Link>
+              </div>
+              
+              {/* Get Gala Tickets */}
+              <div className="col-span-1">
+                <Link href="/events/gala-tickets" passHref className="block w-full">
+                  <motion.button
+                    className={`${styles.quickActionButton} ${styles.quickActionSecondary} w-full`}
+                    aria-label="Get tickets for NESA Africa gala"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaTicketAlt className="h-4 w-4 md:h-5 md:w-5" />
+                    <span className="hidden md:inline">Get Gala Tickets</span>
+                    <span className="md:hidden">Tickets</span>
+                  </motion.button>
+                </Link>
+              </div>
+              
+              {/* Watch NESA TV */}
+              <div className="col-span-1">
+                <Link href="/nesa-tv" passHref className="block w-full">
+                  <motion.button
+                    className={`${styles.quickActionButton} ${styles.quickActionSecondary} w-full`}
+                    aria-label="Watch NESA TV content"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FaPlay className="h-4 w-4 md:h-5 md:w-5" />
+                    <span className="hidden md:inline">Watch NESA TV</span>
+                    <span className="md:hidden">Watch</span>
+                  </motion.button>
+                </Link>
+              </div>
             </div>
           </div>
         </motion.div>
