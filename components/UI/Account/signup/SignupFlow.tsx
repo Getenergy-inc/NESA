@@ -1,5 +1,6 @@
 "use client";
 
+import '@/lib/polyfills/globals'; // Must be the first import after "use client"
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
