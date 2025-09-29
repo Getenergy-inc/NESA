@@ -1,4 +1,7 @@
 'use client';
+import '@/lib/polyfills/globals'; // Must be the first import
+
+
 
 import React, { useState, ReactNode, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';

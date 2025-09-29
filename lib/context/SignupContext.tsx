@@ -1,5 +1,6 @@
 "use client";
 
+import '@/lib/polyfills/globals'; // Must be the first import after "use client"
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { 
   SignupFormData, 

@@ -1,3 +1,4 @@
+import "./lib/edge-polyfill";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
