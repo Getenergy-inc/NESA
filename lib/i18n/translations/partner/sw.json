@@ -1,0 +1,106 @@
+{
+  "partner": {
+    "hero": {
+      "title": "Shiriki na NESA Media",
+      "description": "Jiunge na jukwaa kuu la vyombo vya habari vya elimu barani Afrika linalosherehekea ubora kupitia filamu za nyaraka, mahojiano, na hadithi zenye athari",
+      "button": "Kuwa Mshirika"
+    },
+    "about": {
+      "badge": "Kuhusu NESA Media",
+      "title": "Jukwaa Kuu la Vyombo vya Habari vya Elimu Afrika",
+      "description1": "NESA Media inajitahidi kuonyesha ubora wa elimu katika Afrika kupitia filamu za nyaraka zenye kuvutia, mahojiano ya kipekee, na hadithi zenye athari. Jukwaa letu linasisitiza kazi ya mabadiliko ya waelimishaji, taasisi, na mashirika yanayounda mustakabali wa elimu katika bara hili.",
+      "description2": "Kupitia filamu zetu za nyaraka za \"Mitaa ya Afrika\", hadithi za athari za elimu, na ufuatiliaji wa sherehe za tuzo, tunaongeza sauti na ubunifu unaobadilisha elimu ya Afrika.",
+      "button": "Chunguza NESA Media"
+    },
+    "benefits": {
+      "title": "Faida za Ushirika wa NESA Media",
+      "description": "Shiriki na NESA Media ili kuongeza athari ya chapa yako katika sekta ya elimu katika Afrika na kuunganisha na hadhira yetu ya waelimishaji, taasisi, na waundaji mabadiliko.",
+      "benefit1": {
+        "title": "Mwonekano wa Vyombo vya Habari",
+        "description": "Pata ufuatiliaji maalum katika filamu zetu za nyaraka, mahojiano, na maudhui ya elimu yanayofikia maelfu ya watazamaji katika Afrika."
+      },
+      "benefit2": {
+        "title": "Ushirikiano wa Maudhui",
+        "description": "Unda pamoja maudhui ya elimu yanayovutia ambayo yanaonyesha kujitolea kwa chapa yako katika kuendeleza elimu Afrika."
+      },
+      "benefit3": {
+        "title": "Ushiriki wa Hadhira",
+        "description": "Unganisha na mtandao wetu wa viongozi wa elimu, taasisi, na wabunifu wanaounda mustakabali wa elimu ya Afrika."
+      }
+    },
+    "process": {
+      "title": "Safari ya Ushirika wa NESA Media",
+      "description": "Mchakato wetu ulioimarishwa unahakikisha kuwa ushirika wako na NESA Media unaendana na maono ya elimu ya chapa yako na kuunda athari muhimu katika Afrika.",
+      "step1": {
+        "title": "Maombi",
+        "description": "Shiriki hadithi ya chapa yako na maono ya elimu na timu yetu ya ushirika"
+      },
+      "step2": {
+        "title": "Upangaji wa Maudhui",
+        "description": "Shirikiana na wataalamu wetu wa vyombo vya habari kutengeneza maudhui ya elimu yanayovutia"
+      },
+      "step3": {
+        "title": "Uzalishaji",
+        "description": "Timu yetu inazalisha vyombo vya habari vya ubora wa juu vinavyoonyesha athari ya elimu ya chapa yako"
+      },
+      "step4": {
+        "title": "Usambazaji",
+        "description": "Hadithi yako inafikia hadhira yetu kupitia majukwaa na matukio mbalimbali"
+      }
+    },
+    "cta": {
+      "title": "Jiunge na Harakati za NESA Media",
+      "description1": "Shiriki na NESA Media ili kuonyesha kujitolea kwa chapa yako kwa ubora wa elimu katika Afrika kupitia hadithi zenye kuvutia na maudhui yenye athari.",
+      "description2": "Pamoja, tunaweza kuongeza hadithi za mafanikio ya elimu na kuvutia kizazi kijacho cha viongozi wa Afrika.",
+      "button": "Omba Sasa"
+    },
+    "languageSelector": {
+      "label": "Lugha",
+      "chooseLanguage": "Chagua Lugha"
+    },
+    "apply": {
+      "backLink": "Rudi kwenye Ukurasa wa Washirika",
+      "title": "Maombi ya Ushirika",
+      "description": "Jaza fomu iliyo hapa chini kuomba ushirika na NESA Media. Tutapitia maombi yako na kukujibu ndani ya siku 3-5 za kazi.",
+      "form": {
+        "name": "Jina Lako",
+        "namePlaceholder": "Ingiza jina lako kamili",
+        "email": "Anwani ya Barua Pepe",
+        "emailPlaceholder": "Ingiza anwani yako ya barua pepe",
+        "phone": "Namba ya Simu",
+        "phonePlaceholder": "Ingiza namba yako ya simu",
+        "brandName": "Jina la Chapa/Kampuni",
+        "brandNamePlaceholder": "Ingiza jina la chapa/kampuni yako",
+        "brandLink": "Tovuti ya Chapa/Kampuni",
+        "brandLinkPlaceholder": "https://chapayako.com",
+        "description": "Maelezo ya Chapa/Kampuni",
+        "descriptionPlaceholder": "Eleza kwa ufupi chapa/kampuni yako na unachofanya",
+        "partnershipGoals": "Malengo ya Ushirika",
+        "partnershipGoalsPlaceholder": "Malengo yako ni yapi kwa ushirika huu? Unaonaje kufanya kazi nasi?",
+        "submit": "Wasilisha Maombi",
+        "submitting": "Inawasilisha..."
+      },
+      "success": {
+        "title": "Maombi Yamewasilishwa kwa Mafanikio",
+        "message1": "Asante kwa nia yako ya kushirikiana na NESA Media!",
+        "message2": "Tumepokea maombi yako na tutayapitia ndani ya",
+        "days": "siku 3-5 za kazi",
+        "message3": "na tutawasiliana nawe kupitia anwani ya barua pepe uliyotoa.",
+        "backButton": "Rudi kwenye Ukurasa wa Washirika",
+        "submitAnother": "Wasilisha Maombi Mengine"
+      },
+      "errors": {
+        "nameRequired": "Tafadhali ingiza jina lako",
+        "emailRequired": "Tafadhali ingiza anwani yako ya barua pepe",
+        "invalidEmail": "Tafadhali ingiza anwani halali ya barua pepe",
+        "phoneRequired": "Tafadhali ingiza namba yako ya simu",
+        "brandNameRequired": "Tafadhali ingiza jina la chapa/kampuni yako",
+        "brandLinkRequired": "Tafadhali ingiza tovuti ya chapa/kampuni yako",
+        "invalidUrl": "Tafadhali ingiza URL halali ya tovuti",
+        "descriptionRequired": "Tafadhali toa maelezo ya chapa/kampuni yako",
+        "goalsRequired": "Tafadhali eleza malengo yako ya ushirika",
+        "noConnection": "Hakuna muunganisho wa intaneti. Tafadhali angalia muunganisho wako na ujaribu tena."
+      }
+    }
+  }
+}

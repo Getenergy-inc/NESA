@@ -46,7 +46,7 @@ export default function ProfilePage() {
 
     const handleLogout = () => {
     logout();
-    window.location.href = '/login';
+    window.location.href = '/account/login';
   };
 
   const handleEdit = () => setEditing(true);
@@ -54,7 +54,7 @@ export default function ProfilePage() {
     setEditing(false);
     setImageFile(null);
     if (!user) {
-      router.replace('/account/signup/membersignup');
+      router.replace('/signup/comprehensive');
     } else {
       setFormData({
         fullName: user.fullName || '',

@@ -1,0 +1,106 @@
+{
+  "partner": {
+    "hero": {
+      "title": "Seja Parceiro da NESA Media",
+      "description": "Junte-se à principal plataforma de mídia educacional da África, destacando a excelência através de documentários, entrevistas e narrativas impactantes",
+      "button": "Torne-se um Parceiro"
+    },
+    "about": {
+      "badge": "Sobre a NESA Media",
+      "title": "Principal Plataforma de Mídia Educacional da África",
+      "description1": "A NESA Media dedica-se a mostrar a excelência educacional em toda a África através de documentários envolventes, entrevistas exclusivas e narrativas impactantes. Nossa plataforma destaca o trabalho transformador de educadores, instituições e organizações que moldam o futuro da educação no continente.",
+      "description2": "Através dos nossos documentários \"Ruas da África\", histórias de impacto educacional e cobertura de cerimônias de premiação, amplificamos vozes e inovações que estão revolucionando a educação africana.",
+      "button": "Explore a NESA Media"
+    },
+    "benefits": {
+      "title": "Benefícios da Parceria com a NESA Media",
+      "description": "Associe-se à NESA Media para amplificar o impacto da sua marca no setor educacional em toda a África e conecte-se com nosso público engajado de educadores, instituições e agentes de mudança.",
+      "benefit1": {
+        "title": "Visibilidade na Mídia",
+        "description": "Obtenha cobertura destacada em nossos documentários, entrevistas e conteúdo educacional, alcançando milhares de espectadores em toda a África."
+      },
+      "benefit2": {
+        "title": "Colaboração de Conteúdo",
+        "description": "Co-crie conteúdo educacional envolvente que demonstre o compromisso da sua marca com o avanço da educação na África."
+      },
+      "benefit3": {
+        "title": "Engajamento do Público",
+        "description": "Conecte-se com nossa rede de líderes educacionais, instituições e inovadores que estão moldando o futuro da educação africana."
+      }
+    },
+    "process": {
+      "title": "Jornada de Parceria com a NESA Media",
+      "description": "Nosso processo simplificado garante que sua parceria com a NESA Media esteja alinhada com a visão educacional da sua marca e crie um impacto significativo em toda a África.",
+      "step1": {
+        "title": "Inscrição",
+        "description": "Compartilhe a história e a visão educacional da sua marca com nossa equipe de parcerias"
+      },
+      "step2": {
+        "title": "Planejamento de Conteúdo",
+        "description": "Colabore com nossos especialistas em mídia para desenvolver conteúdo educacional envolvente"
+      },
+      "step3": {
+        "title": "Produção",
+        "description": "Nossa equipe produz mídia de alta qualidade apresentando o impacto educacional da sua marca"
+      },
+      "step4": {
+        "title": "Distribuição",
+        "description": "Sua história alcança nosso público através de múltiplas plataformas e eventos"
+      }
+    },
+    "cta": {
+      "title": "Junte-se ao Movimento NESA Media",
+      "description1": "Associe-se à NESA Media para mostrar o compromisso da sua marca com a excelência educacional em toda a África através de narrativas envolventes e conteúdo impactante.",
+      "description2": "Juntos, podemos amplificar histórias de sucesso educacional e inspirar a próxima geração de líderes africanos.",
+      "button": "Inscreva-se Agora"
+    },
+    "languageSelector": {
+      "label": "Idioma",
+      "chooseLanguage": "Escolher Idioma"
+    },
+    "apply": {
+      "backLink": "Voltar à Página de Parceiros",
+      "title": "Aplicação de Parceria",
+      "description": "Preencha o formulário abaixo para se candidatar a uma parceria com a NESA Media. Analisaremos sua inscrição e entraremos em contato em 3-5 dias úteis.",
+      "form": {
+        "name": "Seu Nome",
+        "namePlaceholder": "Digite seu nome completo",
+        "email": "Endereço de Email",
+        "emailPlaceholder": "Digite seu endereço de email",
+        "phone": "Número de Telefone",
+        "phonePlaceholder": "Digite seu número de telefone",
+        "brandName": "Nome da Marca/Empresa",
+        "brandNamePlaceholder": "Digite o nome da sua marca/empresa",
+        "brandLink": "Site da Marca/Empresa",
+        "brandLinkPlaceholder": "https://suamarca.com",
+        "description": "Descrição da Marca/Empresa",
+        "descriptionPlaceholder": "Descreva brevemente sua marca/empresa e o que você faz",
+        "partnershipGoals": "Objetivos da Parceria",
+        "partnershipGoalsPlaceholder": "Quais são seus objetivos para esta parceria? Como você imagina trabalhar conosco?",
+        "submit": "Enviar Aplicação",
+        "submitting": "Enviando..."
+      },
+      "success": {
+        "title": "Aplicação Enviada com Sucesso",
+        "message1": "Obrigado pelo seu interesse em ser parceiro da NESA Media!",
+        "message2": "Recebemos sua aplicação e a analisaremos dentro de",
+        "days": "3-5 dias úteis",
+        "message3": "e entraremos em contato através do email que você forneceu.",
+        "backButton": "Retornar à Página de Parceiros",
+        "submitAnother": "Enviar Outra Aplicação"
+      },
+      "errors": {
+        "nameRequired": "Por favor, digite seu nome",
+        "emailRequired": "Por favor, digite seu endereço de email",
+        "invalidEmail": "Por favor, digite um endereço de email válido",
+        "phoneRequired": "Por favor, digite seu número de telefone",
+        "brandNameRequired": "Por favor, digite o nome da sua marca/empresa",
+        "brandLinkRequired": "Por favor, digite o site da sua marca/empresa",
+        "invalidUrl": "Por favor, digite uma URL de site válida",
+        "descriptionRequired": "Por favor, forneça uma descrição da sua marca/empresa",
+        "goalsRequired": "Por favor, descreva seus objetivos de parceria",
+        "noConnection": "Sem conexão com a internet. Por favor, verifique sua conexão e tente novamente."
+      }
+    }
+  }
+}

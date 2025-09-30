@@ -1,0 +1,44 @@
+/**
+ * Navbar dropdown fix for all browsers
+ * This ensures dropdown menus are fully opaque and properly overlay the second navbar
+ */
+
+/* Make dropdown background fully opaque */
+.dropdown {
+  background-color: #17120a !important;
+  background: #17120a !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  z-index: 6000 !important;
+}
+
+/* Make dropdown items fully opaque */
+.dropdown-item {
+  background-color: #1a140b !important;
+  z-index: 6001 !important;
+}
+
+/* Make dropdown item hover state fully opaque */
+.dropdown-item:hover {
+  background-color: #231b0f !important;
+}
+
+/* Ensure dropdown is visible above second navbar */
+.nav-item:hover .dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* Disable pointer events on the second navbar when dropdown is open */
+.navRoot:has(.nav-item:hover .dropdown) > div:nth-of-type(2),
+.navRoot:has(.dropdown:hover) > div:nth-of-type(2) {
+  pointer-events: none !important;
+}
+
+/* For browsers that don't support :has, add a fallback */
+@supports not (selector(:has(*))) {
+  .nav-item:hover ~ div:nth-of-type(2) {
+    pointer-events: none !important;
+  }
+}

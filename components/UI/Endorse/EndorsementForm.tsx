@@ -183,18 +183,16 @@ const EndorsementForm: React.FC = () => {
   const handleSubmit = async () => {
     if (!validateStep(4)) return;
 
-    if (!isAuthenticated) {
-      setErrors({ submit: 'You must be logged in to submit an endorsement' });
-      return;
-    }
-
     setLoading(true);
     try {
-      // Include user ID in the submission
+      // Convert File objects to file names for submission
+      // In a production app, you would upload files to a storage service first
       const submissionData = {
         ...formData,
-        user_id: getUserId(),
-        submitted_by: user?.id || getUserId()
+        logo_file: formData.logo_file ? formData.logo_file.name : null,
+        video_file: formData.video_file ? formData.video_file.name : null,
+        user_id: isAuthenticated ? getUserId() : null,
+        submitted_by: isAuthenticated ? (user?.id || getUserId()) : null
       };
 
       const response = await fetch('/api/endorse/submit', {
@@ -208,7 +206,19 @@ const EndorsementForm: React.FC = () => {
       const result = await response.json();
 
       if (result.success) {
-        router.push(`/get-involved/endorse-nesa-africa/success?id=${result.endorsement.id}`);
+        // Handle different next steps based on payment flow
+        const nextStep = result.next_step;
+
+        if (nextStep === 'bank_transfer') {
+          // Redirect to payment instructions page
+          router.push(`/get-involved/endorse-nesa-africa/payment-instructions?endorsementId=${result.endorsement.id}`);
+        } else if (nextStep === 'review' || nextStep === 'email_verification') {
+          // Redirect to success page
+          router.push(`/get-involved/endorse-nesa-africa/success?id=${result.endorsement.id}`);
+        } else {
+          // Default to success page
+          router.push(`/get-involved/endorse-nesa-africa/success?id=${result.endorsement.id}`);
+        }
       } else {
         setErrors({ submit: result.message || 'Failed to submit endorsement' });
       }
@@ -250,59 +260,8 @@ const EndorsementForm: React.FC = () => {
     );
   }
 
-  // Show login prompt if not authenticated
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
-        <div className="max-w-2xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-white rounded-xl shadow-lg p-8 text-center"
-          >
-            <div className="w-16 h-16 bg-[#ea580c]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Lock className="w-8 h-8 text-[#ea580c]" />
-            </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              Authentication Required
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              You need to be logged in to submit an endorsement for NESA-Africa 2025.
-              Please sign in to your account or create a new one to continue.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                text="Sign In"
-                variant="filled"
-                size="large"
-                onClick={() => router.push('/account/login?redirect=' + encodeURIComponent(window.location.pathname))}
-                className="bg-[#ea580c] hover:bg-[#dc2626] text-white px-8 py-4"
-              />
-              <Button
-                text="Create Account"
-                variant="outline"
-                size="large"
-                onClick={() => router.push('/signup/comprehensive')}
-                className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-8 py-4"
-              />
-            </div>
-
-            <div className="mt-8">
-              <button
-                onClick={handleBack}
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mx-auto"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span>Back to Endorsement Info</span>
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    );
-  }
+  // Optional login prompt for non-authenticated users
+  // Removed authentication requirement - anyone can now endorse
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4">
@@ -330,12 +289,26 @@ const EndorsementForm: React.FC = () => {
           </p>
 
           {/* User Info Display */}
-          {user && (
+          {user ? (
             <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
               <p className="text-sm text-green-800">
                 <CheckCircle className="w-4 h-4 inline mr-2" />
                 Signed in as: <span className="font-semibold">{user.email}</span>
               </p>
+            </div>
+          ) : (
+            <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg flex justify-between items-center">
+              <p className="text-sm text-blue-800">
+                <AlertCircle className="w-4 h-4 inline mr-2" />
+                You're endorsing as a guest. <span className="font-semibold">Creating an account is optional.</span>
+              </p>
+              <Button
+                text="Sign In"
+                variant="outlined"
+                size="small"
+                onClick={() => router.push('/account/login?redirect=' + encodeURIComponent(window.location.pathname))}
+                className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white text-xs py-1 px-3"
+              />
             </div>
           )}
 
@@ -594,7 +567,7 @@ const EndorsementForm: React.FC = () => {
               <div className="flex justify-between mt-8">
                 <Button
                   text="Back"
-                  variant="outline"
+                  variant="outlined"
                   onClick={handleBack}
                   className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3"
                 />
@@ -700,7 +673,7 @@ const EndorsementForm: React.FC = () => {
               <div className="flex justify-between mt-8">
                 <Button
                   text="Back"
-                  variant="outline"
+                  variant="outlined"
                   onClick={handleBack}
                   className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3"
                 />
@@ -788,7 +761,7 @@ const EndorsementForm: React.FC = () => {
               <div className="flex justify-between mt-8">
                 <Button
                   text="Back"
-                  variant="outline"
+                  variant="outlined"
                   onClick={handleBack}
                   className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3"
                 />

@@ -74,7 +74,7 @@ const HomePartners = () => {
           </div>
 
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 leading-tight">
-            Meet Our Key Partners
+            Endorsed by Leading Organizations
           </h2>
 
           <p className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">

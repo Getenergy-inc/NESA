@@ -1,27 +1,85 @@
 import { NextRequest, NextResponse } from 'next/server';
+import dbConnect from '@/lib/dbConnect';
+import Endorsement from '@/lib/models/Endorsement';
+import { endorsementVerificationEmailTemplate, sendEmail } from '@/lib/templates/emailTemplates';
 
 // Route segment config - prevent static generation
 export const dynamic = 'force-dynamic';
 export const revalidate = false;
-
-
-// Mock database - In production, this would be replaced with actual database
-let endorsements: any[] = [];
-
-// Generate unique ID
-function generateId(): string {
-  return Math.random().toString(36).substr(2, 9);
-}
 
 // Generate verification token
 function generateVerificationToken(): string {
   return Math.random().toString(36).substr(2, 15);
 }
 
+// Endorsement tier pricing
+const TIER_PRICING = {
+  bronze: 500,
+  silver: 1000,
+  gold: 2500,
+  platinum: 5000,
+  africa_blue_garnet: 250000
+};
+
+// Process GFA Wallet payment
+async function processGFAWalletPayment(userId: string, amount: number, endorsementId: string) {
+  try {
+    // Check wallet balance
+    const balanceResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/gfa-wallet/balance?userId=${userId}`);
+    const balanceData = await balanceResponse.json();
+
+    if (!balanceData.success) {
+      return { success: false, message: 'Unable to check wallet balance' };
+    }
+
+    const usdBalance = balanceData.wallet.balance.usd;
+
+    if (usdBalance < amount) {
+      return {
+        success: false,
+        message: `Insufficient balance. Required: $${amount}, Available: $${usdBalance}`
+      };
+    }
+
+    // Process the payment
+    const paymentResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/gfa-wallet/balance`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userId,
+        amount: -amount, // Negative for debit
+        currency: 'usd',
+        type: 'endorsement_payment',
+        description: `NESA-Africa Endorsement - ${endorsementId}`
+      }),
+    });
+
+    const paymentData = await paymentResponse.json();
+
+    if (paymentData.success) {
+      return {
+        success: true,
+        transactionId: paymentData.wallet.lastTransaction.id,
+        message: 'Payment processed successfully'
+      };
+    } else {
+      return { success: false, message: paymentData.message || 'Payment processing failed' };
+    }
+
+  } catch (error) {
+    console.error('GFA Wallet payment error:', error);
+    return { success: false, message: 'Payment service temporarily unavailable' };
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
+    await dbConnect();
+
     const body = await request.json();
-    
+
     const {
       organization_name,
       contact_person_name,
@@ -44,11 +102,11 @@ export async function POST(request: NextRequest) {
       digital_signature,
       user_id,
       submitted_by
-    } = body;
+    }: any = body;
 
     // Validate required fields
-    if (!organization_name || !contact_person_name || !email || !phone || !country || 
-        !endorser_category || !endorsement_type || !endorsement_headline || 
+    if (!organization_name || !contact_person_name || !email || !phone || !country ||
+        !endorser_category || !endorsement_type || !endorsement_headline ||
         !endorsement_statement || !consent_to_publish || !authorized_to_submit || !digital_signature) {
       return NextResponse.json(
         { success: false, message: 'All required fields must be provided' },
@@ -56,11 +114,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Note: user_id and submitted_by are now optional
+
     // Check if endorsement already exists
-    const existingEndorsement = endorsements.find(endorsement => endorsement.email === email);
+    const existingEndorsement = await Endorsement.findOne({ organization_name, email });
     if (existingEndorsement) {
       return NextResponse.json(
-        { success: false, message: 'An endorsement with this email already exists' },
+        { success: false, message: 'An endorsement for this organization with this email already exists.' },
         { status: 409 }
       );
     }
@@ -73,7 +133,7 @@ export async function POST(request: NextRequest) {
           { status: 400 }
         );
       }
-      
+
       if (payment_method === 'bank_transfer' && !payment_reference) {
         return NextResponse.json(
           { success: false, message: 'Bank transfer requires payment reference' },
@@ -83,8 +143,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create new endorsement
-    const newEndorsement = {
-      id: generateId(),
+    const newEndorsement = new Endorsement({
       organization_name,
       contact_person_name,
       email,
@@ -115,23 +174,89 @@ export async function POST(request: NextRequest) {
       approved_at: null,
       certificate_generated: false,
       featured: false
-    };
+    });
 
-    // Add to mock database
-    endorsements.push(newEndorsement);
+    // Save to database
+    await newEndorsement.save();
 
-    // Return success response
+    let responseMessage = 'Endorsement submitted successfully';
+    let nextStep = null;
+
+    // Handle payment flow for paid endorsements
+    if (endorsement_type === 'paid') {
+      if (payment_method === 'gfa_wallet') {
+        // For GFA wallet, process payment immediately
+        try {
+          const tierAmount = TIER_PRICING[endorsement_tier as keyof typeof TIER_PRICING] || 0;
+          const paymentResult = await processGFAWalletPayment(user_id, tierAmount, (newEndorsement._id as any).toString());
+
+          if (paymentResult.success) {
+            newEndorsement.payment_verified = true;
+            newEndorsement.status = 'pending_review';
+            await newEndorsement.save();
+
+            responseMessage = 'Endorsement submitted and payment processed successfully via GFA Wallet';
+            nextStep = 'review';
+          } else {
+            responseMessage = `Endorsement submitted but payment failed: ${paymentResult.message}`;
+            nextStep = 'payment_failed';
+          }
+        } catch (paymentError) {
+          console.error('GFA Wallet payment error:', paymentError);
+          responseMessage = 'Endorsement submitted but payment processing failed. Please contact support.';
+          nextStep = 'payment_error';
+        }
+      } else if (payment_method === 'bank_transfer') {
+        // For bank transfer, generate reference and set pending payment status
+        const paymentReference = `NESA-END-${Date.now().toString().slice(-8)}-${(newEndorsement._id as any).toString().slice(-4)}`;
+        newEndorsement.payment_reference = paymentReference;
+        newEndorsement.status = 'pending_payment';
+        await newEndorsement.save();
+
+        responseMessage = 'Endorsement submitted. Please complete your bank transfer payment.';
+        nextStep = 'bank_transfer';
+      }
+    } else {
+      // For free endorsements, send verification email immediately
+      try {
+        const verificationUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://nesa.africa'}/get-involved/endorse-nesa-africa/verify-email?email=${encodeURIComponent(email)}&token=${newEndorsement.verification_token}`;
+
+        console.log('🔗 Generated verification URL:', verificationUrl);
+        console.log('📧 Email:', email);
+        console.log('🔑 Token:', newEndorsement.verification_token);
+
+        const emailHtml = endorsementVerificationEmailTemplate({
+          name: contact_person_name,
+          verificationUrl
+        });
+
+        await sendEmail(email, emailHtml, 'Verify Your NESA-Africa 2025 Endorsement');
+
+        console.log('✅ Verification email sent to:', email);
+        nextStep = 'email_verification';
+      } catch (emailError) {
+        console.error('❌ Failed to send verification email:', emailError);
+        nextStep = 'email_error';
+      }
+    }
+
+    // Return success response with next step information
     return NextResponse.json({
       success: true,
-      message: 'Endorsement submitted successfully',
+      message: responseMessage,
       endorsement: {
-        id: newEndorsement.id,
+        id: (newEndorsement._id as any).toString(),
         organization_name: newEndorsement.organization_name,
         email: newEndorsement.email,
         status: newEndorsement.status,
         verification_token: newEndorsement.verification_token,
-        created_at: newEndorsement.created_at
-      }
+        created_at: newEndorsement.created_at,
+        endorsement_type: newEndorsement.endorsement_type,
+        payment_method: newEndorsement.payment_method,
+        payment_reference: newEndorsement.payment_reference,
+        payment_verified: newEndorsement.payment_verified
+      },
+      next_step: nextStep
     });
 
   } catch (error) {
@@ -146,6 +271,8 @@ export async function POST(request: NextRequest) {
 // GET endpoint to retrieve endorsement status
 export async function GET(request: NextRequest) {
   try {
+    await dbConnect();
+
     const { searchParams } = new URL(request.url);
     const email = searchParams.get('email');
 
@@ -156,8 +283,8 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const endorsement = endorsements.find(endorsement => endorsement.email === email);
-    
+    const endorsement = await Endorsement.findOne({ email });
+
     if (!endorsement) {
       return NextResponse.json(
         { success: false, message: 'Endorsement not found' },
@@ -168,7 +295,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       endorsement: {
-        id: endorsement.id,
+        id: (endorsement._id as any).toString(),
         organization_name: endorsement.organization_name,
         email: endorsement.email,
         status: endorsement.status,

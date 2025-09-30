@@ -1,9 +1,21 @@
+/* Import normalize.css for consistent cross-browser baseline */
+@import url('./normalize.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Import Google Fonts for Arabic support */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+/* Import browser compatibility fixes */
+@import url('./browser-fixes.css');
+
+/* Import font rendering improvements */
+@import url('./font-rendering.css');
+
+/* Import Edge-specific fixes - must be last to override other styles */
+@import url('./edge-fixes.css');
 
 /* Scroll restoration and smooth scrolling */
 html {

@@ -204,7 +204,7 @@ const ApplicationStatusDashboard: React.FC<ApplicationStatusDashboardProps> = ({
                 <div className="flex items-center gap-2">
                   <Button
                     text="View"
-                    variant="outline"
+                    variant="outlined"
                     size="small"
                     onClick={() => window.location.href = `/applications/${application.id}`}
                     className="inline-flex items-center gap-1"
@@ -214,7 +214,7 @@ const ApplicationStatusDashboard: React.FC<ApplicationStatusDashboardProps> = ({
                   {(application.status === 'DRAFT' || application.status === 'SUBMITTED') && (
                     <Button
                       text="Edit"
-                      variant="outline"
+                      variant="outlined"
                       size="small"
                       onClick={() => window.location.href = `/applications/${application.id}/edit`}
                       className="inline-flex items-center gap-1"
@@ -225,7 +225,7 @@ const ApplicationStatusDashboard: React.FC<ApplicationStatusDashboardProps> = ({
                   {(application.status === 'DRAFT' || application.status === 'SUBMITTED') && (
                     <Button
                       text="Withdraw"
-                      variant="outline"
+                      variant="outlined"
                       size="small"
                       onClick={() => handleWithdrawApplication(application.id!)}
                       className="inline-flex items-center gap-1 text-red-600 hover:text-red-700"
