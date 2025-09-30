@@ -167,7 +167,7 @@ const HeroSection: React.FC = () => {
             href="/judge-application-form"
             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center group"
           >
-            Apply as Judge
+            Apply as a Judge
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
 

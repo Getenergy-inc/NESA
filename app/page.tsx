@@ -3,7 +3,7 @@ import React from "react";
 import ConditionalLayout from "@/components/Layout/ConditionalLayout";
 import HomeHeader from "@/components/UI/Home/header";
 import HomePartners from "@/components/UI/Home/partners";
-import Judges from "@/components/UI/Home/judges";
+import Judges from "@/components/UI/Home/judges-enhanced";
 import AwardCategories from "@/components/UI/Home/Award-categories";
 import MediaSection from "@/components/UI/Home/media-section";
 import CountdownTimer from "@/components/Common/Others/countdown";

@@ -2,36 +2,59 @@
 
 import { motion } from 'framer-motion';
 import { FiCheck, FiDownload, FiMail, FiCalendar, FiArrowRight, FiHome } from 'react-icons/fi';
-import { SponsorFormData } from './SponsorFormWrapper';
+import { SponsorFormData, SubmissionResult } from './SponsorFormWrapper';
 import Link from 'next/link';
 
 export default function SuccessStep({
-  formData
+  formData,
+  result
 }: {
   formData: SponsorFormData;
+  result: SubmissionResult | null;
 }) {
   const { selectedPlan, company_name, name, email } = formData;
 
-  const nextSteps = [
-    {
-      icon: FiMail,
-      title: 'Check Your Email',
-      description: 'Payment instructions and invoice have been sent to your email address.',
-      timeframe: 'Within 5 minutes'
-    },
-    {
-      icon: FiCalendar,
-      title: 'Payment Processing',
-      description: 'Complete your payment using the provided instructions.',
-      timeframe: 'Within 7 days'
-    },
-    {
-      icon: FiCheck,
-      title: 'Confirmation & Benefits',
-      description: 'Receive your sponsorship certificate and benefit activation.',
-      timeframe: '1-3 business days after payment'
-    }
-  ];
+  // Use the next steps from the API response if available, otherwise use defaults
+  const nextSteps = result?.data?.nextSteps ? 
+    [
+      {
+        icon: FiMail,
+        title: 'Check Your Email',
+        description: result.data.nextSteps[0] || 'Payment instructions and invoice have been sent to your email address.',
+        timeframe: 'Within 5 minutes'
+      },
+      {
+        icon: FiCalendar,
+        title: 'Payment Processing',
+        description: result.data.nextSteps[1] || 'Complete your payment using the provided instructions.',
+        timeframe: 'Within 7 days'
+      },
+      {
+        icon: FiCheck,
+        title: 'Confirmation & Benefits',
+        description: result.data.nextSteps[2] || 'Receive your sponsorship certificate and benefit activation.',
+        timeframe: result.data.estimatedProcessingTime || '1-3 business days after payment'
+      }
+    ] : [
+      {
+        icon: FiMail,
+        title: 'Check Your Email',
+        description: 'Payment instructions and invoice have been sent to your email address.',
+        timeframe: 'Within 5 minutes'
+      },
+      {
+        icon: FiCalendar,
+        title: 'Payment Processing',
+        description: 'Complete your payment using the provided instructions.',
+        timeframe: 'Within 7 days'
+      },
+      {
+        icon: FiCheck,
+        title: 'Confirmation & Benefits',
+        description: 'Receive your sponsorship certificate and benefit activation.',
+        timeframe: '1-3 business days after payment'
+      }
+    ];
 
   const benefits = selectedPlan ? [
     'Digital Certificate of Social Impact',
@@ -66,7 +89,7 @@ export default function SuccessStep({
             Your sponsorship application has been successfully submitted.
           </p>
           <p className="text-gray-500">
-            Application ID: <span className="font-mono font-semibold">NESA-{Date.now().toString().slice(-8)}</span>
+            Application ID: <span className="font-mono font-semibold">{result?.data?.id ? `NESA-${result.data.id.slice(-8)}` : `NESA-${Date.now().toString().slice(-8)}`}</span>
           </p>
         </motion.div>
 
@@ -191,18 +214,18 @@ export default function SuccessStep({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:partnerships@nesa.africa" 
+              href={`mailto:${result?.data?.contactInfo?.email || 'partnerships@nesa.africa'}`} 
               className="flex items-center justify-center px-4 py-2 text-yellow-600 hover:text-yellow-700 font-medium"
             >
               <FiMail className="w-4 h-4 mr-2" />
-              partnerships@nesa.africa
+              {result?.data?.contactInfo?.email || 'partnerships@nesa.africa'}
             </a>
             <a 
-              href="tel:+234-907-962-1110" 
+              href={`tel:${result?.data?.contactInfo?.phone || '+234-907-962-1110'}`} 
               className="flex items-center justify-center px-4 py-2 text-yellow-600 hover:text-yellow-700 font-medium"
             >
               <FiCalendar className="w-4 h-4 mr-2" />
-              +234-907-962-1110
+              {result?.data?.contactInfo?.phone || '+234-907-962-1110'}
             </a>
           </div>
         </div>

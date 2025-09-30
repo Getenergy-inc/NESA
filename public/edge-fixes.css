@@ -1,0 +1,132 @@
+/**
+ * Edge-specific fixes
+ * These styles will ONLY apply to Microsoft Edge browser
+ */
+
+/* Target Edge specifically using its unique identifier */
+@supports (-ms-ime-align:auto) {
+  /* Force Edge to use a solid background instead of backdrop-filter */
+  .dropdown {
+    background-color: rgba(23, 18, 10, 0.95) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Fix dropdown positioning and appearance */
+  .nav-item:hover .dropdown,
+  .nav-item:focus-within .dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    -webkit-transform: translateY(0) !important;
+    -ms-transform: translateY(0) !important;
+    transform: translateY(0) !important;
+    display: block !important;
+  }
+
+  /* Fix dropdown item hover effects */
+  .dropdown-item:hover {
+    background: rgba(234, 88, 12, 0.3) !important;
+    color: #fbbf24 !important;
+    -webkit-transform: translateX(4px) !important;
+    -ms-transform: translateX(4px) !important;
+    transform: translateX(4px) !important;
+  }
+
+  /* Fix chevron rotation */
+  .nav-item:hover .dropdown-chevron svg,
+  .nav-item:focus-within .dropdown-chevron svg {
+    -webkit-transform: rotate(180deg) !important;
+    -ms-transform: rotate(180deg) !important;
+    transform: rotate(180deg) !important;
+  }
+
+  /* Fix mobile navigation */
+  .mobile-nav-link,
+  .mobile-nav-item-link,
+  .mobile-dropdown-toggle {
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+  }
+
+  /* Fix mobile dropdown content */
+  .mobile-dropdown-content.expanded {
+    max-height: 500px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Fix hover effects */
+  .nav-item:hover {
+    -webkit-transform: translateY(-2px) !important;
+    -ms-transform: translateY(-2px) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  /* Fix underline animation */
+  .nav-item a::after {
+    -webkit-transition: width 0.3s ease !important;
+    -ms-transition: width 0.3s ease !important;
+    transition: width 0.3s ease !important;
+  }
+
+  .nav-item a:hover::after {
+    width: 100% !important;
+  }
+
+  /* Fix font rendering */
+  .nav-item a,
+  .dropdown-item,
+  .mobile-nav-link,
+  .mobile-nav-item-link,
+  .mobile-dropdown-toggle {
+    font-weight: 500 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+  }
+}
+
+/* Target Edge using the class added by our JavaScript detection */
+.edge-browser .dropdown {
+  background-color: rgba(23, 18, 10, 0.95) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.edge-browser .nav-item:hover .dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-transform: translateY(0) !important;
+  -ms-transform: translateY(0) !important;
+  transform: translateY(0) !important;
+}
+
+.edge-browser .dropdown-item:hover {
+  background: rgba(234, 88, 12, 0.3) !important;
+  color: #fbbf24 !important;
+  -webkit-transform: translateX(4px) !important;
+  -ms-transform: translateX(4px) !important;
+  transform: translateX(4px) !important;
+}
+
+.edge-browser .nav-item:hover .dropdown-chevron svg {
+  -webkit-transform: rotate(180deg) !important;
+  -ms-transform: rotate(180deg) !important;
+  transform: rotate(180deg) !important;
+}
+
+/* Force hardware acceleration in Edge */
+.edge-browser .dropdown,
+.edge-browser .nav-item,
+.edge-browser .dropdown-item,
+.edge-browser .dropdown-chevron svg {
+  -webkit-transform: translateZ(0) !important;
+  -ms-transform: translateZ(0) !important;
+  transform: translateZ(0) !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-perspective: 1000px !important;
+  perspective: 1000px !important;
+}

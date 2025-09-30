@@ -1,0 +1,91 @@
+/**
+ * Edge-specific spacing for the navbar
+ */
+
+/* Add padding to the body to account for the two-layer navbar */
+body {
+  padding-top: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding-top: 0 !important;
+  }
+}
+
+/* Ensure the navbar stays fixed at the top */
+.edge-navbar nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+}
+
+/* Ensure proper spacing between navbar items */
+.edge-navbar .space-x-6 > * {
+  margin-left: 1.5rem !important;
+}
+
+.edge-navbar .space-x-6 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.edge-navbar .space-x-4 > * {
+  margin-left: 1rem !important;
+}
+
+.edge-navbar .space-x-4 > *:first-child {
+  margin-left: 0 !important;
+}
+
+/* Ensure proper spacing for the logo */
+.edge-navbar .space-x-16 > * {
+  margin-left: 4rem !important;
+}
+
+.edge-navbar .space-x-16 > *:first-child {
+  margin-left: 0 !important;
+}
+
+/* Ensure proper spacing for the secondary navbar */
+.edge-navbar .justify-center {
+  justify-content: center !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1536px) {
+  .edge-navbar .text-gray-200 {
+    font-size: 0.975rem !important;
+    padding: 0.5rem 0.5rem !important;
+  }
+  
+  .edge-navbar .text-gray-300 {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0.5rem !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .edge-navbar .text-gray-200 {
+    font-size: 0.925rem !important;
+    padding: 0.5rem 0.4rem !important;
+  }
+  
+  .edge-navbar .text-gray-300 {
+    font-size: 0.8rem !important;
+    padding: 0.5rem 0.4rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .edge-navbar .text-gray-200 {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 0.3rem !important;
+  }
+  
+  .edge-navbar .text-gray-300 {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.3rem !important;
+  }
+}

@@ -124,7 +124,7 @@ const MediaSection = () => {
                 </div>
               </Link>
               
-              <Link href="/media" className="group">
+              <Link href="/nesa-media" className="group">
                 <div
                   className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border-2 border-primaryGold text-darkBrown px-8 py-4 rounded-full font-semibold hover:bg-primaryGold/10 transition-all duration-300 hover:scale-102"
                 >
@@ -148,7 +148,7 @@ const MediaSection = () => {
                   className="w-full h-full object-cover rounded-xl"
                   controls
                   preload="metadata"
-                  muted
+                  autoPlay
                   playsInline
                   aria-label="NESA Africa promotional video - Learn about our mission and impact"
                   onError={(e) => {
