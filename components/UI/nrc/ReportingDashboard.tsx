@@ -262,7 +262,7 @@ const ReportingDashboard: React.FC<ReportingDashboardProps> = ({
           <Button
             text="Refresh"
             onClick={loadData}
-            variant="outline"
+            variant="outlined"
             className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white flex items-center gap-2"
           >
             <RefreshCw className="w-4 h-4" />

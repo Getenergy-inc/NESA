@@ -292,7 +292,7 @@ const NRCManagement: React.FC = () => {
             </select>
             <Button
               text="Export Data"
-              variant="outline"
+              variant="outlined"
               className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white flex items-center gap-2"
             />
           </div>
@@ -352,7 +352,7 @@ const NRCManagement: React.FC = () => {
                   <div className="flex gap-2">
                     <Button
                       text="View"
-                      variant="outline"
+                      variant="outlined"
                       className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-3 py-1 text-sm"
                     />
                     <Button
@@ -407,7 +407,7 @@ const NRCManagement: React.FC = () => {
                 <div className="flex gap-2 ml-4">
                   <Button
                     text="View Full"
-                    variant="outline"
+                    variant="outlined"
                     className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-3 py-1 text-sm flex items-center gap-1"
                   />
                   <Button
@@ -421,7 +421,7 @@ const NRCManagement: React.FC = () => {
                     text="Reject"
                     onClick={() => handleApplicationReview(application.id, 'reject')}
                     disabled={loading}
-                    variant="outline"
+                    variant="outlined"
                     className="border-red-500 text-red-600 hover:bg-red-50 px-3 py-1 text-sm flex items-center gap-1"
                   />
                 </div>
@@ -448,7 +448,7 @@ const NRCManagement: React.FC = () => {
             <div className="flex items-center gap-4">
               <Button
                 text="Export Report"
-                variant="outline"
+                variant="outlined"
                 className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white flex items-center gap-2"
               />
               <Button

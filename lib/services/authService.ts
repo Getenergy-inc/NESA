@@ -59,6 +59,17 @@ interface ResetPasswordResponse {
 export const login = async (credentials: Credentials): Promise<AuthResponse> => {
   try {
     const response = await apiClient.post('/api/auths/login', credentials);
+    
+    // Handle new unified response format
+    if (response.data.success && response.data.data) {
+      return {
+        message: response.data.message,
+        token: response.data.data.tokens?.accessToken,
+        user: response.data.data.user
+      };
+    }
+    
+    // Fallback for legacy response format
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Invalid email or password');
@@ -211,9 +222,25 @@ export const signupFlow = async (userData: SignupFormData): Promise<SignupRespon
 
     // Map backend response to frontend format
     return mapBackendResponseToFrontend(response);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Signup flow failed:', error);
-    throw new Error(error instanceof Error ? error.message : 'Signup failed');
+    
+    // Handle 409 conflict (user already exists)
+    if (error.response?.status === 409) {
+      return {
+        success: false,
+        message: 'User already exists. Please verify your email or try logging in.',
+        user: undefined
+      };
+    }
+    
+    // Handle other errors
+    const errorMessage = error.response?.data?.message || error.message || 'Signup failed';
+    return {
+      success: false,
+      message: errorMessage,
+      user: undefined
+    };
   }
 };
 

@@ -1,16 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
+import dbConnect from '@/lib/dbConnect';
+import Endorsement from '@/lib/models/Endorsement';
 
 // Route segment config - prevent static generation
 export const dynamic = 'force-dynamic';
 export const revalidate = false;
 
-
-// Mock database - In production, this would be replaced with actual database
-// This should be shared with the submit route in a real implementation
-let endorsements: any[] = [];
-
 export async function POST(request: NextRequest) {
   try {
+    await dbConnect();
+
     const body = await request.json();
     const { email, verification_token } = body;
 
@@ -23,18 +22,17 @@ export async function POST(request: NextRequest) {
     }
 
     // Find endorsement by email and token
-    const endorsementIndex = endorsements.findIndex(
-      endorsement => endorsement.email === email && endorsement.verification_token === verification_token
-    );
+    const endorsement = await Endorsement.findOne({
+      email,
+      verification_token
+    });
 
-    if (endorsementIndex === -1) {
+    if (!endorsement) {
       return NextResponse.json(
         { success: false, message: 'Invalid verification token or email' },
         { status: 404 }
       );
     }
-
-    const endorsement = endorsements[endorsementIndex];
 
     // Check if already verified
     if (endorsement.verified) {
@@ -45,18 +43,17 @@ export async function POST(request: NextRequest) {
     }
 
     // Update verification status
-    endorsements[endorsementIndex] = {
-      ...endorsement,
-      verified: true,
-      status: 'pending_approval', // Move to next stage after email verification
-      updated_at: new Date().toISOString()
-    };
+    endorsement.verified = true;
+    endorsement.status = 'pending_approval'; // Move to next stage after email verification
+    endorsement.updated_at = new Date().toISOString();
+
+    await endorsement.save();
 
     return NextResponse.json({
       success: true,
       message: 'Email verified successfully',
       endorsement: {
-        id: endorsement.id,
+        id: (endorsement._id as any).toString(),
         organization_name: endorsement.organization_name,
         email: endorsement.email,
         status: 'pending_approval',
@@ -76,6 +73,8 @@ export async function POST(request: NextRequest) {
 // GET endpoint to check verification status
 export async function GET(request: NextRequest) {
   try {
+    await dbConnect();
+
     const { searchParams } = new URL(request.url);
     const email = searchParams.get('email');
     const token = searchParams.get('token');
@@ -87,9 +86,10 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const endorsement = endorsements.find(
-      endorsement => endorsement.email === email && endorsement.verification_token === token
-    );
+    const endorsement = await Endorsement.findOne({
+      email,
+      verification_token: token
+    });
 
     if (!endorsement) {
       return NextResponse.json(
@@ -101,7 +101,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       endorsement: {
-        id: endorsement.id,
+        id: (endorsement._id as any).toString(),
         organization_name: endorsement.organization_name,
         email: endorsement.email,
         verified: endorsement.verified,

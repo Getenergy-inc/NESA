@@ -237,6 +237,7 @@ export interface SignupContextType {
   submitForm: () => Promise<SignupResponse>;
   isLoading: boolean;
   error: string | null;
+  clearCache: () => void;
 }
 
 // Component prop types

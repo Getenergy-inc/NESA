@@ -57,6 +57,11 @@ export interface SecondaryNavLink {
   icon?: string;
   description: string;
   external?: boolean;
+  children?: {
+    label: string;
+    path: string;
+    icon?: string;
+  }[];
 }
 
 // Level 3 CTA Navigation Interface

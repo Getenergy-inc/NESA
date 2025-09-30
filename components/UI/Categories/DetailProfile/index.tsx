@@ -44,7 +44,6 @@ const ProfileCard = ({ key, data }: { key: any; data: any }) => {
                 text="Review"
                 fullWidth
                 variant="filled"
-                rounded="lg"
                 size="medium"
                 // onClick={() => ""}
               />

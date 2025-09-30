@@ -32,7 +32,10 @@
   .grid {
     display: grid;
     flex-direction: row;
-    align-items: center;  
+  }
+  /* Apply align-self to children instead of align-items on grid container */
+  .grid > * {
+    align-self: center;
   }
   .image{
     width: 70%;

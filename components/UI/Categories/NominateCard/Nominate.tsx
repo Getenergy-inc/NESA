@@ -35,7 +35,6 @@ const Nominate = ({ key, data }: { key: any; data: any }) => {
               text="See Nominees"
               fullWidth
               variant="filled"
-              rounded="lg"
               size="medium"
               onClick={() => {
                 console.log("Button clicked");

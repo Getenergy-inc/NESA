@@ -1,0 +1,116 @@
+/* 
+ * EDGE-ONLY STYLES
+ * These styles will completely override the navbar styling for Edge
+ * with a simpler, more compatible version
+ */
+
+/* Reset all transitions for better Edge compatibility */
+.nav-item,
+.dropdown,
+.dropdown-item,
+.dropdown-chevron,
+.dropdown-chevron svg,
+.nav-item a::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Basic hover effect for nav items */
+.nav-item:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  background-color: rgba(23, 18, 10, 0.95) !important;
+  border: 1px solid rgba(234, 88, 12, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  z-index: 1000 !important;
+  min-width: 280px !important;
+  padding: 12px 0 !important;
+  border-top: 3px solid #ea580c !important;
+  transform: none !important;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Dropdown item styling */
+.dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 16px 20px !important;
+  color: #e5e7eb !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+  min-height: 52px !important;
+}
+
+/* Dropdown item hover effect */
+.dropdown-item:hover {
+  background: rgba(234, 88, 12, 0.3) !important;
+  color: #fbbf24 !important;
+  transform: translateX(4px) !important;
+}
+
+/* Dropdown chevron styling */
+.dropdown-chevron {
+  margin-left: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  height: 16px !important;
+  color: #9ca3af !important;
+}
+
+/* Rotate chevron on hover */
+.nav-item:hover .dropdown-chevron svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Underline effect for nav items */
+.nav-item a::after {
+  content: '' !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 2px !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  background-color: #FFB92E !important;
+}
+
+.nav-item a:hover::after {
+  width: 100% !important;
+}
+
+/* Mobile navigation fixes */
+@media (max-width: 1024px) {
+  .mobile-dropdown-content {
+    transition: none !important;
+  }
+  
+  .mobile-dropdown-content.expanded {
+    max-height: 500px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .mobile-nav-item:active,
+  .mobile-dropdown-toggle:active,
+  .mobile-nav-item-link:active {
+    transform: scale(0.98) !important;
+  }
+}
