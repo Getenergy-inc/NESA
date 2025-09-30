@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
-import { login, verifyOTP, signup, resetPassword as resetPasswordService, signupFlow, sendOTP, getMe } from "../services/authService";
-import { getUserById, updateUserById } from "../services/userService";
+import {
+  login,
+  verifyOTP,
+  signup,
+  resetPassword as resetPasswordService,
+  signupFlow,
+  sendOTP,
+  getMe,
+} from "../services/authService";
+import { updateUserById } from "../services/userService";
 
 interface Credentials {
   email: string;
   password: string;
-}
-
-interface OTPData {
-  email: string;
-  otp: string;
 }
 
 interface UserData {
@@ -38,30 +41,31 @@ interface User {
   [key: string]: any;
 }
 
-// Cookie utility functions
+// Cookie utility functions with better SSR handling
 const setCookie = (name: string, value: string, days: number) => {
-  if (typeof document === 'undefined') return;
-  
+  if (typeof window === "undefined" || typeof document === "undefined") return;
+
   const expires = new Date();
   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
   document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
 };
 
 const getCookie = (name: string): string | null => {
-  if (typeof document === 'undefined') return null;
-  
+  if (typeof window === "undefined" || typeof document === "undefined")
+    return null;
+
   const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
+  const ca = document.cookie.split(";");
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    while (c.charAt(0) === " ") c = c.substring(1, c.length);
     if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
   }
   return null;
 };
 
 const deleteCookie = (name: string) => {
-  if (typeof document === 'undefined') return;
+  if (typeof window === "undefined" || typeof document === "undefined") return;
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 };
 
@@ -71,18 +75,20 @@ export const useAuth = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Initialize auth state from cookies
+  // Initialize auth state from cookies (client-side only)
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const token = getCookie("token");
     const userId = getCookie("userId");
     const emailVerified = getCookie("emailVerified");
-    
+
     if (token && userId) {
       setIsAuthenticated(true);
       // Try to get user data from cookie or fetch from API
       const userData = {
         id: userId,
-        emailVerified: emailVerified === "true"
+        emailVerified: emailVerified === "true",
       };
       setUser(userData as User);
     }
@@ -109,11 +115,16 @@ export const useAuth = () => {
   const signIn = async (credentials: Credentials) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const data = await login(credentials);
-      if (data.token) {
-        setAuthenticationState(data.user, data.token);
+
+      // The auth service already handles the response transformation
+      const token = data.token;
+      const user = data.user;
+
+      if (token) {
+        setAuthenticationState(user, token);
       }
       return data;
     } catch (err: unknown) {
@@ -128,7 +139,7 @@ export const useAuth = () => {
   const verifyEmail = async (email: string, otp: string) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const data = await verifyOTP({ email, otp });
       if (data.token) {
@@ -139,7 +150,8 @@ export const useAuth = () => {
       }
       return data;
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : "OTP verification failed";
+      const errorMessage =
+        err instanceof Error ? err.message : "OTP verification failed";
       setError(errorMessage);
       throw err;
     } finally {
@@ -150,7 +162,7 @@ export const useAuth = () => {
   const register = async (userData: UserData) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const data = await signup(userData);
       if (data.token) {
@@ -160,7 +172,8 @@ export const useAuth = () => {
       }
       return data;
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : "Registration failed";
+      const errorMessage =
+        err instanceof Error ? err.message : "Registration failed";
       setError(errorMessage);
       throw err;
     } finally {
@@ -172,19 +185,20 @@ export const useAuth = () => {
   const registerWithFlow = async (userData: any) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const data = await signupFlow(userData);
       if (data.token) {
         // Don't set authenticated state yet - user needs email verification
         setCookie("tempToken", data.token, 1);
         setCookie("tempUserId", data.user?.id || "", 1);
-        setUser(data.user as User || null);
+        setUser((data.user as User) || null);
         setIsAuthenticated(false); // Requires email verification
       }
       return data;
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : "Registration failed";
+      const errorMessage =
+        err instanceof Error ? err.message : "Registration failed";
       setError(errorMessage);
       throw err;
     } finally {
@@ -193,15 +207,19 @@ export const useAuth = () => {
   };
 
   // Send OTP for various purposes
-  const sendOTPCode = async (email: string, purpose: 'LOGIN' | 'VERIFY_EMAIL' | 'PASSWORD_RESET' = 'LOGIN') => {
+  const sendOTPCode = async (
+    email: string,
+    purpose: "LOGIN" | "VERIFY_EMAIL" | "PASSWORD_RESET" = "LOGIN"
+  ) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const data = await sendOTP(email, purpose);
       return data;
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : "Failed to send OTP";
+      const errorMessage =
+        err instanceof Error ? err.message : "Failed to send OTP";
       setError(errorMessage);
       throw err;
     } finally {
@@ -213,12 +231,13 @@ export const useAuth = () => {
   const getEnhancedProfile = async () => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const data = await getMe();
       return data;
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : "Failed to fetch profile";
+      const errorMessage =
+        err instanceof Error ? err.message : "Failed to fetch profile";
       setError(errorMessage);
       throw err;
     } finally {
@@ -229,7 +248,7 @@ export const useAuth = () => {
   const updateUser = async (userData: any) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const userId = getUserId(); // Use utility function
       const data = await updateUserById(userId, userData);
@@ -248,7 +267,7 @@ export const useAuth = () => {
     setUser(null);
     setIsAuthenticated(false);
     setError(null);
-    
+
     // Clear all auth cookies
     deleteCookie("token");
     deleteCookie("userId");
@@ -260,12 +279,13 @@ export const useAuth = () => {
   const resetPassword = async (email: string) => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const data = await resetPasswordService(email);
       return data;
     } catch (err: unknown) {
-      const errorMessage = err instanceof Error ? err.message : "Password reset failed";
+      const errorMessage =
+        err instanceof Error ? err.message : "Password reset failed";
       setError(errorMessage);
       throw err;
     } finally {
@@ -295,6 +315,6 @@ export const useAuth = () => {
     getToken,
     logout,
     resetPassword,
-    setAuthenticationState
+    setAuthenticationState,
   };
 };

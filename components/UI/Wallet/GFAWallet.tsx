@@ -289,7 +289,7 @@ const GFAWallet: React.FC<GFAWalletProps> = ({
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Button
             text="Top Up USD"
-            variant="outline"
+            variant="outlined"
             size="small"
             onClick={() => handleTopUp(100, 'usd')}
             className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white"
@@ -297,7 +297,7 @@ const GFAWallet: React.FC<GFAWalletProps> = ({
           />
           <Button
             text="Buy AGC"
-            variant="outline"
+            variant="outlined"
             size="small"
             onClick={() => handleTopUp(50, 'agc')}
             className="border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white"
@@ -305,7 +305,7 @@ const GFAWallet: React.FC<GFAWalletProps> = ({
           />
           <Button
             text="Add NGN"
-            variant="outline"
+            variant="outlined"
             size="small"
             onClick={() => handleTopUp(50000, 'ngn')}
             className="border-green-500 text-green-600 hover:bg-green-500 hover:text-white"
@@ -313,7 +313,7 @@ const GFAWallet: React.FC<GFAWalletProps> = ({
           />
           <Button
             text="Refresh"
-            variant="outline"
+            variant="outlined"
             size="small"
             onClick={fetchWalletData}
             className="border-gray-300 text-gray-700 hover:bg-gray-50"

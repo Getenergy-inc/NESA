@@ -34,8 +34,24 @@ import {
 } from 'lucide-react';
 import Button from '@/components/Common/Button';
 import { useNRCStatus } from '@/lib/hooks/useNRCStatus';
-import { getVolunteerNominees, type NomineeProfile } from '@/lib/services/mockNRCService';
+import nrcService from '@/lib/services/nrcService';
 import NomineeUploadForm from './NomineeUploadForm';
+
+// Define NomineeProfile interface locally since we're removing the mock service
+export interface NomineeProfile {
+  id: string;
+  fullName: string;
+  country: string;
+  region: string;
+  awardCategory: string;
+  subcategory: string;
+  achievementSummary: string;
+  impactMetrics: string;
+  sdgAlignment: string[];
+  status: 'draft' | 'submitted' | 'approved' | 'rejected';
+  dateCreated: string;
+  completionScore: number;
+}
 
 interface Nominee {
   id: string;
@@ -75,10 +91,8 @@ const NRCDashboard: React.FC = () => {
 
     setLoading(true);
     try {
-      const response = await getVolunteerNominees(volunteer.id);
-      if (response.success) {
-        setNominees(response.data || []);
-      }
+      const nominees = await nrcService.getVolunteerNominees(volunteer.id);
+      setNominees(nominees || []);
     } catch (error) {
       console.error('Error loading nominees:', error);
     } finally {
@@ -149,7 +163,7 @@ const NRCDashboard: React.FC = () => {
       const matchesSearch = nominee.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            nominee.awardCategory.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            nominee.country.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           (nominee.organizationName && nominee.organizationName.toLowerCase().includes(searchQuery.toLowerCase()));
+                           nominee.achievementSummary.toLowerCase().includes(searchQuery.toLowerCase());
 
       const matchesStatus = filterStatus === 'all' || nominee.status === filterStatus;
       const matchesCategory = filterCategory === 'all' || nominee.awardCategory === filterCategory;
@@ -632,7 +646,7 @@ const NRCDashboard: React.FC = () => {
             <Button
               text="View All Nominees"
               onClick={() => setActiveTab('nominees')}
-              variant="outline"
+              variant="outlined"
               className="flex-1 border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white"
             />
             <Button
@@ -929,9 +943,7 @@ const NRCDashboard: React.FC = () => {
                         </span>
                       </div>
                       <p className="text-gray-600 mb-2">{nominee.awardCategory}</p>
-                      {nominee.organizationName && (
-                        <p className="text-sm text-gray-500 mb-2">{nominee.organizationName}</p>
-                      )}
+                      <p className="text-sm text-gray-500 mb-2">{nominee.subcategory}</p>
                       <div className="flex items-center gap-4 text-sm text-gray-500">
                         <span className="flex items-center gap-1">
                           <Globe className="w-4 h-4" />
@@ -960,7 +972,7 @@ const NRCDashboard: React.FC = () => {
                       <div className="flex gap-2">
                         <Button
                           text="Edit"
-                          variant="outline"
+                          variant="outlined"
                           className="border-[#ea580c] text-[#ea580c] hover:bg-[#ea580c] hover:text-white px-3 py-1 text-sm"
                         />
                         <Button

@@ -117,7 +117,7 @@ const SponsorDashboard: React.FC = () => {
             <div className="flex gap-3">
               <Button
                 text="Marketing Kit"
-                variant="outline"
+                variant="outlined"
                 onClick={downloadMarketingKit}
                 className="flex items-center gap-2"
                 icon={<Download className="w-4 h-4" />}

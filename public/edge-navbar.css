@@ -1,0 +1,83 @@
+/**
+ * Edge-specific navbar styles
+ * These styles are only loaded for Microsoft Edge browser
+ */
+
+.edge-navbar {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper spacing for navbar */
+.edge-navbar {
+  padding-top: 0; /* Space for fixed navbar */
+}
+
+/* Dropdown styling */
+.edge-navbar .group {
+  position: relative;
+}
+
+/* Transition for dropdown visibility */
+.edge-navbar .group > div {
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+}
+
+/* Dropdown hover effect */
+.edge-navbar .group:hover > div {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* Chevron rotation */
+.edge-navbar .group:hover svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Text color transitions */
+.edge-navbar a, 
+.edge-navbar button {
+  transition: color 0.2s !important;
+}
+
+/* Mobile menu transition */
+.edge-navbar .fixed {
+  transition: opacity 0.3s !important;
+}
+
+/* Mobile sidebar transition */
+.edge-navbar .fixed > div {
+  transition: transform 0.3s !important;
+}
+
+/* Ensure proper color for deepGold */
+.edge-navbar .text-deepGold {
+  color: #FFB92E !important;
+}
+
+.edge-navbar .hover\:text-deepGold:hover {
+  color: #FFB92E !important;
+}
+
+.edge-navbar .bg-deepGold {
+  background-color: #FFB92E !important;
+}
+
+.edge-navbar .hover\:bg-amber-500:hover {
+  background-color: #f59e0b !important;
+}
+
+/* Force hardware acceleration */
+.edge-navbar .group > div,
+.edge-navbar .transition-transform,
+.edge-navbar .transition-all {
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}

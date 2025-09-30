@@ -154,7 +154,7 @@ const JudgeSignupPage: React.FC = () => {
             onClick={() => router.push('/judgeapply')}
             className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
           >
-            Apply as Judge
+            Apply as a Judge
           </button>
         </div>
       </div>

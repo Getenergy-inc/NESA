@@ -1,0 +1,43 @@
+/**
+ * Edge-specific navbar dropdown fix
+ * This ensures dropdown menus are fully opaque and properly overlay the second navbar
+ */
+
+/* Make all dropdown backgrounds fully opaque */
+.edge-navbar .absolute {
+  background-color: #17120a !important;
+  z-index: 6000 !important;
+}
+
+/* Make all dropdown items fully opaque */
+.edge-navbar .flex.items-center.px-4.py-3 {
+  background-color: #1a140b !important;
+  z-index: 6001 !important;
+}
+
+/* Make dropdown item hover state fully opaque */
+.edge-navbar .flex.items-center.px-4.py-3:hover {
+  background-color: #231b0f !important;
+}
+
+/* Ensure proper z-index for the navbar layers */
+.edge-navbar nav {
+  z-index: 5000 !important;
+}
+
+/* Ensure the second navbar is below the dropdowns */
+.edge-navbar .bg-gray-900 {
+  z-index: 4000 !important;
+}
+
+/* Ensure dropdowns are visible above second navbar */
+.edge-navbar .group:hover .absolute {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Disable pointer events on the second navbar when dropdown is open */
+.edge-navbar .group:hover + .bg-gray-900,
+.edge-navbar .group:hover ~ .bg-gray-900 {
+  pointer-events: none !important;
+}

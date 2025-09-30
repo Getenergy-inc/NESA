@@ -345,7 +345,7 @@ const AwardCategories = () => {
         </motion.div>
 
         {/* Powered by GFA Wallet – AfriGold Coin (AGC) */}
-        <motion.div
+        {/* <motion.div
           variants={itemVariants}
           className="bg-gradient-to-r from-whiteGold via-white to-xlGold rounded-2xl shadow-xl border border-primaryGold/30 p-8 relative overflow-hidden"
         >
@@ -388,7 +388,7 @@ const AwardCategories = () => {
               ))}
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );
