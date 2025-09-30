@@ -11,7 +11,7 @@ export interface SubCategory {
   description: string;
   nominees: Nominee[];
 }
- 
+
 export interface Region {
   name: string;
   subCategories: SubCategory[];
@@ -4132,7 +4132,7 @@ export interface Category {
                 ]
               },
     {
-      title: "Political Leaders in Nigeria 2025 Recognition Award for the Best Educational Support Services",
+      title: "Political Leaders in Nigeria 2024 Recognition Award for the Best Educational Support Services",
       description: "This award recognizes political leaders at both state and federal levels who have made outstanding contributions to education in Nigeria through various initiatives, policies, and support programs that advance quality education for all.",
       subCategories: [
         {
@@ -4148,21 +4148,7 @@ export interface Category {
             { name: "Ahmadu Fintiri", image: "/images/political/ahmadu-fintiri.png", achievement: "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.", state: "Adamawa", country: "Nigeria" },
             { name: "Bello Matawalle", image: "/images/political/bello-matawalle.png", achievement: "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.", state: "Zamfara", country: "Nigeria" },
             { name: "Abdullahi Ganduje", image: "/images/political/abdullahi-ganduje.png", achievement: "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.", state: "Kano", country: "Nigeria" },
-            { name: "Nasir El-Rufai", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" },
-            { name: "Samuel Ortom", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "Yahaya Bello", image: "/images/political/ahmadu-fintiri.png", achievement: "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.", state: "Adamawa", country: "Nigeria" },
-            { name: "Philip Aduda", image: "/images/political/bello-matawalle.png", achievement: "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.", state: "Zamfara", country: "Nigeria" },
-            { name: "Smart Adeyemi", image: "/images/political/abdullahi-ganduje.png", achievement: "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.", state: "Kano", country: "Nigeria" },
-            { name: "Abubakar Sani Bello ", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" },
-            { name: "Bukola Saraki", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" },
-            { name: "Dino Melaye", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "Abdulfatah Ahmed", image: "/images/political/ahmadu-fintiri.png", achievement: "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.", state: "Adamawa", country: "Nigeria" },
-            { name: "Babagana Zulum", image: "/images/political/bello-matawalle.png", achievement: "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.", state: "Zamfara", country: "Nigeria" },
-            { name: "Ali Ndume", image: "/images/political/abdullahi-ganduje.png", achievement: "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.", state: "Kano", country: "Nigeria" },
-            { name: "Aisha Alhassan", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" },
-            { name: "Binta Masi Garba", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Bala Mohammed", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" }
-        
+            { name: "Nasir El-Rufai", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" }
           ]
         },
         {
@@ -4178,21 +4164,7 @@ export interface Category {
             { name: "Ben Ayade", image: "/images/political/ben-ayade.png", achievement: "Established multiple technical institutes and built modern school facilities across Cross River State.", state: "Cross River", country: "Nigeria" },
             { name: "Douye Diri", image: "/images/political/douye-diri.png", achievement: "Constructed new schools and renovated existing facilities, focusing on flood-resistant infrastructure in Bayelsa State.", state: "Bayelsa", country: "Nigeria" },
             { name: "Hope Uzodimma", image: "/images/political/hope-uzodimma.png", achievement: "Built new schools and established vocational training centers with modern equipment across Imo State.", state: "Imo", country: "Nigeria" },
-            { name: "Rotimi Akeredolu", image: "/images/political/rotimi-akeredolu.png", achievement: "Constructed multiple schools and established the Ondo State University of Medical Sciences with state-of-the-art facilities.", state: "Ondo", country: "Nigeria" },
-            { name: "Yahaya Bello", image: "/images/political/babajide-sanwo-olu.png", achievement: "Constructed over 100 new schools and renovated 500+ existing schools, including state-of-the-art science laboratories and ICT centers.", state: "Lagos", country: "Nigeria" },
-            { name: "Smart Adeyemi", image: "/images/political/godwin-obaseki.png", achievement: "Built 200+ new classrooms and established digital learning centers in all 192 wards of Edo State through the EdoBEST program.", state: "Edo", country: "Nigeria" },
-            { name: "Abubakar Sani Bello ", image: "/images/political/seyi-makinde.png", achievement: "Constructed 300+ new classrooms, renovated 1,000+ schools, and built modern libraries across Oyo State.", state: "Oyo", country: "Nigeria" },
-            { name: "Ahmadu Fintiri", image: "/images/political/ifeanyi-okowa.png", achievement: "Built 50+ new secondary schools and established technical colleges with modern workshops and laboratories in Delta State.", state: "Delta", country: "Nigeria" },
-            { name: "Binta Masi Garba", image: "/images/political/willie-obiano.png", achievement: "Constructed over 80 new schools and established the Anambra State University of Technology with world-class facilities.", state: "Anambra", country: "Nigeria" },
-            { name: "Bala Mohammed", image: "/images/political/dave-umahi.png", achievement: "Built 50+ model schools with modern facilities and established the King David University of Medical Sciences.", state: "Ebonyi", country: "Nigeria" },
-            { name: "Abdullahi Ganduje ", image: "/images/political/ben-ayade.png", achievement: "Established multiple technical institutes and built modern school facilities across Cross River State.", state: "Cross River", country: "Nigeria" },
-            { name: "Kabiru Gaya", image: "/images/political/douye-diri.png", achievement: "Constructed new schools and renovated existing facilities, focusing on flood-resistant infrastructure in Bayelsa State.", state: "Bayelsa", country: "Nigeria" },
-            { name: "Atiku Bagudu", image: "/images/political/hope-uzodimma.png", achievement: "Built new schools and established vocational training centers with modern equipment across Imo State.", state: "Imo", country: "Nigeria" },
-            { name: "Rochas Okorocha", image: "/images/political/rotimi-akeredolu.png", achievement: "Constructed multiple schools and established the Ondo State University of Medical Sciences with state-of-the-art facilities.", state: "Ondo", country: "Nigeria" },
-            { name: "Ifeanyi Ugwuanyi", image: "/images/political/ben-ayade.png", achievement: "Established multiple technical institutes and built modern school facilities across Cross River State.", state: "Cross River", country: "Nigeria" },
-            { name: "James Manager", image: "/images/political/douye-diri.png", achievement: "Constructed new schools and renovated existing facilities, focusing on flood-resistant infrastructure in Bayelsa State.", state: "Bayelsa", country: "Nigeria" },
-            { name: "Ibikunle Amosun", image: "/images/political/hope-uzodimma.png", achievement: "Built new schools and established vocational training centers with modern equipment across Imo State.", state: "Imo", country: "Nigeria" },
-            { name: "Kayode Fayemi ", image: "/images/political/rotimi-akeredolu.png", achievement: "Constructed multiple schools and established the Ondo State University of Medical Sciences with state-of-the-art facilities.", state: "Ondo", country: "Nigeria" }
+            { name: "Rotimi Akeredolu", image: "/images/political/rotimi-akeredolu.png", achievement: "Constructed multiple schools and established the Ondo State University of Medical Sciences with state-of-the-art facilities.", state: "Ondo", country: "Nigeria" }
           ]
         },
         {
@@ -4208,24 +4180,7 @@ export interface Category {
             { name: "Boss Mustapha", image: "/images/political/boss-mustapha.png", achievement: "Coordinated inter-ministerial efforts for education policy implementation and COVID-19 education response strategies.", state: "Adamawa", country: "Nigeria" },
             { name: "Hadi Sirika", image: "/images/political/hadi-sirika.png", achievement: "Promoted aviation education and established training programs for technical skills in the aviation sector.", state: "Katsina", country: "Nigeria" },
             { name: "Osagie Ehanire", image: "/images/political/osagie-ehanire.png", achievement: "Advocated for health education policies and medical training programs to improve healthcare education.", state: "Edo", country: "Nigeria" },
-            { name: "Babatunde Fashola", image: "/images/political/babatunde-fashola.png", achievement: "Promoted policies for technical education and infrastructure development supporting educational advancement.", state: "Lagos", country: "Nigeria" },
-            { name: "Bukola Saraki ", image: "/images/political/femi-gbajabiamila.png", achievement: "As Speaker of the House of Representatives, championed the passage of multiple education bills and increased budgetary allocation to education.", state: "Lagos", country: "Nigeria" },
-            { name: "Dino Melaye", image: "/images/political/ahmad-lawan.png", achievement: "As Senate President, led legislative efforts to improve education funding and policy reforms at the federal level.", state: "Yobe", country: "Nigeria" },
-            { name: "Abdulfatah Ahmed ", image: "/images/political/adamu-adamu.png", achievement: "As Minister of Education, implemented key policy reforms including the National Policy on Education and improved JAMB processes.", state: "Bauchi", country: "Nigeria" },
-            { name: "Mohammed Abubakar ", image: "/images/political/lai-mohammed.png", achievement: "Advocated for digital literacy policies and promoted the integration of technology in education across Nigeria.", state: "Kwara", country: "Nigeria" },
-            { name: "Ali Ndume", image: "/images/political/zainab-ahmed.png", achievement: "As Minister of Finance, advocated for increased education budget allocation and transparent funding mechanisms.", state: "Kaduna", country: "Nigeria" },
-            { name: "Shehu Sani", image: "/images/political/abubakar-malami.png", achievement: "Championed legal frameworks for education rights and anti-corruption measures in the education sector.", state: "Kebbi", country: "Nigeria" },
-            { name: "Aminu Masari", image: "/images/political/boss-mustapha.png", achievement: "Coordinated inter-ministerial efforts for education policy implementation and COVID-19 education response strategies.", state: "Adamawa", country: "Nigeria" },
-            { name: "Nasir El-Rufai", image: "/images/political/hadi-sirika.png", achievement: "Promoted aviation education and established training programs for technical skills in the aviation sector.", state: "Katsina", country: "Nigeria" },
-            { name: "Enyinnaya Abaribe", image: "/images/political/osagie-ehanire.png", achievement: "Advocated for health education policies and medical training programs to improve healthcare education.", state: "Edo", country: "Nigeria" },
-            { name: "Ifeanyi Ugwuanyi", image: "/images/political/babatunde-fashola.png", achievement: "Promoted policies for technical education and infrastructure development supporting educational advancement.", state: "Lagos", country: "Nigeria" },
-            { name: "Dave Umahi", image: "/images/political/zainab-ahmed.png", achievement: "As Minister of Finance, advocated for increased education budget allocation and transparent funding mechanisms.", state: "Kaduna", country: "Nigeria" },
-            { name: "Ben Murray-Bruce", image: "/images/political/abubakar-malami.png", achievement: "Championed legal frameworks for education rights and anti-corruption measures in the education sector.", state: "Kebbi", country: "Nigeria" },
-            { name: "Godwin Obaseki", image: "/images/political/boss-mustapha.png", achievement: "Coordinated inter-ministerial efforts for education policy implementation and COVID-19 education response strategies.", state: "Adamawa", country: "Nigeria" },
-            { name: "Nyesom Wike ", image: "/images/political/hadi-sirika.png", achievement: "Promoted aviation education and established training programs for technical skills in the aviation sector.", state: "Katsina", country: "Nigeria" },
-            { name: "Bola Ahmed Tinubu ", image: "/images/political/osagie-ehanire.png", achievement: "Advocated for health education policies and medical training programs to improve healthcare education.", state: "Edo", country: "Nigeria" },
-            { name: "Babajide Sanwo-Olu ", image: "/images/political/babatunde-fashola.png", achievement: "Promoted policies for technical education and infrastructure development supporting educational advancement.", state: "Lagos", country: "Nigeria" },
-            { name: "Seyi Makinde", image: "/images/political/babatunde-fashola.png", achievement: "Promoted policies for technical education and infrastructure development supporting educational advancement.", state: "Lagos", country: "Nigeria" }
+            { name: "Babatunde Fashola", image: "/images/political/babatunde-fashola.png", achievement: "Promoted policies for technical education and infrastructure development supporting educational advancement.", state: "Lagos", country: "Nigeria" }
           ]
         }
       ]

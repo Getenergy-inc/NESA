@@ -3,7 +3,6 @@ import { montserrat, poppins } from "@/lib/utils/font";
 import "../public/globals.css";
 import Providers from "@/lib/providers/providers";
 import { AuthProvider } from "@/lib/context/AuthContext";
-// import {AuthProvider} from "@/components/Context/AuthContext";
 import { LoadingProvider } from "@/lib/context/LoadingContext";
 import Modal from "@/components/UI/Modal"; // Import the Modal component
 import { GlobalPageLoader } from "@/components/UI/Loading"; // Import the GlobalPageLoader
