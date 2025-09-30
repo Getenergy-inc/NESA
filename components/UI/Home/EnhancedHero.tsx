@@ -156,9 +156,9 @@ const EnhancedHero = () => {
               After <span className="text-primaryGold font-semibold">15 years</span> of vision and unwavering commitment — <strong className="text-primaryGold">NESA-Africa 2025</strong> emerges as the continent's highest platform for honoring those rebuilding African education from the ground up.
             </motion.p>
             
-            {/* CTA Buttons with professional mobile layout */}
+            {/* CTA Buttons with smaller mobile layout */}
             <motion.div 
-              className="flex flex-row gap-3 justify-center lg:justify-start mt-6 md:mt-8"
+              className="flex flex-row gap-2 md:gap-3 justify-center lg:justify-start mt-5 md:mt-8"
               variants={itemVariants}
             >
               <motion.button 
@@ -169,9 +169,9 @@ const EnhancedHero = () => {
                 whileHover="hover"
                 whileTap="tap"
               >
-                <FaPlay className="h-4 w-4 md:h-5 md:w-5" />
+                <FaPlay className="h-3 w-3 md:h-5 md:w-5" />
                 <span className="hidden md:inline">Read More About NESA</span>
-                <span className="md:hidden">Read More</span>
+                <span className="md:hidden text-xs">Read More</span>
               </motion.button>
               
               <Link href="/get-involved/nomination" passHref>
@@ -182,8 +182,9 @@ const EnhancedHero = () => {
                   whileHover="hover"
                   whileTap="tap"
                 >
-                  <FaTrophy className="h-4 w-4 md:h-5 md:w-5" />
-                  Nominate Now
+                  <FaTrophy className="h-3 w-3 md:h-5 md:w-5" />
+                  <span className="hidden md:inline">Nominate Now</span>
+                  <span className="md:hidden text-xs">Nominate</span>
                 </motion.button>
               </Link>
             </motion.div>
@@ -201,25 +202,25 @@ const EnhancedHero = () => {
           </motion.div>
         </motion.div>
         
-        {/* Quick Action Buttons - Completely redesigned for mobile */}
+        {/* Quick Action Buttons - Spread out with more spacing and edge-to-edge layout */}
         <motion.div 
-          className="w-full bg-darkBrown/90 backdrop-blur-sm border-t border-b border-primaryGold/20 py-4 mt-8 relative z-40"
+          className="w-full bg-darkBrown/90 backdrop-blur-sm border-t border-b border-primaryGold/20 py-3 mt-5 relative z-40"
           variants={isMounted ? quickActionVariants : undefined}
           initial={isMounted ? "hidden" : false}
           animate={isMounted ? "visible" : false}
         >
-          <div className="max-w-[95%] mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="w-[95%] md:w-[90%] mx-auto px-0.5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
               {/* Refer a Friend */}
               <div>
                 <Link href="/get-involved/refer" passHref className="block w-full h-full">
                   <motion.div
                     className={`${styles.mobileActionButton} ${styles.quickActionPrimary}`}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
                   >
-                    <FaUserFriends className="text-lg md:text-xl" />
-                    <span className="text-sm font-medium">Refer a Friend</span>
+                    <FaUserFriends className="text-sm md:text-base" />
+                    <span className="text-xs md:text-xs font-medium">Refer</span>
                   </motion.div>
                 </Link>
               </div>
@@ -228,12 +229,12 @@ const EnhancedHero = () => {
               <div>
                 <Link href="/get-involved/nomination" passHref className="block w-full h-full">
                   <motion.div
-                    className={`${styles.mobileActionButton} ${styles.quickActionPrimary} ring-1 ring-primaryGold/30`}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    className={`${styles.mobileActionButton} ${styles.quickActionPrimary} ring-1 ring-primaryGold/10`}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
                   >
-                    <FaTrophy className="text-lg md:text-xl" />
-                    <span className="text-sm font-medium">Nominate</span>
+                    <FaTrophy className="text-sm md:text-base" />
+                    <span className="text-xs md:text-xs font-medium">Nominate</span>
                   </motion.div>
                 </Link>
               </div>
@@ -243,11 +244,11 @@ const EnhancedHero = () => {
                 <Link href="/events/gala-tickets" passHref className="block w-full h-full">
                   <motion.div
                     className={`${styles.mobileActionButton} ${styles.quickActionSecondary}`}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
                   >
-                    <FaTicketAlt className="text-lg md:text-xl" />
-                    <span className="text-sm font-medium">Get Tickets</span>
+                    <FaTicketAlt className="text-sm md:text-base" />
+                    <span className="text-xs md:text-xs font-medium">Tickets</span>
                   </motion.div>
                 </Link>
               </div>
@@ -257,11 +258,11 @@ const EnhancedHero = () => {
                 <Link href="/nesa-tv" passHref className="block w-full h-full">
                   <motion.div
                     className={`${styles.mobileActionButton} ${styles.quickActionSecondary}`}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
                   >
-                    <FaPlay className="text-lg md:text-xl" />
-                    <span className="text-sm font-medium">Watch NESA</span>
+                    <FaPlay className="text-sm md:text-base" />
+                    <span className="text-xs md:text-xs font-medium">Watch</span>
                   </motion.div>
                 </Link>
               </div>
