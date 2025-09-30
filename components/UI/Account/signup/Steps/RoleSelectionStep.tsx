@@ -343,7 +343,7 @@ const RoleSelectionStep: React.FC = () => {
           <Button
             type="button"
             text="Back"
-            variant="outline"
+            variant="outlined"
             size="medium"
             onClick={previousStep}
             disabled={isLoading}

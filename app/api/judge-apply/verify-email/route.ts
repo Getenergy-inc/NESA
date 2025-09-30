@@ -17,11 +17,11 @@ const sendApprovalEmail = async (email: string, name: string) => {
 
   const emailTemplate = judgeApprovalEmailTemplate({
     name,
-    email,
-    signupUrl
+    signupUrl,
+    verificationUrl: '' // Required by interface but not used here
   });
 
-  await sendEmail(email, emailTemplate);
+  await sendEmail(email, emailTemplate, "NESA Africa - Judge Application Approved");
   return true;
 };
 

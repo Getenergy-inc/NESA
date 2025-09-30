@@ -51,14 +51,17 @@ const paymentMethods = [
 export default function PaymentStep({
   formData,
   onBack,
-  onSubmit
+  onSubmit,
+  isSubmitting,
+  error
 }: {
   formData: SponsorFormData;
   onBack: () => void;
-  onSubmit: () => void;
+  onSubmit: (paymentData?: any) => void;
+  isSubmitting?: boolean;
+  error?: string | null;
 }) {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async () => {
     if (!selectedPaymentMethod) {
@@ -66,13 +69,21 @@ export default function PaymentStep({
       return;
     }
 
-    setIsSubmitting(true);
+    // Find the selected payment method details
+    const selectedMethod = paymentMethods.find(method => method.id === selectedPaymentMethod);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      onSubmit();
-    }, 2000);
+    // Update form data with payment method information
+    const paymentData = {
+      payment_method: selectedMethod?.name || selectedPaymentMethod,
+      payment_details: {
+        method: selectedPaymentMethod,
+        currencies: selectedMethod?.currencies || [],
+        processingTime: selectedMethod?.processingTime || 'Unknown'
+      }
+    };
+    
+    // Call the parent submit handler with payment data
+    onSubmit(paymentData);
   };
 
   const { selectedPlan } = formData;
@@ -244,6 +255,12 @@ export default function PaymentStep({
               )}
 
               {/* Submit Button */}
+              {error && (
+                <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 mb-6">
+                  <p className="text-sm">{error}</p>
+                </div>
+              )}
+              
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

@@ -48,7 +48,7 @@ const Page = () => {
 
   const handleLogout = () => {
     logout();
-    window.location.href = '/login';
+    window.location.href = '/account/login';
   };
 
   const handleEdit = () => {

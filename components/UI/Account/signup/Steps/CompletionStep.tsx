@@ -258,7 +258,7 @@ const CompletionStep: React.FC = () => {
 
         <Button
           text="Back to Home"
-          variant="outline"
+          variant="outlined"
           size="medium"
           onClick={handleGoHome}
           icon={<Home className="w-4 h-4" />}
