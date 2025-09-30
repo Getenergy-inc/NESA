@@ -281,7 +281,7 @@ const NomineeForm = () => {
           <div className="flex justify-end space-x-4">
             <Button
               type="button"
-              variant="outline"
+              variant="outlined"
               text="SAVE AS DRAFT"
               onClick={() => {}}
               className="px-8 py-2"

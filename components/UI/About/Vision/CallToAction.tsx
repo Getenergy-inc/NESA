@@ -43,7 +43,7 @@ const CallToAction = () => {
       badge: "Partner Up"
     },
     {
-      title: "Apply as Judge or Ambassador",
+      title: "Apply as a Judge or Ambassador",
       description: "Join our expert panel or become a regional ambassador",
       icon: Award,
       color: "from-orange-500 to-orange-600",

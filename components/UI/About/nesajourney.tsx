@@ -56,7 +56,7 @@ const NesaJourney = () => {
         <ul className="space-y-6">
           {journeyData.map((item, index) => (
             <li key={index} className="flex flex-col md:flex-row gap-2">
-              <div className="text-lg md:w-1/6  font-medium w-32 md:w-40 text-yellow-600">
+              <div className="text-lg md:w-1/6  font-medium w-32  text-yellow-600">
                 {item.year}
               </div>
               <div className="border-l-2 md:w-5/6 border-yellow-500 pl-4 text-gray-800">

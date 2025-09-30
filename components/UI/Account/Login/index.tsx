@@ -67,13 +67,23 @@ const LoginPage: React.FC = () => {
       const response = await signIn({ email, password });
 
       if (response?.user) {
+        // Direct login success - redirect to dashboard or intended page
         const searchParams = new URLSearchParams(window.location.search);
         const redirect = searchParams.get("redirect");
-        let otpUrl = `/account/otp?email=${encodeURIComponent(email)}`;
+        
+        // Comment out OTP flow for now
+        // let otpUrl = `/account/otp?email=${encodeURIComponent(email)}`;
+        // if (redirect) {
+        //   otpUrl += `&redirect=${encodeURIComponent(redirect)}`;
+        // }
+        // router.push(otpUrl); // Redirect to OTPPage with email and redirect param if present
+        
+        // Direct redirect to intended page
         if (redirect) {
-          otpUrl += `&redirect=${encodeURIComponent(redirect)}`;
+          router.push(redirect);
+        } else {
+          router.push("/ProfileSetting");
         }
-        router.push(otpUrl); // Redirect to OTPPage with email and redirect param if present
       } else {
         // Handle specific error types
         const errorMessage = response?.message || "";

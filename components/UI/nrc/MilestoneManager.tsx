@@ -296,7 +296,7 @@ const MilestoneManager: React.FC<MilestoneManagerProps> = ({ userId, onMilestone
               <Button
                 text="Cancel"
                 onClick={() => setIsCreating(false)}
-                variant="outline"
+                variant="outlined"
                 className="border-gray-300 text-gray-700 hover:bg-gray-50"
               >
                 <X className="w-4 h-4" />

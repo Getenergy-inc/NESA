@@ -1,0 +1,91 @@
+/**
+ * Cross-browser compatibility fixes
+ * Ensures consistent rendering between Chrome and Edge
+ */
+
+/* Edge-specific styles using class added by JS detection */
+.edge-browser .dropdown {
+  background-color: rgba(23, 18, 10, 0.95) !important;
+}
+
+.edge-browser .nav-item:hover .dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-transform: translateY(0) scale(1) !important;
+  -ms-transform: translateY(0) scale(1) !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.edge-browser .dropdown-item:hover {
+  -webkit-transform: translateX(4px) !important;
+  -ms-transform: translateX(4px) !important;
+  transform: translateX(4px) !important;
+}
+
+/* Fix for backdrop-filter in Edge */
+@supports (-ms-ime-align:auto) {
+  .dropdown {
+    background-color: rgba(23, 18, 10, 0.95) !important; /* Darker background for Edge */
+  }
+}
+
+/* Fix for transform transitions in Edge */
+@supports (-ms-ime-align:auto) {
+  .nav-item,
+  .dropdown,
+  .dropdown-item,
+  .mobile-nav-link,
+  .mobile-nav-item-link,
+  .mobile-dropdown-toggle {
+    transition: all 0.3s ease !important;
+  }
+}
+
+/* Fix for Edge animation rendering */
+@supports (-ms-ime-align:auto) {
+  .nav-item a::after {
+    transition: width 0.3s ease !important;
+  }
+}
+
+/* Fix for Edge hover effects */
+@supports (-ms-ime-align:auto) {
+  .dropdown-item:hover {
+    background: rgba(234, 88, 12, 0.25) !important;
+  }
+}
+
+/* Fix for Edge transform scale */
+@supports (-ms-ime-align:auto) {
+  .mobile-nav-item:active,
+  .mobile-dropdown-toggle:active,
+  .mobile-nav-item-link:active {
+    transform: scale(0.98) !important;
+  }
+}
+
+/* Fix for Edge mobile menu transitions */
+@supports (-ms-ime-align:auto) {
+  .mobile-dropdown-content {
+    transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease !important;
+  }
+}
+
+/* Fix for Edge dropdown chevron rotation */
+@supports (-ms-ime-align:auto) {
+  .nav-item:hover .dropdown-chevron svg,
+  .nav-item:focus-within .dropdown-chevron svg {
+    transform: rotate(180deg) !important;
+  }
+}
+
+/* Fix for Edge text rendering */
+@supports (-ms-ime-align:auto) {
+  .nav-item a,
+  .dropdown-item,
+  .mobile-nav-link,
+  .mobile-nav-item-link,
+  .mobile-dropdown-toggle {
+    text-rendering: optimizeLegibility !important;
+  }
+}

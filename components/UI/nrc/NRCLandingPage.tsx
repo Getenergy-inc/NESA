@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useAuthContext } from '@/lib/context/AuthContext';
@@ -26,12 +26,22 @@ const NRCLandingPage: React.FC = () => {
   const router = useRouter();
   const { isAuthenticated } = useAuthContext();
   const { loading, hasApplication, isApproved, isPending, isRejected, canAccessDashboard } = useNRCStatus();
+  
+  // Debug logs
+  useEffect(() => {
+    console.log('NRC Landing Page - Auth Status:', { isAuthenticated });
+    console.log('NRC Landing Page - Volunteer Status:', { 
+      loading, 
+      hasApplication, 
+      isApproved, 
+      isPending, 
+      isRejected, 
+      canAccessDashboard 
+    });
+  }, [isAuthenticated, loading, hasApplication, isApproved, isPending, isRejected, canAccessDashboard]);
 
   const handleApplyNow = () => {
-    // TODO: Re-enable authentication when backend is ready
-    // Authentication temporarily disabled for testing purposes
-
-    /* ORIGINAL AUTHENTICATION LOGIC - COMMENTED FOR TESTING
+    // Check authentication and redirect accordingly
     if (!isAuthenticated) {
       router.push('/account/login');
       return;
@@ -43,41 +53,28 @@ const NRCLandingPage: React.FC = () => {
     }
 
     if (hasApplication) {
-      // User already has an application, show status
+      // User already has an application, redirect to dashboard
+      router.push('/get-involved/nrc-volunteer/dashboard');
       return;
     }
-    */
 
-    // For testing: Direct access to application form
+    // Direct access to application form
     router.push('/get-involved/nrc-volunteer/apply');
   };
 
   const getButtonText = () => {
-    // TODO: Re-enable dynamic button text when backend is ready
-    // Authentication-based button text temporarily disabled for testing
-
-    /* ORIGINAL AUTHENTICATION-BASED LOGIC - COMMENTED FOR TESTING
+    // Dynamic button text based on authentication and status
     if (!isAuthenticated) return 'Login to Apply';
     if (canAccessDashboard) return 'Go to Dashboard';
     if (isPending) return 'Application Pending';
     if (isRejected) return 'Application Not Approved';
     if (hasApplication) return 'View Application Status';
-    */
-
-    // For testing: Simple button text
     return 'Apply Now';
   };
 
   const getButtonDisabled = () => {
-    // TODO: Re-enable button state logic when backend is ready
-    // Button state temporarily enabled for testing
-
-    /* ORIGINAL AUTHENTICATION-BASED LOGIC - COMMENTED FOR TESTING
+    // Re-enable button state logic
     return isPending || isRejected;
-    */
-
-    // For testing: Button always enabled
-    return false;
   };
 
   const benefits = [

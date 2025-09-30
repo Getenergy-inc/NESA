@@ -1,5 +1,6 @@
 "use client";
 
+import '@/lib/polyfills/globals'; // Must be the first import after "use client"
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { 
   SignupFormData, 
@@ -298,6 +299,16 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     localStorage.removeItem(STORAGE_KEY);
   };
 
+  // Clear cached data (useful for debugging user exists errors)
+  const clearCache = () => {
+    console.log('Clearing signup cache...');
+    localStorage.removeItem(STORAGE_KEY);
+    setFormData(initialFormData);
+    setStepProgress(initialStepProgress);
+    setError(null);
+    setIsLoading(false);
+  };
+
   // Submit form
   const submitForm = async (): Promise<SignupResponse> => {
     setIsLoading(true);
@@ -311,19 +322,14 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       }
 
       // Use real API service instead of mock
+      console.log('=== SUBMITTING FORM DATA ===');
+      console.log('Form data being submitted:', formData);
       const response = await signupFlow(formData as SignupFormData);
 
       if (response.success) {
-        // Clear form data on successful signup
-        localStorage.removeItem(STORAGE_KEY);
-
-        // Move to completion step
-        setStepProgress(prev => ({
-          ...prev,
-          currentStep: 'completion',
-          completedSteps: [...STEP_ORDER.slice(0, -1)],
-          progressPercentage: 100
-        }));
+        // Don't move to completion step yet - stay on verification step
+        // The verification step will handle moving to completion after OTP verification
+        console.log('Signup successful, staying on verification step for OTP entry');
       } else {
         setError(response.message);
       }
@@ -352,7 +358,8 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     resetForm,
     submitForm,
     isLoading,
-    error
+    error,
+    clearCache
   };
 
   return (

@@ -31,8 +31,13 @@ export const navlinks: NavLink[] = [
         icon: "Award",
       },
       {
-        label: "About SECF",
-        path: "/about/secf",
+        label: "About NESA Advisory Board",
+        path: "/about/boa",
+        icon: "Users",
+      },
+      {
+        label: "About SCEF",
+        path: "/about/scef",
         icon: "Building2",
       },
       {
@@ -104,7 +109,13 @@ export const navlinks: NavLink[] = [
         path: "/get-involved/partner",
         icon: "Handshake",
       },
-     
+
+      {
+        label: "Apply As A Fundraiser",
+        path: "/get-involved/apply-as-fundraiser",
+        icon: "Handshake",
+      },
+
     ],
   },
   {
@@ -119,7 +130,9 @@ export const navlinks: NavLink[] = [
       },
       {
         label: "NESA TV",
+
         path: "/nesatv",
+
         icon: "Tv",
       },
       {
@@ -161,7 +174,6 @@ export const navlinks: NavLink[] = [
         path: "/help",
         icon: "LifeBuoy",
       },
-      
     ],
   },
   {
@@ -194,11 +206,9 @@ export const navlinks: NavLink[] = [
         path: "/language/pt",
         icon: "PT",
       },
-    ]
-
-  }, 
+    ],
+  },
 ];
-
 
 export const secondaryNavlinks: SecondaryNavLink[] = [
   {
@@ -207,11 +217,22 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
     description: "Regional form/interactive map",
   },
   {
-    label: "Become a sponsor",
-    path: "/sponsor",
-    description: "Sponsorship application",
+    label: "Sponsors",
+    path: "",
+    description: "Sponsorship information",
+    children: [
+      {
+        label: "Our Sponsors",
+        path: "/sponsors",
+        icon: "Users",
+      },
+      {
+        label: "Become a Sponsor",
+        path: "/sponsor",
+        icon: "Handshake",
+      }
+    ]
   },
-  
   {
     label: "Vote with AfriGoldcoin",
     path: "/voting",
@@ -236,7 +257,7 @@ export const secondaryNavlinks: SecondaryNavLink[] = [
     label: "Apply as an Ambassador",
     path: "/ambassador",
     description: "NESA TV platform",
-  }
+  },
 ];
 
 // Level 3 CTA Navigation - Floating/Sticky Elements
@@ -288,8 +309,11 @@ export const legacyNavlinks = [
     label: "Awards",
     path: "/awards",
     children: [
-      { label: "Awards", path: "/awards"},
-      { label: "African Icon", path: "/nomination/sub-categories/africa-lifetime-education-icon" },
+      { label: "Awards", path: "/awards" },
+      {
+        label: "African Icon",
+        path: "/nomination/sub-categories/africa-lifetime-education-icon",
+      },
       { label: "Competitive", path: "/competitive" },
       { label: "Non-Competitive", path: "/non-competitive" },
       { label: "Nomination Process", path: "/nomination" },
@@ -301,7 +325,7 @@ export const legacyNavlinks = [
     label: "Media",
     path: "nesatv",
     children: [
-      { label: "NESA-TV", path: "/nesatv" },
+      { label: "NESA-TV", path: "/nesa-media" },
       { label: "it's in me Radio", path: "/radio-podcast" },
     ],
   },

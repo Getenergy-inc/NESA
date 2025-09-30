@@ -23,7 +23,7 @@ const verificationSchema = z.object({
 });
 
 const VerificationStep: React.FC = () => {
-  const { formData, updateFormData, nextStep, previousStep, isLoading } = useSignup();
+  const { formData, updateFormData, nextStep, previousStep, isLoading, submitForm } = useSignup();
   const { setAuthenticationState } = useAuthContext();
   const [otp, setOtp] = useState<string[]>(['', '', '', '', '', '']);
   const [timeLeft, setTimeLeft] = useState<number>(300); // 5 minutes
@@ -33,6 +33,7 @@ const VerificationStep: React.FC = () => {
   const [isVerifying, setIsVerifying] = useState<boolean>(false);
   const [networkError, setNetworkError] = useState<string>('');
   const [attemptCount, setAttemptCount] = useState<number>(0);
+  const [isSignupComplete, setIsSignupComplete] = useState<boolean>(false);
   const maxAttempts = 5;
   
   // Refs for OTP inputs
@@ -51,6 +52,78 @@ const VerificationStep: React.FC = () => {
   const email = formData.accountType === 'Individual' 
     ? formData.email 
     : (formData as any)?.contactEmail || formData.email;
+
+  // Call signup flow when component mounts (if not already done)
+  useEffect(() => {
+    const initiateSignup = async () => {
+      if (!isSignupComplete && !isLoading) {
+        try {
+          setVerificationError('');
+          setNetworkError('');
+          
+          console.log('Initiating signup flow...');
+          
+          // Call the signup flow to create user and send OTP
+          const response = await submitForm();
+          
+          console.log('Signup response:', response);
+          
+          if (response.success) {
+            console.log('Signup successful, setting isSignupComplete to true');
+            setIsSignupComplete(true);
+            setResendSuccess(true);
+            setTimeout(() => setResendSuccess(false), 5000);
+          } else {
+            console.log('Signup failed:', response.message);
+            // Even if signup failed, allow user to try OTP verification
+            // in case the account was created but there was a response issue
+            setIsSignupComplete(true);
+            setVerificationError(response.message || 'Failed to create account. Please try again.');
+          }
+        } catch (error) {
+          console.error('Signup error:', error);
+          
+          // Check if it's a 409 conflict (user already exists)
+          if (error instanceof Error && error.message.includes('409')) {
+            console.log('User already exists, proceeding to OTP verification');
+            setIsSignupComplete(true);
+            setVerificationError('Account already exists. Please enter the verification code sent to your email.');
+            
+            // Try to resend OTP for existing user
+            try {
+              await resendOtp(email, 'VERIFY_EMAIL');
+              setResendSuccess(true);
+              setTimeout(() => setResendSuccess(false), 5000);
+            } catch (resendError) {
+              console.warn('Failed to resend OTP for existing user:', resendError);
+            }
+          } else {
+            // For other errors, still allow OTP verification attempt
+            setIsSignupComplete(true);
+            
+            const errorMessage = error instanceof Error ? error.message : 'Failed to create account';
+            if (errorMessage.includes('timeout') || errorMessage.includes('network')) {
+              setNetworkError(ERROR_MESSAGES.NETWORK_ERROR);
+            } else {
+              setVerificationError('There was an issue creating your account. If you already have an account, please enter your verification code.');
+            }
+          }
+        }
+      }
+    };
+
+    initiateSignup();
+  }, [isSignupComplete, isLoading, submitForm]);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('VerificationStep state:', {
+      isSignupComplete,
+      isLoading,
+      isVerifying,
+      otpLength: otp.join('').length
+    });
+  }, [isSignupComplete, isLoading, isVerifying, otp]);
 
   // Countdown timer
   useEffect(() => {
@@ -110,6 +183,11 @@ const VerificationStep: React.FC = () => {
 
   // Resend verification email
   const handleResendEmail = async () => {
+    if (!isSignupComplete) {
+      setVerificationError('Please wait for account creation to complete first.');
+      return;
+    }
+
     setIsResending(true);
     setResendSuccess(false);
     setVerificationError('');
@@ -160,22 +238,31 @@ const VerificationStep: React.FC = () => {
 
       // Use real API service
       const response = await verifyOtp(email, data.verificationCode, 'VERIFY_EMAIL');
+      
+      console.log('OTP verification response:', response);
+      console.log('Response data:', response.data);
+      console.log('Response success:', response.data?.success);
+      console.log('Response user:', response.data?.user || response.data?.data?.user);
 
       // Handle verification response
-      if (response.success) {
+      const isSuccess = response.success || response.data?.success;
+      const userData = response.user || response.data?.user || response.data?.data?.user;
+      const token = response.token || response.data?.token || response.data?.data?.tokens?.accessToken;
+      
+      if (isSuccess) {
         // Success - update form data and set authentication state
         updateFormData({ emailVerified: true });
 
         // Set authentication state with user data from response
-        const userData = {
+        const authUserData = {
           ...formData,
           emailVerified: true,
-          id: response.user?.id || 'verified-user',
-          role: response.user?.role || 'FREE_MEMBER',
-          accountType: response.user?.accountType || formData.accountType
+          id: userData?.id || 'verified-user',
+          role: userData?.role || 'FREE_MEMBER',
+          accountType: userData?.accountType || formData.accountType
         };
 
-        setAuthenticationState(userData, response.token || 'verified-token');
+        setAuthenticationState(authUserData, token || 'verified-token');
 
         // Proceed to completion step
         nextStep();
@@ -217,6 +304,20 @@ const VerificationStep: React.FC = () => {
           {email}
         </p>
       </div>
+
+      {/* Account Creation Loading */}
+      {!isSignupComplete && isLoading && (
+        <div className="mb-6">
+          <div className="p-4 rounded-lg border bg-blue-50 border-blue-200 flex items-start space-x-3">
+            <RefreshCw className="w-5 h-5 mt-0.5 flex-shrink-0 text-blue-500 animate-spin" />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-blue-800">
+                Creating your account and sending verification code...
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Success Message */}
       {resendSuccess && (
@@ -317,10 +418,10 @@ const VerificationStep: React.FC = () => {
             <button
               type="button"
               onClick={handleResendEmail}
-              disabled={isResending || timeLeft > 240} // Allow resend after 1 minute
+              disabled={!isSignupComplete || isResending || timeLeft > 240} // Allow resend after 1 minute and signup complete
               className={`
                 text-sm font-medium transition-colors
-                ${timeLeft > 240 
+                ${!isSignupComplete || timeLeft > 240 
                   ? 'text-gray-400 cursor-not-allowed' 
                   : 'text-orange-600 hover:text-orange-700'
                 }
@@ -341,11 +442,11 @@ const VerificationStep: React.FC = () => {
         {/* Submit Button */}
         <Button
           type="submit"
-          text="Verify Email"
+          text={!isSignupComplete ? "Creating Account..." : "Verify Email"}
           variant="filled"
           size="medium"
-          disabled={otp.join('').length !== 6 || isVerifying}
-          loading={isVerifying}
+          disabled={!isSignupComplete || otp.join('').length !== 6 || isVerifying || isLoading}
+          loading={isVerifying || (!isSignupComplete && isLoading)}
           className="w-full py-3"
         />
 
@@ -354,7 +455,7 @@ const VerificationStep: React.FC = () => {
           <Button
             type="button"
             text="Back"
-            variant="outline"
+            variant="outlined"
             size="medium"
             onClick={previousStep}
             disabled={isLoading || isVerifying}

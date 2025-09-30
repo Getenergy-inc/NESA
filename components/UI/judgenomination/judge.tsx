@@ -134,7 +134,7 @@ return(
 {/* second section */}
           <div className='bg-[#FFF5E0] p-20 pl-[50px] md:pl-[8%] '>
 
-            <div className='flex items-center gap-10 px-auto flex flex-col md:flex-row'>
+            <div className='flex items-center gap-10 px-auto flex-col md:flex-row'>
 
               <div className=' flex-shrink-0'>
                 <Image
