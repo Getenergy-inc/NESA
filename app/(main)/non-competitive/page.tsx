@@ -36,22 +36,22 @@ const Page = () => {
     },
     {
       title: "Best Research & Development Institution (Nigeria)",
-      description: "This award aims to recognize and honor research institutes in Nigeria that have made significant contributions to the educational sector through innovative research and development (R&D) initiatives. This award celebrates institutes that have demonstrated excellence in conducting impactful research, developing educational technologies, and implementing projects that enhance educational quality and accessibility.",
+      description: "This award aims to recognize and honor research institutes in Nigeria that have made significant contributions to the educational sector through innovative research and development (R&D) initiatives.",
       subCategoryPath: "/nomination/sub-categories/best-research-development"
     },
     {
       title: "Africa Lifetime Education Icon Recognition",
-      description: "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition, this prestigious accolade honors individuals from around the world who have dedicated their lives to advancing sustainable education for all in Africa, aligning with the United Nations Sustainable Development Goal 4 (SDG 4) - Quality Education.",
+      description: "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition.",
       subCategoryPath: "/nomination/sub-categories/africa-lifetime-education-icon"
     },
     {
       title: "Faith-Based & Political Leadership Awards-Christian Education Champions",
-      description: "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition, this prestigious accolade honors individuals from around the world who have dedicated their lives to advancing sustainable education for all in Africa, aligning with the United Nations Sustainable Development Goal 4 (SDG 4) - Quality Education.",
+      description: "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition.",
       subCategoryPath: "/nomination/sub-categories/christian-education-champion"
     },
     {
       title: "Faith-Based & Political Leadership Awards-Islamic Education Champions",
-      description: "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition, this prestigious accolade honors individuals from around the world who have dedicated their lives to advancing sustainable education for all in Africa, aligning with the United Nations Sustainable Development Goal 4 (SDG 4) - Quality Education.",
+      description: "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition.",
       subCategoryPath: "/nomination/sub-categories/islamic-education-champion"
     },
     {
