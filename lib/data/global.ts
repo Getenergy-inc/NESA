@@ -161,7 +161,7 @@ export const navlinks: NavLink[] = [
     children: [
       {
         label: "FAQ",
-        path: "/faq",
+        path: "/faqs",
         icon: "MessageCircle",
       },
       {
