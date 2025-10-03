@@ -40,7 +40,9 @@ export const MOCK_JUDGE: Judge[] =
   title:"Yeelen Education Project",
   certificationDate: "July 20, 2025",
   averageScore: 8.4,
-  assignedCategories: ['best-media-advocacy-nigeria', 'best-csr-education-africa', 'community-impact-local'],
+  assignedCategories: ['Best Education Initiative in North West Zone Award', 'Oil And Gas CSR in Education Award',
+    'Food And Beverages CSR in Education Award',
+    'Manufacturing CSR in Education Award'],
     },
     {
   id: 'judge-002',
@@ -51,7 +53,7 @@ export const MOCK_JUDGE: Judge[] =
   title:"Yeelen Education Project",
   certificationDate: "July 20, 2025",
   averageScore: 8.4,
-  assignedCategories: ['best-media-advocacy-nigeria', 'best-csr-education-africa', 'community-impact-local'],
+  assignedCategories: ['Best Education Initiative in North West Zone Award', 'best-csr-education-africa', 'community-impact-local'],
     },
     {
   id: 'judge-003',
@@ -68,9 +70,10 @@ export const MOCK_JUDGE: Judge[] =
 
 
 export const MOCK_CATEGORIES = [
-  { slug: 'best-media-advocacy-nigeria', title: 'Best Media Organization in Educational Advocacy — Nigeria' },
-  { slug: 'best-csr-education-africa', title: 'Best CSR in Education — Africa (Regional)' },
-  { slug: 'community-impact-local', title: 'Community Impact (Local)' },
+  { slug: 'best-Education-initiative-in-north-west-zone-award', title: 'Best Education Initiative in North West Zone Award' },
+  { slug: 'oil-and-gas-csr-in-education-award', title: 'Oil And Gas CSR in Education Award' },
+  { slug: 'manufacturing-csr-in-education-award', title: 'Manufacturing CSR in Education Award' },
+  { slug: 'food-and-Beverages-csr-in-education-award', title: 'Food And Beverages CSR in Education Award'},
 ];
 
 export const MOCK_NOMINEES: Nominee[] = [
@@ -78,7 +81,7 @@ export const MOCK_NOMINEES: Nominee[] = [
     id: 'nom-001',
     title: "Brothers Building Futures (BBF)",
     name: 'Educational Times (Print)',
-    category: 'best-media-advocacy-nigeria',
+    category: 'Best Education Initiative in North West Zone Award',
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
@@ -125,7 +128,7 @@ export const MOCK_NOMINEES: Nominee[] = [
     { id: 'nom-002', 
     title: "Brothers Building Futures (BBF)",
     name: 'EduVoice FM', 
-    category: 'best-media-advocacy-nigeria', 
+    category: 'Best Education Initiative in North West Zone Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
@@ -172,7 +175,7 @@ export const MOCK_NOMINEES: Nominee[] = [
   { id: 'nom-003', 
     title: "Brothers Building Futures (BBF)",
     name: 'BankAid CSR Program', 
-    category: 'best-csr-education-africa', 
+    category: 'Best Education Initiative in North West Zone Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
@@ -213,7 +216,7 @@ export const MOCK_NOMINEES: Nominee[] = [
   { id: 'nom-004',
     title: "Brothers Building Futures (BBF)",
     name: 'Local Helpers NGO', 
-    category: 'community-impact-local', 
+    category: 'Oil And Gas CSR in Education Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
@@ -259,7 +262,7 @@ export const MOCK_NOMINEES: Nominee[] = [
   { id: 'nom-005',
     title: "Brothers Building Futures (BBF)",
     name: 'Local Helpers NGO', 
-    category: 'community-impact-local', 
+    category: 'Oil And Gas CSR in Education Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
@@ -299,7 +302,7 @@ export const MOCK_NOMINEES: Nominee[] = [
   { id: 'nom-006',
     title: "Brothers Building Futures (BBF)",
     name: 'Local Helpers NGO', 
-    category: 'community-impact-local', 
+    category: 'Manufacturing CSR in Education Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
@@ -345,7 +348,7 @@ export const MOCK_NOMINEES: Nominee[] = [
   { id: 'nom-007',
     title: "Brothers Building Futures (BBF)",
     name: 'Local Helpers NGO', 
-    category: 'community-impact-local', 
+    category: 'Manufacturing CSR in Education Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
@@ -391,18 +394,12 @@ export const MOCK_NOMINEES: Nominee[] = [
   { id: 'nom-008',
     title: "Brothers Building Futures (BBF)",
     name: 'Local Helpers NGO', 
-    category: 'community-impact-local', 
+    category:'Food And Beverages CSR in Education Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
     imageURL:"/images/judgereview.png",
         reviews:[
-          {
-    id: "r1",
-    judgeId: "judge-001",
-    rating: 4,
-    comment: "Great work on education initiatives.",
-  },
   {
     id: "r2",
     judgeId: "judge-002",
@@ -437,18 +434,12 @@ export const MOCK_NOMINEES: Nominee[] = [
   { id: 'nom-009',
     title: "Brothers Building Futures (BBF)",
     name: 'Local Helpers NGO', 
-    category: 'community-impact-local', 
+    category: 'Food And Beverages CSR in Education Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
     imageURL:"/images/judgereview.png",
         reviews:[
-          {
-    id: "r1",
-    judgeId: "judge-001",
-    rating: 4,
-    comment: "Great work on education initiatives.",
-  },
   {
     id: "r2",
     judgeId: "judge-002",
@@ -483,7 +474,7 @@ export const MOCK_NOMINEES: Nominee[] = [
   { id: 'nom-010',
     title: "Brothers Building Futures (BBF)",
     name: 'Local Helpers NGO', 
-    category: 'community-impact-local', 
+    category: 'Food And Beverages CSR in Education Award', 
     achievements:
       "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     bio: 'Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.',
