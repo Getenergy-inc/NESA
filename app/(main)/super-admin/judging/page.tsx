@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/U-I/card";
-import DashboardLayout from "@/components/UI/SuperAdmin/DashboardLayout";
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import {
   BookOpen,
   CheckCircle,
@@ -69,10 +69,9 @@ const commentsTrendData = [
 
 const JudgingArenaPanel = () => {
   return (
-    <DashboardLayout>
-      <div className="p-4 md:p-6 lg:p-8 space-y-6">
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
-          🧑‍⚖️ Judging Arena Module
+    <SuperAdminLayout>
+      <div className="space-y-8">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Judging Arena Module
         </h1>
         <p className="text-gray-600">
           Manage judge assignments, review progress, scoring, and flags.
@@ -202,7 +201,7 @@ const JudgingArenaPanel = () => {
       </Card>
     </div>
     
-    </DashboardLayout>
+    </SuperAdminLayout>
   );
 };
 

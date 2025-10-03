@@ -3,6 +3,8 @@
 import React from 'react';
 import { useAuthContext } from '@/lib/context/AuthContext';
 import PublicLayout from './PublicLayout';
+import {usePathname} from 'next/navigation';
+import SuperAdminLayout from '@/components/UI/SuperAdmin/SuperAdminLayout';
 import AuthenticatedLayout from './AuthenticatedLayout';
 import LoadingSpinner from '@/components/Common/LoadingSpinner';
 import { useScrollToTop } from '@/lib/hooks/useScrollToTop';
@@ -17,7 +19,7 @@ const ConditionalLayout: React.FC<ConditionalLayoutProps> = ({
   forcePublic = false 
 }) => {
   const { isAuthenticated, isLoading } = useAuthContext();
-  
+    const pathname = usePathname();
   // Automatically scroll to top on route changes
   useScrollToTop();
 
@@ -34,6 +36,12 @@ const ConditionalLayout: React.FC<ConditionalLayoutProps> = ({
   if (forcePublic) {
     return <PublicLayout>{children}</PublicLayout>;
   }
+
+    // Super-admin dashboard routes (always show dashboard layout if authenticated)
+  if (pathname.startsWith("/super-admin")) {
+    return <SuperAdminLayout>{children}</SuperAdminLayout>;
+  }
+
 
   // Use authenticated layout for verified users
   if (isAuthenticated) {

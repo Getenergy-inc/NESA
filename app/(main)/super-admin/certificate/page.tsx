@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import DashboardLayout from "@/components/UI/SuperAdmin/DashboardLayout";
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import AppCard from "@/components/UI/SuperAdmin/AppCard";
 import AppTable from "@/components/UI/SuperAdmin/AppTable";
 import AppButton from "@/components/UI/SuperAdmin/AppButton";
@@ -57,9 +57,9 @@ const DigitalCertificateHub = () => {
   }));
 
   return (
-    <DashboardLayout>
-        <div>
-            <h1 className="text-2xl font-bold">🧾 Digital Certificate Hub</h1>
+    <SuperAdminLayout>
+        <div className="space-y-8">
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Digital Certificate Hub</h1>
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <AppCard title="Certificates of Nomination">
@@ -107,7 +107,7 @@ const DigitalCertificateHub = () => {
         />
       </AppCard>
       </div>
-    </DashboardLayout>
+    </SuperAdminLayout>
   );
 };
 

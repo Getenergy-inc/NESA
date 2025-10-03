@@ -1,67 +1,88 @@
 "use client";
 
 import { useState } from "react";
-import { Lock, Mail } from "lucide-react";
-import { useAuth } from "@/components/Context/AuthContext";
+import { useRouter } from "next/navigation";
+import { useAuthContext } from "@/lib/context/AuthContext";
 
-export default function LoginPage() {
-  const { login } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function SuperAdminLoginPage() {
+  const { signIn, isLoading, error } = useAuthContext();
+  const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [formError, setFormError] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setFormError("");
 
-    if (email === "admin@example.com" && password === "password123") {
-      login(email);
-    } else {
-      alert("Invalid credentials");
+    try {
+      const user = await signIn(form);
+
+      if (user?.role === "super-admin") {
+        router.push("/super-admin"); // ✅ redirect to dashboard
+      } else {
+        setFormError("Unauthorized access. Only Super Admins can login here.");
+      }
+    } catch (err: any) {
+      setFormError(err.message || "Login failed. Please try again.");
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-100 via-white to-orange-50">
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+        {/* Title */}
+        <h1 className="text-2xl font-bold text-center bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">
           Super Admin Login
         </h1>
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        {/* Error */}
+        {(formError || error) && (
+          <p className="text-red-600 text-sm text-center mt-2">
+            {formError || error}
+          </p>
+        )}
+
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
-            <label className="text-sm font-medium text-gray-600">Email</label>
-            <div className="flex items-center border rounded-lg px-3 py-2 mt-1">
-              <Mail className="w-5 h-5 text-gray-400" />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-2 py-1 outline-none"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+            />
           </div>
 
           <div>
-            <label className="text-sm font-medium text-gray-600">Password</label>
-            <div className="flex items-center border rounded-lg px-3 py-2 mt-1">
-              <Lock className="w-5 h-5 text-gray-400" />
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-2 py-1 outline-none"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
+            <label className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+            />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg font-semibold transition"
+            disabled={isLoading}
+            className="w-full bg-gradient-to-r from-[#f59e0b] to-[#ea580c] text-white font-bold py-2 px-4 rounded-md hover:opacity-90 transition"
           >
-            Login
+            {isLoading ? "Signing in..." : "Login"}
           </button>
         </form>
       </div>

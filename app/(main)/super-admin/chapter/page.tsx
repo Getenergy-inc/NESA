@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import DashboardLayout from "@/components/UI/SuperAdmin/DashboardLayout";
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import AppCard from "@/components/UI/SuperAdmin/AppCard";
 import AppTable from "@/components/UI/SuperAdmin/AppTable";
 import AppButton from "@/components/UI/SuperAdmin/AppButton";
@@ -56,9 +56,9 @@ const ChapterAmbassadorTracker = () => {
   };
 
   return (
-    <DashboardLayout>
-        <div>
-        <h1 className="text-2xl font-bold">📊 Chapter & Ambassador Tracker</h1>
+    <SuperAdminLayout>
+        <div className="space-y-8">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Chapter & Ambassador Tracker</h1>
       {/* 🔍 Filters */}
       <AppCard title="Filters">
         <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
@@ -121,7 +121,7 @@ const ChapterAmbassadorTracker = () => {
         />
       </AppCard>
       </div>
-    </DashboardLayout>
+    </SuperAdminLayout>
   );
 };
 

@@ -1,14 +1,14 @@
-import DashboardLayout from "@/components/UI/SuperAdmin/DashboardLayout";
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import OverviewCard from "@/components/UI/SuperAdmin/OverviewCard";
 import Accordion from "@/components/UI/SuperAdmin/Accordion";
 import { Award, Users, FileText } from "lucide-react";
 
 export default function AwardSuperCategoryControlCenter() {
   return (
-    <DashboardLayout>
-      <div className="space-y-6">
+    <SuperAdminLayout>
+      <div className="space-y-8">
         {/* Page Title */}
-        <h1 className="text-2xl font-bold">🧾 Award Super Category Control Center</h1>
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Award Super Category Control Center</h1>
 
         {/* 🔷 Blue Garnet */}
         <Accordion title="🔷 Blue Garnet (African Icon Lifetime Awards)">
@@ -54,6 +54,6 @@ export default function AwardSuperCategoryControlCenter() {
           </div>
         </Accordion>
       </div>
-    </DashboardLayout>
+    </SuperAdminLayout>
   );
 }

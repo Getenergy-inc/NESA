@@ -1,16 +1,16 @@
 "use client";
 
-import DashboardLayout from "@/components/UI/SuperAdmin/DashboardLayout";
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import AppCard from "@/components/UI/SuperAdmin/AppCard";
 import { Bell, Mail, Users, MessageSquare } from "lucide-react";
 import { Button } from "@/components/U-I/button";
 
 const NotificationsPanel = () => {
   return (
-    <DashboardLayout>
+    <SuperAdminLayout>
       <div className="space-y-8">
         {/* Title */}
-        <h1 className="text-2xl font-bold">📬 Notifications & Messaging</h1>
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Notifications & Messaging</h1>
 
         {/* Cards Section */}
         <div className="grid md:grid-cols-2 gap-6">
@@ -79,7 +79,7 @@ const NotificationsPanel = () => {
           </AppCard>
         </div>
       </div>
-    </DashboardLayout>
+    </SuperAdminLayout>
   );
 };
 

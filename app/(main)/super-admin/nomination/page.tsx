@@ -1,6 +1,6 @@
 "use client";
 
-import DashboardLayout from "@/components/UI/SuperAdmin/DashboardLayout";
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import AppCard from "@/components/UI/SuperAdmin/AppCard";
 import AppTable from "@/components/UI/SuperAdmin/AppTable";
 import AppSelect from "@/components/UI/SuperAdmin/AppSelect";
@@ -38,12 +38,11 @@ const NominationSystemPage = () => {
   ];
 
   return (
-    <DashboardLayout>
-      <div className="space-y-10">
+    <SuperAdminLayout>
+      <div className="space-y-8">
         {/* Page Header */}
         <div className="rounded-2xl p-6 text-black shadow-md">
-          <h1 className="text-3xl font-extrabold flex items-center gap-2">
-            📂 Nomination Management System
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Nomination Management System
           </h1>
           <p className="mt-2 text-sm text-gray-600">
             Manage submissions, filter nominees, and track verification status in real time.
@@ -85,7 +84,7 @@ const NominationSystemPage = () => {
           <AppTable columns={columns} data={data} />
         </AppCard>
       </div>
-    </DashboardLayout>
+    </SuperAdminLayout>
   );
 };
 

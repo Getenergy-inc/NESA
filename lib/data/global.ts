@@ -41,8 +41,8 @@ export const navlinks: NavLink[] = [
         icon: "Building2",
       },
       {
-        label: "Mission 2025",
-        path: "/about/mission-2025",
+        label: "Mission 2025-2035",
+        path: "/about/mission-2025-2035",
         icon: "Target",
       },
     ],

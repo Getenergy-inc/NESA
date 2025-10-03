@@ -1,4 +1,4 @@
-import DashboardLayout from "@/components/UI/SuperAdmin/DashboardLayout";
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import OverviewCard from "@/components/UI/SuperAdmin/OverviewCard";
 
 import {
@@ -15,10 +15,10 @@ import {
 
 export default function GlobalOverviewPage() {
   return (
-    <DashboardLayout>
+    <SuperAdminLayout>
       <div className="space-y-6">
         {/* Page Title */}
-        <h1 className="text-2xl font-bold">🧮 Global Overview Panel</h1>
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Global Overview Panel</h1>
 
         {/* Nominations */}
         <section>
@@ -78,6 +78,6 @@ export default function GlobalOverviewPage() {
           </div>
         </section>
       </div>
-    </DashboardLayout>
+    </SuperAdminLayout>
   );
 }

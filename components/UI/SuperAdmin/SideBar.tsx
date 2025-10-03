@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import Link from "next/link";
-import { useAuth } from "@/components/Context/AuthContext";
+// import { useAuth } from "@/components/Context/AuthContext";
 import {
   Home,
   Award,
@@ -14,6 +14,7 @@ import {
   Scale,
   LogOut,
 } from "lucide-react";
+import Image from "next/image";
 
 const menu = [
   { href: "/super-admin", label: "Global Overview", icon: Home },
@@ -29,31 +30,49 @@ const menu = [
 ];
 
 export default function Sidebar() {
-    const { logout } = useAuth();
+  // const { logout, user } = useAuth();
+  const user = {
+    name: "Super Admin",
+    avatar: "/images/admin.jpeg", 
+  };
+
   return (
-    <aside className="fixed top-0 left-0 h-screen w-64 bg-white border-r shadow-md flex flex-col gap-10">
-      {/* Logo / Header */}
-      <div className="p-4 font-extrabold text-xl border-b text-[#ea580c]">Dashboard</div>
+    <aside className="fixed top-0 left-0 h-screen w-80 bg-white border-r shadow-md flex flex-col">
+
+      {/* Welcome Section */}
+      <div className="flex items-center gap-3 p-6 border-b">
+        <Image
+          src={user.avatar}
+          alt="Admin Avatar"
+          width={40}
+          height={40}
+          className="rounded-full border"
+        />
+        <div>
+          <p className="text-sm text-gray-500">Welcome,</p>
+          <p className="font-semibold text-gray-900">{user.name}</p>
+        </div>
+      </div>
 
       {/* Nav */}
-      <nav className="overflow-y-auto font-bold p-2 space-y-1">
+      <nav className="flex-1 overflow-y-auto font-bold p-1 space-y-1">
         {menu.map(({ href, label, icon: Icon }) => (
           <Link
             key={href}
             href={href}
-            className="flex items-center gap-3 px-3 py-2 rounded-md hover:text-gray-700  hover:bg-[#f59e0b] bg-indigo-50  text-indigo-700 transition"
+            className="flex items-center gap-3 px-3 py-2 rounded-md hover:text-gray-700 hover:bg-[#f59e0b] bg-indigo-50 text-indigo-700 transition"
           >
             <Icon size={18} />
             <span>{label}</span>
           </Link>
         ))}
       </nav>
-      
+
       {/* Logout */}
       <div className="p-2 border-t">
         <button
           onClick={() => {
-            
+            // logout();
           }}
           className="w-full flex items-center gap-2 p-2 rounded font-extrabold text-red-600 transition-colors"
         >
