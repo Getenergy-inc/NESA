@@ -146,6 +146,30 @@ const FAQPage: React.FC = () => {
       question: 'Can I nominate myself?',
       answer: 'Yes. Self-nominations are allowed in all categories except honorary awards (e.g. Africa Icon Awards).'
     },
+    {
+      id: 'q26',
+      category: 'nominations',
+      question: 'Who can nominate for the NESA-Africa Awards?',
+      answer: ' Anyone across Africa and the diaspora can nominate deserving individuals, institutions, or organizations via our online form. Some categories are open to public nominations, while others require institutional endorsement.'
+    },
+    {
+      id: 'q27',
+      category: 'nominations',
+      question: 'What are the criteria for nomination?',
+      answer: ' Criteria vary by category but generally include measurable educational impact, innovation, alignment with SDG 4, inclusivity, and sustainability.'
+    },
+    {
+      id: 'q28',
+      category: 'nominations',
+      question: 'What is the African Icon of the Decade award?',
+      answer: 'This is a prestigious lifetime recognition award for individuals or institutions with transformative impact on African education from 2014–2024. It is non-contestable and Board-nominated.'
+    },
+    {
+      id: 'q30',
+      category: 'nominations',
+      question: 'What is the difference between Competitive and Non-Competitive awards?',
+      answer: 'Competitive awards are subject to both public voting and internal judging. Non-competitive awards (like the Platinum Certificate) are selected solely through internal evaluation.'
+    },
 
     // Voting & Award Decisions
     {
@@ -172,13 +196,19 @@ const FAQPage: React.FC = () => {
       question: 'How are winners selected?',
       answer: 'Winners are selected based on a combination of public votes, judges\' scores, and impact metrics, depending on the category.'
     },
+    {
+      id: 'q11',
+      category: 'voting',
+      question: 'How do I vote for a nominee?',
+      answer: 'Voting is done via AfriGoldCoin tokens through our digital wallet. Users receive 10 free coins upon signup and can buy more to vote across categories.'
+    },
 
     // Support & Donations
     {
-      id: 'q11',
+      id: 'q29',
       category: 'support',
       question: 'How can I support NESA-Africa?',
-      answer: 'You can: Donate via your AGC Wallet or bank, Sponsor an award or nominee, Support EduAid Africa or Rebuild My School programs, Purchase certificates or merchandise.'
+      answer: ' You can donate, become an ambassador, join a local chapter, refer a school, or volunteer with us.'
     },
     {
       id: 'q12',
@@ -335,7 +365,7 @@ const FAQPage: React.FC = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-deepGold font-raleway leading-tight"
+              className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 text-deepGold font-raleway leading-tight leading-loose"
             >
               Frequently Asked
               <span className="block text-primaryGold">Questions</span>
@@ -343,7 +373,7 @@ const FAQPage: React.FC = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-xl md:text-2xl text-lightGold mb-12 leading-relaxed font-poppins max-w-3xl mx-auto"
+              className="text-l md:text-xl text-lightGold mb-12 leading-relaxed font-poppins max-w-3xl mx-auto"
             >
               Find answers to common questions about NESA-Africa 2025 awards, nominations, and more
             </motion.p>
@@ -351,7 +381,7 @@ const FAQPage: React.FC = () => {
             {/* Enhanced Search Bar */}
             <motion.div
               variants={itemVariants}
-              className="relative max-w-3xl mx-auto"
+              className="relative max-w-2xl mx-auto"
             >
               <div className="relative">
                 <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-darkBrown/60 w-6 h-6" />
@@ -360,7 +390,7 @@ const FAQPage: React.FC = () => {
                   placeholder="Search for answers..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-16 pr-6 py-5 rounded-2xl text-darkBrown placeholder-darkBrown/60 focus:outline-none focus:ring-4 focus:ring-primaryGold/30 bg-white/95 backdrop-blur-sm shadow-2xl text-lg font-medium border border-primaryGold/20"
+                  className="w-full pl-16 pr-6 py-4 rounded-2xl text-darkBrown placeholder-darkBrown/60 focus:outline-none focus:ring-4 focus:ring-primaryGold/30 bg-white/95 backdrop-blur-sm shadow-2xl text-lg font-medium border border-primaryGold/20"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 />
@@ -587,84 +617,77 @@ const FAQPage: React.FC = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              variants={containerVariants}
-              className="grid md:grid-cols-3 gap-8"
-            >
-              {[
-                {
-                  icon: <Mail className="w-10 h-10" />,
-                  title: "Email Support",
-                  description: "Get comprehensive help via email",
-                  action: "support@nesa.africa",
-                  href: "mailto:support@nesa.africa",
-                  color: "from-primaryGold to-deepGold"
-                },
-                {
-                  icon: <MessageCircle className="w-10 h-10" />,
-                  title: "Live Chat",
-                  description: "Chat with our support team",
-                  action: "Start Chat",
-                  href: "#",
-                  color: "from-lightGold to-midGold"
-                },
-                {
-                  icon: <Globe className="w-10 h-10" />,
-                  title: "Join a Chapter",
-                  description: "Connect with your local community",
-                  action: "Find Your Chapter",
-                  href: "/chapters",
-                  color: "from-midGold to-primaryGold"
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover="hover"
-                  className="group"
-                >
-                  <motion.div
-                    className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-primaryGold/20 hover:border-primaryGold/40 transition-all duration-300 relative overflow-hidden"
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 20px 40px rgba(243, 169, 40, 0.2)"
-                    }}
-                    transition={{ duration: 0.3 }}
+              <motion.div
+                variants={containerVariants}
+                className="grid md:grid-cols-2 gap-8"
+              >
+                {[
+                  {
+                    icon: <Mail className="w-10 h-10" />,
+                    title: "Email Support",
+                    description: "Get comprehensive help via email",
+                    action: "support@nesa.africa",
+                    href: "mailto:support@nesa.africa",
+                    color: "from-primaryGold to-deepGold"
+                  },
+                  {
+                    icon: <Globe className="w-10 h-10" />,
+                    title: "Join a Chapter",
+                    description: "Connect with your local community",
+                    action: "Find Your Chapter",
+                    href: "/local-chapters",
+                    color: "from-midGold to-primaryGold"
+                  }
+                ].map((item, index) => (
+                  <motion.a
+                    key={index}
+                    href={item.href}
+                    variants={itemVariants}
+                    whileHover="hover"
+                    className="group block"
+                    target={item.href.startsWith("http") || item.href.startsWith("mailto") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
                   >
-                    {/* Background gradient on hover */}
                     <motion.div
-                      className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                    />
-
-                    <motion.div
-                      className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center mx-auto mb-6`}
-                      whileHover={{ scale: 1.1, rotate: 360 }}
-                      transition={{ duration: 0.6 }}
+                      className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-primaryGold/20 hover:border-primaryGold/40 transition-all duration-300 relative overflow-hidden"
+                      whileHover={{
+                        scale: 1.05,
+                        boxShadow: "0 20px 40px rgba(243, 169, 40, 0.2)"
+                      }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <div className="text-darkBrown">
-                        {item.icon}
-                      </div>
+                      {/* Background gradient on hover */}
+                      <motion.div
+                        className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                      />
+
+                      <motion.div
+                        className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center mx-auto mb-6`}
+                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <div className="text-darkBrown">{item.icon}</div>
+                      </motion.div>
+
+                      <h3 className="font-bold text-xl text-deepGold mb-3 group-hover:text-primaryGold transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-lightGold/80 mb-6 leading-relaxed">
+                        {item.description}
+                      </p>
+
+                      <motion.span
+                        className="inline-block bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {item.action}
+                      </motion.span>
                     </motion.div>
+                  </motion.a>
+                ))}
+              </motion.div>
 
-                    <h3 className="font-bold text-xl text-deepGold mb-3 group-hover:text-primaryGold transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <p className="text-lightGold/80 mb-6 leading-relaxed">
-                      {item.description}
-                    </p>
-
-                    <motion.a
-                      href={item.href}
-                      className="inline-block bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {item.action}
-                    </motion.a>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
 
             {/* Additional CTA */}
             <motion.div
@@ -687,7 +710,7 @@ const FAQPage: React.FC = () => {
                   Sign Up Now
                 </motion.a>
                 <motion.a
-                  href="/nominate"
+                  href="/awards"
                   className="border-2 border-primaryGold text-primaryGold font-bold px-8 py-4 rounded-xl hover:bg-primaryGold hover:text-darkBrown transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
