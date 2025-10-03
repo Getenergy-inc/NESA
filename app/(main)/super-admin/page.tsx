@@ -1,3 +1,4 @@
+
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import OverviewCard from "@/components/UI/SuperAdmin/OverviewCard";
 
@@ -80,4 +81,4 @@ export default function GlobalOverviewPage() {
       </div>
     </SuperAdminLayout>
   );
-}
+

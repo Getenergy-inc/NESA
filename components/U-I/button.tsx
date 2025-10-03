@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline" | "destructive" | "secondary";
+  variant?: "default" | "outline" | "destructive";
 }
 
 export function Button({
@@ -22,10 +22,6 @@ export function Button({
     case "destructive":
       variantClasses =
         "bg-red-600 text-white hover:bg-red-700 dark:hover:bg-red-800";
-      break;
-        case "secondary":
-      variantClasses =
-        "bg-white text-blue-600 hover:bg-blue-700 hover:text-white border border-blue-600 ";
       break;
     default:
       variantClasses =

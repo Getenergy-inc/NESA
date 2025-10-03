@@ -113,7 +113,7 @@ const Navbar = () => {
     <>
       {/* Two-Layer Horizontal Navigation Layout */}
       <nav
-        className="bg-[#17120a] fixed top-0 left-0 w-full h-auto flex flex-col z-[1000] transition-transform duration-300 ease-in-out"
+        className={`${styles.navRoot} bg-[#17120a] fixed top-0 left-0 w-full h-auto flex flex-col z-[1000] transition-transform duration-300 ease-in-out`}
         ref={ref}
       >
         {/* Layer 1 - Top Bar: Main Navigation */}

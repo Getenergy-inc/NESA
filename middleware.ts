@@ -1,31 +1,28 @@
+import "./lib/edge-polyfill";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+
+const DYNAMIC_ROUTES = ['/api/', '/admin', '/sponsors'];
 
 export function middleware(request: NextRequest) {
   // Log the URL for debugging
   console.log("Middleware processing URL:", request.nextUrl.pathname);
-  
+
   // Get the token from cookies
   const token = request.cookies.get("token")?.value;
-  // Also check for next-auth.session-token which is used by NextAuth
-  const nextAuthToken = request.cookies.get("next-auth.session-token")?.value || 
-                        request.cookies.get("__Secure-next-auth.session-token")?.value;
-  
+
   console.log("Token in middleware:", token);
-  console.log("NextAuth token in middleware:", nextAuthToken ? "Found" : "Not found");
 
-  // For NextAuth routes, just let them pass through
-  if (request.nextUrl.pathname.startsWith('/api/auth')) {
-    return NextResponse.next();
-  }
-
-  // For admin routes, allow access without authentication
-  if (request.nextUrl.pathname.startsWith('/admin')) {
-    return NextResponse.next();
+  // For dynamic routes that should not be cached, add no-cache headers
+  if (DYNAMIC_ROUTES.some(path => request.nextUrl.pathname.startsWith(path))) {
+    const response = NextResponse.next();
+    response.headers.set('x-middleware-cache', 'no-cache');
+    response.headers.set('Cache-Control', 'no-store, max-age=0');
+    return response;
   }
 
   // For member routes, check if the user is authenticated
-  if (request.nextUrl.pathname.startsWith('/member') && !token && !nextAuthToken) {
+  if (request.nextUrl.pathname.startsWith('/member') && !token) {
     // Redirect to the login page if not authenticated
     const loginUrl = new URL("/account/login", request.url);
     // Add redirect query param so user can continue to intended page after login
@@ -40,9 +37,10 @@ export function middleware(request: NextRequest) {
 // Apply middleware only to routes below
 export const config = {
   matcher: [
+    "/api/:path*",
+    "/admin/:path*",
+    "/sponsors/:path*",
     "/member/:path*", 
     "/ProfileSetting"
-    // Admin routes are no longer protected
-    // Exclude "/api/auth/:path*" to avoid edge runtime issues
   ],
 };

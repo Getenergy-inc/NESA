@@ -13,56 +13,56 @@ const JudgePage: React.FC = () => {
 
 const nominees = [
   {
-    id: "1", // Changed to string
+    id: "1",
     name: "Mr Joseph Johnson",
+    bio: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     title: "Brothers Building Futures (BBF)",
-    category: "Education", // Added category
-    bio: "A dedicated advocate for educational reform.", // Added bio
+    category: 'Best Education Initiative in North West Zone Award',
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: "2", // Changed to string
+    id: "2",
     name: "Mr Joseph Johnson",
+    category: 'Best Education Initiative in North West Zone Award',
+    bio: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     title: "Brothers Building Futures (BBF)",
-    category: "Education", // Added category
-    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: "3", // Changed to string
+    id: "3",
     name: "Mr Joseph Johnson",
+    category: 'Best Education Initiative in North West Zone Award',
+    bio: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     title: "Brothers Building Futures (BBF)",
-    category: "Education", // Added category
-    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: "4", // Changed to string
+    id: "4",
     name: "Mr Joseph Johnson",
+    category: 'Best Education Initiative in North West Zone Award',
+    bio: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     title: "Brothers Building Futures (BBF)",
-    category: "Education", // Added category
-    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: "5", // Changed to string
+    id: "5",
     name: "Mr Joseph Johnson",
+    category: 'Best Education Initiative in North West Zone Award',
+    bio: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     title: "Brothers Building Futures (BBF)",
-    category: "Education", // Added category
-    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },
   {
-    id: "6", // Changed to string
+    id: "6",
     name: "Mr Joseph Johnson",
+    category: 'Best Education Initiative in North West Zone Award',
+    bio: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community, his innovative mobile library system and successful partnership with the government showcase her ability to create sustainable change.",
     title: "Brothers Building Futures (BBF)",
-    category: "Education", // Added category
-    bio: "A dedicated advocate for educational reform.", // Added bio
     achievements: "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
     imageURL:"/images/judgereview.png",
   },

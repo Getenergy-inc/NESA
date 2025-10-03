@@ -11,6 +11,7 @@ import {
   Review,
 } from "../../data";
 import CommentCard from "@/components/UI/judgenomination/JudgeComment";
+import Button from "@/components/Common/Button";
 
 // Simulating logged-in judge (picked the first one for demo)
 const CURRENT_JUDGE: Judge = MOCK_JUDGE[0];
@@ -23,6 +24,8 @@ export default function NomineePage() {
   const [reviews, setReviews] = useState<Review[]>(nominee?.reviews || []);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+
+    const [selected, setSelected] = useState<"approve" | "reject" | null>(null);
 
   if (!nominee) {
     return <p className="p-6">Nominee not found</p>;
@@ -204,8 +207,23 @@ export default function NomineePage() {
           onChange={(e) => setComment(e.target.value)}
           placeholder="Write your justification..."
           rows={4}
-          className="w-full border rounded-lg p-3 text-sm mb-20"
+          className="w-full border rounded-lg p-3 text-sm mb-10"
         />
+
+              {/* ✅ Approve & Reject buttons */}
+      <div className="flex justify-center gap-4 mb-20">
+        <button
+        className="mt-4 text-black py-2 px-4 rounded-lg border hover:bg-green-600 transition-colors cursor-pointer"
+      >
+        Approve
+      </button>
+        <button className="mt-4 text-black py-2 px-4 rounded-lg border hover:bg-red-600 transition-colors cursor-pointer">
+          Reject
+        </button>
+      </div>
+
+
+
 
         <button
           onClick={handleSubmit}

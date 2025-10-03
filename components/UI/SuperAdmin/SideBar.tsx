@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 // import { useAuth } from "@/components/Context/AuthContext";
 import {
@@ -16,20 +17,21 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-const menu = [
-  { href: "/super-admin", label: "Global Overview", icon: Home },
-  { href: "/super-admin/awards", label: "Award Control Center", icon: Award },
-  { href: "/super-admin/wallet", label: "GFAWzip", icon: Wallet },
-  { href: "/super-admin/user", label: "User Management", icon: Users },
-  { href: "/super-admin/judging", label: "Judging Arena", icon: Scale },
-  { href: "/super-admin/nomination", label: "Nomination System", icon: ThumbsUp },
-  { href: "/super-admin/certificate", label: "Certificate Hub", icon: BadgeCheck },
-  { href: "/super-admin/chapter", label: "Chapter Tracker", icon: Footprints },
-  { href: "/super-admin/notification", label: "Notifications", icon: Bell },
-  { href: "/super-admin/settings", label: "System Settings", icon: Settings },
+const navItems = [
+  { name: "Global Overview", path: "/super-admin/global-overview" },
+  { name: "Award Categories", path: "/super-admin/award-categories" },
+  { name: "AGC Wallet", path: "/super-admin/wallet" },
+  { name: "User Management", path: "/super-admin/user" },
+  { name: "Judging Arena", path: "/super-admin/judging" },
+  { name: "Nominations", path: "/super-admin/nominations" },
+  { name: "Certificates", path: "/super-admin/certifications" },
+  { name: "Chapters", path: "/super-admin/chapters" },
+  { name: "Notifications", path: "/super-admin/notifications" },
+  { name: "Settings", path: "/super-admin/settings" },
 ];
 
 export default function Sidebar() {
+
   // const { logout, user } = useAuth();
   const user = {
     name: "Super Admin",
@@ -80,5 +82,6 @@ export default function Sidebar() {
         </button>
       </div>
     </aside>
+
   );
 }

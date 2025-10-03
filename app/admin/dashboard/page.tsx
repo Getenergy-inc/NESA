@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import {
   Box,
@@ -49,10 +48,7 @@ interface DashboardStats {
     pending: number;
     approved: number;
   };
-  students: {
-    total: number;
-    active: number;
-  };
+ 
   mediaPartners: {
     total: number;
     active: number;
@@ -66,10 +62,7 @@ interface DashboardStats {
     total: number;
     active: number;
   };
-  events: {
-    total: number;
-    upcoming: number;
-  };
+
 }
 
 interface RecentItem {
@@ -81,18 +74,17 @@ interface RecentItem {
 }
 
 export default function AdminDashboard() {
-  const { data: session, status } = useSession();
+  //const { user, isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
   
   // State variables
   const [stats, setStats] = useState<DashboardStats>({
     sponsors: { total: 0, pending: 0, approved: 0, rejected: 0 },
     endorsers: { total: 0, pending: 0, approved: 0 },
-    students: { total: 0, active: 0 },
     mediaPartners: { total: 0, active: 0 },
     nrcApplications: { total: 0, pending: 0, approved: 0 },
     partners: { total: 0, active: 0 },
-    events: { total: 0, upcoming: 0 }
+   
   });
   const [recentItems, setRecentItems] = useState<RecentItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -147,11 +139,10 @@ export default function AdminDashboard() {
         setStats(prev => ({
           ...prev,
           endorsers: { total: 24, pending: 5, approved: 19 },
-          students: { total: 156, active: 132 },
           mediaPartners: { total: 15, active: 12 },
           nrcApplications: { total: 45, pending: 8, approved: 37 },
           partners: { total: 18, active: 15 },
-          events: { total: 10, upcoming: 3 }
+         
         }));
         
       } catch (err) {
@@ -163,7 +154,7 @@ export default function AdminDashboard() {
     };
     
     fetchDashboardData();
-  }, [session, status]);
+  }, []);
   
   // Format date
   const formatDate = (dateString: string) => {
@@ -311,53 +302,7 @@ export default function AdminDashboard() {
                 </Card>
               </Grid>
               
-              {/* Students Card */}
-              <Grid  size = {{xs:12, sm:6, md:4}}>
-                <Card>
-                  <CardContent>
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                      <Avatar sx={{ bgcolor: 'success.main', mr: 2 }}>
-                        <PeopleIcon />
-                      </Avatar>
-                      <Typography variant="h6">Students</Typography>
-                    </Box>
-                    
-                    <Typography variant="h3" component="div" gutterBottom>
-                      {stats.students.total}
-                    </Typography>
-                    
-                    <Grid container spacing={1}>
-                      <Grid  size = {{xs: 6}}>
-                        <Typography variant="body2" color="text.secondary">
-                          Active
-                        </Typography>
-                        <Typography variant="h6" color="success.main">
-                          {stats.students.active}
-                        </Typography>
-                      </Grid>
-                      <Grid  size = {{xs: 6}}>
-                        <Typography variant="body2" color="text.secondary">
-                          Inactive
-                        </Typography>
-                        <Typography variant="h6">
-                          {stats.students.total - stats.students.active}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                  <Divider />
-                  <CardActions>
-                    <Button 
-                      component={Link}
-                      href="/admin/students"
-                      size="small" 
-                      endIcon={<ArrowForwardIcon />}
-                    >
-                      Manage Students
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
+            
               
               {/* Media Partners Card */}
               <Grid  size = {{xs: 12, sm: 6, md: 4}}>
@@ -407,53 +352,7 @@ export default function AdminDashboard() {
                 </Card>
               </Grid>
               
-              {/* Events Card */}
-              <Grid  size = {{xs:12, sm:6, md:4}}>
-                <Card>
-                  <CardContent>
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                      <Avatar sx={{ bgcolor: 'warning.main', mr: 2 }}>
-                        <EventIcon />
-                      </Avatar>
-                      <Typography variant="h6">Events</Typography>
-                    </Box>
-                    
-                    <Typography variant="h3" component="div" gutterBottom>
-                      {stats.events.total}
-                    </Typography>
-                    
-                    <Grid container spacing={1}>
-                      <Grid  size = {{xs: 6}}>
-                        <Typography variant="body2" color="text.secondary">
-                          Upcoming
-                        </Typography>
-                        <Typography variant="h6" color="primary.main">
-                          {stats.events.upcoming}
-                        </Typography>
-                      </Grid>
-                      <Grid  size = {{xs: 6}}>
-                        <Typography variant="body2" color="text.secondary">
-                          Past
-                        </Typography>
-                        <Typography variant="h6">
-                          {stats.events.total - stats.events.upcoming}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                  <Divider />
-                  <CardActions>
-                    <Button 
-                      component={Link}
-                      href="/admin/events"
-                      size="small" 
-                      endIcon={<ArrowForwardIcon />}
-                    >
-                      Manage Events
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
+            
             </Grid>
             
             {/* Recent Activity */}

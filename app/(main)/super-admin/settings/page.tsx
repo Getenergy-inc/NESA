@@ -1,4 +1,5 @@
-"use client";
+import SettingsPanel from '@/components/UI/SuperAdmin/SettingsPanel'
+import React from 'react'
 
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import AppCard from "@/components/UI/SuperAdmin/AppCard";

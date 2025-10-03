@@ -88,7 +88,7 @@ const EdgeNavbar = ({
                           </svg>
                         </span>
                       </button>
-                      <div className="absolute left-0 mt-2 w-64 bg-gray-900 border border-gray-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                      <div className="absolute left-0 mt-2 w-64 bg-[#17120a] border border-gray-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all" style={{ zIndex: 6000 }}>
                         {item.children.map((subitem, subindex) => (
                           <Link
                             key={subindex}
@@ -196,7 +196,7 @@ const EdgeNavbar = ({
                           </svg>
                         </span>
                       </button>
-                      <div className="absolute right-0 mt-2 w-64 bg-gray-900 border border-gray-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                      <div className="absolute right-0 mt-2 w-64 bg-[#17120a] border border-gray-700 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all" style={{ zIndex: 6000 }}>
                         {item.children && item.children.map((subitem, subindex) => (
                           <Link
                             key={subindex}

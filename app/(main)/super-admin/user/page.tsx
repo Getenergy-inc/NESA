@@ -1,4 +1,6 @@
-"use client";
+import UserManagement from '@/components/UI/SuperAdmin/UserManagement'
+import React from 'react'
+
 
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import OverviewCard from "@/components/UI/SuperAdmin/OverviewCard";

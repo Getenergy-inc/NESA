@@ -15,21 +15,21 @@ export function TableHeader({
   className = "",
   ...props
 }: React.HTMLAttributes<HTMLTableSectionElement>) {
-  return <thead className={`bg-gray-100 ${className}`} {...props} />;
+  return <thead className={`bg-gray-100 dark:bg-gray-800 ${className}`} {...props} />;
 }
 
 export function TableBody({
   className = "",
   ...props
 }: React.HTMLAttributes<HTMLTableSectionElement>) {
-  return <tbody className={`divide-y divide-gray-200 ${className}`} {...props} />;
+  return <tbody className={`divide-y divide-gray-200 dark:divide-gray-700 ${className}`} {...props} />;
 }
 
 export function TableRow({
   className = "",
   ...props
 }: React.HTMLAttributes<HTMLTableRowElement>) {
-  return <tr className={`hover:bg-gray-50  ${className}`} {...props} />;
+  return <tr className={`hover:bg-gray-50 dark:hover:bg-gray-800 ${className}`} {...props} />;
 }
 
 export function TableHead({
@@ -38,7 +38,7 @@ export function TableHead({
 }: React.ThHTMLAttributes<HTMLTableCellElement>) {
   return (
     <th
-      className={`px-4 py-2 font-medium text-gray-600  ${className}`}
+      className={`px-4 py-2 font-medium text-gray-600 dark:text-gray-300 ${className}`}
       {...props}
     />
   );

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { signIn } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import {
   Box,
@@ -16,11 +15,13 @@ import {
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import Link from 'next/link';
+import { useAuth } from '@/lib/context/auth-context';
 
 const LoginPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams?.get('callbackUrl') || (searchParams?.get('redirect') || '/dashboard');
+  const { login } = useAuth();
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,34 +42,23 @@ const LoginPage = () => {
       
       console.log('Attempting login with:', { email, callbackUrl });
       
-      // For credentials provider, we don't use callbackUrl in the signIn function
-      // We'll handle the redirect manually after successful login
-      const result = await signIn('credentials', {
-        redirect: false,
-        email,
-        password,
-      });
+      // Use the login function from auth context
+      await login(email, password);
       
-      console.log('Login result:', result);
+      console.log('Login successful, redirecting to:', callbackUrl);
       
-      if (result?.error) {
-        // Check if this is an admin login attempt
-        if (callbackUrl.includes('/admin')) {
-          setError('Admin login failed. Please check your credentials and try again.');
-          console.error('Admin login failed:', result.error);
-        } else {
-          setError('Invalid email or password');
-        }
-      } else if (result?.ok) {
-        console.log('Login successful, redirecting to:', callbackUrl);
-        
-        // Use a slight delay to ensure the session is properly set
-        setTimeout(() => {
-          router.push(callbackUrl);
-        }, 500);
-      }
+      // Use a slight delay to ensure the auth state is properly set
+      setTimeout(() => {
+        router.push(callbackUrl);
+      }, 500);
     } catch (err) {
-      setError('An error occurred during login');
+      // Check if this is an admin login attempt
+      if (callbackUrl.includes('/admin')) {
+        setError('Admin login failed. Please check your credentials and try again.');
+        console.error('Admin login failed:', err);
+      } else {
+        setError('Invalid email or password');
+      }
       console.error('Login error:', err);
     } finally {
       setLoading(false);

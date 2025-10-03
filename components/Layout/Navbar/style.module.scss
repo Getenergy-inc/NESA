@@ -1,6 +1,7 @@
 /* Horizontal Navigation Styles */
 .nav-item {
   position: relative;
+  z-index: 6000; /* ensure hover area and dropdown sit above second navbar */
   -webkit-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -36,36 +37,50 @@
   }
 }
 
+/* Create a small invisible hover buffer below the nav item to prevent accidental dropdown close */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 40px; /* larger hover buffer to bridge over second navbar */
+  z-index: 6000;
+}
+
 /* Dropdown Menu Styles */
 .dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   left: 0;
-  background: rgba(23, 18, 10, 0.9); /* Slightly adjusted opacity */
+  /* Use solid color to ensure full opacity */
+  background-color: #17120a !important;
+  background: #17120a !important; /* Removed gradient for solid color */
   border: 1px solid rgba(234, 88, 12, 0.3);
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15); /* Simplified shadow */
   opacity: 0;
   visibility: hidden;
-  -webkit-transform: translateY(-15px) scale(0.95);
-  -ms-transform: translateY(-15px) scale(0.95);
-  transform: translateY(-15px) scale(0.95);
+  /* Avoid vertical offset that can create a hover gap */
+  -webkit-transform: translateY(0) scale(1);
+  -ms-transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1);
   -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   -ms-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1000;
+  z-index: 6000; /* Increased z-index to be higher than nav-item */
   min-width: 280px;
   padding: 12px 0;
-  /* Ensure backdrop-filter is applied consistently across browsers */
-  -webkit-backdrop-filter: blur(15px); /* For Safari and Edge compatibility */
-  backdrop-filter: blur(15px);
+  /* Ensure background stays opaque */
+  -webkit-backdrop-filter: none; /* For Safari and Edge compatibility */
+  backdrop-filter: none;
   border-top: 3px solid #ea580c;
   /* Fix for Edge backdrop-filter rendering */
   will-change: transform, opacity;
   
   /* Edge-specific backdrop-filter fix */
   @supports (-ms-ime-align:auto) {
-    background-color: rgba(23, 18, 10, 0.95);
+    background-color: #17120a;
     /* Use a pseudo-element for Edge to improve backdrop-filter */
     &::before {
       content: '';
@@ -74,8 +89,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      -webkit-backdrop-filter: blur(15px);
-      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
       z-index: -1;
       border-radius: 12px;
       pointer-events: none;
@@ -97,13 +112,16 @@
     position: relative;
     min-height: 52px;
     will-change: transform, background, color;
+    background-color: #1a140b !important; /* Added !important to ensure solid color */
+    gap: 12px;
+    z-index: 6001; /* Higher z-index than dropdown container */
 
     &:last-child {
       border-bottom: none;
     }
 
     &:hover {
-      background: linear-gradient(135deg, rgba(234, 88, 12, 0.2) 0%, rgba(234, 88, 12, 0.3) 100%);
+      background-color: #231b0f !important; /* Added !important to ensure solid color */
       color: #fbbf24;
       -webkit-transform: translateX(4px);
       -ms-transform: translateX(4px);
@@ -119,7 +137,7 @@
     &:focus {
       outline: 2px solid #fbbf24;
       outline-offset: -2px;
-      background: rgba(234, 88, 12, 0.2);
+      background-color: #2a2012;
       color: #fbbf24;
 
       .dropdown-item-icon {
@@ -132,10 +150,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       margin-right: 12px;
-      margin-top: -1px; // Fine-tune vertical alignment with text baseline
+      margin-top: 0; // Align with text baseline across platforms
+      line-height: 1;
       -webkit-transition: color 0.3s ease;
       -ms-transition: color 0.3s ease;
       transition: color 0.3s ease;
@@ -147,6 +166,7 @@
         display: block; // Prevent inline spacing issues
         width: 18px;
         height: 18px;
+        vertical-align: middle;
       }
     }
 
@@ -168,15 +188,31 @@
   transform: translateY(0) scale(1);
 }
 
+/* Keep dropdown visible when hovered to avoid flicker */
+.dropdown:hover {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0) scale(1);
+  -ms-transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1);
+}
+
+/* Disable pointer events on the second navbar while any dropdown is open */
+.navRoot:has(.nav-item:hover .dropdown) > div:nth-of-type(2),
+.navRoot:has(.dropdown:hover) > div:nth-of-type(2),
+.navRoot:has(.nav-item:focus-within .dropdown) > div:nth-of-type(2) {
+  pointer-events: none !important;
+}
+
 /* Dropdown chevron indicator */
 .dropdown-chevron {
   margin-left: 8px;
-  margin-top: -1px; // Fine-tune vertical alignment with text
+  margin-top: 0; // Align with text baseline across platforms
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   -ms-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -188,8 +224,8 @@
     -webkit-transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     -ms-transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     display: block; // Prevent inline spacing issues
     will-change: transform;
   }

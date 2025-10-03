@@ -1,7 +1,9 @@
 'use client';
+import '@/lib/polyfills/globals'; // Must be the first import
 
-import React, { useState, ReactNode, useMemo } from 'react';
-import { useSession, signOut } from 'next-auth/react';
+
+
+import React, { useState, ReactNode, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import {
@@ -48,7 +50,32 @@ interface AdminLayoutProps {
 }
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
-  const { data: session, status } = useSession();
+  // Use dynamic import for auth to prevent static generation issues
+  const [authState, setAuthState] = useState<{user: any, logout: () => Promise<void>}>({
+    user: null,
+    logout: async () => {}
+  });
+  
+  // Load auth dynamically on the client side only
+  useEffect(() => {
+    const loadAuth = async () => {
+      try {
+        // Dynamic import of the auth context
+        const { useAuth } = await import('@/lib/context/auth-context');
+        // Use the hook inside the effect
+        const auth = useAuth();
+        setAuthState({
+          user: auth.user,
+          logout: auth.logout
+        });
+      } catch (error) {
+        console.error('Failed to load auth:', error);
+      }
+    };
+    
+    loadAuth();
+  }, []);
+  
   const router = useRouter();
   const pathname = usePathname();
   const theme = useTheme();
@@ -57,7 +84,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const [open, setOpen] = useState(!isMobile);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   
-  // No authentication checks needed
+  // No authentication checks needed for admin routes
   
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -73,7 +100,8 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   
   const handleLogout = async () => {
     handleMenuClose();
-    await signOut({ callbackUrl: '/' });
+    await authState.logout();
+    router.push('/');
   };
   
   const menuItems = [

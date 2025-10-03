@@ -81,7 +81,7 @@ const HeroCenter = () => {
 
 
       {/* Main hero content with new structure - moved up */}
-      <div className="text-white relative md:px-10 px-2 pt-6 pb-4 sm:pt-8 sm:pb-4 md:pt-10 md:pb-6 lg:pt-12 lg:pb-6">
+      <div className="text-white relative md:px-10 px-4 pt-6 pb-4 sm:pt-8 sm:pb-4 md:pt-10 md:pb-6 lg:pt-12 lg:pb-6">
         <motion.div
           className="grid md:grid-cols-2 items-center gap-8 md:gap-12"
           initial="hidden"
@@ -89,12 +89,11 @@ const HeroCenter = () => {
           variants={{
             visible: { transition: { staggerChildren: 0.25 } },
           }}
-          
         >
           
           {/* Left Column - Text Content */}
           <motion.div
-            className="space-y-8 text-center md:text-left max-w-2xl"
+            className="space-y-8 text-center md:text-left mx-auto md:mx-0 max-w-2xl"
             variants={{
               hidden: { opacity: 0, x: -40 },
               visible: { opacity: 1, x: 0 },
@@ -103,21 +102,31 @@ const HeroCenter = () => {
           >
             {/* Headline */}
             <motion.h1
-              className="text-2xl md:text-5xl lg:text-4xl font-extrabold bg-gradient-to-r from-[#f59e0b] to-[#ea580c]  text-transparent bg-clip-text font-raleway leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-extrabold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] text-transparent bg-clip-text font-raleway leading-tight text-center md:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
             >
-             Honoring Africa's Changemakers <br />
-              <span className="text-white">Building the Future of Education Across the Continent</span>
+              Honoring Africa's Changemakers <br />
+              <span className="text-white">Building the Future of Education</span>
             </motion.h1>
 
             {/* Divider / Accent */}
             <div className="w-24 h-1 mx-auto md:mx-0 bg-gradient-to-r from-primaryGold to-deepGold rounded-full shadow-lg"></div>
+            
+            {/* Mobile-only description - Simplified */}
+            <motion.p
+              className="md:hidden text-lg text-gray-200 leading-relaxed font-poppins mt-4 px-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            >
+              <strong className="text-[#ea580c]">NESA-Africa 2025</strong> is the continent's premier platform honoring those rebuilding African education from the ground up.
+            </motion.p>
 
             {/* Paragraphs */}
             <motion.p
-              className="text-base md:text-lg text-gray-200 leading-relaxed font-poppins"
+              className="hidden md:block text-base md:text-lg text-gray-200 leading-relaxed font-poppins"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
@@ -128,7 +137,7 @@ const HeroCenter = () => {
             </motion.p>
 
             <motion.p
-              className="text-base md:text-sm text-deepGold italic border-l-4 border-deepGold pl-4"
+              className="hidden md:block text-base md:text-sm text-deepGold italic border-l-4 border-deepGold pl-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
@@ -137,7 +146,7 @@ const HeroCenter = () => {
             </motion.p>
 
             <motion.p
-              className="text-base md:text-sm text-gray-300 leading-relaxed"
+              className="hidden md:block text-base md:text-sm text-gray-300 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
@@ -146,7 +155,7 @@ const HeroCenter = () => {
             </motion.p>
 
             <motion.p
-              className="text-base md:text-sm text-white font-semibold bg-red-600/20 px-4 py-2 rounded-lg inline-block"
+              className="hidden md:inline-block text-base md:text-sm text-white font-semibold bg-red-600/20 px-4 py-2 rounded-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
@@ -160,10 +169,11 @@ const HeroCenter = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
+              className="flex justify-center md:justify-start"
             >
                <motion.button
                 onClick={() => setIsModalOpen(true)}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300 mt-4 md:mt-0"
                 whileHover={{
                   scale: 1.05,
                   y: -2,
@@ -196,17 +206,17 @@ const HeroCenter = () => {
       {/* Third Navigation Bar */}
       <div className="relative md:px-10 px-2 pt-12 pb-6 md:pt-16 md:pb-8 lg:pt-20 ">
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+          className="flex flex-wrap justify-center gap-4 md:gap-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 1.2 }}
         >
           {/* Refer a friend */}
-          <motion.div className="group">
-            <Link href="/get-involved/refer-a-friend">
+          <motion.div className="group flex-1 min-w-[150px] max-w-[220px]">
+            <Link href="/get-involved/refer-a-friend" className="block w-full">
             <motion.button
               onClick={() => console.log("Refer a friend")}
-              className="w-[80%] bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3"
+              className="w-full bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-4 py-3 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
               whileHover={{
                 scale: 1.05,
                 y: -3,
@@ -215,18 +225,17 @@ const HeroCenter = () => {
               whileTap={{ scale: 0.95 }}
               aria-label="Refer a friend to NESA Africa"
             >
-              <FaUserFriends size={20} />
-              Refer a Friend
+              <FaUserFriends size={18} />
+              <span className="whitespace-nowrap">Refer a Friend</span>
             </motion.button>
             </Link>
           </motion.div>
 
           {/* Nominate Now */}
-          
-          <motion.div className="group">
-            <Link href="/get-involved/nomination">
+          <motion.div className="group flex-1 min-w-[150px] max-w-[220px]">
+            <Link href="/get-involved/nomination" className="block w-full">
               <motion.div
-                className="w-[80%] bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 ring-2 ring-primaryGold/20 hover:ring-primaryGold/40 cursor-pointer"
+                className="w-full bg-gradient-to-r from-primaryGold to-deepGold text-darkBrown px-4 py-3 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 ring-2 ring-primaryGold/20 hover:ring-primaryGold/40 cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   y: -3,
@@ -235,19 +244,18 @@ const HeroCenter = () => {
                 whileTap={{ scale: 0.95 }}
                 aria-label="Nominate someone for NESA Africa awards"
               >
-                <FaTrophy size={20} />
-                Nominate Now
+                <FaTrophy size={18} />
+                <span className="whitespace-nowrap">Nominate Now</span>
               </motion.div>
             </Link>
           </motion.div>
           
-
           {/* Get Gala Tickets */}
-          <motion.div className="group">
-            <Link href="/get-involved/tickets">
+          <motion.div className="group flex-1 min-w-[150px] max-w-[220px]">
+            <Link href="/get-involved/tickets" className="block w-full">
             <motion.button
               onClick={() => console.log("Get Gala Tickets")}
-              className="w-[80%] bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 hover:bg-primaryGold hover:text-darkBrown"
+              className="w-full bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-4 py-3 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 hover:bg-primaryGold hover:text-darkBrown"
               whileHover={{
                 scale: 1.05,
                 y: -3,
@@ -256,18 +264,18 @@ const HeroCenter = () => {
               whileTap={{ scale: 0.95 }}
               aria-label="Get tickets for NESA Africa gala"
             >
-              <FaTicketAlt size={20} />
-              Get Gala Tickets
+              <FaTicketAlt size={18} />
+              <span className="whitespace-nowrap">Get Gala Tickets</span>
             </motion.button>
             </Link>
           </motion.div>
 
           {/* Watch NESA TV */}
-          <motion.div className="group">
-            <Link href={"/nesa-media"}>
+          <motion.div className="group flex-1 min-w-[150px] max-w-[220px]">
+            <Link href={"/nesa-media"} className="block w-full">
             <motion.button
               onClick={() => console.log("Watch NESA TV")}
-              className="w-[80%] bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-6 py-4 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 hover:bg-primaryGold hover:text-darkBrown"
+              className="w-full bg-white/10 backdrop-blur-sm border-2 border-primaryGold text-white px-4 py-3 rounded-full font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 hover:bg-primaryGold hover:text-darkBrown"
               whileHover={{
                 scale: 1.05,
                 y: -3,
@@ -276,8 +284,8 @@ const HeroCenter = () => {
               whileTap={{ scale: 0.95 }}
               aria-label="Watch NESA TV content"
             >
-              <FaPlay size={20} />
-              Watch NESA TV
+              <FaPlay size={18} />
+              <span className="whitespace-nowrap">Watch NESA TV</span>
             </motion.button>
             </Link>
           </motion.div>

@@ -29,15 +29,3 @@ export default function SuperAdminLayout({ children }: { children: ReactNode }) 
   );
 }
 
-// import { useRouter } from "next/navigation";
-// import { useAuth } from "@/components/Context/AuthContext";
-  // const { user } = useAuth();
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   if (!user) {
-  //     router.push("/login");
-  //   }
-  // }, [user, router]);
-
-  // if (!user) return null; // show nothing until redirect

@@ -142,7 +142,11 @@ export default function JudgesDashboard() {
                 <button className="flex items-center p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors text-left">
                   <MessageSquare className="w-8 h-8 text-purple-600 mr-3" />
                   <div>
-                    <div className="font-medium text-gray-900">Judge Chat Room</div>
+                    <Link
+                    href={`/chatroom`}
+                    className="font-medium text-gray-900">
+                      <div className="font-medium text-gray-900">Judges Chatroom</div>
+                    </Link>
                     <div className="text-sm text-gray-600">Collaborate with other judges</div>
                   </div>
                 </button>
@@ -162,9 +166,9 @@ export default function JudgesDashboard() {
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Assigned Category</h2>
               <div className="space-y-4">
                 {MOCK_CATEGORIES
-                  .filter((c) => Array.isArray(CURRENT_JUDGE.assignedCategories) ? CURRENT_JUDGE.assignedCategories.includes(c.slug) : true)
+                  .filter((c) => Array.isArray(CURRENT_JUDGE.assignedCategories) ? CURRENT_JUDGE.assignedCategories.includes(c.title) : true)
                   .map((c) => {
-                    const nominees = MOCK_NOMINEES.filter((n) => n.category === c.slug);
+                    const nominees = MOCK_NOMINEES.filter((n) => n.category === c.title);
                     const done = nominees.filter((n) =>
                       Array.isArray(n.reviews) && n.reviews.some((r: Review) => r.judgeId === CURRENT_JUDGE.id)
                     ).length;
@@ -172,7 +176,7 @@ export default function JudgesDashboard() {
 
                     return (
                     <Link
-                      key={c.slug}
+                      key={c.title}
                       href={`/judge/category/${c.slug}`}
                       className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Card, CardContent } from "@/components/U-I/card";
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
@@ -37,20 +35,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
   color,
   icon,
 }) => {
-  return (
-    <Card className="shadow-md hover:shadow-lg transition rounded-2xl border border-gray-100">
-      <CardContent className="flex items-center justify-between p-4">
-        <div>
-          <h3 className="text-sm font-medium text-gray-600">{title}</h3>
-          <p className={`text-xl font-bold text-${color}-600`}>{value}</p>
-        </div>
-        <div className={`p-3 rounded-full bg-${color}-100 text-${color}-600`}>
-          {icon}
-        </div>
-      </CardContent>
-    </Card>
-  );
-};
+
 
 const reviewCompletionData = [
   { category: "Arts", completed: 85, pending: 15 },
