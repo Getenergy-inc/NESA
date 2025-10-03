@@ -6,10 +6,10 @@ export const metadata = {
   keywords: 'NESA-Africa, FAQ, questions, answers, awards, nominations, voting, education, Africa',
 };
 
-const DonationPage = () => {
+const FAQ = () => {
   return(
     <FAQPage/>
   )
 }
 
-export default DonationPage 
+export default FAQ 
