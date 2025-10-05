@@ -375,9 +375,6 @@ const PartnersPageContent = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl mb-8 text-deepGold max-w-2xl mx-auto"
           >
-
-            Partner with us
-          </button>
             {t('partner.cta.description2')}
           </motion.p>
           <motion.div
@@ -398,126 +395,6 @@ const PartnersPageContent = () => {
     </div>
   );
 };
-
-      {/* Form Modal */}
-      {isFormOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl max-w-md w-full p-6 relative">
-            <button
-              onClick={() => setIsFormOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-            >
-              <X size={24} />
-            </button>
-
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">
-              Partnership Application
-            </h3>
-
-            {isSuccess ? (
-              <div className="text-center py-8">
-                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h4 className="text-xl font-bold text-green-600 mb-2">
-                  Success!
-                </h4>
-                <p className="text-gray-600">
-                  Your application has been submitted successfully. We'll be in
-                  touch soon!
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {error && (
-                  <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600">
-                    <AlertCircle size={16} />
-                    <span className="text-sm">{error}</span>
-                  </div>
-                )}
-
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Full Name *
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange("name", e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-deepGold focus:border-transparent"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email Address *
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-deepGold focus:border-transparent"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="brandName"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Brand Name *
-                  </label>
-                  <input
-                    id="brandName"
-                    type="text"
-                    value={formData.brandName}
-                    onChange={(e) =>
-                      handleInputChange("brandName", e.target.value)
-                    }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-deepGold focus:border-transparent"
-                    placeholder="Enter your brand name"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="brandLink"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Brand Website *
-                  </label>
-                  <input
-                    id="brandLink"
-                    type="url"
-                    value={formData.brandLink}
-                    onChange={(e) =>
-                      handleInputChange("brandLink", e.target.value)
-                    }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-deepGold focus:border-transparent"
-                    placeholder="https://yourbrand.com"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-deepGold hover:bg-darkGold text-black font-bold py-3 rounded-xl transition-colors"
-                >
-                  Partner
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
-    </>
 
 // Wrapper component that provides the language context
 const PartnersPage = () => {
