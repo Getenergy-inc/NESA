@@ -2,9 +2,10 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { User, Wallet, Share2, PenSquareIcon } from 'lucide-react';
+import { User, Wallet, Share2, PenSquareIcon, TrendingUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useAuthContext } from '@/lib/context/AuthContext';
+import { useWallet } from '@/lib/hooks/useWallet';
 import { IoEyeSharp, IoEyeOffSharp, IoLogOut } from "react-icons/io5";
 import SecurityTab from "@/components/UI/Accountsettings/SecurityTab";
 
@@ -13,6 +14,7 @@ import SecurityTab from "@/components/UI/Accountsettings/SecurityTab";
 export default function ProfilePage() {
   const router = useRouter();
   const { user, getUserId, logout, updateUser } = useAuthContext();
+  const { totalBalance, withdrawableBalance, lockedBalance, loading: walletLoading } = useWallet();
   
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -27,6 +29,13 @@ export default function ProfilePage() {
     image: '',
   });
   const [imageFile, setImageFile] = useState<File | null>(null);
+
+  const formatAGC = (amount: number) => {
+    return new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(amount);
+  };
 
   useEffect(() => {
     if (!user) {
@@ -217,6 +226,39 @@ export default function ProfilePage() {
         </div>
 
         <div className='p-10'>
+          {/* Wallet Balance Quick View */}
+          <div className='bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl p-6 mb-6 shadow-lg max-w-[1016px]'>
+            <div className='flex items-center justify-between'>
+              <div>
+                <p className='text-sm opacity-90 mb-1'>Total AGC Balance</p>
+                <h2 className='text-3xl font-bold'>
+                  {walletLoading ? (
+                    <span className="animate-pulse">---</span>
+                  ) : (
+                    `${formatAGC(totalBalance)} AGC`
+                  )}
+                </h2>
+                <div className='flex gap-4 mt-3 text-sm'>
+                  <div>
+                    <p className='opacity-75'>Withdrawable</p>
+                    <p className='font-semibold'>{formatAGC(withdrawableBalance)} AGC</p>
+                  </div>
+                  <div>
+                    <p className='opacity-75'>Locked</p>
+                    <p className='font-semibold'>{formatAGC(lockedBalance)} AGC</p>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => router.push('/ProfileSetting/ProfileWallet')}
+                className='bg-white text-orange-600 px-6 py-3 rounded-xl font-semibold hover:bg-orange-50 transition-colors flex items-center gap-2'
+              >
+                <Wallet className="w-5 h-5" />
+                View Wallet
+              </button>
+            </div>
+          </div>
+
           <div className='border border-2 border-b-[#B6B5B3] w-full max-w-[1016px] p-10 rounded-2xl'>
             {/* Header */}
             <div className="flex justify-start flex-col md:justify-between md:flex-row md:mb-[30px]">
