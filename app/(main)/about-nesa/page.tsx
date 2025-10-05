@@ -1,6 +1,6 @@
 "use client"; // Ensure this is the first line
 
-import "../../../public/styles/fade.css";
+// import "../../../public/styles/fade.css";
 import Image from "next/image";
 import NesaAfricaHeader from "@/components/UI/NesaAfrica/header";
 import TypeOfAwards from "@/components/UI/About/type-of-awards";
