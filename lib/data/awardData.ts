@@ -22,531 +22,1248 @@ export interface Category {
   regions?: Region[];
   subCategories?: SubCategory[];
 }
-  export const categories: Category[] = [
-    {
-      "title": "Africa Lifetime Education Icon Special Recognition Award",
-      "description": "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition, this prestigious accolade honors individuals from around the world who have dedicated their lives to advancing sustainable education for all in Africa, aligning with the United Nations Sustainable Development Goal 4 (SDG 4) - Quality Education.",
-      "subCategories": [
-        {
-          "title": "Africa Education Philanthropy Icon Of The Decade (2014-2024)",
-          "description": "Honors significant philanthropic contributions that have improved educational access and quality, advancing SDG 4's targets.",
-          "nominees": [
-            { "name": "Aliko Dangote", "image": "/images/africaicons/aliko-dangote.png", "achievement": "Established the 'Dangote Foundation' in 1993, which has invested millions in educational causes across Africa." },
-            { "name": "Mo Ibrahim", "image": "/images/africaicons/mo-ibrahim.png", "achievement": "Founded the 'Mo Ibrahim Foundation' in 2006, supporting governance and leadership in Africa." },
-            { "name": "Strive Masiyiwa", "image": "/images/africaicons/strive-masiyiwa.png", "achievement": "Established the 'Higher Life Foundation' in 1996, providing scholarships to over 250,000 African students." },
-            { "name": "Folorunso Alakija", "image": "/images/africaicons/Folorunso-alakija.png", "achievement": "Established the 'Rose of Sharon Foundation' in 2008, providing scholarships and educational support to widows and orphans." },
-            { "name": "Patrice Motsepe", "image": "/images/africaicons/patrice-motsepe.png", "achievement": "Founded the 'Motsepe Foundation' in 1999, focusing on education, scholarships, and school infrastructure in South Africa." },
-            { "name": "Tony Elumelu", "image": "/images/africaicons/tony-elumelu.png", "achievement": "Established the 'Tony Elumelu Foundation' in 2010, providing scholarships and promoting entrepreneurship education across Africa." },
-            { "name": "Isabel dos Santos", "image": "/images/africaicons/isabel-dos-santos.png", "achievement": "Founded the 'Isabel dos Santos Foundation' in 2014, which has funded educational projects and scholarships in Angola." },
-            { "name": "Nassef Sawiris", "image": "/images/africaicons/nassef-sawiris.png", "achievement": "Founded the 'Sawiris Foundation for Social Development' in 2001, supporting higher education and scholarships in Egypt." },
-            { "name": "Osei Kwame", "image": "/images/africaicons/osei-kwame.png", "achievement": "Founded the 'Despite Foundation,' supporting education through scholarships and school building projects in Ghana." },
-            { "name": "Tsitsi Masiyiwa", "image": "/images/africaicons/tsitsi-masiyiwa.png", "achievement": "Co-founded the 'Capernaum Trust' in 1996, providing scholarships and educational support to orphans and vulnerable children." }
-          ]
-        },
-        {
-          "title": "Literary And New Curriculum Advocate Africa Education Icon Of The Decade (2014-2024)",
-          "description": "Honors significant contributions to literature and curriculum development in African education.",
-          "nominees": [
-            { "name": "Ngugi wa Thiong'o", "image": "/images/africaicons/ngugi-wa-thiongo.png", "achievement": "Founded the 'Ngugi wa Thiong'o Foundation' in 1980, promoting indigenous languages in education in Kenya." },
-            { "name": "Chinua Achebe", "image": "/images/africaicons/chinua-achebe.png", "achievement": "Founded the 'Chinua Achebe Foundation' in 1990, promoting African literature and supporting literary education (posthumously)." },
-            { "name": "Mariama Ba", "image": "/images/africaicons/mariama-ba.png", "achievement": "Established the 'Mariama Ba School' in 1979, a beacon of girls' education in Senegal." },
-            { "name": "Chris Abani", "image": "/images/africaicons/chris-abani.png", "achievement": "Dedication to improving rural education, particularly for girls, demonstrating a significant impact on her community." },
-            { "name": "Buchi Emecheta", "image": "/images/africaicons/buchi-emecheta.png", "achievement": "Dedication to improving rural education, particularly for girls, demonstrating a significant impact on her community." },
-            { "name": "Chimamanda Ngozi Adichie", "image": "/images/africaicons/chimamanda-ngozi-adichie.png", "achievement": "Founded the 'Farafina Trust' in 2008, promoting literary education and supporting young writers in Nigeria." },
-            { "name": "Wole Soyinka", "image": "/images/africaicons/wole-soyinka.png", "achievement": "Established the 'Wole Soyinka Centre for Investigative Journalism' in 2004, promoting media literacy and education in Nigeria." },
-            { "name": "Ama Ata Aidoo", "image": "/images/africaicons/ama-ata-aidoo.png", "achievement": "Founded the 'Mbaasem Foundation' in 2000, supporting the development of African women writers and promoting literacy in Ghana." },
-            { "name": "Nnedi Okorafor", "image": "/images/africaicons/nnedi-okorafor.png", "achievement": "Co-founded the 'African Speculative Fiction Society' in 2016, promoting African literature in science fiction and fantasy." },
-            { "name": "Teju Cole", "image": "/images/africaicons/teju-cole.png", "achievement": "Founded the 'Teju Cole Literary Project' in 2010, promoting literature and creative writing in Nigeria." }
-          ]
-        },
-        {
-          "title": "Africa Technical Educator Icon Of The Decade (2014-2024)",
-          "description": "Recognizes outstanding contributions to technical education in Africa.",
-          "nominees": [
-            { "name": "Patrick Awuah", "image": "/images/africaicons/patrick-awuah.png", "achievement": "Founder of 'Ashesi University' in 2002, which emphasizes leadership, ethics, and entrepreneurship in its technical and liberal arts education." },
-            { "name": "Ndidi Nwuneli", "image": "/images/africaicons/ndidi-nwuneli.png", "achievement": "Co-founder of 'LEAP Africa' in 2002, which focuses on leadership and life skills training for young people." },
-            { "name": "Fred Swaniker", "image": "/images/africaicons/fred-swaniker.png", "achievement": "Founder of 'African Leadership University' in 2015, a network of tertiary institutions focused on developing Africa's next generation of leaders." },
-            { "name": "Oluseun Onigbinde", "image": "/images/africaicons/oluseun-onigbinde.png", "achievement": "Co-founder of 'BudgIT' in 2011, which uses data to drive education in governance and public policy." },
-            { "name": "Bright Simons", "image": "/images/africaicons/bright-simons.png", "achievement": "Founder of 'mPedigree' in 2007, an organization that uses mobile technology to enhance healthcare and education services." },
-            { "name": "Rebecca Enonchong", "image": "/images/africaicons/rebecca-enonchong.png", "achievement": "Founder of 'AppsTech' in 1999, which provides enterprise application solutions and has supported IT education in Africa." },
-            { "name": "Judith Owigar", "image": "/images/africaicons/judith-owigar.png", "achievement": "Co-founder of 'AkiraChix' in 2010, which empowers young women in Kenya through technical training in software development." },
-            { "name": "Tunde Kehinde", "image": "/images/africaicons/tunde-kehinde.png", "achievement": "Co-founder of 'Lidya' in 2016, a digital financial services platform that provides financial literacy and resources to small businesses in Africa." },
-            { "name": "Iyinoluwa Aboyeji", "image": "/images/africaicons/iyinoluwa-aboyeji.png", "achievement": "Co-founder of 'Flutterwave' in 2016, supporting fintech education and training across Africa." },
-            { "name": "Audrey Cheng", "image": "/images/africaicons/audrey-cheng.png", "achievement": "Founder of 'Moringa School' in 2014, a Nairobi-based technology and coding bootcamp training the next generation of software developers." }
-          ]
-        }
-      ]
-    },
-      
-    {
-      "title": "Best NGO Education Support Recognition Award",
-      "description": "This award recognizes non-governmental organizations (NGOs) that have made outstanding contributions to education in Africa through various initiatives and support programs.",
-      "subCategories": [
-        {
-          "title": "Best Educational Infrastructure Initiative By An NGO",
-          "description": "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
-          "nominees": [
-            { "name": "Teach For Nigeria", "image": "/images/ngo/teach-for-nigeria.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Slum2School Africa", "image": "/images/ngo/slum2school.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "ActionAid Nigeria", "image": "/images/ngo/actionaid.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Plan International Nigeria", "image": "/images/ngo/plan-international-nigeria.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Malala Fund Nigeria", "image": "/images/ngo/malala-fund.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Girl Child Education Initiative", "image": "/images/ngo/girl-child-initiative.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Universal Learning Solutions", "image": "/images/ngo/universal-learning-solutions.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Bridge International Academies", "image": "/images/ngo/bridge.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Save the Children Nigeria", "image": "/images/ngo/save-the-children.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "UNICEF Nigeria", "image": "/images/ngo/unicef.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." }
-          ]
-        },
-        {
-          "title": "Exceptional Donation Of Educational Materials By An NGO",
-          "description": "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
-          "nominees": [
-            { "name": "Nigeria Youth Futures Fund", "image": "/images/ngo/nigeria-youth-futures-fund.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "One Million Teachers", "image": "/images/ngo/one-million-teachers.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "The Education Partnership (TEP)", "image": "/images/ngo/the-education-partnership.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Street Child Nigeria", "image": "/images/ngo/street-child.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Educate Nigeria Initiative", "image": "/images/ngo/educate-nigeria-initiative.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "LEAP Africa", "image": "/images/ngo/leap-africa.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Young Educators Foundation", "image": "/images/ngo/young-educators-foundation.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "The Tony Elumelu Foundation", "image": "/images/ngo/the-tony-elumelu-foundation.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "YEDBC (Yaba Educators Centre for In)", "image": "/images/ngo/yedbc.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Oando Foundation", "image": "/images/ngo/oando-foundation.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." }
-          ]
-        },
-        {
-          "title": "Outstanding Donation Of Education Aid By NGO",
-          "description": "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
-          "nominees": [
-            { "name": "Paradigm Initiative", "image": "/images/ngo/paradigm-initiative.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "MANI (Maternal and Child Survival Program)", "image": "/images/ngo/mani.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "STEM Nigeria Direct", "image": "/images/ngo/stem-nigeria-direct.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "Tech4Dev (Technology for Social G)", "image": "/images/ngo/tech4dev.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "REACH Initiative International", "image": "/images/ngo/reach-initiative-international.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "KnowledgeAid Initiative", "image": "/images/ngo/knowledgeaid-initiative.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "YISA (Youth Initiative for Sustain)", "image": "/images/ngo/yisa.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "SkillNG", "image": "/images/ngo/saind.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "AYECI (African Youth Initiative on)", "image": "/images/ngo/save-the-children.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." },
-            { "name": "EVA (The Education As A Vaccine In)", "image": "/images/ngo/eva.png", "achievement": "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community." }
-          ]
-        },
-        {
-          "title": "Youth Empowerment Through Educational Services By An NGO In Nigeria",
-          "description": "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
-          "nominees": [
-            { "name": "Youth for Technology Foundation", "image": "/images/ngo/youth-for-technology.png", "achievement": "Provided technology training and entrepreneurship education to young people in Nigeria. Empowered over 20,000 youths wi..." },
-            { "name": "Junior Achievement Nigeria (JAN)", "image": "/images/ngo/junior-achievement.png", "achievement": "Implemented educational programs that empowered youths with financial literacy and workforce readiness for youths, reache..." },
-            { "name": "YALI Network Nigeria", "image": "/images/ngo/yali-network.png", "achievement": "Provided leadership and professional development opportunities for young Nigerians through the Young African Leaders Initiative..." },
-            { "name": "AIESEC Nigeria", "image": "/images/ngo/aiesec.png", "achievement": "Offered international exchange programs that provide young people with leadership opportunities, global internships, and socia..." },
-            { "name": "Girls Education Mission International (GEM)", "image": "/images/ngo/girls-education-mission.png", "achievement": "Focused on empowering young girls through education, providing scholarships, mentorship, and advocacy for girls' rights. I..." },
-            { "name": "Rise Network", "image": "/images/ngo/rise-network.png", "achievement": "Facilitated career development, mentorship, and skills training for young people in Nigeria. Supported over 35,000 young Nige..." },
-            { "name": "Jobberman Nigeria", "image": "/images/ngo/jobberman.png", "achievement": "Offered job training and placement services for young Nigerians, bridging the gap between job seekers and employers. Trained..." },
-            { "name": "Young African Leadership Initiative (YALI) Nigeria", "image": "/images/ngo/yali.png", "achievement": "Empowered young Nigerians through leadership training, civic engagement, and professional development programs. Impac..." },
-            { "name": "YouthHubAfrica", "image": "/images/ngo/youthhub-africa.png", "achievement": "Supported youth-driven initiatives for social change and education, providing platforms for young voices to be heard in Nigeri..." },
-            { "name": "Youth Mentoring Initiative for Youth Empowerment (MIYE)", "image": "/images/ngo/youth-mentoring-initiative.png", "achievement": "Guided young people through mentorship and educational programs, focusing on leadership and personal development. Ment..." }
-          ]
-        },
-        {
-          "title": "Women And Girls' Empowerment In Education By An NGO In Nigeria",
-          "description": "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
-          "nominees": [
-            { "name": "Girls Education Mission International (GEM)", "image": "/images/ngo/girls-education-mission.png", "achievement": "Provided educational scholarships, mentorship, and advocacy for the education of girls in northern Nigeria. Empowered over..." },
-            { "name": "ActionAid Nigeria", "image": "/images/ngo/actionaid.png", "achievement": "Implemented the Safe Cities for Women and Girls initiative. Advocated for educational programs to empower women and girls, focu..." },
-            { "name": "Educate Girls Nigeria", "image": "/images/ngo/educate-girls.png", "achievement": "Focused on enrolling and retaining girls in school, especially in rural and underserved communities. Increased school enrollmen..." },
-            { "name": "Women's Rights Advancement and Protection Alternative (WRAPA)", "image": "/images/ngo/wrapa.png", "achievement": "Provided education and vocational training for women and girls, particularly those affected by gender-based violence. Empow..." },
-            { "name": "Girl Child Concerns (GCC)", "image": "/images/ngo/girl-child-concerns.png", "achievement": "Implemented initiatives focused on the education and empowerment of adolescent girls in northern Nigeria. Supported the educ..." },
-            { "name": "Women for Women International Nigeria", "image": "/images/ngo/women-for-women.png", "achievement": "Provided educational programs, vocational skills training, and support to women survivors of conflict. Empowered over 20,000..." },
-            { "name": "Baobab for Women's Human Rights", "image": "/images/ngo/baobab.png", "achievement": "Focused on educating women and girls about their rights, including the right to education. Provided literacy programs for wom..." },
-            { "name": "Centre for Girls Education (CGE)", "image": "/images/ngo/centre-for-girls-education.png", "achievement": "Implemented programs to educate and empower girls in rural northern Nigeria, focusing on literacy and life skills. Improved..." },
-            { "name": "Tech4Dev Women's Empowerment Program", "image": "/images/ngo/tech4dev.png", "achievement": "Educated young women in digital skills and entrepreneurship, helping them to access better job opportunities. Trained over 5,000..." },
-            { "name": "Association of Nigerian Women Entrepreneurs (ANWE)", "image": "/images/ngo/anwep.png", "achievement": "Promoted education and entrepreneurship for women and girls, providing resources and support for business startups. Empowered o..." }
-          ]
-        }
-      ]
-    },
-  
-  
+export const categories: Category[] = [
+  {
+    title: "Africa Lifetime Education Icon Special Recognition Award",
+    description:
+      "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition, this prestigious accolade honors individuals from around the world who have dedicated their lives to advancing sustainable education for all in Africa, aligning with the United Nations Sustainable Development Goal 4 (SDG 4) - Quality Education.",
+    subCategories: [
       {
-        "title": "Africa Diaspora association Educational Impact Projects Recognition Award in Africa",
-        "description": "Honoring the significant contributions made by diaspora organizations towards achieving \"Education for all\" across the African Continent.",
-        "subCategories": [
+        title: "Africa Education Philanthropy Icon Of The Decade (2014-2024)",
+        description:
+          "Honors significant philanthropic contributions that have improved educational access and quality, advancing SDG 4's targets.",
+        nominees: [
           {
-            "title": "The Best Diaspora-Led Educational Infrastructure Project in Africa",
-            "description": "This category celebrates diaspora organizations that have created significant educational infrastructure, advancing the quality of education across Africa.",
-            "nominees": [
-              {
-                "name": "Nigerian Association in the UK",
-                "achievement": "Constructed a science and technology center in Osun State, Nigeria, fully equipped with modern laboratories and classrooms.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Nigerian_Association_in_the_UK.png"
-              },
-              {
-                "name": "Ghanaian Association of Washington",
-                "achievement": "Built a community library and learning center in Kumasi, Ghana, with a focus on providing access to books and digital resources.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Ghanaian_Association_of_Washington.png"
-              },
-              {
-                "name": "Kenyan Diaspora Alliance",
-                "achievement": "Constructed three primary schools in rural areas of Kenya, including the provision of solar power and internet access.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Kenyan_Diaspora_Alliance.png"
-              },
-              {
-                "name": "Ethiopian Diaspora Fellowship",
-                "achievement": "Renovated dilapidated schools in Addis Ababa, Ethiopia, including upgrading classrooms, sanitation facilities, and playgrounds.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Ethiopian_Diaspora_Fellowship.png"
-              },
-              {
-                "name": "South African Diaspora United",
-                "achievement": "Funded the construction of a multi-purpose education and sports complex in Soweto, South Africa. Provided a safe space for learning and recreation.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/South_African_Diaspora_United.png"
-              },
-              {
-                "name": "Ugandan North American Association",
-                "achievement": "Built a secondary school in Gulu, Uganda, focusing on regions recovering from conflict. Provided quality education to over 500 students.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Ugandan_North_American_Association.png"
-              },
-              {
-                "name": "Zimbabwean Diaspora Network",
-                "achievement": "Led the refurbishment of schools in Matabeleland, Zimbabwe, including the installation of computer labs and solar power systems.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Zimbabwean_Diaspora_Network.png"
-              },
-              {
-                "name": "Senegalese Association in France",
-                "achievement": "Funded the construction of a vocational training center in Dakar, Senegal, focusing on trades such as carpentry, plumbing, and electrical work.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Senegalese_Association_in_France.png"
-              },
-              {
-                "name": "Tanzanian Community in the USA",
-                "achievement": "Established digital learning hubs in rural Tanzania, providing internet access and e-learning tools to underserved communities.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Tanzanian_Community_in_the_USA.png"
-              },
-              {
-                "name": "Congolese Diaspora Impact Group",
-                "achievement": "Built a school complex in Kinshasa, Democratic Republic of the Congo, including classrooms, a library, and a computer lab.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Congolese_Diaspora_Impact_Group.png"
-              }
-            ]
+            name: "Aliko Dangote",
+            image: "/images/africaicons/aliko-dangote.png",
+            achievement:
+              "Established the 'Dangote Foundation' in 1993, which has invested millions in educational causes across Africa.",
           },
           {
-            "title": "The Best Diaspora-Led Educational Program Innovation in Africa",
-            "description": "This category recognizes innovative educational programs initiated by diaspora organizations that have significantly impacted learning outcomes in Africa.",
-            "nominees": [
-              {
-                "name": "African Diaspora Network (ADN)",
-                "achievement": "Developed an e-learning platform that offers free access to STEM courses for students across Africa. Trained 5,000 teachers across the continent.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/African_Diaspora_Network.png"
-              },
-              {
-                "name": "Sierra Leonean Empowerment Network",
-                "achievement": "Reached over 10,000 students in multiple countries, significantly improving their understanding and performance in science subjects.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Sierra_Leonean_Empowerment_Network.png"
-              },
-              {
-                "name": "African Leadership Academy Alumni",
-                "achievement": "Designed an after-school leadership program that fosters entrepreneurial skills among African youth. Over 1,000 students have participated.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/African_Leadership_Academy_Alumni.png"
-              },
-              {
-                "name": "Nigerian Diaspora Direct Investment Summit",
-                "achievement": "Introduced a mentorship and investment program for young entrepreneurs in Nigeria, combining educational resources with financial support.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Nigerian_Diaspora_Direct_Investment_Summit.png"
-              },
-              {
-                "name": "Somali Diaspora Youth",
-                "achievement": "Developed a distance learning program that connects Somali students in rural areas with diaspora educators via virtual classrooms.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Somali_Diaspora_Youth.png"
-              },
-              {
-                "name": "Eritrean Diaspora Initiative",
-                "achievement": "Launched a digital literacy program that provides Eritrean students with essential IT skills, including coding and digital communication.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Eritrean_Diaspora_Network.png"
-              },
-              {
-                "name": "Moroccan American Network",
-                "achievement": "Established a bilingual education program that supports French and Arabic literacy in Moroccan schools using digital tools.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Moroccan_American_Network.png"
-              },
-              {
-                "name": "Ghana Diaspora Professional Network",
-                "achievement": "Developed an IT skills training program focused on coding, web development, and digital marketing for Ghanaian youth.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Ghana_Diaspora_Professional_Network.png"
-              },
-              {
-                "name": "Botswana Educational Foundation",
-                "achievement": "Introduced an environmental education program that teaches sustainable practices and conservation in Botswana's schools.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Botswana_Educational_Foundation.png"
-              },
-              {
-                "name": "Liberian Diaspora Education Fund",
-                "achievement": "Implemented an after-school tutoring and mentorship program in Liberia, focusing on literacy and numeracy skills. Improved academic performance for over 5,000 students.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Liberian_Diaspora_Education_Fund.png"
-              }
-            ]
+            name: "Mo Ibrahim",
+            image: "/images/africaicons/mo-ibrahim.png",
+            achievement:
+              "Founded the 'Mo Ibrahim Foundation' in 2006, supporting governance and leadership in Africa.",
           },
           {
-            "title": "The Best Diaspora-Led Teacher Training And Support Initiative in Africa",
-            "description": "This category honors diaspora-led initiatives that have significantly improved teacher training and support across Africa.",
-            "nominees": [
-              {
-                "name": "African Teacher Foundation",
-                "achievement": "Delivered a teacher training program covering modern pedagogical methods, classroom management, and technology integration.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/African_Teacher_Foundation.png"
-              },
-              {
-                "name": "Diaspora African Women in Education (DAWIE)",
-                "achievement": "Established a mentorship program connecting female educators in Africa with experienced teachers abroad. Empowered 2,000 women in education.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Diaspora_African_Women_in_Education.png"
-              },
-              {
-                "name": "Zimbabwean Teachers Association Abroad",
-                "achievement": "Launched a continuous professional development program for Zimbabwean teachers, focusing on curriculum development and modern teaching methods.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Zimbabwean_Teachers_Association_Abroad.png"
-              },
-              {
-                "name": "Ghanaian Teachers in Diaspora",
-                "achievement": "Developed an annual teacher training conference in Accra, Ghana, featuring workshops on best practices in education and technology integration.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Ghanaian_Teachers_in_Diaspora.png"
-              },
-              {
-                "name": "Ugandan Teachers' Network",
-                "achievement": "Implemented a peer-to-peer support network for Ugandan teachers, offering resources, mentorship, and collaborative professional development.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Ugandan_Teachers_Network.png"
-              },
-              {
-                "name": "Malawian Diaspora Teaching Initiative",
-                "achievement": "Conducted teacher training workshops focusing on inclusive education and teaching students with special needs. Trained over 1,000 educators.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Malawian_Diaspora_Teaching_Initiative.png"
-              },
-              {
-                "name": "Sierra Leone Teachers Abroad Network",
-                "achievement": "Provided remote training and resources for teachers in Sierra Leone, focusing on post-conflict education and trauma-informed teaching practices.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Sierra_Leone_Teachers_Abroad_Network.png"
-              },
-              {
-                "name": "Ethiopian Education Foundation",
-                "achievement": "Established a teacher exchange program that brings Ethiopian educators to the United States for training in STEM education. Improved science and math instruction in over 100 Ethiopian schools.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Ethiopian_Education_Foundation.png"
-              },
-              {
-                "name": "South Sudanese Educators Abroad",
-                "achievement": "Developed a peace education curriculum and trained teachers in South Sudan on conflict resolution and peacebuilding. Trained over 500 educators.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/South_Sudanese_Educators_Abroad.png"
-              },
-              {
-                "name": "Zambian Diaspora Education Trust",
-                "achievement": "Developed a STEM-focused teacher training initiative, providing resources and training to Zambian teachers. Trained 1,500 teachers in innovative science and math instruction methods.",
-                "state": "Lagos, Nigeria",
-                "country": "Nigeria",
-                "image": "/images/diaspora/Zambian_Diaspora_Education_Trust.png"
-              }
-            ]
-          }
-        ]
+            name: "Strive Masiyiwa",
+            image: "/images/africaicons/strive-masiyiwa.png",
+            achievement:
+              "Established the 'Higher Life Foundation' in 1996, providing scholarships to over 250,000 African students.",
+          },
+          {
+            name: "Folorunso Alakija",
+            image: "/images/africaicons/Folorunso-alakija.png",
+            achievement:
+              "Established the 'Rose of Sharon Foundation' in 2008, providing scholarships and educational support to widows and orphans.",
+          },
+          {
+            name: "Patrice Motsepe",
+            image: "/images/africaicons/patrice-motsepe.png",
+            achievement:
+              "Founded the 'Motsepe Foundation' in 1999, focusing on education, scholarships, and school infrastructure in South Africa.",
+          },
+          {
+            name: "Tony Elumelu",
+            image: "/images/africaicons/tony-elumelu.png",
+            achievement:
+              "Established the 'Tony Elumelu Foundation' in 2010, providing scholarships and promoting entrepreneurship education across Africa.",
+          },
+          {
+            name: "Isabel dos Santos",
+            image: "/images/africaicons/isabel-dos-santos.png",
+            achievement:
+              "Founded the 'Isabel dos Santos Foundation' in 2014, which has funded educational projects and scholarships in Angola.",
+          },
+          {
+            name: "Nassef Sawiris",
+            image: "/images/africaicons/nassef-sawiris.png",
+            achievement:
+              "Founded the 'Sawiris Foundation for Social Development' in 2001, supporting higher education and scholarships in Egypt.",
+          },
+          {
+            name: "Osei Kwame",
+            image: "/images/africaicons/osei-kwame.png",
+            achievement:
+              "Founded the 'Despite Foundation,' supporting education through scholarships and school building projects in Ghana.",
+          },
+          {
+            name: "Tsitsi Masiyiwa",
+            image: "/images/africaicons/tsitsi-masiyiwa.png",
+            achievement:
+              "Co-founded the 'Capernaum Trust' in 1996, providing scholarships and educational support to orphans and vulnerable children.",
+          },
+        ],
       },
-  
-  
       {
-        title: "The Overall Best CSR for Education in Nigeria Award 2024",
-        description: "Honoring corporate social responsibility by banks, telecommunications, and other sectors, and showing their impactful CSR initiatives that have ...",
-        subCategories: [
+        title:
+          "Literary And New Curriculum Advocate Africa Education Icon Of The Decade (2014-2024)",
+        description:
+          "Honors significant contributions to literature and curriculum development in African education.",
+        nominees: [
           {
-            title: "Banking And Finance CSR in Education Award",
-            description: "Recognizes financial institutions for their initiatives in supporting education.",
-            nominees: [
-              { name: "Access Bank", image: "/images/csricons/access.png", achievement: "Launched the 'Access Bank School Adoption Program' to renovate schools and provide learning materials." },
-              { name: "First Bank of Nigeria", image: "/images/csricons/firstbank.png", achievement: "Sponsored the 'SPARK' initiative for mentoring and career development in schools." },
-              { name: "Zenith Bank", image: "/images/csricons/zenith.png", achievement: "Funded ICT labs in several public schools across Nigeria. Provided scholarships for underprivileged students in tertiary institutions." },
-              { name: "GTBank", image: "/images/csricons/gtb.png", achievement: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community." },
-              { name: "UBA", image: "/images/csricons/uba.png", achievement: "Established the 'UBA Foundation' focused on education and development. Provided scholarships and educational grants to students across Nigeria." },
-              { name: "Ecobank", image: "/images/csricons/ecobank.png", achievement: "Supported digital literacy projects in collaboration with local NGOs. Donated educational materials to rural schools." },
-              { name: "Fidelity Bank", image: "/images/csricons/fidelity.png", achievement: "Launched the 'Fidelity Helping Hands Project' to improve school facilities. Engaged in teacher training workshops to enhance education quality." },
-              { name: "Stanbic IBTC", image: "/images/csricons/stanbicibtc.png", achievement: "Provided capacity-building workshops for educators. Engaged in teacher training workshops to enhance education quality." },
-              { name: "Union Bank", image: "/images/csricons/union.png", achievement: "Funded infrastructure development in schools through the 'UnionCares' initiative. Provided capacity-building workshops for educators." },
-              { name: "Sterling Bank", image: "/images/csricons/sterling.png", achievement: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community." }
-            ]
+            name: "Ngugi wa Thiong'o",
+            image: "/images/africaicons/ngugi-wa-thiongo.png",
+            achievement:
+              "Founded the 'Ngugi wa Thiong'o Foundation' in 1980, promoting indigenous languages in education in Kenya.",
           },
           {
-            title: "Telecommunications CSR in Education Award",
-            description: "Honors telecom companies for their support in digital learning programs and connectivity for education.",
-            nominees: [
-              { name: "MTN Nigeria", image: "/images/csricons/mtn.png", achievement: "Implemented the 'MTN Foundation Schools Connect' to provide internet access to rural schools. Donated computers and ICT equip..." },
-              { name: "Airtel Nigeria", image: "/images/csricons/airtel.png", achievement: "Launched the 'Adopt-a-School' initiative to improve school infrastructure. Provided scholarships for students pursuing technolo..." },
-              { name: "Glo Mobile", image: "/images/csricons/glo.png", achievement: "Provided scholarships for students pursuing technology courses. Organized coding and programming workshops for secondary sch..." },
-              { name: "9mobile", image: "/images/csricons/9mobile.png", achievement: "Developed the '9mobile Future Minds' initiative for digital education. Collaborated with educational NGOs to provide learning..." }
-            ]
+            name: "Chinua Achebe",
+            image: "/images/africaicons/chinua-achebe.png",
+            achievement:
+              "Founded the 'Chinua Achebe Foundation' in 1990, promoting African literature and supporting literary education (posthumously).",
           },
           {
-            title: "Oil And Gas CSR in Education Award",
-            description: "Celebrates oil and gas companies' contributions to educational development in their host communities.",
-            nominees: [
-              { name: "Shell Nigeria", image: "/images/csricons/shell.png", achievement: "Implemented the 'Shell University Scholarship Scheme' for engineering students. Sponsored STEM workshops for secondary school..." },
-              { name: "ExxonMobil Nigeria", image: "/images/csricons/exxonmobil.png", achievement: "Developed the 'ExxonMobil Teachers Academy' for STEM educators. Provided grants for educational infrastructure develo..." },
-              { name: "Chevron Nigeria", image: "/images/csricons/chevron.png", achievement: "Developed the 'ExxonMobil Teachers Academy' for STEM educators. Provided grants for educational infrastructure develo..." },
-              { name: "Total Nigeria", image: "/images/csricons/total.png", achievement: "Launched the 'TotalEnergies STEM Excellence Program' for secondary schools. Sponsored science fairs and exhibitions to promote inn..." },
-              { name: "Eni (Agip)", image: "/images/csricons/agip.png", achievement: "Implemented the 'Eni Scholarship Program' for tertiary education in technical fields. Supported educational research projects in..." },
-              { name: "Schlumberger Nigeria", image: "/images/csricons/schlumberger.png", achievement: "Implemented the 'Schlumberger Teachers Empowerment Program' for continuous professional development. Funded scholars..." },
-              { name: "Baker Hughes", image: "/images/csricons/baker_hughes.png", achievement: "Supported the 'Global School Infrastructure Development Project' in rural areas. Engaged in educational outreach programs..." },
-              { name: "Seplat Petroleum", image: "/images/csricons/seplat.png", achievement: "Implemented the 'Seplat Teachers Empowerment Program' for continuous professional development." },
-              { name: "Addax Petroleum", image: "/images/csricons/addax.png", achievement: "Funded science laboratories in secondary schools through the 'Addax Science Initiative'. Sponsored educational trips and excursions..." },
-              { name: "Oando Plc", image: "/images/csricons/oando.png", achievement: "Launched the 'Oando Foundation's Adopt-a-School Initiative' to improve learning environments. Provided mentorship and c..." }
-            ]
+            name: "Mariama Ba",
+            image: "/images/africaicons/mariama-ba.png",
+            achievement:
+              "Established the 'Mariama Ba School' in 1979, a beacon of girls' education in Senegal.",
           },
           {
-            title: "Food And Beverages CSR in Education Award",
-            description: "Acknowledges food and beverage companies' support for nutrition and education programs.",
-            nominees: [
-              { name: "Nestle Nigeria", image: "/images/csricons/nestlenigeria.png", achievement: "Launched the 'Nestlé Healthy Kids Program' to educate children on nutrition and health. Provided school feeding programs in partne..." },
-              { name: "Cadbury Nigeria", image: "/images/csricons/cadbury.png", achievement: "Supported the 'Cadbury Nutrition Education Initiative' in primary schools. Donated learning materials and resources to schools..." },
-              { name: "Nigerian Breweries", image: "/images/csricons/nigerianbreweries.png", achievement: "Developed the 'Nigerian Breweries Felix Ohiwerei Education Trust Fund' to support education. Funded scholarships and educat..." },
-              { name: "Guinness Nigeria", image: "/images/csricons/guinness.png", achievement: "Established the 'Guinness Nigeria Empowerment Program' for youth development. Supported vocational training..." },
-              { name: "Flour Mills of Nigeria", image: "/images/csricons/fmnn.png", achievement: "Supported the 'FMN Educational Support Initiative' to improve literacy and numeracy. Provided educational materials and resourc..." },
-              { name: "Coca-Cola Nigeria", image: "/images/csricons/cocacola.png", achievement: "Implemented the 'Coca-Cola Foundation School Support Program' for educational infrastructure. Sponsored health and well..." },
-              { name: "Dangote Sugar", image: "/images/csricons/dangotesugar.png", achievement: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community." },
-              { name: "PepsiCo Nigeria", image: "/images/csricons/pepsi.png", achievement: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community." },
-              { name: "FrieslandCampina WAMCO", image: "/images/csricons/frieslandcampina.png", achievement: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community." },
-              { name: "Promasidor Nigeria", image: "/images/csricons/promasi.png", achievement: "Implemented the 'Promasidor Quill Awards' for educational journalism. Sponsored essay competitions and academic challenges for..." }
-            ]
+            name: "Chris Abani",
+            image: "/images/africaicons/chris-abani.png",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating a significant impact on her community.",
           },
           {
-            title: "Manufacturing CSR in Education Award",
-            description: "Recognizes manufacturing companies for their initiatives in technical and vocational education.",
-            nominees: [
-              { name: "Dangote Group", image: "/images/csricons/dangotecement.png", achievement: "Implemented the 'Dangote Academy' for vocational and technical training. Provided scholarships and sponsorships for engineer..." },
-              { name: "Nigerian Bottling Company", image: "/images/csricons/bottle.png", achievement: "Launched the 'NBC Education Initiative' to support digital learning. Sponsored ICT training workshops for teachers." },
-              { name: "Lafarge Africa", image: "/images/csricons/lafarge.png", achievement: "Developed the 'Lafarge Education Support Program' for secondary schools. Donated building materials for school infrastructure p..." },
-              { name: "Unilever Nigeria", image: "/images/csricons/unilever.png", achievement: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community." },
-              { name: "PZ Cussons Nigeria", image: "/images/csricons/pz.png", achievement: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community." },
-              { name: "Procter & Gamble Nigeria", image: "/images/csricons/pg.png", achievement: "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community." },
-              { name: "Honeywell Flour Mills", image: "/images/csricons/honeywell.png", achievement: "Launched the 'Honeywell Excellence Program' for educational sponsorships. Supported capacity-building workshops for..." },
-              { name: "BUA Group", image: "/images/csricons/bua.png", achievement: "Supported the 'BUA School Renovation Project' to improve learning environments. Funded vocational training programs for yo..." },
-              { name: "Innoson Vehicle Manufacturing", image: "/images/csricons/innoson.png", achievement: "Supported the 'Innoson Auto Mechanics Training Program' for skill acquisition. Donated educational materials and resourc..." },
-              { name: "May & Baker Nigeria", image: "/images/csricons/mb.png", achievement: "Launched the 'May & Baker Science Challenge' for secondary school students. Sponsored science fairs and exhibitions to p..." }
-            ]
+            name: "Buchi Emecheta",
+            image: "/images/africaicons/buchi-emecheta.png",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating a significant impact on her community.",
           },
+          {
+            name: "Chimamanda Ngozi Adichie",
+            image: "/images/africaicons/chimamanda-ngozi-adichie.png",
+            achievement:
+              "Founded the 'Farafina Trust' in 2008, promoting literary education and supporting young writers in Nigeria.",
+          },
+          {
+            name: "Wole Soyinka",
+            image: "/images/africaicons/wole-soyinka.png",
+            achievement:
+              "Established the 'Wole Soyinka Centre for Investigative Journalism' in 2004, promoting media literacy and education in Nigeria.",
+          },
+          {
+            name: "Ama Ata Aidoo",
+            image: "/images/africaicons/ama-ata-aidoo.png",
+            achievement:
+              "Founded the 'Mbaasem Foundation' in 2000, supporting the development of African women writers and promoting literacy in Ghana.",
+          },
+          {
+            name: "Nnedi Okorafor",
+            image: "/images/africaicons/nnedi-okorafor.png",
+            achievement:
+              "Co-founded the 'African Speculative Fiction Society' in 2016, promoting African literature in science fiction and fantasy.",
+          },
+          {
+            name: "Teju Cole",
+            image: "/images/africaicons/teju-cole.png",
+            achievement:
+              "Founded the 'Teju Cole Literary Project' in 2010, promoting literature and creative writing in Nigeria.",
+          },
+        ],
+      },
+      {
+        title: "Africa Technical Educator Icon Of The Decade (2014-2024)",
+        description:
+          "Recognizes outstanding contributions to technical education in Africa.",
+        nominees: [
+          {
+            name: "Patrick Awuah",
+            image: "/images/africaicons/patrick-awuah.png",
+            achievement:
+              "Founder of 'Ashesi University' in 2002, which emphasizes leadership, ethics, and entrepreneurship in its technical and liberal arts education.",
+          },
+          {
+            name: "Ndidi Nwuneli",
+            image: "/images/africaicons/ndidi-nwuneli.png",
+            achievement:
+              "Co-founder of 'LEAP Africa' in 2002, which focuses on leadership and life skills training for young people.",
+          },
+          {
+            name: "Fred Swaniker",
+            image: "/images/africaicons/fred-swaniker.png",
+            achievement:
+              "Founder of 'African Leadership University' in 2015, a network of tertiary institutions focused on developing Africa's next generation of leaders.",
+          },
+          {
+            name: "Oluseun Onigbinde",
+            image: "/images/africaicons/oluseun-onigbinde.png",
+            achievement:
+              "Co-founder of 'BudgIT' in 2011, which uses data to drive education in governance and public policy.",
+          },
+          {
+            name: "Bright Simons",
+            image: "/images/africaicons/bright-simons.png",
+            achievement:
+              "Founder of 'mPedigree' in 2007, an organization that uses mobile technology to enhance healthcare and education services.",
+          },
+          {
+            name: "Rebecca Enonchong",
+            image: "/images/africaicons/rebecca-enonchong.png",
+            achievement:
+              "Founder of 'AppsTech' in 1999, which provides enterprise application solutions and has supported IT education in Africa.",
+          },
+          {
+            name: "Judith Owigar",
+            image: "/images/africaicons/judith-owigar.png",
+            achievement:
+              "Co-founder of 'AkiraChix' in 2010, which empowers young women in Kenya through technical training in software development.",
+          },
+          {
+            name: "Tunde Kehinde",
+            image: "/images/africaicons/tunde-kehinde.png",
+            achievement:
+              "Co-founder of 'Lidya' in 2016, a digital financial services platform that provides financial literacy and resources to small businesses in Africa.",
+          },
+          {
+            name: "Iyinoluwa Aboyeji",
+            image: "/images/africaicons/iyinoluwa-aboyeji.png",
+            achievement:
+              "Co-founder of 'Flutterwave' in 2016, supporting fintech education and training across Africa.",
+          },
+          {
+            name: "Audrey Cheng",
+            image: "/images/africaicons/audrey-cheng.png",
+            achievement:
+              "Founder of 'Moringa School' in 2014, a Nairobi-based technology and coding bootcamp training the next generation of software developers.",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    title: "Best NGO Education Support Recognition Award",
+    description:
+      "This award recognizes non-governmental organizations (NGOs) that have made outstanding contributions to education in Africa through various initiatives and support programs.",
+    subCategories: [
+      {
+        title: "Best Educational Infrastructure Initiative By An NGO",
+        description:
+          "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+        nominees: [
+          {
+            name: "Teach For Nigeria",
+            image: "/images/ngo/teach-for-nigeria.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Slum2School Africa",
+            image: "/images/ngo/slum2school.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "ActionAid Nigeria",
+            image: "/images/ngo/actionaid.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Plan International Nigeria",
+            image: "/images/ngo/plan-international-nigeria.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Malala Fund Nigeria",
+            image: "/images/ngo/malala-fund.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Girl Child Education Initiative",
+            image: "/images/ngo/girl-child-initiative.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Universal Learning Solutions",
+            image: "/images/ngo/universal-learning-solutions.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Bridge International Academies",
+            image: "/images/ngo/bridge.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Save the Children Nigeria",
+            image: "/images/ngo/save-the-children.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "UNICEF Nigeria",
+            image: "/images/ngo/unicef.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+        ],
+      },
+      {
+        title: "Exceptional Donation Of Educational Materials By An NGO",
+        description:
+          "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+        nominees: [
+          {
+            name: "Nigeria Youth Futures Fund",
+            image: "/images/ngo/nigeria-youth-futures-fund.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "One Million Teachers",
+            image: "/images/ngo/one-million-teachers.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "The Education Partnership (TEP)",
+            image: "/images/ngo/the-education-partnership.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Street Child Nigeria",
+            image: "/images/ngo/street-child.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Educate Nigeria Initiative",
+            image: "/images/ngo/educate-nigeria-initiative.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "LEAP Africa",
+            image: "/images/ngo/leap-africa.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Young Educators Foundation",
+            image: "/images/ngo/young-educators-foundation.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "The Tony Elumelu Foundation",
+            image: "/images/ngo/the-tony-elumelu-foundation.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "YEDBC (Yaba Educators Centre for In)",
+            image: "/images/ngo/yedbc.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Oando Foundation",
+            image: "/images/ngo/oando-foundation.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+        ],
+      },
+      {
+        title: "Outstanding Donation Of Education Aid By NGO",
+        description:
+          "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+        nominees: [
+          {
+            name: "Paradigm Initiative",
+            image: "/images/ngo/paradigm-initiative.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "MANI (Maternal and Child Survival Program)",
+            image: "/images/ngo/mani.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "STEM Nigeria Direct",
+            image: "/images/ngo/stem-nigeria-direct.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "Tech4Dev (Technology for Social G)",
+            image: "/images/ngo/tech4dev.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "REACH Initiative International",
+            image: "/images/ngo/reach-initiative-international.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "KnowledgeAid Initiative",
+            image: "/images/ngo/knowledgeaid-initiative.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "YISA (Youth Initiative for Sustain)",
+            image: "/images/ngo/yisa.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "SkillNG",
+            image: "/images/ngo/saind.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "AYECI (African Youth Initiative on)",
+            image: "/images/ngo/save-the-children.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+          {
+            name: "EVA (The Education As A Vaccine In)",
+            image: "/images/ngo/eva.png",
+            achievement:
+              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+          },
+        ],
+      },
+      {
+        title:
+          "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+        description:
+          "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+        nominees: [
+          {
+            name: "Youth for Technology Foundation",
+            image: "/images/ngo/youth-for-technology.png",
+            achievement:
+              "Provided technology training and entrepreneurship education to young people in Nigeria. Empowered over 20,000 youths wi...",
+          },
+          {
+            name: "Junior Achievement Nigeria (JAN)",
+            image: "/images/ngo/junior-achievement.png",
+            achievement:
+              "Implemented educational programs that empowered youths with financial literacy and workforce readiness for youths, reache...",
+          },
+          {
+            name: "YALI Network Nigeria",
+            image: "/images/ngo/yali-network.png",
+            achievement:
+              "Provided leadership and professional development opportunities for young Nigerians through the Young African Leaders Initiative...",
+          },
+          {
+            name: "AIESEC Nigeria",
+            image: "/images/ngo/aiesec.png",
+            achievement:
+              "Offered international exchange programs that provide young people with leadership opportunities, global internships, and socia...",
+          },
+          {
+            name: "Girls Education Mission International (GEM)",
+            image: "/images/ngo/girls-education-mission.png",
+            achievement:
+              "Focused on empowering young girls through education, providing scholarships, mentorship, and advocacy for girls' rights. I...",
+          },
+          {
+            name: "Rise Network",
+            image: "/images/ngo/rise-network.png",
+            achievement:
+              "Facilitated career development, mentorship, and skills training for young people in Nigeria. Supported over 35,000 young Nige...",
+          },
+          {
+            name: "Jobberman Nigeria",
+            image: "/images/ngo/jobberman.png",
+            achievement:
+              "Offered job training and placement services for young Nigerians, bridging the gap between job seekers and employers. Trained...",
+          },
+          {
+            name: "Young African Leadership Initiative (YALI) Nigeria",
+            image: "/images/ngo/yali.png",
+            achievement:
+              "Empowered young Nigerians through leadership training, civic engagement, and professional development programs. Impac...",
+          },
+          {
+            name: "YouthHubAfrica",
+            image: "/images/ngo/youthhub-africa.png",
+            achievement:
+              "Supported youth-driven initiatives for social change and education, providing platforms for young voices to be heard in Nigeri...",
+          },
+          {
+            name: "Youth Mentoring Initiative for Youth Empowerment (MIYE)",
+            image: "/images/ngo/youth-mentoring-initiative.png",
+            achievement:
+              "Guided young people through mentorship and educational programs, focusing on leadership and personal development. Ment...",
+          },
+        ],
+      },
+      {
+        title: "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+        description:
+          "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+        nominees: [
+          {
+            name: "Girls Education Mission International (GEM)",
+            image: "/images/ngo/girls-education-mission.png",
+            achievement:
+              "Provided educational scholarships, mentorship, and advocacy for the education of girls in northern Nigeria. Empowered over...",
+          },
+          {
+            name: "ActionAid Nigeria",
+            image: "/images/ngo/actionaid.png",
+            achievement:
+              "Implemented the Safe Cities for Women and Girls initiative. Advocated for educational programs to empower women and girls, focu...",
+          },
+          {
+            name: "Educate Girls Nigeria",
+            image: "/images/ngo/educate-girls.png",
+            achievement:
+              "Focused on enrolling and retaining girls in school, especially in rural and underserved communities. Increased school enrollmen...",
+          },
+          {
+            name: "Women's Rights Advancement and Protection Alternative (WRAPA)",
+            image: "/images/ngo/wrapa.png",
+            achievement:
+              "Provided education and vocational training for women and girls, particularly those affected by gender-based violence. Empow...",
+          },
+          {
+            name: "Girl Child Concerns (GCC)",
+            image: "/images/ngo/girl-child-concerns.png",
+            achievement:
+              "Implemented initiatives focused on the education and empowerment of adolescent girls in northern Nigeria. Supported the educ...",
+          },
+          {
+            name: "Women for Women International Nigeria",
+            image: "/images/ngo/women-for-women.png",
+            achievement:
+              "Provided educational programs, vocational skills training, and support to women survivors of conflict. Empowered over 20,000...",
+          },
+          {
+            name: "Baobab for Women's Human Rights",
+            image: "/images/ngo/baobab.png",
+            achievement:
+              "Focused on educating women and girls about their rights, including the right to education. Provided literacy programs for wom...",
+          },
+          {
+            name: "Centre for Girls Education (CGE)",
+            image: "/images/ngo/centre-for-girls-education.png",
+            achievement:
+              "Implemented programs to educate and empower girls in rural northern Nigeria, focusing on literacy and life skills. Improved...",
+          },
+          {
+            name: "Tech4Dev Women's Empowerment Program",
+            image: "/images/ngo/tech4dev.png",
+            achievement:
+              "Educated young women in digital skills and entrepreneurship, helping them to access better job opportunities. Trained over 5,000...",
+          },
+          {
+            name: "Association of Nigerian Women Entrepreneurs (ANWE)",
+            image: "/images/ngo/anwep.png",
+            achievement:
+              "Promoted education and entrepreneurship for women and girls, providing resources and support for business startups. Empowered o...",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    title:
+      "Africa Diaspora association Educational Impact Projects Recognition Award in Africa",
+    description:
+      'Honoring the significant contributions made by diaspora organizations towards achieving "Education for all" across the African Continent.',
+    subCategories: [
+      {
+        title:
+          "The Best Diaspora-Led Educational Infrastructure Project in Africa",
+        description:
+          "This category celebrates diaspora organizations that have created significant educational infrastructure, advancing the quality of education across Africa.",
+        nominees: [
+          {
+            name: "Nigerian Association in the UK",
+            achievement:
+              "Constructed a science and technology center in Osun State, Nigeria, fully equipped with modern laboratories and classrooms.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Nigerian_Association_in_the_UK.png",
+          },
+          {
+            name: "Ghanaian Association of Washington",
+            achievement:
+              "Built a community library and learning center in Kumasi, Ghana, with a focus on providing access to books and digital resources.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Ghanaian_Association_of_Washington.png",
+          },
+          {
+            name: "Kenyan Diaspora Alliance",
+            achievement:
+              "Constructed three primary schools in rural areas of Kenya, including the provision of solar power and internet access.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Kenyan_Diaspora_Alliance.png",
+          },
+          {
+            name: "Ethiopian Diaspora Fellowship",
+            achievement:
+              "Renovated dilapidated schools in Addis Ababa, Ethiopia, including upgrading classrooms, sanitation facilities, and playgrounds.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Ethiopian_Diaspora_Fellowship.png",
+          },
+          {
+            name: "South African Diaspora United",
+            achievement:
+              "Funded the construction of a multi-purpose education and sports complex in Soweto, South Africa. Provided a safe space for learning and recreation.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/South_African_Diaspora_United.png",
+          },
+          {
+            name: "Ugandan North American Association",
+            achievement:
+              "Built a secondary school in Gulu, Uganda, focusing on regions recovering from conflict. Provided quality education to over 500 students.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Ugandan_North_American_Association.png",
+          },
+          {
+            name: "Zimbabwean Diaspora Network",
+            achievement:
+              "Led the refurbishment of schools in Matabeleland, Zimbabwe, including the installation of computer labs and solar power systems.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Zimbabwean_Diaspora_Network.png",
+          },
+          {
+            name: "Senegalese Association in France",
+            achievement:
+              "Funded the construction of a vocational training center in Dakar, Senegal, focusing on trades such as carpentry, plumbing, and electrical work.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Senegalese_Association_in_France.png",
+          },
+          {
+            name: "Tanzanian Community in the USA",
+            achievement:
+              "Established digital learning hubs in rural Tanzania, providing internet access and e-learning tools to underserved communities.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Tanzanian_Community_in_the_USA.png",
+          },
+          {
+            name: "Congolese Diaspora Impact Group",
+            achievement:
+              "Built a school complex in Kinshasa, Democratic Republic of the Congo, including classrooms, a library, and a computer lab.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Congolese_Diaspora_Impact_Group.png",
+          },
+        ],
+      },
+      {
+        title: "The Best Diaspora-Led Educational Program Innovation in Africa",
+        description:
+          "This category recognizes innovative educational programs initiated by diaspora organizations that have significantly impacted learning outcomes in Africa.",
+        nominees: [
+          {
+            name: "African Diaspora Network (ADN)",
+            achievement:
+              "Developed an e-learning platform that offers free access to STEM courses for students across Africa. Trained 5,000 teachers across the continent.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/African_Diaspora_Network.png",
+          },
+          {
+            name: "Sierra Leonean Empowerment Network",
+            achievement:
+              "Reached over 10,000 students in multiple countries, significantly improving their understanding and performance in science subjects.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Sierra_Leonean_Empowerment_Network.png",
+          },
+          {
+            name: "African Leadership Academy Alumni",
+            achievement:
+              "Designed an after-school leadership program that fosters entrepreneurial skills among African youth. Over 1,000 students have participated.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/African_Leadership_Academy_Alumni.png",
+          },
+          {
+            name: "Nigerian Diaspora Direct Investment Summit",
+            achievement:
+              "Introduced a mentorship and investment program for young entrepreneurs in Nigeria, combining educational resources with financial support.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image:
+              "/images/diaspora/Nigerian_Diaspora_Direct_Investment_Summit.png",
+          },
+          {
+            name: "Somali Diaspora Youth",
+            achievement:
+              "Developed a distance learning program that connects Somali students in rural areas with diaspora educators via virtual classrooms.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Somali_Diaspora_Youth.png",
+          },
+          {
+            name: "Eritrean Diaspora Initiative",
+            achievement:
+              "Launched a digital literacy program that provides Eritrean students with essential IT skills, including coding and digital communication.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Eritrean_Diaspora_Network.png",
+          },
+          {
+            name: "Moroccan American Network",
+            achievement:
+              "Established a bilingual education program that supports French and Arabic literacy in Moroccan schools using digital tools.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Moroccan_American_Network.png",
+          },
+          {
+            name: "Ghana Diaspora Professional Network",
+            achievement:
+              "Developed an IT skills training program focused on coding, web development, and digital marketing for Ghanaian youth.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Ghana_Diaspora_Professional_Network.png",
+          },
+          {
+            name: "Botswana Educational Foundation",
+            achievement:
+              "Introduced an environmental education program that teaches sustainable practices and conservation in Botswana's schools.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Botswana_Educational_Foundation.png",
+          },
+          {
+            name: "Liberian Diaspora Education Fund",
+            achievement:
+              "Implemented an after-school tutoring and mentorship program in Liberia, focusing on literacy and numeracy skills. Improved academic performance for over 5,000 students.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Liberian_Diaspora_Education_Fund.png",
+          },
+        ],
+      },
+      {
+        title:
+          "The Best Diaspora-Led Teacher Training And Support Initiative in Africa",
+        description:
+          "This category honors diaspora-led initiatives that have significantly improved teacher training and support across Africa.",
+        nominees: [
+          {
+            name: "African Teacher Foundation",
+            achievement:
+              "Delivered a teacher training program covering modern pedagogical methods, classroom management, and technology integration.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/African_Teacher_Foundation.png",
+          },
+          {
+            name: "Diaspora African Women in Education (DAWIE)",
+            achievement:
+              "Established a mentorship program connecting female educators in Africa with experienced teachers abroad. Empowered 2,000 women in education.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Diaspora_African_Women_in_Education.png",
+          },
+          {
+            name: "Zimbabwean Teachers Association Abroad",
+            achievement:
+              "Launched a continuous professional development program for Zimbabwean teachers, focusing on curriculum development and modern teaching methods.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image:
+              "/images/diaspora/Zimbabwean_Teachers_Association_Abroad.png",
+          },
+          {
+            name: "Ghanaian Teachers in Diaspora",
+            achievement:
+              "Developed an annual teacher training conference in Accra, Ghana, featuring workshops on best practices in education and technology integration.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Ghanaian_Teachers_in_Diaspora.png",
+          },
+          {
+            name: "Ugandan Teachers' Network",
+            achievement:
+              "Implemented a peer-to-peer support network for Ugandan teachers, offering resources, mentorship, and collaborative professional development.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Ugandan_Teachers_Network.png",
+          },
+          {
+            name: "Malawian Diaspora Teaching Initiative",
+            achievement:
+              "Conducted teacher training workshops focusing on inclusive education and teaching students with special needs. Trained over 1,000 educators.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Malawian_Diaspora_Teaching_Initiative.png",
+          },
+          {
+            name: "Sierra Leone Teachers Abroad Network",
+            achievement:
+              "Provided remote training and resources for teachers in Sierra Leone, focusing on post-conflict education and trauma-informed teaching practices.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Sierra_Leone_Teachers_Abroad_Network.png",
+          },
+          {
+            name: "Ethiopian Education Foundation",
+            achievement:
+              "Established a teacher exchange program that brings Ethiopian educators to the United States for training in STEM education. Improved science and math instruction in over 100 Ethiopian schools.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Ethiopian_Education_Foundation.png",
+          },
+          {
+            name: "South Sudanese Educators Abroad",
+            achievement:
+              "Developed a peace education curriculum and trained teachers in South Sudan on conflict resolution and peacebuilding. Trained over 500 educators.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/South_Sudanese_Educators_Abroad.png",
+          },
+          {
+            name: "Zambian Diaspora Education Trust",
+            achievement:
+              "Developed a STEM-focused teacher training initiative, providing resources and training to Zambian teachers. Trained 1,500 teachers in innovative science and math instruction methods.",
+            state: "Lagos, Nigeria",
+            country: "Nigeria",
+            image: "/images/diaspora/Zambian_Diaspora_Education_Trust.png",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    title: "The Overall Best CSR for Education in Nigeria Award 2024",
+    description:
+      "Honoring corporate social responsibility by banks, telecommunications, and other sectors, and showing their impactful CSR initiatives that have ...",
+    subCategories: [
+      {
+        title: "Banking And Finance CSR in Education Award",
+        description:
+          "Recognizes financial institutions for their initiatives in supporting education.",
+        nominees: [
+          {
+            name: "Access Bank",
+            image: "/images/bestcsr/Access Bank.png",
+            achievement:
+              "Launched the 'Access Bank School Adoption Program' to renovate schools and provide learning materials.",
+          },
+          {
+            name: "First Bank of Nigeria",
+            image: "/images/bestcsr/First Bank of Nigeria.png",
+            achievement:
+              "Sponsored the 'SPARK' initiative for mentoring and career development in schools.",
+          },
+          {
+            name: "Zenith Bank",
+            image: "/images/bestcsr/Zenith Bank.png",
+            achievement:
+              "Funded ICT labs in several public schools across Nigeria. Provided scholarships for underprivileged students in tertiary institutions.",
+          },
+          {
+            name: "Guaranty Trust Bank",
+            image: "/images/bestcsr/Guaranty Trust Bank.png",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+          },
+          {
+            name: "United Bank for Africa",
+            image: "/images/bestcsr/United Bank for Africa.png",
+            achievement:
+              "Established the 'UBA Foundation' focused on education and development. Provided scholarships and educational grants to students across Nigeria.",
+          },
+          {
+            name: "Ecobank Nigeria",
+            image: "/images/bestcsr/Ecobank.png",
+            achievement:
+              "Supported digital literacy projects in collaboration with local NGOs. Donated educational materials to rural schools.",
+          },
+          {
+            name: "Fidelity Bank",
+            image: "/images/bestcsr/Fidelity Bank.png",
+            achievement:
+              "Launched the 'Fidelity Helping Hands Project' to improve school facilities. Engaged in teacher training workshops to enhance education quality.",
+          },
+          {
+            name: "Stanbic IBTC",
+            image: "/images/bestcsr/Stanbic IBTC.png",
+            achievement:
+              "Provided capacity-building workshops for educators. Engaged in teacher training workshops to enhance education quality.",
+          },
+          {
+            name: "Union Bank",
+            image: "/images/bestcsr/Union Bank of Nigeria.png",
+            achievement:
+              "Funded infrastructure development in schools through the 'UnionCares' initiative. Provided capacity-building workshops for educators.",
+          },
+          {
+            name: "Polaris Bank",
+            image: "/images/bestcsr/Polaris Bank.png",
+            achievement:
+              "Implemented the “Polaris Edu-Program” to enhance STEM education. Offered scholarships to high-performing students from low-income families.",
+          },
+        ],
+      },
+
+      {
+        title: "Telecommunications CSR in Education Award",
+        description:
+          "Honors telecom companies for their support in digital learning programs and connectivity for education.",
+        nominees: [
+          {
+            name: "MTN Nigeria",
+            image: "/images/bestcsr/MTN.png",
+            achievement:
+              "Implemented the 'MTN Foundation Schools Connect' to provide internet access to rural schools. Donated computers and ICT equipment to enhance digital learning.",
+          },
+          {
+            name: "Airtel Nigeria",
+            image: "/images/bestcsr/Airtel.png",
+            achievement:
+              "Launched the 'Adopt-a-School' initiative to improve school infrastructure. Provided scholarships for students pursuing technology courses",
+          },
+          {
+            name: "Glo Mobile",
+            image: "/images/bestcsr/Glo.png",
+            achievement:
+              "Provided scholarships for students pursuing technology courses. Organized coding and programming workshops for secondary school students",
+          },
+          {
+            name: "9mobile",
+            image: "/images/bestcsr/9mobile.png",
+            achievement:
+              "Developed the '9mobile Future Minds' initiative for digital education. Collaborated with educational NGOs to provide learning...",
+          },
+          {
+            name: "Smile Communications",
+            image: "/images/bestcsr/Smile Communications.png",
+            achievement:
+              "Offered internet connectivity solutions to underserved schools.Partnered with local governments to facilitate digital literacy training.",
+          },
+          {
+            name: "ntel",
+            image: "/images/bestcsr/ntel.png",
+            achievement:
+              "Supported e-learning platforms through discounted data packages for students.Engaged in teacher training programs on ICT integration in education.",
+          },
+          {
+            name: "Spectranet",
+            image: "/images/bestcsr/Spectranet.png",
+            achievement:
+              "Developed the '9mobile Future Minds' initiative for digital education. Collaborated with educational NGOs to provide learning...",
+          },
+          {
+            name: "Swift Networks",
+            image: "/images/bestcsr/Swift Networks.png",
+            achievement:
+              "Implemented “Project Swift EduTech” to support ICT education. Provided training for teachers on using technology in the classroom.",
+          },
+          {
+            name: "Cobranet",
+            image: "/images/bestcsr/Cobranet.png",
+            achievement:
+              "Supported initiatives to improve ICT facilities in public schools.Sponsored educational competitions focused on technology innovation.",
+          },
+          {
+            name: "ipNX Nigeria",
+            image: "/images/bestcsr/ipNX Nigeria.png",
+            achievement:
+              "Launched the “ipNX Scholar” program to fund educational technology projects.Collaborated with schools to implement e-learning solutions.",
+          },
+        ],
+      },
+
+      {
+        title: "Oil And Gas CSR in Education Award",
+        description:
+          "Celebrates oil and gas companies' contributions to educational development in their host communities.",
+        nominees: [
+          {
+            name: "Shell Nigeria",
+            image: "/images/bestcsr/shell.png",
+            achievement:
+              "Implemented the 'Shell University Scholarship Scheme' for engineering students. Sponsored STEM workshops for secondary school students",
+          },
+          {
+            name: "Chevron Nigeria",
+            image: "/images/bestcsr/Chevron.png",
+            achievement:
+              "Supported the “Chevron Education Initiative” to enhance science education in schools.Funded university research projects in collaboration with Nigerian institutions.",
+          },
+          {
+            name: "ExxonMobil Nigeria",
+            image: "/images/bestcsr/ExxonMobil.png",
+            achievement:
+              "Developed the 'ExxonMobil Teachers Academy' for STEM educators. Provided grants for educational infrastructure development in host communities",
+          },
+          {
+            name: "TotalEnergies Nigeria",
+            image: "/images/bestcsr/TotalEnergies.png",
+            achievement:
+              "Launched the 'TotalEnergies STEM Excellence Program' for secondary schools. Sponsored science fairs and exhibitions to promote inn...",
+          },
+          {
+            name: "Nigerian National Petroleum Corporation (NNPC)",
+            image: "/images/bestcsr/NNPC.png",
+            achievement:
+              "Established the “NNPC Science Quiz Competition” for students nationwide.Partnered with universities for research and development in energy studies.",
+          },
+          {
+            name: "Seplat Petroleum",
+            image: "/images/bestcsr/Seplat Petroleum.png",
+            achievement:
+              "Implemented the 'Seplat Teachers Empowerment Program' for continuous professional development.Funded scholarships for students in oil-producing regions.",
+          },
+          {
+            name: "Conoil Producing Limited",
+            image: "/images/bestcsr/Conoil Producing Limited.png",
+            achievement:
+              "Supported the “Conoil School Infrastructure Development Project” in rural areas.Engaged in educational outreach programs in local communities.",
+          },
+          {
+            name: "Oando Plc",
+            image: "/images/bestcsr/Oando.png",
+            achievement:
+              "Launched the 'Oando Foundation's Adopt-a-School Initiative' to improve learning environments. Provided mentorship and career guidance programs for students.",
+          },
+          {
+            name: "Addax Petroleum",
+            image: "/images/bestcsr/Addax.png",
+            achievement:
+              "Funded science laboratories in secondary schools through the 'Addax Science Initiative'. Sponsored educational trips and excursions for students.",
+          },
+          {
+            name: "Eni Nigeria",
+            image: "/images/bestcsr/Eni.png",
+            achievement:
+              "Implemented the 'Eni Scholarship Program' for tertiary education in technical fields. Supported educational research projects in partnership with Nigerian universities.",
+          },
+        ],
+      },
+
+      {
+        title: "Food And Beverages CSR in Education Award",
+        description:
+          "Acknowledges food and beverage companies' support for nutrition and education programs.",
+        nominees: [
+          {
+            name: "Nestle Nigeria",
+            image: "/images/bestcsr/Nestlé Nigeria.png",
+            achievement:
+              "Launched the 'Nestlé Healthy Kids Program' to educate children on nutrition and health. Provided school feeding programs in partnership with local governments.",
+          },
+          {
+            name: "Cadbury Nigeria",
+            image: "/images/bestcsr/Cadbury.png",
+            achievement:
+              "Supported the 'Cadbury Nutrition Education Initiative' in primary schools. Donated learning materials and resources to schools in underserved areas.",
+          },
+          {
+            name: "Coca-Cola Nigeria",
+            image: "/images/bestcsr/CocaCola.png",
+            achievement:
+              "Implemented the 'Coca-Cola Foundation School Support Program' for educational infrastructure. Sponsored health and wellness workshops for students and teachers.",
+          },
+          {
+            name: "Nigerian Breweries",
+            image: "/images/bestcsr/Nigerian Breweries.png",
+            achievement:
+              "Developed the 'Nigerian Breweries Felix Ohiwerei Education Trust Fund' to support education. Funded scholarships and educational grants for students across Nigeria.",
+          },
+          {
+            name: "Guinness Nigeria",
+            image: "/images/bestcsr/Guinness Nigeria.png",
+            achievement:
+              "Established the 'Guinness Nigeria Empowerment Program' for youth development. Supported vocational training programs for secondary school graduates.",
+          },
+          {
+            name: "PZ Cussons Nigeria",
+            image: "/images/bestcsr/PZ Cussons.png",
+            achievement:
+              "Implemented the “PZ Cussons Chemistry Challenge” to promote science education.Donated laboratory equipment and resources to schools.",
+          },
+          {
+            name: "Unilever Nigeria",
+            image: "/images/bestcsr/Unilever Ghana.png",
+            achievement:
+              "Launched the “Unilever Bright Future Schools Program” for primary education.Conducted hygiene and sanitation workshops in schools.",
+          },
+          {
+            name: "Flour Mills of Nigeria",
+            image: "/images/bestcsr/Flour Mills of Nigeria.png",
+            achievement:
+              "Supported the 'FMN Educational Support Initiative' to improve literacy and numeracy. Provided educational materials and resources to rural schools.",
+          },
+          {
+            name: "Promasidor Nigeria",
+            image: "/images/bestcsr/Promasidor.png",
+            achievement:
+              "Implemented the “Promasidor Quill Awards” for educational journalism.Sponsored essay competitions and academic challenges for students.",
+          },
+          {
+            name: "Chi Limited",
+            image: "/images/bestcsr/Chi Limited.png",
+            achievement:
+              "Launched the “Chi Limited School Nutrition Program” to support healthy eating habits.Donated food supplies and learning materials to schools.",
+          },
+        ],
+      },
+
+      {
+        title: "Manufacturing CSR in Education Award",
+        description:
+          "Recognizes manufacturing companies for their initiatives in technical and vocational education.",
+        nominees: [
+          {
+            name: "Dangote Group",
+            image: "/images/bestcsr/Dangote Group.png",
+            achievement:
+              "Implemented the 'Dangote Academy' for vocational and technical training. Provided scholarships and sponsorships for engineering students.",
+          },
+          {
+            name: "BUA Group",
+            image: "/images/bestcsr/BUA Group.png",
+            achievement:
+              "Supported the 'BUA School Renovation Project' to improve learning environments. Funded vocational training programs for youth empowerment.",
+          },
+          {
+            name: "Lafarge Africa",
+            image: "/images/bestcsr/Lafarge Africa.png",
+            achievement:
+              "Developed the 'Lafarge Education Support Program' for secondary schools. Donated building materials for school infrastructure projects.",
+          },
+          {
+            name: "Nigerian Bottling Company",
+            image: "/images/bestcsr/Nigerian Bottling Company.png",
+            achievement:
+              "Launched the 'NBC Education Initiative' to support digital learning. Sponsored ICT training workshops for teachers.",
+          },
+          {
+            name: "Innoson Vehicle Manufacturing",
+            image: "/images/bestcsr/Innoson Vehicle Manufacturing.png",
+            achievement:
+              "Supported the 'Innoson Auto Mechanics Training Program' for skill acquisition. Donated educational materials and resources to technical colleges.",
+          },
+          {
+            name: "Julius Berger Nigeria",
+            image: "/images/bestcsr/Julius Berger.png",
+            achievement:
+              "Implemented the “Julius Berger School Support Scheme” for educational infrastructure.Funded engineering scholarships for university students.",
+          },
+          {
+            name: "Honeywell Group",
+            image: "/images/bestcsr/Honeywell Group.png",
+            achievement:
+              "Launched the 'Honeywell Excellence Program' for educational sponsorships. Supported capacity-building workshops for educators",
+          },
+          {
+            name: "PZ Wilmar",
+            image: "/images/bestcsr/PZ Cussons.png",
+            achievement:
+              "Developed the “PZ Wilmar Educational Support Initiative” for primary schools.Provided nutritional education and resources for students.",
+          },
+          {
+            name: "Vitafoam Nigeria",
+            image: "/images/bestcsr/Vitafoam.png",
+            achievement:
+              "Implemented the “Vitafoam Comfort in Schools Program” to improve learning environments.Donated furniture and learning materials to schools.",
+          },
+          {
+            name: "May & Baker Nigeria",
+            image: "/images/bestcsr/MayBaker.png",
+            achievement:
+              "Launched the 'May & Baker Science Challenge' for secondary school students. Sponsored science fairs and exhibitions to promote innovation.",
+          },
+        ],
+      },
+
       {
         title: "Aviation CSR in Education Award",
         description:
           "Honors aviation companies for their support of aerospace education and training programs.",
         nominees: [
           {
-            name: "Arik Air",
-            image: "/images/csricons/arikair.png",
-            achievement:
-              'Launched the "Arik Wings for Kids" program to introduce children to aviation. Provided educational materials and resources to avia...',
-          },
-          {
             name: "Air Peace",
-            image: "/images/csricons/airpeace.png",
+            image: "/images/bestcsr/Air Peace.png",
             achievement:
-              'Implemented the "Air Peace Aviation Scholarship" for aspiring pilots and engineers. Sponsored aviation career for se...',
+              'Implemented the "Air Peace Aviation Scholarship" for aspiring pilots and engineers. Sponsored aviation career workshops for secondary school students.',
           },
           {
-            name: "Dana Air",
-            image: "/images/csricons/danaair.png",
+            name: "Arik Air",
+            image: "/images/bestcsr/Arik Air.png",
             achievement:
-              'Implemented the "Dana Air Youth Empowerment Initiative" for aviation education. Sponsored educational trips to a...',
-          },
-          {
-            name: "Ibom Air",
-            image: "/images/csricons/ibomair.png",
-            achievement:
-              'Launched the "Ibom Air Future Aviators Program" for youth development. Sponsored educational workshops on aviation safety a...',
+              'Launched the "Arik Wings for Kids" program to introduce children to aviation. Provided educational materials and resources to aviation schools.',
           },
           {
             name: "Aero Contractors",
-            image: "/images/csricons/aero.png",
+            image: "/images/bestcsr/Aero Contractors.png",
             achievement:
-              'Supported the "Aero Aviation Training Academy" for skill development. Engaged in educational outreach programs in local co...',
+              'Supported the "Aero Aviation Training Academy" for skill development. Engaged in educational outreach programs in local communities. ',
           },
           {
-            name: "Azman Air",
-            image: "/images/csricons/azmanair.png",
+            name: "Dana Air",
+            image: "/images/bestcsr/Dana Air.png",
             achievement:
-              'Supported the "Azman Aviation Education Project" for capacity building. Donated learning materials and resources to schools...',
+              'Implemented the "Dana Air Youth Empowerment Initiative" for aviation education. Sponsored educational trips to aviation facilities for students.',
           },
           {
             name: "Overland Airways",
-            image: "/images/csricons/overlandairways.png",
+            image: "/images/bestcsr/Overland Airways.png",
             achievement:
-              'Launched the "Overland Airways School Support Program" for educational infrastructure. Provided mentorship and car...',
+              'Launched the "Overland Airways School Support Program" for educational infrastructure.Provided mentorship and career guidance for students interested in aviation.',
           },
           {
-            name: "Med-View Airline",
-            image: "/images/csricons/med.png",
+            name: "Azman Air",
+            image: "/images/bestcsr/Azman Air.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Green Africa Airways",
-            image: "/images/csricons/greenafrica.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              'Supported the "Azman Aviation Education Project" for capacity building. Donated learning materials and resources to schools in host communities.',
           },
           {
             name: "Max Air",
-            image: "/images/csricons/max.png",
+            image: "/images/bestcsr/Max Air.png",
             achievement:
-              'Implemented the "Max Air Scholarship Program" for aviation studies. Engaged in community outreach programs to promote...',
+              'Implemented the "Max Air Scholarship Program" for aviation studies. Engaged in community outreach programs to promote aviation careers.',
+          },
+          {
+            name: "Ibom Air",
+            image: "/images/bestcsr/Ibom Air.png",
+            achievement:
+              'Launched the "Ibom Air Future Aviators Program" for youth development. Sponsored educational workshops on aviation safety and technology.',
+          },
+          {
+            name: "Allied Air",
+            image: "/images/bestcsr/Allied Air.png",
+            achievement:
+              "Supported the “Allied Air School Infrastructure Development Project” in rural areas. Engaged in educational outreach programs in local communities.",
+          },
+          {
+            name: "Nigeria Air (proposed):",
+            image: "/images/bestcsr/Nigeria Air.png",
+            achievement:
+              "Planned initiatives for educational outreach and aviation-focused programs.Collaborated with educational institutions for aviation-related research.",
           },
         ],
       },
+
       {
         title: "Technology And ICT CSR in Education Award",
         description:
@@ -554,63 +1271,63 @@ export interface Category {
         nominees: [
           {
             name: "Microsoft Nigeria",
-            image: "/images/csricons/microsoft.png",
+            image: "/images/bestcsr/Microsoft.png",
             achievement:
               'Implemented the "Microsoft YouthSpark" initiative to provide digital skills training. Sponsored coding competitions and hackathons.',
           },
           {
             name: "Google Nigeria",
-            image: "/images/csricons/google.png",
+            image: "/images/bestcsr/Google.png",
             achievement:
-              'Launched the "Google Digital Skills for Africa" program for ICT education. Conducted workshops on using Google tools for teachin...',
+              'Launched the "Google Digital Skills for Africa" program for ICT education. Conducted workshops on using Google tools for teaching and learning.',
           },
           {
-            name: "Andela",
-            image: "/images/csricons/andela.png",
+            name: "IBM West Africa",
+            image: "/images/bestcsr/IBM North Africa.png",
             achievement:
-              'Implemented the "Andela Learning Community" to train young developers. Sponsored hackathons and technology boo...',
-          },
-          {
-            name: "Flutterwave",
-            image: "/images/csricons/flutterwave.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
-          },
-          {
-            name: "Paystack",
-            image: "/images/csricons/paystack.png",
-            achievement:
-              'Launched the "Paystack Developer Accelerator" for aspiring tech entrepreneurs. Sponsored coding workshops and mentorshi...',
-          },
-          {
-            name: "Interswitch",
-            image: "/images/csricons/interswitch.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
-          },
-          {
-            name: "Oracle Nigeria",
-            image: "/images/csricons/oracle.png",
-            achievement:
-              'Launched the "Oracle Academy" to support computer science education. Sponsored workshops on database management and...',
+              "Developed the “IBM STEM for Girls” initiative to encourage female participation in technology. Sponsored teacher training programs on ICT integration in education.",
           },
           {
             name: "HP Nigeria",
-            image: "/images/csricons/hp.png",
+            image: "/images/bestcsr/HP.png",
             achievement:
-              'Supported the "HP LIFE" program to provide technology education for entrepreneurs. Donated laptops and ICT equipment to scho...',
-          },
-          {
-            name: "Tek Experts Nigeria",
-            image: "/images/csricons/te.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              "Supported the “HP LIFE” program to provide technology education for entrepreneurs. Donated laptops and ICT equipment to schools in underserved areas.",
           },
           {
             name: "Cisco Nigeria",
-            image: "/images/csricons/cisco.png",
+            image: "/images/bestcsr/Cisco.png",
             achievement:
-              'Implemented the "Cisco Networking Academy" for ICT education and training. Offered certifications and courses for stude...',
+              'Implemented the "Cisco Networking Academy" for ICT education and training. Offered certifications and courses for students in networking and IT.',
+          },
+          {
+            name: "Oracle Nigeria",
+            image: "/images/bestcsr/Oracle.png",
+            achievement:
+              'Launched the "Oracle Academy" to support computer science education. Sponsored workshops on database management and software development.',
+          },
+          {
+            name: "SAP Nigeria",
+            image: "/images/bestcsr/SAP.png",
+            achievement:
+              "Supported the “SAP Africa Code Week” initiative to promote coding skills. Engaged in teacher training programs on digital literacy.",
+          },
+          {
+            name: "Andela",
+            image: "/images/bestcsr/Andela.png",
+            achievement:
+              'Implemented the "Andela Learning Community" to train young developers. Sponsored hackathons and technology bootcamps for students.',
+          },
+          {
+            name: "MainOne",
+            image: "/images/bestcsr/MainOne.png",
+            achievement:
+              "Developed the “MainOne Digital Lagos” initiative for internet access in schools. Donated ICT equipment and resources to enhance digital learning.",
+          },
+          {
+            name: "Paystack",
+            image: "/images/bestcsr/paystack.png",
+            achievement:
+              'Launched the "Paystack Developer Accelerator" for aspiring tech entrepreneurs. Sponsored coding workshops and mentorship programs for students.',
           },
         ],
       },
@@ -621,197 +1338,205 @@ export interface Category {
         nominees: [
           {
             name: "Julius Berger Nigeria",
-            image: "/images/csricons/juliusberger.png",
+            image: "/images/bestcsr/Julius Berger.png",
             achievement:
               'Implemented the "Julius Berger School Support Program" for educational infrastructure. Funded engineering scholarships for university students.',
           },
           {
-            name: "Dangote Cement",
-            image: "/images/csricons/dangote.png",
-            achievement:
-              'Supported the "Dangote Cement School Empowerment Program" to improve learning environments. Funded vocational training programs for youth empowerment.',
-          },
-          {
             name: "Cappa & D'Alberto Plc",
-            image: "/images/csricons/cd.png",
+            image: "/images/bestcsr/CappaD'Alberto.png",
             achievement:
-              'Developed the "FL-ICAN Education Initiative" for vocational training. Supported capacity-building workshops for educators.',
+              "Launched the “Cappa & D'Alberto School Renovation Project” to improve learning environments. Donated building materials for school infrastructure projects.",
           },
           {
-            name: "Dantata & Sawoe Construction",
-            image: "/images/csricons/ds.png",
+            name: "El-Alan Construction Company",
+            image: "/images/bestcsr/ElAlan Construction Company.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              'Developed the "El-Alan Education Initiative" for vocational training. Supported capacity-building workshops for educators.',
           },
           {
             name: "RCC Nigeria",
-            image: "/images/csricons/rcc.png",
+            image: "/images/bestcsr/RCC.png",
             achievement:
               'Implemented the "RCC Educational Support Program" for secondary schools. Provided scholarships and sponsorships for engineering students.',
           },
           {
             name: "ITB Nigeria",
-            image: "/images/csricons/itb.png",
+            image: "/images/bestcsr/ITB.png",
             achievement:
               'Supported the "ITB School Infrastructure Development Project" in rural areas. Engaged in educational outreach programs in local communities.',
           },
           {
-            name: "Costain West Africa",
-            image: "/images/csricons/cwa.png",
+            name: "BUA Cement",
+            image: "/images/bestcsr/BUA Cement.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              "Launched the “BUA Education Initiative” for vocational training and skill acquisition. Provided scholarships and sponsorships for engineering students.",
           },
           {
-            name: "El-Alan Construction Company",
-            image: "/images/csricons/ellanroadconstruction.png",
+            name: "Lafarge Africa",
+            image: "/images/bestcsr/Lafarge Africa.png",
             achievement:
-              'Developed the "El-Alan Education Initiative" for vocational training. Supported capacity-building workshops for educators.',
+              "Developed the “Lafarge Education Support Program” for secondary schools. Donated building materials for school infrastructure projects.",
           },
           {
-            name: "Setraco Nigeria",
-            image: "/images/csricons/setraco.png",
+            name: "Dangote Cement",
+            image: "/images/bestcsr/Dangote Cement.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              'Supported the "Dangote Cement School Empowerment Program" to improve learning environments. Funded vocational training programs for youth empowerment.',
           },
           {
-            name: "Arab Contractors",
-            image: "/images/csricons/arabhomes.png",
+            name: "UPDC PLC",
+            image: "/images/bestcsr/UPDC PLC.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              "Implemented the “UPDC Educational Support Initiative” for primary schools. Provided educational materials and resources to rural schools.",
+          },
+          {
+            name: "Mixta Africa",
+            image: "/images/bestcsr/Mixta Africa.png",
+            achievement:
+              "Developed the “Mixta Africa Education Initiative” for capacity building and skill acquisition. Supported capacity-building workshops for educators.",
           },
         ],
       },
+
       {
         title: "Retail And E-Commerce CSR in Education Award",
         description:
           "Recognizes retail and e-commerce companies for their support of education through various initiatives.",
         nominees: [
           {
-            name: "Shoprite Nigeria",
-            image: "/images/csricons/shoprite.png",
-            achievement:
-              'Supported the "Shoprite Community Education Initiative" for school infrastructure development. Engaged in educational outre...',
-          },
-          {
-            name: "Spar Nigeria",
-            image: "/images/csricons/spar.png",
-            achievement:
-              'Developed the "Spar School Support Scheme" for educational resources and infrastructure. Donated learning materials.',
-          },
-          {
             name: "Jumia Nigeria",
-            image: "/images/csricons/jumia.png",
+            image: "/images/bestcsr/Jumia.png",
             achievement:
-              'Implemented the "Jumia School Support Program" to provide educational resources. Sponsored digital literacy workshops for stu...',
+              'Implemented the "Jumia School Support Program" to provide educational resources. Sponsored digital literacy workshops for students and teachers.',
           },
           {
             name: "Konga",
-            image: "/images/csricons/konga.png",
+            image: "/images/bestcsr/Konga.png",
             achievement:
-              'Launched the "Konga Digital Academy" for e-learning and digital skills development. Provided scholarships for students pursuing...',
+              'Launched the "Konga Digital Academy" for e-learning and digital skills development. Provided scholarships for students pursuing technology courses.',
           },
           {
-            name: "Justrite Superstore",
-            image: "/images/csricons/justrite.png",
+            name: "Shoprite Nigeria",
+            image: "/images/bestcsr/Shoprite.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              'Supported the "Shoprite Community Education Initiative" for school infrastructure development. Engaged in educational outreach programs in local communities.',
+          },
+          {
+            name: "Spar Nigeria",
+            image: "/images/bestcsr/Spar.png",
+            achievement:
+              'Developed the "Spar School Support Scheme" for educational resources and infrastructure. Donated learning materials and resources to schools in underserved areas.',
+          },
+          {
+            name: "PayPorte",
+            image: "/images/bestcsr/PayPorte.png",
+            achievement:
+              "Launched the “PayPorte Education Empowerment Program” for skill acquisition and vocational training. Sponsored scholarships and educational grants for students across Nigeria.",
+          },
+          {
+            name: "Yudala",
+            image: "/images/bestcsr/Yudala.png",
+            achievement:
+              "Implemented the “Yudala School Support Program” to provide educational resources. Sponsored digital literacy workshops for students and teachers.",
+          },
+          {
+            name: "SLOT Systems",
+            image: "/images/bestcsr/SLOT Systems.png",
+            achievement:
+              "Launched the “SLOT Digital Academy” for e-learning and digital skills development. Provided scholarships for students pursuing technology courses.",
           },
           {
             name: "Game Stores Nigeria",
-            image: "/images/csricons/game.png",
+            image: "/images/bestcsr/Game Stores.png",
             achievement:
-              'Supported the "Game Community Education Initiative" for school infrastructure development. Engaged in educational outre...',
+              'Supported the "Game Community Education Initiative" for school infrastructure development. Engaged in educational outreach programs in local communities.',
           },
           {
-            name: "Prince Ebeano Supermarket",
-            image: "/images/csricons/pes.png",
+            name: "Grandex Stores",
+            image: "/images/bestcsr/Grandex Stores.png",
             achievement:
-              'Launched the "Prince Ebeano Education Empowerment Program" for skill acquisition and vocational training. Sponsored schol...',
+              "Developed the “Grandex School Support Scheme” for educational resources and infrastructure. Donated learning materials and resources to schools in underserved areas.",
           },
           {
-            name: "Addide Supermarket",
-            image: "/images/csricons/addide.png",
+            name: "Justrite Superstore",
+            image: "/images/bestcsr/justrite.png",
             achievement:
               "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
           },
           {
-            name: "Everyday Supermarket",
-            image: "/images/csricons/everyday.png",
+            name: "Ebeano Supermarket",
+            image: "/images/bestcsr/Ebeano Supermarket.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
-          },
-          {
-            name: "Hubmart Stores",
-            image: "/images/csricons/hub.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              'Launched the "Prince Ebeano Education Empowerment Program" for skill acquisition and vocational training. ponsored scholarships and educational grants for students across Nigeria.',
           },
         ],
       },
+
       {
         title: "Pharmaceuticals CSR in Education Award",
         description:
           "Honors pharmaceutical companies for their support of health education and related initiatives.",
         nominees: [
           {
-            name: "GlaxoSmithKline Nigeria",
-            image: "/images/csricons/gsk.png",
+            name: "Emzor Pharmaceutical Industries",
+            image: "/images/bestcsr/Emzor Pharmaceutical Industries.png",
             achievement:
-              'Supported the "GSK Health Education Program" for primary schools. Conducted health and wellness workshops for students...',
-          },
-          {
-            name: "Pfizer Nigeria",
-            image: "/images/csricons/pfizer.png",
-            achievement:
-              'Launched the "Pfizer Science Challenge" for secondary school students. Sponsored science fairs and exhibitions to promote inn...',
-          },
-          {
-            name: "Emzor Pharmaceutical",
-            image: "/images/csricons/emzor.png",
-            achievement:
-              'Implemented the "Emzor Health Education Program" to promote health literacy in schools. Donated medical supplies and reso...',
-          },
-          {
-            name: "May & Baker Nigeria",
-            image: "/images/csricons/mbn.png",
-            achievement:
-              'Developed the "May & Baker Science Education Initiative" for STEM education. Donated laboratory equipment and resourc...',
+              'Implemented the "Emzor Health Education Program" to promote health literacy in schools. Donated medical supplies and resources to healthcare training institutions.',
           },
           {
             name: "Fidson Healthcare Plc",
-            image: "/images/csricons/fidson.png",
+            image: "/images/bestcsr/Fidson Healthcare Plc.png",
             achievement:
-              'Launched the "Fidson Science Challenge" for secondary school students. Sponsored science fairs and exhibitions to promote inn...',
+              'Launched the "Fidson Science Challenge" for secondary school students. Sponsored science fairs and exhibitions to promote innovation.',
+          },
+          {
+            name: "May & Baker Nigeria",
+            image: "/images/bestcsr/MayBaker.png",
+            achievement:
+              'Developed the "May & Baker Science Education Initiative" for STEM education. Donated laboratory equipment and resources to schools.',
+          },
+          {
+            name: "GlaxoSmithKline Nigeria",
+            image: "/images/bestcsr/GlaxoSmithKline.png",
+            achievement:
+              'Supported the "GSK Health Education Program" for primary schools. Conducted health and wellness workshops for students and teachers.',
           },
           {
             name: "Neimeth International Pharmaceuticals",
-            image: "/images/csricons/neimeth.png",
+            image: "/images/bestcsr/neimeth.png",
             achievement:
-              'Launched the "Neimeth Science Challenge" for secondary school students. Sponsored science fairs and exhibitions to promote inn...',
-          },
-          {
-            name: "Mopson Pharmaceuticals",
-            image: "/images/csricons/mp.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              'Launched the "Neimeth Science Challenge" for secondary school students. Sponsored science fairs and exhibitions to promote innovation.',
           },
           {
             name: "Swiss Pharma Nigeria",
-            image: "/images/csricons/swipha.png",
+            image: "/images/bestcsr/Swiss Pharma.png",
             achievement:
-              'Developed the "Swiss Pharma Education Initiative" for STEM education. Donated laboratory equipment and resources to sch...',
+              'Developed the "Swiss Pharma Education Initiative" for STEM education. Donated laboratory equipment and resources to schools.',
           },
           {
-            name: "Biofem Pharmaceuticals",
-            image: "/images/csricons/biofem.png",
+            name: "Juhel Nigeria",
+            image: "/images/bestcsr/Juhel.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              "Supported the “Juhel Health Education Program” for primary schools.Conducted health and wellness workshops for students and teachers.",
           },
           {
-            name: "Evans Medical Plc",
-            image: "/images/csricons/evans.png",
+            name: "Pfizer Nigeria",
+            image: "/images/bestcsr/Pfizer.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+              'Launched the "Pfizer Science Challenge" for secondary school students. Sponsored science fairs and exhibitions to promote innovation.',
+          },
+          {
+            name: "Sanofi Nigeria",
+            image: "/images/bestcsr/Sanofi.png",
+            achievement:
+              "Developed the “Sanofi Education Initiative” for STEM education. Donated laboratory equipment and resources to schools.",
+          },
+          {
+            name: "Roche Nigeria",
+            image: "/images/bestcsr/Roche Nigeria.png",
+            achievement:
+              "Supported the “Roche Health Education Program” for primary schools. Conducted health and wellness workshops for students and teachers.",
           },
         ],
       },
@@ -821,75 +1546,64 @@ export interface Category {
           "Recognizes insurance companies for their contributions to financial literacy and education programs.",
         nominees: [
           {
-            name: "AXA Mansard Insurance",
-            image: "/images/csricons/axamansard.png",
-            achievement:
-              "Supported the 'AXA Mansard Financial Literacy Program' for secondary schools. Conducted workshops on financial planning.",
-          },
-          {
-            name: "AIICO Insurance Plc",
-            image: "/images/csricons/aiico.png",
-            achievement:
-              "Launched the 'AIICO Education Support Initiative' for educational resources. Sponsored scholarships for students pursuing...",
-          },
-          {
             name: "Leadway Assurance",
-            image: "/images/csricons/leadway.png",
+            image: "/images/bestcsr/Leadway Assurance.png",
             achievement:
-              "Implemented the 'Leadway Financial Literacy Program' for secondary schools. Conducted workshops on financial planning and insura...",
+              "Implemented the 'Leadway Financial Literacy Program' for secondary schools and conducted workshops on financial planning and insurance awareness.",
           },
           {
-            name: "Custodian and Allied Plc",
-            image: "/images/csricons/custodian.png",
+            name: "AIICO Insurance",
+            image: "/images/bestcsr/AIICO Insurance.png",
             achievement:
-              "Implemented the 'Mutual Benefits Financial Literacy Program' for secondary schools. Conducted workshops on financial...",
+              "Launched the 'AIICO Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and insurance courses.",
           },
           {
-            name: "NEM Insurance Plc",
-            image: "/images/csricons/nem.png",
+            name: "AXA Mansard Insurance",
+            image: "/images/bestcsr/AXA Mansard Insurance.png",
             achievement:
-              "Launched the 'NEM Education Support Initiative' for educational resources. Sponsored scholarships for students pursuing...",
+              "Supported the 'AXA Mansard Financial Literacy Program' for secondary schools and conducted workshops on financial planning and insurance awareness.",
+          },
+          {
+            name: "Custodian and Allied Insurance",
+            image: "/images/bestcsr/Custodian and Allied Insurance.png",
+            achievement:
+              "Launched the 'Custodian Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and insurance courses.",
           },
           {
             name: "Mutual Benefits Assurance",
-            image: "/images/csricons/mutualbenefits.png",
+            image: "/images/bestcsr/Mutual Benefits Assurance.png",
             achievement:
-              "Supported the 'Sovereign Trust Financial Literacy Program' for secondary schools. Conducted workshops on financial planning...",
+              "Implemented the 'Mutual Benefits Financial Literacy Program' for secondary schools and conducted workshops on financial planning and insurance awareness.",
           },
           {
-            name: "Cornerstone Insurance",
-            image: "/images/csricons/cornerstone.png",
+            name: "NEM Insurance",
+            image: "/images/bestcsr/NEM Insurance.png",
             achievement:
-              "Implemented the 'Cornerstone Financial Literacy Program' for secondary schools. Conducted workshops on financial planning...",
-          },
-          {
-            name: "Lasaco Assurance Plc",
-            image: "/images/csricons/lasaco.png",
-            achievement: "n",
-          },
-          {
-            name: "Consolidated Hallmark Insurance",
-            image: "/images/csricons/consolidatedhallmark.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Launched the 'NEM Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and insurance courses.",
           },
           {
             name: "Sovereign Trust Insurance",
-            image: "/images/csricons/sovereigntrust.png",
+            image: "/images/bestcsr/Sovereign Trust Insurance.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Supported the 'Sovereign Trust Financial Literacy Program' for secondary schools and conducted workshops on financial planning and insurance awareness.",
+          },
+          {
+            name: "Zenith General Insurance",
+            image: "/images/bestcsr/Zenith General Insurance.png",
+            achievement:
+              "Launched the 'Zenith General Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and insurance courses.",
+          },
+          {
+            name: "Cornerstone Insurance",
+            image: "/images/bestcsr/Cornerstone Insurance.png",
+            achievement:
+              "Implemented the 'Cornerstone Financial Literacy Program' for secondary schools and conducted workshops on financial planning and insurance awareness.",
           },
           {
             name: "NSIA Insurance",
-            image: "/images/csricons/nsia.png",
+            image: "/images/bestcsr/NSIA Insurance.png",
             achievement:
-              "Launched the 'NSIA Education Support Initiative' for educational resources. Sponsored scholarships for students pursuing...",
-          },
-          {
-            name: "Zenith General Insurance:",
-            image: "/images/csricons/zenith.png",
-            achievement:
-              "Launched the 'Zenith General Education Support Initiative' for educational resources. Sponsored scholarships for students purs...",
+              "Launched the 'NSIA Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and insurance courses.",
           },
         ],
       },
@@ -901,75 +1615,63 @@ export interface Category {
         nominees: [
           {
             name: "Channels Television",
-            image: "/images/csricons/channels.png",
+            image: "/images/bestcsr/Channels Television.png",
             achievement:
-              "Implemented the 'Channels Kids Club' to promote educational content for children. Sponsored educational documentaries and...",
+              "Implemented the 'Channels Kids Club' to promote educational content for children and sponsored educational documentaries and programs for students.",
           },
           {
             name: "NTA (Nigerian Television Authority)",
-            image: "/images/csricons/nta.png",
+            image: "/images/bestcsr/NTA.png",
             achievement:
-              "Launched the 'NTA Educational Initiative' to support learning through television. Produced educational programs and docu...",
-          },
-          {
-            name: "Silverbird Television",
-            image: "/images/csricons/silverbird.png",
-            achievement:
-              "Developed the 'Silverbird Education Initiative' for educational content creation. Produced documentaries and programs focused on e...",
-          },
-          {
-            name: "TVC Communications",
-            image: "/images/csricons/tvc.png",
-            achievement:
-              "Launched the 'TVC Education Support Initiative' for educational outreach. Sponsored educational programs and even...",
+              "Launched the 'NTA Educational Initiative' to support learning through television and produced educational programs and documentaries for schools.",
           },
           {
             name: "Multichoice Nigeria (DSTV)",
-            image: "/images/csricons/multichoice.png",
+            image: "/images/bestcsr/Multichoice.png",
             achievement:
-              "Supported the 'DSTV Eutelsat Star Awards' to promote science and technology education. Sponsored educational scholarships for stu...",
+              "Supported the 'DSTV Eutelsat Star Awards' to promote science and technology education and sponsored educational scholarships for students across Nigeria.",
           },
           {
-            name: "HipTV",
-            image: "/images/csricons/hiptv.png",
+            name: "Silverbird Group",
+            image: "/images/bestcsr/Silverbird Group.png",
             achievement:
-              "Developed the 'HipTV Educational Initiative' for educational content creation. Produced documentaries and programs focused on e...",
+              "Developed the 'Silverbird Education Initiative' for educational content creation and produced documentaries and programs focused on education and development.",
           },
           {
             name: "Wazobia FM",
-            image: "/images/csricons/wazobia.png",
+            image: "/images/bestcsr/Wazobia FM.png",
             achievement:
-              "Launched the 'Wazobia Education Support Program' for educational outreach. Sponsored educational programs and even...",
-          },
-          {
-            name: "AIT (Africa Independent Television)",
-            image: "/images/csricons/ait.png",
-            achievement:
-              "Implemented the 'Arise Educational Initiative' to support learning through media. Produced educational programs and docu...",
-          },
-          {
-            name: "Cool FM Nigeria",
-            image: "/images/csricons/coolfm.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "The Guardian Nigeria",
-            image: "/images/csricons/guardian.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "EbonyLife TV",
-            image: "/images/csricons/ebonylife.png",
-            achievement:
-              "Launched the 'EbonyLife Education Support Program' for educational outreach. Sponsored educational programs and even...",
+              "Launched the 'Wazobia Education Support Program' for educational outreach and sponsored educational programs and events for schools.",
           },
           {
             name: "Arise News",
-            image: "/images/csricons/arise.png",
+            image: "/images/bestcsr/Arise News.png",
             achievement:
-              "Implemented the 'Arise Educational Initiative' to support learning through media. Produced educational programs and docu...",
+              "Implemented the 'Arise Educational Initiative' to support learning through media and produced educational programs and documentaries for schools.",
+          },
+          {
+            name: "TVC Communications",
+            image: "/images/bestcsr/TVC Communications.png",
+            achievement:
+              "Launched the 'TVC Education Support Initiative' for educational outreach and sponsored educational programs and events for schools.",
+          },
+          {
+            name: "HipTV",
+            image: "/images/bestcsr/HipTV.png",
+            achievement:
+              "Developed the 'HipTV Educational Initiative' for educational content creation and produced documentaries and programs focused on education and development.",
+          },
+          {
+            name: "Africa Magic",
+            image: "/images/bestcsr/Africa Magic.png",
+            achievement:
+              "Supported the 'Africa Magic Educational Initiative' for educational outreach and sponsored educational programs and events for schools.",
+          },
+          {
+            name: "EbonyLife TV",
+            image: "/images/bestcsr/EbonyLife TV.png",
+            achievement:
+              "Launched the 'EbonyLife Education Support Program' for educational outreach and sponsored educational programs and events for schools.",
           },
         ],
       },
@@ -981,87 +1683,63 @@ export interface Category {
         nominees: [
           {
             name: "Olam Nigeria",
-            image: "/images/csricons/olam.png",
+            image: "/images/bestcsr/Olam.png",
             achievement:
-              "Implemented the 'Olam Agricultural Education Program' to promote agricultural literacy in schools. Donated seeds and reso...",
+              "Implemented the 'Olam Agricultural Education Program' to promote agricultural literacy in schools and donated seeds and resources to school farms and agricultural projects.",
           },
           {
             name: "Flour Mills of Nigeria",
-            image: "/images/csricons/fmn.png",
+            image: "/images/bestcsr/Flour Mills of Nigeria.png",
             achievement:
-              "Launched the 'FMN Agro-Allied Education Initiative' for agricultural education. Sponsored training programs for students in...",
+              "Launched the 'FMN Agro-Allied Education Initiative' for agricultural education and sponsored training programs for students in agricultural practices.",
+          },
+          {
+            name: "Dangote Sugar Refinery",
+            image: "/images/bestcsr/Dangote Sugar Refinery.png",
+            achievement:
+              "Developed the 'Dangote Sugar Agricultural Education Program' for secondary schools and donated farming equipment and resources to schools in rural areas.",
           },
           {
             name: "Presco Plc",
-            image: "/images/csricons/presco.png",
+            image: "/images/bestcsr/Presco Plc.png",
             achievement:
-              "Supported the 'Presco Agro-Education Initiative' for agricultural training and skill development. Engaged in capacity-building...",
+              "Supported the 'Presco Agro-Education Initiative' for agricultural training and skill development and engaged in capacity-building workshops for students in agriculture.",
           },
           {
-            name: "PZ Wilmar",
-            image: "/images/csricons/pzwilmar.png",
+            name: "Nigerian Breweries (Agro-Allied Division)",
+            image: "/images/bestcsr/Nigerian Breweries.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Launched the 'Nigerian Breweries Agricultural Education Initiative' for secondary schools and donated farming equipment and resources to schools in rural areas.",
           },
           {
-            name: "Dangote Sugar",
-            image: "/images/csricons/dangotesugar.png",
+            name: "Nestlé Nigeria (Agriculture)",
+            image: "/images/bestcsr/Nestlé Nigeria.png",
             achievement:
-              "Developed the 'Dangote Sugar Agricultural Education Program' for secondary schools. Donated farming equipment and resources...",
-          },
-          {
-            name: "BUA Sugar Refinery",
-            image: "/images/csricons/bua.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Nestle Nigeria",
-            image: "/images/csricons/nestle.png",
-            achievement:
-              "Developed the 'Nestle Agricultural Education Program' for secondary schools. Sponsored training programs for students in agricultur...",
-          },
-          {
-            name: "Cadbury Nigeria",
-            image: "/images/csricons/cadbury.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Guinness Nigeria",
-            image: "/images/csricons/guinness.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Nigerian Breweries",
-            image: "/images/csricons/nigerianbreweries.png",
-            achievement:
-              "Launched the 'Nigerian Breweries Agricultural Education Initiative' for secondary schools. Donated farming equipment and resources...",
+              "Developed the 'Nestlé Agricultural Education Program' for secondary schools and sponsored training programs for students in agricultural practices.",
           },
           {
             name: "Chi Farms",
-            image: "/images/csricons/chifarms.png",
+            image: "/images/bestcsr/Chi Farms.png",
             achievement:
-              "Implemented the 'Chi Farms Agro-Education Initiative' for agricultural training and skill development. Engaged in capacity-building...",
+              "Implemented the 'Chi Farms Agro-Education Initiative' for agricultural training and skill development and engaged in capacity-building workshops for students in agriculture.",
           },
           {
-            name: "Notore Chemical Industries:",
-            image: "/images/csricons/notore.png",
+            name: "Notore Chemical Industries",
+            image: "/images/bestcsr/Notore Chemical Industries.png",
             achievement:
-              "Supported the 'Notore Agricultural Education Program' for secondary schools. Donated farming equipment and resources to school...",
+              "Supported the 'Notore Agricultural Education Program' for secondary schools and donated farming equipment and resources to schools in rural areas.",
           },
           {
             name: "Premier Feeds Mills",
-            image: "/images/csricons/premierfeeds.png",
+            image: "/images/bestcsr/Premier Feeds Mills.png",
             achievement:
-              "Launched the 'Premier Feeds Agricultural Education Initiative' for secondary schools. Donated farming equipment and resources...",
+              "Launched the 'Premier Feeds Agricultural Education Initiative' for secondary schools and donated farming equipment and resources to schools in rural areas.",
           },
           {
             name: "AACE Foods",
-            image: "/images/csricons/aacefoods.png",
+            image: "/images/bestcsr/AACE Foods.png",
             achievement:
-              "Developed the 'AACE Foods Agro-Education Program' for secondary schools. Sponsored training programs for students in agricultur...",
+              "Developed the 'AACE Foods Agro-Education Program' for secondary schools and sponsored training programs for students in agricultural practices.",
           },
         ],
       },
@@ -1073,75 +1751,63 @@ export interface Category {
         nominees: [
           {
             name: "Reddington Hospital",
-            image: "/images/csricons/reddington.png",
+            image: "/images/bestcsr/ReddingtonHospital.png",
             achievement:
-              "Implemented the 'Reddington Health Education Program' to promote health literacy in schools. Donated medical supplies and resources to healthcare training institutions.",
-          },
-          {
-            name: "St. Nicholas Hospital",
-            image: "/images/csricons/stnicholas.png",
-            achievement:
-              "Developed the 'St. Nicholas Health Education Program' for primary schools. Conducted health and wellness workshops for students and teachers.",
+              "Implemented the 'Reddington Health Education Program' to promote health literacy in schools and donated medical supplies and resources to healthcare training institutions.",
           },
           {
             name: "Lagoon Hospitals",
-            image: "/images/csricons/lagoon.png",
+            image: "/images/bestcsr/LagoonHospitals.png",
             achievement:
-              "Launched the 'Lagoon Medical Education Initiative' for secondary schools. Sponsored health and wellness workshops for students and teachers.",
+              "Launched the 'Lagoon Medical Education Initiative' for secondary schools and sponsored health and wellness workshops for students and teachers.",
           },
           {
-            name: "Eko Hospital",
-            image: "/images/csricons/eko.png",
+            name: "St. Nicholas Hospital",
+            image: "/images/bestcsr/StNicholasHospital.png",
             achievement:
-              "Launched the 'Eko Medical Education Initiative' for secondary schools. Sponsored health and wellness workshops for students and teachers.",
+              "Developed the 'St. Nicholas Health Education Program' for primary schools and conducted health and wellness workshops for students and teachers.",
           },
           {
-            name: "First Consultants Medical Centre",
-            image: "/images/csricons/fcmc.png",
+            name: "Cedarcrest Hospitals",
+            image: "/images/bestcsr/CedarcrestHospitals.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Supported the 'Cedarcrest Medical Education Initiative' for secondary schools and sponsored health and wellness workshops for students and teachers.",
           },
           {
-            name: "Medbury Medical Services",
-            image: "/images/csricons/medbury.png",
+            name: "Nizamiye Hospital",
+            image: "/images/bestcsr/NizamiyeHospital.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Avon Healthcare Limited",
-            image: "/images/csricons/avon.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Lifebridge Medical Diagnostics",
-            image: "/images/csricons/lifebridge.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Bridge Clinic",
-            image: "/images/csricons/bridge.png",
-            achievement:
-              "Developed the 'Bridge Clinic Health Education Program' for primary schools. Conducted health and wellness workshops for students and teachers.",
-          },
-          {
-            name: "Lily Hospitals",
-            image: "/images/csricons/lily.png",
-            achievement:
-              "Supported the 'Lily Medical Education Initiative' for secondary schools. Sponsored health and wellness workshops for students and teachers.",
-          },
-          {
-            name: "Eye Foundation Hospital",
-            image: "/images/csricons/eyefoundation.png",
-            achievement:
-              "Supported the 'Eye Foundation Health Education Program' for primary schools. Conducted health and wellness workshops for students and teachers.",
+              "Launched the 'Nizamiye Health Education Program' for primary schools and conducted health and wellness workshops for students and teachers.",
           },
           {
             name: "First Cardiology Consultants",
-            image: "/images/csricons/firstcardiology.png",
+            image: "/images/bestcsr/FirstCardiologyConsultants.png",
             achievement:
-              "Developed the 'First Cardiology Medical Education Initiative' for secondary schools. Sponsored health and wellness workshops for students and teachers.",
+              "Developed the 'First Cardiology Medical Education Initiative' for secondary schools and sponsored health and wellness workshops for students and teachers.",
+          },
+          {
+            name: "Eye Foundation Hospital",
+            image: "/images/bestcsr/EyeFoundationHospital.png",
+            achievement:
+              "Supported the 'Eye Foundation Health Education Program' for primary schools and conducted health and wellness workshops for students and teachers.",
+          },
+          {
+            name: "Eko Hospital",
+            image: "/images/bestcsr/EkoHospital.png",
+            achievement:
+              "Launched the 'Eko Medical Education Initiative' for secondary schools and sponsored health and wellness workshops for students and teachers.",
+          },
+          {
+            name: "Bridge Clinic",
+            image: "/images/bestcsr/BridgeClinic.png",
+            achievement:
+              "Developed the 'Bridge Clinic Health Education Program' for primary schools and conducted health and wellness workshops for students and teachers.",
+          },
+          {
+            name: "Lily Hospitals",
+            image: "/images/bestcsr/LilyHospitals.png",
+            achievement:
+              "Supported the 'Lily Medical Education Initiative' for secondary schools and sponsored health and wellness workshops for students and teachers.",
           },
         ],
       },
@@ -1153,96 +1819,67 @@ export interface Category {
         nominees: [
           {
             name: "PwC Nigeria",
-            image: "/images/csricons/pwc.png",
+            image: "/images/bestcsr/PwCNigeria.png",
             achievement:
-              "Implemented the 'PwC Business Education Program' for secondary schools. Sponsored internships and training programs for stude...",
-          },
-          {
-            name: "Deloitte Nigeria",
-            image: "/images/csricons/deloitte.png",
-            achievement:
-              "Supported the 'Deloitte Business Education Program' for secondary schools. Sponsored internships and training programs for stude...",
+              "Implemented the 'PwC Business Education Program' for secondary schools and sponsored internships and training programs for students in finance and accounting.",
           },
           {
             name: "KPMG Nigeria",
-            image: "/images/csricons/kpmg.png",
+            image: "/images/bestcsr/KPMGNigeria.png",
             achievement:
-              "Launched the 'KPMG Education Support Initiative' for educational resources. Sponsored scholarships for students pursuin...",
+              "Launched the 'KPMG Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and accounting courses.",
+          },
+          {
+            name: "Deloitte Nigeria",
+            image: "/images/bestcsr/DeloitteNigeria.png",
+            achievement:
+              "Supported the 'Deloitte Business Education Program' for secondary schools and sponsored internships and training programs for students in finance and accounting.",
           },
           {
             name: "Ernst & Young Nigeria",
-            image: "/images/csricons/ey.png",
+            image: "/images/bestcsr/ErnstYoungNigeria.png",
             achievement:
-              "Launched the 'EY Education Support Initiative' for educational resources. Sponsored scholarships for students pursuin...",
+              "Launched the 'EY Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and accounting courses.",
           },
           {
             name: "Accenture Nigeria",
-            image: "/images/csricons/accenture.png",
+            image: "/images/bestcsr/AccentureNigeria.png",
             achievement:
-              "Implemented the 'Accenture Business Education Program' for secondary schools. Sponsored internships and training program...",
+              "Implemented the 'Accenture Business Education Program' for secondary schools and sponsored internships and training programs for students in finance and accounting.",
           },
           {
-            name: "Baker Tilly Nigeria",
-            image: "/images/csricons/bakertilly.png",
+            name: "McKinsey & Company Nigeria",
+            image: "/images/bestcsr/McKinseyNigeria.png",
             achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "SIAO Partners",
-            image: "/images/csricons/siao.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Grant Thornton Nigeria",
-            image: "/images/csricons/grantthornton.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Banwo & Ighodalo",
-            image: "/images/csricons/banwoighodalo.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Aluko & Oyebode",
-            image: "/images/csricons/alukooyebode.png",
-            achievement:
-              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "McKinsey & Company Nigeria:",
-            image: "/images/csricons/mckinsey.png",
-            achievement:
-              "Launched the 'McKinsey Education Support Initiative' for educational resources. Sponsored scholarships for students pursuin...",
+              "Launched the 'McKinsey Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and accounting courses.",
           },
           {
             name: "Boston Consulting Group Nigeria",
-            image: "/images/csricons/bcg.png",
+            image: "/images/bestcsr/BCGNigeria.png",
             achievement:
-              "Supported the 'BCG Business Education Program' for secondary schools. Sponsored internships and training programs for stude...",
+              "Supported the 'BCG Business Education Program' for secondary schools and sponsored internships and training programs for students in finance and accounting.",
           },
           {
             name: "FBNQuest",
-            image: "/images/csricons/fbnquest.png",
+            image: "/images/bestcsr/FBNQuest.png",
             achievement:
-              "Launched the 'FBNQuest Education Support Initiative' for educational resources. Sponsored scholarships for students pursuin...",
+              "Launched the 'FBNQuest Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and accounting courses.",
           },
           {
             name: "Stanbic IBTC Holdings",
-            image: "/images/csricons/stanbic.png",
+            image: "/images/bestcsr/StanbicIBTCHoldings.png",
             achievement:
-              "Implemented the 'Stanbic IBTC Business Education Program' for secondary schools. Sponsored internships and training program...",
+              "Implemented the 'Stanbic IBTC Business Education Program' for secondary schools and sponsored internships and training programs for students in finance and accounting.",
           },
           {
-            name: "United Capital Plc:",
-            image: "/images/csricons/unitedcapital.png",
+            name: "United Capital Plc",
+            image: "/images/bestcsr/UnitedCapitalPlc.png",
             achievement:
-              "Launched the 'United Capital Education Support Initiative' for educational resources. Sponsored scholarships for students pursuin...",
+              "Launched the 'United Capital Education Support Initiative' for educational resources and sponsored scholarships for students pursuing finance and accounting courses.",
           },
         ],
       },
+
       {
         title: "Fintech CSR in Education Award",
         description:
@@ -1250,84 +1887,67 @@ export interface Category {
         nominees: [
           {
             name: "Flutterwave",
-            image: "/images/csricons/flutterwave.png",
+            image: "/images/bestcsr/Flutterwave.png",
             achievement:
-              "Implemented the 'Flutterwave Financial Literacy Program' for secondary schools. Conducted workshops on financial planning.",
+              "Implemented the 'Flutterwave Financial Literacy Program' for secondary schools and conducted workshops on financial planning and entrepreneurship for students.",
           },
           {
             name: "Paystack",
-            image: "/images/csricons/paystack.png",
+            image: "/images/bestcsr/Paystack.png",
             achievement:
-              "Launched the 'Paystack Education Support Initiative' for educational resources. Sponsored scholarships for students pursuing...",
+              "Launched the 'Paystack Education Support Initiative' for educational resources and sponsored scholarships for students pursuing technology and finance courses.",
           },
           {
             name: "Interswitch",
-            image: "/images/csricons/interswitch.png",
+            image: "/images/bestcsr/Interswitch.png",
             achievement:
-              "Supported the 'Interswitch Financial Literacy Program' for secondary schools. Conducted workshops on financial planning and fintech.",
-          },
-          {
-            name: "Remita",
-            image: "/images/csricons/remita.png",
-            achievement:
-              "Implemented the 'Remita Financial Literacy Program' for secondary schools. Conducted workshops on financial planning.",
-          },
-          {
-            name: "Carbon",
-            image: "/images/csricons/carbon.png",
-            achievement:
-              "Launched the 'Carbon Education Support Initiative' for educational resources. Sponsored scholarships for students pursuing...",
+              "Supported the 'Interswitch Financial Literacy Program' for secondary schools and conducted workshops on financial planning and entrepreneurship for students.",
           },
           {
             name: "Paga",
-            image: "/images/csricons/paga.png",
+            image: "/images/bestcsr/Paga.png",
             achievement:
-              "Launched the 'Paga Education Support Initiative' for educational resources. Sponsored scholarships for students pursuing...",
+              "Launched the 'Paga Education Support Initiative' for educational resources and sponsored scholarships for students pursuing technology and finance courses.",
+          },
+          {
+            name: "Remita",
+            image: "/images/bestcsr/Remita.png",
+            achievement:
+              "Implemented the 'Remita Financial Literacy Program' for secondary schools and conducted workshops on financial planning and entrepreneurship for students.",
+          },
+          {
+            name: "Carbon (Paylater)",
+            image: "/images/bestcsr/Carbon.png",
+            achievement:
+              "Launched the 'Carbon Education Support Initiative' for educational resources and sponsored scholarships for students pursuing technology and finance courses.",
           },
           {
             name: "Kuda Bank",
-            image: "/images/csricons/kudabank.png",
+            image: "/images/bestcsr/KudaBank.png",
             achievement:
-              "Supported the 'Kuda Financial Literacy Program' for secondary schools. Conducted workshops on financial planning.",
-          },
-          {
-            name: "Moniepoint",
-            image: "/images/csricons/moniepoint.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "FairMoney",
-            image: "/images/csricons/fairmoney.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "TeamApt",
-            image: "/images/csricons/teamapt.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Supported the 'Kuda Financial Literacy Program' for secondary schools and conducted workshops on financial planning and entrepreneurship for students.",
           },
           {
             name: "OPay",
-            image: "/images/csricons/opay.png",
+            image: "/images/bestcsr/OPay.png",
             achievement:
-              "Launched the 'OPay Education Support Initiative' for educational resources. Sponsored scholarships for students pursuing...",
+              "Launched the 'OPay Education Support Initiative' for educational resources and sponsored scholarships for students pursuing technology and finance courses.",
           },
           {
             name: "PalmPay",
-            image: "/images/csricons/palmpay.png",
+            image: "/images/bestcsr/PalmPay.png",
             achievement:
-              "Implemented the 'PalmPay Financial Literacy Program' for secondary schools. Conducted workshops on financial planning.",
+              "Implemented the 'PalmPay Financial Literacy Program' for secondary schools and conducted workshops on financial planning and entrepreneurship for students.",
           },
           {
             name: "Chipper Cash",
-            image: "/images/csricons/chippercash.png",
+            image: "/images/bestcsr/ChipperCash.png",
             achievement:
-              "Launched the 'Chipper Cash Education Support Initiative' for educational resources. Sponsored scholarships for students pursuing...",
+              "Launched the 'Chipper Cash Education Support Initiative' for educational resources and sponsored scholarships for students pursuing technology and finance courses.",
           },
         ],
       },
+
       {
         title: "Microfinance Banks CSR in Education Award",
         description:
@@ -1335,84 +1955,67 @@ export interface Category {
         nominees: [
           {
             name: "LAPO Microfinance Bank",
-            image: "/images/csricons/lapo.png",
+            image: "/images/bestcsr/LAPOMicrofinanceBank.png",
             achievement:
-              "Implemented the 'LAPO Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
-          },
-          {
-            name: "Grooming Centre",
-            image: "/images/csricons/groomingcentre.png",
-            achievement:
-              "Supported the 'Grooming Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
+              "Implemented the 'LAPO Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
           },
           {
             name: "Accion Microfinance Bank",
-            image: "/images/csricons/accion.png",
+            image: "/images/bestcsr/AccionMicrofinanceBank.png",
             achievement:
-              "Launched the 'Accion Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
+              "Launched the 'Accion Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
           },
           {
-            name: "AB Microfinance Bank NIGERIA",
-            image: "/images/csricons/abmicrofinance.png",
+            name: "Fortis Microfinance Bank",
+            image: "/images/bestcsr/FortisMicrofinanceBank.png",
             achievement:
-              "Launched the 'AB Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
+              "Supported the 'Fortis Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
+          },
+          {
+            name: "AB Microfinance Bank",
+            image: "/images/bestcsr/ABMicrofinanceBank.png",
+            achievement:
+              "Launched the 'AB Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
+          },
+          {
+            name: "NPF Microfinance Bank",
+            image: "/images/bestcsr/NPFMicrofinanceBank.png",
+            achievement:
+              "Implemented the 'NPF Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
+          },
+          {
+            name: "BoI Microfinance Bank",
+            image: "/images/bestcsr/BoIMicrofinanceBank.png",
+            achievement:
+              "Launched the 'BoI Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
+          },
+          {
+            name: "Grooming Microfinance Bank",
+            image: "/images/bestcsr/GroomingMicrofinanceBank.png",
+            achievement:
+              "Supported the 'Grooming Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
           },
           {
             name: "Baobab Microfinance Bank",
-            image: "/images/csricons/baobab.png",
+            image: "/images/bestcsr/BaobabMicrofinanceBank.png",
             achievement:
-              "Launched the 'Baobab Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
-          },
-          {
-            name: "Mainstreet Microfinance Bank",
-            image: "/images/csricons/mainstreet.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "NPF Microfinance Bank Plc",
-            image: "/images/csricons/npf.png",
-            achievement:
-              "Implemented the 'NPF Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
-          },
-          {
-            name: "Fina Trust Microfinance Bank",
-            image: "/images/csricons/finatrust.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Rehoboth Microfinance Bank",
-            image: "/images/csricons/rehoboth.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Fortis MFB",
-            image: "/images/csricons/fortis.png",
-            achievement:
-              "Supported the 'Fortis Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
+              "Launched the 'Baobab Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
           },
           {
             name: "EdFin Microfinance Bank",
-            image: "/images/csricons/edfin.png",
+            image: "/images/bestcsr/EdFinMicrofinanceBank.png",
             achievement:
-              "Implemented the 'EdFin Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
+              "Implemented the 'EdFin Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
           },
           {
             name: "Addosser Microfinance Bank",
-            image: "/images/csricons/addosser.png",
+            image: "/images/bestcsr/AddosserMicrofinanceBank.png",
             achievement:
-              "Launched the 'Addosser Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
-          },
-          {
-            name: "AB Microfinance Bank Nigeria",
-            image: "/images/csricons/abmicrofinance.png",
-            achievement:
-              "Launched the 'AB Education Support Initiative' for primary schools. Sponsored scholarships for students from underprivileg...",
+              "Launched the 'Addosser Education Support Initiative' for primary schools and sponsored scholarships for students from underprivileged communities.",
           },
         ],
       },
+
       {
         title: "Emerging Telecommunications CSR in Education Award",
         description:
@@ -1420,72 +2023,67 @@ export interface Category {
         nominees: [
           {
             name: "Smile Communications",
-            image: "/images/csricons/smile.png",
+            image: "/images/bestcsr/SmileCommunications.png",
             achievement:
-              "Implemented the 'Smile School Support Program' to provide educational resources. Sponsored digital literacy workshops for stu...",
+              "Implemented the 'Smile School Support Program' to provide educational resources and sponsored digital literacy workshops for students and teachers.",
+          },
+          {
+            name: "ntel",
+            image: "/images/bestcsr/Ntel.png",
+            achievement:
+              "Launched the 'ntel Digital Academy' for e-learning and digital skills development and provided scholarships for students pursuing technology courses.",
           },
           {
             name: "Spectranet",
-            image: "/images/csricons/spectranet.png",
+            image: "/images/bestcsr/Spectranet.png",
             achievement:
-              "Supported the 'Spectranet Community Education Initiative' for school infrastructure development. Engaged in educational outre...",
+              "Supported the 'Spectranet Community Education Initiative' for school infrastructure development and engaged in educational outreach programs in local communities.",
+          },
+          {
+            name: "Swift Networks",
+            image: "/images/bestcsr/SwiftNetworks.png",
+            achievement:
+              "Developed the 'Swift School Support Scheme' for educational resources and infrastructure and donated learning materials and resources to schools in underserved areas.",
+          },
+          {
+            name: "Cobranet",
+            image: "/images/bestcsr/Cobranet.png",
+            achievement:
+              "Launched the 'Cobranet Education Empowerment Program' for skill acquisition and vocational training and sponsored scholarships and educational grants for students across Nigeria.",
           },
           {
             name: "ipNX Nigeria",
-            image: "/images/csricons/ipnx.png",
+            image: "/images/bestcsr/ipNXNigeria.png",
             achievement:
-              "Implemented the 'ipNX School Support Program' to provide educational resources. Sponsored digital literacy workshops for stu...",
+              "Implemented the 'ipNX School Support Program' to provide educational resources and sponsored digital literacy workshops for students and teachers.",
           },
           {
-            name: "Ntel",
-            image: "/images/csricons/ntel.png",
+            name: "Tizeti",
+            image: "/images/bestcsr/Tizeti.png",
             achievement:
-              "Launched the 'Ntel Digital Academy' for e-learning and digital skills development. Provided scholarships for students pursuing...",
-          },
-          {
-            name: "Tizeti (Wifi.com.ng)",
-            image: "/images/csricons/tizeti.png",
-            achievement:
-              "Launched the 'Tizeti Digital Academy' for e-learning and digital skills development. Provided scholarships for students pursuing...",
-          },
-          {
-            name: "SWIFT Networks",
-            image: "/images/csricons/swift.png",
-            achievement:
-              "Developed the 'Swift School Support Scheme' for educational resources and infrastructure. Donated learning materials a...",
+              "Launched the 'Tizeti Digital Academy' for e-learning and digital skills development and provided scholarships for students pursuing technology courses.",
           },
           {
             name: "VDT Communications",
-            image: "/images/csricons/vdt.png",
+            image: "/images/bestcsr/VDTCommunications.png",
             achievement:
-              "Supported the 'VDT Community Education Initiative' for school infrastructure development. Engaged in educational outre...",
+              "Supported the 'VDT Community Education Initiative' for school infrastructure development and engaged in educational outreach programs in local communities.",
           },
           {
-            name: "Tingo Mobile",
-            image: "/images/csricons/tingo.png",
+            name: "Swift Telephone Network",
+            image: "/images/bestcsr/SwiftTelephoneNetwork.png",
             achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Cobranet Limited",
-            image: "/images/csricons/cobranet.png",
-            achievement:
-              "Launched the 'Cobranet Education Empowerment Program' for skill acquisition and vocational training. Sponsored scholars...",
-          },
-          {
-            name: "Coollink NG",
-            image: "/images/csricons/coollink.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Developed the 'Swift School Support Scheme' for educational resources and infrastructure and donated learning materials and resources to schools in underserved areas.",
           },
           {
             name: "Bitflux Communications",
-            image: "/images/csricons/bitflux.png",
+            image: "/images/bestcsr/BitfluxCommunications.png",
             achievement:
-              "Launched the 'Bitflux Education Empowerment Program' for skill acquisition and vocational training. Sponsored schol...",
+              "Launched the 'Bitflux Education Empowerment Program' for skill acquisition and vocational training and sponsored scholarships and educational grants for students across Nigeria.",
           },
         ],
       },
+
       {
         title:
           "Conglomerates And Diversified Businesses CSR in Education Award",
@@ -1494,66 +2092,135 @@ export interface Category {
         nominees: [
           {
             name: "Dangote Group",
-            image: "/images/csricons/dangote.png",
+            image: "/images/bestcsr/Dangote Group.png",
             achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "UAC of Nigeria Plc",
-            image: "/images/csricons/uac.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Flour Mills of Nigeria",
-            image: "/images/csricons/flourmills.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
-          },
-          {
-            name: "Honeywell Group",
-            image: "/images/csricons/honeywell.png",
-            achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Implemented the 'Dangote Academy' for vocational and technical training and provided scholarships and sponsorships for engineering students.",
           },
           {
             name: "BUA Group",
-            image: "/images/csricons/bua.png",
+            image: "/images/bestcsr/BUA Group.png",
             achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Supported the 'BUA School Renovation Project' to improve learning environments and funded vocational training programs for youth empowerment.",
+          },
+          {
+            name: "Flour Mills of Nigeria",
+            image: "/images/bestcsr/Flour Mills of Nigeria.png",
+            achievement:
+              "Developed the 'FMN Educational Support Initiative' to improve literacy and numeracy and provided educational materials and resources to rural schools.",
+          },
+          {
+            name: "UAC of Nigeria",
+            image: "/images/bestcsr/UAC of Nigeria.png",
+            achievement:
+              "Launched the 'UAC Education Initiative' for vocational training and skill acquisition and supported capacity-building workshops for educators.",
           },
           {
             name: "Transcorp Nigeria",
-            image: "/images/csricons/transcorp.png",
+            image: "/images/bestcsr/Transcorp.png",
             achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Implemented the 'Transcorp School Support Program' for educational infrastructure and funded engineering scholarships for university students.",
           },
           {
-            name: "Stallion Group",
-            image: "/images/csricons/stallion.png",
+            name: "Kewalram Group",
+            image: "/images/bestcsr/Kewalram Group.png",
             achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Launched the 'Kewalram Education Support Initiative' for primary schools and provided educational materials and resources to rural schools.",
           },
           {
-            name: "Kewalram Chanrai Group",
-            image: "/images/csricons/kewalram.png",
+            name: "Honeywell Group",
+            image: "/images/bestcsr/Honeywell Group.png",
             achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Developed the 'Honeywell Excellence Program' for educational sponsorships and supported capacity-building workshops for educators.",
           },
           {
             name: "Leventis Group",
-            image: "/images/csricons/leventis.png",
+            image: "/images/bestcsr/Leventis Group.png",
             achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Implemented the 'Leventis School Support Scheme' for educational infrastructure and funded engineering scholarships for university students.",
           },
           {
-            name: "Chellarams Plc",
-            image: "/images/csricons/chellarams.png",
+            name: "PZ Cussons Nigeria",
+            image: "/images/bestcsr/PZ Cussons.png",
             achievement:
-              "Dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.",
+              "Launched the 'PZ Cussons Chemistry Challenge' to promote science education and donated laboratory equipment and resources to schools.",
+          },
+          {
+            name: "John Holt Plc",
+            image: "/images/bestcsr/John Holt Plc.png",
+            achievement:
+              "Supported the 'John Holt Education Initiative' for vocational training and engaged in capacity-building workshops for educators.",
           },
         ],
       },
+
+      {
+        title: "Technology and Software CSR in Education Award ",
+        description:
+          "Acknowledges software and technology companies for their contributions to educational technology and digital literacy.",
+        nominees: [
+          {
+            name: "Andela",
+            image: "/images/bestcsr/Andela.png",
+            achievement:
+              "Implemented the 'Andela Learning Community' to train young developers and sponsored hackathons and technology bootcamps for students.",
+          },
+          {
+            name: "Flutterwave",
+            image: "/images/bestcsr/Flutterwave.png",
+            achievement:
+              "Launched the 'Flutterwave Developer Program' for tech talent development and sponsored coding workshops and mentorship programs for students.",
+          },
+          {
+            name: "Terragon Group",
+            image: "/images/bestcsr/TerragonGroup.png",
+            achievement:
+              "Supported the 'Terragon Digital Literacy Initiative' for secondary schools and conducted workshops on using digital tools for teaching and learning.",
+          },
+          {
+            name: "MainOne",
+            image: "/images/bestcsr/MainOne.png",
+            achievement:
+              "Developed the 'MainOne Digital Lagos' initiative for internet access in schools and donated ICT equipment and resources to enhance digital learning.",
+          },
+          {
+            name: "SystemSpecs (Remita)",
+            image: "/images/bestcsr/SystemSpecs.png",
+            achievement:
+              "Implemented the 'SystemSpecs Technology Education Program' for secondary schools and sponsored workshops on financial technology and entrepreneurship.",
+          },
+          {
+            name: "Tek Experts",
+            image: "/images/bestcsr/TekExperts.png",
+            achievement:
+              "Launched the 'Tek Experts Academy' for IT training and certification and provided scholarships for students pursuing technology courses.",
+          },
+          {
+            name: "Softcom Limited",
+            image: "/images/bestcsr/SoftcomLimited.png",
+            achievement:
+              "Supported the 'Softcom Digital Skills Program' for secondary schools and conducted workshops on using digital tools for teaching and learning.",
+          },
+          {
+            name: "Sidmach Technologies",
+            image: "/images/bestcsr/SidmachTechnologies.png",
+            achievement:
+              "Developed the 'Sidmach School Support Scheme' for educational resources and infrastructure and donated learning materials and resources to schools in underserved areas.",
+          },
+          {
+            name: "Data Science Nigeria",
+            image: "/images/bestcsr/DataScienceNigeria.png",
+            achievement:
+              "Launched the 'Data Science Nigeria Academy' for data analytics training and sponsored data science competitions and workshops for students.",
+          },
+          {
+            name: "Schoolgate",
+            image: "/images/bestcsr/Schoolgate.png",
+            achievement:
+              "Implemented the 'Schoolgate Digital Literacy Program' for secondary schools and sponsored workshops on using digital tools for teaching and learning.",
+          },
+        ],
+      },
+
       {
         title: "Real Estate Development CSR in Education Award",
         description:
@@ -1561,66 +2228,135 @@ export interface Category {
         nominees: [
           {
             name: "UPDC Plc",
-            image: "/images/csricons/updc.png",
+            image: "/images/bestcsr/UPDCPlc.png",
             achievement:
-              "Implemented the 'UPDC Educational Support Initiative' for primary schools. Provided educational materials and resources to rura...",
+              "Implemented the 'UPDC Educational Support Initiative' for primary schools and provided educational materials and resources to rural schools.",
           },
           {
             name: "Mixta Africa",
-            image: "/images/csricons/mixta.png",
+            image: "/images/bestcsr/MixtaAfrica.png",
             achievement:
-              "Developed the 'Mixta Africa Education Initiative' for capacity building and skill acquisition. Supported capacity-building w...",
+              "Developed the 'Mixta Africa Education Initiative' for capacity building and skill acquisition and supported capacity-building workshops for educators.",
           },
           {
             name: "Landmark Group",
-            image: "/images/csricons/landmark.png",
+            image: "/images/bestcsr/LandmarkGroup.png",
             achievement:
-              "Launched the 'Landmark School Support Scheme' for educational infrastructure development. Donated building materials fo...",
+              "Launched the 'Landmark School Support Scheme' for educational infrastructure development and donated building materials for school renovation projects.",
           },
           {
             name: "Cosgrove Investment Limited",
-            image: "/images/csricons/cosgrove.png",
+            image: "/images/bestcsr/CosgroveInvestmentLimited.png",
             achievement:
-              "Supported the 'Cosgrove Education Empowerment Program' for secondary schools. Sponsored scholarships and edu...",
+              "Supported the 'Cosgrove Education Empowerment Program' for secondary schools and sponsored scholarships and educational grants for students.",
           },
           {
             name: "Octo5 Holdings Limited",
-            image: "/images/csricons/octo5.png",
+            image: "/images/bestcsr/Octo5HoldingsLimited.png",
             achievement:
-              "Implemented the 'Octo5 School Support Program' for educational resources. Engaged in educational outreach programs in local c...",
+              "Implemented the 'Octo5 School Support Program' for educational resources and engaged in educational outreach programs in local communities.",
           },
           {
             name: "Brains & Hammers Limited",
-            image: "/images/csricons/brainshammers.png",
+            image: "/images/bestcsr/BrainsAndHammersLimited.png",
             achievement:
-              "Launched the 'Brains & Hammers Educational Initiative' for primary schools. Provided educational materials and resourc...",
+              "Launched the 'Brains & Hammers Educational Initiative' for primary schools and provided educational materials and resources to rural schools.",
           },
           {
             name: "GText Homes",
-            image: "/images/csricons/gtext.png",
+            image: "/images/bestcsr/GTextHomes.png",
             achievement:
-              "Developed the 'GText School Support Scheme' for educational infrastructure development. Donated building materials fo...",
+              "Developed the 'GText School Support Scheme' for educational infrastructure development and donated building materials for school renovation projects.",
           },
           {
             name: "Megamound Investment Limited",
-            image: "/images/csricons/megamound.png",
+            image: "/images/bestcsr/MegamoundInvestmentLimited.png",
             achievement:
-              "Supported the 'Megamound Education Empowerment Program' for secondary schools. Sponsored scholarships and educa...",
+              "Supported the 'Megamound Education Empowerment Program' for secondary schools and sponsored scholarships and educational grants for students.",
           },
           {
             name: "Adron Homes and Properties",
-            image: "/images/csricons/adron.png",
+            image: "/images/bestcsr/AdronHomesAndProperties.png",
             achievement:
-              "Implemented the 'Adron School Support Program' for educational resources. Engaged in educational outreach programs...",
+              "Implemented the 'Adron School Support Program' for educational resources and engaged in educational outreach programs in local communities.",
           },
           {
             name: "RevolutionPlus Property Development",
-            image: "/images/csricons/revolutionplus.png",
+            image: "/images/bestcsr/RevolutionPlusPropertyDevelopment.png",
             achievement:
-              "Launched the 'RevolutionPlus Educational Initiative' for primary schools. Provided educational materials and resources to rura...",
+              "Launched the 'RevolutionPlus Educational Initiative' for primary schools and provided educational materials and resources to rural schools.",
           },
         ],
       },
+
+      {
+        title: "Commercial Retail CSR in Education Award ",
+        description:
+          "Celebrates commercial retail businesses for their educational support through community engagement and resource provision.",
+        nominees: [
+          {
+            name: "Shoprite Nigeria",
+            image: "/images/bestcsr/ShopriteNigeria.png",
+            achievement:
+              "Supported the 'Shoprite Community Education Initiative' for school infrastructure development and engaged in educational outreach programs in local communities.",
+          },
+          {
+            name: "Spar Nigeria",
+            image: "/images/bestcsr/SparNigeria.png",
+            achievement:
+              "Developed the 'Spar School Support Scheme' for educational resources and infrastructure and donated learning materials and resources to schools in underserved areas.",
+          },
+          {
+            name: "Game Stores Nigeria",
+            image: "/images/bestcsr/GameStoresNigeria.png",
+            achievement:
+              "Launched the 'Game Education Empowerment Program' for skill acquisition and vocational training and sponsored scholarships and educational grants for students across Nigeria.",
+          },
+          {
+            name: "Ebeano Supermarket",
+            image: "/images/bestcsr/EbeanoSupermarket.png",
+            achievement:
+              "Implemented the 'Ebeano School Support Program' to provide educational resources and sponsored digital literacy workshops for students and teachers.",
+          },
+          {
+            name: "Grandex Stores",
+            image: "/images/bestcsr/GrandexStores.png",
+            achievement:
+              "Launched the 'Grandex Digital Academy' for e-learning and digital skills development and provided scholarships for students pursuing technology courses.",
+          },
+          {
+            name: "Prince Ebeano & Co.",
+            image: "/images/bestcsr/PrinceEbeanoAndCo.png",
+            achievement:
+              "Supported the 'Prince Ebeano Community Education Initiative' for school infrastructure development and engaged in educational outreach programs in local communities.",
+          },
+          {
+            name: "Justrite Superstores",
+            image: "/images/bestcsr/JustriteSuperstores.png",
+            achievement:
+              "Developed the 'Justrite School Support Scheme' for educational resources and infrastructure and donated learning materials and resources to schools in underserved areas.",
+          },
+          {
+            name: "Everyday Supermarket",
+            image: "/images/bestcsr/EverydaySupermarket.png",
+            achievement:
+              "Launched the 'Everyday Education Empowerment Program' for skill acquisition and vocational training and sponsored scholarships and educational grants for students across Nigeria.",
+          },
+          {
+            name: "Addide Stores",
+            image: "/images/bestcsr/AddideStores.png",
+            achievement:
+              "Implemented the 'Addide School Support Program' to provide educational resources and sponsored digital literacy workshops for students and teachers.",
+          },
+          {
+            name: "Hubmart Stores",
+            image: "/images/bestcsr/HubmartStores.png",
+            achievement:
+              "Launched the 'Hubmart Digital Academy' for e-learning and digital skills development and provided scholarships for students pursuing technology courses.",
+          },
+        ],
+      },
+
       {
         title: "Hotels CSR in Education Award 2022-2024 in Nigeria",
         description:
@@ -1628,63 +2364,63 @@ export interface Category {
         nominees: [
           {
             name: "Transcorp Hilton Abuja",
-            image: "/images/csricons/transcorphilton.png",
+            image: "/images/bestcsr/TranscorpHiltonAbuja.png",
             achievement:
-              "Launched the 'Transcorp Hilton Educational Support Program' for primary schools. Provided scholarships for student...",
+              "Launched the 'Transcorp Hilton Educational Support Program' for primary schools and provided scholarships for students in underprivileged communities.",
           },
           {
             name: "Eko Hotels & Suites",
-            image: "/images/csricons/ekohotels.png",
+            image: "/images/bestcsr/EkoHotelsAndSuites.png",
             achievement:
-              "Developed the 'Eko Hotels School Support Scheme' for educational infrastructure development. Donated building materials fo...",
+              "Developed the 'Eko Hotels School Support Scheme' for educational infrastructure development and donated building materials for school renovation projects.",
           },
           {
             name: "Radisson Blu Lagos",
-            image: "/images/csricons/radissonblu.png",
+            image: "/images/bestcsr/RadissonBluLagos.png",
             achievement:
-              "Implemented the 'Radisson Blu Education Empowerment Program' for secondary schools. Sponsored scholarships and educa...",
+              "Implemented the 'Radisson Blu Education Empowerment Program' for secondary schools and sponsored scholarships and educational grants for students.",
           },
           {
             name: "Sheraton Lagos Hotel",
-            image: "/images/csricons/sheraton.png",
+            image: "/images/bestcsr/SheratonLagosHotel.png",
             achievement:
-              "Supported the 'Sheraton School Support Program' for educational resources. Engaged in educational outreach programs in local c...",
+              "Supported the 'Sheraton School Support Program' for educational resources and engaged in educational outreach programs in local communities.",
           },
           {
             name: "Intercontinental Hotel Lagos",
-            image: "/images/csricons/intercontinental.png",
+            image: "/images/bestcsr/IntercontinentalHotelLagos.png",
             achievement:
-              "Launched the 'Intercontinental Educational Initiative' for primary schools. Provided educational materials and resources to rura...",
+              "Launched the 'Intercontinental Educational Initiative' for primary schools and provided educational materials and resources to rural schools.",
           },
           {
             name: "Protea Hotel Ikeja",
-            image: "/images/csricons/protea.png",
+            image: "/images/bestcsr/ProteaHotelIkeja.png",
             achievement:
-              "Developed the 'Protea School Support Scheme' for educational infrastructure development. Donated building materials...",
+              "Developed the 'Protea School Support Scheme' for educational infrastructure development and donated building materials for school renovation projects.",
           },
           {
             name: "Four Points by Sheraton Lagos",
-            image: "/images/csricons/fourpoints.png",
+            image: "/images/bestcsr/FourPointsBySheratonLagos.png",
             achievement:
-              "Supported the 'Four Points Education Empowerment Program' for secondary schools. Sponsored scholarships and educa...",
-          },
-          {
-            name: "Golden Tulip Hotel",
-            image: "/images/csricons/goldentulip.png",
-            achievement:
-              "Developed the 'Golden Tulip School Support Scheme' for educational infrastructure development. Donated building materials...",
+              "Supported the 'Four Points Education Empowerment Program' for secondary schools and sponsored scholarships and educational grants for students.",
           },
           {
             name: "Lagos Continental Hotel",
-            image: "/images/csricons/lagoscontinental.png",
+            image: "/images/bestcsr/LagosContinentalHotel.png",
             achievement:
-              "Implemented the 'Lagos Continental School Support Program' for educational resources. Engaged in educational outreach programs...",
+              "Implemented the 'Lagos Continental School Support Program' for educational resources and engaged in educational outreach programs in local communities.",
           },
           {
             name: "Federal Palace Hotel",
-            image: "/images/csricons/federalpalace.png",
+            image: "/images/bestcsr/FederalPalaceHotel.png",
             achievement:
-              "Launched the 'Federal Palace Educational Initiative' for primary schools. Provided educational materials and resources to rura...",
+              "Launched the 'Federal Palace Educational Initiative' for primary schools and provided educational materials and resources to rural schools.",
+          },
+          {
+            name: "Golden Tulip Hotel",
+            image: "/images/bestcsr/GoldenTulipHotel.png",
+            achievement:
+              "Developed the 'Golden Tulip School Support Scheme' for educational infrastructure development and donated building materials for school renovation projects.",
           },
         ],
       },
@@ -3546,28 +4282,32 @@ export interface Category {
               {
                 name: "Movitel (Mozambique)",
                 image: "/images/bestcsr/Movitel (Mozambique).png",
-                achievement: "Movitel Education – Improving education through technology by providing digital tools and internet access to schools in Mozambique. Year of Support: 2012-Present",
+                achievement:
+                  "Movitel Education – Improving education through technology by providing digital tools and internet access to schools in Mozambique. Year of Support: 2012-Present",
                 state: "",
                 country: "",
               },
               {
                 name: "Orange Botswana",
                 image: "/images/bestcsr/Orange Botswana.png",
-                achievement: "Orange Foundation Schools – Supporting digital training and infrastructure development in schools across Botswana. Year of Support: 2011-Present",
+                achievement:
+                  "Orange Foundation Schools – Supporting digital training and infrastructure development in schools across Botswana. Year of Support: 2011-Present",
                 state: "",
                 country: "",
               },
               {
                 name: "Telecel Zimbabwe",
                 image: "/images/bestcsr/Telecel.png",
-                achievement: "Educa Telecom– Developing educational programs and providing data access for students across Angola, supporting digital education. Year of Support: 2014-Present",
+                achievement:
+                  "Educa Telecom– Developing educational programs and providing data access for students across Angola, supporting digital education. Year of Support: 2014-Present",
                 state: "",
                 country: "",
               },
               {
                 name: "Namibia Telecom",
                 image: "/images/bestcsr/Namibia Telecom.png",
-                achievement: "TeleSchool – Providing educational broadcasts and online content to support learning in Namibia, particularly in remote areas. Year of Support: 2015-Present",
+                achievement:
+                  "TeleSchool – Providing educational broadcasts and online content to support learning in Namibia, particularly in remote areas. Year of Support: 2015-Present",
                 state: "",
                 country: "",
               },
@@ -3595,7 +4335,8 @@ export interface Category {
               {
                 name: "Dimension Data",
                 image: "/images/bestcsr/Dimension Data.png",
-                achievement: "Future Tech Leaders – STEM workshops & career guidance (2014–Present).",
+                achievement:
+                  "Future Tech Leaders – STEM workshops & career guidance (2014–Present).",
                 state: "",
                 country: "South Africa",
               },
@@ -3651,21 +4392,24 @@ export interface Category {
               {
                 name: "Microsoft South Africa",
                 image: "/images/bestcsr/Microsoft.png",
-                achievement: "4Afrika digital literacy & entrepreneurship (2013–Present).",
+                achievement:
+                  "4Afrika digital literacy & entrepreneurship (2013–Present).",
                 state: "",
                 country: "South Africa",
               },
               {
                 name: "Huawei South Africa",
                 image: "/images/bestcsr/Huawei.png",
-                achievement: "Seeds for the Future – ICT skills & global training (2014–Present).",
+                achievement:
+                  "Seeds for the Future – ICT skills & global training (2014–Present).",
                 state: "",
                 country: "South Africa",
               },
               {
                 name: "Econet Zimbabwe",
                 image: "/images/bestcsr/Econet.png",
-                achievement: "Econet Tech Academy – digital training (2015–Present).",
+                achievement:
+                  "Econet Tech Academy – digital training (2015–Present).",
                 state: "",
                 country: "Zimbabwe",
               },
@@ -3679,7 +4423,8 @@ export interface Category {
               {
                 name: "Dimension Data",
                 image: "/images/bestcsr/Dimension Data.png",
-                achievement: "Tech for Schools – Delivering IT infrastructure and support to under-resourced schools across South Africa, enhancing digital education. Year of Support: 2010-Present",
+                achievement:
+                  "Tech for Schools – Delivering IT infrastructure and support to under-resourced schools across South Africa, enhancing digital education. Year of Support: 2010-Present",
                 state: "Johannesburg",
                 country: "South Africa",
               },
@@ -3693,7 +4438,8 @@ export interface Category {
               {
                 name: "Altron",
                 image: "/images/bestcsr/Altron.png",
-                achievement: "Future Tech Leaders – Offering STEM workshops and career guidance to students, promoting tech education in South Africa. Year of Support: 2014-Present",
+                achievement:
+                  "Future Tech Leaders – Offering STEM workshops and career guidance to students, promoting tech education in South Africa. Year of Support: 2014-Present",
                 state: "Johannesburg",
                 country: "South Africa",
               },
@@ -4538,7 +5284,8 @@ export interface Category {
               },
               {
                 name: "Sierra Leone Produce Marketing Company (SLPMC)",
-                image: "/images/bestcsr/Sierra Leone Produce Marketing Company (SLPMC).png",
+                image:
+                  "/images/bestcsr/Sierra Leone Produce Marketing Company (SLPMC).png",
                 achievement:
                   "SLPMC Education Fund – Supporting agricultural education and promoting sustainable farming practices in Sierra Leone. Year of Support: 2015-Present",
                 state: "",
@@ -4570,7 +5317,8 @@ export interface Category {
               {
                 name: "Cement de l’Afrique (CEMAF)",
                 image: "/images/bestcsr/Cement de l’Afrique .png",
-                achievement: "Build a Future – school construction & renovations (2013–Present)..",
+                achievement:
+                  "Build a Future – school construction & renovations (2013–Present)..",
                 state: "",
                 country: "Cameroon",
               },
@@ -5199,20 +5947,23 @@ export interface Category {
               {
                 name: "Heidelberg Cement (Central African Republic)",
                 image: "/images/bestcsr/Heidelberg Cement.png",
-                achievement: "Cementing Education – Supporting technical schools and vocational training in construction and engineering in the Central African Republic. Year of Support: 2014-Present",
+                achievement:
+                  "Cementing Education – Supporting technical schools and vocational training in construction and engineering in the Central African Republic. Year of Support: 2014-Present",
                 state: "Douala",
                 country: "Cameroon",
               },
               {
                 name: "Glencore (Congo)",
                 image: "/images/bestcsr/Glencore.png",
-                achievement: "Glencore Academy – Providing vocational training in mining and industrial skills, supporting education in the mining sector in Congo. Year of Support: 2012-Present",
+                achievement:
+                  "Glencore Academy – Providing vocational training in mining and industrial skills, supporting education in the mining sector in Congo. Year of Support: 2012-Present",
                 state: "Kinshasa",
                 country: "DR Congo",
               },
               {
                 name: "Société Nationale des Pétroles du Congo (SNPC) (Congo)",
-                image: "/images/bestcsr/Société Nationale des Pétroles du Congo.png",
+                image:
+                  "/images/bestcsr/Société Nationale des Pétroles du Congo.png",
                 achievement:
                   "SNPC Educational Support – Funding scholarships and technical training, particularly in the oil and gas industry in Congo. Year of Support: 2013-Present",
                 state: "Brazzaville",
@@ -5292,7 +6043,8 @@ export interface Category {
               },
               {
                 name: "Société Nationale des Eaux du Gabon (Gabon)",
-                image: "/images/bestcsr/Société Nationale des Eaux du Gabon.png",
+                image:
+                  "/images/bestcsr/Société Nationale des Eaux du Gabon.png",
                 achievement:
                   "Focusing on sustainable water use in agriculture, supporting farming practices in Gabon. Year of Support: 2015-Present",
                 state: "Libreville",
@@ -5341,7 +6093,8 @@ export interface Category {
               {
                 name: "Congolaise Industrielle des Bois (CIB) (Congo)",
                 image: "/images/bestcsr/Congolaise Industrielle des Bois.png",
-                achievement: "Providing educational support in forestry and environmental studies, promoting sustainable practices in Congo. Year of Support: 2014-Present",
+                achievement:
+                  "Providing educational support in forestry and environmental studies, promoting sustainable practices in Congo. Year of Support: 2014-Present",
                 state: "Brazzaville",
                 country: "Congo",
               },
@@ -5381,7 +6134,7 @@ export interface Category {
                 name: "Koffi Olomidé",
                 image: "/images/bestcsr/Koffi Olomidé.png",
                 achievement:
-                   "Olomidé Education Initiative – Supporting education in rural areas through music and arts, enhancing  education in DR Congo. Year of Support: 2014-Present",
+                  "Olomidé Education Initiative – Supporting education in rural areas through music and arts, enhancing  education in DR Congo. Year of Support: 2014-Present",
                 state: "",
                 country: "",
               },
@@ -5440,8 +6193,7 @@ export interface Category {
               "African International Sports Stars CSR For Education in West Africa",
             description:
               "Honoring West African international sports stars making significant educational contributions in West Africa",
-            nominees: [
-            ],
+            nominees: [],
           },
         ],
       },
@@ -6636,70 +7388,80 @@ export interface Category {
             state: "Kogi",
             country: "Nigeria",
             image: "/images/friendlystate/kogi-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact ",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact ",
           },
           {
             name: "Kwara State",
             state: "Kwara",
             country: "Nigeria",
             image: "/images/friendlystate/kwara-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Benue State",
             state: "Benue",
             country: "Nigeria",
             image: "/images/friendlystate/benue-state.png",
-            achievement: "LDedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "LDedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Nasarawa State",
             state: "Nasarawa",
             country: "Nigeria",
             image: "/images/friendlystate/nasarawa-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Niger State",
             state: "Niger",
             country: "Nigeria",
             image: "/images/friendlystate/niger-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Plateau State",
             state: "Plateau",
             country: "Nigeria",
             image: "/images/friendlystate/plateau-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Federal Capital Territory",
             state: "FCT",
             country: "Nigeria",
             image: "/images/friendlystate/federal-capital-territory.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Kaduna State",
             state: "Kaduna",
             country: "Nigeria",
             image: "/images/friendlystate/kaduna-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Kebbi State",
             state: "Kebbi",
             country: "Nigeria",
             image: "/images/friendlystate/kebbi-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Sokoto State",
             state: "Sokoto",
             country: "Nigeria",
             image: "/images/friendlystate/sokoto-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
         ],
       },
@@ -6713,70 +7475,80 @@ export interface Category {
             state: "Adamawa",
             country: "Nigeria",
             image: "/images/friendlystate/adamawa-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Bauchi State",
             state: "Bauchi",
             country: "Nigeria",
             image: "/images/friendlystate/bauchi-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Borno State",
             state: "Borno",
             country: "Nigeria",
             image: "/images/friendlystate/borno-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Gombe State",
             state: "Gombe",
             country: "Nigeria",
             image: "/images/friendlystate/gombe-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Taraba State",
             state: "Taraba",
             country: "Nigeria",
             image: "/images/friendlystate/taraba-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Yobe State",
             state: "Yobe",
             country: "Nigeria",
             image: "/images/friendlystate/yobe-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Jigawa State",
             state: "Jigawa",
             country: "Nigeria",
             image: "/images/friendlystate/jigawa-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Kano State",
             state: "Kano",
             country: "Nigeria",
             image: "/images/friendlystate/Kano-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Katsina State",
             state: "Katsina",
             country: "Nigeria",
             image: "/images/friendlystate/katsina-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Zamfara State",
             state: "Zamfara",
             country: "Nigeria",
             image: "/images/friendlystate/Zamfara-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
         ],
       },
@@ -6791,70 +7563,80 @@ export interface Category {
             state: "Kaduna",
             country: "Nigeria",
             image: "/images/friendlystate/kaduna-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Kano State",
             state: "Kano",
             country: "Nigeria",
             image: "/images/friendlystate/kano-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Kebbi State",
             state: "Kebbi",
             country: "Nigeria",
             image: "/images/friendlystate/kebbi-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impactLogo with shield and text 'Kebbi State'",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impactLogo with shield and text 'Kebbi State'",
           },
           {
             name: "Sokoto State",
             state: "Sokoto",
             country: "Nigeria",
             image: "/images/friendlystate/sokoto-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Jigawa State",
             state: "Jigawa",
             country: "Nigeria",
             image: "/images/friendlystate/jigawa-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Zamfara State",
             state: "Zamfara",
             country: "Nigeria",
             image: "/images/friendlystate/zamfara-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Katsina State",
             state: "Katsina",
             country: "Nigeria",
             image: "/images/friendlystate/katsina-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Borno State",
             state: "Borno",
             country: "Nigeria",
             image: "/images/friendlystate/borno-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Yobe State Government",
             state: "Yobe",
             country: "Nigeria",
             image: "/images/friendlystate/yobe-state-government.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Bauchi State",
             state: "Bauchi",
             country: "Nigeria",
             image: "/images/friendlystate/bauchi-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
         ],
       },
@@ -6868,70 +7650,80 @@ export interface Category {
             state: "Abia",
             country: "Nigeria",
             image: "/images/friendlystate/abia-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Anambra State",
             state: "Anambra",
             country: "Nigeria",
             image: "/images/friendlystate/anambra-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Ebonyi State",
             state: "Ebonyi",
             country: "Nigeria",
             image: "/images/friendlystate/ebonyi-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Enugu State",
             state: "Enugu",
             country: "Nigeria",
             image: "/images/friendlystate/enugu-state-government.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Imo State",
             state: "Imo",
             country: "Nigeria",
             image: "/images/friendlystate/imo-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Anambra State",
             state: "Anambra",
             country: "Nigeria",
             image: "/images/friendlystate/anambra-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Akwa Ibom State",
             state: "Akwa Ibom",
             country: "Nigeria",
             image: "/images/friendlystate/akwaibom-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Rivers  State",
             state: "Rivers",
             country: "Nigeria",
             image: "/images/friendlystate/rivers-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Bayelsa State",
             state: "Bayelsa",
             country: "Nigeria",
             image: "/images/friendlystate/bayelsa-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Delta State",
             state: "Delta",
             country: "Nigeria",
             image: "/images/friendlystate/delta-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
         ],
       },
@@ -6946,70 +7738,80 @@ export interface Category {
             state: "Akwa Ibom",
             country: "Nigeria",
             image: "/images/friendlystate/akwaibom-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Bayelsa State",
             state: "Bayelsa",
             country: "Nigeria",
             image: "/images/friendlystate/bayelsa-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Cross River State",
             state: "Cross River",
             country: "Nigeria",
             image: "/images/friendlystate/cross-river-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Delta State",
             state: "Delta",
             country: "Nigeria",
             image: "/images/friendlystate/delta-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Edo State",
             state: "Edo",
             country: "Nigeria",
             image: "/images/friendlystate/edo-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Rivers State",
             state: "Rivers",
             country: "Nigeria",
             image: "/images/friendlystate/rivers-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Anambra State",
             state: "Anambra",
             country: "Nigeria",
             image: "/images/friendlystate/anambra.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Abia State",
             state: "Abia",
             country: "Nigeria",
             image: "/images/friendlystate/abia-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Imo State",
             state: "Delta",
             country: "Nigeria",
             image: "/images/friendlystate/imo-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Enugu State Government",
             state: "Enugu",
             country: "Nigeria",
             image: "/images/friendlystate/enugu-state-government.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
         ],
       },
@@ -7023,77 +7825,88 @@ export interface Category {
             state: "Ekiti",
             country: "Nigeria",
             image: "/images/friendlystate/ekiti-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Lagos State",
             state: "Lagos",
             country: "Nigeria",
             image: "/images/friendlystate/lagos-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Ogun State",
             state: "Ogun",
             country: "Nigeria",
             image: "/images/friendlystate/ogun-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Ondo State",
             state: "Ondo",
             country: "Nigeria",
             image: "/images/friendlystate/ondo-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Osun State",
             state: "Osun",
             country: "Nigeria",
             image: "/images/friendlystate/osun-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Oyo State",
             state: "Oyo",
             country: "Nigeria",
             image: "/images/friendlystate/oyo-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Kogi State",
             state: "Kogi",
             country: "Nigeria",
             image: "/images/friendlystate/kogi-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Niger State",
             state: "Niger",
             country: "Nigeria",
             image: "/images/friendlystate/niger-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Kwara State",
             state: "Kwara",
             country: "Nigeria",
             image: "/images/friendlystate/kwara-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "Nasarawa State",
             state: "Nasarawa",
             country: "Nigeria",
             image: "/images/friendlystate/nasarawa-state.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
           {
             name: "FCT (Federal Capital Territory)",
             state: "Abuja",
             country: "Nigeria",
             image: "/images/friendlystate/federal-capital-territory.png",
-            achievement: "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
+            achievement:
+              "Dedication to improving rural education, particularly for girls, demonstrating significant community impact",
           },
         ],
       },
@@ -7396,7 +8209,8 @@ export interface Category {
               "Innovative library services supporting nursing education.",
             state: "Akwa Ibom State",
             country: "Nigeria",
-            image: "/images/libraries/School_of_Nursing_University_of_Benin.png",
+            image:
+              "/images/libraries/School_of_Nursing_University_of_Benin.png",
           },
           {
             name: "School of Nursing, Lagos University",
@@ -7447,8 +8261,7 @@ export interface Category {
               "Innovative library programs supporting nursing students.",
             state: "Edo State",
             country: "Nigeria",
-            image:
-              "/images/libraries/Nnamdi_Azikiwe_University_Library.png",
+            image: "/images/libraries/Nnamdi_Azikiwe_University_Library.png",
           },
           {
             name: "School of Nursing, Federal Medical Centre",
@@ -7729,8 +8542,7 @@ export interface Category {
             achievement: "Comprehensive library services for nursing students.",
             state: "Ogun State",
             country: "Nigeria",
-            image:
-              "/images/libraries/Redeemers_University_Library.png",
+            image: "/images/libraries/Redeemers_University_Library.png",
           },
         ],
       },
@@ -7768,7 +8580,8 @@ export interface Category {
               "Rich collection supporting educational research and practice.",
             state: "Kano",
             country: "Nigeria",
-            image: "/images/libraries/Federal_College_of_Education_Library_Kano.png",
+            image:
+              "/images/libraries/Federal_College_of_Education_Library_Kano.png",
           },
           {
             name: "College of Education, Gindiri Library",
