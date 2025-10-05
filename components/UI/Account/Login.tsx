@@ -22,31 +22,31 @@ const LoginPage = () => {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams?.get('callbackUrl') || (searchParams?.get('redirect') || '/dashboard');
   const { login } = useAuth();
-
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    
     if (!email || !password) {
       setError('Please enter both email and password');
       return;
     }
-
+    
     try {
       setLoading(true);
       setError('');
-
+      
       console.log('Attempting login with:', { email, callbackUrl });
-
+      
       // Use the login function from auth context
       await login(email, password);
-
+      
       console.log('Login successful, redirecting to:', callbackUrl);
-
+      
       // Use a slight delay to ensure the auth state is properly set
       setTimeout(() => {
         router.push(callbackUrl);
@@ -64,7 +64,7 @@ const LoginPage = () => {
       setLoading(false);
     }
   };
-
+  
   return (
     <Container maxWidth="sm">
       <Box sx={{ mt: 8, mb: 4 }}>
@@ -74,23 +74,23 @@ const LoginPage = () => {
               {callbackUrl.includes('/admin') ? 'NESA Africa Admin Login' : 'NESA Africa Login'}
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              {callbackUrl.includes('/admin')
-                ? 'Enter admin credentials to access the dashboard'
+              {callbackUrl.includes('/admin') 
+                ? 'Enter admin credentials to access the dashboard' 
                 : 'Enter your credentials to access your account'}
             </Typography>
             {callbackUrl.includes('/admin') && (
-              <Typography variant="body2" color="primary" sx={{ mt: 1 }}>
-                Admin access only
-              </Typography>
+               <Typography variant="body2" color="primary" sx={{ mt: 1 }}>
+               Admin access only
+             </Typography>
             )}
           </Box>
-
+          
           {error && (
             <Alert severity="error" sx={{ mb: 3 }}>
               {error}
             </Alert>
           )}
-
+          
           <Box component="form" onSubmit={handleSubmit}>
             <TextField
               margin="normal"
@@ -127,9 +127,9 @@ const LoginPage = () => {
             >
               {loading ? <CircularProgress size={24} /> : 'Sign In'}
             </Button>
-
+            
             <Grid container justifyContent="center">
-              <Grid size={{ xs: 12, sm: 12 }} >
+              <Grid size={{xs:12, sm:12}} >
                 <Box textAlign="center">
                   <MuiLink component={Link} href="/" variant="body2">
                     Return to Home Page
