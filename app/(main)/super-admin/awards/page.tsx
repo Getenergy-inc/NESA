@@ -1,3 +1,5 @@
+"use client";
+import React from 'react'
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import OverviewCard from "@/components/UI/SuperAdmin/OverviewCard";
 import Accordion from "@/components/UI/SuperAdmin/Accordion";

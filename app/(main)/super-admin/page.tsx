@@ -17,7 +17,7 @@ import {
 export default function GlobalOverviewPage() {
   return (
     <SuperAdminLayout>
-      <div className="space-y-6">
+      <div className="space-y-8">
         {/* Page Title */}
         <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Global Overview Panel</h1>
 
@@ -81,4 +81,4 @@ export default function GlobalOverviewPage() {
       </div>
     </SuperAdminLayout>
   );
-
+}

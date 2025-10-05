@@ -20,7 +20,7 @@ export default function SuperAdminLayout({ children }: { children: ReactNode }) 
 
       <main
         className={`flex-1 p-6 overflow-y-auto ${
-          !isLoginPage ? "ml-64" : ""
+          !isLoginPage ? "ml-36" : ""
         }`}
       >
         {children}

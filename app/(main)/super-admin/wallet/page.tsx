@@ -1,4 +1,4 @@
-import AGCWalletOverview from '@/components/UI/SuperAdmin/AGCWalletOverview'
+"use client";
 import React from 'react'
 
 
@@ -198,4 +198,4 @@ export default function WalletActivityPanel() {
       </div>
     </SuperAdminLayout>
   );
-
+}

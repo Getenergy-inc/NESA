@@ -1,7 +1,7 @@
 "use client";
 
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
-import AppCard from "@/components/UI/SuperAdmin/AppCard";
+import AppCard from "@/components/UI/SuperAdmin/AppCard"
 import { Bell, Mail, Users, MessageSquare } from "lucide-react";
 import { Button } from "@/components/U-I/button";
 

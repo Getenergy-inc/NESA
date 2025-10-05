@@ -1,4 +1,4 @@
-import SettingsPanel from '@/components/UI/SuperAdmin/SettingsPanel'
+"use client";
 import React from 'react'
 
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";

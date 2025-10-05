@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import { Card, CardContent } from "@/components/U-I/card";
-import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout"; 
 import {
   BookOpen,
   CheckCircle,
@@ -9,18 +11,6 @@ import {
   Bell,
   Flag,
 } from "lucide-react";
-
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  LineChart,
-  Line,
-} from "recharts";
 
 type OverviewCardProps = {
   title: string;
@@ -35,28 +25,27 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
   color,
   icon,
 }) => {
-
-
-const reviewCompletionData = [
-  { category: "Arts", completed: 85, pending: 15 },
-  { category: "Science", completed: 92, pending: 8 },
-  { category: "Tech", completed: 76, pending: 24 },
-  { category: "Business", completed: 64, pending: 36 },
-];
-
-const commentsTrendData = [
-  { day: "Mon", comments: 35 },
-  { day: "Tue", comments: 50 },
-  { day: "Wed", comments: 42 },
-  { day: "Thu", comments: 60 },
-  { day: "Fri", comments: 38 },
-];
+  return (
+    <Card className="shadow-md hover:shadow-lg transition rounded-2xl border border-gray-100">
+      <CardContent className="flex items-center justify-between p-4">
+        <div>
+          <h3 className="text-sm font-medium text-gray-600">{title}</h3>
+          <p className={`text-xl font-bold text-${color}-600`}>{value}</p>
+        </div>
+        <div className={`p-3 rounded-full bg-${color}-100 text-${color}-600`}>
+          {icon}
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
 
 const JudgingArenaPanel = () => {
   return (
     <SuperAdminLayout>
-      <div className="space-y-8">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">Judging Arena Module
+      <div className="p-4 md:p-6 lg:p-8 space-y-6">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
+          🧑‍⚖️ Judging Arena Module
         </h1>
         <p className="text-gray-600">
           Manage judge assignments, review progress, scoring, and flags.
@@ -101,91 +90,7 @@ const JudgingArenaPanel = () => {
             icon={<Flag />}
           />
         </div>
-          {/* Review Completion Chart */}
-      <Card className="shadow-md rounded-2xl border border-gray-100">
-        <CardContent className="p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
-            Review Completion by Category
-          </h2>
-          <div className="w-full h-64">
-            <ResponsiveContainer>
-              <BarChart data={reviewCompletionData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="category" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="completed" fill="#16a34a" name="Completed %" />
-                <Bar dataKey="pending" fill="#dc2626" name="Pending %" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Comments Trend Chart */}
-      <Card className="shadow-md rounded-2xl border border-gray-100">
-        <CardContent className="p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
-            Comments Trend (This Week)
-          </h2>
-          <div className="w-full h-64">
-            <ResponsiveContainer>
-              <LineChart data={commentsTrendData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
-                <YAxis />
-                <Tooltip />
-                <Line type="monotone" dataKey="comments" stroke="#2563eb" />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Judge Activity Log */}
-      <Card className="shadow-md rounded-2xl border border-gray-100">
-        <CardContent className="p-6 overflow-x-auto">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
-            Judge Activity Log
-          </h2>
-          <table className="w-full text-sm text-left text-gray-600">
-            <thead className="bg-gray-100 text-gray-700">
-              <tr>
-                <th className="px-4 py-2">Judge</th>
-                <th className="px-4 py-2">Category</th>
-                <th className="px-4 py-2">Reviews Submitted</th>
-                <th className="px-4 py-2">Flags</th>
-                <th className="px-4 py-2">Last Active</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t">
-                <td className="px-4 py-2">Dr. Amina</td>
-                <td className="px-4 py-2">Arts</td>
-                <td className="px-4 py-2">45</td>
-                <td className="px-4 py-2">0</td>
-                <td className="px-4 py-2">2h ago</td>
-              </tr>
-              <tr className="border-t">
-                <td className="px-4 py-2">Mr. Johnson</td>
-                <td className="px-4 py-2">Science</td>
-                <td className="px-4 py-2">32</td>
-                <td className="px-4 py-2">1</td>
-                <td className="px-4 py-2">5h ago</td>
-              </tr>
-              <tr className="border-t">
-                <td className="px-4 py-2">Prof. Ade</td>
-                <td className="px-4 py-2">Tech</td>
-                <td className="px-4 py-2">27</td>
-                <td className="px-4 py-2">2</td>
-                <td className="px-4 py-2">1d ago</td>
-              </tr>
-            </tbody>
-          </table>
-        </CardContent>
-      </Card>
-    </div>
-    
+      </div>
     </SuperAdminLayout>
   );
 };
