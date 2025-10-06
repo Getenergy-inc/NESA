@@ -234,343 +234,1917 @@ export const categories: Category[] = [
   },
 
   {
-    title: "Best NGO Education Support Recognition Award",
+    title: "Best NGO Education Support Recognition Award (Africa-Regional)",
     description:
       "This award recognizes non-governmental organizations (NGOs) that have made outstanding contributions to education in Africa through various initiatives and support programs.",
-    subCategories: [
+    regions: [
       {
-        title: "Best Educational Infrastructure Initiative By An NGO",
-        description:
-          "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
-        nominees: [
+        name: "North Africa",
+        subCategories: [
           {
-            name: "Teach For Nigeria",
-            image: "/images/ngo/teach-for-nigeria.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Slum2School Africa",
-            image: "/images/ngo/slum2school.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "ActionAid Nigeria",
-            image: "/images/ngo/actionaid.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Plan International Nigeria",
-            image: "/images/ngo/plan-international-nigeria.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Malala Fund Nigeria",
-            image: "/images/ngo/malala-fund.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Girl Child Education Initiative",
-            image: "/images/ngo/girl-child-initiative.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Universal Learning Solutions",
-            image: "/images/ngo/universal-learning-solutions.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Bridge International Academies",
-            image: "/images/ngo/bridge.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Save the Children Nigeria",
-            image: "/images/ngo/save-the-children.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "UNICEF Nigeria",
-            image: "/images/ngo/unicef.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
       {
-        title: "Exceptional Donation Of Educational Materials By An NGO",
-        description:
-          "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
-        nominees: [
+        name: "East Africa",
+        subCategories: [
           {
-            name: "Nigeria Youth Futures Fund",
-            image: "/images/ngo/nigeria-youth-futures-fund.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "One Million Teachers",
-            image: "/images/ngo/one-million-teachers.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "The Education Partnership (TEP)",
-            image: "/images/ngo/the-education-partnership.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Street Child Nigeria",
-            image: "/images/ngo/street-child.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Educate Nigeria Initiative",
-            image: "/images/ngo/educate-nigeria-initiative.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "LEAP Africa",
-            image: "/images/ngo/leap-africa.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Young Educators Foundation",
-            image: "/images/ngo/young-educators-foundation.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "The Tony Elumelu Foundation",
-            image: "/images/ngo/the-tony-elumelu-foundation.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "YEDBC (Yaba Educators Centre for In)",
-            image: "/images/ngo/yedbc.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Oando Foundation",
-            image: "/images/ngo/oando-foundation.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
       {
-        title: "Outstanding Donation Of Education Aid By NGO",
-        description:
-          "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
-        nominees: [
+        name: "West Africa",
+        subCategories: [
           {
-            name: "Paradigm Initiative",
-            image: "/images/ngo/paradigm-initiative.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Teach For Nigeria",
+                image: "/images/ngo/teach-for-nigeria.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Slum2School Africa",
+                image: "/images/ngo/slum2school.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "ActionAid Nigeria",
+                image: "/images/ngo/actionaid.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Plan International Nigeria",
+                image: "/images/ngo/plan-international-nigeria.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Malala Fund Nigeria",
+                image: "/images/ngo/malala-fund.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Girl Child Education Initiative",
+                image: "/images/ngo/girl-child-initiative.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Universal Learning Solutions",
+                image: "/images/ngo/universal-learning-solutions.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Bridge International Academies",
+                image: "/images/ngo/bridge.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Save the Children Nigeria",
+                image: "/images/ngo/save-the-children.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "UNICEF Nigeria",
+                image: "/images/ngo/unicef.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+            ],
           },
           {
-            name: "MANI (Maternal and Child Survival Program)",
-            image: "/images/ngo/mani.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nigeria Youth Futures Fund",
+                image: "/images/ngo/nigeria-youth-futures-fund.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "One Million Teachers",
+                image: "/images/ngo/one-million-teachers.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "The Education Partnership (TEP)",
+                image: "/images/ngo/the-education-partnership.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Street Child Nigeria",
+                image: "/images/ngo/street-child.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Educate Nigeria Initiative",
+                image: "/images/ngo/educate-nigeria-initiative.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "LEAP Africa",
+                image: "/images/ngo/leap-africa.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Young Educators Foundation",
+                image: "/images/ngo/young-educators-foundation.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "The Tony Elumelu Foundation",
+                image: "/images/ngo/the-tony-elumelu-foundation.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "YEDBC (Yaba Educators Centre for In)",
+                image: "/images/ngo/yedbc.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Oando Foundation",
+                image: "/images/ngo/oando-foundation.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+            ],
           },
           {
-            name: "STEM Nigeria Direct",
-            image: "/images/ngo/stem-nigeria-direct.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Paradigm Initiative",
+                image: "/images/ngo/paradigm-initiative.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "MANI (Maternal and Child Survival Program)",
+                image: "/images/ngo/mani.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "STEM Nigeria Direct",
+                image: "/images/ngo/stem-nigeria-direct.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Tech4Dev (Technology for Social G)",
+                image: "/images/ngo/tech4dev.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "REACH Initiative International",
+                image: "/images/ngo/reach-initiative-international.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "KnowledgeAid Initiative",
+                image: "/images/ngo/knowledgeaid-initiative.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "YISA (Youth Initiative for Sustain)",
+                image: "/images/ngo/yisa.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "SkillNG",
+                image: "/images/ngo/saind.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "AYECI (African Youth Initiative on)",
+                image: "/images/ngo/save-the-children.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "EVA (The Education As A Vaccine In)",
+                image: "/images/ngo/eva.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+            ],
           },
           {
-            name: "Tech4Dev (Technology for Social G)",
-            image: "/images/ngo/tech4dev.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Youth for Technology Foundation",
+                image: "/images/ngo/youth-for-technology.png",
+                achievement:
+                  "Provided technology training and entrepreneurship education to young people in Nigeria. Empowered over 20,000 youths wi...",
+              },
+              {
+                name: "Junior Achievement Nigeria (JAN)",
+                image: "/images/ngo/junior-achievement.png",
+                achievement:
+                  "Implemented educational programs that empowered youths with financial literacy and workforce readiness for youths, reache...",
+              },
+              {
+                name: "YALI Network Nigeria",
+                image: "/images/ngo/yali-network.png",
+                achievement:
+                  "Provided leadership and professional development opportunities for young Nigerians through the Young African Leaders Initiative...",
+              },
+              {
+                name: "AIESEC Nigeria",
+                image: "/images/ngo/aiesec.png",
+                achievement:
+                  "Offered international exchange programs that provide young people with leadership opportunities, global internships, and socia...",
+              },
+              {
+                name: "Girls Education Mission International (GEM)",
+                image: "/images/ngo/girls-education-mission.png",
+                achievement:
+                  "Focused on empowering young girls through education, providing scholarships, mentorship, and advocacy for girls' rights. I...",
+              },
+              {
+                name: "Rise Network",
+                image: "/images/ngo/rise-network.png",
+                achievement:
+                  "Facilitated career development, mentorship, and skills training for young people in Nigeria. Supported over 35,000 young Nige...",
+              },
+              {
+                name: "Jobberman Nigeria",
+                image: "/images/ngo/jobberman.png",
+                achievement:
+                  "Offered job training and placement services for young Nigerians, bridging the gap between job seekers and employers. Trained...",
+              },
+              {
+                name: "Young African Leadership Initiative (YALI) Nigeria",
+                image: "/images/ngo/yali.png",
+                achievement:
+                  "Empowered young Nigerians through leadership training, civic engagement, and professional development programs. Impac...",
+              },
+              {
+                name: "YouthHubAfrica",
+                image: "/images/ngo/youthhub-africa.png",
+                achievement:
+                  "Supported youth-driven initiatives for social change and education, providing platforms for young voices to be heard in Nigeri...",
+              },
+              {
+                name: "Youth Mentoring Initiative for Youth Empowerment (MIYE)",
+                image: "/images/ngo/youth-mentoring-initiative.png",
+                achievement:
+                  "Guided young people through mentorship and educational programs, focusing on leadership and personal development. Ment...",
+              },
+            ],
           },
           {
-            name: "REACH Initiative International",
-            image: "/images/ngo/reach-initiative-international.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "KnowledgeAid Initiative",
-            image: "/images/ngo/knowledgeaid-initiative.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "YISA (Youth Initiative for Sustain)",
-            image: "/images/ngo/yisa.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "SkillNG",
-            image: "/images/ngo/saind.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "AYECI (African Youth Initiative on)",
-            image: "/images/ngo/save-the-children.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "EVA (The Education As A Vaccine In)",
-            image: "/images/ngo/eva.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Girls Education Mission International (GEM)",
+                image: "/images/ngo/girls-education-mission.png",
+                achievement:
+                  "Provided educational scholarships, mentorship, and advocacy for the education of girls in northern Nigeria. Empowered over...",
+              },
+              {
+                name: "ActionAid Nigeria",
+                image: "/images/ngo/actionaid.png",
+                achievement:
+                  "Implemented the Safe Cities for Women and Girls initiative. Advocated for educational programs to empower women and girls, focu...",
+              },
+              {
+                name: "Educate Girls Nigeria",
+                image: "/images/ngo/educate-girls.png",
+                achievement:
+                  "Focused on enrolling and retaining girls in school, especially in rural and underserved communities. Increased school enrollmen...",
+              },
+              {
+                name: "Women's Rights Advancement and Protection Alternative (WRAPA)",
+                image: "/images/ngo/wrapa.png",
+                achievement:
+                  "Provided education and vocational training for women and girls, particularly those affected by gender-based violence. Empow...",
+              },
+              {
+                name: "Girl Child Concerns (GCC)",
+                image: "/images/ngo/girl-child-concerns.png",
+                achievement:
+                  "Implemented initiatives focused on the education and empowerment of adolescent girls in northern Nigeria. Supported the educ...",
+              },
+              {
+                name: "Women for Women International Nigeria",
+                image: "/images/ngo/women-for-women.png",
+                achievement:
+                  "Provided educational programs, vocational skills training, and support to women survivors of conflict. Empowered over 20,000...",
+              },
+              {
+                name: "Baobab for Women's Human Rights",
+                image: "/images/ngo/baobab.png",
+                achievement:
+                  "Focused on educating women and girls about their rights, including the right to education. Provided literacy programs for wom...",
+              },
+              {
+                name: "Centre for Girls Education (CGE)",
+                image: "/images/ngo/centre-for-girls-education.png",
+                achievement:
+                  "Implemented programs to educate and empower girls in rural northern Nigeria, focusing on literacy and life skills. Improved...",
+              },
+              {
+                name: "Tech4Dev Women's Empowerment Program",
+                image: "/images/ngo/tech4dev.png",
+                achievement:
+                  "Educated young women in digital skills and entrepreneurship, helping them to access better job opportunities. Trained over 5,000...",
+              },
+              {
+                name: "Association of Nigerian Women Entrepreneurs (ANWE)",
+                image: "/images/ngo/anwep.png",
+                achievement:
+                  "Promoted education and entrepreneurship for women and girls, providing resources and support for business startups. Empowered o...",
+              },
+            ],
           },
         ],
       },
       {
-        title:
-          "Youth Empowerment Through Educational Services By An NGO In Nigeria",
-        description:
-          "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
-        nominees: [
+        name: "South Africa",
+        subCategories: [
           {
-            name: "Youth for Technology Foundation",
-            image: "/images/ngo/youth-for-technology.png",
-            achievement:
-              "Provided technology training and entrepreneurship education to young people in Nigeria. Empowered over 20,000 youths wi...",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Junior Achievement Nigeria (JAN)",
-            image: "/images/ngo/junior-achievement.png",
-            achievement:
-              "Implemented educational programs that empowered youths with financial literacy and workforce readiness for youths, reache...",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "YALI Network Nigeria",
-            image: "/images/ngo/yali-network.png",
-            achievement:
-              "Provided leadership and professional development opportunities for young Nigerians through the Young African Leaders Initiative...",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "AIESEC Nigeria",
-            image: "/images/ngo/aiesec.png",
-            achievement:
-              "Offered international exchange programs that provide young people with leadership opportunities, global internships, and socia...",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Girls Education Mission International (GEM)",
-            image: "/images/ngo/girls-education-mission.png",
-            achievement:
-              "Focused on empowering young girls through education, providing scholarships, mentorship, and advocacy for girls' rights. I...",
-          },
-          {
-            name: "Rise Network",
-            image: "/images/ngo/rise-network.png",
-            achievement:
-              "Facilitated career development, mentorship, and skills training for young people in Nigeria. Supported over 35,000 young Nige...",
-          },
-          {
-            name: "Jobberman Nigeria",
-            image: "/images/ngo/jobberman.png",
-            achievement:
-              "Offered job training and placement services for young Nigerians, bridging the gap between job seekers and employers. Trained...",
-          },
-          {
-            name: "Young African Leadership Initiative (YALI) Nigeria",
-            image: "/images/ngo/yali.png",
-            achievement:
-              "Empowered young Nigerians through leadership training, civic engagement, and professional development programs. Impac...",
-          },
-          {
-            name: "YouthHubAfrica",
-            image: "/images/ngo/youthhub-africa.png",
-            achievement:
-              "Supported youth-driven initiatives for social change and education, providing platforms for young voices to be heard in Nigeri...",
-          },
-          {
-            name: "Youth Mentoring Initiative for Youth Empowerment (MIYE)",
-            image: "/images/ngo/youth-mentoring-initiative.png",
-            achievement:
-              "Guided young people through mentorship and educational programs, focusing on leadership and personal development. Ment...",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
       {
-        title: "Women And Girls' Empowerment In Education By An NGO In Nigeria",
-        description:
-          "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
-        nominees: [
+        name: "Central Africa",
+        subCategories: [
           {
-            name: "Girls Education Mission International (GEM)",
-            image: "/images/ngo/girls-education-mission.png",
-            achievement:
-              "Provided educational scholarships, mentorship, and advocacy for the education of girls in northern Nigeria. Empowered over...",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "ActionAid Nigeria",
-            image: "/images/ngo/actionaid.png",
-            achievement:
-              "Implemented the Safe Cities for Women and Girls initiative. Advocated for educational programs to empower women and girls, focu...",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Educate Girls Nigeria",
-            image: "/images/ngo/educate-girls.png",
-            achievement:
-              "Focused on enrolling and retaining girls in school, especially in rural and underserved communities. Increased school enrollmen...",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Women's Rights Advancement and Protection Alternative (WRAPA)",
-            image: "/images/ngo/wrapa.png",
-            achievement:
-              "Provided education and vocational training for women and girls, particularly those affected by gender-based violence. Empow...",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Girl Child Concerns (GCC)",
-            image: "/images/ngo/girl-child-concerns.png",
-            achievement:
-              "Implemented initiatives focused on the education and empowerment of adolescent girls in northern Nigeria. Supported the educ...",
-          },
-          {
-            name: "Women for Women International Nigeria",
-            image: "/images/ngo/women-for-women.png",
-            achievement:
-              "Provided educational programs, vocational skills training, and support to women survivors of conflict. Empowered over 20,000...",
-          },
-          {
-            name: "Baobab for Women's Human Rights",
-            image: "/images/ngo/baobab.png",
-            achievement:
-              "Focused on educating women and girls about their rights, including the right to education. Provided literacy programs for wom...",
-          },
-          {
-            name: "Centre for Girls Education (CGE)",
-            image: "/images/ngo/centre-for-girls-education.png",
-            achievement:
-              "Implemented programs to educate and empower girls in rural northern Nigeria, focusing on literacy and life skills. Improved...",
-          },
-          {
-            name: "Tech4Dev Women's Empowerment Program",
-            image: "/images/ngo/tech4dev.png",
-            achievement:
-              "Educated young women in digital skills and entrepreneurship, helping them to access better job opportunities. Trained over 5,000...",
-          },
-          {
-            name: "Association of Nigerian Women Entrepreneurs (ANWE)",
-            image: "/images/ngo/anwep.png",
-            achievement:
-              "Promoted education and entrepreneurship for women and girls, providing resources and support for business startups. Empowered o...",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
@@ -578,14 +2152,12 @@ export const categories: Category[] = [
   },
 
   {
-    title:
-      "Africa Diaspora association Educational Impact Projects Recognition Award in Africa",
+    title: "Diaspora Association Educational Impact in Africa",
     description:
-      'Honoring the significant contributions made by diaspora organizations towards achieving "Education for all" across the African Continent.',
+      "This Award recognizes and honors the significant contributions made by the Nigerian diaspora towards achieving 'Education for All' in Nigeria. This award, set for the 2023 cycle, aims to celebrate diaspora individuals, groups, or organizations that have made a substantial impact through skills transfer, corporate social responsibility (CSR) initiatives, advocacy, and other educational support back home in Nigeria.",
     subCategories: [
       {
-        title:
-          "The Best Diaspora-Led Educational Infrastructure Project in Africa",
+        title: "The Best Diaspora-Led Educational Infrastructure",
         description:
           "This category celebrates diaspora organizations that have created significant educational infrastructure, advancing the quality of education across Africa.",
         nominees: [
@@ -672,7 +2244,7 @@ export const categories: Category[] = [
         ],
       },
       {
-        title: "The Best Diaspora-Led Educational Program Innovation in Africa",
+        title: "The Best Diaspora-Led Educational Program Innovation",
         description:
           "This category recognizes innovative educational programs initiated by diaspora organizations that have significantly impacted learning outcomes in Africa.",
         nominees: [
@@ -760,8 +2332,7 @@ export const categories: Category[] = [
         ],
       },
       {
-        title:
-          "The Best Diaspora-Led Teacher Training And Support Initiative in Africa",
+        title: "The Best Diaspora-Led Teacher Training And Support Initiative",
         description:
           "This category honors diaspora-led initiatives that have significantly improved teacher training and support across Africa.",
         nominees: [
@@ -1609,69 +3180,89 @@ export const categories: Category[] = [
       },
 
       {
-        title: "Media And Entertainment CSR in Education Award",
+        title: "Social Media Influencer CSR For Education",
         description:
-          "Recognizes media and entertainment companies for their support of educational content and initiatives.",
+          "Recognizing social media influencers making substantial educational impacts",
         nominees: [
           {
-            name: "Channels Television",
-            image: "/images/bestcsr/Channels Television.png",
+            name: "Yemi Alade (Nigeria)",
+            image: "/images/bestcsr/Yemi Alade.png",
             achievement:
-              "Implemented the 'Channels Kids Club' to promote educational content for children and sponsored educational documentaries and programs for students.",
+              "#EducationForAll Campaign – Advocating for and fundraising for school supplies and scholarships, supporting underprivileged students in Nigeria. Year of Support: 2016-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "NTA (Nigerian Television Authority)",
-            image: "/images/bestcsr/NTA.png",
+            name: "Samuel Eto'o (Cameroon)",
+            image: "/images/bestcsr/Samuel Eto'o.png",
             achievement:
-              "Launched the 'NTA Educational Initiative' to support learning through television and produced educational programs and documentaries for schools.",
+              "Samuel Eto'o Foundation – Building schools and providing educational materials, improving access to education in Cameroon. Year of Support: 2006-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "Multichoice Nigeria (DSTV)",
-            image: "/images/bestcsr/Multichoice.png",
+            name: "Davido (Nigeria)",
+            image: "/images/bestcsr/Davido.png",
             achievement:
-              "Supported the 'DSTV Eutelsat Star Awards' to promote science and technology education and sponsored educational scholarships for students across Nigeria.",
+              "Davido Education Fund – Supporting underprivileged students with scholarships and learning materials, enhancing educational opportunities in Nigeria. Year of Support: 2018-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "Silverbird Group",
-            image: "/images/bestcsr/Silverbird Group.png",
+            name: "Omotola Jalade Ekeinde (Nigeria)",
+            image: "/images/bestcsr/Omotola Jalade Ekeinde.png",
             achievement:
-              "Developed the 'Silverbird Education Initiative' for educational content creation and produced documentaries and programs focused on education and development.",
+              "Omotola Youth Empowerment Program – Focusing on education and skills development for youth in Nigeria. Year of Support: 2010-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "Wazobia FM",
-            image: "/images/bestcsr/Wazobia FM.png",
+            name: "Sarkodie (Ghana)",
+            image: "/images/bestcsr/Sarkodie.png",
             achievement:
-              "Launched the 'Wazobia Education Support Program' for educational outreach and sponsored educational programs and events for schools.",
+              "Sark Nation Foundation – Providing scholarships and educational support for students in need in Ghana. Year of Support: 2014-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "Arise News",
-            image: "/images/bestcsr/Arise News.png",
+            name: "Tiwa Savage (Nigeria)",
+            image: "/images/bestcsr/Tiwa Savage.png",
             achievement:
-              "Implemented the 'Arise Educational Initiative' to support learning through media and produced educational programs and documentaries for schools.",
+              "Savage Foundation – Supporting girls' education and providing scholarships, empowering young women in Nigeria. Year of Support: 2017-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "TVC Communications",
-            image: "/images/bestcsr/TVC Communications.png",
+            name: "Genevieve Nnaji (Nigeria)",
+            image: "/images/bestcsr/Genevieve Nnaji.png",
             achievement:
-              "Launched the 'TVC Education Support Initiative' for educational outreach and sponsored educational programs and events for schools.",
+              "Genevieve Foundation – Offering scholarships and mentorship for young women in education, promoting female empowerment in Nigeria. Year of Support: 2013-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "HipTV",
-            image: "/images/bestcsr/HipTV.png",
+            name: "Cuppy (Florence Ifeoluwa Otedola) (Nigeria)",
+            image: "/images/bestcsr/Cuppy (Florence Ifeoluwa Otedola).png",
             achievement:
-              "Developed the 'HipTV Educational Initiative' for educational content creation and produced documentaries and programs focused on education and development.",
+              "Cuppy Foundation – Focusing on education and providing scholarships, supporting youth education in Nigeria. Year of Support: 2018-Present",
+            state: "Accra",
+            country: "Ghana",
           },
           {
-            name: "Africa Magic",
-            image: "/images/bestcsr/Africa Magic.png",
+            name: "Magasco (Cameroon): Magasco Education Fund",
+            image: "/images/bestcsr/Magasco.png",
             achievement:
-              "Supported the 'Africa Magic Educational Initiative' for educational outreach and sponsored educational programs and events for schools.",
+              "Promoting educational comedy and literacy through social media content.",
+            state: "",
+            country: "",
           },
           {
-            name: "EbonyLife TV",
-            image: "/images/bestcsr/EbonyLife TV.png",
+            name: "Charlotte Dipanda (Cameroon)",
+            image: "/images/bestcsr/Charlotte Dipanda.png",
             achievement:
-              "Launched the 'EbonyLife Education Support Program' for educational outreach and sponsored educational programs and events for schools.",
+              "Dipanda's Learning Initiative – Supporting girls' education and empowerment through scholarships and mentoring in Cameroon. Year of Support: 2016-Present",
+            state: "",
+            country: "",
           },
         ],
       },
@@ -7376,7 +8967,7 @@ export const categories: Category[] = [
   {
     title: "Overall best educational friendly state in Nigeria 2024",
     description:
-      "Awards the tertiary institution that stands out in academic excellence, community engagement, and student support with notable ICT infrastructure.",
+      "This award aims to celebrate and recognize educational excellence across the African continent. The Best EduTech Organization in Nigeria and Africa 2024 award acknowledges the significant contributions of EduTech organizations that have leveraged technology to enhance educational experiences and outcomes. This award highlights the innovative approaches and technological solutions that EduTech organizations have implemented to address educational challenges and improve the quality of education in Nigeria and across Africa.",
     subCategories: [
       {
         title: "Best Education Initiative in North Central Zone",
@@ -10229,7 +11820,7 @@ export const categories: Category[] = [
     title:
       "Political Leaders in Nigeria 2024 Recognition Award for the Best Educational Support Services",
     description:
-      "This award recognizes political leaders at both state and federal levels who have made outstanding contributions to education in Nigeria through various initiatives, policies, and support programs that advance quality education for all.",
+      "The Political Leaders in Nigeria 2024 Recognition Award for the Best Educational Support Services aims to acknowledge and celebrate political leaders who have made outstanding contributions to the educational sector. This award recognizes those who have significantly impacted education through scholarship programs, infrastructure development, donations, and advocacy for educational reforms. The award seeks to highlight and honor the efforts of political leaders who have demonstrated exceptional commitment to ensuring educational excellence and accessibility across Nigeria.",
     subCategories: [
       {
         title:
@@ -10979,265 +12570,1219 @@ export const categories: Category[] = [
     title: "Support for education in STEM in Nigeria",
     description:
       "Celebrating initiatives by any organization for creative arts role in education and promoting hands-on learning experiences.",
-    subCategories: [
+    regions: [
       {
-        title: "The Best Innovative STEM Curriculum Development in Nigeria",
-        description:
-          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-        nominees: [
+        name: "North Africa",
+        subCategories: [
           {
-            name: "University of Lagos",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/university_of_lagos.png",
-            achievement:
-              "Developed a multidisciplinary STEM curriculum focusing on practical applications and research. Enhanced STEM education for students.",
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Covenant University",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Covenant_University.png",
-            achievement:
-              "Introduced an innovative engineering curriculum integrating industry practices. Prepared over 3,000 students for careers in engineering.",
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Lagos State Model College",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Lagos_State_Model_College.png",
-            achievement:
-              "Implemented a specialized STEM program for secondary students, emphasizing real-world problem-solving. Improved student performance in STEM subjects.",
-          },
-          {
-            name: "Federal Government College Enugu",
-            state: "Enugu",
-            country: "Nigeria",
-            image: "/images/stem/Federal_Government_College_Enugu.png",
-            achievement:
-              "Developed a STEM curriculum with a focus on renewable energy and environmental sciences. Trained over 2,500 students in sustainable technologies.",
-          },
-          {
-            name: "Nigerian Turkish International Coll",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Nigerian_Turkish_International_Coll.png",
-            achievement:
-              "Introduced advanced STEM subjects, including robotics and coding, into the school curriculum. Achieved top rankings in international STEM competitions.",
-          },
-          {
-            name: "British International School Lagos",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/British_International_School_Lagos.png",
-            achievement:
-              "Integrated STEM across all grade levels, with an emphasis on technology and engineering. Produced high-achieving students in STEM fields internationally.",
-          },
-          {
-            name: "University of Nigeria, Nsukka",
-            state: "Enugu",
-            country: "Nigeria",
-            image: "/images/stem/University_of_Nigeria_Nsukka.png",
-            achievement:
-              "Developed a comprehensive STEM curriculum with a strong research component. Facilitated groundbreaking research in various STEM fields.",
-          },
-          {
-            name: "STEM Nigeria Initiative",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/STEM_Nigeria_Initiative.png",
-            achievement:
-              "Designed a national STEM curriculum that incorporates local context and resources. Benefited over 10,000 students across multiple schools.",
-          },
-          {
-            name: "Centre for Mathematics and Science Education",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Centre_for_Mathematics_and_Science.png",
-            achievement:
-              "Developed a STEM curriculum focusing on mathematics and science literacy. Improved mathematical proficiency among secondary school students.",
-          },
-          {
-            name: "Nigerian Educational Research and Development Council (NERDC)",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Nigerian_Educational_Research.png",
-            achievement:
-              "Led the national development of STEM curriculum guidelines and standards. Standardized STEM education across the country.",
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
       {
-        title: "The Best STEM Outreach and Community Engagement in Nigeria",
-        description:
-          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-        nominees: [
+        name: "East Africa",
+        subCategories: [
           {
-            name: "STEM Café",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/STEM_Café.png",
-            achievement:
-              "Established interactive STEM learning centers in underserved communities. Engaged over 20,000 students in hands-on STEM activities.",
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Junior Achievement Nigeria",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Junior_Achievement_Nigeria.png",
-            achievement:
-              "Implemented STEM programs that focus on entrepreneurship and innovation. Reached over 50,000 students across Nigeria.",
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Teach for Nigeria",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Teach_for_Nigeria.png",
-            achievement:
-              "Promoted STEM education through teaching fellowships in underserved areas. Improved STEM literacy among 30,000 students in rural communities.",
-          },
-          {
-            name: "Abuja Science and Technology Park",
-            state: "Abuja",
-            country: "Nigeria",
-            image: "/images/stem/Abuja_Science_and_Technology_Park.png",
-            achievement:
-              "Organized community-based STEM workshops and competitions. Engaged 15,000 students and community members in STEM activities.",
-          },
-          {
-            name: "Yaba College of Technology",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Yaba_College_of_Technology.png",
-            achievement:
-              "Conducted STEM outreach programs targeting secondary school students. Enhanced STEM skills for over 10,000 students through workshops.",
-          },
-          {
-            name: "TechQuest STEM Academy",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/TechQuest_STEM_Academy.png",
-            achievement:
-              "Provided STEM education through coding and robotics workshops in low-income areas. Trained over 25,000 students in digital skills.",
-          },
-          {
-            name: "Lagos State Ministry of Education",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Lagos_State_Ministry_of_Education.png",
-            achievement:
-              "Launched state-wide STEM initiatives to promote science and technology education. Improved STEM education in over 500 schools across Lagos State.",
-          },
-          {
-            name: "SkillNG",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/SkillNG.png",
-            achievement:
-              "Offered STEM training and career guidance for youths in technology fields. Empowered over 15,000 young people with STEM skills.",
-          },
-          {
-            name: "Nigerian Society of Engineers",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Nigerian_Society_of_Engineers.png",
-            achievement:
-              "Led community STEM projects focusing on engineering education and awareness. Reached over 10,000 students and young professionals.",
-          },
-          {
-            name: "African Science Academy",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/African_Science_Academy.png",
-            achievement:
-              "Established STEM programs for girls in rural areas, focusing on science education and leadership. Empowered over 5,000 girls with STEM skills.",
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
       {
-        title: "The Best Technology Integration in STEM Education in Nigeria",
-        description:
-          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-        nominees: [
+        name: "West Africa",
+        subCategories: [
           {
-            name: "American University of Nigeria",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/American_University_of_Nigeria.png",
-            achievement:
-              "Implemented technology-enhanced STEM programs with a focus on digital learning. Provided tech-driven education to over 5,000 students.",
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "University of Lagos",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/university_of_lagos.png",
+                achievement:
+                  "Developed a multidisciplinary STEM curriculum focusing on practical applications and research. Enhanced STEM education for students.",
+              },
+              {
+                name: "Covenant University",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Covenant_University.png",
+                achievement:
+                  "Introduced an innovative engineering curriculum integrating industry practices. Prepared over 3,000 students for careers in engineering.",
+              },
+              {
+                name: "Lagos State Model College",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Lagos_State_Model_College.png",
+                achievement:
+                  "Implemented a specialized STEM program for secondary students, emphasizing real-world problem-solving. Improved student performance in STEM subjects.",
+              },
+              {
+                name: "Federal Government College Enugu",
+                state: "Enugu",
+                country: "Nigeria",
+                image: "/images/stem/Federal_Government_College_Enugu.png",
+                achievement:
+                  "Developed a STEM curriculum with a focus on renewable energy and environmental sciences. Trained over 2,500 students in sustainable technologies.",
+              },
+              {
+                name: "Nigerian Turkish International Coll",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nigerian_Turkish_International_Coll.png",
+                achievement:
+                  "Introduced advanced STEM subjects, including robotics and coding, into the school curriculum. Achieved top rankings in international STEM competitions.",
+              },
+              {
+                name: "British International School Lagos",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/British_International_School_Lagos.png",
+                achievement:
+                  "Integrated STEM across all grade levels, with an emphasis on technology and engineering. Produced high-achieving students in STEM fields internationally.",
+              },
+              {
+                name: "University of Nigeria, Nsukka",
+                state: "Enugu",
+                country: "Nigeria",
+                image: "/images/stem/University_of_Nigeria_Nsukka.png",
+                achievement:
+                  "Developed a comprehensive STEM curriculum with a strong research component. Facilitated groundbreaking research in various STEM fields.",
+              },
+              {
+                name: "STEM Nigeria Initiative",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/STEM_Nigeria_Initiative.png",
+                achievement:
+                  "Designed a national STEM curriculum that incorporates local context and resources. Benefited over 10,000 students across multiple schools.",
+              },
+              {
+                name: "Centre for Mathematics and Science Education",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Centre_for_Mathematics_and_Science.png",
+                achievement:
+                  "Developed a STEM curriculum focusing on mathematics and science literacy. Improved mathematical proficiency among secondary school students.",
+              },
+              {
+                name: "Nigerian Educational Research and Development Council (NERDC)",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nigerian_Educational_Research.png",
+                achievement:
+                  "Led the national development of STEM curriculum guidelines and standards. Standardized STEM education across the country.",
+              },
+            ],
           },
           {
-            name: "Green Springs School",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Green_Springs_School.png",
-            achievement:
-              "Integrated advanced technology tools into STEM curriculum, including virtual labs and online simulations. Enhanced learning experience for students.",
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "STEM Café",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/STEM_Café.png",
+                achievement:
+                  "Established interactive STEM learning centers in underserved communities. Engaged over 20,000 students in hands-on STEM activities.",
+              },
+              {
+                name: "Junior Achievement Nigeria",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Junior_Achievement_Nigeria.png",
+                achievement:
+                  "Implemented STEM programs that focus on entrepreneurship and innovation. Reached over 50,000 students across Nigeria.",
+              },
+              {
+                name: "Teach for Nigeria",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Teach_for_Nigeria.png",
+                achievement:
+                  "Promoted STEM education through teaching fellowships in underserved areas. Improved STEM literacy among 30,000 students in rural communities.",
+              },
+              {
+                name: "Abuja Science and Technology Park",
+                state: "Abuja",
+                country: "Nigeria",
+                image: "/images/stem/Abuja_Science_and_Technology_Park.png",
+                achievement:
+                  "Organized community-based STEM workshops and competitions. Engaged 15,000 students and community members in STEM activities.",
+              },
+              {
+                name: "Yaba College of Technology",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Yaba_College_of_Technology.png",
+                achievement:
+                  "Conducted STEM outreach programs targeting secondary school students. Enhanced STEM skills for over 10,000 students through workshops.",
+              },
+              {
+                name: "TechQuest STEM Academy",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/TechQuest_STEM_Academy.png",
+                achievement:
+                  "Provided STEM education through coding and robotics workshops in low-income areas. Trained over 25,000 students in digital skills.",
+              },
+              {
+                name: "Lagos State Ministry of Education",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Lagos_State_Ministry_of_Education.png",
+                achievement:
+                  "Launched state-wide STEM initiatives to promote science and technology education. Improved STEM education in over 500 schools across Lagos State.",
+              },
+              {
+                name: "SkillNG",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/SkillNG.png",
+                achievement:
+                  "Offered STEM training and career guidance for youths in technology fields. Empowered over 15,000 young people with STEM skills.",
+              },
+              {
+                name: "Nigerian Society of Engineers",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nigerian_Society_of_Engineers.png",
+                achievement:
+                  "Led community STEM projects focusing on engineering education and awareness. Reached over 10,000 students and young professionals.",
+              },
+              {
+                name: "African Science Academy",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/African_Science_Academy.png",
+                achievement:
+                  "Established STEM programs for girls in rural areas, focusing on science education and leadership. Empowered over 5,000 girls with STEM skills.",
+              },
+            ],
           },
           {
-            name: "Obafemi Awolowo University",
-            state: "Osun",
-            country: "Nigeria",
-            image: "/images/stem/Obafemi_Awolowo_University.png",
-            achievement:
-              "Developed a robust e-learning platform for STEM courses. Increased access to STEM education for over 10,000 students.",
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "American University of Nigeria",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/American_University_of_Nigeria.png",
+                achievement:
+                  "Implemented technology-enhanced STEM programs with a focus on digital learning. Provided tech-driven education to over 5,000 students.",
+              },
+              {
+                name: "Green Springs School",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Green_Springs_School.png",
+                achievement:
+                  "Integrated advanced technology tools into STEM curriculum, including virtual labs and online simulations. Enhanced learning experience for students.",
+              },
+              {
+                name: "Obafemi Awolowo University",
+                state: "Osun",
+                country: "Nigeria",
+                image: "/images/stem/Obafemi_Awolowo_University.png",
+                achievement:
+                  "Developed a robust e-learning platform for STEM courses. Increased access to STEM education for over 10,000 students.",
+              },
+              {
+                name: "University of Ibadan",
+                state: "Oyo",
+                country: "Nigeria",
+                image: "/images/stem/University_of_Ibadan.png",
+                achievement:
+                  "Integrated cutting-edge technology into STEM research and education. Facilitated research and learning for over 15,000 students.",
+              },
+              {
+                name: "Afe Babalola University",
+                state: "Ekiti",
+                country: "Nigeria",
+                image: "/images/stem/Afe_Babalola_University.png",
+                achievement:
+                  "Launched a tech-driven STEM program with a focus on innovation and entrepreneurship. Empowered 3,000 students with digital skills.",
+              },
+              {
+                name: "Bridge International Academies",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Bridge_International_Academies.png",
+                achievement:
+                  "Utilized educational technology to deliver STEM education in low-income areas. Improved STEM literacy for over 100,000 students.",
+              },
+              {
+                name: "CodeLagos",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/CodeLagos.png",
+                achievement:
+                  "Implemented a state-wide coding and technology program for students. Trained over 100,000 students in coding and digital literacy.",
+              },
+              {
+                name: "Edves",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Edves.png",
+                achievement:
+                  "Developed and deployed a technology platform to manage and enhance STEM education in schools. Supported over 500 schools in Nigeria.",
+              },
+              {
+                name: "Andela Learning Community",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Andela_Learning_Community.png",
+                achievement:
+                  "Provided online and offline technology training to students and professionals. Trained over 20,000 individuals in software development.",
+              },
+              {
+                name: "STEM METS Resources",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/STEM_METS_Resources.png",
+                achievement:
+                  "Offered STEM kits and technology resources for hands-on learning in schools. Enhanced STEM education for over 30,000 students across Nigeria.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "South Africa",
+        subCategories: [
+          {
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "University of Ibadan",
-            state: "Oyo",
-            country: "Nigeria",
-            image: "/images/stem/University_of_Ibadan.png",
-            achievement:
-              "Integrated cutting-edge technology into STEM research and education. Facilitated research and learning for over 15,000 students.",
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Afe Babalola University",
-            state: "Ekiti",
-            country: "Nigeria",
-            image: "/images/stem/Afe_Babalola_University.png",
-            achievement:
-              "Launched a tech-driven STEM program with a focus on innovation and entrepreneurship. Empowered 3,000 students with digital skills.",
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Central Africa",
+        subCategories: [
+          {
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Bridge International Academies",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Bridge_International_Academies.png",
-            achievement:
-              "Utilized educational technology to deliver STEM education in low-income areas. Improved STEM literacy for over 100,000 students.",
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "CodeLagos",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/CodeLagos.png",
-            achievement:
-              "Implemented a state-wide coding and technology program for students. Trained over 100,000 students in coding and digital literacy.",
-          },
-          {
-            name: "Edves",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Edves.png",
-            achievement:
-              "Developed and deployed a technology platform to manage and enhance STEM education in schools. Supported over 500 schools in Nigeria.",
-          },
-          {
-            name: "Andela Learning Community",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/Andela_Learning_Community.png",
-            achievement:
-              "Provided online and offline technology training to students and professionals. Trained over 20,000 individuals in software development.",
-          },
-          {
-            name: "STEM METS Resources",
-            state: "Lagos",
-            country: "Nigeria",
-            image: "/images/stem/STEM_METS_Resources.png",
-            achievement:
-              "Offered STEM kits and technology resources for hands-on learning in schools. Enhanced STEM education for over 30,000 students across Nigeria.",
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 2",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 3",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 4",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 5",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 6",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 7",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 8",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 9",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+              {
+                name: "Nominee 10",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
