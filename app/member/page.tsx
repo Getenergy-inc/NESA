@@ -7,70 +7,80 @@ import ReferralInfo from '@/components/Layout/Dashboard/ReferralInfo';
 import VotingOverviewCard from '@/components/Layout/Dashboard/VotingOverviewCard';
 import SkeletonLoader from '@/components/UI/SkeletonLoader';
 import { useAuthContext } from '@/lib/context/AuthContext';
+import { useWallet } from '@/lib/hooks/useWallet';
 import { FiAlertCircle, FiCheckCircle, FiX } from 'react-icons/fi';
-
-const recentActivities = [
-  {
-    type: 'wallet',
-    title: 'Wallet Top-up',
-    description: 'You funded your wallet with ₦5,000',
-    date: 'April 6, 2025 at 3:45 PM',
-  },
-  {
-    type: 'referral',
-    title: 'New Referral Bonus',
-    description: 'You earned ₦1,000 from John Doe signup',
-    date: 'April 5, 2025 at 11:20 AM',
-  },
-  {
-    type: 'voting',
-    title: 'New Nomination',
-    description: 'You nominated Jane Smith for "Community Leader"',
-    date: 'April 3, 2025 at 4:05 PM',
-  },
-  {
-    type: 'wallet',
-    title: 'Withdrawal Processed',
-    description: '₦2,000 was withdrawn to your bank account',
-    date: 'April 1, 2025 at 10:00 AM',
-  },
-];
+import WalletWidget from '@/components/Wallet/WalletWidget';
 
 export default function DashboardPage() {
   const router = useRouter();
   const { user } = useAuthContext();
+  const { totalBalance, withdrawableBalance, transactions, loading: walletLoading } = useWallet();
   const [loading, setLoading] = useState(true);
   const [showNotification, setShowNotification] = useState(true);
   const [verificationStatus, setVerificationStatus] = useState({
     emailVerified: false,
     kycCompleted: false,
   });
+  const [recentActivities, setRecentActivities] = useState<any[]>([]);
 
   useEffect(() => {
-    // Simulate API call to get verification status
-    const fetchVerificationStatus = async () => {
+    const fetchDashboardData = async () => {
       try {
-        // In a real app, you would fetch this from your backend:
-        // const response = await fetch(`/api/users/${user.id}/verification-status`);
-        // const status = await response.json();
-        
-        // Mock response for demonstration
-        const mockStatus = {
-          emailVerified: user?.emailVerified || false,
+        // Set verification status from user data
+        const status = {
+          emailVerified: user?.isVerified || user?.emailVerified || false,
           kycCompleted: user?.KYC || false,
         };
         
-        setVerificationStatus(mockStatus);
+        setVerificationStatus(status);
+
+        // Convert wallet transactions to recent activities
+        if (transactions && transactions.length > 0) {
+          const activities = transactions.slice(0, 4).map((tx: any) => {
+            let type = 'wallet';
+            let title = 'Transaction';
+            let description = tx.description || tx.reason;
+
+            if (tx.type === 'CREDIT' || tx.type === 'PURCHASE_USER') {
+              type = 'wallet';
+              title = tx.reason === 'signup_bonus' ? 'Signup Bonus' : 'Wallet Credit';
+            } else if (tx.type === 'DEBIT') {
+              type = 'wallet';
+              title = 'Wallet Debit';
+            } else if (tx.type === 'TRANSFER') {
+              type = 'wallet';
+              title = 'Transfer';
+            }
+
+            return {
+              type,
+              title,
+              description,
+              date: new Date(tx.createdAt).toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+              })
+            };
+          });
+          setRecentActivities(activities);
+        }
+        
         setLoading(false);
       } catch (error) {
-        console.error('Failed to fetch verification status:', error);
+        console.error('Failed to fetch dashboard data:', error);
         setLoading(false);
       }
     };
 
-    const timer = setTimeout(fetchVerificationStatus, 2000);
-    return () => clearTimeout(timer);
-  }, [user]);
+    if (user) {
+      fetchDashboardData();
+    } else {
+      setLoading(false);
+    }
+  }, [user, transactions]);
 
   const needsAttention = !verificationStatus.emailVerified || !verificationStatus.kycCompleted;
 
@@ -81,6 +91,9 @@ export default function DashboardPage() {
       router.push('/account/complete-kyc');
     }
   };
+
+  // Get user's first name
+  const firstName = user?.firstName || user?.fullName?.split(' ')[0] || 'User';
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -96,7 +109,7 @@ export default function DashboardPage() {
             <>
               <div className="flex justify-between items-start">
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900">Welcome {user?.fullName || 'User'},</h1>
+                  <h1 className="text-3xl font-bold text-gray-900">Welcome {firstName},</h1>
                   <p className="mt-2 text-sm text-gray-600">
                     Track your nominations, referrals, and wallet activities
                   </p>
@@ -174,6 +187,15 @@ export default function DashboardPage() {
           )}
         </div>
 
+        {/* Wallet Widget - New! */}
+        <div className="mb-6">
+          {loading || walletLoading ? (
+            <SkeletonLoader className="h-48 w-full rounded-lg" />
+          ) : (
+            <WalletWidget compact={false} showActions={true} />
+          )}
+        </div>
+
         {/* Voting Overview */}
         <div className="mb-12">
           {loading ? (
@@ -216,7 +238,7 @@ export default function DashboardPage() {
                     </div>
                   ))}
               </div>
-            ) : (
+            ) : recentActivities.length > 0 ? (
               <ul className="divide-y divide-gray-200">
                 {recentActivities.map((activity, index) => (
                   <li key={index} className="p-6 hover:bg-gray-50 transition-colors">
@@ -228,6 +250,11 @@ export default function DashboardPage() {
                   </li>
                 ))}
               </ul>
+            ) : (
+              <div className="p-6 text-center text-gray-500">
+                <p>No recent activity yet</p>
+                <p className="text-sm mt-2">Your activity will appear here once you start using the platform</p>
+              </div>
             )}
           </div>
         </div>

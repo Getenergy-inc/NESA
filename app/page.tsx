@@ -22,8 +22,9 @@ export default function HomePage() {
         targetDateProp="2025-09-10T19:55:00Z"
       />
       <MediaSection />
+       <HomePartners />
       <Judges />
-      <HomePartners />
+     
     </ConditionalLayout>
   );
 }

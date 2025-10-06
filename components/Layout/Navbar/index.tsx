@@ -24,12 +24,12 @@ const Navbar = () => {
   const [isEdgeBrowser, setIsEdgeBrowser] = useState(false);
 
   const controlMenu = (action: boolean) => setSidebarOpen(action);
-  
+
   // Detect Edge browser on client side
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const isEdge = 
-        navigator.userAgent.indexOf('Edg') !== -1 || 
+      const isEdge =
+        navigator.userAgent.indexOf('Edg') !== -1 ||
         navigator.userAgent.indexOf('Edge') !== -1;
       setIsEdgeBrowser(isEdge);
     }
@@ -62,24 +62,24 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   // Edge browser detection and compatibility fixes
   useEffect(() => {
     const isEdgeBrowser = () => {
       if (typeof window === 'undefined' || !window.navigator) return false;
       return (
-        navigator.userAgent.indexOf('Edg') !== -1 || 
+        navigator.userAgent.indexOf('Edg') !== -1 ||
         navigator.userAgent.indexOf('Edge') !== -1
       );
     };
-    
+
     if (isEdgeBrowser() && ref.current) {
       // Apply Edge-specific styles directly to DOM elements for maximum compatibility
       const dropdowns = ref.current.querySelectorAll(`.${styles.dropdown}`);
       const navItems = ref.current.querySelectorAll(`.${styles['nav-item']}`);
       const dropdownItems = ref.current.querySelectorAll(`.${styles['dropdown-item']}`);
       const chevrons = ref.current.querySelectorAll(`.${styles['dropdown-chevron']} svg`);
-      
+
       // Apply styles to dropdowns
       dropdowns.forEach((dropdown: Element) => {
         const el = dropdown as HTMLElement;
@@ -88,13 +88,13 @@ const Navbar = () => {
         el.style.backdropFilter = 'none';
         el.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.4)';
       });
-      
+
       // Apply styles to dropdown items
       dropdownItems.forEach((item: Element) => {
         const el = item as HTMLElement;
         el.style.transition = 'all 0.3s ease';
       });
-      
+
       // Apply styles to chevrons
       chevrons.forEach((chevron: Element) => {
         const el = chevron as HTMLElement;
@@ -107,7 +107,7 @@ const Navbar = () => {
   if (isEdgeBrowser) {
     return <EdgeNavbar user={user} pathname={pathname} sidebarOpen={sidebarOpen} controlMenu={controlMenu} />;
   }
-  
+
   // Otherwise render the standard navbar with all features
   return (
     <>
@@ -237,11 +237,10 @@ const HorizontalNavLink = ({
         <div className="relative">
           <Link
             href={link.path}
-            className={`font-normal duration-300 relative py-2 px-3 rounded-md transition-all hover:bg-white/5 flex items-center ${
-              isActive
+            className={`font-normal duration-300 relative py-2 px-3 rounded-md transition-all hover:bg-white/5 flex items-center ${isActive
                 ? 'text-deepGold'
                 : 'text-white hover:text-deepGold'
-            }`}
+              }`}
             aria-haspopup="true"
             aria-expanded="false"
             role="button"
@@ -288,11 +287,10 @@ const HorizontalNavLink = ({
       ) : (
         <Link
           href={link.path}
-          className={`font-normal duration-300 relative py-2 px-3 rounded-md transition-all hover:bg-white/5 ${
-            isActive
+          className={`font-normal duration-300 relative py-2 px-3 rounded-md transition-all hover:bg-white/5 ${isActive
               ? 'text-deepGold'
               : 'text-white hover:text-deepGold'
-          }`}
+            }`}
         >
           <span>{link.label}</span>
           {isActive && (
@@ -315,7 +313,7 @@ const AuthButtons = ({ user }: { user: any }) => {
   const { logout } = useAuthContext();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
- 
+
   // Effect to close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -328,14 +326,14 @@ const AuthButtons = ({ user }: { user: any }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
- 
+
   if (user) {
     // If the user is logged in, show a dropdown menu on desktop
     const handleLogout = () => {
       logout();
       window.location.href = '/login';
     };
- 
+
     return (
       <div className="relative" ref={dropdownRef}> {/* Use relative positioning for dropdown */}
         {/* Trigger element - User icon */}
@@ -351,14 +349,14 @@ const AuthButtons = ({ user }: { user: any }) => {
             {renderIcon({ name: 'ChevronDown', size: 16 })}
           </motion.span>
         </motion.div>
- 
+
         {/* Dropdown Menu */}
         {dropdownOpen && (
           <div className="absolute right-0 mt-2 w-48 bg-black border border-deepGold/20 rounded-lg shadow-lg py-2 px-3 z-50 backdrop-blur-sm">
-            <Link href="/ProfileSetting">
+            <Link href="/member">
               <motion.div className="flex items-center space-x-3 cursor-pointer p-3 rounded-md hover:bg-white/5 transition-all duration-200">
                 <User className="text-gray-300 w-5 h-5" />
-                <span className="text-gray-200 font-medium text-base">My Account</span>
+                <span className="text-gray-200 font-medium text-base">Dashboard</span>
               </motion.div>
             </Link>
             <button
@@ -373,7 +371,7 @@ const AuthButtons = ({ user }: { user: any }) => {
       </div>
     );
   }
- 
+
   // If the user is not logged in, return null since Login/Sign Up are now in main nav
   return null;
 };
@@ -390,9 +388,8 @@ const MobileSidebar = ({
   pathname: string;
 }) => (
   <aside
-    className={`${
-      sidebarOpen ? "translate-x-0" : "translate-x-full"
-    } fixed top-0 right-0 w-full h-full bg-black text-white select-none flex duration-300 ease-out items-start justify-center z-[2000] overflow-y-auto lg:hidden`}
+    className={`${sidebarOpen ? "translate-x-0" : "translate-x-full"
+      } fixed top-0 right-0 w-full h-full bg-black text-white select-none flex duration-300 ease-out items-start justify-center z-[2000] overflow-y-auto lg:hidden`}
     style={{
       WebkitTransition: 'transform 0.3s ease-out',
       msTransition: 'transform 0.3s ease-out',
@@ -445,21 +442,19 @@ const MobileSideMenu = ({
       <div className="flex w-full mb-6 border-b border-[#ea580c]/20 bg-gradient-to-r from-[#17120a]/80 to-[#1a140b]/80 rounded-t-lg">
         <button
           onClick={() => setActiveTab('main')}
-          className={`flex-1 py-4 text-center font-medium text-base transition-all duration-200 rounded-tl-lg ${
-            activeTab === 'main'
+          className={`flex-1 py-4 text-center font-medium text-base transition-all duration-200 rounded-tl-lg ${activeTab === 'main'
               ? 'text-[#FFB92E] border-b-2 border-[#FFB92E] bg-gradient-to-b from-[#ea580c]/10 to-[#ea580c]/5'
               : 'text-gray-300 hover:text-[#FFB92E] hover:bg-[#ea580c]/5'
-          }`}
+            }`}
         >
           Main Navigation
         </button>
         <button
           onClick={() => setActiveTab('secondary')}
-          className={`flex-1 py-4 text-center font-medium text-base transition-all duration-200 rounded-tr-lg ${
-            activeTab === 'secondary'
+          className={`flex-1 py-4 text-center font-medium text-base transition-all duration-200 rounded-tr-lg ${activeTab === 'secondary'
               ? 'text-[#FFB92E] border-b-2 border-[#FFB92E] bg-gradient-to-b from-[#ea580c]/10 to-[#ea580c]/5'
               : 'text-gray-300 hover:text-[#FFB92E] hover:bg-[#ea580c]/5'
-          }`}
+            }`}
         >
           Quick Access
         </button>
@@ -487,37 +482,33 @@ const MobileSideMenu = ({
                       {/* Dropdown Toggle Button */}
                       <button
                         onClick={() => toggleMobileDropdown(link.label)}
-                        className={`w-full flex items-center justify-between px-4 py-4 text-left font-medium transition-all duration-200 min-h-[56px] ${
-                          isActive
+                        className={`w-full flex items-center justify-between px-4 py-4 text-left font-medium transition-all duration-200 min-h-[56px] ${isActive
                             ? 'text-[#FFB92E] bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 border-l-4 border-[#FFB92E]'
                             : 'text-gray-200 hover:text-[#FFB92E] hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5'
-                        }`}
+                          }`}
                         aria-expanded={isExpanded}
                         aria-haspopup="true"
                         aria-controls={`mobile-dropdown-${link.label.replace(/\s+/g, '-').toLowerCase()}`}
                       >
                         <div className="flex items-center flex-1">
                           {link.icon && (
-                            <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${
-                              isActive ? 'text-[#FFB92E]' : 'text-gray-400 group-hover:text-[#ea580c]'
-                            }`}>
+                            <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${isActive ? 'text-[#FFB92E]' : 'text-gray-400 group-hover:text-[#ea580c]'
+                              }`}>
                               {renderIcon({ name: link.icon, size: 18 })}
                             </span>
                           )}
                           <span className="text-base">{link.label}</span>
                         </div>
-                        <span className={`inline-flex items-center justify-center w-5 h-5 ml-2 transition-all duration-200 ${
-                          isExpanded ? 'rotate-180 text-[#FFB92E]' : 'rotate-0 text-gray-400'
-                        }`}>
+                        <span className={`inline-flex items-center justify-center w-5 h-5 ml-2 transition-all duration-200 ${isExpanded ? 'rotate-180 text-[#FFB92E]' : 'rotate-0 text-gray-400'
+                          }`}>
                           {renderIcon({ name: 'ChevronDown', size: 16 })}
                         </span>
                       </button>
 
                       {/* Dropdown Content */}
                       <div
-                        className={`overflow-hidden transition-all duration-300 ease-in-out bg-gradient-to-r from-[#17120a]/95 to-[#1a140b]/95 border-t border-[#FFB92E]/30 ${
-                          isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                        }`}
+                        className={`overflow-hidden transition-all duration-300 ease-in-out bg-gradient-to-r from-[#17120a]/95 to-[#1a140b]/95 border-t border-[#FFB92E]/30 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                          }`}
                         id={`mobile-dropdown-${link.label.replace(/\s+/g, '-').toLowerCase()}`}
                         role="menu"
                         aria-label={`${link.label} submenu`}
@@ -543,17 +534,15 @@ const MobileSideMenu = ({
                   ) : (
                     <Link
                       href={link.path}
-                      className={`flex items-center px-4 py-4 font-medium transition-all duration-200 min-h-[56px] ${
-                        isActive
+                      className={`flex items-center px-4 py-4 font-medium transition-all duration-200 min-h-[56px] ${isActive
                           ? 'text-[#FFB92E] bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 border-l-4 border-[#FFB92E] shadow-lg'
                           : 'text-gray-200 hover:text-[#FFB92E] hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5'
-                      }`}
+                        }`}
                       onClick={() => controlMenu(false)}
                     >
                       {link.icon && (
-                        <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${
-                          isActive ? 'text-[#FFB92E]' : 'text-gray-400 hover:text-[#ea580c]'
-                        }`}>
+                        <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${isActive ? 'text-[#FFB92E]' : 'text-gray-400 hover:text-[#ea580c]'
+                          }`}>
                           {renderIcon({ name: link.icon, size: 18 })}
                         </span>
                       )}
@@ -587,17 +576,15 @@ const MobileSideMenu = ({
                 >
                   <Link
                     href={link.path}
-                    className={`flex items-center px-4 py-4 font-medium transition-all duration-200 min-h-[56px] ${
-                      isActive
+                    className={`flex items-center px-4 py-4 font-medium transition-all duration-200 min-h-[56px] ${isActive
                         ? 'text-[#FFB92E] bg-gradient-to-r from-[#ea580c]/15 to-[#ea580c]/10 border-l-4 border-[#FFB92E] shadow-lg'
                         : 'text-gray-200 hover:text-[#FFB92E] hover:bg-gradient-to-r hover:from-[#ea580c]/8 hover:to-[#ea580c]/5'
-                    }`}
+                      }`}
                     onClick={() => controlMenu(false)}
                   >
                     {link.icon && (
-                      <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${
-                        isActive ? 'text-[#FFB92E]' : 'text-gray-400 hover:text-[#ea580c]'
-                      }`}>
+                      <span className={`inline-flex items-center justify-center w-5 h-5 mr-3 transition-colors duration-200 ${isActive ? 'text-[#FFB92E]' : 'text-gray-400 hover:text-[#ea580c]'
+                        }`}>
                         {renderIcon({ name: link.icon, size: 18 })}
                       </span>
                     )}

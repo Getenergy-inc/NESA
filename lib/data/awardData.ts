@@ -11820,7 +11820,7 @@ export const categories: Category[] = [
     title:
       "Political Leaders in Nigeria 2024 Recognition Award for the Best Educational Support Services",
     description:
-      "The Political Leaders in Nigeria 2024 Recognition Award for the Best Educational Support Services aims to acknowledge and celebrate political leaders who have made outstanding contributions to the educational sector. This award recognizes those who have significantly impacted education through scholarship programs, infrastructure development, donations, and advocacy for educational reforms. The award seeks to highlight and honor the efforts of political leaders who have demonstrated exceptional commitment to ensuring educational excellence and accessibility across Nigeria.",
+      "This award recognizes political leaders at both state and federal levels who have made outstanding contributions to education in Nigeria through various initiatives, policies, and support programs that advance quality education for all.",
     subCategories: [
       {
         title:
@@ -11906,6 +11906,334 @@ export const categories: Category[] = [
             achievement:
               "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
             state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Samuel Ortom",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Yahaya Bello",
+            image: "/images/political/ahmadu-fintiri.png",
+            achievement:
+              "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.",
+            state: "Adamawa",
+            country: "Nigeria",
+          },
+          {
+            name: "Philip Aduda",
+            image: "/images/political/bello-matawalle.png",
+            achievement:
+              "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.",
+            state: "Zamfara",
+            country: "Nigeria",
+          },
+          {
+            name: "Smart Adeyemi",
+            image: "/images/political/abdullahi-ganduje.png",
+            achievement:
+              "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.",
+            state: "Kano",
+            country: "Nigeria",
+          },
+          {
+            name: "Abubakar Sani Bello ",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Bukola Saraki",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Dino Melaye",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Abdulfatah Ahmed",
+            image: "/images/political/ahmadu-fintiri.png",
+            achievement:
+              "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.",
+            state: "Adamawa",
+            country: "Nigeria",
+          },
+          {
+            name: "Babagana Zulum",
+            image: "/images/political/bello-matawalle.png",
+            achievement:
+              "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.",
+            state: "Zamfara",
+            country: "Nigeria",
+          },
+          {
+            name: "Ali Ndume",
+            image: "/images/political/abdullahi-ganduje.png",
+            achievement:
+              "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.",
+            state: "Kano",
+            country: "Nigeria",
+          },
+          {
+            name: "Aisha Alhassan",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Binta Masi Garba",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Bala Mohammed",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Ahmed Lawan ",
+            image: "/images/political/abdullahi-ganduje.png",
+            achievement:
+              "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.",
+            state: "Kano",
+            country: "Nigeria",
+          },
+          {
+            name: "Mohammed Abubakar ",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Ibrahim Shekarau ",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Aminu Tambuwal",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Aminu Masari",
+            image: "/images/political/ahmadu-fintiri.png",
+            achievement:
+              "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.",
+            state: "Adamawa",
+            country: "Nigeria",
+          },
+          {
+            name: "Kabiru Gaya ",
+            image: "/images/political/bello-matawalle.png",
+            achievement:
+              "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.",
+            state: "Zamfara",
+            country: "Nigeria",
+          },
+          {
+            name: "Atiku Bagudu ",
+            image: "/images/political/abdullahi-ganduje.png",
+            achievement:
+              "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.",
+            state: "Kano",
+            country: "Nigeria",
+          },
+          {
+            name: "Shehu Sani ",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Dave Umahi ",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Enyinnaya Abaribe ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Ike Ekweremadu ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Willie Obiano ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Rochas Okorocha ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Ben Murray-Bruce ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Ifeanyi Okowa",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "James Manager ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Douye Diri ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Rotimi Akeredolu ",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Oluremi Tinubu ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Ibikunle Amosun",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Kayode Fayemi ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Bola Ahmed Tinubu ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
             country: "Nigeria",
           },
         ],
@@ -12567,1222 +12895,268 @@ export const categories: Category[] = [
   },
 
   {
-    title: "Support for education in STEM in Nigeria",
+    title: "Support for education in STEM in Nigeria 2024",
     description:
       "Celebrating initiatives by any organization for creative arts role in education and promoting hands-on learning experiences.",
-    regions: [
+    subCategories: [
       {
-        name: "North Africa",
-        subCategories: [
+        title: "The Best Innovative STEM Curriculum Development in Nigeria",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
           {
-            title: "The Best Innovative STEM Curriculum Development in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "University of Lagos",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/university_of_lagos.png",
+            achievement:
+              "Developed a multidisciplinary STEM curriculum focusing on practical applications and research. Enhanced STEM education for students.",
           },
           {
-            title: "The Best STEM Outreach and Community Engagement in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "Covenant University",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Covenant_University.png",
+            achievement:
+              "Introduced an innovative engineering curriculum integrating industry practices. Prepared over 3,000 students for careers in engineering.",
           },
           {
-            title:
-              "The Best Technology Integration in STEM Education in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "Lagos State Model College",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Lagos_State_Model_College.png",
+            achievement:
+              "Implemented a specialized STEM program for secondary students, emphasizing real-world problem-solving. Improved student performance in STEM subjects.",
+          },
+          {
+            name: "Federal Government College Enugu",
+            state: "Enugu",
+            country: "Nigeria",
+            image: "/images/stem/Federal_Government_College_Enugu.png",
+            achievement:
+              "Developed a STEM curriculum with a focus on renewable energy and environmental sciences. Trained over 2,500 students in sustainable technologies.",
+          },
+          {
+            name: "Nigerian Turkish International Coll",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Nigerian_Turkish_International_Coll.png",
+            achievement:
+              "Introduced advanced STEM subjects, including robotics and coding, into the school curriculum. Achieved top rankings in international STEM competitions.",
+          },
+          {
+            name: "British International School Lagos",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/British_International_School_Lagos.png",
+            achievement:
+              "Integrated STEM across all grade levels, with an emphasis on technology and engineering. Produced high-achieving students in STEM fields internationally.",
+          },
+          {
+            name: "University of Nigeria, Nsukka",
+            state: "Enugu",
+            country: "Nigeria",
+            image: "/images/stem/University_of_Nigeria_Nsukka.png",
+            achievement:
+              "Developed a comprehensive STEM curriculum with a strong research component. Facilitated groundbreaking research in various STEM fields.",
+          },
+          {
+            name: "STEM Nigeria Initiative",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/STEM_Nigeria_Initiative.png",
+            achievement:
+              "Designed a national STEM curriculum that incorporates local context and resources. Benefited over 10,000 students across multiple schools.",
+          },
+          {
+            name: "Centre for Mathematics and Science",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Centre_for_Mathematics_and_Science.png",
+            achievement:
+              "Developed a STEM curriculum focusing on mathematics and science literacy. Improved mathematical proficiency among secondary school students.",
+          },
+          {
+            name: "Nigerian Educational Research and",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Nigerian_Educational_Research.png",
+            achievement:
+              "Led the national development of STEM curriculum guidelines and standards. Standardized STEM education across the country.",
           },
         ],
       },
       {
-        name: "East Africa",
-        subCategories: [
+        title: "The Best STEM Outreach and Community Engagement in Nigeria",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
           {
-            title: "The Best Innovative STEM Curriculum Development in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "STEM Café",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/STEM_Café.png",
+            achievement:
+              "Established interactive STEM learning centers in underserved communities. Engaged over 20,000 students in hands-on STEM activities.",
           },
           {
-            title: "The Best STEM Outreach and Community Engagement in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "Junior Achievement Nigeria",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Junior_Achievement_Nigeria.png",
+            achievement:
+              "Implemented STEM programs that focus on entrepreneurship and innovation. Reached over 50,000 students across Nigeria.",
           },
           {
-            title:
-              "The Best Technology Integration in STEM Education in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "Teach for Nigeria",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Teach_for_Nigeria.png",
+            achievement:
+              "Promoted STEM education through teaching fellowships in underserved areas. Improved STEM literacy among 30,000 students in rural communities.",
+          },
+          {
+            name: "Abuja Science and Technology Park",
+            state: "Abuja",
+            country: "Nigeria",
+            image: "/images/stem/Abuja_Science_and_Technology_Park.png",
+            achievement:
+              "Organized community-based STEM workshops and competitions. Engaged 15,000 students and community members in STEM activities.",
+          },
+          {
+            name: "Yaba College of Technology",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Yaba_College_of_Technology.png",
+            achievement:
+              "Conducted STEM outreach programs targeting secondary school students. Enhanced STEM skills for over 10,000 students through workshops.",
+          },
+          {
+            name: "TechQuest STEM Academy",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/TechQuest_STEM_Academy.png",
+            achievement:
+              "Provided STEM education through coding and robotics workshops in low-income areas. Trained over 25,000 students in digital skills.",
+          },
+          {
+            name: "Lagos State Ministry of Education",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Lagos_State_Ministry_of_Education.png",
+            achievement:
+              "Launched state-wide STEM initiatives to promote science and technology education. Improved STEM education in over 500 schools across Lagos State.",
+          },
+          {
+            name: "SkillNG",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/SkillNG.png",
+            achievement:
+              "Offered STEM training and career guidance for youths in technology fields. Empowered over 15,000 young people with STEM skills.",
+          },
+          {
+            name: "Nigerian Society of Engineers",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Nigerian_Society_of_Engineers.png",
+            achievement:
+              "Led community STEM projects focusing on engineering education and awareness. Reached over 10,000 students and young professionals.",
+          },
+          {
+            name: "African Science Academy",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/African_Science_Academy.png",
+            achievement:
+              "Established STEM programs for girls in rural areas, focusing on science education and leadership. Empowered over 5,000 girls with STEM skills.",
           },
         ],
       },
       {
-        name: "West Africa",
-        subCategories: [
+        title: "The Best Technology Integration in STEM Education in Nigeria",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
           {
-            title: "The Best Innovative STEM Curriculum Development in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "University of Lagos",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/university_of_lagos.png",
-                achievement:
-                  "Developed a multidisciplinary STEM curriculum focusing on practical applications and research. Enhanced STEM education for students.",
-              },
-              {
-                name: "Covenant University",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Covenant_University.png",
-                achievement:
-                  "Introduced an innovative engineering curriculum integrating industry practices. Prepared over 3,000 students for careers in engineering.",
-              },
-              {
-                name: "Lagos State Model College",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Lagos_State_Model_College.png",
-                achievement:
-                  "Implemented a specialized STEM program for secondary students, emphasizing real-world problem-solving. Improved student performance in STEM subjects.",
-              },
-              {
-                name: "Federal Government College Enugu",
-                state: "Enugu",
-                country: "Nigeria",
-                image: "/images/stem/Federal_Government_College_Enugu.png",
-                achievement:
-                  "Developed a STEM curriculum with a focus on renewable energy and environmental sciences. Trained over 2,500 students in sustainable technologies.",
-              },
-              {
-                name: "Nigerian Turkish International Coll",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nigerian_Turkish_International_Coll.png",
-                achievement:
-                  "Introduced advanced STEM subjects, including robotics and coding, into the school curriculum. Achieved top rankings in international STEM competitions.",
-              },
-              {
-                name: "British International School Lagos",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/British_International_School_Lagos.png",
-                achievement:
-                  "Integrated STEM across all grade levels, with an emphasis on technology and engineering. Produced high-achieving students in STEM fields internationally.",
-              },
-              {
-                name: "University of Nigeria, Nsukka",
-                state: "Enugu",
-                country: "Nigeria",
-                image: "/images/stem/University_of_Nigeria_Nsukka.png",
-                achievement:
-                  "Developed a comprehensive STEM curriculum with a strong research component. Facilitated groundbreaking research in various STEM fields.",
-              },
-              {
-                name: "STEM Nigeria Initiative",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/STEM_Nigeria_Initiative.png",
-                achievement:
-                  "Designed a national STEM curriculum that incorporates local context and resources. Benefited over 10,000 students across multiple schools.",
-              },
-              {
-                name: "Centre for Mathematics and Science Education",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Centre_for_Mathematics_and_Science.png",
-                achievement:
-                  "Developed a STEM curriculum focusing on mathematics and science literacy. Improved mathematical proficiency among secondary school students.",
-              },
-              {
-                name: "Nigerian Educational Research and Development Council (NERDC)",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nigerian_Educational_Research.png",
-                achievement:
-                  "Led the national development of STEM curriculum guidelines and standards. Standardized STEM education across the country.",
-              },
-            ],
+            name: "American University of Nigeria",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/American_University_of_Nigeria.png",
+            achievement:
+              "Implemented technology-enhanced STEM programs with a focus on digital learning. Provided tech-driven education to over 5,000 students.",
           },
           {
-            title: "The Best STEM Outreach and Community Engagement in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "STEM Café",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/STEM_Café.png",
-                achievement:
-                  "Established interactive STEM learning centers in underserved communities. Engaged over 20,000 students in hands-on STEM activities.",
-              },
-              {
-                name: "Junior Achievement Nigeria",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Junior_Achievement_Nigeria.png",
-                achievement:
-                  "Implemented STEM programs that focus on entrepreneurship and innovation. Reached over 50,000 students across Nigeria.",
-              },
-              {
-                name: "Teach for Nigeria",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Teach_for_Nigeria.png",
-                achievement:
-                  "Promoted STEM education through teaching fellowships in underserved areas. Improved STEM literacy among 30,000 students in rural communities.",
-              },
-              {
-                name: "Abuja Science and Technology Park",
-                state: "Abuja",
-                country: "Nigeria",
-                image: "/images/stem/Abuja_Science_and_Technology_Park.png",
-                achievement:
-                  "Organized community-based STEM workshops and competitions. Engaged 15,000 students and community members in STEM activities.",
-              },
-              {
-                name: "Yaba College of Technology",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Yaba_College_of_Technology.png",
-                achievement:
-                  "Conducted STEM outreach programs targeting secondary school students. Enhanced STEM skills for over 10,000 students through workshops.",
-              },
-              {
-                name: "TechQuest STEM Academy",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/TechQuest_STEM_Academy.png",
-                achievement:
-                  "Provided STEM education through coding and robotics workshops in low-income areas. Trained over 25,000 students in digital skills.",
-              },
-              {
-                name: "Lagos State Ministry of Education",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Lagos_State_Ministry_of_Education.png",
-                achievement:
-                  "Launched state-wide STEM initiatives to promote science and technology education. Improved STEM education in over 500 schools across Lagos State.",
-              },
-              {
-                name: "SkillNG",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/SkillNG.png",
-                achievement:
-                  "Offered STEM training and career guidance for youths in technology fields. Empowered over 15,000 young people with STEM skills.",
-              },
-              {
-                name: "Nigerian Society of Engineers",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nigerian_Society_of_Engineers.png",
-                achievement:
-                  "Led community STEM projects focusing on engineering education and awareness. Reached over 10,000 students and young professionals.",
-              },
-              {
-                name: "African Science Academy",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/African_Science_Academy.png",
-                achievement:
-                  "Established STEM programs for girls in rural areas, focusing on science education and leadership. Empowered over 5,000 girls with STEM skills.",
-              },
-            ],
+            name: "Green Springs School",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Green_Springs_School.png",
+            achievement:
+              "Integrated advanced technology tools into STEM curriculum, including virtual labs and online simulations. Enhanced learning experience for students.",
           },
           {
-            title:
-              "The Best Technology Integration in STEM Education in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "American University of Nigeria",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/American_University_of_Nigeria.png",
-                achievement:
-                  "Implemented technology-enhanced STEM programs with a focus on digital learning. Provided tech-driven education to over 5,000 students.",
-              },
-              {
-                name: "Green Springs School",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Green_Springs_School.png",
-                achievement:
-                  "Integrated advanced technology tools into STEM curriculum, including virtual labs and online simulations. Enhanced learning experience for students.",
-              },
-              {
-                name: "Obafemi Awolowo University",
-                state: "Osun",
-                country: "Nigeria",
-                image: "/images/stem/Obafemi_Awolowo_University.png",
-                achievement:
-                  "Developed a robust e-learning platform for STEM courses. Increased access to STEM education for over 10,000 students.",
-              },
-              {
-                name: "University of Ibadan",
-                state: "Oyo",
-                country: "Nigeria",
-                image: "/images/stem/University_of_Ibadan.png",
-                achievement:
-                  "Integrated cutting-edge technology into STEM research and education. Facilitated research and learning for over 15,000 students.",
-              },
-              {
-                name: "Afe Babalola University",
-                state: "Ekiti",
-                country: "Nigeria",
-                image: "/images/stem/Afe_Babalola_University.png",
-                achievement:
-                  "Launched a tech-driven STEM program with a focus on innovation and entrepreneurship. Empowered 3,000 students with digital skills.",
-              },
-              {
-                name: "Bridge International Academies",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Bridge_International_Academies.png",
-                achievement:
-                  "Utilized educational technology to deliver STEM education in low-income areas. Improved STEM literacy for over 100,000 students.",
-              },
-              {
-                name: "CodeLagos",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/CodeLagos.png",
-                achievement:
-                  "Implemented a state-wide coding and technology program for students. Trained over 100,000 students in coding and digital literacy.",
-              },
-              {
-                name: "Edves",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Edves.png",
-                achievement:
-                  "Developed and deployed a technology platform to manage and enhance STEM education in schools. Supported over 500 schools in Nigeria.",
-              },
-              {
-                name: "Andela Learning Community",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Andela_Learning_Community.png",
-                achievement:
-                  "Provided online and offline technology training to students and professionals. Trained over 20,000 individuals in software development.",
-              },
-              {
-                name: "STEM METS Resources",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/STEM_METS_Resources.png",
-                achievement:
-                  "Offered STEM kits and technology resources for hands-on learning in schools. Enhanced STEM education for over 30,000 students across Nigeria.",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: "South Africa",
-        subCategories: [
-          {
-            title: "The Best Innovative STEM Curriculum Development in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "Obafemi Awolowo University",
+            state: "Osun",
+            country: "Nigeria",
+            image: "/images/stem/Obafemi_Awolowo_University.png",
+            achievement:
+              "Developed a robust e-learning platform for STEM courses. Increased access to STEM education for over 10,000 students.",
           },
           {
-            title: "The Best STEM Outreach and Community Engagement in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "University of Ibadan",
+            state: "Oyo",
+            country: "Nigeria",
+            image: "/images/stem/University_of_Ibadan.png",
+            achievement:
+              "Integrated cutting-edge technology into STEM research and education. Facilitated research and learning for over 15,000 students.",
           },
           {
-            title:
-              "The Best Technology Integration in STEM Education in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: "Central Africa",
-        subCategories: [
-          {
-            title: "The Best Innovative STEM Curriculum Development in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "Afe Babalola University",
+            state: "Ekiti",
+            country: "Nigeria",
+            image: "/images/stem/Afe_Babalola_University.png",
+            achievement:
+              "Launched a tech-driven STEM program with a focus on innovation and entrepreneurship. Empowered 3,000 students with digital skills.",
           },
           {
-            title: "The Best STEM Outreach and Community Engagement in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "Bridge International Academies",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Bridge_International_Academies.png",
+            achievement:
+              "Utilized educational technology to deliver STEM education in low-income areas. Improved STEM literacy for over 100,000 students.",
           },
           {
-            title:
-              "The Best Technology Integration in STEM Education in Nigeria",
-            description:
-              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-            nominees: [
-              {
-                name: "Nominee 1",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 2",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 3",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 4",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 5",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 6",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 7",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 8",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 9",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-              {
-                name: "Nominee 10",
-                state: "Lagos",
-                country: "Nigeria",
-                image: "/images/stem/Nominee1.png",
-                achievement: "",
-              },
-            ],
+            name: "CodeLagos",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/CodeLagos.png",
+            achievement:
+              "Implemented a state-wide coding and technology program for students. Trained over 100,000 students in coding and digital literacy.",
+          },
+          {
+            name: "Edves",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Edves.png",
+            achievement:
+              "Developed and deployed a technology platform to manage and enhance STEM education in schools. Supported over 500 schools in Nigeria.",
+          },
+          {
+            name: "Andela Learning Community",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/Andela_Learning_Community.png",
+            achievement:
+              "Provided online and offline technology training to students and professionals. Trained over 20,000 individuals in software development.",
+          },
+          {
+            name: "STEM METS Resources",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/stem/STEM_METS_Resources.png",
+            achievement:
+              "Offered STEM kits and technology resources for hands-on learning in schools. Enhanced STEM education for over 30,000 students across Nigeria.",
           },
         ],
       },

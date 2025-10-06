@@ -1,11 +1,9 @@
+
+
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,18 +15,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
     "downlevelIteration": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+      "@/*": ["./*"]
+    },
+    "plugins": [{ "name": "next" }]
   },
   "include": [
     "next-env.d.ts",
@@ -36,9 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "dist/types/**/*.ts"
-, "app/judge/all categories/allcategories", "app/(main)/get-involved/partner/FAQs"  ],
-  "exclude": [
-    "node_modules",
-    ".next/types/**/*.ts"
-  ]
+  ],
+  "exclude": ["node_modules",
+".next/types/**/*.ts"]
 }
