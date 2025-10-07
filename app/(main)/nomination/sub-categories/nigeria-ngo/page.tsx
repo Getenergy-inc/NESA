@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
-import { useRouter } from 'next/navigation';
-import NominationPage from '@/components/UI/nomination/nominate';
+import { useRouter } from "next/navigation";
+import NominationPage from "@/components/UI/nomination/nominate";
 
 interface Category {
   title: string;
@@ -13,51 +13,64 @@ interface Category {
 }
 
 const NigeriaNGOAwardCategoryPage = () => {
-  
   const router = useRouter();
-  
+
   const subcategories: Category[] = [
     {
-      title: "The Overall Best NGO Contribution to Achieving Education for All in Nigeria 2024",
-      description: "This award aims to celebrate and recognize educational excellence across Africa. The Overall Best NGO Contribution to Achieving Education for All in Nigeria 2024 Award is dedicated to highlighting the outstanding efforts of non-governmental organizations (NGOs) that have made significant contributions to improving education in Nigeria. This award will honor NGOs that have demonstrated exceptional commitment, innovation, and impact in their educational initiatives.",
-      image: "/images/nesa-card2.png"
+      title:
+        "The Overall Best NGO Contribution to Achieving Education for All in Nigeria 2024",
+      description:
+        "This award aims to celebrate and recognize educational excellence across Africa. The Overall Best NGO Contribution to Achieving Education for All in Nigeria 2024 Award is dedicated to highlighting the outstanding efforts of non-governmental organizations (NGOs) that have made significant contributions to improving education in Nigeria. This award will honor NGOs that have demonstrated exceptional commitment, innovation, and impact in their educational initiatives.",
+      image: "/images/nesa-card2.png",
     },
     {
       title: "Best Educational Infrastructure Initiative By An NGO in Nigeria",
-      description: "This award honors NGOs that have made substantial effort in improving or building educational infrastructure in Nigeria. It includes initiatives like constructing schools, libraries, and other educational facilities.",
-      image: "/images/nesa-card2.png"
+      description:
+        "This award honors NGOs that have made substantial effort in improving or building educational infrastructure in Nigeria. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+      image: "/images/nesa-card2.png",
     },
     {
-      title: "Exceptional Donation Of Educational Materials By An NGO in Nigeria",
-      description: "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions in Nigeria like books, computers, and other learning resources.",
-      image: "/images/nesa-card2.png"
+      title:
+        "Exceptional Donation Of Educational Materials By An NGO in Nigeria",
+      description:
+        "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions in Nigeria like books, computers, and other learning resources.",
+      image: "/images/nesa-card2.png",
     },
     {
       title: "Outstanding Donation Of Education Aid By NGO in Nigeria",
-      description: "Celebrates NGOs that provide substantial educational aid in Nigeria, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
-      image: "/images/nesa-card2.png"
+      description:
+        "Celebrates NGOs that provide substantial educational aid in Nigeria, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+      image: "/images/nesa-card2.png",
     },
     {
-      title: "Youth Empowerment Through Educational Services by an NGO in Nigeria",
-      description: "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development in Nigeria.",
-      image: "/images/nesa-card2.png"
+      title:
+        "Youth Empowerment Through Educational Services by an NGO in Nigeria",
+      description:
+        "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development in Nigeria.",
+      image: "/images/nesa-card2.png",
     },
     {
       title: "Women and Girls' Empowerment in Education by an NGO in Nigeria",
-      description: "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives in Nigeria.",
-      image: "/images/nesa-card2.png"
+      description:
+        "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives in Nigeria.",
+      image: "/images/nesa-card2.png",
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(
+    null
+  );
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % subcategories.length);
   }, [subcategories.length]);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + subcategories.length) % subcategories.length);
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + subcategories.length) % subcategories.length
+    );
   }, [subcategories.length]);
 
   useEffect(() => {
@@ -65,13 +78,14 @@ const NigeriaNGOAwardCategoryPage = () => {
     return () => clearInterval(interval);
   }, [nextSlide]);
 
-  
   const handleNominate = (category: Category) => {
     router.push(
-      `/nominateform?type=${encodeURIComponent("Nigeria NGO Education Award")}` +
-      `&title=${encodeURIComponent(category.title)}` +
-      `&description=${encodeURIComponent(category.description)}` +
-      `&image=${encodeURIComponent(category.image)}`
+      `/nominateform?type=${encodeURIComponent(
+        "Nigeria NGO Education Award"
+      )}` +
+        `&title=${encodeURIComponent(category.title)}` +
+        `&description=${encodeURIComponent(category.description)}` +
+        `&image=${encodeURIComponent(category.image)}`
     );
   };
 
@@ -81,27 +95,13 @@ const NigeriaNGOAwardCategoryPage = () => {
       <div className="relative bg-[#191307] text-white py-24 px-8">
         <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center opacity-20"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-2 md:mt-16 text-center">Nigeria NGO Category</h2>
-          <h1 className="text-4xl font-bold text-[#FFC247] mb-4 text-center">{subcategories[currentIndex].title}</h1>
-          <p className="mb-8 text-center">
-            {subcategories[currentIndex].description}
-          </p>
-        </div>
-        
-        {/* Carousel Indicator Dots */}
-        <div className="absolute bottom-4 left-4 flex space-x-2">
-          {subcategories.map((_, index) => (
-            <div key={index} className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-[#FFC247]' : 'bg-white'}`}></div>
-          ))}
-        </div>
-        {/* Carousel Navigation Arrows */}
-        <div className="absolute bottom-4 right-4 flex space-x-4">
-          <button onClick={prevSlide} className="p-2 rounded transition" style={{ background: 'linear-gradient(90deg, #FFC247 -6.07%, #E48900 156.79%)' }}>
-            <IoMdArrowBack size={32} color="#191307" />
-          </button>
-          <button onClick={nextSlide} className="p-2 rounded transition" style={{ background: 'linear-gradient(90deg, #FFC247 -6.07%, #E48900 156.79%)' }}>
-            <IoMdArrowForward size={32} color="#191307" />
-          </button>
+          <h2 className="text-2xl mb-2 md:mt-16 text-center">
+            Nigeria NGO Category
+          </h2>
+          <h1 className="text-4xl font-bold text-[#FFC247] mb-4 text-center">
+            {subcategories[0].title}
+          </h1>
+          <p className="mb-8 text-center">{subcategories[0].description}</p>
         </div>
       </div>
 
@@ -113,7 +113,10 @@ const NigeriaNGOAwardCategoryPage = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {subcategories.slice(1).map((category, index) => (
-            <div key={index} className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col">
+            <div
+              key={index}
+              className="bg-[#191307] rounded-3xl overflow-hidden shadow-lg transition-transform hover:scale-105 flex flex-col"
+            >
               <div className="relative h-60 flex items-center justify-center p-6">
                 <Image
                   src={category.image}
@@ -125,23 +128,37 @@ const NigeriaNGOAwardCategoryPage = () => {
               </div>
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
-                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{category.description}</p>
+                  <h3 className="text-white text-xl font-bold mb-2">
+                    {category.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm mb-4">
+                    {category.description}
+                  </p>
                 </div>
                 <div className="flex flex-col gap-3 mt-auto">
                   <button
-                    onClick={() => router.push(`/nominees?category=${encodeURIComponent("Nigeria NGO Education Award")}&subcategory=${encodeURIComponent(category.title)}`)}
+                    onClick={() =>
+                      router.push(
+                        `/nominees?category=${encodeURIComponent(
+                          "Nigeria NGO Education Award"
+                        )}&subcategory=${encodeURIComponent(category.title)}`
+                      )
+                    }
                     className="w-full bg-transparent text-[#FFC247] py-2.5 rounded-lg hover:bg-[#33270E] transition-all duration-300 border-2 border-[#FFC247] font-medium tracking-wide flex items-center justify-center group"
                   >
                     <span className="mr-2 text-lg">👁️</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">See Existing Nominees</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                      See Existing Nominees
+                    </span>
                   </button>
                   <button
                     onClick={() => handleNominate(category)}
                     className="w-full py-2.5 rounded-lg font-medium text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 bg-gradient-to-r from-[#FFC247] to-[#E48900] flex items-center justify-center group"
                   >
                     <span className="mr-2 text-lg">🏆</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">Nominate</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                      Nominate
+                    </span>
                   </button>
                 </div>
               </div>
@@ -149,7 +166,7 @@ const NigeriaNGOAwardCategoryPage = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Purpose and Benefits Section */}
       <div className="bg-white w-full">
         <div className="max-w-6xl mx-auto py-12 px-4">
@@ -159,10 +176,12 @@ const NigeriaNGOAwardCategoryPage = () => {
               <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
             </h2>
             <p className="mb-4">
-              To acknowledge the contributions of NGOs that have made significant impact in improving education in Nigeria. 
-              This award aims to promote further innovation and investment in educational initiatives by NGOs, highlighting 
-              the importance of non-governmental organizations in achieving educational excellence and supporting the 
-              educational development of Nigeria.
+              To acknowledge the contributions of NGOs that have made
+              significant impact in improving education in Nigeria. This award
+              aims to promote further innovation and investment in educational
+              initiatives by NGOs, highlighting the importance of
+              non-governmental organizations in achieving educational excellence
+              and supporting the educational development of Nigeria.
             </p>
           </div>
 
@@ -175,17 +194,20 @@ const NigeriaNGOAwardCategoryPage = () => {
               <li className="flex items-start">
                 <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
                 <div>
-                  <strong>Awardees:</strong> Enhanced visibility and credibility in the NGO and education sectors, opportunities for
-                  networking and collaboration with other educational leaders and stakeholders, potential for increased funding
-                  and support for their initiatives, and national recognition and prestige.
+                  <strong>Awardees:</strong> Enhanced visibility and credibility
+                  in the NGO and education sectors, opportunities for networking
+                  and collaboration with other educational leaders and
+                  stakeholders, potential for increased funding and support for
+                  their initiatives, and national recognition and prestige.
                 </div>
               </li>
               <li className="flex items-start">
                 <span className="w-2 h-2 mt-2 mr-2 rounded-full bg-gradient-to-r from-[#FFC247] to-[#E48900] border border-dotted border-[#FFC247]"></span>
                 <div>
-                  <strong>Nigeria and Africa:</strong> Improves quality of education and student outcomes in Nigeria, encourages best
-                  practices and innovations in the NGO sector, and increases progress towards achieving the SDGs related to
-                  education.
+                  <strong>Nigeria and Africa:</strong> Improves quality of
+                  education and student outcomes in Nigeria, encourages best
+                  practices and innovations in the NGO sector, and increases
+                  progress towards achieving the SDGs related to education.
                 </div>
               </li>
             </ul>
