@@ -26,11 +26,19 @@ const EnhancedHero = () => {
   
   // State to track if component is mounted (client-side)
   const [isMounted, setIsMounted] = useState(false);
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
    
   // Set mounted state after component mounts (client-side only)
   useEffect(() => {
     setIsMounted(true);
+  }, []);
+
+  // Show popup after a short delay on every page load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 2000); // 2 second delay
+    return () => clearTimeout(timer);
   }, []);
   
   // Animation variants using utility functions
@@ -52,11 +60,12 @@ const EnhancedHero = () => {
     },
   };
 
-   useEffect(() => {
-      if (!showPopup) return;
-      const timer = setTimeout(() => setShowPopup(false), 30000); // 30 seconds
-      return () => clearTimeout(timer);
-    }, [showPopup]);
+  // Auto-close popup after 30 seconds
+  useEffect(() => {
+    if (!showPopup) return;
+    const timer = setTimeout(() => setShowPopup(false), 30000);
+    return () => clearTimeout(timer);
+  }, [showPopup]);
   
   
 
