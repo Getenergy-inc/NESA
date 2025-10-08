@@ -119,7 +119,7 @@ const PopupSlider = ({ open, onClose }: { open: boolean; onClose: () => void }) 
             ))}
           </div>
         </motion.div>
-      </motion.div>
+      )}
     </AnimatePresence>
   );
 };

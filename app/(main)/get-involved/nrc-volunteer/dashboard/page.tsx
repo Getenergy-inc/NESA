@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useAuthContext } from '@/lib/context/AuthContext';
 import { useNRCStatus } from '@/lib/hooks/useNRCStatus';
+import { useWallet } from '@/lib/hooks/useWallet';
 import {
   User,
   Target,
@@ -12,13 +13,22 @@ import {
   Award,
   Users,
   FileText,
-  Clock
+  Clock,
+  Wallet
 } from 'lucide-react';
 
 export default function NRCDashboard() {
   const router = useRouter();
   const { user } = useAuthContext();
   const { loading, volunteer, canAccessDashboard } = useNRCStatus();
+  const { totalBalance, withdrawableBalance, loading: walletLoading } = useWallet();
+
+  const formatAGC = (amount: number) => {
+    return new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(amount);
+  };
 
   if (loading) {
     return (
@@ -170,6 +180,39 @@ export default function NRCDashboard() {
             </div>
           </motion.div>
         </div>
+
+        {/* Wallet Balance Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+          className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg shadow-lg p-6 text-white mb-8"
+        >
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <Wallet className="w-5 h-5" />
+                <p className="text-sm opacity-90">Your AGC Balance</p>
+              </div>
+              <h3 className="text-3xl font-bold mb-2">
+                {walletLoading ? (
+                  <span className="animate-pulse">---</span>
+                ) : (
+                  `${formatAGC(totalBalance)} AGC`
+                )}
+              </h3>
+              <p className="text-sm opacity-90">
+                Withdrawable: {formatAGC(withdrawableBalance)} AGC
+              </p>
+            </div>
+            <button
+              onClick={() => router.push('/ProfileSetting/ProfileWallet')}
+              className="bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
+            >
+              View Wallet
+            </button>
+          </div>
+        </motion.div>
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-3 gap-8">

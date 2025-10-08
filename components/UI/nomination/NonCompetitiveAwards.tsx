@@ -2,7 +2,17 @@
 import { motion } from "framer-motion";
 import { toTopV, parentV, opacityV } from "@/lib/utils/variants";
 import Link from "next/link";
-import { Medal, Building2, Upload, Download, Handshake, Award, Users, FileText, Lock } from "lucide-react";
+import {
+  Medal,
+  Building2,
+  Upload,
+  Download,
+  Handshake,
+  Award,
+  Users,
+  FileText,
+  Lock,
+} from "lucide-react";
 import { useAuthContext } from "@/lib/context/AuthContext";
 import { useRouter } from "next/navigation";
 
@@ -13,96 +23,39 @@ const NonCompetitiveAwards = () => {
   // Handle authentication-required actions
   const handleAuthAction = (link: string) => {
     if (!isAuthenticated) {
-      router.push('/account/login');
+      router.push("/account/login");
       return;
     }
     router.push(link);
   };
 
   const criteriaData = [
-    { label: "🎯 Eligibility", value: "States, libraries, research institutes, faith organizations, political leaders" },
-    { label: "📥 Nomination Method", value: "Public nomination + internal research and verification" },
-    { label: "📁 Documentation", value: "Verified proof of educational impact and achievements" },
-    { label: "🗳️ Voting Method", value: "Expert panel evaluation only (no public voting)" },
-    { label: "🧮 Selection Process", value: "Internal review by judges, board members, and volunteers" },
+    {
+      label: "🎯 Eligibility",
+      value:
+        "States, libraries, research institutes, faith organizations, political leaders",
+    },
+    {
+      label: "📥 Nomination Method",
+      value: "Public nomination + internal research and verification",
+    },
+    {
+      label: "📁 Documentation",
+      value: "Verified proof of educational impact and achievements",
+    },
+    {
+      label: "🗳️ Voting Method",
+      value: "Expert panel evaluation only (no public voting)",
+    },
+    {
+      label: "🧮 Selection Process",
+      value: "Internal review by judges, board members, and volunteers",
+    },
     { label: "🏆 Recognition", value: "Platinum Certificate of Recognition" },
-    { label: "📜 Certificate Access", value: "Downloadable upon verification and approval" }
-  ];
-
-  const actions = [
     {
-      title: "Submit Nomination",
-      description: isAuthenticated 
-        ? "Nominate deserving institutions, states, or organizations" 
-        : "Login to submit nominations",
-      icon: isAuthenticated ? Building2 : Lock,
-      link: "/nomination/non-competitive/submit",
-      buttonText: isAuthenticated ? "Submit Nomination" : "Login to Nominate",
-      color: "from-gray-500 to-gray-600",
-      featured: true,
-      requiresAuth: true
+      label: "📜 Certificate Access",
+      value: "Downloadable upon verification and approval",
     },
-    {
-      title: "Upload Documentation",
-      description: isAuthenticated 
-        ? "Provide evidence of educational impact and achievements" 
-        : "Login to upload documentation",
-      icon: isAuthenticated ? Upload : Lock,
-      link: "/nomination/non-competitive/upload-docs",
-      buttonText: isAuthenticated ? "Upload Evidence" : "Login to Upload",
-      color: "from-blue-500 to-blue-600",
-      featured: true,
-      requiresAuth: true
-    },
-    {
-      title: "Download Certificate",
-      description: isAuthenticated 
-        ? "Access your Platinum Certificate once approved" 
-        : "Login to check certificate status",
-      icon: isAuthenticated ? Download : Lock,
-      link: "/certificates/download?type=non-competitive",
-      buttonText: isAuthenticated ? "Check Status" : "Login to Check",
-      color: "from-purple-500 to-purple-600",
-      requiresAuth: true
-    },
-    {
-      title: "Become a Reviewer",
-      description: "Join our expert panel to evaluate non-competitive nominations",
-      icon: Users,
-      link: "/reviewer/apply",
-      buttonText: "Apply as Reviewer",
-      color: "from-green-500 to-green-600",
-      requiresAuth: false
-    },
-    {
-      title: "Partnership Opportunities",
-      description: "Partner with us to support institutional recognition",
-      icon: Handshake,
-      link: "/partnerships/non-competitive",
-      buttonText: "Explore Partnership",
-      color: "from-orange-500 to-orange-600",
-      requiresAuth: false
-    },
-    {
-      title: "View Guidelines",
-      description: "Read detailed guidelines for non-competitive nominations",
-      icon: FileText,
-      link: "/guidelines/non-competitive",
-      buttonText: "View Guidelines",
-      color: "from-indigo-500 to-indigo-600",
-      requiresAuth: false
-    }
-  ];
-
-  const subcategories = [
-    { name: "Educational-Friendly States", icon: "🏛️", count: "6 zones" },
-    { name: "Tertiary Libraries", icon: "📚", count: "Best in Nigeria" },
-    { name: "Research Institutes", icon: "🔬", count: "R&D Excellence" },
-    { name: "Faith-Based Champions", icon: "⛪", count: "Christian & Islamic" },
-    { name: "Political Leaders", icon: "🏛️", count: "Educational Support" },
-    { name: "International Contributors", icon: "🌍", count: "Global Partners" },
-    { name: "Diaspora Associations", icon: "✈️", count: "Impact Programs" },
-    { name: "Bilateral Partners", icon: "🤝", count: "Collaborations" }
   ];
 
   return (
@@ -119,24 +72,24 @@ const NonCompetitiveAwards = () => {
           <motion.div variants={toTopV} className="text-center">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-500/20 to-gray-600/20 rounded-full border border-gray-400/30 mb-6">
               <Medal className="w-5 h-5 text-gray-400 mr-2" />
-              <span className="text-gray-400 font-medium">NON-COMPETITIVE RECOGNITION</span>
+              <span className="text-gray-400 font-medium">
+                NON-COMPETITIVE RECOGNITION
+              </span>
             </div>
-            
-            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-300 to-gray-500 text-transparent bg-clip-text mb-4">
+
+            <h2 className="text-3xl md:text-5xl font-bold pb-5 bg-gradient-to-r from-gray-300 to-gray-500 text-transparent bg-clip-text mb-4">
               🏅 Platinum Certificate of Recognition Awards
             </h2>
-            <div className="bg-gradient-to-r from-gray-500/20 to-gray-600/20 text-gray-400 px-4 py-2 rounded-full text-sm font-medium inline-block mb-4">
-              Non-Competitive | Expert Panel Evaluation
-            </div>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Honoring state actors, diaspora groups, ministries, research institutes, and institutions with verified social impact in education.
+              Honoring state actors, diaspora groups, ministries, research
+              institutes, and institutions with verified social impact in
+              education.
             </p>
           </motion.div>
 
           {/* Main Content Card */}
           <motion.div variants={toTopV} className="max-w-6xl mx-auto">
             <div className="bg-gradient-to-br from-[#191307]/80 to-[#33270E]/60 backdrop-blur-sm border border-gray-400/20 rounded-2xl p-8 hover:border-gray-400/40 transition-all duration-300">
-              
               {/* Criteria Table */}
               <div className="mb-8">
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-300 to-gray-500 text-transparent bg-clip-text mb-6 flex items-center">
@@ -145,9 +98,16 @@ const NonCompetitiveAwards = () => {
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {criteriaData.map((item, index) => (
-                    <div key={index} className="flex justify-between items-start p-4 bg-gradient-to-r from-gray-500/10 to-gray-600/10 rounded-lg border border-gray-400/10">
-                      <span className="text-gray-400 font-medium text-sm">{item.label}</span>
-                      <span className="text-gray-300 text-sm text-right max-w-[60%]">{item.value}</span>
+                    <div
+                      key={index}
+                      className="flex justify-between items-start p-4 bg-gradient-to-r from-gray-500/10 to-gray-600/10 rounded-lg border border-gray-400/10"
+                    >
+                      <span className="text-gray-400 font-medium text-sm">
+                        {item.label}
+                      </span>
+                      <span className="text-gray-300 text-sm text-right max-w-[60%]">
+                        {item.value}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -155,7 +115,9 @@ const NonCompetitiveAwards = () => {
 
               {/* Key Features */}
               <div className="mb-8">
-                <h4 className="text-xl font-bold text-gray-400 mb-4">Key Features:</h4>
+                <h4 className="text-xl font-bold text-gray-400 mb-4">
+                  Key Features:
+                </h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   {[
                     "Merit-based recognition system",
@@ -163,11 +125,13 @@ const NonCompetitiveAwards = () => {
                     "Verified documentation required",
                     "Institutional and governmental focus",
                     "No public voting involved",
-                    "Platinum certificate recognition"
+                    "Platinum certificate recognition",
                   ].map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-300 text-sm leading-relaxed">{feature}</p>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {feature}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -176,7 +140,7 @@ const NonCompetitiveAwards = () => {
           </motion.div>
 
           {/* Subcategories Grid */}
-          <motion.div variants={toTopV} className="text-center">
+          {/* <motion.div variants={toTopV} className="text-center">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-300 to-gray-500 text-transparent bg-clip-text mb-8">
               Recognition Categories
             </h3>
@@ -196,10 +160,10 @@ const NonCompetitiveAwards = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Action Buttons */}
-          <motion.div variants={toTopV} className="text-center">
+          {/* <motion.div variants={toTopV} className="text-center">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-300 to-gray-500 text-transparent bg-clip-text mb-8">
               Get Involved
             </h3>
@@ -276,10 +240,10 @@ const NonCompetitiveAwards = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Important Notice */}
-          <motion.div variants={opacityV} className="max-w-4xl mx-auto">
+          {/* <motion.div variants={opacityV} className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-r from-gray-500/10 to-gray-600/10 rounded-2xl p-6 border border-gray-400/30 text-center">
               <div className="flex items-center justify-center mb-4">
                 <Medal className="w-8 h-8 text-gray-400 mr-3" />
@@ -288,17 +252,19 @@ const NonCompetitiveAwards = () => {
                 </h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Non-competitive awards focus on verified achievements and institutional impact, 
-                evaluated by expert panels without public voting requirements.
+                Non-competitive awards focus on verified achievements and
+                institutional impact, evaluated by expert panels without public
+                voting requirements.
               </p>
               <div className="bg-gradient-to-r from-gray-500/20 to-gray-600/20 rounded-lg p-4">
                 <p className="text-gray-400 text-sm">
-                  <strong>Note:</strong> All nominations undergo thorough verification and expert review 
-                  to ensure recognition of genuine educational impact and institutional excellence.
+                  <strong>Note:</strong> All nominations undergo thorough
+                  verification and expert review to ensure recognition of
+                  genuine educational impact and institutional excellence.
                 </p>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

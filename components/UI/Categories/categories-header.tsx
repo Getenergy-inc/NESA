@@ -121,10 +121,8 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
 
   return (
     <header>
-      <div
-        className={`min-h-screen max-w-screen bg-[#191307CC] text-white ${styles.homeHeader} relative flex flex-col`}
-      >
-        <div className="flex-1">
+      <div>
+        {/* <div className="flex-1">
           {Slides.map((slide, index) => (
             <section
               key={index}
@@ -135,11 +133,11 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
               {slide}
             </section>
           ))}
-        </div>
+        </div> */}
 
         {/* Controls (below content) */}
         <div className="w-full pb-8 md:pb-4 pt-6 flex items-center justify-between md:px-4 px-2 relative z-10">
-          {/* Dots */}
+          {/* Dots
           <div className="flex items-center md:space-x-2 space-x-1">
             {Array.from({ length: totalSlides }).map((_, id) => (
               <div
@@ -153,10 +151,10 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
                 }`}
               ></div>
             ))}
-          </div>
+          </div> */}
 
           {/* Navigation Arrows */}
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <button
               onClick={() => {
                 prevSlide();
@@ -175,7 +173,7 @@ const CategoryHeader: React.FC<CategoryCardProps> = ({
             >
               <span className="material-icons">&gt;</span>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

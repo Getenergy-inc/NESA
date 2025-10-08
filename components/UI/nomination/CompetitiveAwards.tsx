@@ -2,7 +2,16 @@
 import { motion } from "framer-motion";
 import { toTopV, parentV, opacityV } from "@/lib/utils/variants";
 import Link from "next/link";
-import { Award, Users, Vote, Download, UserPlus, DollarSign, Wallet, Lock } from "lucide-react";
+import {
+  Award,
+  Users,
+  Vote,
+  Download,
+  UserPlus,
+  DollarSign,
+  Wallet,
+  Lock,
+} from "lucide-react";
 import { useAuthContext } from "@/lib/context/AuthContext";
 import { useRouter } from "next/navigation";
 
@@ -13,19 +22,38 @@ const CompetitiveAwards = () => {
   // Handle authentication-required actions
   const handleAuthAction = (link: string) => {
     if (!isAuthenticated) {
-      router.push('/account/login');
+      router.push("/account/login");
       return;
     }
     router.push(link);
   };
   const criteriaData = [
-    { label: "🎯 Eligibility", value: "Schools, individuals, startups, community orgs, media" },
-    { label: "📥 Nomination", value: "Public submission (via AGC wallet only)" },
-    { label: "📈 Certificate Access", value: "Requires minimum 1,000 nominations or combined votes" },
-    { label: "🗳️ Voting Method", value: "Public Voting + Judges + Admin Review" },
-    { label: "🧮 Voting Weights", value: "Public (40%), Judges (50%), BOT/BOA/CVO (10%)" },
+    {
+      label: "🎯 Eligibility",
+      value: "Schools, individuals, startups, community orgs, media",
+    },
+    {
+      label: "📥 Nomination",
+      value: "Public submission (via AGC wallet only)",
+    },
+    {
+      label: "📈 Certificate Access",
+      value: "Requires minimum 1,000 nominations or combined votes",
+    },
+    {
+      label: "🗳️ Voting Method",
+      value: "Public Voting + Judges + Admin Review",
+    },
+    {
+      label: "🧮 Voting Weights",
+      value: "Public (40%), Judges (50%), BOT/BOA/CVO (10%)",
+    },
     { label: "🏆 Winners", value: "1 Gold Certificate winner per subcategory" },
-    { label: "📜 Recognition", value: "Non-winners with 1,000+ votes/nominations can download certificate" }
+    {
+      label: "📜 Recognition",
+      value:
+        "Non-winners with 1,000+ votes/nominations can download certificate",
+    },
   ];
 
   // Define actions with role-based permissions
@@ -42,7 +70,16 @@ const CompetitiveAwards = () => {
         color: "from-[#FFC247] to-[#E48900]",
         featured: true,
         requiresAuth: true,
-        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "JUDGE", "VOLUNTEER", "NRC_VOLUNTEER", "ADMIN", "SUPER_ADMIN"]
+        allowedRoles: [
+          "FREE_MEMBER",
+          "STANDARD_MEMBER",
+          "AMBASSADOR",
+          "JUDGE",
+          "VOLUNTEER",
+          "NRC_VOLUNTEER",
+          "ADMIN",
+          "SUPER_ADMIN",
+        ],
       },
       {
         title: "Vote Using AGC",
@@ -55,7 +92,16 @@ const CompetitiveAwards = () => {
         color: "from-green-500 to-green-600",
         featured: true,
         requiresAuth: true,
-        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "JUDGE", "VOLUNTEER", "NRC_VOLUNTEER", "ADMIN", "SUPER_ADMIN"]
+        allowedRoles: [
+          "FREE_MEMBER",
+          "STANDARD_MEMBER",
+          "AMBASSADOR",
+          "JUDGE",
+          "VOLUNTEER",
+          "NRC_VOLUNTEER",
+          "ADMIN",
+          "SUPER_ADMIN",
+        ],
       },
       {
         title: "Download Certificate",
@@ -67,7 +113,16 @@ const CompetitiveAwards = () => {
         buttonText: isAuthenticated ? "Check Eligibility" : "Login to Check",
         color: "from-purple-500 to-purple-600",
         requiresAuth: true,
-        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "JUDGE", "VOLUNTEER", "NRC_VOLUNTEER", "ADMIN", "SUPER_ADMIN"]
+        allowedRoles: [
+          "FREE_MEMBER",
+          "STANDARD_MEMBER",
+          "AMBASSADOR",
+          "JUDGE",
+          "VOLUNTEER",
+          "NRC_VOLUNTEER",
+          "ADMIN",
+          "SUPER_ADMIN",
+        ],
       },
       {
         title: "Become a Judge",
@@ -77,7 +132,13 @@ const CompetitiveAwards = () => {
         buttonText: "Apply as Judge",
         color: "from-blue-500 to-blue-600",
         requiresAuth: false,
-        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "VOLUNTEER", "NRC_VOLUNTEER"]
+        allowedRoles: [
+          "FREE_MEMBER",
+          "STANDARD_MEMBER",
+          "AMBASSADOR",
+          "VOLUNTEER",
+          "NRC_VOLUNTEER",
+        ],
       },
       {
         title: "Sponsor a Subcategory",
@@ -87,7 +148,14 @@ const CompetitiveAwards = () => {
         buttonText: "Sponsor Now",
         color: "from-orange-500 to-orange-600",
         requiresAuth: false,
-        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "SPONSOR", "ADMIN", "SUPER_ADMIN"]
+        allowedRoles: [
+          "FREE_MEMBER",
+          "STANDARD_MEMBER",
+          "AMBASSADOR",
+          "SPONSOR",
+          "ADMIN",
+          "SUPER_ADMIN",
+        ],
       },
       {
         title: "Top Up AGC Wallet",
@@ -99,12 +167,21 @@ const CompetitiveAwards = () => {
         buttonText: isAuthenticated ? "Top Up Wallet" : "Login for Wallet",
         color: "from-[#FFC247] to-[#E48900]",
         requiresAuth: true,
-        allowedRoles: ["FREE_MEMBER", "STANDARD_MEMBER", "AMBASSADOR", "JUDGE", "VOLUNTEER", "NRC_VOLUNTEER", "ADMIN", "SUPER_ADMIN"]
-      }
+        allowedRoles: [
+          "FREE_MEMBER",
+          "STANDARD_MEMBER",
+          "AMBASSADOR",
+          "JUDGE",
+          "VOLUNTEER",
+          "NRC_VOLUNTEER",
+          "ADMIN",
+          "SUPER_ADMIN",
+        ],
+      },
     ];
 
     // Filter actions based on user role
-    return baseActions.filter(action => {
+    return baseActions.filter((action) => {
       if (!action.allowedRoles) return true;
       if (!isAuthenticated && !action.requiresAuth) return true;
       if (!isAuthenticated && action.requiresAuth) return true; // Show with login prompt
@@ -115,14 +192,22 @@ const CompetitiveAwards = () => {
   const actions = getActions();
 
   const subcategories = [
-    { name: "STEM Education Excellence", count: "15 subcategories", icon: "🔬" },
+    {
+      name: "STEM Education Excellence",
+      count: "15 subcategories",
+      icon: "🔬",
+    },
     { name: "EdTech Innovation", count: "12 subcategories", icon: "💻" },
     { name: "Policy Advocacy", count: "10 subcategories", icon: "📋" },
     { name: "Educational Media", count: "8 subcategories", icon: "📺" },
     { name: "Community Impact", count: "18 subcategories", icon: "🏘️" },
     { name: "Teacher Excellence", count: "14 subcategories", icon: "👨‍🏫" },
     { name: "Student Achievement", count: "12 subcategories", icon: "🎓" },
-    { name: "Infrastructure Development", count: "12 subcategories", icon: "🏗️" }
+    {
+      name: "Infrastructure Development",
+      count: "12 subcategories",
+      icon: "🏗️",
+    },
   ];
 
   return (
@@ -139,42 +224,71 @@ const CompetitiveAwards = () => {
           <motion.div variants={toTopV} className="text-center">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#FFC247]/20 to-[#E48900]/20 rounded-full border border-[#FFC247]/30 mb-6">
               <Award className="w-5 h-5 text-[#FFC247] mr-2" />
-              <span className="text-[#FFC247] font-medium">COMPETITIVE EXCELLENCE</span>
+              <span className="text-[#FFC247] font-medium">
+                COMPETITIVE EXCELLENCE
+              </span>
             </div>
-            
+
             <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-4">
               🥇 Blue Garnet & Gold Certificate Awards
             </h2>
-            <div className="bg-gradient-to-r from-[#FFC247]/20 to-[#E48900]/20 text-[#FFC247] px-4 py-2 rounded-full text-sm font-medium inline-block mb-4">
+            {/* <div className="bg-gradient-to-r from-[#FFC247]/20 to-[#E48900]/20 text-[#FFC247] px-4 py-2 rounded-full text-sm font-medium inline-block mb-4">
               Competitive | Public Voting + Judges
-            </div>
+            </div> */}
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Celebrating rising educators, youth leaders, NGOs, tech disruptors, and institutions making measurable educational impact (1–10 years).
+              Celebrating rising educators, youth leaders, NGOs, tech
+              disruptors, and institutions making measurable educational impact
+              (1–10 years).
             </p>
           </motion.div>
 
           {/* Main Content Card */}
           <motion.div variants={toTopV} className="max-w-6xl mx-auto">
             <div className="bg-gradient-to-br from-[#191307]/80 to-[#33270E]/60 backdrop-blur-sm border border-[#FFC247]/20 rounded-2xl p-8 hover:border-[#FFC247]/40 transition-all duration-300">
-              
               {/* Criteria Table */}
               <div className="mb-8">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] text-transparent bg-clip-text mb-6 flex items-center">
-                  <Award className="w-6 h-6 text-[#FFC247] mr-3" />
-                  Award Criteria & Details
-                </h3>
-                
-                <div className="overflow-x-auto">
+                <div className="w-full flex justify-center">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] text-transparent bg-clip-text mb-6 flex items-center">
+                    <Award className="w-6 h-6 text-[#FFC247] mr-3" />
+                    Award Criteria & Details
+                  </h3>
+                </div>
+
+                <p className="mb-4 text-lg text-gray-300 mx-auto">
+                  NESA-Africa 2025 is honoring excellence in education through 8
+                  Competitive Blue Garnet Awards, each representing a major
+                  category. Within each, multiple sub-categories (101 in total)
+                  will be recognized with Gold Certificates, with top performers
+                  competing for the prestigious Blue Garnet Award in their main
+                  category.
+                </p>
+                <p className="mb-4 text-lg text-gray-300 mx-auto">
+                  Each nominee first competes at the sub-category level for a
+                  Gold Certificate, and winners of each sub-category are
+                  elevated to contend for the Blue Garnet Award in their main
+                  category. The award evaluation process aligns with SDG 4,
+                  Africa Agenda 2063, and ESG principles to ensure that
+                  excellence is judged by both impact and sustainability.
+                </p>
+
+                {/* <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-[#FFC247]/20">
-                        <th className="text-left py-3 px-4 text-[#FFC247] font-semibold">Criteria</th>
-                        <th className="text-left py-3 px-4 text-[#FFC247] font-semibold">Details</th>
+                        <th className="text-left py-3 px-4 text-[#FFC247] font-semibold">
+                          Criteria
+                        </th>
+                        <th className="text-left py-3 px-4 text-[#FFC247] font-semibold">
+                          Details
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       {criteriaData.map((item, index) => (
-                        <tr key={index} className="border-b border-[#FFC247]/10 hover:bg-[#FFC247]/5 transition-colors duration-200">
+                        <tr
+                          key={index}
+                          className="border-b border-[#FFC247]/10 hover:bg-[#FFC247]/5 transition-colors duration-200"
+                        >
                           <td className="py-4 px-4 text-gray-300 font-medium whitespace-nowrap">
                             {item.label}
                           </td>
@@ -185,12 +299,14 @@ const CompetitiveAwards = () => {
                       ))}
                     </tbody>
                   </table>
-                </div>
+                </div> */}
               </div>
 
               {/* Key Features */}
               <div className="mb-8">
-                <h4 className="text-xl font-bold text-[#FFC247] mb-4">Key Features:</h4>
+                <h4 className="text-xl font-bold text-[#FFC247] mb-4">
+                  Key Features:
+                </h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   {[
                     "Public nomination and voting system",
@@ -198,11 +314,13 @@ const CompetitiveAwards = () => {
                     "Combined public and expert judge evaluation",
                     "1,000 vote threshold for certificate access",
                     "Direct scholarship funding through votes",
-                    "Transparent impact tracking and reporting"
+                    "Transparent impact tracking and reporting",
                   ].map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-gradient-to-r from-[#FFC247] to-[#E48900] rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-300 text-sm leading-relaxed">{feature}</p>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {feature}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -210,14 +328,15 @@ const CompetitiveAwards = () => {
             </div>
           </motion.div>
 
-          {/* Subcategories Overview */}
+          {/* Subcategories Overview
           <motion.div variants={toTopV} className="space-y-8">
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-4">
                 Award Subcategories
               </h3>
               <p className="text-gray-300 max-w-2xl mx-auto">
-                Comprehensive coverage across 8 main categories with 101+ specialized subcategories
+                Comprehensive coverage across 8 main categories with 101+
+                specialized subcategories
               </p>
             </div>
 
@@ -236,10 +355,10 @@ const CompetitiveAwards = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Action Buttons */}
-          <motion.div variants={toTopV} className="space-y-8">
+          {/* <motion.div variants={toTopV} className="space-y-8">
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FFC247] to-[#E48900] inline-block text-transparent bg-clip-text mb-4">
                 Available Actions
@@ -254,15 +373,25 @@ const CompetitiveAwards = () => {
                 <motion.div
                   key={index}
                   variants={opacityV}
-                  className={`group ${action.featured ? 'lg:col-span-1' : ''}`}
+                  className={`group ${action.featured ? "lg:col-span-1" : ""}`}
                 >
                   <div
-                    onClick={() => action.requiresAuth && !isAuthenticated ? handleAuthAction(action.link) : null}
+                    onClick={() =>
+                      action.requiresAuth && !isAuthenticated
+                        ? handleAuthAction(action.link)
+                        : null
+                    }
                     className={`bg-gradient-to-br from-[#191307]/80 to-[#33270E]/60 backdrop-blur-sm border border-[#FFC247]/20 rounded-xl p-6 hover:border-[#FFC247]/40 transition-all duration-300 h-full cursor-pointer group-hover:transform group-hover:scale-105 ${
-                      action.featured ? 'border-[#FFC247]/40 bg-gradient-to-br from-[#FFC247]/5 to-[#E48900]/5' : ''
-                    } ${!isAuthenticated && action.requiresAuth ? 'opacity-75' : ''}`}
+                      action.featured
+                        ? "border-[#FFC247]/40 bg-gradient-to-br from-[#FFC247]/5 to-[#E48900]/5"
+                        : ""
+                    } ${
+                      !isAuthenticated && action.requiresAuth
+                        ? "opacity-75"
+                        : ""
+                    }`}
                   >
-                    {(!action.requiresAuth || isAuthenticated) ? (
+                    {!action.requiresAuth || isAuthenticated ? (
                       <Link href={action.link} className="block h-full">
                         <div className="text-center h-full flex flex-col">
                           {action.featured && (
@@ -271,7 +400,9 @@ const CompetitiveAwards = () => {
                             </div>
                           )}
 
-                          <div className={`bg-gradient-to-r ${action.color} p-4 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                          <div
+                            className={`bg-gradient-to-r ${action.color} p-4 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                          >
                             <action.icon className="w-8 h-8 text-white" />
                           </div>
 
@@ -283,7 +414,9 @@ const CompetitiveAwards = () => {
                             {action.description}
                           </p>
 
-                          <div className={`bg-gradient-to-r ${action.color} text-white font-semibold px-6 py-2 rounded-full text-sm hover:shadow-lg transition-all duration-300 w-full mt-auto text-center`}>
+                          <div
+                            className={`bg-gradient-to-r ${action.color} text-white font-semibold px-6 py-2 rounded-full text-sm hover:shadow-lg transition-all duration-300 w-full mt-auto text-center`}
+                          >
                             {action.buttonText}
                           </div>
                         </div>
@@ -296,7 +429,9 @@ const CompetitiveAwards = () => {
                           </div>
                         )}
 
-                        <div className={`bg-gradient-to-r ${action.color} p-4 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center opacity-75`}>
+                        <div
+                          className={`bg-gradient-to-r ${action.color} p-4 rounded-full mx-auto mb-4 w-16 h-16 flex items-center justify-center opacity-75`}
+                        >
                           <action.icon className="w-8 h-8 text-white" />
                         </div>
 
@@ -320,10 +455,10 @@ const CompetitiveAwards = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Important Notice */}
-          <motion.div variants={opacityV} className="max-w-4xl mx-auto">
+          {/* <motion.div variants={opacityV} className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-r from-[#FFC247]/10 to-[#E48900]/10 rounded-2xl p-6 border border-[#FFC247]/30 text-center">
               <div className="flex items-center justify-center mb-4">
                 <Vote className="w-8 h-8 text-[#FFC247] mr-3" />
@@ -332,17 +467,19 @@ const CompetitiveAwards = () => {
                 </h3>
               </div>
               <p className="text-gray-300 mb-4">
-                Every vote cast using AfriGold Coin directly contributes to scholarship funding, 
-                creating a sustainable cycle where recognition drives educational support.
+                Every vote cast using AfriGold Coin directly contributes to
+                scholarship funding, creating a sustainable cycle where
+                recognition drives educational support.
               </p>
               <div className="bg-gradient-to-r from-[#FFC247]/20 to-[#E48900]/20 rounded-lg p-4">
                 <p className="text-[#FFC247] text-sm font-medium">
-                  💡 <strong>Certificate Access:</strong> Reach 1,000 combined nominations or votes to unlock your 
-                  downloadable Certificate of Recognition, even if you don't win the gold certificate.
+                  💡 <strong>Certificate Access:</strong> Reach 1,000 combined
+                  nominations or votes to unlock your downloadable Certificate
+                  of Recognition, even if you don't win the gold certificate.
                 </p>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

@@ -102,9 +102,9 @@ const CSRInEducationAwardPage = () => {
       image: "/images/nesa-card2.png",
     },
     {
-      title: "Media And Entertainment CSR in Education Award",
+      title: "Social Media Influencer CSR For Education",
       description:
-        "Honors  media and entertainment companies for educational content  creation, scholarships, and outreach programs.",
+        "Recognizing social media influencers making substantial educational impacts",
       image: "/images/nesa-card2.png",
     },
     {
@@ -194,45 +194,15 @@ const CSRInEducationAwardPage = () => {
       <div className="relative bg-[#191307] text-white py-24 px-8">
         <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center opacity-20"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-2 md:mt-16 text-center">Category 7</h2>
           <h1 className="text-3xl font-bold text-[#FFC247] mb-4 text-center">
-            {categories[currentIndex].title}
+            {categories[0].title}
           </h1>
-          <p className="mb-8 text-center">
-            {categories[currentIndex].description}
-          </p>
-        </div>
-
-        {/* Carousel Indicator Dots */}
-        <div className="absolute bottom-4 left-4 flex space-x-2">
-          {categories.map((_, index) => (
-            <div
-              key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex ? "bg-[#FFC247]" : "bg-white"
-              }`}
-            ></div>
-          ))}
-        </div>
-        {/* Carousel Navigation Arrows */}
-        <div className="absolute bottom-4 right-4 flex space-x-4">
-          <button
-            onClick={prevSlide}
-            className="p-2 rounded transition bg-[#FFC247]"
-          >
-            <IoMdArrowBack size={24} color="#191307" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="p-2 rounded transition bg-[#FFC247]"
-          >
-            <IoMdArrowForward size={24} color="#191307" />
-          </button>
+          <p className="mb-8 text-center">{categories[0].description}</p>
         </div>
       </div>
       {/* Sub-Categories Section */}
       <div className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-3xl font-bold mb-8 relative inline-block">
+        <h2 className="text-3xl text-center font-bold mb-8 relative inline-block">
           The Overall Best CSR for Education in Nigeria Award 2024
           <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
         </h2>

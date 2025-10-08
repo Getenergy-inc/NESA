@@ -15,9 +15,9 @@ const CSRAwardCategoryPage = () => {
   const subcategories: Category[] = [
     {
       title:
-        "The Overall Best Corporate Social Responsibility (CSR) for Education in Nigeria Award",
+        "The Overall Best Corporate Social Responsibility (CSR) for Education in Africa Award",
       description:
-        "This Award celebrates the significant contributions of corporate entities across various sectors to the education sector in Nigeria through corporate social responsibility initiatives. This Award highlights the crucial impact and strategic importance of CSR in education.",
+        "This Award celebrates the significant contributions of corporate entities across various sectors to the education sector in Africa through corporate social responsibility initiatives. This Award highlights the crucial impact and strategic importance of CSR in education.",
       image: "/images/nesa-card2.png",
     },
     {
@@ -99,53 +99,13 @@ const CSRAwardCategoryPage = () => {
   return (
     <div className="min-h-screen bg-[#FFF5E0]">
       {/* Hero Section */}
-      <div className="relative bg-[#191307] text-white py-12 sm:py-24 px-4 sm:px-8 mt-16">
-        <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center"></div>
+      <div className="relative bg-[#191307] text-white py-24 px-8">
+        <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center opacity-20"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-xl sm:text-2xl mb-2 md:mt-16 text-center">
-            Category 3
-          </h2>
-          <h1 className="text-2xl sm:text-4xl font-bold text-[#FFC247] mb-2 sm:mb-4 text-center">
-            {subcategories[currentIndex].title}
+          <h1 className="text-3xl font-bold text-[#FFC247] mb-4 text-center">
+            {subcategories[0].title}
           </h1>
-          <p className="text-sm sm:text-base mb-4 sm:mb-8 text-center">
-            {subcategories[currentIndex].description}
-          </p>
-        </div>
-
-        {/* Carousel Indicator Dots */}
-        <div className="absolute bottom-4 left-4 flex space-x-2">
-          {subcategories.map((_, index) => (
-            <div
-              key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex ? "bg-[#FFC247]" : "bg-white"
-              }`}
-            ></div>
-          ))}
-        </div>
-        {/* Carousel Navigation Arrows */}
-        <div className="absolute bottom-4 right-4 flex space-x-4">
-          <button
-            onClick={prevSlide}
-            className="p-2 rounded transition"
-            style={{
-              background:
-                "linear-gradient(90deg, #FFC247 -6.07%, #E48900 156.79%)",
-            }}
-          >
-            <IoMdArrowBack size={32} color="#191307" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="p-2 rounded transition"
-            style={{
-              background:
-                "linear-gradient(90deg, #FFC247 -6.07%, #E48900 156.79%)",
-            }}
-          >
-            <IoMdArrowForward size={32} color="#191307" />
-          </button>
+          <p className="mb-8 text-center">{subcategories[0].description}</p>
         </div>
       </div>
       {/* Sub-Categories Section */}

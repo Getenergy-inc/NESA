@@ -234,343 +234,657 @@ export const categories: Category[] = [
   },
 
   {
-    title: "Best NGO Education Support Recognition Award",
+    title: "Best NGO Education Support Recognition Award (Africa-Regional)",
     description:
       "This award recognizes non-governmental organizations (NGOs) that have made outstanding contributions to education in Africa through various initiatives and support programs.",
-    subCategories: [
+    regions: [
       {
-        title: "Best Educational Infrastructure Initiative By An NGO",
-        description:
-          "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
-        nominees: [
+        name: "North Africa",
+        subCategories: [
           {
-            name: "Teach For Nigeria",
-            image: "/images/ngo/teach-for-nigeria.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Slum2School Africa",
-            image: "/images/ngo/slum2school.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "ActionAid Nigeria",
-            image: "/images/ngo/actionaid.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Plan International Nigeria",
-            image: "/images/ngo/plan-international-nigeria.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Malala Fund Nigeria",
-            image: "/images/ngo/malala-fund.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Girl Child Education Initiative",
-            image: "/images/ngo/girl-child-initiative.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Universal Learning Solutions",
-            image: "/images/ngo/universal-learning-solutions.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Bridge International Academies",
-            image: "/images/ngo/bridge.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Save the Children Nigeria",
-            image: "/images/ngo/save-the-children.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "UNICEF Nigeria",
-            image: "/images/ngo/unicef.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
       {
-        title: "Exceptional Donation Of Educational Materials By An NGO",
-        description:
-          "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
-        nominees: [
+        name: "East Africa",
+        subCategories: [
           {
-            name: "Nigeria Youth Futures Fund",
-            image: "/images/ngo/nigeria-youth-futures-fund.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "One Million Teachers",
-            image: "/images/ngo/one-million-teachers.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "The Education Partnership (TEP)",
-            image: "/images/ngo/the-education-partnership.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Street Child Nigeria",
-            image: "/images/ngo/street-child.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Educate Nigeria Initiative",
-            image: "/images/ngo/educate-nigeria-initiative.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "LEAP Africa",
-            image: "/images/ngo/leap-africa.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Young Educators Foundation",
-            image: "/images/ngo/young-educators-foundation.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "The Tony Elumelu Foundation",
-            image: "/images/ngo/the-tony-elumelu-foundation.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "YEDBC (Yaba Educators Centre for In)",
-            image: "/images/ngo/yedbc.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Oando Foundation",
-            image: "/images/ngo/oando-foundation.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-        ],
-      },
-      {
-        title: "Outstanding Donation Of Education Aid By NGO",
-        description:
-          "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
-        nominees: [
-          {
-            name: "Paradigm Initiative",
-            image: "/images/ngo/paradigm-initiative.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "MANI (Maternal and Child Survival Program)",
-            image: "/images/ngo/mani.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "STEM Nigeria Direct",
-            image: "/images/ngo/stem-nigeria-direct.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "Tech4Dev (Technology for Social G)",
-            image: "/images/ngo/tech4dev.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "REACH Initiative International",
-            image: "/images/ngo/reach-initiative-international.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "KnowledgeAid Initiative",
-            image: "/images/ngo/knowledgeaid-initiative.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "YISA (Youth Initiative for Sustain)",
-            image: "/images/ngo/yisa.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "SkillNG",
-            image: "/images/ngo/saind.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "AYECI (African Youth Initiative on)",
-            image: "/images/ngo/save-the-children.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
-          },
-          {
-            name: "EVA (The Education As A Vaccine In)",
-            image: "/images/ngo/eva.png",
-            achievement:
-              "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
       {
-        title:
-          "Youth Empowerment Through Educational Services By An NGO In Nigeria",
-        description:
-          "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
-        nominees: [
+        name: "West Africa",
+        subCategories: [
           {
-            name: "Youth for Technology Foundation",
-            image: "/images/ngo/youth-for-technology.png",
-            achievement:
-              "Provided technology training and entrepreneurship education to young people in Nigeria. Empowered over 20,000 youths wi...",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Teach For Nigeria",
+                image: "/images/ngo/teach-for-nigeria.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Slum2School Africa",
+                image: "/images/ngo/slum2school.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "ActionAid Nigeria",
+                image: "/images/ngo/actionaid.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Plan International Nigeria",
+                image: "/images/ngo/plan-international-nigeria.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Malala Fund Nigeria",
+                image: "/images/ngo/malala-fund.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Girl Child Education Initiative",
+                image: "/images/ngo/girl-child-initiative.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Universal Learning Solutions",
+                image: "/images/ngo/universal-learning-solutions.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Bridge International Academies",
+                image: "/images/ngo/bridge.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Save the Children Nigeria",
+                image: "/images/ngo/save-the-children.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "UNICEF Nigeria",
+                image: "/images/ngo/unicef.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+            ],
           },
           {
-            name: "Junior Achievement Nigeria (JAN)",
-            image: "/images/ngo/junior-achievement.png",
-            achievement:
-              "Implemented educational programs that empowered youths with financial literacy and workforce readiness for youths, reache...",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nigeria Youth Futures Fund",
+                image: "/images/ngo/nigeria-youth-futures-fund.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "One Million Teachers",
+                image: "/images/ngo/one-million-teachers.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "The Education Partnership (TEP)",
+                image: "/images/ngo/the-education-partnership.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Street Child Nigeria",
+                image: "/images/ngo/street-child.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Educate Nigeria Initiative",
+                image: "/images/ngo/educate-nigeria-initiative.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "LEAP Africa",
+                image: "/images/ngo/leap-africa.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Young Educators Foundation",
+                image: "/images/ngo/young-educators-foundation.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "The Tony Elumelu Foundation",
+                image: "/images/ngo/the-tony-elumelu-foundation.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "YEDBC (Yaba Educators Centre for In)",
+                image: "/images/ngo/yedbc.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Oando Foundation",
+                image: "/images/ngo/oando-foundation.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+            ],
           },
           {
-            name: "YALI Network Nigeria",
-            image: "/images/ngo/yali-network.png",
-            achievement:
-              "Provided leadership and professional development opportunities for young Nigerians through the Young African Leaders Initiative...",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Paradigm Initiative",
+                image: "/images/ngo/paradigm-initiative.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "MANI (Maternal and Child Survival Program)",
+                image: "/images/ngo/mani.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "STEM Nigeria Direct",
+                image: "/images/ngo/stem-nigeria-direct.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "Tech4Dev (Technology for Social G)",
+                image: "/images/ngo/tech4dev.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "REACH Initiative International",
+                image: "/images/ngo/reach-initiative-international.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "KnowledgeAid Initiative",
+                image: "/images/ngo/knowledgeaid-initiative.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "YISA (Youth Initiative for Sustain)",
+                image: "/images/ngo/yisa.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "SkillNG",
+                image: "/images/ngo/saind.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "AYECI (African Youth Initiative on)",
+                image: "/images/ngo/save-the-children.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+              {
+                name: "EVA (The Education As A Vaccine In)",
+                image: "/images/ngo/eva.png",
+                achievement:
+                  "Significant contributions to improving rural education, particularly for girls, demonstrating a significant impact on their community.",
+              },
+            ],
           },
           {
-            name: "AIESEC Nigeria",
-            image: "/images/ngo/aiesec.png",
-            achievement:
-              "Offered international exchange programs that provide young people with leadership opportunities, global internships, and socia...",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Youth for Technology Foundation",
+                image: "/images/ngo/youth-for-technology.png",
+                achievement:
+                  "Provided technology training and entrepreneurship education to young people in Nigeria. Empowered over 20,000 youths wi...",
+              },
+              {
+                name: "Junior Achievement Nigeria (JAN)",
+                image: "/images/ngo/junior-achievement.png",
+                achievement:
+                  "Implemented educational programs that empowered youths with financial literacy and workforce readiness for youths, reache...",
+              },
+              {
+                name: "YALI Network Nigeria",
+                image: "/images/ngo/yali-network.png",
+                achievement:
+                  "Provided leadership and professional development opportunities for young Nigerians through the Young African Leaders Initiative...",
+              },
+              {
+                name: "AIESEC Nigeria",
+                image: "/images/ngo/aiesec.png",
+                achievement:
+                  "Offered international exchange programs that provide young people with leadership opportunities, global internships, and socia...",
+              },
+              {
+                name: "Girls Education Mission International (GEM)",
+                image: "/images/ngo/girls-education-mission.png",
+                achievement:
+                  "Focused on empowering young girls through education, providing scholarships, mentorship, and advocacy for girls' rights. I...",
+              },
+              {
+                name: "Rise Network",
+                image: "/images/ngo/rise-network.png",
+                achievement:
+                  "Facilitated career development, mentorship, and skills training for young people in Nigeria. Supported over 35,000 young Nige...",
+              },
+              {
+                name: "Jobberman Nigeria",
+                image: "/images/ngo/jobberman.png",
+                achievement:
+                  "Offered job training and placement services for young Nigerians, bridging the gap between job seekers and employers. Trained...",
+              },
+              {
+                name: "Young African Leadership Initiative (YALI) Nigeria",
+                image: "/images/ngo/yali.png",
+                achievement:
+                  "Empowered young Nigerians through leadership training, civic engagement, and professional development programs. Impac...",
+              },
+              {
+                name: "YouthHubAfrica",
+                image: "/images/ngo/youthhub-africa.png",
+                achievement:
+                  "Supported youth-driven initiatives for social change and education, providing platforms for young voices to be heard in Nigeri...",
+              },
+              {
+                name: "Youth Mentoring Initiative for Youth Empowerment (MIYE)",
+                image: "/images/ngo/youth-mentoring-initiative.png",
+                achievement:
+                  "Guided young people through mentorship and educational programs, focusing on leadership and personal development. Ment...",
+              },
+            ],
           },
           {
-            name: "Girls Education Mission International (GEM)",
-            image: "/images/ngo/girls-education-mission.png",
-            achievement:
-              "Focused on empowering young girls through education, providing scholarships, mentorship, and advocacy for girls' rights. I...",
-          },
-          {
-            name: "Rise Network",
-            image: "/images/ngo/rise-network.png",
-            achievement:
-              "Facilitated career development, mentorship, and skills training for young people in Nigeria. Supported over 35,000 young Nige...",
-          },
-          {
-            name: "Jobberman Nigeria",
-            image: "/images/ngo/jobberman.png",
-            achievement:
-              "Offered job training and placement services for young Nigerians, bridging the gap between job seekers and employers. Trained...",
-          },
-          {
-            name: "Young African Leadership Initiative (YALI) Nigeria",
-            image: "/images/ngo/yali.png",
-            achievement:
-              "Empowered young Nigerians through leadership training, civic engagement, and professional development programs. Impac...",
-          },
-          {
-            name: "YouthHubAfrica",
-            image: "/images/ngo/youthhub-africa.png",
-            achievement:
-              "Supported youth-driven initiatives for social change and education, providing platforms for young voices to be heard in Nigeri...",
-          },
-          {
-            name: "Youth Mentoring Initiative for Youth Empowerment (MIYE)",
-            image: "/images/ngo/youth-mentoring-initiative.png",
-            achievement:
-              "Guided young people through mentorship and educational programs, focusing on leadership and personal development. Ment...",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Girls Education Mission International (GEM)",
+                image: "/images/ngo/girls-education-mission.png",
+                achievement:
+                  "Provided educational scholarships, mentorship, and advocacy for the education of girls in northern Nigeria. Empowered over...",
+              },
+              {
+                name: "ActionAid Nigeria",
+                image: "/images/ngo/actionaid.png",
+                achievement:
+                  "Implemented the Safe Cities for Women and Girls initiative. Advocated for educational programs to empower women and girls, focu...",
+              },
+              {
+                name: "Educate Girls Nigeria",
+                image: "/images/ngo/educate-girls.png",
+                achievement:
+                  "Focused on enrolling and retaining girls in school, especially in rural and underserved communities. Increased school enrollmen...",
+              },
+              {
+                name: "Women's Rights Advancement and Protection Alternative (WRAPA)",
+                image: "/images/ngo/wrapa.png",
+                achievement:
+                  "Provided education and vocational training for women and girls, particularly those affected by gender-based violence. Empow...",
+              },
+              {
+                name: "Girl Child Concerns (GCC)",
+                image: "/images/ngo/girl-child-concerns.png",
+                achievement:
+                  "Implemented initiatives focused on the education and empowerment of adolescent girls in northern Nigeria. Supported the educ...",
+              },
+              {
+                name: "Women for Women International Nigeria",
+                image: "/images/ngo/women-for-women.png",
+                achievement:
+                  "Provided educational programs, vocational skills training, and support to women survivors of conflict. Empowered over 20,000...",
+              },
+              {
+                name: "Baobab for Women's Human Rights",
+                image: "/images/ngo/baobab.png",
+                achievement:
+                  "Focused on educating women and girls about their rights, including the right to education. Provided literacy programs for wom...",
+              },
+              {
+                name: "Centre for Girls Education (CGE)",
+                image: "/images/ngo/centre-for-girls-education.png",
+                achievement:
+                  "Implemented programs to educate and empower girls in rural northern Nigeria, focusing on literacy and life skills. Improved...",
+              },
+              {
+                name: "Tech4Dev Women's Empowerment Program",
+                image: "/images/ngo/tech4dev.png",
+                achievement:
+                  "Educated young women in digital skills and entrepreneurship, helping them to access better job opportunities. Trained over 5,000...",
+              },
+              {
+                name: "Association of Nigerian Women Entrepreneurs (ANWE)",
+                image: "/images/ngo/anwep.png",
+                achievement:
+                  "Promoted education and entrepreneurship for women and girls, providing resources and support for business startups. Empowered o...",
+              },
+            ],
           },
         ],
       },
       {
-        title: "Women And Girls' Empowerment In Education By An NGO In Nigeria",
-        description:
-          "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
-        nominees: [
+        name: "South Africa",
+        subCategories: [
           {
-            name: "Girls Education Mission International (GEM)",
-            image: "/images/ngo/girls-education-mission.png",
-            achievement:
-              "Provided educational scholarships, mentorship, and advocacy for the education of girls in northern Nigeria. Empowered over...",
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "ActionAid Nigeria",
-            image: "/images/ngo/actionaid.png",
-            achievement:
-              "Implemented the Safe Cities for Women and Girls initiative. Advocated for educational programs to empower women and girls, focu...",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Educate Girls Nigeria",
-            image: "/images/ngo/educate-girls.png",
-            achievement:
-              "Focused on enrolling and retaining girls in school, especially in rural and underserved communities. Increased school enrollmen...",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Women's Rights Advancement and Protection Alternative (WRAPA)",
-            image: "/images/ngo/wrapa.png",
-            achievement:
-              "Provided education and vocational training for women and girls, particularly those affected by gender-based violence. Empow...",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Girl Child Concerns (GCC)",
-            image: "/images/ngo/girl-child-concerns.png",
-            achievement:
-              "Implemented initiatives focused on the education and empowerment of adolescent girls in northern Nigeria. Supported the educ...",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Central Africa",
+        subCategories: [
+          {
+            title: "Best Educational Infrastructure Initiative By An NGO",
+            description:
+              "This award honors NGOs that have made substantial effort in improving or building educational infrastructure. It includes initiatives like constructing schools, libraries, and other educational facilities.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Women for Women International Nigeria",
-            image: "/images/ngo/women-for-women.png",
-            achievement:
-              "Provided educational programs, vocational skills training, and support to women survivors of conflict. Empowered over 20,000...",
+            title: "Exceptional Donation Of Educational Materials By An NGO",
+            description:
+              "Recognizing NGOs that have significantly contributed educational material to schools and educational institutions like books, computers, and other learning resources.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Baobab for Women's Human Rights",
-            image: "/images/ngo/baobab.png",
-            achievement:
-              "Focused on educating women and girls about their rights, including the right to education. Provided literacy programs for wom...",
+            title: "Outstanding Donation Of Education Aid By NGO",
+            description:
+              "Celebrates NGOs that provide substantial educational aid, which can include scholarships, funding for educational programs, support for teachers, and other forms of financial assistance.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Centre for Girls Education (CGE)",
-            image: "/images/ngo/centre-for-girls-education.png",
-            achievement:
-              "Implemented programs to educate and empower girls in rural northern Nigeria, focusing on literacy and life skills. Improved...",
+            title:
+              "Youth Empowerment Through Educational Services By An NGO In Nigeria",
+            description:
+              "Recognizes NGOs that have implemented innovative programs to empower youth through education and skill development.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
           {
-            name: "Tech4Dev Women's Empowerment Program",
-            image: "/images/ngo/tech4dev.png",
-            achievement:
-              "Educated young women in digital skills and entrepreneurship, helping them to access better job opportunities. Trained over 5,000...",
-          },
-          {
-            name: "Association of Nigerian Women Entrepreneurs (ANWE)",
-            image: "/images/ngo/anwep.png",
-            achievement:
-              "Promoted education and entrepreneurship for women and girls, providing resources and support for business startups. Empowered o...",
+            title:
+              "Women And Girls' Empowerment In Education By An NGO In Nigeria",
+            description:
+              "Honors NGOs that have made significant contributions to empowering women and girls through educational initiatives.",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
           },
         ],
       },
@@ -578,14 +892,12 @@ export const categories: Category[] = [
   },
 
   {
-    title:
-      "Africa Diaspora association Educational Impact Projects Recognition Award in Africa",
+    title: "Diaspora Association Educational Impact in Africa",
     description:
-      'Honoring the significant contributions made by diaspora organizations towards achieving "Education for all" across the African Continent.',
+      "This Award recognizes and honors the significant contributions made by the Nigerian diaspora towards achieving 'Education for All' in Nigeria. This award, set for the 2023 cycle, aims to celebrate diaspora individuals, groups, or organizations that have made a substantial impact through skills transfer, corporate social responsibility (CSR) initiatives, advocacy, and other educational support back home in Nigeria.",
     subCategories: [
       {
-        title:
-          "The Best Diaspora-Led Educational Infrastructure Project in Africa",
+        title: "The Best Diaspora-Led Educational Infrastructure",
         description:
           "This category celebrates diaspora organizations that have created significant educational infrastructure, advancing the quality of education across Africa.",
         nominees: [
@@ -672,7 +984,7 @@ export const categories: Category[] = [
         ],
       },
       {
-        title: "The Best Diaspora-Led Educational Program Innovation in Africa",
+        title: "The Best Diaspora-Led Educational Program Innovation",
         description:
           "This category recognizes innovative educational programs initiated by diaspora organizations that have significantly impacted learning outcomes in Africa.",
         nominees: [
@@ -760,8 +1072,7 @@ export const categories: Category[] = [
         ],
       },
       {
-        title:
-          "The Best Diaspora-Led Teacher Training And Support Initiative in Africa",
+        title: "The Best Diaspora-Led Teacher Training And Support Initiative",
         description:
           "This category honors diaspora-led initiatives that have significantly improved teacher training and support across Africa.",
         nominees: [
@@ -1609,69 +1920,89 @@ export const categories: Category[] = [
       },
 
       {
-        title: "Media And Entertainment CSR in Education Award",
+        title: "Social Media Influencer CSR For Education",
         description:
-          "Recognizes media and entertainment companies for their support of educational content and initiatives.",
+          "Recognizing social media influencers making substantial educational impacts",
         nominees: [
           {
-            name: "Channels Television",
-            image: "/images/bestcsr/Channels Television.png",
+            name: "Yemi Alade (Nigeria)",
+            image: "/images/bestcsr/Yemi Alade.png",
             achievement:
-              "Implemented the 'Channels Kids Club' to promote educational content for children and sponsored educational documentaries and programs for students.",
+              "#EducationForAll Campaign – Advocating for and fundraising for school supplies and scholarships, supporting underprivileged students in Nigeria. Year of Support: 2016-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "NTA (Nigerian Television Authority)",
-            image: "/images/bestcsr/NTA.png",
+            name: "Samuel Eto'o (Cameroon)",
+            image: "/images/bestcsr/Samuel Eto'o.png",
             achievement:
-              "Launched the 'NTA Educational Initiative' to support learning through television and produced educational programs and documentaries for schools.",
+              "Samuel Eto'o Foundation – Building schools and providing educational materials, improving access to education in Cameroon. Year of Support: 2006-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "Multichoice Nigeria (DSTV)",
-            image: "/images/bestcsr/Multichoice.png",
+            name: "Davido (Nigeria)",
+            image: "/images/bestcsr/Davido.png",
             achievement:
-              "Supported the 'DSTV Eutelsat Star Awards' to promote science and technology education and sponsored educational scholarships for students across Nigeria.",
+              "Davido Education Fund – Supporting underprivileged students with scholarships and learning materials, enhancing educational opportunities in Nigeria. Year of Support: 2018-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "Silverbird Group",
-            image: "/images/bestcsr/Silverbird Group.png",
+            name: "Omotola Jalade Ekeinde (Nigeria)",
+            image: "/images/bestcsr/Omotola Jalade Ekeinde.png",
             achievement:
-              "Developed the 'Silverbird Education Initiative' for educational content creation and produced documentaries and programs focused on education and development.",
+              "Omotola Youth Empowerment Program – Focusing on education and skills development for youth in Nigeria. Year of Support: 2010-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "Wazobia FM",
-            image: "/images/bestcsr/Wazobia FM.png",
+            name: "Sarkodie (Ghana)",
+            image: "/images/bestcsr/Sarkodie.png",
             achievement:
-              "Launched the 'Wazobia Education Support Program' for educational outreach and sponsored educational programs and events for schools.",
+              "Sark Nation Foundation – Providing scholarships and educational support for students in need in Ghana. Year of Support: 2014-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "Arise News",
-            image: "/images/bestcsr/Arise News.png",
+            name: "Tiwa Savage (Nigeria)",
+            image: "/images/bestcsr/Tiwa Savage.png",
             achievement:
-              "Implemented the 'Arise Educational Initiative' to support learning through media and produced educational programs and documentaries for schools.",
+              "Savage Foundation – Supporting girls' education and providing scholarships, empowering young women in Nigeria. Year of Support: 2017-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "TVC Communications",
-            image: "/images/bestcsr/TVC Communications.png",
+            name: "Genevieve Nnaji (Nigeria)",
+            image: "/images/bestcsr/Genevieve Nnaji.png",
             achievement:
-              "Launched the 'TVC Education Support Initiative' for educational outreach and sponsored educational programs and events for schools.",
+              "Genevieve Foundation – Offering scholarships and mentorship for young women in education, promoting female empowerment in Nigeria. Year of Support: 2013-Present",
+            state: "",
+            country: "",
           },
           {
-            name: "HipTV",
-            image: "/images/bestcsr/HipTV.png",
+            name: "Cuppy (Florence Ifeoluwa Otedola) (Nigeria)",
+            image: "/images/bestcsr/Cuppy (Florence Ifeoluwa Otedola).png",
             achievement:
-              "Developed the 'HipTV Educational Initiative' for educational content creation and produced documentaries and programs focused on education and development.",
+              "Cuppy Foundation – Focusing on education and providing scholarships, supporting youth education in Nigeria. Year of Support: 2018-Present",
+            state: "Accra",
+            country: "Ghana",
           },
           {
-            name: "Africa Magic",
-            image: "/images/bestcsr/Africa Magic.png",
+            name: "Magasco (Cameroon): Magasco Education Fund",
+            image: "/images/bestcsr/Magasco.png",
             achievement:
-              "Supported the 'Africa Magic Educational Initiative' for educational outreach and sponsored educational programs and events for schools.",
+              "Promoting educational comedy and literacy through social media content.",
+            state: "",
+            country: "",
           },
           {
-            name: "EbonyLife TV",
-            image: "/images/bestcsr/EbonyLife TV.png",
+            name: "Charlotte Dipanda (Cameroon)",
+            image: "/images/bestcsr/Charlotte Dipanda.png",
             achievement:
-              "Launched the 'EbonyLife Education Support Program' for educational outreach and sponsored educational programs and events for schools.",
+              "Dipanda's Learning Initiative – Supporting girls' education and empowerment through scholarships and mentoring in Cameroon. Year of Support: 2016-Present",
+            state: "",
+            country: "",
           },
         ],
       },
@@ -7376,7 +7707,7 @@ export const categories: Category[] = [
   {
     title: "Overall best educational friendly state in Nigeria 2024",
     description:
-      "Awards the tertiary institution that stands out in academic excellence, community engagement, and student support with notable ICT infrastructure.",
+      "This award aims to celebrate and recognize educational excellence across the African continent. The Best EduTech Organization in Nigeria and Africa 2024 award acknowledges the significant contributions of EduTech organizations that have leveraged technology to enhance educational experiences and outcomes. This award highlights the innovative approaches and technological solutions that EduTech organizations have implemented to address educational challenges and improve the quality of education in Nigeria and across Africa.",
     subCategories: [
       {
         title: "Best Education Initiative in North Central Zone",
@@ -9397,647 +9728,2376 @@ export const categories: Category[] = [
         ],
       },
 
-      
-              {
-                "title": "Best Educational Grant-Giving Organization in Nigeria (2020-2024)",
-                "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                "nominees": [
-                  {
-                    "name": "Bill and Melinda Gates Foundation",
-                    "state": "Lagos",
-                    "country": "Nigeria",
-                    "image": "/images/global/Bill_and_Melinda_Gates_Foundation.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.'"
-                  },
-                  {
-                    "name": " GPE (Global Partnership for Education.) ",
-                    "state": "Lagos",
-                    "country": "Nigeria",
-                    "image": "/images/global/GPE.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                  },
-                  {
-                    "name": "Ford Foundation ",
-                    "state": "Lagos",
-                    "country": "Nigeria",
-                    "image": "/images/global/Ford_Foundation.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                  },
-                  {
-                    "name": "Carnegie Corporation of New York",
-                    "state": "Enugu",
-                    "country": "Nigeria",
-                    "image": "/images/global/Carnegie_Corporation_of_NewYork.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                  },
-                  {
-                    "name": "Rockefeller Foundation",
-                    "state": "Lagos",
-                    "country": "Nigeria",
-                    "image": "/images/global/Rockefeller_Foundation.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                  },
-                  {
-                    "name": "MacArthur Foundation",
-                    "state": "Plateau",
-                    "country": "Nigeria",
-                    "image": "/images/global/MacArthur_Foundation.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                  },
-                  {
-                    "name": "Open Society Foundations",
-                    "state": "Lagos",
-                    "country": "Nigeria",
-                    "image": "/images/global/Open_Society_Foundations.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community"
-                  },
-                  {
-                    "name": "Hewlett Foundation",
-                    "state": "Lagos",
-                    "country": "Nigeria",
-                    "image": "/images/global/Hewlett_Foundation.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                  },
-                  {
-                    "name": "Packard Foundation",
-                    "state": "Kebbi",
-                    "country": "Nigeria",
-                    "image": "/images/global/Packard_Foundation.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community"
-                  },
-                  {
-                    "name": "Kellogg Foundation ",
-                    "state": "Lagos",
-                    "country": "Nigeria",
-                    "image": "/images/global/Kellogg_Foundation.png",
-                    "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community"
-                  }
-                ]
-                
-                },
-                {
-                  "title": "Best International Airline Education Support Initiative in Nigeria (2020-2024)",
-                  "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                  "nominees": [
-                    {
-                      "name": "Emirates Airlines",
-                      "state": "Lagos",
-                      "country": "Nigeria",
-                      "image": "/images/global/Emirates_Airlines.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.'"
-                    },
-                    {
-                      "name": "British Airways",
-                      "state": "Lagos",
-                      "country": "Nigeria",
-                      "image": "/images/global/British_Airways.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                    },
-                    {
-                      "name": "Qatar Airways",
-                      "state": "Lagos",
-                      "country": "Nigeria",
-                      "image": "/images/global/Qatar_Airways.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                    },
-                    {
-                      "name": "Turkish Airlines",
-                      "state": "Enugu",
-                      "country": "Nigeria",
-                      "image": "/images/global/Turkish_Airlines.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                    },
-                    {
-                      "name": "Ethiopian Airlines",
-                      "state": "Lagos",
-                      "country": "Nigeria",
-                      "image": "/images/global/Ethiopian_Airlines.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                    },
-                    {
-                      "name": "Delta Airlines",
-                      "state": "Plateau",
-                      "country": "Nigeria",
-                      "image": "/images/global/Delta_Airlines.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                    },
-                    {
-                      "name": "Lufthansa",
-                      "state": "Lagos",
-                      "country": "Nigeria",
-                      "image": "/images/global/Lufthansa.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community"
-                    },
-                    {
-                      "name": "Air France",
-                      "state": "Lagos",
-                      "country": "Nigeria",
-                      "image": "/images/global/Air_France.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'"
-                    },
-                    {
-                      "name": "Kenya Airways",
-                      "state": "Kebbi",
-                      "country": "Nigeria",
-                      "image": "/images/global/Kenya_Airways.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community"
-                    },
-                    {
-                      "name": " KLM Royal Dutch Airlines",
-                      "state": "Lagos",
-                      "country": "Nigeria",
-                      "image": "/images/global/KLM_Royal_Dutch_Airlines.png",
-                      "achievement": "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community"
-                    }
-                  ]
-                  
-                  },
-                  {
-                    "title": "Best Leadership Training Organization in Nigeria (2020-2024)",
-                    "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    "nominees": [
-                      {
-                        "name": "Leadership Initiative for Transformation and Empowerment (LITE Africa)",
-                        "state": "Lagos",
-                        "country": "Nigeria",
-                        "image": "/images/global/Leadership_Initiative_for_Transformation_and_Empowerment.png",
-                        "achievement": "Provided leadership and civic education training programs for youth and community leaders across Nigeria. Empowered over 20,000 individuals with leadership skills and civic responsibility."
-                      },
-                      {
-                        "name": "African Leadership Academy (ALA)",
-                        "state": "Lagos",
-                        "country": "Nigeria",
-                        "image": "/images/global/African_Leadership_Academy.png",
-                        "achievement": "Delivered leadership training and entrepreneurship programs for young Nigerians with high potential. Cultivated a new generation of leaders prepared to drive change in their communities. Year(s) of Contribution: 2020-2024."
-                      },
-                      {
-                        "name": "The Bridge Leadership Foundation",
-                        "state": "Lagos",
-                        "country": "Nigeria",
-                        "image": "/images/global/The_Bridge_Leadership_Foundation.png",
-                        "achievement": "Implemented leadership and career development programs for young professionals and students in Nigeria. Enhanced leadership capacity and career readiness for thousands of Nigerian youth."
-                      },
-                      {
-                        "name": "LEAP Africa",
-                        "state": "Enugu",
-                        "country": "Nigeria",
-                        "image": "/images/global/LEAP_Africa.png",
-                        "achievement": "Provided leadership training and ethics education for secondary school students and young professionals. Developed ethical leaders with a strong sense of social responsibility."
-                      },
-                      {
-                        "name": "Young African Leaders Initiative (YALI) Nigeria",
-                        "state": "Lagos",
-                        "country": "Nigeria",
-                        "image": "/images/global/Young_African_Leaders_Initiative_Nigeria.png",
-                        "achievement": "Offered leadership and professional development training to young Nigerians through various programs and workshops. Trained over 50,000 young leaders, enhancing their leadership skills and civic engagement."
-                      },
-                      {
-                        "name": "Centre for Values in Leadership (CVL)",
-                        "state": "Plateau",
-                        "country": "Nigeria",
-                        "image": "/images/global/Centre_for_Values_in_Leadership.png",
-                        "achievement": "Provided leadership development programs focusing on values-based leadership for professionals and public servants. Instilled ethical leadership principles and improved governance practices in Nigeria."
-                      },
-                      {
-                        "name": "Rise Network",
-                        "state": "Lagos",
-                        "country": "Nigeria",
-                        "image": "/images/global/Rise_Network.png",
-                        "achievement": "Conducted leadership training, mentorship, and life skills programs for Nigerian youth. Empowered thousands of young Nigerians with leadership and life skills for personal and professional growth."
-                      },
-                      {
-                        "name": "Junior Chamber International (JCI) Nigeria",
-                        "state": "Lagos",
-                        "country": "Nigeria",
-                        "image": "/images/global/Junior_Chamber_International_Nigeria.png",
-                        "achievement": "Implemented leadership development programs and community service projects, fostering active citizenship among youth. Developed responsible leaders committed to positive change in their communities."
-                      },
-                      {
-                        "name": "The Tony Elumelu Foundation",
-                        "state": "Kebbi",
-                        "country": "Nigeria",
-                        "image": "/images/global/The_Tony_Elumelu_Foundation.png",
-                        "achievement": "Provided leadership and entrepreneurship training for emerging African entrepreneurs, including Nigerians. Empowered over 15,000 young entrepreneurs with the skills to lead and innovate in their businesses."
-                      },
-                      {
-                        "name": "Global Shapers Community Lagos Hub",
-                        "state": "Lagos",
-                        "country": "Nigeria",
-                        "image": "/images/global/Global_Shapers_Community_Lagos_Hub.png",
-                        "achievement": "Delivered leadership and community development programs for young Nigerians, focusing on social impact and sustainability. Fostered a network of young leaders dedicated to making a positive impact in society."
-                      }
-                    ]
-                  },
-                ]
-              },
-              {
-                "title": "Christian faith organization Educational Champion of the Decade Award",
-                "description": "Recognizing Christian faith-based organizations for their outstanding contributions to education advancement.",
-                "subCategories": [
-                  {
-                    "title": "Best Advocacy for Educational Reforms and Awareness Campaigns by a Christian Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
-                    "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    "nominees": [
-                      { name: "RCCG (Redeemed Christian Chur)", image: "/images/christain/RCCG.png", achievement: "Led nationwide campaigns for education reform, including initiatives to improve access to education in rural areas. Successfully..." },
-                      { name: "Deeper Life Bible Church", image: "/images/christain/Deeper_Life_Bible_Church.png", achievement: "Advocated for educational reforms through community outreach and partnerships with government agencies. Increased community..." },
-                      { name: "Living Faith Church Worldwide", image: "/images/christain/Living_Faith_Church_Worldwide.png", achievement: "Through the Education Commission, led efforts to reform educational policies and improve school curricula nationwide. Contri..." },
-                      { name: "Christ Embassy", image: "/images/christain/Christ_Embassy.png", achievement: "Conducted awareness campaigns focused on digital education and the integration of technology in schools. Increased adoption o..." },
-                      { name: "Catholic Church Nigeria", image: "/images/christain/Catholic_Church_Nigeria.png", achievement: "Led advocacy campaigns for inclusive education and the rights of children with disabilities to receive quality education. Pro..." },
-                      { name: "Methodist Church Nigeria", image: "/images/christain/Methodist_Church_Nigeria.png", achievement: "Engaged in campaigns for educational equity and the improvement of public school systems. Enhanced public school infrastr..." },
-                      { name: "Anglican Church Nigeria", image: "/images/christain/Anglican_Church_Nigeria.png", achievement: "Advocated for educational reforms, focusing on curriculum development and teacher training programs. Influenced curriculum..." },
-                      { name: "The Apostolic Church Nigeria", image: "/images/christain/The_Apostolic_Church_Nigeria.png", achievement: "Launched campaigns for educational access in underserved regions, particularly in the northern states. Increased educational o..." },
-                      { name: "Assemblies of God Nigeria", image: "/images/christain/Assemblies_of_God_Nigeria.png", achievement: "Led advocacy for improved educational standards in rural schools, focusing on teacher quality and infrastructure developm..." },
-                      { name: "The Lord's Chosen Charismatic", image: "/images/christain/The_Lord's_Chosen_Charismatic.png", achievement: "Promoted campaigns for adult education and literacy, particularly among women and vulnerable groups. Increased literacy rates..." }
-                    ]
-                  },
-                  {
-                    "title": "Best Educational Infrastructure Development By A Christian Organization Contribution To Achieving Education For All In Nigeria NESA-Award/Nigeria 2024",
-                    "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    "nominees": [
-                      { name: "Living Faith Church Worldwide", image: "/images/christain/Living_Faith_Church_Worldwide.png", achievement: "Established Covenant University, Faith Academy, and multiple secondary schools nationwide. Over 30,000 students benefited..." },
-                      { name: "RCCG (Redeemed Christian Chur)", image: "/images/christain/RCCG.png", achievement: "Developed Redeemer's University, several primary and secondary schools across Nigeria, and extensive educational facilities i..." },
-                      { name: "Christ Embassy", image: "/images/christain/Christ_Embassy.png", achievement: "Established Loveworld Schools and contributed to the construction of educational centers in underserved commu..." },
-                      { name: "Deeper Life Bible Church", image: "/images/christain/Deeper_Life_Bible_Church.png", achievement: "Built Anchor University and multiple primary and secondary schools with modern educational facilities. Over 15,000 students r..." },
-                      { name: "Catholic Church Nigeria", image: "/images/christain/Catholic_Church_Nigeria.png", achievement: "Established and renovated numerous schools, including Veritas University and several mission schools across Nigeria. Impr..." },
-                      { name: "Methodist Church Nigeria", image: "/images/christain/Methodist_Church_Nigeria.png", achievement: "Developed Methodist High Schools and contributed to the renovation of older mission schools. Enhanced learning environ..." },
-                      { name: "Seventh-day Adventist Church Nig,", image: "/images/christain/Seventh-day_Adventist_Church_Nig.png", achievement: "Established Babcock University and several secondary schools, focusing on health education and holistic development. Over 12..." },
-                      { name: "Anglican Church Nigeria", image: "/images/christain/Anglican_Church_Nigeria.png", achievement: "Built Ajayi Crowther University and several Anglican-run schools, improving access to quality education. Provided quality educatio..." },
-                      { name: "The Apostolic Church Nigeria", image: "/images/christain/The_Apostolic_Church_Nigeria.png", achievement: "Constructed numerous primary and secondary schools, particularly in rural areas. Improved access to education for over 10,0..." },
-                      { name: "The Lord's Chosen Charismatic", image: "/images/christain/The_Lord's_Chosen_Charismatic.png", achievement: "Developed educational infrastructure, including schools and vocational training centers, especially in rural areas. Provided e..." }
-                    ]
-                  },
-                  {
-                    "title": "Best Scholarship Program by a Christian Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
-                    "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    "nominees": [
-                      { name: "Living Faith Church Worldwide", image: "/images/christain/Living_Faith_Church_Worldwide.png", achievement: "Through the David Oyedepo Foundation, awarded scholarships to thousands of students across Africa, including Nigeria. Su..." },
-                      { name: "RCCG (Redeemed Christian Chur)", image: "/images/christain/RCCG.png", achievement: "Awarded over 5,000 scholarships annually to students at various educational levels across Nigeria. Enabled access to education for..." },
-                      { name: "Christ Embassy", image: "/images/christain/Christ_Embassy.png", achievement: "Established the Loveworld Scholarship Fund, providing financial aid to students in need. Assisted over 1,500 students annually in acc..." },
-                      { name: "Deeper Life Bible Church", image: "/images/christain/Deeper_Life_Bible_Church.png", achievement: "Provided scholarships for thousands of students through the Deeper Life Scholarship Scheme, focusing on academic excellence..." },
-                      { name: "Catholic Church Nigeria", image: "/images/christain/Catholic_Church_Nigeria.png", achievement: "Provided scholarships through various dioceses, supporting education for thousands of students from marginalized co..." },
-                      { name: "Methodist Church Nigeria", image: "/images/christain/Methodist_Church_Nigeria.png", achievement: "Offered scholarships and financial aid programs to students, particularly in rural areas. Over 2,000 students supported annua..." },
-                      { name: "Seventh-day Adventist Church Nig,", image: "/images/christain/Seventh-day_Adventist_Church_Nig.png", achievement: "Established Babcock University and several secondary schools, focusing on health education and holistic development. Over 12..." },
-                      { name: "Anglican Church Nigeria", image: "/images/christain/Anglican_Church_Nigeria.png", achievement: "Provided scholarships and bursaries to deserving students, ensuring continued education for many who might otherwise dr..." },
-                      { name: "The Apostolic Church Nigeria", image: "/images/christain/The_Apostolic_Church_Nigeria.png", achievement: "Implemented scholarship programs for students in primary, secondary, and tertiary institutions, focusing on educational equity..." },
-                      { name: "The Lord's Chosen Charismatic", image: "/images/christain/The_Lord's_Chosen_Charismatic.png", achievement: "Offered scholarships and financial support to students across Nigeria, focusing on those in rural areas. Enabled over 1,000 students..." }
-                    ]
-                  },
-                  {
-                    "title": "Best Holistic Educational Support By A Christian Organization Contribution To Achieving Education For All In Nigeria NESA-Award/Nigeria 2024",
-                    "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    "nominees": [
-                      { name: "Catholic Church Nigeria", image: "/images/christain/Catholic_Church_Nigeria.png", achievement: "Provided holistic education through schools that offer academic, spiritual, and vocational training, along with community health servic..." },
-                      { name: "Methodist Church Nigeria", image: "/images/christain/Methodist_Church_Nigeria.png", achievement: "Developed programs that integrate education, vocational training, and community outreach, focusing on holistic d..." },
-                      { name: "Anglican Church Nigeria", image: "/images/christain/Anglican_Church_Nigeria.png", achievement: "Implemented programs that combine academic education with life skills, vocational training, and moral instruction. E..." },
-                      { name: "Salvation Army Nigeria", image: "/images/christain/Salvation_Army_Nigeria.png", achievement: "Provided education and support services, including health care, vocational training, and disaster relief, particularly in underserve..." },
-                      { name: "Nigerian Baptist Convention", image: "/images/christain/Nigerian_Baptist_Convention.png", achievement: "Offered programs that support academic achievement, vocational training, and leadership development, fostering holistic gr..." },
-                      { name: "Seventh-day Adventist Church Nig,", image: "/images/christain/Seventh-day_Adventist_Church_Nig.png", achievement: "Delivered holistic education that includes spiritual development, health education, and vocational training, particularly through Bab..." },
-                      { name: "Evangelical Church Winning All", image: "/images/christain/Evangelical_Church_Winning_All.png", achievement: "Provided educational and community support programs, including health services, vocational training, and leadership develop..." },
-                      { name: "Nigerian Fellowship of Evangelical", image: "/images/christain/Nigerian_Fellowship_of_Evangelical.png", achievement: "Focused on student mentoring, leadership training, and academic support, particularly within tertiary institutions. Assisted over 7,00..." },
-                      { name: "Nigeria Christian Graduate Fellowship", image: "/images/christain/Nigeria_Christian_Graduate_Fellowship.png", achievement: "Offered mentoring, vocational training, and community development projects, supporting both academic and personal gr..." },
-                      { name: "Living Faith Church Worldwide", image: "/images/christain/Living_Faith_Church_Worldwide.png", achievement: "Through its network of schools and universities, provided holistic education that combines academics with spiritual and mor..." }
-                    ]
-                  }
-                ]
-              },
-              {
-                title: "Islamic faith organization Educational Champion of the Decade Award in Nigeria (2013-2024)",
-                description: "Celebrating Islamic faith-based organizations for their crucial role in advancing and diversifying educational opportunities.",
-                subCategories: [
-                  {
-                    title: "Best Educational Infrastructure Development by an Islamic Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
-                    description: "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    nominees: [
-                      { name: "NASFAT (Nasrul-Lahi-L-Fatih soci)", image: "/images/islam/NASFAT.png", achievement: "Established several primary and secondary schools across Nigeria, along with modern libraries and ICT centers. Over 20,000 students benefit annually." },
-                      { name: "FOMWAN (Federation of Muslim W)", image: "/images/islam/FOMWAN.png", achievement: "Developed schools, particularly in northern Nigeria, focusing on girls' education and providing necessary infrastructure. Enhanced access to education for thousands." },
-                      { name: "Ansar-Ud-Deen Society of Nigeria", image: "/images/islam/Ansar-Ud-Deen_Society_of_Nigeria.png", achievement: "Built and renovated numerous schools and Islamic learning centers across the country, with a focus on underserved communities. Provided modern facilities to enhance learning." },
-                      { name: "MSSN (Muslim Students Society of)", image: "/images/islam/MSSN.png", achievement: "Constructed educational facilities within universities and secondary schools to support Muslim students' academic and spiritual growth." },
-                      { name: "The Muslim Congress (TMC)", image: "/images/islam/The_Muslim_Congress.png", achievement: "Established schools and vocational training centers across Nigeria, particularly in rural areas, focusing on skill development and education." },
-                      { name: "Al-Habibiyyah Islamic Society,", image: "/images/islam/Al-Habibiyyah_Islamic_Society.png", achievement: "Developed several educational centers, including schools and Islamic learning institutes, providing both secular and religious education." },
-                      { name: "Islamic Education Trust (IET)", image: "/images/islam/Islamic_Education_Trust.png", achievement: "Constructed and equipped modern educational facilities, including science laboratories and libraries, to enhance learning experiences." },
-                      { name: "Islamic Society of Nigeria (ISN)", image: "/images/islam/Islamic_Society_of_Nigeria.png", achievement: "Built schools and renovated existing educational facilities, particularly in northern Nigeria, to support quality education. Enhanced infrastructure in underserved areas." },
-                      { name: "Al-Furqan Foundation", image: "/images/islam/Al-Furqan_Foundation.png", achievement: "Established schools and educational centers with a focus on integrating Islamic education with modern curricula. Provided educational infrastructure in underserved areas." },
-                      { name: "MUSWEN (Muslim Ummah of South)", image: "/images/islam/MUSWEN.png", achievement: "Developed educational facilities across southwestern Nigeria, focusing on improving access to quality Islamic and secular education." }
-                    ]
-                  },
-                  {
-                    title: "Best Scholarship Program by an Islamic Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
-                    description: "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    nominees: [
-                      { name: "FOMWAN (Federation of Muslim W)", image: "/images/islam/FOMWAN.png", achievement: "Provided scholarships specifically targeting girls and women, promoting female education in northern Nigeria. Over 3,000 girls benefited." },
-                      { name: "NASFAT (Nasrul-Lahi-L-Fatih soci)", image: "/images/islam/NASFAT.png", achievement: "Awarded thousands of scholarships annually to students at various educational levels across Nigeria. Supported the education of underprivileged students." },
-                      { name: "Ansar-Ud-Deen Society of Nigeria", image: "/images/islam/Ansar-Ud-Deen_Society_of_Nigeria.png", achievement: "Implemented scholarship programs that supported students in secondary and tertiary institutions, particularly in science and technology fields." },
-                      { name: "MSSN (Muslim Students Society of)", image: "/images/islam/MSSN.png", achievement: "Provided financial aid and scholarships to Muslim students in tertiary institutions, ensuring continuity in education. Supported thousands of students." },
-                      { name: "The Muslim Congress (TMC)", image: "/images/islam/The_Muslim_Congress.png", achievement: "Awarded scholarships to students across Nigeria, with a focus on those pursuing technical and vocational education. Over 2,000 students benefited." },
-                      { name: "Al-Habibiyyah Islamic Society,", image: "/images/islam/Al-Habibiyyah_Islamic_Society.png", achievement: "Offered scholarships to orphans and underprivileged students, enabling them to access both Islamic and secular education. Hundreds of students benefited." },
-                      { name: "Islamic Education Trust (IET)", image: "/images/islam/Islamic_Education_Trust.png", achievement: "Provided scholarships to students in higher education, particularly in science and technology disciplines. Assisted over 2,000 students." },
-                      { name: "Islamic Society of Nigeria (ISN)", image: "/images/islam/Islamic_Society_of_Nigeria.png", achievement: "Implemented a comprehensive scholarship program targeting students from low-income families, ensuring they have access to quality education." },
-                      { name: "Al-Furqan Foundation", image: "/images/islam/Al-Furqan_Foundation.png", achievement: "Provided scholarships focused on supporting students in Islamic studies and sciences, bridging religious and modern education. Hundreds of students benefited." },
-                      { name: "MUSWEN (Muslim Ummah of South)", image: "/images/islam/MUSWEN.png", achievement: "Offered scholarships and financial support to students, particularly those in tertiary education, across southwestern Nigeria. Supported hundreds of students." }
-                    ]
-                  },
-                  {
-                    title: "Best Holistic Educational Support by an Islamic Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
-                    description: "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    nominees: [
-                      { name: "NASFAT (Nasrul-Lahi-L-Fatih soci)", image: "/images/islam/NASFAT.png", achievement: "Offered comprehensive educational programs, including academic tutoring, health services, and vocational training. Benefited thousands of students." },
-                      { name: "FOMWAN (Federation of Muslim W)", image: "/images/islam/FOMWAN.png", achievement: "Provided holistic support through educational programs, health services, and vocational training, particularly for girls and women in northern Nigeria." },
-                      { name: "Ansar-Ud-Deen Society of Nigeria", image: "/images/islam/Ansar-Ud-Deen_Society_of_Nigeria.png", achievement: "Implemented programs that combined academic support with community service, leadership training, and vocational skills development." },
-                      { name: "MSSN (Muslim Students Society of)", image: "/images/islam/MSSN.png", achievement: "Provided holistic support for Muslim students in secondary and tertiary institutions, including academic mentoring and community engagement." },
-                      { name: "The Muslim Congress (TMC)", image: "/images/islam/The_Muslim_Congress.png", achievement: "Offered comprehensive support through education, vocational training, and community engagement, particularly in rural areas." },
-                      { name: "Al-Habibiyyah Islamic Society,", image: "/images/islam/Al-Habibiyyah_Islamic_Society.png", achievement: "Offered a range of support services, including education, health, and vocational training to underprivileged communities. Benefited over 10,000 individuals." },
-                      { name: "Islamic Education Trust (IET)", image: "/images/islam/Islamic_Education_Trust.png", achievement: "Implemented holistic educational programs that included academic support, vocational training, and health services, particularly in rural areas." },
-                      { name: "Islamic Society of Nigeria (ISN)", image: "/images/islam/Islamic_Society_of_Nigeria.png", achievement: "Offered comprehensive support programs, including educational, health, and community services, to enhance the lives of Muslim communities." },
-                      { name: "Al-Furqan Foundation", image: "/images/islam/Al-Furqan_Foundation.png", achievement: "Provided holistic support through integrated educational programs, focusing on academic excellence and personal development." },
-                      { name: "MUSWEN (Muslim Ummah of South)", image: "/images/islam/MUSWEN.png", achievement: "Offered comprehensive educational and community support programs, including academic mentoring, vocational training, and health services." }
-                    ]
-                  },
-                  {
-                    title: "Best Advocacy for Educational Reforms and Awareness Campaigns by an Islamic Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
-                    description: "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-                    nominees: [
-                      { name: "NASFAT (Nasrul-Lahi-L-Fatih soci)", image: "/images/islam/NASFAT.png", achievement: "Led national campaigns advocating for girls' education and improved educational standards in public schools. Influenced policies at state and national levels." },
-                      { name: "FOMWAN (Federation of Muslim W)", image: "/images/islam/FOMWAN.png", achievement: "Spearheaded educational reforms focused on female education and rights, particularly in northern Nigeria. Played a key role in policy-making and awareness." },
-                      { name: "Ansar-Ud-Deen Society of Nigeria", image: "/images/islam/Ansar-Ud-Deen_Society_of_Nigeria.png", achievement: "Engaged in advocacy campaigns for educational reforms, focusing on curriculum development and teacher training. Contributed to national education policies." },
-                      { name: "MSSN (Muslim Students Society of)", image: "/images/islam/MSSN.png", achievement: "Conducted awareness campaigns on the importance of education and engaged in policy advocacy for student rights and educational reforms." },
-                      { name: "The Muslim Congress (TMC)", image: "/images/islam/The_Muslim_Congress.png", achievement: "Led initiatives advocating for educational reforms and the integration of moral and ethical education into school curricula. Contributed to policy changes." },
-                      { name: "Al-Habibiyyah Islamic Society,", image: "/images/islam/Al-Habibiyyah_Islamic_Society.png", achievement: "Promoted campaigns for educational equity and access, particularly in marginalized communities. Influenced local policies through advocacy efforts." },
-                      { name: "Islamic Education Trust (IET)", image: "/images/islam/Islamic_Education_Trust.png", achievement: "Advocated for the adoption of modern educational practices in Islamic schools across Nigeria. Improved the quality of Islamic education nationwide." },
-                      { name: "Islamic Society of Nigeria (ISN)", image: "/images/islam/Islamic_Society_of_Nigeria.png", achievement: "Conducted campaigns focused on educational reforms and the promotion of inclusive education for all. Influenced national education policies." },
-                      { name: "Al-Furqan Foundation", image: "/images/islam/Al-Furqan_Foundation.png", achievement: "Led advocacy efforts to promote education in rural areas, focusing on infrastructure development and educational access. Contributed to policy changes." },
-                      { name: "MUSWEN (Muslim Ummah of South)", image: "/images/islam/MUSWEN.png", achievement: "Advocated for educational reforms in southwestern Nigeria, focusing on improving public school systems and teacher training programs." }
-                    ]
-                  }
-                ]
-              },
-    {
-      title: "Political Leaders in Nigeria 2024 Recognition Award for the Best Educational Support Services",
-      description: "This award recognizes political leaders at both state and federal levels who have made outstanding contributions to education in Nigeria through various initiatives, policies, and support programs that advance quality education for all.",
-      subCategories: [
-        {
-          title: "Outstanding Scholarship Program for Both Vocational and Formal Education by a Politician",
-          description: "Recognizes political leaders who have established or significantly supported scholarship programs that provide educational opportunities for both vocational and formal education pathways, helping to bridge the skills gap and promote inclusive education.",
-          nominees: [
-            { name: "Babajide Sanwo-Olu", image: "/images/political/babajide-sanwo-olu.png", achievement: "Established the Lagos State Scholarship Board providing over 10,000 scholarships annually for both vocational and university education.", state: "Lagos", country: "Nigeria" },
-            { name: "Nyesom Wike", image: "/images/political/nyesom-wike.png", achievement: "Created the Rivers State Scholarship Scheme supporting over 5,000 students in technical and university programs annually.", state: "Rivers", country: "Nigeria" },
-            { name: "Godwin Obaseki", image: "/images/political/godwin-obaseki.png", achievement: "Launched the Edo State Skills Development Agency providing vocational training and scholarships to over 15,000 youths.", state: "Edo", country: "Nigeria" },
-            { name: "Seyi Makinde", image: "/images/political/seyi-makinde.png", achievement: "Implemented free education policy and established technical colleges with scholarship programs benefiting over 20,000 students.", state: "Oyo", country: "Nigeria" },
-            { name: "Dapo Abiodun", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Ifeanyi Ugwuanyi", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "Ahmadu Fintiri", image: "/images/political/ahmadu-fintiri.png", achievement: "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.", state: "Adamawa", country: "Nigeria" },
-            { name: "Bello Matawalle", image: "/images/political/bello-matawalle.png", achievement: "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.", state: "Zamfara", country: "Nigeria" },
-            { name: "Abdullahi Ganduje", image: "/images/political/abdullahi-ganduje.png", achievement: "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.", state: "Kano", country: "Nigeria" },
-            { name: "Nasir El-Rufai", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" },
-            { name: "Samuel Ortom", image: "/images/political/samuel-ortom.png", achievement: "Scholarship for educational and vocational students in Benue state. 1200+ students supported from 2022-2024.", state: "Benue", country: "Nigeria" },
-            { name: "Yahaya Bello", image: "/images/political/yahaya-bello.png", achievement: "Expanded scholarship programs for students in tertiary institutions in Kogi state. 2000+ students benefitted from 2022-2024.", state: "Kogi", country: "Nigeria" },
-            { name: "Philip Aduda", image: "/images/political/phillip aduda.png", achievement: "Scholarships for secondary and tertiary students across the FCT. Over 1500 students supported between 2022-2024", state: "FCT", country: "Nigeria" },
-            { name: "Smart Adeyemi", image: "/images/political/smart-adeyemi.png", achievement: "Donation of science laboratory equipments to secondary schools in Kogi state. Enhance science education for 2500+ students between 2022-2024.", state: "Kogi", country: "Nigeria" },
-            { name: "Abubakar Sani Bello ", image: "/images/political/sani-bello.png", achievement: "Building new classrooms and providing learning materials in Niger state. 2000+ students benefitted from enhanced learning facilities between 2022-2024.", state: "Niger", country: "Nigeria" },
-            { name: "Bukola Saraki", image: "/images/political/bukola-saraki.png", achievement: "Adovocay for educational reforms and funding in Kwara state. Policy changes leading to increased funding and access between 2022-2024.", state: "Kwara", country: "Nigeria" },
-            { name: "Dino Melaye", image: "/images/political/dino-melaye.png", achievement: "Advocacy for inclusive education policy in Kogi state. Improved acces to education for marginalized groups in 2022-2024.", state: "Kogi", country: "Nigeria" },
-            { name: "Abdulfatah Ahmed", image: "/images/political/abdulfatah-ahmed.png", achievement: "Policies promoting technical and vocational education in Kwara state. Enhanced focus on vocational education and skills development between 2022-2024", state: "Kwara", country: "Nigeria" },
-            { name: "Babagana Zulum", image: "/images/political/babagana-zulum.png", achievement: "Scholarships for displaced children in borno state. 3000+ students supported between 2022-2024.", state: "Borno", country: "Nigeria" },
-            { name: "Ali Ndume", image: "/images/political/ali-ndume.png", achievement: "Vocational scholarships for youths in conflict zones. 1200+ youths benefitted from 2022-2024.", state: "Kano", country: "Nigeria" },
-            { name: "Aisha Alhassan", image: "/images/political/aisha-alhassan.png", achievement: ".", state: "Kaduna", country: "Nigeria" },
-            { name: "Binta Masi Garba", image: "/images/political/binta-masi-garba.png", achievement: "Donation of books and learning materials to schools in Adamawa state. Enhanced access to educational resources 2000+ students between 2022-2024.", state: "Adamawa", country: "Nigeria" },
-            { name: "Bala Mohammed", image: "/images/political/bala-mohammed.png", achievement: "Construction of technical and vocational training centeres across Bauchi state.", state: "Bauchi", country: "Nigeria" },
-            { name: "Ahmed Lawan ", image: "/images/political/ahmed-lawan.png", achievement: "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.", state: "Kano", country: "Nigeria" },
-            { name: "Mohammed Abubakar ", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" },
-            { name: "Ibrahim Shekarau ", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" },
-            { name: "Aminu Tambuwal", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "Aminu Masari", image: "/images/political/ahmadu-fintiri.png", achievement: "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.", state: "Adamawa", country: "Nigeria" },
-            { name: "Kabiru Gaya ", image: "/images/political/bello-matawalle.png", achievement: "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.", state: "Zamfara", country: "Nigeria" },
-            { name: "Atiku Bagudu ", image: "/images/political/abdullahi-ganduje.png", achievement: "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.", state: "Kano", country: "Nigeria" },
-            { name: "Shehu Sani ", image: "/images/political/nasir-el-rufai.png", achievement: "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.", state: "Kaduna", country: "Nigeria" },
-            { name: "Dave Umahi ", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Enyinnaya Abaribe ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Ike Ekweremadu ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Willie Obiano ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Rochas Okorocha ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Ben Murray-Bruce ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Ifeanyi Okowa", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "James Manager ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "Douye Diri ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "Rotimi Akeredolu ", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Oluremi Tinubu ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "Ibikunle Amosun", image: "/images/political/dapo-abiodun.png", achievement: "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.", state: "Ogun", country: "Nigeria" },
-            { name: "Kayode Fayemi ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" },
-            { name: "Bola Ahmed Tinubu ", image: "/images/political/ifeanyi-ugwuanyi.png", achievement: "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.", state: "Enugu", country: "Nigeria" }
-          ]
-        },
-        {
-          title: "Exemplary Infrastructure Development and Donations for Education by a Politician",
-          description: "Honors political leaders who have championed the development of educational infrastructure, including school buildings, libraries, laboratories, technology centers, and other facilities that enhance the learning environment.",
-          nominees: [
-            { name: "Babajide Sanwo-Olu", image: "/images/political/babajide-sanwo-olu.png", achievement: "Constructed over 100 new schools and renovated 500+ existing schools, including state-of-the-art science laboratories and ICT centers.", state: "Lagos", country: "Nigeria" },
-            { name: "Godwin Obaseki", image: "/images/political/godwin-obaseki.png", achievement: "Built 200+ new classrooms and established digital learning centers in all 192 wards of Edo State through the EdoBEST program.", state: "Edo", country: "Nigeria" },
-            { name: "Seyi Makinde", image: "/images/political/seyi-makinde.png", achievement: "Constructed 300+ new classrooms, renovated 1,000+ schools, and built modern libraries across Oyo State.", state: "Oyo", country: "Nigeria" },
-            { name: "Ifeanyi Okowa", image: "/images/political/ifeanyi-okowa.png", achievement: "Built 50+ new secondary schools and established technical colleges with modern workshops and laboratories in Delta State.", state: "Delta", country: "Nigeria" },
-            { name: "Willie Obiano", image: "/images/political/willie-obiano.png", achievement: "Constructed over 80 new schools and established the Anambra State University of Technology with world-class facilities.", state: "Anambra", country: "Nigeria" },
-            { name: "Dave Umahi", image: "/images/political/dave-umahi.png", achievement: "Built 50+ model schools with modern facilities and established the King David University of Medical Sciences.", state: "Ebonyi", country: "Nigeria" },
-            { name: "Ben Ayade", image: "/images/political/ben-ayade.png", achievement: "Established multiple technical institutes and built modern school facilities across Cross River State.", state: "Cross River", country: "Nigeria" },
-            { name: "Douye Diri", image: "/images/political/douye-diri.png", achievement: "Constructed new schools and renovated existing facilities, focusing on flood-resistant infrastructure in Bayelsa State.", state: "Bayelsa", country: "Nigeria" },
-            { name: "Hope Uzodimma", image: "/images/political/hope-uzodimma.png", achievement: "Built new schools and established vocational training centers with modern equipment across Imo State.", state: "Imo", country: "Nigeria" },
-            { name: "Rotimi Akeredolu", image: "/images/political/rotimi-akeredolu.png", achievement: "Constructed multiple schools and established the Ondo State University of Medical Sciences with state-of-the-art facilities.", state: "Ondo", country: "Nigeria" }
-          ]
-        },
-        {
-          title: "Advocacy and Policy Development for Education by a Politician",
-          description: "Celebrates political leaders who have been instrumental in developing and advocating for educational policies that have positively impacted the Nigerian education system, including legislative reforms, policy initiatives, and advocacy efforts.",
-          nominees: [
-            { name: "Femi Gbajabiamila", image: "/images/political/femi-gbajabiamila.png", achievement: "As Speaker of the House of Representatives, championed the passage of multiple education bills and increased budgetary allocation to education.", state: "Lagos", country: "Nigeria" },
-            { name: "Ahmad Lawan", image: "/images/political/ahmad-lawan.png", achievement: "As Senate President, led legislative efforts to improve education funding and policy reforms at the federal level.", state: "Yobe", country: "Nigeria" },
-            { name: "Adamu Adamu", image: "/images/political/adamu-adamu.png", achievement: "As Minister of Education, implemented key policy reforms including the National Policy on Education and improved JAMB processes.", state: "Bauchi", country: "Nigeria" },
-            { name: "Lai Mohammed", image: "/images/political/lai-mohammed.png", achievement: "Advocated for digital literacy policies and promoted the integration of technology in education across Nigeria.", state: "Kwara", country: "Nigeria" },
-            { name: "Zainab Ahmed", image: "/images/political/zainab-ahmed.png", achievement: "As Minister of Finance, advocated for increased education budget allocation and transparent funding mechanisms.", state: "Kaduna", country: "Nigeria" },
-            { name: "Abubakar Malami", image: "/images/political/abubakar-malami.png", achievement: "Championed legal frameworks for education rights and anti-corruption measures in the education sector.", state: "Kebbi", country: "Nigeria" },
-            { name: "Boss Mustapha", image: "/images/political/boss-mustapha.png", achievement: "Coordinated inter-ministerial efforts for education policy implementation and COVID-19 education response strategies.", state: "Adamawa", country: "Nigeria" },
-            { name: "Hadi Sirika", image: "/images/political/hadi-sirika.png", achievement: "Promoted aviation education and established training programs for technical skills in the aviation sector.", state: "Katsina", country: "Nigeria" },
-            { name: "Osagie Ehanire", image: "/images/political/osagie-ehanire.png", achievement: "Advocated for health education policies and medical training programs to improve healthcare education.", state: "Edo", country: "Nigeria" },
-            { name: "Babatunde Fashola", image: "/images/political/babatunde-fashola.png", achievement: "Promoted policies for technical education and infrastructure development supporting educational advancement.", state: "Lagos", country: "Nigeria" }
-          ]
-        }
-      ]
-    },
+      {
+        title:
+          "Best Educational Grant-Giving Organization in Nigeria (2020-2024)",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "Bill and Melinda Gates Foundation",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Bill_and_Melinda_Gates_Foundation.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.'",
+          },
+          {
+            name: " GPE (Global Partnership for Education.) ",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/GPE.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Ford Foundation ",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Ford_Foundation.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Carnegie Corporation of New York",
+            state: "Enugu",
+            country: "Nigeria",
+            image: "/images/global/Carnegie_Corporation_of_NewYork.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Rockefeller Foundation",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Rockefeller_Foundation.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "MacArthur Foundation",
+            state: "Plateau",
+            country: "Nigeria",
+            image: "/images/global/MacArthur_Foundation.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Open Society Foundations",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Open_Society_Foundations.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+          },
+          {
+            name: "Hewlett Foundation",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Hewlett_Foundation.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Packard Foundation",
+            state: "Kebbi",
+            country: "Nigeria",
+            image: "/images/global/Packard_Foundation.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+          },
+          {
+            name: "Kellogg Foundation ",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Kellogg_Foundation.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+          },
+        ],
+      },
+      {
+        title:
+          "Best International Airline Education Support Initiative in Nigeria (2020-2024)",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "Emirates Airlines",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Emirates_Airlines.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community.'",
+          },
+          {
+            name: "British Airways",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/British_Airways.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Qatar Airways",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Qatar_Airways.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Turkish Airlines",
+            state: "Enugu",
+            country: "Nigeria",
+            image: "/images/global/Turkish_Airlines.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Ethiopian Airlines",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Ethiopian_Airlines.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Delta Airlines",
+            state: "Plateau",
+            country: "Nigeria",
+            image: "/images/global/Delta_Airlines.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Lufthansa",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Lufthansa.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+          },
+          {
+            name: "Air France",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Air_France.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community'",
+          },
+          {
+            name: "Kenya Airways",
+            state: "Kebbi",
+            country: "Nigeria",
+            image: "/images/global/Kenya_Airways.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+          },
+          {
+            name: " KLM Royal Dutch Airlines",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/KLM_Royal_Dutch_Airlines.png",
+            achievement:
+              "dedication to improving rural education, particularly for girls, demonstrates a significant impact on her community",
+          },
+        ],
+      },
+      {
+        title: "Best Leadership Training Organization in Nigeria (2020-2024)",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "Leadership Initiative for Transformation and Empowerment (LITE Africa)",
+            state: "Lagos",
+            country: "Nigeria",
+            image:
+              "/images/global/Leadership_Initiative_for_Transformation_and_Empowerment.png",
+            achievement:
+              "Provided leadership and civic education training programs for youth and community leaders across Nigeria. Empowered over 20,000 individuals with leadership skills and civic responsibility.",
+          },
+          {
+            name: "African Leadership Academy (ALA)",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/African_Leadership_Academy.png",
+            achievement:
+              "Delivered leadership training and entrepreneurship programs for young Nigerians with high potential. Cultivated a new generation of leaders prepared to drive change in their communities. Year(s) of Contribution: 2020-2024.",
+          },
+          {
+            name: "The Bridge Leadership Foundation",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/The_Bridge_Leadership_Foundation.png",
+            achievement:
+              "Implemented leadership and career development programs for young professionals and students in Nigeria. Enhanced leadership capacity and career readiness for thousands of Nigerian youth.",
+          },
+          {
+            name: "LEAP Africa",
+            state: "Enugu",
+            country: "Nigeria",
+            image: "/images/global/LEAP_Africa.png",
+            achievement:
+              "Provided leadership training and ethics education for secondary school students and young professionals. Developed ethical leaders with a strong sense of social responsibility.",
+          },
+          {
+            name: "Young African Leaders Initiative (YALI) Nigeria",
+            state: "Lagos",
+            country: "Nigeria",
+            image:
+              "/images/global/Young_African_Leaders_Initiative_Nigeria.png",
+            achievement:
+              "Offered leadership and professional development training to young Nigerians through various programs and workshops. Trained over 50,000 young leaders, enhancing their leadership skills and civic engagement.",
+          },
+          {
+            name: "Centre for Values in Leadership (CVL)",
+            state: "Plateau",
+            country: "Nigeria",
+            image: "/images/global/Centre_for_Values_in_Leadership.png",
+            achievement:
+              "Provided leadership development programs focusing on values-based leadership for professionals and public servants. Instilled ethical leadership principles and improved governance practices in Nigeria.",
+          },
+          {
+            name: "Rise Network",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Rise_Network.png",
+            achievement:
+              "Conducted leadership training, mentorship, and life skills programs for Nigerian youth. Empowered thousands of young Nigerians with leadership and life skills for personal and professional growth.",
+          },
+          {
+            name: "Junior Chamber International (JCI) Nigeria",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Junior_Chamber_International_Nigeria.png",
+            achievement:
+              "Implemented leadership development programs and community service projects, fostering active citizenship among youth. Developed responsible leaders committed to positive change in their communities.",
+          },
+          {
+            name: "The Tony Elumelu Foundation",
+            state: "Kebbi",
+            country: "Nigeria",
+            image: "/images/global/The_Tony_Elumelu_Foundation.png",
+            achievement:
+              "Provided leadership and entrepreneurship training for emerging African entrepreneurs, including Nigerians. Empowered over 15,000 young entrepreneurs with the skills to lead and innovate in their businesses.",
+          },
+          {
+            name: "Global Shapers Community Lagos Hub",
+            state: "Lagos",
+            country: "Nigeria",
+            image: "/images/global/Global_Shapers_Community_Lagos_Hub.png",
+            achievement:
+              "Delivered leadership and community development programs for young Nigerians, focusing on social impact and sustainability. Fostered a network of young leaders dedicated to making a positive impact in society.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title:
+      "Christian faith organization Educational Champion of the Decade Award",
+    description:
+      "Recognizing Christian faith-based organizations for their outstanding contributions to education advancement.",
+    subCategories: [
+      {
+        title:
+          "Best Advocacy for Educational Reforms and Awareness Campaigns by a Christian Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "RCCG (Redeemed Christian Chur)",
+            image: "/images/christain/RCCG.png",
+            achievement:
+              "Led nationwide campaigns for education reform, including initiatives to improve access to education in rural areas. Successfully...",
+          },
+          {
+            name: "Deeper Life Bible Church",
+            image: "/images/christain/Deeper_Life_Bible_Church.png",
+            achievement:
+              "Advocated for educational reforms through community outreach and partnerships with government agencies. Increased community...",
+          },
+          {
+            name: "Living Faith Church Worldwide",
+            image: "/images/christain/Living_Faith_Church_Worldwide.png",
+            achievement:
+              "Through the Education Commission, led efforts to reform educational policies and improve school curricula nationwide. Contri...",
+          },
+          {
+            name: "Christ Embassy",
+            image: "/images/christain/Christ_Embassy.png",
+            achievement:
+              "Conducted awareness campaigns focused on digital education and the integration of technology in schools. Increased adoption o...",
+          },
+          {
+            name: "Catholic Church Nigeria",
+            image: "/images/christain/Catholic_Church_Nigeria.png",
+            achievement:
+              "Led advocacy campaigns for inclusive education and the rights of children with disabilities to receive quality education. Pro...",
+          },
+          {
+            name: "Methodist Church Nigeria",
+            image: "/images/christain/Methodist_Church_Nigeria.png",
+            achievement:
+              "Engaged in campaigns for educational equity and the improvement of public school systems. Enhanced public school infrastr...",
+          },
+          {
+            name: "Anglican Church Nigeria",
+            image: "/images/christain/Anglican_Church_Nigeria.png",
+            achievement:
+              "Advocated for educational reforms, focusing on curriculum development and teacher training programs. Influenced curriculum...",
+          },
+          {
+            name: "The Apostolic Church Nigeria",
+            image: "/images/christain/The_Apostolic_Church_Nigeria.png",
+            achievement:
+              "Launched campaigns for educational access in underserved regions, particularly in the northern states. Increased educational o...",
+          },
+          {
+            name: "Assemblies of God Nigeria",
+            image: "/images/christain/Assemblies_of_God_Nigeria.png",
+            achievement:
+              "Led advocacy for improved educational standards in rural schools, focusing on teacher quality and infrastructure developm...",
+          },
+          {
+            name: "The Lord's Chosen Charismatic",
+            image: "/images/christain/The_Lord's_Chosen_Charismatic.png",
+            achievement:
+              "Promoted campaigns for adult education and literacy, particularly among women and vulnerable groups. Increased literacy rates...",
+          },
+        ],
+      },
+      {
+        title:
+          "Best Educational Infrastructure Development By A Christian Organization Contribution To Achieving Education For All In Nigeria NESA-Award/Nigeria 2024",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "Living Faith Church Worldwide",
+            image: "/images/christain/Living_Faith_Church_Worldwide.png",
+            achievement:
+              "Established Covenant University, Faith Academy, and multiple secondary schools nationwide. Over 30,000 students benefited...",
+          },
+          {
+            name: "RCCG (Redeemed Christian Chur)",
+            image: "/images/christain/RCCG.png",
+            achievement:
+              "Developed Redeemer's University, several primary and secondary schools across Nigeria, and extensive educational facilities i...",
+          },
+          {
+            name: "Christ Embassy",
+            image: "/images/christain/Christ_Embassy.png",
+            achievement:
+              "Established Loveworld Schools and contributed to the construction of educational centers in underserved commu...",
+          },
+          {
+            name: "Deeper Life Bible Church",
+            image: "/images/christain/Deeper_Life_Bible_Church.png",
+            achievement:
+              "Built Anchor University and multiple primary and secondary schools with modern educational facilities. Over 15,000 students r...",
+          },
+          {
+            name: "Catholic Church Nigeria",
+            image: "/images/christain/Catholic_Church_Nigeria.png",
+            achievement:
+              "Established and renovated numerous schools, including Veritas University and several mission schools across Nigeria. Impr...",
+          },
+          {
+            name: "Methodist Church Nigeria",
+            image: "/images/christain/Methodist_Church_Nigeria.png",
+            achievement:
+              "Developed Methodist High Schools and contributed to the renovation of older mission schools. Enhanced learning environ...",
+          },
+          {
+            name: "Seventh-day Adventist Church Nig,",
+            image: "/images/christain/Seventh-day_Adventist_Church_Nig.png",
+            achievement:
+              "Established Babcock University and several secondary schools, focusing on health education and holistic development. Over 12...",
+          },
+          {
+            name: "Anglican Church Nigeria",
+            image: "/images/christain/Anglican_Church_Nigeria.png",
+            achievement:
+              "Built Ajayi Crowther University and several Anglican-run schools, improving access to quality education. Provided quality educatio...",
+          },
+          {
+            name: "The Apostolic Church Nigeria",
+            image: "/images/christain/The_Apostolic_Church_Nigeria.png",
+            achievement:
+              "Constructed numerous primary and secondary schools, particularly in rural areas. Improved access to education for over 10,0...",
+          },
+          {
+            name: "The Lord's Chosen Charismatic",
+            image: "/images/christain/The_Lord's_Chosen_Charismatic.png",
+            achievement:
+              "Developed educational infrastructure, including schools and vocational training centers, especially in rural areas. Provided e...",
+          },
+        ],
+      },
+      {
+        title:
+          "Best Scholarship Program by a Christian Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "Living Faith Church Worldwide",
+            image: "/images/christain/Living_Faith_Church_Worldwide.png",
+            achievement:
+              "Through the David Oyedepo Foundation, awarded scholarships to thousands of students across Africa, including Nigeria. Su...",
+          },
+          {
+            name: "RCCG (Redeemed Christian Chur)",
+            image: "/images/christain/RCCG.png",
+            achievement:
+              "Awarded over 5,000 scholarships annually to students at various educational levels across Nigeria. Enabled access to education for...",
+          },
+          {
+            name: "Christ Embassy",
+            image: "/images/christain/Christ_Embassy.png",
+            achievement:
+              "Established the Loveworld Scholarship Fund, providing financial aid to students in need. Assisted over 1,500 students annually in acc...",
+          },
+          {
+            name: "Deeper Life Bible Church",
+            image: "/images/christain/Deeper_Life_Bible_Church.png",
+            achievement:
+              "Provided scholarships for thousands of students through the Deeper Life Scholarship Scheme, focusing on academic excellence...",
+          },
+          {
+            name: "Catholic Church Nigeria",
+            image: "/images/christain/Catholic_Church_Nigeria.png",
+            achievement:
+              "Provided scholarships through various dioceses, supporting education for thousands of students from marginalized co...",
+          },
+          {
+            name: "Methodist Church Nigeria",
+            image: "/images/christain/Methodist_Church_Nigeria.png",
+            achievement:
+              "Offered scholarships and financial aid programs to students, particularly in rural areas. Over 2,000 students supported annua...",
+          },
+          {
+            name: "Seventh-day Adventist Church Nig,",
+            image: "/images/christain/Seventh-day_Adventist_Church_Nig.png",
+            achievement:
+              "Established Babcock University and several secondary schools, focusing on health education and holistic development. Over 12...",
+          },
+          {
+            name: "Anglican Church Nigeria",
+            image: "/images/christain/Anglican_Church_Nigeria.png",
+            achievement:
+              "Provided scholarships and bursaries to deserving students, ensuring continued education for many who might otherwise dr...",
+          },
+          {
+            name: "The Apostolic Church Nigeria",
+            image: "/images/christain/The_Apostolic_Church_Nigeria.png",
+            achievement:
+              "Implemented scholarship programs for students in primary, secondary, and tertiary institutions, focusing on educational equity...",
+          },
+          {
+            name: "The Lord's Chosen Charismatic",
+            image: "/images/christain/The_Lord's_Chosen_Charismatic.png",
+            achievement:
+              "Offered scholarships and financial support to students across Nigeria, focusing on those in rural areas. Enabled over 1,000 students...",
+          },
+        ],
+      },
+      {
+        title:
+          "Best Holistic Educational Support By A Christian Organization Contribution To Achieving Education For All In Nigeria NESA-Award/Nigeria 2024",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "Catholic Church Nigeria",
+            image: "/images/christain/Catholic_Church_Nigeria.png",
+            achievement:
+              "Provided holistic education through schools that offer academic, spiritual, and vocational training, along with community health servic...",
+          },
+          {
+            name: "Methodist Church Nigeria",
+            image: "/images/christain/Methodist_Church_Nigeria.png",
+            achievement:
+              "Developed programs that integrate education, vocational training, and community outreach, focusing on holistic d...",
+          },
+          {
+            name: "Anglican Church Nigeria",
+            image: "/images/christain/Anglican_Church_Nigeria.png",
+            achievement:
+              "Implemented programs that combine academic education with life skills, vocational training, and moral instruction. E...",
+          },
+          {
+            name: "Salvation Army Nigeria",
+            image: "/images/christain/Salvation_Army_Nigeria.png",
+            achievement:
+              "Provided education and support services, including health care, vocational training, and disaster relief, particularly in underserve...",
+          },
+          {
+            name: "Nigerian Baptist Convention",
+            image: "/images/christain/Nigerian_Baptist_Convention.png",
+            achievement:
+              "Offered programs that support academic achievement, vocational training, and leadership development, fostering holistic gr...",
+          },
+          {
+            name: "Seventh-day Adventist Church Nig,",
+            image: "/images/christain/Seventh-day_Adventist_Church_Nig.png",
+            achievement:
+              "Delivered holistic education that includes spiritual development, health education, and vocational training, particularly through Bab...",
+          },
+          {
+            name: "Evangelical Church Winning All",
+            image: "/images/christain/Evangelical_Church_Winning_All.png",
+            achievement:
+              "Provided educational and community support programs, including health services, vocational training, and leadership develop...",
+          },
+          {
+            name: "Nigerian Fellowship of Evangelical",
+            image: "/images/christain/Nigerian_Fellowship_of_Evangelical.png",
+            achievement:
+              "Focused on student mentoring, leadership training, and academic support, particularly within tertiary institutions. Assisted over 7,00...",
+          },
+          {
+            name: "Nigeria Christian Graduate Fellowship",
+            image:
+              "/images/christain/Nigeria_Christian_Graduate_Fellowship.png",
+            achievement:
+              "Offered mentoring, vocational training, and community development projects, supporting both academic and personal gr...",
+          },
+          {
+            name: "Living Faith Church Worldwide",
+            image: "/images/christain/Living_Faith_Church_Worldwide.png",
+            achievement:
+              "Through its network of schools and universities, provided holistic education that combines academics with spiritual and mor...",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title:
+      "Islamic faith organization Educational Champion of the Decade Award in Nigeria (2013-2024)",
+    description:
+      "Celebrating Islamic faith-based organizations for their crucial role in advancing and diversifying educational opportunities.",
+    subCategories: [
+      {
+        title:
+          "Best Educational Infrastructure Development by an Islamic Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "NASFAT (Nasrul-Lahi-L-Fatih soci)",
+            image: "/images/islam/NASFAT.png",
+            achievement:
+              "Established several primary and secondary schools across Nigeria, along with modern libraries and ICT centers. Over 20,000 students benefit annually.",
+          },
+          {
+            name: "FOMWAN (Federation of Muslim W)",
+            image: "/images/islam/FOMWAN.png",
+            achievement:
+              "Developed schools, particularly in northern Nigeria, focusing on girls' education and providing necessary infrastructure. Enhanced access to education for thousands.",
+          },
+          {
+            name: "Ansar-Ud-Deen Society of Nigeria",
+            image: "/images/islam/Ansar-Ud-Deen_Society_of_Nigeria.png",
+            achievement:
+              "Built and renovated numerous schools and Islamic learning centers across the country, with a focus on underserved communities. Provided modern facilities to enhance learning.",
+          },
+          {
+            name: "MSSN (Muslim Students Society of)",
+            image: "/images/islam/MSSN.png",
+            achievement:
+              "Constructed educational facilities within universities and secondary schools to support Muslim students' academic and spiritual growth.",
+          },
+          {
+            name: "The Muslim Congress (TMC)",
+            image: "/images/islam/The_Muslim_Congress.png",
+            achievement:
+              "Established schools and vocational training centers across Nigeria, particularly in rural areas, focusing on skill development and education.",
+          },
+          {
+            name: "Al-Habibiyyah Islamic Society,",
+            image: "/images/islam/Al-Habibiyyah_Islamic_Society.png",
+            achievement:
+              "Developed several educational centers, including schools and Islamic learning institutes, providing both secular and religious education.",
+          },
+          {
+            name: "Islamic Education Trust (IET)",
+            image: "/images/islam/Islamic_Education_Trust.png",
+            achievement:
+              "Constructed and equipped modern educational facilities, including science laboratories and libraries, to enhance learning experiences.",
+          },
+          {
+            name: "Islamic Society of Nigeria (ISN)",
+            image: "/images/islam/Islamic_Society_of_Nigeria.png",
+            achievement:
+              "Built schools and renovated existing educational facilities, particularly in northern Nigeria, to support quality education. Enhanced infrastructure in underserved areas.",
+          },
+          {
+            name: "Al-Furqan Foundation",
+            image: "/images/islam/Al-Furqan_Foundation.png",
+            achievement:
+              "Established schools and educational centers with a focus on integrating Islamic education with modern curricula. Provided educational infrastructure in underserved areas.",
+          },
+          {
+            name: "MUSWEN (Muslim Ummah of South)",
+            image: "/images/islam/MUSWEN.png",
+            achievement:
+              "Developed educational facilities across southwestern Nigeria, focusing on improving access to quality Islamic and secular education.",
+          },
+        ],
+      },
+      {
+        title:
+          "Best Scholarship Program by an Islamic Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "FOMWAN (Federation of Muslim W)",
+            image: "/images/islam/FOMWAN.png",
+            achievement:
+              "Provided scholarships specifically targeting girls and women, promoting female education in northern Nigeria. Over 3,000 girls benefited.",
+          },
+          {
+            name: "NASFAT (Nasrul-Lahi-L-Fatih soci)",
+            image: "/images/islam/NASFAT.png",
+            achievement:
+              "Awarded thousands of scholarships annually to students at various educational levels across Nigeria. Supported the education of underprivileged students.",
+          },
+          {
+            name: "Ansar-Ud-Deen Society of Nigeria",
+            image: "/images/islam/Ansar-Ud-Deen_Society_of_Nigeria.png",
+            achievement:
+              "Implemented scholarship programs that supported students in secondary and tertiary institutions, particularly in science and technology fields.",
+          },
+          {
+            name: "MSSN (Muslim Students Society of)",
+            image: "/images/islam/MSSN.png",
+            achievement:
+              "Provided financial aid and scholarships to Muslim students in tertiary institutions, ensuring continuity in education. Supported thousands of students.",
+          },
+          {
+            name: "The Muslim Congress (TMC)",
+            image: "/images/islam/The_Muslim_Congress.png",
+            achievement:
+              "Awarded scholarships to students across Nigeria, with a focus on those pursuing technical and vocational education. Over 2,000 students benefited.",
+          },
+          {
+            name: "Al-Habibiyyah Islamic Society,",
+            image: "/images/islam/Al-Habibiyyah_Islamic_Society.png",
+            achievement:
+              "Offered scholarships to orphans and underprivileged students, enabling them to access both Islamic and secular education. Hundreds of students benefited.",
+          },
+          {
+            name: "Islamic Education Trust (IET)",
+            image: "/images/islam/Islamic_Education_Trust.png",
+            achievement:
+              "Provided scholarships to students in higher education, particularly in science and technology disciplines. Assisted over 2,000 students.",
+          },
+          {
+            name: "Islamic Society of Nigeria (ISN)",
+            image: "/images/islam/Islamic_Society_of_Nigeria.png",
+            achievement:
+              "Implemented a comprehensive scholarship program targeting students from low-income families, ensuring they have access to quality education.",
+          },
+          {
+            name: "Al-Furqan Foundation",
+            image: "/images/islam/Al-Furqan_Foundation.png",
+            achievement:
+              "Provided scholarships focused on supporting students in Islamic studies and sciences, bridging religious and modern education. Hundreds of students benefited.",
+          },
+          {
+            name: "MUSWEN (Muslim Ummah of South)",
+            image: "/images/islam/MUSWEN.png",
+            achievement:
+              "Offered scholarships and financial support to students, particularly those in tertiary education, across southwestern Nigeria. Supported hundreds of students.",
+          },
+        ],
+      },
+      {
+        title:
+          "Best Holistic Educational Support by an Islamic Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "NASFAT (Nasrul-Lahi-L-Fatih soci)",
+            image: "/images/islam/NASFAT.png",
+            achievement:
+              "Offered comprehensive educational programs, including academic tutoring, health services, and vocational training. Benefited thousands of students.",
+          },
+          {
+            name: "FOMWAN (Federation of Muslim W)",
+            image: "/images/islam/FOMWAN.png",
+            achievement:
+              "Provided holistic support through educational programs, health services, and vocational training, particularly for girls and women in northern Nigeria.",
+          },
+          {
+            name: "Ansar-Ud-Deen Society of Nigeria",
+            image: "/images/islam/Ansar-Ud-Deen_Society_of_Nigeria.png",
+            achievement:
+              "Implemented programs that combined academic support with community service, leadership training, and vocational skills development.",
+          },
+          {
+            name: "MSSN (Muslim Students Society of)",
+            image: "/images/islam/MSSN.png",
+            achievement:
+              "Provided holistic support for Muslim students in secondary and tertiary institutions, including academic mentoring and community engagement.",
+          },
+          {
+            name: "The Muslim Congress (TMC)",
+            image: "/images/islam/The_Muslim_Congress.png",
+            achievement:
+              "Offered comprehensive support through education, vocational training, and community engagement, particularly in rural areas.",
+          },
+          {
+            name: "Al-Habibiyyah Islamic Society,",
+            image: "/images/islam/Al-Habibiyyah_Islamic_Society.png",
+            achievement:
+              "Offered a range of support services, including education, health, and vocational training to underprivileged communities. Benefited over 10,000 individuals.",
+          },
+          {
+            name: "Islamic Education Trust (IET)",
+            image: "/images/islam/Islamic_Education_Trust.png",
+            achievement:
+              "Implemented holistic educational programs that included academic support, vocational training, and health services, particularly in rural areas.",
+          },
+          {
+            name: "Islamic Society of Nigeria (ISN)",
+            image: "/images/islam/Islamic_Society_of_Nigeria.png",
+            achievement:
+              "Offered comprehensive support programs, including educational, health, and community services, to enhance the lives of Muslim communities.",
+          },
+          {
+            name: "Al-Furqan Foundation",
+            image: "/images/islam/Al-Furqan_Foundation.png",
+            achievement:
+              "Provided holistic support through integrated educational programs, focusing on academic excellence and personal development.",
+          },
+          {
+            name: "MUSWEN (Muslim Ummah of South)",
+            image: "/images/islam/MUSWEN.png",
+            achievement:
+              "Offered comprehensive educational and community support programs, including academic mentoring, vocational training, and health services.",
+          },
+        ],
+      },
+      {
+        title:
+          "Best Advocacy for Educational Reforms and Awareness Campaigns by an Islamic Organization Contribution to Achieving Education for All in Nigeria NESA-Award/Nigeria 2024",
+        description:
+          "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+        nominees: [
+          {
+            name: "NASFAT (Nasrul-Lahi-L-Fatih soci)",
+            image: "/images/islam/NASFAT.png",
+            achievement:
+              "Led national campaigns advocating for girls' education and improved educational standards in public schools. Influenced policies at state and national levels.",
+          },
+          {
+            name: "FOMWAN (Federation of Muslim W)",
+            image: "/images/islam/FOMWAN.png",
+            achievement:
+              "Spearheaded educational reforms focused on female education and rights, particularly in northern Nigeria. Played a key role in policy-making and awareness.",
+          },
+          {
+            name: "Ansar-Ud-Deen Society of Nigeria",
+            image: "/images/islam/Ansar-Ud-Deen_Society_of_Nigeria.png",
+            achievement:
+              "Engaged in advocacy campaigns for educational reforms, focusing on curriculum development and teacher training. Contributed to national education policies.",
+          },
+          {
+            name: "MSSN (Muslim Students Society of)",
+            image: "/images/islam/MSSN.png",
+            achievement:
+              "Conducted awareness campaigns on the importance of education and engaged in policy advocacy for student rights and educational reforms.",
+          },
+          {
+            name: "The Muslim Congress (TMC)",
+            image: "/images/islam/The_Muslim_Congress.png",
+            achievement:
+              "Led initiatives advocating for educational reforms and the integration of moral and ethical education into school curricula. Contributed to policy changes.",
+          },
+          {
+            name: "Al-Habibiyyah Islamic Society,",
+            image: "/images/islam/Al-Habibiyyah_Islamic_Society.png",
+            achievement:
+              "Promoted campaigns for educational equity and access, particularly in marginalized communities. Influenced local policies through advocacy efforts.",
+          },
+          {
+            name: "Islamic Education Trust (IET)",
+            image: "/images/islam/Islamic_Education_Trust.png",
+            achievement:
+              "Advocated for the adoption of modern educational practices in Islamic schools across Nigeria. Improved the quality of Islamic education nationwide.",
+          },
+          {
+            name: "Islamic Society of Nigeria (ISN)",
+            image: "/images/islam/Islamic_Society_of_Nigeria.png",
+            achievement:
+              "Conducted campaigns focused on educational reforms and the promotion of inclusive education for all. Influenced national education policies.",
+          },
+          {
+            name: "Al-Furqan Foundation",
+            image: "/images/islam/Al-Furqan_Foundation.png",
+            achievement:
+              "Led advocacy efforts to promote education in rural areas, focusing on infrastructure development and educational access. Contributed to policy changes.",
+          },
+          {
+            name: "MUSWEN (Muslim Ummah of South)",
+            image: "/images/islam/MUSWEN.png",
+            achievement:
+              "Advocated for educational reforms in southwestern Nigeria, focusing on improving public school systems and teacher training programs.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title:
+      "Political Leaders in Nigeria 2024 Recognition Award for the Best Educational Support Services",
+    description:
+      "This award recognizes political leaders at both state and federal levels who have made outstanding contributions to education in Nigeria through various initiatives, policies, and support programs that advance quality education for all.",
+    subCategories: [
+      {
+        title:
+          "Outstanding Scholarship Program for Both Vocational and Formal Education by a Politician",
+        description:
+          "Recognizes political leaders who have established or significantly supported scholarship programs that provide educational opportunities for both vocational and formal education pathways, helping to bridge the skills gap and promote inclusive education.",
+        nominees: [
+          {
+            name: "Babajide Sanwo-Olu",
+            image: "/images/political/babajide-sanwo-olu.png",
+            achievement:
+              "Established the Lagos State Scholarship Board providing over 10,000 scholarships annually for both vocational and university education.",
+            state: "Lagos",
+            country: "Nigeria",
+          },
+          {
+            name: "Nyesom Wike",
+            image: "/images/political/nyesom-wike.png",
+            achievement:
+              "Created the Rivers State Scholarship Scheme supporting over 5,000 students in technical and university programs annually.",
+            state: "Rivers",
+            country: "Nigeria",
+          },
+          {
+            name: "Godwin Obaseki",
+            image: "/images/political/godwin-obaseki.png",
+            achievement:
+              "Launched the Edo State Skills Development Agency providing vocational training and scholarships to over 15,000 youths.",
+            state: "Edo",
+            country: "Nigeria",
+          },
+          {
+            name: "Seyi Makinde",
+            image: "/images/political/seyi-makinde.png",
+            achievement:
+              "Implemented free education policy and established technical colleges with scholarship programs benefiting over 20,000 students.",
+            state: "Oyo",
+            country: "Nigeria",
+          },
+          {
+            name: "Dapo Abiodun",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Ifeanyi Ugwuanyi",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Ahmadu Fintiri",
+            image: "/images/political/ahmadu-fintiri.png",
+            achievement:
+              "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.",
+            state: "Adamawa",
+            country: "Nigeria",
+          },
+          {
+            name: "Bello Matawalle",
+            image: "/images/political/bello-matawalle.png",
+            achievement:
+              "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.",
+            state: "Zamfara",
+            country: "Nigeria",
+          },
+          {
+            name: "Abdullahi Ganduje",
+            image: "/images/political/abdullahi-ganduje.png",
+            achievement:
+              "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.",
+            state: "Kano",
+            country: "Nigeria",
+          },
+          {
+            name: "Nasir El-Rufai",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Samuel Ortom",
+            image: "/images/political/samuel-ortom.png",
+            achievement:
+              "Scholarship for educational and vocational students in Benue state. 1200+ students supported from 2022-2024.",
+            state: "Benue",
+            country: "Nigeria",
+          },
+          {
+            name: "Yahaya Bello",
+            image: "/images/political/yahaya-bello.png",
+            achievement:
+              "Expanded scholarship programs for students in tertiary institutions in Kogi state. 2000+ students benefitted from 2022-2024.",
+            state: "Kogi",
+            country: "Nigeria",
+          },
+          {
+            name: "Philip Aduda",
+            image: "/images/political/phillip aduda.png",
+            achievement:
+              "Scholarships for secondary and tertiary students across the FCT. Over 1500 students supported between 2022-2024",
+            state: "FCT",
+            country: "Nigeria",
+          },
+          {
+            name: "Smart Adeyemi",
+            image: "/images/political/smart-adeyemi.png",
+            achievement:
+              "Donation of science laboratory equipments to secondary schools in Kogi state. Enhance science education for 2500+ students between 2022-2024.",
+            state: "Kogi",
+            country: "Nigeria",
+          },
+          {
+            name: "Abubakar Sani Bello ",
+            image: "/images/political/sani-bello.png",
+            achievement:
+              "Building new classrooms and providing learning materials in Niger state. 2000+ students benefitted from enhanced learning facilities between 2022-2024.",
+            state: "Niger",
+            country: "Nigeria",
+          },
+          {
+            name: "Bukola Saraki",
+            image: "/images/political/bukola-saraki.png",
+            achievement:
+              "Adovocay for educational reforms and funding in Kwara state. Policy changes leading to increased funding and access between 2022-2024.",
+            state: "Kwara",
+            country: "Nigeria",
+          },
+          {
+            name: "Dino Melaye",
+            image: "/images/political/dino-melaye.png",
+            achievement:
+              "Advocacy for inclusive education policy in Kogi state. Improved acces to education for marginalized groups in 2022-2024.",
+            state: "Kogi",
+            country: "Nigeria",
+          },
+          {
+            name: "Abdulfatah Ahmed",
+            image: "/images/political/abdulfatah-ahmed.png",
+            achievement:
+              "Policies promoting technical and vocational education in Kwara state. Enhanced focus on vocational education and skills development between 2022-2024",
+            state: "Kwara",
+            country: "Nigeria",
+          },
+          {
+            name: "Babagana Zulum",
+            image: "/images/political/babagana-zulum.png",
+            achievement:
+              "Scholarships for displaced children in borno state. 3000+ students supported between 2022-2024.",
+            state: "Borno",
+            country: "Nigeria",
+          },
+          {
+            name: "Ali Ndume",
+            image: "/images/political/ali-ndume.png",
+            achievement:
+              "Vocational scholarships for youths in conflict zones. 1200+ youths benefitted from 2022-2024.",
+            state: "Kano",
+            country: "Nigeria",
+          },
+          {
+            name: "Aisha Alhassan",
+            image: "/images/political/aisha-alhassan.png",
+            achievement:
+              ".",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Binta Masi Garba",
+            image: "/images/political/binta-masi-garba.png",
+            achievement:
+              "Donation of books and learning materials to schools in Adamawa state. Enhanced access to educational resources 2000+ students between 2022-2024.",
+            state: "Adamawa",
+            country: "Nigeria",
+          },
+          {
+            name: "Bala Mohammed",
+            image: "/images/political/bala-mohammed.png",
+            achievement:
+              "Construction of technical and vocational training centeres across Bauchi state.",
+            state: "Bauchi",
+            country: "Nigeria",
+          },
+          {
+            name: "Ahmed Lawan ",
+            image: "/images/political/ahmed-lawan.png",
+            achievement:
+              "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.",
+            state: "Kano",
+            country: "Nigeria",
+          },
+          {
+            name: "Mohammed Abubakar ",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Ibrahim Shekarau ",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Aminu Tambuwal",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Aminu Masari",
+            image: "/images/political/ahmadu-fintiri.png",
+            achievement:
+              "Launched the Adamawa State Education Scholarship Scheme focusing on technical and university education for over 6,000 students.",
+            state: "Adamawa",
+            country: "Nigeria",
+          },
+          {
+            name: "Kabiru Gaya ",
+            image: "/images/political/bello-matawalle.png",
+            achievement:
+              "Created vocational training centers and scholarship programs benefiting over 10,000 youths in Zamfara State.",
+            state: "Zamfara",
+            country: "Nigeria",
+          },
+          {
+            name: "Atiku Bagudu ",
+            image: "/images/political/abdullahi-ganduje.png",
+            achievement:
+              "Established the Kano State Scholarship Board providing educational support to over 25,000 students in various fields.",
+            state: "Kano",
+            country: "Nigeria",
+          },
+          {
+            name: "Shehu Sani ",
+            image: "/images/political/nasir-el-rufai.png",
+            achievement:
+              "Implemented comprehensive education reforms including scholarship programs for over 15,000 students in technical and formal education.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Dave Umahi ",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Enyinnaya Abaribe ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Ike Ekweremadu ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Willie Obiano ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Rochas Okorocha ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Ben Murray-Bruce ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Ifeanyi Okowa",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "James Manager ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Douye Diri ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Rotimi Akeredolu ",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Oluremi Tinubu ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Ibikunle Amosun",
+            image: "/images/political/dapo-abiodun.png",
+            achievement:
+              "Created the Ogun State Education Trust Fund providing scholarships and vocational training to over 8,000 beneficiaries.",
+            state: "Ogun",
+            country: "Nigeria",
+          },
+          {
+            name: "Kayode Fayemi ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+          {
+            name: "Bola Ahmed Tinubu ",
+            image: "/images/political/ifeanyi-ugwuanyi.png",
+            achievement:
+              "Established the Enugu State Education Development Fund supporting both formal and vocational education for over 12,000 students.",
+            state: "Enugu",
+            country: "Nigeria",
+          },
+        ],
+      },
+      {
+        title:
+          "Exemplary Infrastructure Development and Donations for Education by a Politician",
+        description:
+          "Honors political leaders who have championed the development of educational infrastructure, including school buildings, libraries, laboratories, technology centers, and other facilities that enhance the learning environment.",
+        nominees: [
+          {
+            name: "Babajide Sanwo-Olu",
+            image: "/images/political/babajide-sanwo-olu.png",
+            achievement:
+              "Constructed over 100 new schools and renovated 500+ existing schools, including state-of-the-art science laboratories and ICT centers.",
+            state: "Lagos",
+            country: "Nigeria",
+          },
+          {
+            name: "Godwin Obaseki",
+            image: "/images/political/godwin-obaseki.png",
+            achievement:
+              "Built 200+ new classrooms and established digital learning centers in all 192 wards of Edo State through the EdoBEST program.",
+            state: "Edo",
+            country: "Nigeria",
+          },
+          {
+            name: "Seyi Makinde",
+            image: "/images/political/seyi-makinde.png",
+            achievement:
+              "Constructed 300+ new classrooms, renovated 1,000+ schools, and built modern libraries across Oyo State.",
+            state: "Oyo",
+            country: "Nigeria",
+          },
+          {
+            name: "Ifeanyi Okowa",
+            image: "/images/political/ifeanyi-okowa.png",
+            achievement:
+              "Built 50+ new secondary schools and established technical colleges with modern workshops and laboratories in Delta State.",
+            state: "Delta",
+            country: "Nigeria",
+          },
+          {
+            name: "Willie Obiano",
+            image: "/images/political/willie-obiano.png",
+            achievement:
+              "Constructed over 80 new schools and established the Anambra State University of Technology with world-class facilities.",
+            state: "Anambra",
+            country: "Nigeria",
+          },
+          {
+            name: "Dave Umahi",
+            image: "/images/political/dave-umahi.png",
+            achievement:
+              "Built 50+ model schools with modern facilities and established the King David University of Medical Sciences.",
+            state: "Ebonyi",
+            country: "Nigeria",
+          },
+          {
+            name: "Ben Ayade",
+            image: "/images/political/ben-ayade.png",
+            achievement:
+              "Established multiple technical institutes and built modern school facilities across Cross River State.",
+            state: "Cross River",
+            country: "Nigeria",
+          },
+          {
+            name: "Douye Diri",
+            image: "/images/political/douye-diri.png",
+            achievement:
+              "Constructed new schools and renovated existing facilities, focusing on flood-resistant infrastructure in Bayelsa State.",
+            state: "Bayelsa",
+            country: "Nigeria",
+          },
+          {
+            name: "Hope Uzodimma",
+            image: "/images/political/hope-uzodimma.png",
+            achievement:
+              "Built new schools and established vocational training centers with modern equipment across Imo State.",
+            state: "Imo",
+            country: "Nigeria",
+          },
+          {
+            name: "Rotimi Akeredolu",
+            image: "/images/political/rotimi-akeredolu.png",
+            achievement:
+              "Constructed multiple schools and established the Ondo State University of Medical Sciences with state-of-the-art facilities.",
+            state: "Ondo",
+            country: "Nigeria",
+          },
+        ],
+      },
+      {
+        title: "Advocacy and Policy Development for Education by a Politician",
+        description:
+          "Celebrates political leaders who have been instrumental in developing and advocating for educational policies that have positively impacted the Nigerian education system, including legislative reforms, policy initiatives, and advocacy efforts.",
+        nominees: [
+          {
+            name: "Femi Gbajabiamila",
+            image: "/images/political/femi-gbajabiamila.png",
+            achievement:
+              "As Speaker of the House of Representatives, championed the passage of multiple education bills and increased budgetary allocation to education.",
+            state: "Lagos",
+            country: "Nigeria",
+          },
+          {
+            name: "Ahmad Lawan",
+            image: "/images/political/ahmad-lawan.png",
+            achievement:
+              "As Senate President, led legislative efforts to improve education funding and policy reforms at the federal level.",
+            state: "Yobe",
+            country: "Nigeria",
+          },
+          {
+            name: "Adamu Adamu",
+            image: "/images/political/adamu-adamu.png",
+            achievement:
+              "As Minister of Education, implemented key policy reforms including the National Policy on Education and improved JAMB processes.",
+            state: "Bauchi",
+            country: "Nigeria",
+          },
+          {
+            name: "Lai Mohammed",
+            image: "/images/political/lai-mohammed.png",
+            achievement:
+              "Advocated for digital literacy policies and promoted the integration of technology in education across Nigeria.",
+            state: "Kwara",
+            country: "Nigeria",
+          },
+          {
+            name: "Zainab Ahmed",
+            image: "/images/political/zainab-ahmed.png",
+            achievement:
+              "As Minister of Finance, advocated for increased education budget allocation and transparent funding mechanisms.",
+            state: "Kaduna",
+            country: "Nigeria",
+          },
+          {
+            name: "Abubakar Malami",
+            image: "/images/political/abubakar-malami.png",
+            achievement:
+              "Championed legal frameworks for education rights and anti-corruption measures in the education sector.",
+            state: "Kebbi",
+            country: "Nigeria",
+          },
+          {
+            name: "Boss Mustapha",
+            image: "/images/political/boss-mustapha.png",
+            achievement:
+              "Coordinated inter-ministerial efforts for education policy implementation and COVID-19 education response strategies.",
+            state: "Adamawa",
+            country: "Nigeria",
+          },
+          {
+            name: "Hadi Sirika",
+            image: "/images/political/hadi-sirika.png",
+            achievement:
+              "Promoted aviation education and established training programs for technical skills in the aviation sector.",
+            state: "Katsina",
+            country: "Nigeria",
+          },
+          {
+            name: "Osagie Ehanire",
+            image: "/images/political/osagie-ehanire.png",
+            achievement:
+              "Advocated for health education policies and medical training programs to improve healthcare education.",
+            state: "Edo",
+            country: "Nigeria",
+          },
+          {
+            name: "Babatunde Fashola",
+            image: "/images/political/babatunde-fashola.png",
+            achievement:
+              "Promoted policies for technical education and infrastructure development supporting educational advancement.",
+            state: "Lagos",
+            country: "Nigeria",
+          },
+        ],
+      },
+    ],
+  },
 
-    
-    {
-      title: "Creative Arts Industry Contribution to Education in Nigeria 2024",
-      description: "Recognizing efforts towards advancing education through creative arts and dedication to achieving quality education under SDG 4 objectives.",
-      subCategories: [
-        {
-          title: "Best Nollywood Production and Artiste for Educational Content Award",
-          description: "This category celebrates Nollywood productions and artistes that have created significant educational content, advancing the quality of education and awareness in Nigeria.",
-          nominees: [
-            { name: "Kunle Afolayan", image: "/images/creativeart/Kunle_Afolayan.png", achievement: "Created a film that addresses Nigeria's colonial history and its impact on society. Used historical narratives to educate audiences." },
-            { name: "Genevieve Nnaji", image: "/images/creativeart/Genevieve_Nnaji.png", achievement: "Directed and starred in a film that highlights gender equality and entrepreneurship in Nigeria. Promoted educational themes of female empowerment." },
-            { name: "Tunde Kelani", image: "/images/creativeart/Tunde_Kelani.png", achievement: "Produced a film that educates audiences on Yoruba culture and the life of a Nigerian musician, Ayinla Omowura. Preserved and promoted cultural heritage." },
-            { name: "Ijeoma Grace Agu", image: "/images/creativeart/Ijeoma_Grace_Agu.png", achievement: "Acted in a film that discusses migration, identity, and self-discovery. Relevant to educational and social discussions. Engaged audiences in critical thinking." },
-            { name: "Femi Odugbemi", image: "/images/creativeart/Femi_Odugbemi.png", achievement: "Directed a film that explores the lives of young people in Lagos, focusing on issues of social mobility and education. Used storytelling to inspire change." },
-            { name: "Niyi Akinmolayan", image: "/images/creativeart/Niyi_Akinmolayan.png", achievement: "Directed a film that addresses corporate ethics, law, and gender issues in the workplace. Educated audiences on the complexities of professional life." },
-            { name: "Kemi Adetiba", image: "/images/creativeart/Kemi_Adetiba.png", achievement: "Directed a film that explores themes of power, leadership, and societal structures in Nigeria. Engaged viewers in critical discussions about governance." },
-            { name: "Bolanle Austen-Peters", image: "/images/creativeart/Bolanle_Austen-Peters.png", achievement: "Directed a film that highlights the intersection of wealth, education, and societal expectations in Lagos. Provided educational insights into social dynamics." },
-            { name: "Ramsey Nouah", image: "/images/creativeart/Ramsey_Nouah.png", achievement: "Directed and acted in a film that explores themes of greed, ambition, and the consequences of unethical decisions. Educated audiences on moral dilemmas." },
-            { name: "Adesua Etomi", image: "/images/creativeart/Adesua_Etomi.png", achievement: "Starred in a film that addresses education, cultural diversity, and the importance of youth empowerment in Northern Nigeria. Used her platform to promote social change." }
-          ]
-        },
-        {
-          title: "Best Music Industry Contribution to Education Award",
-          description: "This award honors musicians and organizations in the music industry that have made significant contributions to education, either through educational content or advocacy for educational reforms.",
-          nominees: [
-            { name: "Asa", image: "/images/creativeart/Asa.png", achievement: "Created a song that addresses social issues, including the importance of education in achieving societal progress. Raised awareness about education's role in development." },
-            { name: "2Baba (2Face Idibia)", image: "/images/creativeart/2Baba.png", achievement: "Produced music that promotes peace, unity, and the importance of education in achieving these goals. Engaged audiences in discussions about social progress." },
-            { name: "Yemi Alade", image: "/images/creativeart/Yemi_Alade.png", achievement: "Created music that celebrates African identity and the importance of education in cultural preservation. Promoted the value of education in maintaining heritage." },
-            { name: "Falz", image: "/images/creativeart/Falz.png", achievement: "Produced a song that critically examines Nigeria's social and educational challenges. Used music to spark conversations about educational reform." },
-            { name: "Simi", image: "/images/creativeart/Simi.png", achievement: "Created music that highlights the role of education in women's empowerment and societal progress. Encouraged the education and advancement of women." },
-            { name: "Teni", image: "/images/creativeart/Teni.png", achievement: "Released a song that celebrates personal achievement through hard work and education. Inspired young people to pursue education." },
-            { name: "Burnaboy", image: "/images/creativeart/Burna_Boy.png", achievement: "Produced music that addresses economic challenges and the role of education in achieving financial independence. Encouraged youth to value education." },
-            { name: "Banky W", image: "/images/creativeart/Banky_W.png", achievement: "Created music that advocates for the importance of education in building strong, resilient communities. Promoted education as a tool for social change." },
-            { name: "Cobhams Asuquo", image: "/images/creativeart/Cobhams_Asuquo.png", achievement: "Produced a song that emphasizes the value of education in overcoming life's challenges. Motivated young people to pursue education despite obstacles." },
-            { name: "Darey Art Alade", image: "/images/creativeart/Darey_Art_Alade.png", achievement: "Released music that tells stories of struggle and success, highlighting the role of education. Encouraged resilience and perseverance in educational pursuits." }
-          ]
-        },
-        {
-          title: "Best Literature and Art Works for Education Award",
-          description: "Recognizes writers, literary organizations, and visual artists whose work has significantly contributed to education, particularly in promoting reading, historical understanding, and cultural awareness.",
-          nominees: [
-            { name: "Chimamanda Ngozi Adichie", image: "/images/creativeart/Chimamanda_Ngozi_Adichie.png", achievement: "Authored a novel that educates readers about the Nigerian Civil War and its impact on society. Used literature to foster a deeper understanding of history." },
-            { name: "Wole Soyinka", image: "/images/creativeart/Wole_Soyinka.png", achievement: "Wrote plays that explore African culture, colonialism, and the role of education in societal change. Educated global audiences about Nigerian history and culture." },
-            { name: "Chinelo Okparanta", image: "/images/creativeart/Chinelo_Okparanta.png", achievement: "Authored a novel that addresses issues of identity, education, and social change in Nigeria. Promoted critical thinking about the role of education in society." },
-            { name: "Helon Habila", image: "/images/creativeart/Helon_Habila.png", achievement: "Wrote a novel that discusses environmental degradation and its impact on education in the Niger Delta. Used storytelling to raise awareness about environmental issues." },
-            { name: "Sefi Atta", image: "/images/creativeart/Sefi_Atta.png", achievement: "Authored a novel that explores gender roles, education, and personal growth in Nigeria. Encouraged discussions about the importance of education for women." },
-            { name: "Nnedi Okorafor", image: "/images/creativeart/Nnedi_okorafor.png", achievement: "Wrote a novel that blends African folklore with modern educational themes. Promoted African culture and the importance of education through storytelling." },
-            { name: "Lola Shoneyin", image: "/images/creativeart/Lola_Shoneyin.png", achievement: "Authored a novel that addresses gender issues, education, and societal norms in Nigeria. Used literature to highlight the role of education in challenging social norms." },
-            { name: "Teju Cole", image: "/images/creativeart/Teju_Cole.png", achievement: "Wrote a novel that explores themes of identity, migration, and education in a globalized world. Encouraged critical thinking about the role of education in shaping identity." },
-            { name: "Chris Abani", image: "/images/creativeart/Chris_Abani.png", achievement: "Authored a novel that discusses urban life, education, and survival in Lagos. Used storytelling to raise awareness about the challenges facing urban youth." },
-            { name: "Elnathan John", image: "/images/creativeart/Elnathan_John.png", achievement: "Wrote a novel that examines religious extremism, education, and social issues in Northern Nigeria. Promoted discussions on the role of education in combating extremism." }
-          ]
-        },
-        {
-          title: "Best Visual Arts and Educational Impact Award",
-          description: "This award honors visual artists and sculptors whose work has had a significant educational impact, either through the themes they explore or their contributions to educational institutions.",
-          nominees: [
-            { name: "Bruce Onobrakpeya", image: "/images/creativeart/Bruce_Onobrakpeya.png", achievement: "Created art that reflects Nigeria's cultural heritage and educational themes. Used visual arts to educate audiences about Nigerian history and traditions." },
-            { name: "Nike Davies-Okundaye", image: "/images/creativeart/Nike_Davies-Okundaye.png", achievement: "Promoted traditional Nigerian textile arts and their educational significance. Educated communities and students on the importance of preserving cultural heritage." },
-            { name: "Peju Alatise", image: "/images/creativeart/Peju_Alatise.png", achievement: "Created artwork that addresses the education and empowerment of young girls in Nigeria. Raised awareness about the importance of education in addressing social issues." },
-            { name: "Ndidi Dike", image: "/images/creativeart/Ndidi_Dike.png", achievement: "Used mixed media to explore the impact of global trade on education and society. Educated audiences on the connections between economics, education, and social progress." },
-            { name: "Victor Ehikhamenor", image: "/images/creativeart/Victor_Ehikhamenor.png", achievement: "Created an exhibition that blends contemporary art with Nigerian folklore and education. Used visual arts to promote cultural education and preservation." },
-            { name: "Diseye Tantua", image: "/images/creativeart/Diseye_Tantua.png", achievement: "Produced art that celebrates African pop culture and its educational influence on youth. Engaged young audiences in discussions about the role of popular culture in education." },
-            { name: "Osi Audu", image: "/images/creativeart/Osi_Audu.png", achievement: "Created abstract art that explores themes of identity, education, and self-awareness. Promoted introspection and critical thinking through visual arts." },
-            { name: "Laolu Senbanjo", image: "/images/creativeart/Laolu_Senbanjo.png", achievement: "Combined traditional Yoruba art with contemporary education on African spirituality. Educated global audiences on Yoruba culture and its relevance to modern education." },
-            { name: "Olalekan Jeyifous", image: "/images/creativeart/Olalekan_Jeyifous.png", achievement: "Created public art that examines urban development, education, and social issues. Used art to spark conversations about the role of education in urban planning." },
-            { name: "Olu Amoda", image: "/images/creativeart/Olu_Amoda.png", achievement: "Created sculptures that address themes of energy, sustainability, and education. Promoted education on renewable energy and environmental conservation through art." }
-          ]
-        },
-        {
-          title: "Best Performing Arts and Education Enrichment Award",
-          description: "This category recognizes performers and institutions in the performing arts who have significantly contributed to education, particularly in raising awareness of social issues through theatre, dance, and other performances.",
-          nominees: [
-            { name: "Bolanle Austen-Peters", image: "/images/creativeart/Bolanle_Austen_Peters.png", achievement: "Produced a musical that educates audiences about Fela Kuti's life and his impact on Nigerian society. Promoted cultural education through theatrical productions." },
-            { name: "Segun Adefila", image: "/images/creativeart/Segun_Adefila.png", achievement: "Founded a theater troupe that uses performance to educate communities on social and educational issues. Engaged audiences in discussions about societal challenges." },
-            { name: "Ijeoma Grace Agu", image: "/images/creativeart/Ijeoma_Grace_Agu.png", achievement: "Acted in plays that address gender, education, and social justice. Educated audiences on the importance of education in addressing societal issues." },
-            { name: "Kunle Afolayan", image: "/images/creativeart/Kunle.png", achievement: "Directed a film that highlights vocational education and its importance in Nigeria. Promoted the value of vocational education and skills development." },
-            { name: "Adesua Etomi", image: "/images/creativeart/Adesua_Etomi.png", achievement: "Acted in a series that educates viewers about sexual health, education, and youth empowerment. Used television to promote educational messages." },
-            { name: "Lala Akindoju", image: "/images/creativeart/Lala_Akindoju.png", achievement: "Acted in and produced plays that address women's rights and education. Engaged audiences in discussions about gender equality and education." },
-            { name: "Wale Ojo", image: "/images/creativeart/Wale_Ojo.png", achievement: "Starred in films that address communication, culture, and education. Used cinema to promote cultural education and understanding." },
-            { name: "Tope Oshin", image: "/images/creativeart/Tope_Oshin.png", achievement: "Directed films that explore themes of education, wealth, and social mobility. Educated audiences on the role of education in societal advancement." },
-            { name: "Kemi Lala Akindoju", image: "/images/creativeart/Kemi_Lala.png", achievement: "Produced and acted in plays that highlight educational and social issues in Nigeria. Promoted education on societal issues through theater." },
-            { name: "Femi Odugbemi", image: "/images/creativeart/Femi_Odugbemi.png", achievement: "Directed a series that explores family dynamics, education, and social challenges. Used television to educate audiences on complex social issues." }
-          ]
-        },
-        {
-          title: "Best Film and Media for Educational Advancement Award",
-          description: "This award recognizes individuals and organizations that have used film and media to enhance educational practices, resources, and accessibility.",
-          nominees: [
-            { name: "Femi Odugbemi", image: "/images/creativeart/Femi_Odugbemi.png", achievement: "Produced documentaries focusing on educational reform and advocacy in Nigeria." },
-            { name: "Jade Osiberu", image: "/images/creativeart/Jade_Osiberu.png", achievement: "Used her filmmaking skills to highlight educational challenges and inspire change." },
-            { name: "Tunde Kelani", image: "/images/creativeart/Tunde_Kelani.png", achievement: "Contributed to cultural education through film, preserving and promoting indigenous languages and traditions." },
-            { name: "Kunle Afolayan", image: "/images/creativeart/Kunle_Afolayan.png", achievement: "Created impactful educational films that highlight societal issues and promote education." },
-            { name: "Kemi Adetiba", image: "/images/creativeart/Kemi_Adetiba.png", achievement: "Directed films that address gender inequality and advocate for girls' education." },
-            { name: "Izu Ojukwu", image: "/images/creativeart/Izu_Ojukwu.png", achievement: "Used historical films to educate audiences about Nigerian heritage and promote cultural awareness." },
-            { name: "Mildred Okwo", image: "/images/creativeart/Mildred_Okwo.png", achievement: "Produced films that address social issues and promote educational awareness." },
-            { name: "Moses Inwang", image: "/images/creativeart/Moses_Inwang.png", achievement: "Created films that tackle educational challenges and inspire youth empowerment." },
-            { name: "Blessing Egbe", image: "/images/creativeart/Blessing_Egbe.png", achievement: "Used her productions to highlight the importance of education, especially for girls." },
-            { name: "Akin Omotoso", image: "/images/creativeart/Akin_Omotoso.png", achievement: "Directed films that explore themes of education and social justice in Nigeria." }
-          ]
-        },
-        {
-          title: "Best Creative Advocacy and Educational Campaigns Award",
-          description: "This category celebrates organizations that have used creative campaigns to promote education, making learning more engaging and accessible.",
-          nominees: [
-            { name: "ONE Campaign", image: "/images/creativeart/ONE_Campaign.png", achievement: "Led impactful campaigns advocating for education access and quality in Nigeria." },
-            { name: "Girl Rising Nigeria", image: "/images/creativeart/Girl_Rising_Nigeria.png", achievement: "Championed girls' education through powerful storytelling and media campaigns." },
-            { name: "Teach For Nigeria", image: "/images/creativeart/Teach_Nigeria.png", achievement: "Recruited and placed outstanding graduates in underserved schools to improve education quality." },
-            { name: "Youth for Technology Foundation", image: "/images/creativeart/Youth_Foundation.png", achievement: "Empowered youth through technology education and entrepreneurship programs." },
-            { name: "African Leadership Academy", image: "/images/creativeart/African_Leadership.png", achievement: "Developed young leaders through innovative education programs focused on African development." },
-            { name: "Education as a Vaccine (EVA)", image: "/images/creativeart/Education_Vaccine.png", achievement: "Promoted youth-friendly health education and services across Nigeria." },
-            { name: "Stand to End Rape Initiative (STER)", image: "/images/creativeart/Stand-Initiative.png", achievement: "Advocated for comprehensive sexuality education to prevent sexual violence." },
-            { name: "CAMFED (Campaign for Female E..)", image: "/images/creativeart/CAMFED.png", achievement: "Supported girls' education and women's empowerment through community-driven initiatives." },
-            { name: "Connected Development (CODE)", image: "/images/creativeart/Connected_Development.png", achievement: "Used technology to track education projects and promote accountability in the sector." },
-            { name: "HACEY Health Initiative", image: "/images/creativeart/HACEY_Health.png", achievement: "Implemented health education programs targeting young people and vulnerable communities." }
-          ]
-        }
-      ]
-    },
-      
-    {
-      "title": "Support for education in STEM in Nigeria 2024",
-      "description": "Celebrating initiatives by any organization for creative arts role in education and promoting hands-on learning experiences.",
-      "subCategories": [
-        {
-          "title": "The Best Innovative STEM Curriculum Development in Nigeria",
-          "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-          "nominees": [
-            { "name": "University of Lagos", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/university_of_lagos.png", "achievement": "Developed a multidisciplinary STEM curriculum focusing on practical applications and research. Enhanced STEM education for students." },
-            { "name": "Covenant University", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Covenant_University.png", "achievement": "Introduced an innovative engineering curriculum integrating industry practices. Prepared over 3,000 students for careers in engineering." },
-            { "name": "Lagos State Model College", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Lagos_State_Model_College.png", "achievement": "Implemented a specialized STEM program for secondary students, emphasizing real-world problem-solving. Improved student performance in STEM subjects." },
-            { "name": "Federal Government College Enugu", "state": "Enugu", "country": "Nigeria", "image": "/images/stem/Federal_Government_College_Enugu.png", "achievement": "Developed a STEM curriculum with a focus on renewable energy and environmental sciences. Trained over 2,500 students in sustainable technologies." },
-            { "name": "Nigerian Turkish International Coll", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Nigerian_Turkish_International_Coll.png", "achievement": "Introduced advanced STEM subjects, including robotics and coding, into the school curriculum. Achieved top rankings in international STEM competitions." },
-            { "name": "British International School Lagos", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/British_International_School_Lagos.png", "achievement": "Integrated STEM across all grade levels, with an emphasis on technology and engineering. Produced high-achieving students in STEM fields internationally." },
-            { "name": "University of Nigeria, Nsukka", "state": "Enugu", "country": "Nigeria", "image": "/images/stem/University_of_Nigeria_Nsukka.png", "achievement": "Developed a comprehensive STEM curriculum with a strong research component. Facilitated groundbreaking research in various STEM fields." },
-            { "name": "STEM Nigeria Initiative", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/STEM_Nigeria_Initiative.png", "achievement": "Designed a national STEM curriculum that incorporates local context and resources. Benefited over 10,000 students across multiple schools." },
-            { "name": "Centre for Mathematics and Science", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Centre_for_Mathematics_and_Science.png", "achievement": "Developed a STEM curriculum focusing on mathematics and science literacy. Improved mathematical proficiency among secondary school students." },
-            { "name": "Nigerian Educational Research and", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Nigerian_Educational_Research.png", "achievement": "Led the national development of STEM curriculum guidelines and standards. Standardized STEM education across the country." }
-          ]
-        },
-        {
-          "title": "The Best STEM Outreach and Community Engagement in Nigeria",
-          "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-          "nominees": [
-            { "name": "STEM Café", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/STEM_Café.png", "achievement": "Established interactive STEM learning centers in underserved communities. Engaged over 20,000 students in hands-on STEM activities." },
-            { "name": "Junior Achievement Nigeria", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Junior_Achievement_Nigeria.png", "achievement": "Implemented STEM programs that focus on entrepreneurship and innovation. Reached over 50,000 students across Nigeria." },
-            { "name": "Teach for Nigeria", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Teach_for_Nigeria.png", "achievement": "Promoted STEM education through teaching fellowships in underserved areas. Improved STEM literacy among 30,000 students in rural communities." },
-            { "name": "Abuja Science and Technology Park", "state": "Abuja", "country": "Nigeria", "image": "/images/stem/Abuja_Science_and_Technology_Park.png", "achievement": "Organized community-based STEM workshops and competitions. Engaged 15,000 students and community members in STEM activities." },
-            { "name": "Yaba College of Technology", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Yaba_College_of_Technology.png", "achievement": "Conducted STEM outreach programs targeting secondary school students. Enhanced STEM skills for over 10,000 students through workshops." },
-            { "name": "TechQuest STEM Academy", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/TechQuest_STEM_Academy.png", "achievement": "Provided STEM education through coding and robotics workshops in low-income areas. Trained over 25,000 students in digital skills." },
-            { "name": "Lagos State Ministry of Education", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Lagos_State_Ministry_of_Education.png", "achievement": "Launched state-wide STEM initiatives to promote science and technology education. Improved STEM education in over 500 schools across Lagos State." },
-            { "name": "SkillNG", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/SkillNG.png", "achievement": "Offered STEM training and career guidance for youths in technology fields. Empowered over 15,000 young people with STEM skills." },
-            { "name": "Nigerian Society of Engineers", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Nigerian_Society_of_Engineers.png", "achievement": "Led community STEM projects focusing on engineering education and awareness. Reached over 10,000 students and young professionals." },
-            { "name": "African Science Academy", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/African_Science_Academy.png", "achievement": "Established STEM programs for girls in rural areas, focusing on science education and leadership. Empowered over 5,000 girls with STEM skills." }
-          ]
-        },
-        {
-          "title": "The Best Technology Integration in STEM Education in Nigeria",
-          "description": "Recognizes educators and institutions employing innovative teaching methods in STEM education",
-          "nominees": [
-            { "name": "American University of Nigeria", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/American_University_of_Nigeria.png", "achievement": "Implemented technology-enhanced STEM programs with a focus on digital learning. Provided tech-driven education to over 5,000 students." },
-            { "name": "Green Springs School", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Green_Springs_School.png", "achievement": "Integrated advanced technology tools into STEM curriculum, including virtual labs and online simulations. Enhanced learning experience for students." },
-            { "name": "Obafemi Awolowo University", "state": "Osun", "country": "Nigeria", "image": "/images/stem/Obafemi_Awolowo_University.png", "achievement": "Developed a robust e-learning platform for STEM courses. Increased access to STEM education for over 10,000 students." },
-            { "name": "University of Ibadan", "state": "Oyo", "country": "Nigeria", "image": "/images/stem/University_of_Ibadan.png", "achievement": "Integrated cutting-edge technology into STEM research and education. Facilitated research and learning for over 15,000 students." },
-            { "name": "Afe Babalola University", "state": "Ekiti", "country": "Nigeria", "image": "/images/stem/Afe_Babalola_University.png", "achievement": "Launched a tech-driven STEM program with a focus on innovation and entrepreneurship. Empowered 3,000 students with digital skills." },
-            { "name": "Bridge International Academies", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Bridge_International_Academies.png", "achievement": "Utilized educational technology to deliver STEM education in low-income areas. Improved STEM literacy for over 100,000 students." },
-            { "name": "CodeLagos", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/CodeLagos.png", "achievement": "Implemented a state-wide coding and technology program for students. Trained over 100,000 students in coding and digital literacy." },
-            { "name": "Edves", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Edves.png", "achievement": "Developed and deployed a technology platform to manage and enhance STEM education in schools. Supported over 500 schools in Nigeria." },
-            { "name": "Andela Learning Community", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/Andela_Learning_Community.png", "achievement": "Provided online and offline technology training to students and professionals. Trained over 20,000 individuals in software development." },
-            { "name": "STEM METS Resources", "state": "Lagos", "country": "Nigeria", "image": "/images/stem/STEM_METS_Resources.png", "achievement": "Offered STEM kits and technology resources for hands-on learning in schools. Enhanced STEM education for over 30,000 students across Nigeria." }
-          ]
-        }
-      ]
-    }
-  ]
+  {
+    title: "Creative Arts Industry Contribution to Education in Nigeria 2024",
+    description:
+      "Recognizing efforts towards advancing education through creative arts and dedication to achieving quality education under SDG 4 objectives.",
+    subCategories: [
+      {
+        title:
+          "Best Nollywood Production and Artiste for Educational Content Award",
+        description:
+          "This category celebrates Nollywood productions and artistes that have created significant educational content, advancing the quality of education and awareness in Nigeria.",
+        nominees: [
+          {
+            name: "Kunle Afolayan",
+            image: "/images/creativeart/Kunle_Afolayan.png",
+            achievement:
+              "Created a film that addresses Nigeria's colonial history and its impact on society. Used historical narratives to educate audiences.",
+          },
+          {
+            name: "Genevieve Nnaji",
+            image: "/images/creativeart/Genevieve_Nnaji.png",
+            achievement:
+              "Directed and starred in a film that highlights gender equality and entrepreneurship in Nigeria. Promoted educational themes of female empowerment.",
+          },
+          {
+            name: "Tunde Kelani",
+            image: "/images/creativeart/Tunde_Kelani.png",
+            achievement:
+              "Produced a film that educates audiences on Yoruba culture and the life of a Nigerian musician, Ayinla Omowura. Preserved and promoted cultural heritage.",
+          },
+          {
+            name: "Ijeoma Grace Agu",
+            image: "/images/creativeart/Ijeoma_Grace_Agu.png",
+            achievement:
+              "Acted in a film that discusses migration, identity, and self-discovery. Relevant to educational and social discussions. Engaged audiences in critical thinking.",
+          },
+          {
+            name: "Femi Odugbemi",
+            image: "/images/creativeart/Femi_Odugbemi.png",
+            achievement:
+              "Directed a film that explores the lives of young people in Lagos, focusing on issues of social mobility and education. Used storytelling to inspire change.",
+          },
+          {
+            name: "Niyi Akinmolayan",
+            image: "/images/creativeart/Niyi_Akinmolayan.png",
+            achievement:
+              "Directed a film that addresses corporate ethics, law, and gender issues in the workplace. Educated audiences on the complexities of professional life.",
+          },
+          {
+            name: "Kemi Adetiba",
+            image: "/images/creativeart/Kemi_Adetiba.png",
+            achievement:
+              "Directed a film that explores themes of power, leadership, and societal structures in Nigeria. Engaged viewers in critical discussions about governance.",
+          },
+          {
+            name: "Bolanle Austen-Peters",
+            image: "/images/creativeart/Bolanle_Austen-Peters.png",
+            achievement:
+              "Directed a film that highlights the intersection of wealth, education, and societal expectations in Lagos. Provided educational insights into social dynamics.",
+          },
+          {
+            name: "Ramsey Nouah",
+            image: "/images/creativeart/Ramsey_Nouah.png",
+            achievement:
+              "Directed and acted in a film that explores themes of greed, ambition, and the consequences of unethical decisions. Educated audiences on moral dilemmas.",
+          },
+          {
+            name: "Adesua Etomi",
+            image: "/images/creativeart/Adesua_Etomi.png",
+            achievement:
+              "Starred in a film that addresses education, cultural diversity, and the importance of youth empowerment in Northern Nigeria. Used her platform to promote social change.",
+          },
+        ],
+      },
+      {
+        title: "Best Music Industry Contribution to Education Award",
+        description:
+          "This award honors musicians and organizations in the music industry that have made significant contributions to education, either through educational content or advocacy for educational reforms.",
+        nominees: [
+          {
+            name: "Asa",
+            image: "/images/creativeart/Asa.png",
+            achievement:
+              "Created a song that addresses social issues, including the importance of education in achieving societal progress. Raised awareness about education's role in development.",
+          },
+          {
+            name: "2Baba (2Face Idibia)",
+            image: "/images/creativeart/2Baba.png",
+            achievement:
+              "Produced music that promotes peace, unity, and the importance of education in achieving these goals. Engaged audiences in discussions about social progress.",
+          },
+          {
+            name: "Yemi Alade",
+            image: "/images/creativeart/Yemi_Alade.png",
+            achievement:
+              "Created music that celebrates African identity and the importance of education in cultural preservation. Promoted the value of education in maintaining heritage.",
+          },
+          {
+            name: "Falz",
+            image: "/images/creativeart/Falz.png",
+            achievement:
+              "Produced a song that critically examines Nigeria's social and educational challenges. Used music to spark conversations about educational reform.",
+          },
+          {
+            name: "Simi",
+            image: "/images/creativeart/Simi.png",
+            achievement:
+              "Created music that highlights the role of education in women's empowerment and societal progress. Encouraged the education and advancement of women.",
+          },
+          {
+            name: "Teni",
+            image: "/images/creativeart/Teni.png",
+            achievement:
+              "Released a song that celebrates personal achievement through hard work and education. Inspired young people to pursue education.",
+          },
+          {
+            name: "Burnaboy",
+            image: "/images/creativeart/Burna_Boy.png",
+            achievement:
+              "Produced music that addresses economic challenges and the role of education in achieving financial independence. Encouraged youth to value education.",
+          },
+          {
+            name: "Banky W",
+            image: "/images/creativeart/Banky_W.png",
+            achievement:
+              "Created music that advocates for the importance of education in building strong, resilient communities. Promoted education as a tool for social change.",
+          },
+          {
+            name: "Cobhams Asuquo",
+            image: "/images/creativeart/Cobhams_Asuquo.png",
+            achievement:
+              "Produced a song that emphasizes the value of education in overcoming life's challenges. Motivated young people to pursue education despite obstacles.",
+          },
+          {
+            name: "Darey Art Alade",
+            image: "/images/creativeart/Darey_Art_Alade.png",
+            achievement:
+              "Released music that tells stories of struggle and success, highlighting the role of education. Encouraged resilience and perseverance in educational pursuits.",
+          },
+        ],
+      },
+      {
+        title: "Best Literature and Art Works for Education Award",
+        description:
+          "Recognizes writers, literary organizations, and visual artists whose work has significantly contributed to education, particularly in promoting reading, historical understanding, and cultural awareness.",
+        nominees: [
+          {
+            name: "Chimamanda Ngozi Adichie",
+            image: "/images/creativeart/Chimamanda_Ngozi_Adichie.png",
+            achievement:
+              "Authored a novel that educates readers about the Nigerian Civil War and its impact on society. Used literature to foster a deeper understanding of history.",
+          },
+          {
+            name: "Wole Soyinka",
+            image: "/images/creativeart/Wole_Soyinka.png",
+            achievement:
+              "Wrote plays that explore African culture, colonialism, and the role of education in societal change. Educated global audiences about Nigerian history and culture.",
+          },
+          {
+            name: "Chinelo Okparanta",
+            image: "/images/creativeart/Chinelo_Okparanta.png",
+            achievement:
+              "Authored a novel that addresses issues of identity, education, and social change in Nigeria. Promoted critical thinking about the role of education in society.",
+          },
+          {
+            name: "Helon Habila",
+            image: "/images/creativeart/Helon_Habila.png",
+            achievement:
+              "Wrote a novel that discusses environmental degradation and its impact on education in the Niger Delta. Used storytelling to raise awareness about environmental issues.",
+          },
+          {
+            name: "Sefi Atta",
+            image: "/images/creativeart/Sefi_Atta.png",
+            achievement:
+              "Authored a novel that explores gender roles, education, and personal growth in Nigeria. Encouraged discussions about the importance of education for women.",
+          },
+          {
+            name: "Nnedi Okorafor",
+            image: "/images/creativeart/Nnedi_okorafor.png",
+            achievement:
+              "Wrote a novel that blends African folklore with modern educational themes. Promoted African culture and the importance of education through storytelling.",
+          },
+          {
+            name: "Lola Shoneyin",
+            image: "/images/creativeart/Lola_Shoneyin.png",
+            achievement:
+              "Authored a novel that addresses gender issues, education, and societal norms in Nigeria. Used literature to highlight the role of education in challenging social norms.",
+          },
+          {
+            name: "Teju Cole",
+            image: "/images/creativeart/Teju_Cole.png",
+            achievement:
+              "Wrote a novel that explores themes of identity, migration, and education in a globalized world. Encouraged critical thinking about the role of education in shaping identity.",
+          },
+          {
+            name: "Chris Abani",
+            image: "/images/creativeart/Chris_Abani.png",
+            achievement:
+              "Authored a novel that discusses urban life, education, and survival in Lagos. Used storytelling to raise awareness about the challenges facing urban youth.",
+          },
+          {
+            name: "Elnathan John",
+            image: "/images/creativeart/Elnathan_John.png",
+            achievement:
+              "Wrote a novel that examines religious extremism, education, and social issues in Northern Nigeria. Promoted discussions on the role of education in combating extremism.",
+          },
+        ],
+      },
+      {
+        title: "Best Visual Arts and Educational Impact Award",
+        description:
+          "This award honors visual artists and sculptors whose work has had a significant educational impact, either through the themes they explore or their contributions to educational institutions.",
+        nominees: [
+          {
+            name: "Bruce Onobrakpeya",
+            image: "/images/creativeart/Bruce_Onobrakpeya.png",
+            achievement:
+              "Created art that reflects Nigeria's cultural heritage and educational themes. Used visual arts to educate audiences about Nigerian history and traditions.",
+          },
+          {
+            name: "Nike Davies-Okundaye",
+            image: "/images/creativeart/Nike_Davies-Okundaye.png",
+            achievement:
+              "Promoted traditional Nigerian textile arts and their educational significance. Educated communities and students on the importance of preserving cultural heritage.",
+          },
+          {
+            name: "Peju Alatise",
+            image: "/images/creativeart/Peju_Alatise.png",
+            achievement:
+              "Created artwork that addresses the education and empowerment of young girls in Nigeria. Raised awareness about the importance of education in addressing social issues.",
+          },
+          {
+            name: "Ndidi Dike",
+            image: "/images/creativeart/Ndidi_Dike.png",
+            achievement:
+              "Used mixed media to explore the impact of global trade on education and society. Educated audiences on the connections between economics, education, and social progress.",
+          },
+          {
+            name: "Victor Ehikhamenor",
+            image: "/images/creativeart/Victor_Ehikhamenor.png",
+            achievement:
+              "Created an exhibition that blends contemporary art with Nigerian folklore and education. Used visual arts to promote cultural education and preservation.",
+          },
+          {
+            name: "Diseye Tantua",
+            image: "/images/creativeart/Diseye_Tantua.png",
+            achievement:
+              "Produced art that celebrates African pop culture and its educational influence on youth. Engaged young audiences in discussions about the role of popular culture in education.",
+          },
+          {
+            name: "Osi Audu",
+            image: "/images/creativeart/Osi_Audu.png",
+            achievement:
+              "Created abstract art that explores themes of identity, education, and self-awareness. Promoted introspection and critical thinking through visual arts.",
+          },
+          {
+            name: "Laolu Senbanjo",
+            image: "/images/creativeart/Laolu_Senbanjo.png",
+            achievement:
+              "Combined traditional Yoruba art with contemporary education on African spirituality. Educated global audiences on Yoruba culture and its relevance to modern education.",
+          },
+          {
+            name: "Olalekan Jeyifous",
+            image: "/images/creativeart/Olalekan_Jeyifous.png",
+            achievement:
+              "Created public art that examines urban development, education, and social issues. Used art to spark conversations about the role of education in urban planning.",
+          },
+          {
+            name: "Olu Amoda",
+            image: "/images/creativeart/Olu_Amoda.png",
+            achievement:
+              "Created sculptures that address themes of energy, sustainability, and education. Promoted education on renewable energy and environmental conservation through art.",
+          },
+        ],
+      },
+      {
+        title: "Best Performing Arts and Education Enrichment Award",
+        description:
+          "This category recognizes performers and institutions in the performing arts who have significantly contributed to education, particularly in raising awareness of social issues through theatre, dance, and other performances.",
+        nominees: [
+          {
+            name: "Bolanle Austen-Peters",
+            image: "/images/creativeart/Bolanle_Austen_Peters.png",
+            achievement:
+              "Produced a musical that educates audiences about Fela Kuti's life and his impact on Nigerian society. Promoted cultural education through theatrical productions.",
+          },
+          {
+            name: "Segun Adefila",
+            image: "/images/creativeart/Segun_Adefila.png",
+            achievement:
+              "Founded a theater troupe that uses performance to educate communities on social and educational issues. Engaged audiences in discussions about societal challenges.",
+          },
+          {
+            name: "Ijeoma Grace Agu",
+            image: "/images/creativeart/Ijeoma_Grace_Agu.png",
+            achievement:
+              "Acted in plays that address gender, education, and social justice. Educated audiences on the importance of education in addressing societal issues.",
+          },
+          {
+            name: "Kunle Afolayan",
+            image: "/images/creativeart/Kunle.png",
+            achievement:
+              "Directed a film that highlights vocational education and its importance in Nigeria. Promoted the value of vocational education and skills development.",
+          },
+          {
+            name: "Adesua Etomi",
+            image: "/images/creativeart/Adesua_Etomi.png",
+            achievement:
+              "Acted in a series that educates viewers about sexual health, education, and youth empowerment. Used television to promote educational messages.",
+          },
+          {
+            name: "Lala Akindoju",
+            image: "/images/creativeart/Lala_Akindoju.png",
+            achievement:
+              "Acted in and produced plays that address women's rights and education. Engaged audiences in discussions about gender equality and education.",
+          },
+          {
+            name: "Wale Ojo",
+            image: "/images/creativeart/Wale_Ojo.png",
+            achievement:
+              "Starred in films that address communication, culture, and education. Used cinema to promote cultural education and understanding.",
+          },
+          {
+            name: "Tope Oshin",
+            image: "/images/creativeart/Tope_Oshin.png",
+            achievement:
+              "Directed films that explore themes of education, wealth, and social mobility. Educated audiences on the role of education in societal advancement.",
+          },
+          {
+            name: "Kemi Lala Akindoju",
+            image: "/images/creativeart/Kemi_Lala.png",
+            achievement:
+              "Produced and acted in plays that highlight educational and social issues in Nigeria. Promoted education on societal issues through theater.",
+          },
+          {
+            name: "Femi Odugbemi",
+            image: "/images/creativeart/Femi_Odugbemi.png",
+            achievement:
+              "Directed a series that explores family dynamics, education, and social challenges. Used television to educate audiences on complex social issues.",
+          },
+        ],
+      },
+      {
+        title: "Best Film and Media for Educational Advancement Award",
+        description:
+          "This award recognizes individuals and organizations that have used film and media to enhance educational practices, resources, and accessibility.",
+        nominees: [
+          {
+            name: "Femi Odugbemi",
+            image: "/images/creativeart/Femi_Odugbemi.png",
+            achievement:
+              "Produced documentaries focusing on educational reform and advocacy in Nigeria.",
+          },
+          {
+            name: "Jade Osiberu",
+            image: "/images/creativeart/Jade_Osiberu.png",
+            achievement:
+              "Used her filmmaking skills to highlight educational challenges and inspire change.",
+          },
+          {
+            name: "Tunde Kelani",
+            image: "/images/creativeart/Tunde_Kelani.png",
+            achievement:
+              "Contributed to cultural education through film, preserving and promoting indigenous languages and traditions.",
+          },
+          {
+            name: "Kunle Afolayan",
+            image: "/images/creativeart/Kunle_Afolayan.png",
+            achievement:
+              "Created impactful educational films that highlight societal issues and promote education.",
+          },
+          {
+            name: "Kemi Adetiba",
+            image: "/images/creativeart/Kemi_Adetiba.png",
+            achievement:
+              "Directed films that address gender inequality and advocate for girls' education.",
+          },
+          {
+            name: "Izu Ojukwu",
+            image: "/images/creativeart/Izu_Ojukwu.png",
+            achievement:
+              "Used historical films to educate audiences about Nigerian heritage and promote cultural awareness.",
+          },
+          {
+            name: "Mildred Okwo",
+            image: "/images/creativeart/Mildred_Okwo.png",
+            achievement:
+              "Produced films that address social issues and promote educational awareness.",
+          },
+          {
+            name: "Moses Inwang",
+            image: "/images/creativeart/Moses_Inwang.png",
+            achievement:
+              "Created films that tackle educational challenges and inspire youth empowerment.",
+          },
+          {
+            name: "Blessing Egbe",
+            image: "/images/creativeart/Blessing_Egbe.png",
+            achievement:
+              "Used her productions to highlight the importance of education, especially for girls.",
+          },
+          {
+            name: "Akin Omotoso",
+            image: "/images/creativeart/Akin_Omotoso.png",
+            achievement:
+              "Directed films that explore themes of education and social justice in Nigeria.",
+          },
+        ],
+      },
+      {
+        title: "Best Creative Advocacy and Educational Campaigns Award",
+        description:
+          "This category celebrates organizations that have used creative campaigns to promote education, making learning more engaging and accessible.",
+        nominees: [
+          {
+            name: "ONE Campaign",
+            image: "/images/creativeart/ONE_Campaign.png",
+            achievement:
+              "Led impactful campaigns advocating for education access and quality in Nigeria.",
+          },
+          {
+            name: "Girl Rising Nigeria",
+            image: "/images/creativeart/Girl_Rising_Nigeria.png",
+            achievement:
+              "Championed girls' education through powerful storytelling and media campaigns.",
+          },
+          {
+            name: "Teach For Nigeria",
+            image: "/images/creativeart/Teach_Nigeria.png",
+            achievement:
+              "Recruited and placed outstanding graduates in underserved schools to improve education quality.",
+          },
+          {
+            name: "Youth for Technology Foundation",
+            image: "/images/creativeart/Youth_Foundation.png",
+            achievement:
+              "Empowered youth through technology education and entrepreneurship programs.",
+          },
+          {
+            name: "African Leadership Academy",
+            image: "/images/creativeart/African_Leadership.png",
+            achievement:
+              "Developed young leaders through innovative education programs focused on African development.",
+          },
+          {
+            name: "Education as a Vaccine (EVA)",
+            image: "/images/creativeart/Education_Vaccine.png",
+            achievement:
+              "Promoted youth-friendly health education and services across Nigeria.",
+          },
+          {
+            name: "Stand to End Rape Initiative (STER)",
+            image: "/images/creativeart/Stand-Initiative.png",
+            achievement:
+              "Advocated for comprehensive sexuality education to prevent sexual violence.",
+          },
+          {
+            name: "CAMFED (Campaign for Female E..)",
+            image: "/images/creativeart/CAMFED.png",
+            achievement:
+              "Supported girls' education and women's empowerment through community-driven initiatives.",
+          },
+          {
+            name: "Connected Development (CODE)",
+            image: "/images/creativeart/Connected_Development.png",
+            achievement:
+              "Used technology to track education projects and promote accountability in the sector.",
+          },
+          {
+            name: "HACEY Health Initiative",
+            image: "/images/creativeart/HACEY_Health.png",
+            achievement:
+              "Implemented health education programs targeting young people and vulnerable communities.",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    title: "Support for education in STEM in Nigeria 2024",
+    description:
+      "Celebrating initiatives by any organization for creative arts role in education and promoting hands-on learning experiences.",
+    regions: [
+      {
+        name: "North Africa",
+        subCategories: [
+          {
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+          {
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+          {
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "East Africa",
+        subCategories: [
+          {
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+          {
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+          {
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "West Africa",
+        subCategories: [
+          {
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "University of Lagos",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/university_of_lagos.png",
+                achievement:
+                  "Developed a multidisciplinary STEM curriculum focusing on practical applications and research. Enhanced STEM education for students.",
+              },
+              {
+                name: "Covenant University",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Covenant_University.png",
+                achievement:
+                  "Introduced an innovative engineering curriculum integrating industry practices. Prepared over 3,000 students for careers in engineering.",
+              },
+              {
+                name: "Lagos State Model College",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Lagos_State_Model_College.png",
+                achievement:
+                  "Implemented a specialized STEM program for secondary students, emphasizing real-world problem-solving. Improved student performance in STEM subjects.",
+              },
+              {
+                name: "Federal Government College Enugu",
+                state: "Enugu",
+                country: "Nigeria",
+                image: "/images/stem/Federal_Government_College_Enugu.png",
+                achievement:
+                  "Developed a STEM curriculum with a focus on renewable energy and environmental sciences. Trained over 2,500 students in sustainable technologies.",
+              },
+              {
+                name: "Nigerian Turkish International Coll",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nigerian_Turkish_International_Coll.png",
+                achievement:
+                  "Introduced advanced STEM subjects, including robotics and coding, into the school curriculum. Achieved top rankings in international STEM competitions.",
+              },
+              {
+                name: "British International School Lagos",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/British_International_School_Lagos.png",
+                achievement:
+                  "Integrated STEM across all grade levels, with an emphasis on technology and engineering. Produced high-achieving students in STEM fields internationally.",
+              },
+              {
+                name: "University of Nigeria, Nsukka",
+                state: "Enugu",
+                country: "Nigeria",
+                image: "/images/stem/University_of_Nigeria_Nsukka.png",
+                achievement:
+                  "Developed a comprehensive STEM curriculum with a strong research component. Facilitated groundbreaking research in various STEM fields.",
+              },
+              {
+                name: "STEM Nigeria Initiative",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/STEM_Nigeria_Initiative.png",
+                achievement:
+                  "Designed a national STEM curriculum that incorporates local context and resources. Benefited over 10,000 students across multiple schools.",
+              },
+              {
+                name: "Centre for Mathematics and Science",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Centre_for_Mathematics_and_Science.png",
+                achievement:
+                  "Developed a STEM curriculum focusing on mathematics and science literacy. Improved mathematical proficiency among secondary school students.",
+              },
+              {
+                name: "Nigerian Educational Research and",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nigerian_Educational_Research.png",
+                achievement:
+                  "Led the national development of STEM curriculum guidelines and standards. Standardized STEM education across the country.",
+              },
+            ],
+          },
+          {
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "STEM Café",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/STEM_Café.png",
+                achievement:
+                  "Established interactive STEM learning centers in underserved communities. Engaged over 20,000 students in hands-on STEM activities.",
+              },
+              {
+                name: "Junior Achievement Nigeria",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Junior_Achievement_Nigeria.png",
+                achievement:
+                  "Implemented STEM programs that focus on entrepreneurship and innovation. Reached over 50,000 students across Nigeria.",
+              },
+              {
+                name: "Teach for Nigeria",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Teach_for_Nigeria.png",
+                achievement:
+                  "Promoted STEM education through teaching fellowships in underserved areas. Improved STEM literacy among 30,000 students in rural communities.",
+              },
+              {
+                name: "Abuja Science and Technology Park",
+                state: "Abuja",
+                country: "Nigeria",
+                image: "/images/stem/Abuja_Science_and_Technology_Park.png",
+                achievement:
+                  "Organized community-based STEM workshops and competitions. Engaged 15,000 students and community members in STEM activities.",
+              },
+              {
+                name: "Yaba College of Technology",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Yaba_College_of_Technology.png",
+                achievement:
+                  "Conducted STEM outreach programs targeting secondary school students. Enhanced STEM skills for over 10,000 students through workshops.",
+              },
+              {
+                name: "TechQuest STEM Academy",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/TechQuest_STEM_Academy.png",
+                achievement:
+                  "Provided STEM education through coding and robotics workshops in low-income areas. Trained over 25,000 students in digital skills.",
+              },
+              {
+                name: "Lagos State Ministry of Education",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Lagos_State_Ministry_of_Education.png",
+                achievement:
+                  "Launched state-wide STEM initiatives to promote science and technology education. Improved STEM education in over 500 schools across Lagos State.",
+              },
+              {
+                name: "SkillNG",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/SkillNG.png",
+                achievement:
+                  "Offered STEM training and career guidance for youths in technology fields. Empowered over 15,000 young people with STEM skills.",
+              },
+              {
+                name: "Nigerian Society of Engineers",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nigerian_Society_of_Engineers.png",
+                achievement:
+                  "Led community STEM projects focusing on engineering education and awareness. Reached over 10,000 students and young professionals.",
+              },
+              {
+                name: "African Science Academy",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/African_Science_Academy.png",
+                achievement:
+                  "Established STEM programs for girls in rural areas, focusing on science education and leadership. Empowered over 5,000 girls with STEM skills.",
+              },
+            ],
+          },
+          {
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "American University of Nigeria",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/American_University_of_Nigeria.png",
+                achievement:
+                  "Implemented technology-enhanced STEM programs with a focus on digital learning. Provided tech-driven education to over 5,000 students.",
+              },
+              {
+                name: "Green Springs School",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Green_Springs_School.png",
+                achievement:
+                  "Integrated advanced technology tools into STEM curriculum, including virtual labs and online simulations. Enhanced learning experience for students.",
+              },
+              {
+                name: "Obafemi Awolowo University",
+                state: "Osun",
+                country: "Nigeria",
+                image: "/images/stem/Obafemi_Awolowo_University.png",
+                achievement:
+                  "Developed a robust e-learning platform for STEM courses. Increased access to STEM education for over 10,000 students.",
+              },
+              {
+                name: "University of Ibadan",
+                state: "Oyo",
+                country: "Nigeria",
+                image: "/images/stem/University_of_Ibadan.png",
+                achievement:
+                  "Integrated cutting-edge technology into STEM research and education. Facilitated research and learning for over 15,000 students.",
+              },
+              {
+                name: "Afe Babalola University",
+                state: "Ekiti",
+                country: "Nigeria",
+                image: "/images/stem/Afe_Babalola_University.png",
+                achievement:
+                  "Launched a tech-driven STEM program with a focus on innovation and entrepreneurship. Empowered 3,000 students with digital skills.",
+              },
+              {
+                name: "Bridge International Academies",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Bridge_International_Academies.png",
+                achievement:
+                  "Utilized educational technology to deliver STEM education in low-income areas. Improved STEM literacy for over 100,000 students.",
+              },
+              {
+                name: "CodeLagos",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/CodeLagos.png",
+                achievement:
+                  "Implemented a state-wide coding and technology program for students. Trained over 100,000 students in coding and digital literacy.",
+              },
+              {
+                name: "Edves",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Edves.png",
+                achievement:
+                  "Developed and deployed a technology platform to manage and enhance STEM education in schools. Supported over 500 schools in Nigeria.",
+              },
+              {
+                name: "Andela Learning Community",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Andela_Learning_Community.png",
+                achievement:
+                  "Provided online and offline technology training to students and professionals. Trained over 20,000 individuals in software development.",
+              },
+              {
+                name: "STEM METS Resources",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/STEM_METS_Resources.png",
+                achievement:
+                  "Offered STEM kits and technology resources for hands-on learning in schools. Enhanced STEM education for over 30,000 students across Nigeria.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "South Africa",
+        subCategories: [
+          {
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+          {
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+          {
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Central Africa",
+        subCategories: [
+          {
+            title: "The Best Innovative STEM Curriculum Development in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+          {
+            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+          {
+            title:
+              "The Best Technology Integration in STEM Education in Nigeria",
+            description:
+              "Recognizes educators and institutions employing innovative teaching methods in STEM education",
+            nominees: [
+              {
+                name: "Nominee 1",
+                state: "Lagos",
+                country: "Nigeria",
+                image: "/images/stem/Nominee1.png",
+                achievement: "",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];

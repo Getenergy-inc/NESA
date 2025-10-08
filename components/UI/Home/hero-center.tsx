@@ -13,30 +13,20 @@ import PopupSlider from "@/components/UI/Common/PopupSlider";
 
 const HeroCenter = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
  
+  // Show popup after a short delay on every page load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 2000); // 2 second delay
+    return () => clearTimeout(timer);
+  }, []);
 
-  // Animation variants
-
-
-  const videoVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  
-
-  // Optionally auto-close after a few seconds
+  // Auto-close popup after 30 seconds
   useEffect(() => {
     if (!showPopup) return;
-    const timer = setTimeout(() => setShowPopup(false), 30000); // 30 seconds
+    const timer = setTimeout(() => setShowPopup(false), 30000);
     return () => clearTimeout(timer);
   }, [showPopup]);
 
