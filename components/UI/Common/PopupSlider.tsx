@@ -119,6 +119,15 @@ const PopupSlider = ({ open, onClose }: { open: boolean; onClose: () => void }) 
             ))}
           </div>
         </motion.div>
+      </motion.div>
+      {open && (
+        <motion.div
+          className="fixed inset-0 bg-black/50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+        />
       )}
     </AnimatePresence>
   );
