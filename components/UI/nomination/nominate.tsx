@@ -140,7 +140,7 @@ const NominationPage: React.FC<NominationPageProps> = ({ type, category }) => {
                                 onChange={handleInputChange}
                                 value={formData.categoryType}
                                 readOnly
-                                className="bg-gray-50 p-3 rounded-lg w-full bg-gray-50 border border-gray-200 focus:border-[#FFC247] focus:ring-2 focus:ring-[#FFC247]/20 transition-all"
+                                className="bg-gray-50 p-3 rounded-lg w-full border border-gray-200 focus:border-[#FFC247] focus:ring-2 focus:ring-[#FFC247]/20 transition-all"
                               />
                             </div>
                             <div >
@@ -154,7 +154,7 @@ const NominationPage: React.FC<NominationPageProps> = ({ type, category }) => {
                                 onChange={handleInputChange}
                                 value={formData.subCategory}
                                 readOnly
-                                className="bg-gray-50 p-3 rounded-lg w-full bg-gray-50 border border-gray-200 focus:border-[#FFC247] focus:ring-2 focus:ring-[#FFC247]/20 transition-all"
+                                className="bg-gray-50 p-3 rounded-lg w-full border border-gray-200 focus:border-[#FFC247] focus:ring-2 focus:ring-[#FFC247]/20 transition-all"
                               />
                             </div>
               {/* Name Field */}

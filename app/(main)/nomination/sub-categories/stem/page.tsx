@@ -16,25 +16,25 @@ const StemPage = () => {
 
   const subcategories: Category[] = [
     {
-      title: "Support for education in STEM in Nigeria",
+      title: "Best STEM Education Program or Project (Africa-Regional)",
       description:
-        "Celebrating initiatives by any organization for creative arts role in education and promoting hands-on learning experiences.",
+        "Celebrating STEM programs that include every learner, improve measurable outcomes, and open pathways to higher education and decent work—across North, West, East, Central, and Southern Africa.",
       image: "/images/nesa-card2.png",
     },
     {
-      title: "The Best Innovative STEM Curriculum Development in Nigeria",
+      title: "The Best Innovative STEM Curriculum Development",
       description:
         "Recognizes educators and institutions employing innovative teaching methods in STEM education",
       image: "/images/nesa-card2.png",
     },
     {
-      title: "The Best STEM Outreach and Community Engagement in Nigeria",
+      title: "The Best STEM Outreach and Community Engagement",
       description:
         "Recognizes educators and institutions employing innovative teaching methods in STEM education.",
       image: "/images/nesa-card2.png",
     },
     {
-      title: "The Best Technology Integration in STEM Education in Nigeria",
+      title: "The Best Technology Integration in STEM Education",
       description:
         "Recognizes educators and institutions employing innovative teaching methods in STEM education.",
       image: "/images/nesa-card2.png",
@@ -84,7 +84,7 @@ const StemPage = () => {
       <div className="bg-[#FFF5E0] w-full">
         <div className="max-w-6xl mx-auto py-12 px-4">
           <h2 className="text-3xl text-center font-bold mb-8 relative inline-block text-black">
-            Support for education in STEM in Nigeria
+            Support for education in STEM in Africa
             <span className="absolute -bottom-2 left-0 w-16 h-1 bg-[#FFC247]"></span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
