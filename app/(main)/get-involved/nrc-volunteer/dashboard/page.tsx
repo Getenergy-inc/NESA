@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { useAuthContext } from '@/lib/context/AuthContext';
 import { useNRCStatus } from '@/lib/hooks/useNRCStatus';
 import { useWallet } from '@/lib/hooks/useWallet';
 import {
@@ -19,9 +18,12 @@ import {
 
 export default function NRCDashboard() {
   const router = useRouter();
-  const { user } = useAuthContext();
   const { loading, volunteer, canAccessDashboard } = useNRCStatus();
-  const { totalBalance, withdrawableBalance, loading: walletLoading } = useWallet();
+  // Disable wallet for now since NRC uses AGC tokens instead
+  // const { totalBalance, withdrawableBalance, loading: walletLoading } = useWallet();
+  const totalBalance = 0;
+  const withdrawableBalance = 0;
+  const walletLoading = false;
 
   const formatAGC = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -81,7 +83,7 @@ export default function NRCDashboard() {
               <h1 className="text-3xl font-bold text-gray-900">
                 Welcome back, {volunteer?.fullName && volunteer.fullName !== 'Unknown'
                   ? volunteer.fullName
-                  : user?.email?.split('@')[0] || 'Volunteer'}!
+                  : volunteer?.email?.split('@')[0] || 'Volunteer'}!
               </h1>
               <p className="text-gray-600 mt-2">
                 NRC Volunteer Dashboard - {volunteer?.country}
@@ -277,12 +279,12 @@ export default function NRCDashboard() {
                 <p className="font-medium text-gray-900">
                   {volunteer?.fullName && volunteer.fullName !== 'Unknown'
                     ? volunteer.fullName
-                    : user?.email?.split('@')[0] || 'Not provided'}
+                    : volunteer?.email?.split('@')[0] || 'Not provided'}
                 </p>
               </div>
               <div>
                 <label className="text-sm text-gray-500">Email</label>
-                <p className="font-medium text-gray-900">{volunteer?.email || user?.email || 'Not provided'}</p>
+                <p className="font-medium text-gray-900">{volunteer?.email || 'Not provided'}</p>
               </div>
               <div>
                 <label className="text-sm text-gray-500">Country</label>

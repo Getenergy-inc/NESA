@@ -3,6 +3,7 @@ import Image from "next/image";
 import { IoIosSearch, IoIosArrowBack } from "react-icons/io";
 import { categories, Category, Region, SubCategory, Nominee } from '@/lib/data/awardData';
 import { useRouter } from 'next/navigation';
+import publicNomineeService from '@/lib/services/publicNomineeService';
 
 
 const AwardCategory: React.FC<{
@@ -19,9 +20,8 @@ const AwardCategory: React.FC<{
 
   return (
     <div
-      className={`bg-[#191307] text-white rounded-3xl flex flex-col lg:${
-        isFirst ? 'flex-row' : 'flex-col'
-      } justify-between`}
+      className={`bg-[#191307] text-white rounded-3xl flex flex-col lg:${isFirst ? 'flex-row' : 'flex-col'
+        } justify-between`}
       style={{
         width: '100%',
         height: 'auto',
@@ -41,9 +41,8 @@ const AwardCategory: React.FC<{
         </div>
       </div>
       <div
-        className={`${
-          isFirst ? 'lg:w-1/2' : 'w-full'
-        } p-6 flex flex-col justify-between`}
+        className={`${isFirst ? 'lg:w-1/2' : 'w-full'
+          } p-6 flex flex-col justify-between`}
       >
         <div>
           <h3 className="text-xl font-bold mb-2">{category.title}</h3>
@@ -102,7 +101,10 @@ const RegionComponent: React.FC<{
 const SubCategoryComponent: React.FC<{
   subCategory: SubCategory;
   onSelectSubCategory: (subCategory: SubCategory) => void;
-}> = ({ subCategory, onSelectSubCategory }) => {
+  nomineeCount?: number;
+}> = ({ subCategory, onSelectSubCategory, nomineeCount }) => {
+  const totalCount = nomineeCount || subCategory.nominees.length;
+
   return (
     <div className="bg-[#191307] text-white rounded-3xl flex flex-col justify-between" style={{ width: '100%', minHeight: '540px' }}>
       <div className="w-full p-6 flex justify-center items-center">
@@ -114,6 +116,11 @@ const SubCategoryComponent: React.FC<{
         <div>
           <h3 className="text-xl font-bold mb-2">{subCategory.title}</h3>
           <p className="text-sm mb-4">{subCategory.description}</p>
+          {totalCount > 0 && (
+            <p className="text-xs text-[#FFC247] mb-2">
+              {totalCount} {totalCount === 1 ? 'Nominee' : 'Nominees'}
+            </p>
+          )}
         </div>
         <div className="mt-auto">
           <button
@@ -132,9 +139,9 @@ const SubCategoryComponent: React.FC<{
   );
 };
 
-const NomineeComponent: React.FC<{ 
-  nominee: Nominee, 
-  categoryTitle: string, 
+const NomineeComponent: React.FC<{
+  nominee: Nominee,
+  categoryTitle: string,
   subCategoryTitle: string,
   isJudgeView?: boolean
 }> = ({ nominee, categoryTitle, subCategoryTitle, isJudgeView = false }) => {
@@ -156,35 +163,35 @@ const NomineeComponent: React.FC<{
   };
 
   return (
-    <div 
-      className="bg-[#191307] text-white rounded-3xl p-6 flex flex-col justify-between" 
+    <div
+      className="bg-[#191307] text-white rounded-3xl p-6 flex flex-col justify-between"
       style={{ width: '100%', minHeight: '540px' }}
     >
       <div>
         <div className="relative w-full mb-4 flex justify-center items-center">
           <div className="relative w-full" style={{ paddingBottom: '66.67%' }}>
-            <Image 
-              src={nominee.image} 
-              alt={nominee.name} 
-              layout="fill" 
-              objectFit="cover" 
-              className="rounded-2xl" 
+            <Image
+              src={nominee.image}
+              alt={nominee.name}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-2xl"
             />
           </div>
         </div>
         <h3 className="text-xl font-bold mb-2">{nominee.name}</h3>
         {(nominee.state || nominee.country) && (
           <p className="text-sm mb-2 text-gray-400">
-            {nominee.state && nominee.country 
+            {nominee.state && nominee.country
               ? `${nominee.state}, ${nominee.country}`
               : nominee.state || nominee.country}
           </p>
         )}
         <p className="text-sm mb-4">{nominee.achievement}</p>
       </div>
-      <button 
+      <button
         onClick={handleButtonClick}
-        className="w-full py-2.5 px-4 rounded-lg font-medium mt-auto bg-gradient-to-r from-[#FFC247] to-[#E48900] text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 flex items-center justify-center group" 
+        className="w-full py-2.5 px-4 rounded-lg font-medium mt-auto bg-gradient-to-r from-[#FFC247] to-[#E48900] text-[#191307] hover:shadow-[0_0_15px_rgba(255,194,71,0.5)] transition-all duration-300 flex items-center justify-center group"
       >
         <span className="mr-2 text-lg">{isJudgeView ? '⭐' : '🏆'}</span>
         <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -201,8 +208,8 @@ interface JudgePageProps {
   isJudgeView?: boolean;
 }
 
-const JudgePage: React.FC<JudgePageProps> = ({ 
-  initialCategory = null, 
+const JudgePage: React.FC<JudgePageProps> = ({
+  initialCategory = null,
   initialSubCategory = null,
   isJudgeView = false
 }) => {
@@ -210,24 +217,27 @@ const JudgePage: React.FC<JudgePageProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
   const [selectedSubCategory, setSelectedSubCategory] = useState<SubCategory | null>(null);
-  
+  const [nrcNominees, setNrcNominees] = useState<Nominee[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [mergedSubCategory, setMergedSubCategory] = useState<SubCategory | null>(null);
+
   // Find and set initial category and subcategory if provided
   useEffect(() => {
     if (initialCategory) {
-      const category = categories.find(c => 
+      const category = categories.find(c =>
         c.title.toLowerCase() === initialCategory.toLowerCase() ||
         c.title.toLowerCase().includes(initialCategory.toLowerCase())
       );
-      
+
       if (category) {
         setSelectedCategory(category);
-        
+
         if (initialSubCategory && category.subCategories) {
-          const subCategory = category.subCategories.find(sc => 
+          const subCategory = category.subCategories.find(sc =>
             sc.title.toLowerCase() === initialSubCategory.toLowerCase() ||
             sc.title.toLowerCase().includes(initialSubCategory.toLowerCase())
           );
-          
+
           if (subCategory) {
             setSelectedSubCategory(subCategory);
           }
@@ -235,6 +245,54 @@ const JudgePage: React.FC<JudgePageProps> = ({
       }
     }
   }, [initialCategory, initialSubCategory]);
+
+  // Fetch NRC nominees when subcategory is selected
+  useEffect(() => {
+    const fetchNRCNominees = async () => {
+      if (selectedSubCategory && selectedCategory) {
+        setLoading(true);
+        try {
+          // Import the category mapping
+          const { getCategoryValue, getSubcategoryValue } = await import('@/lib/utils/categoryMapping');
+
+          const awardCategoryValue = getCategoryValue(selectedCategory.title);
+          const subcategoryValue = getSubcategoryValue(selectedSubCategory.title);
+
+          console.log('Fetching NRC nominees:', {
+            category: selectedCategory.title,
+            categoryValue: awardCategoryValue,
+            subcategory: selectedSubCategory.title,
+            subcategoryValue: subcategoryValue
+          });
+
+          const nominees = await publicNomineeService.getNominees(
+            awardCategoryValue,
+            subcategoryValue
+          );
+
+          setNrcNominees(nominees);
+
+          // Merge static and NRC nominees
+          const merged: SubCategory = {
+            ...selectedSubCategory,
+            nominees: [...selectedSubCategory.nominees, ...nominees]
+          };
+
+          setMergedSubCategory(merged);
+        } catch (error) {
+          console.error('Error fetching NRC nominees:', error);
+          setMergedSubCategory(selectedSubCategory);
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        setMergedSubCategory(null);
+        setNrcNominees([]);
+      }
+    };
+
+    fetchNRCNominees();
+  }, [selectedSubCategory, selectedCategory]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -403,16 +461,35 @@ const JudgePage: React.FC<JudgePageProps> = ({
             </div>
           )}
           {selectedSubCategory && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-              {selectedSubCategory.nominees.map((nominee, index) => (
-                <NomineeComponent 
-                  key={index} 
-                  nominee={nominee} 
-                  categoryTitle={selectedCategory?.title || ""} 
-                  subCategoryTitle={selectedSubCategory.title}
-                  isJudgeView={isJudgeView}
-                />
-              ))}
+            <div className="w-full">
+              {loading && (
+                <div className="text-center py-8">
+                  <p className="text-gray-600">Loading nominees...</p>
+                </div>
+              )}
+              {!loading && mergedSubCategory && (
+                <>
+                  {nrcNominees.length > 0 && (
+                    <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                      <p className="text-green-700 text-sm">
+                        ✨ Showing {mergedSubCategory.nominees.length} total nominees
+                        ({selectedSubCategory.nominees.length} featured + {nrcNominees.length} community nominated)
+                      </p>
+                    </div>
+                  )}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {mergedSubCategory.nominees.map((nominee, index) => (
+                      <NomineeComponent
+                        key={`nominee-${index}`}
+                        nominee={nominee}
+                        categoryTitle={selectedCategory?.title || ""}
+                        subCategoryTitle={selectedSubCategory.title}
+                        isJudgeView={isJudgeView}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>

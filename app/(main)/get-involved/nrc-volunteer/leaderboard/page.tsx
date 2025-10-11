@@ -1,214 +1,206 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Medal, Award, Star, TrendingUp } from 'lucide-react';
+import { Trophy, Medal, Award, TrendingUp, Users } from 'lucide-react';
+import nrcService from '@/lib/services/nrcService';
 
-// Define the volunteer type
-interface Volunteer {
+interface LeaderboardEntry {
   rank: number;
-  name: string;
+  volunteerId: string;
+  fullName: string;
+  displayName: string;
   country: string;
-  avatar: string;
-  uploads: number;
-  verified: number;
-  agc: number;
+  nomineesUploaded: number;
+  agcEarned: number;
+  level: string;
+  badge: string | null;
 }
 
 export default function LeaderboardPage() {
-  const [timeframe, setTimeframe] = useState<'weekly' | 'monthly' | 'allTime'>('monthly');
+  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [type, setType] = useState<'uploads' | 'agc'>('uploads');
+  const [currentUserId, setCurrentUserId] = useState<string | null>(null);
 
-  // Sample leaderboard data - will be fetched from API
-  const leaderboardData: Record<string, Volunteer[]> = {
-    weekly: [
-      { rank: 1, name: 'John Doe', country: 'Kenya', avatar: '👨🏾‍💻', uploads: 120, verified: 110, agc: 550 },
-      { rank: 2, name: 'Jane Smith', country: 'Nigeria', avatar: '👩🏾‍🔬', uploads: 105, verified: 98, agc: 490 },
-      { rank: 3, name: 'David Osei', country: 'Ghana', avatar: '👨🏿‍🎓', uploads: 95, verified: 90, agc: 450 },
-      { rank: 4, name: 'Amina Hassan', country: 'Tanzania', avatar: '👩🏽‍🏫', uploads: 85, verified: 80, agc: 400 },
-      { rank: 5, name: 'Michael Abebe', country: 'Ethiopia', avatar: '👨🏾‍🔧', uploads: 75, verified: 70, agc: 350 }
-    ],
-    monthly: [
-      { rank: 1, name: 'Sarah Kimani', country: 'Kenya', avatar: '👩🏾‍💼', uploads: 320, verified: 290, agc: 1450 },
-      { rank: 2, name: 'Emmanuel Adeyemi', country: 'Nigeria', avatar: '👨🏿‍🚀', uploads: 280, verified: 260, agc: 1300 },
-      { rank: 3, name: 'Fatima Diallo', country: 'Senegal', avatar: '👩🏿‍⚕️', uploads: 250, verified: 230, agc: 1150 },
-      { rank: 4, name: 'Robert Mensah', country: 'Ghana', avatar: '👨🏾‍🍳', uploads: 220, verified: 200, agc: 1000 },
-      { rank: 5, name: 'Zainab Mohammed', country: 'Egypt', avatar: '👩🏽‍🔧', uploads: 190, verified: 170, agc: 850 }
-    ],
-    allTime: [
-      { rank: 1, name: 'Daniel Mwangi', country: 'Kenya', avatar: '👨🏾‍🎨', uploads: 1200, verified: 1100, agc: 5500 },
-      { rank: 2, name: 'Chioma Okonkwo', country: 'Nigeria', avatar: '👩🏿‍🏭', uploads: 1100, verified: 1000, agc: 5000 },
-      { rank: 3, name: 'Kwame Asante', country: 'Ghana', avatar: '👨🏿‍✈️', uploads: 1000, verified: 900, agc: 4500 },
-      { rank: 4, name: 'Aisha Juma', country: 'Tanzania', avatar: '👩🏾‍🌾', uploads: 900, verified: 800, agc: 4000 },
-      { rank: 5, name: 'Tewodros Haile', country: 'Ethiopia', avatar: '👨🏾‍🏫', uploads: 800, verified: 700, agc: 3500 }
-    ]
+  useEffect(() => {
+    // Get current NRC user ID
+    if (typeof window !== 'undefined') {
+      setCurrentUserId(localStorage.getItem('nrc_user_id'));
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchLeaderboard();
+  }, [type]);
+
+  const fetchLeaderboard = async () => {
+    try {
+      setLoading(true);
+      const data = await nrcService.getLeaderboard(type, 20);
+      setLeaderboard(data);
+    } catch (error) {
+      console.error('Error fetching leaderboard:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const currentData = leaderboardData[timeframe];
-
   const getRankIcon = (rank: number) => {
-    switch (rank) {
-      case 1: return <Trophy className="w-6 h-6 text-yellow-500" />;
-      case 2: return <Medal className="w-6 h-6 text-gray-400" />;
-      case 3: return <Award className="w-6 h-6 text-amber-600" />;
-      default: return <Star className="w-6 h-6 text-blue-500" />;
-    }
+    if (rank === 1) return <Trophy className="w-6 h-6 text-yellow-500" />;
+    if (rank === 2) return <Medal className="w-6 h-6 text-gray-400" />;
+    if (rank === 3) return <Medal className="w-6 h-6 text-orange-600" />;
+    return <span className="text-lg font-bold text-gray-600">{rank}</span>;
   };
 
   const getRankBg = (rank: number) => {
-    switch (rank) {
-      case 1: return 'bg-gradient-to-r from-yellow-400 to-yellow-600';
-      case 2: return 'bg-gradient-to-r from-gray-300 to-gray-500';
-      case 3: return 'bg-gradient-to-r from-amber-400 to-amber-600';
-      default: return 'bg-gradient-to-r from-blue-400 to-blue-600';
-    }
+    if (rank === 1) return 'bg-gradient-to-r from-yellow-50 to-yellow-100 border-yellow-300';
+    if (rank === 2) return 'bg-gradient-to-r from-gray-50 to-gray-100 border-gray-300';
+    if (rank === 3) return 'bg-gradient-to-r from-orange-50 to-orange-100 border-orange-300';
+    return 'bg-white border-gray-200';
   };
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-lg shadow-lg p-6 mb-8"
         >
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">NRC Leaderboard</h1>
-              <p className="text-gray-600 mt-2">Top performing volunteers across Africa</p>
-            </div>
-            <div className="flex space-x-2">
-              {(['weekly', 'monthly', 'allTime'] as const).map((period) => (
-                <button
-                  key={period}
-                  onClick={() => setTimeframe(period)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                    timeframe === period
-                      ? 'bg-[#ea580c] text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
-                >
-                  {period === 'allTime' ? 'All Time' : period.charAt(0).toUpperCase() + period.slice(1)}
-                </button>
-              ))}
+              <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
+                <Trophy className="w-8 h-8 text-orange-600" />
+                NRC Volunteer Leaderboard
+              </h1>
+              <p className="text-gray-600 mt-2">
+                Top performing volunteers in the Nomination Research Campaign
+              </p>
             </div>
           </div>
         </motion.div>
 
-        {/* Top 3 Podium */}
-        {currentData.length > 0 ? (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="grid md:grid-cols-3 gap-6 mb-8"
-          >
-            {currentData.slice(0, 3).map((volunteer, index) => (
-            <div
-              key={volunteer.rank}
-              className={`relative bg-white rounded-lg shadow-lg p-6 text-center ${
-                index === 0 ? 'md:order-2 transform md:scale-110' : 
-                index === 1 ? 'md:order-1' : 'md:order-3'
+        {/* Type Selector */}
+        <div className="bg-white rounded-lg shadow p-4 mb-6">
+          <div className="flex gap-4">
+            <button
+              onClick={() => setType('uploads')}
+              className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-colors ${
+                type === 'uploads'
+                  ? 'bg-orange-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              <div className={`absolute -top-3 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full ${getRankBg(volunteer.rank)} flex items-center justify-center`}>
-                {getRankIcon(volunteer.rank)}
-              </div>
-              <div className="mt-6">
-                <div className="text-4xl mb-2">{volunteer.avatar}</div>
-                <h3 className="text-xl font-bold text-gray-900">{volunteer.name}</h3>
-                <p className="text-gray-600">{volunteer.country}</p>
-                <div className="mt-4 space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-sm text-gray-500">Uploads:</span>
-                    <span className="font-semibold">{volunteer.uploads}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm text-gray-500">Verified:</span>
-                    <span className="font-semibold text-green-600">{volunteer.verified}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm text-gray-500">AGC Earned:</span>
-                    <span className="font-semibold text-yellow-600">{volunteer.agc}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-        ) : null}
+              <Users className="w-5 h-5 inline mr-2" />
+              Most Uploads
+            </button>
+            <button
+              onClick={() => setType('agc')}
+              className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-colors ${
+                type === 'agc'
+                  ? 'bg-orange-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              <TrendingUp className="w-5 h-5 inline mr-2" />
+              Most AGC Earned
+            </button>
+          </div>
+        </div>
 
-        {/* Full Leaderboard Table */}
+        {/* Leaderboard */}
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          {loading ? (
+            <div className="p-12 text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading leaderboard...</p>
+            </div>
+          ) : leaderboard.length === 0 ? (
+            <div className="p-12 text-center text-gray-500">
+              <Award className="w-16 h-16 mx-auto mb-4 text-gray-300" />
+              <p>No volunteers found yet</p>
+            </div>
+          ) : (
+            <div className="divide-y divide-gray-200">
+              {leaderboard.map((entry) => (
+                <motion.div
+                  key={entry.volunteerId}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: entry.rank * 0.05 }}
+                  className={`p-6 border-l-4 ${getRankBg(entry.rank)} ${
+                    entry.volunteerId === currentUserId ? 'ring-2 ring-orange-500' : ''
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4 flex-1">
+                      {/* Rank */}
+                      <div className="w-12 h-12 flex items-center justify-center">
+                        {getRankIcon(entry.rank)}
+                      </div>
+
+                      {/* Volunteer Info */}
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-lg font-semibold text-gray-900">
+                            {entry.displayName}
+                          </h3>
+                          {entry.volunteerId === currentUserId && (
+                            <span className="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded">
+                              You
+                            </span>
+                          )}
+                          {entry.badge && (
+                            <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded">
+                              {entry.badge}
+                            </span>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-4 mt-1 text-sm text-gray-600">
+                          <span>{entry.country}</span>
+                          <span className="text-gray-400">•</span>
+                          <span className="text-orange-600 font-medium">{entry.level}</span>
+                        </div>
+                      </div>
+
+                      {/* Stats */}
+                      <div className="flex gap-8 text-center">
+                        <div>
+                          <div className="text-2xl font-bold text-gray-900">
+                            {entry.nomineesUploaded}
+                          </div>
+                          <div className="text-xs text-gray-500">Uploads</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-orange-600">
+                            {entry.agcEarned.toFixed(0)}
+                          </div>
+                          <div className="text-xs text-gray-500">AGC</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Info Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-lg shadow-lg overflow-hidden"
+          transition={{ delay: 0.3 }}
+          className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6"
         >
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-              <TrendingUp className="w-5 h-5" />
-              Complete Rankings
-            </h2>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Rank
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Volunteer
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Uploads
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Verified
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Success Rate
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    AGC Earned
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {currentData.map((volunteer) => (
-                  <tr key={volunteer.rank} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="flex items-center">
-                        {getRankIcon(volunteer.rank)}
-                        <span className="ml-2 text-lg font-bold text-gray-900">#{volunteer.rank}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="flex items-center">
-                        <span className="text-2xl mr-3">{volunteer.avatar}</span>
-                        <div>
-                          <div className="text-sm font-medium text-gray-900">{volunteer.name}</div>
-                          <div className="text-sm text-gray-500">{volunteer.country}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">{volunteer.uploads}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-green-600">{volunteer.verified}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-blue-600">
-                        {Math.round((volunteer.verified / volunteer.uploads) * 100)}%
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-yellow-600">{volunteer.agc} AGC</div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h3 className="font-semibold text-blue-900 mb-2">How Rankings Work</h3>
+          <ul className="text-sm text-blue-800 space-y-1">
+            <li>• Rankings are updated in real-time based on verified nominees</li>
+            <li>• Earn 10 AGC tokens for each verified nominee</li>
+            <li>• Top performers receive special badges and recognition</li>
+            <li>• Keep uploading quality nominees to climb the ranks!</li>
+          </ul>
         </motion.div>
       </div>
     </div>
