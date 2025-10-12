@@ -13,6 +13,7 @@ import Category from "@/components/UI/categorynominate/nominatecategories";
 import CountdownTimer from "@/components/Common/Others/countdown";
 import CompetitiveCategoriesOverview from "@/components/UI/categorynominate/CompetitiveCategoriesOverview";
 import CompetitiveAwards from "@/components/UI/nomination/CompetitiveAwards";
+import CompetitveGetInvolve from "@/components/UI/nomination/CompetitveGetInvolve";
 
 const Page = () => {
   const handleTimeUpdate = (time: {
@@ -24,7 +25,7 @@ const Page = () => {
     console.log("Time updated:", time);
   };
 
-  const categoryData = [
+  const SingleData = [
     {
       title: "Best Media Organization in Educational Advocacy (Nigeria)",
       description:
@@ -32,28 +33,10 @@ const Page = () => {
       subCategoryPath: "/nomination/sub-categories/best-media-organization",
     },
     {
-      title: "Best CSR in Education (Africa – Regional)",
-      description:
-        "Honors exceptional international award programs for international collaborations and contributions to Nigeria educational development.",
-      subCategoryPath: "/nomination/sub-categories/best-csr-education",
-    },
-    {
-      title: "Best NGO Contribution to Achieving Education for All",
-      description:
-        "We recognize research institutes for their exceptional contributions and excellence to educational research and development in Nigeria, shaping future educational strategies.",
-      subCategoryPath: "/nomination/sub-categories/best-ngo-contribution",
-    },
-    {
       title: "Creative Arts Industry Contribution to Education (Nigeria)",
       description:
         "Recognizing effort towards achieving sustainable development goal 4, for dedication to achieving quality education under SDG 4, elevating",
       subCategoryPath: "/nomination/sub-categories/creative-arts-contribution",
-    },
-    {
-      title: "Best EduTech Organization in Africa (Regional)",
-      description:
-        "Recognizing philanthropy and leadership contributions for their outstanding contributions to education.",
-      subCategoryPath: "nomination/sub-categories/best-edutech-organization",
     },
     {
       title: "Best NGO Contribution to Education (Nigeria)",
@@ -67,31 +50,51 @@ const Page = () => {
         "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
       subCategoryPath: "/nomination/sub-categories/csr-education-africa",
     },
+  ];
+  const RegionalData = [
     {
-      title: "Best STEM Education Program or Project (Africa-wide)",
+      title: "Best CSR in Education (Africa – Regional)",
+      description:
+        "Honors exceptional international award programs for international collaborations and contributions to Nigeria educational development.",
+      subCategoryPath: `/nominees?category=Best Africa Regional Companies CSR for Education Special Recognition Award in Africa 2024`,
+    },
+    {
+      title: "Best NGO Contribution to Achieving Education (Africa-Regional)",
+      description:
+        "We recognize research institutes for their exceptional contributions and excellence to educational research and development in Nigeria, shaping future educational strategies.",
+      subCategoryPath: `/nominees?category=Best NGO Education Support Recognition Award (Africa-Regional)`,
+    },
+    {
+      title: "Best EduTech Organization in Africa (Africa-Regional)",
+      description:
+        "Recognizing philanthropy and leadership contributions for their outstanding contributions to education.",
+      subCategoryPath: `/nominees?category=Best EduTech Organization in Nigeria and Africa 2024`,
+    },
+    {
+      title: "Best STEM Education Program or Project (Africa-Regional)",
       description:
         "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
-      subCategoryPath: "/nomination/sub-categories/stem",
+      subCategoryPath: `/nominees?category=Support for education in STEM in Nigeria`,
     },
   ];
 
   const title = "Categories in the Competitive Categories";
   return (
     <>
-      <CategoryHeader categoryData={categoryData} />
+      <CompetitiveAwards />
 
-      <main className="pb-8">
+      {/* <CategoryHeader categoryData={categoryData} /> */}
+
+      <main>
         {/* <CountdownTimer
           onTimeUpdate={handleTimeUpdate}
           targetDateProp="2025-09-10T19:55:00Z"
         /> */}
-        <Category categoryData={categoryData} head={title} />
+        <Category SingleData={SingleData} RegionalData={RegionalData} />
         {/* Enhanced Competitive Awards Section */}
-        <CompetitiveAwards />
 
         {/* <CompetitiveCategoriesOverview /> */}
-        <Whynominate />
-        <HowToNominate />
+        <CompetitveGetInvolve />
       </main>
     </>
   );

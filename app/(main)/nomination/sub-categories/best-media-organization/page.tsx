@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
-import NominationPage from "@/components/UI/nomination/nominate";
+// import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
+// import NominationPage from "@/components/UI/nomination/nominate";
 import { useRouter } from "next/navigation";
 
 interface Category {
@@ -16,9 +16,9 @@ const MediaEducationalAdvocacyAwardPage = () => {
   const categories: Category[] = [
     {
       title:
-        "The Overall Best Media Organization in Nigeria with Educational Advocacy Content 2024",
+        "The Overall Best Media Organization in Nigeria with Educational Advocacy Content 2025",
       description:
-        "The Overall Best Media Organization in Nigeria with Educational Advocacy Content for Achieving Education for All Award 2024 recognizes media organizations that have made significant contributions to educational advocacy through their content. This award celebrates media outlets that have effectively utilized their platforms to promote education, raise awareness about educational issues, and advocate for educational reforms and initiatives.",
+        "The Overall Best Media Organization in Nigeria with Educational Advocacy Content for Achieving Education for All Award 2025 recognizes media organizations that have made significant contributions to educational advocacy through their content. This award celebrates media outlets that have effectively utilized their platforms to promote education, raise awareness about educational issues, and advocate for educational reforms and initiatives.",
       image: "/images/nesa-card2.png",
     },
     {
@@ -79,43 +79,15 @@ const MediaEducationalAdvocacyAwardPage = () => {
       <div className="relative bg-[#191307] text-white py-24 px-8">
         <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center opacity-20"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-2 md:mt-16 text-center">Category 1</h2>
           <h1 className="text-3xl font-bold text-[#FFC247] mb-4 text-center">
             {categories[0].title}
           </h1>
           <p className="mb-8 text-center">{categories[0].description}</p>
         </div>
-
-        {/* Carousel Indicator Dots */}
-        <div className="absolute bottom-4 left-4 flex space-x-2">
-          {categories.map((_, index) => (
-            <div
-              key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex ? "bg-[#FFC247]" : "bg-white"
-              }`}
-            ></div>
-          ))}
-        </div>
-        {/* Carousel Navigation Arrows */}
-        <div className="absolute bottom-4 right-4 flex space-x-4">
-          <button
-            onClick={prevSlide}
-            className="p-2 rounded transition bg-[#FFC247]"
-          >
-            <IoMdArrowBack size={24} color="#191307" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="p-2 rounded transition bg-[#FFC247]"
-          >
-            <IoMdArrowForward size={24} color="#191307" />
-          </button>
-        </div>
       </div>
       {/* Sub-Categories Section */}
       <div className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-3xl font-bold mb-8 relative inline-block">
+        <h2 className="text-3xl text-center font-bold mb-8 relative inline-block">
           The Best Media Organization with Educational Advocacy Content Award
           Sub-Categories
           <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-[#FFC247] to-[#E48900]"></span>
