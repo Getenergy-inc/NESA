@@ -70,9 +70,9 @@ const Page = () => {
       description: "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
       subCategoryPath: "/nomination/sub-categories/best-csr-education"
     }
-    
+
   ];
-  
+
   return (
     <>
       <main className="py-20">
