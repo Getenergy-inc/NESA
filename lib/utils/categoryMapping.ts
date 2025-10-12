@@ -92,20 +92,21 @@ export function getCategoryDisplayName(value: string): string {
  * Supports exact match and case-insensitive fuzzy matching
  */
 export function getSubcategoryValue(displayName: string): string {
-  // Try exact match first
+  // Normalize input: trim and lowercase
+  const normalizedInput = displayName.toLowerCase().trim();
+
+  // Try exact match first (after normalization)
   if (SUBCATEGORY_MAPPING[displayName]) {
     return SUBCATEGORY_MAPPING[displayName];
   }
-  
-  // Try case-insensitive match
-  const normalizedInput = displayName.toLowerCase().trim();
-  
+
+  // Try case-insensitive match with trimming
   for (const [key, value] of Object.entries(SUBCATEGORY_MAPPING)) {
-    if (key.toLowerCase() === normalizedInput) {
+    if (key.toLowerCase().trim() === normalizedInput) {
       return value;
     }
   }
-  
+
   // Return original if no match found
   return displayName;
 }
@@ -221,8 +222,7 @@ export const SUBCATEGORY_MAPPING: { [key: string]: string } = {
     "overall-best-library",
   "Best University Library in Nigeria (Public)": "university-library-public",
   "Best University Library in Nigeria (Private)": "university-library-private",
-  "Best Polytechnic Library in Nigeria (Public)":
-    "polytechnic-library-public",
+  "Best Polytechnic Library in Nigeria (Public)": "polytechnic-library-public",
   "Best College of Education Library in Nigeria (Public)":
     "college-education-library-public",
   "Best College of Nursing Library in Nigeria (Public)":
@@ -300,6 +300,38 @@ export const SUBCATEGORY_MAPPING: { [key: string]: string } = {
     "diaspora-program-innovation",
   "The Best Diaspora-Led Teacher Training and Support Initiative.":
     "diaspora-teacher-training",
+
+  // CSR for Education Africa subcategories (Blue Garnet) - unique ones only
+  "Oil And Gas CSR in Education Award": "oil-gas-csr-africa",
+  "Food And Beverages CSR in Education Award": "food-beverages-csr-africa",
+  "Aviation CSR in Education Award": "aviation-csr-africa",
+  "Real Estate and Construction CSR in Education Award":
+    "real-estate-construction-csr-africa",
+  "Retail and E-commerce CSR in Education Award": "retail-ecommerce-csr-africa",
+  "Commercial retail CSR in Education Award": "commercial-retail-csr-africa",
+  "Pharmaceuticals CSR in Education Award": "pharmaceuticals-csr-africa",
+  "Insurance CSR in Education Award": "insurance-csr-africa",
+  "Conglomerates And Diversified Businesses CSR in Education Award":
+    "conglomerates-csr-africa",
+  "Media And Entertainment CSR in Education Award":
+    "media-entertainment-csr-africa",
+  "Health Care And Hospitals CSR in Education Award":
+    "healthcare-hospitals-csr-africa",
+  "Professional Services CSR in Education Award":
+    "professional-services-csr-africa",
+  "Fintech CSR in Education Award": "fintech-csr-africa",
+  "Microfinance Banks CSR in Education Award": "microfinance-banks-csr-africa",
+  "Emerging Telecommunications CSR in Education Award":
+    "emerging-telecommunications-csr-africa",
+  "Technology and Software CSR in Education Award":
+    "technology-software-csr-africa",
+  "Real Estate Development CSR in Education Award":
+    "real-estate-development-csr-africa",
+  "Hotels CSR in Education Award": "hotels-csr-africa",
+  "Manufacturing CSR in Education Award": "manufacturing-csr-africa",
+  "Technology And ICT CSR in Education Award": "technology-ict-csr-africa",
+  "Agriculture And Agribusiness CSR in Education Award":
+    "agriculture-agribusiness-csr-africa",
 };
 
 /**
