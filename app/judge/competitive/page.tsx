@@ -58,13 +58,10 @@ const Page = () => {
   ];
   
   
-  const title = "Categories in the Competitive Categories"
   return (
     <>
-
-          <main className="py-20">
-
-        <Category categoryData={categoryData} head ={title} />
+      <main className="py-20">
+        <Category SingleData={categoryData} RegionalData={[]} />
       </main>
     </>
   );

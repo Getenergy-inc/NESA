@@ -73,15 +73,10 @@ const Page = () => {
     
   ];
   
-  const title = "Categories in the Non-Competitive Categories"
-  
-
   return (
     <>
-      {/* <NonCategoryHeader categoryData={categoryData} /> */}
       <main className="py-20">
-
-      <Category categoryData={categoryData} head={title} />
+        <Category SingleData={categoryData} RegionalData={[]} />
       </main>
     </>
   );
