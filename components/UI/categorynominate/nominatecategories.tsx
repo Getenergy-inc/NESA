@@ -20,8 +20,8 @@ export interface CategoryCardProps {
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({
-  SingleData,
-  RegionalData,
+  SingleData = [],
+  RegionalData = [],
 }) => {
   return (
     <section className="bg-white">
@@ -34,6 +34,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           </div>
         </div>
 
+        {SingleData && SingleData.length > 0 && (
         <div className="relative container mx-auto px-4">
           <h1 className="text-2xl md:text-3xl font-bold bg-[#E48900] inline-block text-transparent bg-clip-text mb-8 pl-5">
             Nigeria Based
@@ -91,6 +92,8 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
             ))}
           </div>
         </div>
+        )}
+        {RegionalData && RegionalData.length > 0 && (
         <div className="relative container mx-auto px-4">
           <h1 className="text-2xl md:text-3xl font-bold bg-[#E48900] inline-block text-transparent bg-clip-text mb-8 pl-5 pt-10">
             Regional Based
@@ -148,6 +151,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
             ))}
           </div>
         </div>
+        )}
       </div>
     </section>
   );

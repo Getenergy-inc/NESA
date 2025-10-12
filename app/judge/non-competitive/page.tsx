@@ -70,18 +70,13 @@ const Page = () => {
       description: "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
       subCategoryPath: "/nomination/sub-categories/best-csr-education"
     }
-    
+
   ];
-  
-  const title = "Categories in the Non-Competitive Categories"
-  
 
   return (
     <>
-      {/* <NonCategoryHeader categoryData={categoryData} /> */}
       <main className="py-20">
-
-      <Category categoryData={categoryData} head={title} />
+        <Category SingleData={categoryData} RegionalData={[]} />
       </main>
     </>
   );
