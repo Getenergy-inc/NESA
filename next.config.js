@@ -26,6 +26,8 @@ const nextConfig = {
     },
     serverComponentsExternalPackages: ['mongoose'],
   },
+  // Add timeout for static generation to prevent hanging
+  staticPageGenerationTimeout: 600, // 10 minutes timeout for large number of pages
   // Optimize build performance
   swcMinify: true,
   compiler: {
@@ -45,7 +47,7 @@ const nextConfig = {
         tls: false,
       };
     }
-    
+
     // Server-side configuration to fix "self is not defined" and global issues
     if (isServer) {
       config.plugins = config.plugins || [];
@@ -73,7 +75,7 @@ const nextConfig = {
         /This can lead to unexpected behavior when compiling on a filesystem with other case-semantic/,
       ],
     };
-    
+
     // Optimize memory usage with smaller chunks
     config.optimization = {
       ...config.optimization,
@@ -97,10 +99,10 @@ const nextConfig = {
         },
       },
     };
-    
+
     return config;
   },
-  
+
 }
 
 module.exports = nextConfig
