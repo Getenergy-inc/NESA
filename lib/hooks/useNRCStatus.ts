@@ -59,24 +59,34 @@ export const useNRCStatus = (): NRCStatus => {
   const checkStatus = async () => {
     console.log("NRC Status Check - User object:", user);
 
-    const userId = user?.id || user?.userId;
+    // For NRC, prioritize localStorage userId over authenticated user
+    let userId = "";
 
+    if (typeof window !== "undefined") {
+      userId = localStorage.getItem("nrc_user_id") || "";
+    }
+
+    // If no NRC userId in localStorage, this user hasn't registered for NRC yet
     if (!userId) {
       console.log(
-        "NRC Status Check - No userId found, setting loading to false"
+        "NRC Status Check - No NRC userId found in localStorage, user not registered for NRC"
       );
       setLoading(false);
       return;
     }
 
-    console.log("NRC Status Check - Using userId:", userId);
+    console.log("NRC Status Check - Using NRC userId:", userId);
     setLoading(true);
 
     try {
-      // Use the dedicated checkVolunteerStatus endpoint
-      const statusResponse = await nrcService.checkVolunteerStatus();
+      // Use the dedicated checkVolunteerStatus endpoint with userId
+      const statusResponse = await nrcService.checkVolunteerStatus(userId);
 
-      if (statusResponse.success && statusResponse.data && statusResponse.data.profile) {
+      if (
+        statusResponse.success &&
+        statusResponse.data &&
+        statusResponse.data.profile
+      ) {
         const profile = statusResponse.data.profile;
 
         setHasApplication(true);

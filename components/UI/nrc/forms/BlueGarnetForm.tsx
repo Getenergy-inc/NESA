@@ -74,7 +74,7 @@ export const BlueGarnetForm: React.FC<BlueGarnetFormProps> = ({
       {/* Blue Garnet Specific Fields */}
       <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
         <h3 className="text-xl font-semibold text-gray-900 mb-6">Lifetime Impact Details</h3>
-        
+
         <div className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div>

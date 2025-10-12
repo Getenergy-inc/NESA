@@ -24,29 +24,19 @@ import '@/styles/nrc-hero.css';
 
 const NRCLandingPage: React.FC = () => {
   const router = useRouter();
-  const { isAuthenticated } = useAuthContext();
-  const { loading, hasApplication, isApproved, isPending, isRejected, canAccessDashboard } = useNRCStatus();
+  const { loading, hasApplication, canAccessDashboard } = useNRCStatus();
   
   // Debug logs
   useEffect(() => {
-    console.log('NRC Landing Page - Auth Status:', { isAuthenticated });
     console.log('NRC Landing Page - Volunteer Status:', { 
       loading, 
       hasApplication, 
-      isApproved, 
-      isPending, 
-      isRejected, 
       canAccessDashboard 
     });
-  }, [isAuthenticated, loading, hasApplication, isApproved, isPending, isRejected, canAccessDashboard]);
+  }, [loading, hasApplication, canAccessDashboard]);
 
   const handleApplyNow = () => {
-    // Check authentication and redirect accordingly
-    if (!isAuthenticated) {
-      router.push('/account/login');
-      return;
-    }
-
+    // No authentication required - direct access
     if (canAccessDashboard) {
       router.push('/get-involved/nrc-volunteer/dashboard');
       return;
@@ -63,18 +53,15 @@ const NRCLandingPage: React.FC = () => {
   };
 
   const getButtonText = () => {
-    // Dynamic button text based on authentication and status
-    if (!isAuthenticated) return 'Login to Apply';
+    // Dynamic button text based on status (no auth required)
     if (canAccessDashboard) return 'Go to Dashboard';
-    if (isPending) return 'Application Pending';
-    if (isRejected) return 'Application Not Approved';
     if (hasApplication) return 'View Application Status';
     return 'Apply Now';
   };
 
   const getButtonDisabled = () => {
-    // Re-enable button state logic
-    return isPending || isRejected;
+    // Button is always enabled (no auth required)
+    return false;
   };
 
   const benefits = [
@@ -435,7 +422,7 @@ const NRCLandingPage: React.FC = () => {
               className={`font-semibold px-8 py-4 text-lg shadow-xl nrc-hero-button nrc-hero-gpu-accelerated ${
                 getButtonDisabled()
                   ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'bg-white text-[#ea580c] hover:bg-gray-100 hover:scale-105 transition-all duration-300'
+                  : 'bg-red text-[#ea580c] hover:bg-gray-100 hover:scale-105 transition-all duration-300'
               }`}
               aria-describedby="hero-title"
               aria-label={getButtonDisabled()
