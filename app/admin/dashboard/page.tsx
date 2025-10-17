@@ -351,6 +351,54 @@ export default function AdminDashboard() {
                   </CardActions>
                 </Card>
               </Grid>
+
+              {/* Public Nominations Card */}
+              <Grid  size = {{xs: 12, sm: 6, md: 4}}>
+                <Card>
+                  <CardContent>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                      <Avatar sx={{ bgcolor: 'warning.main', mr: 2 }}>
+                        <PeopleIcon />
+                      </Avatar>
+                      <Typography variant="h6">Public Nominations</Typography>
+                    </Box>
+                    
+                    <Typography variant="h3" component="div" gutterBottom>
+                      {stats.nrcApplications.total}
+                    </Typography>
+                    
+                    <Grid container spacing={1}>
+                      <Grid  size = {{xs: 6}}>
+                        <Typography variant="body2" color="text.secondary">
+                          Pending
+                        </Typography>
+                        <Typography variant="h6" color="warning.main">
+                          {stats.nrcApplications.pending}
+                        </Typography>
+                      </Grid>
+                      <Grid  size = {{xs: 6}}>
+                        <Typography variant="body2" color="text.secondary">
+                          Reviewed
+                        </Typography>
+                        <Typography variant="h6" color="success.main">
+                          {stats.nrcApplications.approved}
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                  <Divider />
+                  <CardActions>
+                    <Button 
+                      component={Link}
+                      href="/admin/public-nominations"
+                      size="small" 
+                      endIcon={<ArrowForwardIcon />}
+                    >
+                      View Nominations
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
               
             
             </Grid>
