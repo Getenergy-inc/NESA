@@ -122,7 +122,7 @@ const EnhancedHero = () => {
               <span className={styles.announcementTag}>ANNOUNCEMENT</span>
               <p className={styles.announcementText}>
                 Honoring Africa's Changemakers Building the Future of Education
-                <span className={styles.mobileHidden}> — Nomination Starts from May 1st, 2025</span>
+                <span className={styles.mobileHidden}> — Nomination Starts from November, 2025</span>
               </p>
             </div>
           ))}
