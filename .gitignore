@@ -18,11 +18,9 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Environment variables
-.env
 .env*.local
 
 # Editor settings
-.vscode
 .idea
 
 # OS files
@@ -30,21 +28,17 @@ pnpm-debug.log*
 Thumbs.db
 
 
-.env
-.env.local
 FRONTEND_BACKEND_INTEGRATION_GUIDE.md
 docs/
 scripts/
 tsconfig.tsbuildinfo
 
-.env*
 /dist
 package-lock.json
 .next/
 
-.env.local
-.env.local
 tsconfig.tsbuildinfo
 
 NETLIFY-DEPLOYMENT.md
 REMOVE-NEXTAUTH-PLAN.md
+config.bat
