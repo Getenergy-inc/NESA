@@ -20,7 +20,7 @@ const ActionButtons = () => {
       title: "📝 Nominate a Changemaker",
       description: "Recognize outstanding educators and institutions making a difference",
       icon: UserPlus,
-      link: "/get-involved/nomination",
+      link: "/nominate",
       buttonText: "Start Nomination",
       color: "from-[#FFC247] to-[#E48900]",
       featured: true
@@ -237,7 +237,7 @@ const ActionButtons = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/get-involved/nomination">
+                <Link href="/nominate">
                   <button className="bg-gradient-to-r from-[#FFC247] to-[#E48900] text-[#191307] font-bold text-lg px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center">
                     <UserPlus className="w-5 h-5 mr-2" />
                     Start Nominating Today

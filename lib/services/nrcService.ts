@@ -498,6 +498,90 @@ class NRCService {
       throw new Error(error.message || "");
     }
   }
+
+  // Public Nomination Methods
+  async submitPublicNomination(nominationData: {
+    fullName: string;
+    organizationName?: string;
+    country: string;
+    region?: string;
+    email?: string;
+    phone?: string;
+    website?: string;
+    superAwardCategory?: string;
+    awardCategory: string;
+    subcategory: string;
+    achievementSummary: string;
+    whyDeserving?: string;
+    impactDescription?: string;
+    verificationLinks?: string;
+    nominatorName?: string;
+    nominatorEmail: string;
+    nominatorPhone?: string;
+    nominatorRelationship?: string;
+    additionalNotes?: string;
+  }): Promise<ApiResponse<any>> {
+    try {
+      const response = await this.fetchNRC('/public/nominate', {
+        method: 'POST',
+        body: JSON.stringify(nominationData),
+      });
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message || 'Failed to submit public nomination');
+    }
+  }
+
+  async getPublicNominations(filters?: {
+    status?: string;
+    page?: number;
+    limit?: number;
+    search?: string;
+  }): Promise<any> {
+    try {
+      const params = new URLSearchParams();
+      if (filters) {
+        Object.entries(filters).forEach(([key, value]) => {
+          if (value !== undefined) {
+            params.append(key, value.toString());
+          }
+        });
+      }
+      
+      const response = await this.fetchNRC(`/admin/public-nominations?${params}`);
+      return response.data;
+    } catch (error: any) {
+      throw new Error(error.message || 'Failed to get public nominations');
+    }
+  }
+
+  async updatePublicNomination(
+    nominationId: string, 
+    action: 'APPROVE' | 'REJECT' | 'REQUEST_INFO' | 'UPGRADE',
+    reviewNotes?: string,
+    rejectionReason?: string
+  ): Promise<ApiResponse<any>> {
+    try {
+      const response = await this.fetchNRC(`/admin/public-nominations/${nominationId}`, {
+        method: 'PUT',
+        body: JSON.stringify({ action, reviewNotes, rejectionReason }),
+      });
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message || 'Failed to update public nomination');
+    }
+  }
+
+  async deletePublicNomination(nominationId: string): Promise<ApiResponse<any>> {
+    try {
+      const response = await this.fetchNRC(`/admin/public-nominations/${nominationId}`, {
+        method: 'DELETE',
+      });
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message || 'Failed to delete public nomination');
+    }
+  }
 }
 
 export const nrcService = new NRCService();
