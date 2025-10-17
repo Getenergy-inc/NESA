@@ -15,13 +15,19 @@ export default function MyNomineesPage() {
 
   useEffect(() => {
     const fetchNominees = async () => {
-      if (!user?.id) {
+      // Get NRC user ID from localStorage
+      const nrcUserId = typeof window !== 'undefined' 
+        ? localStorage.getItem('nrc_user_id') 
+        : null;
+      
+      if (!nrcUserId) {
+        setError('NRC user ID not found. Please register as an NRC volunteer first.');
         setLoading(false);
         return;
       }
       
       try {
-        const fetchedNominees = await nrcService.getVolunteerNominees(user.id);
+        const fetchedNominees = await nrcService.getVolunteerNominees(nrcUserId);
         console.log('Fetched nominees:', fetchedNominees);
         setNominees(fetchedNominees);
       } catch (err) {
@@ -33,10 +39,12 @@ export default function MyNomineesPage() {
     };
 
     fetchNominees();
-  }, [user?.id]);
+  }, []);
 
   const getStatusColor = (status: string) => {
     switch (status?.toUpperCase()) {
+      case 'PUBLISHED': return 'bg-green-100 text-green-800';
+      case 'VERIFIED': return 'bg-green-100 text-green-800';
       case 'APPROVED': return 'bg-green-100 text-green-800';
       case 'REVIEW': return 'bg-yellow-100 text-yellow-800';
       case 'REJECTED': return 'bg-red-100 text-red-800';
@@ -47,6 +55,8 @@ export default function MyNomineesPage() {
   
   const getStatusDisplay = (status: string) => {
     switch (status?.toUpperCase()) {
+      case 'PUBLISHED': return 'Published';
+      case 'VERIFIED': return 'Verified';
       case 'APPROVED': return 'Approved';
       case 'REVIEW': return 'Under Review';
       case 'REJECTED': return 'Rejected';

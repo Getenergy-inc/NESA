@@ -115,15 +115,9 @@ const NRCApplicationForm: React.FC = () => {
   };
 
   const onSubmit = async (data: NRCApplicationData) => {
-    console.log('Form submission started', { data, user });
+    console.log('Form submission started', { data });
     clearError();
     clearSuccess();
-
-    if (!user?.id) {
-      console.error('User not authenticated:', user);
-      alert('You must be logged in to register as an NRC volunteer');
-      return;
-    }
 
     if (!data.commitment || !data.terms) {
       console.error('Missing commitment or terms acceptance');
@@ -137,17 +131,19 @@ const NRCApplicationForm: React.FC = () => {
       return;
     }
 
-    // Use the logged-in user's email, not the form email
+    // Generate a unique userId from email (no auth required)
+    const userId = `nrc-${data.email.replace(/[^a-zA-Z0-9]/g, '-')}-${Date.now()}`;
+
+    // Registration data without authentication
     const registrationData = {
-      userId: user.id,
+      userId: userId,
       region: 'Africa', // Default to Africa for now
       country: data.country,
       coordinator: undefined, // Will be assigned later by admin
       displayName: data.fullName,
       badge: undefined,
-      // Use authenticated user's email to prevent multiple accounts
       fullName: data.fullName,
-      email: user.email // Use logged-in user's email
+      email: data.email
     };
 
     console.log('Sending registration data:', registrationData);
@@ -156,8 +152,13 @@ const NRCApplicationForm: React.FC = () => {
     console.log('Registration result:', success);
 
     if (success) {
-      console.log('Registration successful (or already registered), showing success screen');
+      console.log('Registration successful, showing success screen');
       setShowSuccess(true);
+      // Store userId in localStorage for later use
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('nrc_user_id', userId);
+        localStorage.setItem('nrc_user_email', data.email);
+      }
       // Reset form
       setSelectedSkills([]);
       setCvFile(null);
@@ -193,7 +194,7 @@ const NRCApplicationForm: React.FC = () => {
               className="w-full bg-[#ea580c] hover:bg-[#dc2626] text-white"
             />
             <Button
-              text="Go to Dashboard (Testing)"
+              text="Go to Dashboard"
               onClick={() => router.push('/get-involved/nrc-volunteer/dashboard')}
               variant="outlined"
               className="w-full border-[#ea580c] text-[#ea580c] hover:bg-orange-50"

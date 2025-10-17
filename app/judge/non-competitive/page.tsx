@@ -36,34 +36,29 @@ const Page = () => {
       subCategoryPath: "/nomination/sub-categories/africa-lifetime-education-icon"
     },
     {
-      title: "Best Faith-Based Organization in Education404",
-      description: "The Africa Lifetime Education Icon Special Recognition Award is the pinnacle of the NESA-Africa awards and the Santos Creations Educational Foundation. Envisioned as the Africa education advocacy Nobel award recognition, this prestigious accolade honors individuals from around the world who have dedicated their lives to advancing sustainable education for all in Africa, aligning with the United Nations Sustainable Development Goal 4 (SDG 4) - Quality Education.",
-      subCategoryPath: "/nomination/sub-categories/404"
+      title: "Best Faith-Based Organization in Education",
+      description: "Recognizing faith-based organizations for their outstanding contributions to education in Nigeria.",
+      subCategoryPath: "/nomination/sub-categories/christian-education-champion"
     },
     {
       title: "Best Political Leaders' Educational Support Services",
       description: "Recognizing philanthropy and leadership contributions for their outstanding contributions to education.",
-      subCategoryPath: "nomination/sub-categories/best-political-leader"
+      subCategoryPath: "/nomination/sub-categories/best-political-leader"
     },
     {
-      title: "Best STEM Education Champion404",
-      description: "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
-      subCategoryPath: "/nomination/sub-categories/best-edutech-organization"
+      title: "Best STEM Education Champion",
+      description: "Celebrates organizations that have made significant improvements in STEM education.",
+      subCategoryPath: "/nomination/sub-categories/stem"
     },
     {
-      title: "Diaspora Education Impact Awards404",
-      description: "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
-      subCategoryPath: "nomination/sub-categories/best-educational-state"
+      title: "Diaspora Education Impact Awards",
+      description: "Recognizing diaspora contributions to education in Africa.",
+      subCategoryPath: "/nomination/sub-categories/africa-diaspora-impact"
     },
     {
-      title: "Best International & Bilateral Contributors to Education404",
-      description: "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
-      subCategoryPath: "/nomination/sub-categories/404"
-    },
-    {
-      title: "Diaspora Contributions to Education in Africa404",
-      description: "diaspora place holder",
-      subCategoryPath: "/nomination/sub-categories/404"
+      title: "Best International & Bilateral Contributors to Education",
+      description: "Celebrates international organizations that have made significant improvements in educational access.",
+      subCategoryPath: "/nomination/sub-categories/international-contributors"
     },
     {
       title: "Best Corporate Social Responsibility (CSR) in Education (Nigeria)",
@@ -75,18 +70,13 @@ const Page = () => {
       description: "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
       subCategoryPath: "/nomination/sub-categories/best-csr-education"
     }
-    
+
   ];
-  
-  const title = "Categories in the Non-Competitive Categories"
-  
 
   return (
     <>
-      {/* <NonCategoryHeader categoryData={categoryData} /> */}
       <main className="py-20">
-
-      <Category categoryData={categoryData} head={title} />
+        <Category SingleData={categoryData} RegionalData={[]} />
       </main>
     </>
   );

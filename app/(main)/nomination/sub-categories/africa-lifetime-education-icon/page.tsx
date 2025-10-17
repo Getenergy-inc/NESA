@@ -90,11 +90,7 @@ const SpecialRecognitionPage = () => {
         "Africa Lifetime Education Icon Recognition"
       )}` +
         `&title=${encodeURIComponent(category.title)}` +
-        `&description=${encodeURIComponent(
-          typeof category.description === "string"
-            ? category.description
-            : "Complex description"
-        )}` +
+        `&description=${encodeURIComponent(typeof category.description === 'string' ? category.description : 'Complex description')}` +
         `&image=${encodeURIComponent(category.image)}`
     );
   };
@@ -109,6 +105,7 @@ const SpecialRecognitionPage = () => {
 
   return (
     <div className="min-h-screen bg-[#FFF5E0]">
+      
       {/* Hero Section */}
       <div className="relative bg-[#191307] text-white py-24 px-8">
         <div className="absolute inset-0 bg-[url('/images/Herosection.png')] bg-cover bg-center opacity-20"></div>
@@ -122,6 +119,22 @@ const SpecialRecognitionPage = () => {
               ? slides[currentIndex].description
               : slides[currentIndex].description}
           </p>
+        </div>
+    
+        {/* Carousel Indicator Dots */}
+        <div className="absolute bottom-4 left-4 flex space-x-2">
+          {slides.map((_, index) => (
+            <div key={index} className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-[#FFC247]' : 'bg-white'}`}></div>
+          ))}
+        </div>
+        {/* Carousel Navigation Arrows */}
+        <div className="absolute bottom-4 right-4 flex space-x-4">
+          <button onClick={prevSlide} className="p-2 rounded transition bg-[#FFC247]">
+            <IoMdArrowBack size={24} color="#191307" />
+          </button>
+          <button onClick={nextSlide} className="p-2 rounded transition bg-[#FFC247]">
+            <IoMdArrowForward size={24} color="#191307" />
+          </button>
         </div>
       </div>
       {/* Sub-Categories Section */}
@@ -275,81 +288,52 @@ const SpecialRecognitionPage = () => {
             </ul>
           </div>
 
-          {/* Award Overview */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">
-              Award Overview
-            </h2>
+              {/* Award Overview */}
+              <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">Award Overview</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white rounded-xl shadow p-6">
               <div>
                 <div className="mb-2 flex">
-                  <span className="font-bold w-40 text-[#E48900]">
-                    Award Name:
-                  </span>
-                  <span className="text-[#191307]">
-                    Africa Icon Blue Garnet Awards
-                  </span>
+              <span className="font-bold w-40 text-[#E48900]">Award Name:</span>
+              <span className="text-[#191307]">Africa Icon Blue Garnet Awards</span>
                 </div>
                 <div className="mb-2 flex">
-                  <span className="font-bold w-40 text-[#E48900]">
-                    Award Type:
-                  </span>
-                  <span className="text-[#191307]">
-                    Non-Competitive (Public Nomination + Internal Judges Panel)
-                  </span>
+              <span className="font-bold w-40 text-[#E48900]">Award Type:</span>
+              <span className="text-[#191307]">Non-Competitive (Public Nomination + Internal Judges Panel)</span>
                 </div>
                 <div className="mb-2 flex">
-                  <span className="font-bold w-40 text-[#E48900]">
-                    Eligibility:
-                  </span>
-                  <span className="text-[#191307]">
-                    20+ years contribution to African education (2005–2025)
-                  </span>
+              <span className="font-bold w-40 text-[#E48900]">Eligibility:</span>
+              <span className="text-[#191307]">20+ years contribution to African education (2005–2025)</span>
                 </div>
                 <div className="mb-2 flex">
-                  <span className="font-bold w-40 text-[#E48900]">
-                    Nomination Access:
-                  </span>
-                  <span className="text-[#191307]">
-                    Public Nomination via NESA.Africa
-                  </span>
+              <span className="font-bold w-40 text-[#E48900]">Nomination Access:</span>
+              <span className="text-[#191307]">Public Nomination via NESA.Africa</span>
                 </div>
                 <div className="mb-2 flex">
-                  <span className="font-bold w-40 text-[#E48900]">
-                    Evaluation Benchmarks:
-                  </span>
-                  <span className="text-[#191307]">
-                    SDG 4 & 5, Agenda 2063 Goal 1 & 17, ESG, Sustainability
-                  </span>
+              <span className="font-bold w-40 text-[#E48900]">Evaluation Benchmarks:</span>
+              <span className="text-[#191307]">SDG 4 & 5, Agenda 2063 Goal 1 & 17, ESG, Sustainability</span>
                 </div>
               </div>
               <div>
                 <div className="mb-2 flex">
-                  <span className="font-bold w-40 text-[#E48900]">
-                    Recognition Items:
-                  </span>
-                  <span className="text-[#191307]">
-                    Trophy, Digital Certificate (GFA Wallet), Media Feature,
-                    Legacy Profile
-                  </span>
+              <span className="font-bold w-40 text-[#E48900]">Recognition Items:</span>
+              <span className="text-[#191307]">
+                Trophy, Digital Certificate (GFA Wallet), Media Feature, Legacy Profile
+              </span>
                 </div>
                 <div className="mb-2 flex">
-                  <span className="font-bold w-40 text-[#E48900]">
-                    Optional:
-                  </span>
-                  <span className="text-[#191307]">
-                    Printed certificate upon request (3 weeks before Award Gala)
-                  </span>
+              <span className="font-bold w-40 text-[#E48900]">Optional:</span>
+              <span className="text-[#191307]">
+                Printed certificate upon request (3 weeks before Award Gala)
+              </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Target Recipients */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">
-              Target Recipients
-            </h2>
+              {/* Target Recipients */}
+              <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">Target Recipients</h2>
             <ul className="list-disc pl-6 text-[#191307] space-y-2">
               <li>Education policy pioneers</li>
               <li>Innovators of scalable education models</li>
@@ -360,11 +344,9 @@ const SpecialRecognitionPage = () => {
             </ul>
           </div>
 
-          {/* Nomination & Evaluation Process */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">
-              Nomination & Evaluation Process
-            </h2>
+              {/* Nomination & Evaluation Process */}
+              <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">Nomination & Evaluation Process</h2>
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white rounded-xl shadow text-[#191307]">
                 <thead>
@@ -374,56 +356,39 @@ const SpecialRecognitionPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-t">
-                    <td className="py-2 px-4 font-semibold">
-                      Step 1 – Public Nomination
-                    </td>
-                    <td className="py-2 px-4">
-                      Open from July 15 – November 1, 2025 via nesa.africa
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-2 px-4 font-semibold">
-                      Step 2 – Judges Evaluation
-                    </td>
-                    <td className="py-2 px-4">
-                      Ongoing from September – November 20, 2025 using weighted
-                      criteria
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-2 px-4 font-semibold">
-                      Step 3 – Final Deliberation
-                    </td>
-                    <td className="py-2 px-4">
-                      Judges convene in closed session to select 9 Icons across
-                      3 focus areas:
-                      <ul className="list-disc pl-6 mt-2 space-y-1">
-                        <li>Policy & Innovation</li>
-                        <li>Equity & Inclusion</li>
-                        <li>Diaspora Contributions</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-2 px-4 font-semibold">
-                      Step 4 – Recognition
-                    </td>
-                    <td className="py-2 px-4">
-                      Award Gala Night: December 22, 2025; profile published in
-                      NESA Legacy Journal
-                    </td>
-                  </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4 font-semibold">Step 1 – Public Nomination</td>
+                <td className="py-2 px-4">Open from July 15 – November 1, 2025 via nesa.africa</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4 font-semibold">Step 2 – Judges Evaluation</td>
+                <td className="py-2 px-4">Ongoing from September – November 20, 2025 using weighted criteria</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4 font-semibold">Step 3 – Final Deliberation</td>
+                <td className="py-2 px-4">
+                  Judges convene in closed session to select 9 Icons across 3 focus areas:
+                  <ul className="list-disc pl-6 mt-2 space-y-1">
+                <li>Policy & Innovation</li>
+                <li>Equity & Inclusion</li>
+                <li>Diaspora Contributions</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4 font-semibold">Step 4 – Recognition</td>
+                <td className="py-2 px-4">
+                  Award Gala Night: December 22, 2025; profile published in NESA Legacy Journal
+                </td>
+              </tr>
                 </tbody>
               </table>
             </div>
           </div>
 
-          {/* Recognition Package */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">
-              Recognition Package
-            </h2>
+              {/* Recognition Package */}
+              <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">Recognition Package</h2>
             <ul className="list-disc pl-6 text-[#191307] space-y-2">
               <li>
                 Blue Garnet Trophy (Symbol of Continental Education Impact)
@@ -436,11 +401,9 @@ const SpecialRecognitionPage = () => {
             </ul>
           </div>
 
-          {/* Key Dates Summary */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">
-              Key Dates Summary
-            </h2>
+              {/* Key Dates Summary */}
+              <div className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-[#191307]">Key Dates Summary</h2>
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white rounded-xl shadow text-[#191307]">
                 <thead>
@@ -450,34 +413,30 @@ const SpecialRecognitionPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-t">
-                    <td className="py-2 px-4">Nomination Opens</td>
-                    <td className="py-2 px-4">July 15, 2025</td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-2 px-4">Nomination Closes</td>
-                    <td className="py-2 px-4">November 20, 2025</td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-2 px-4">Judges Evaluation Period</td>
-                    <td className="py-2 px-4">September – November 20, 2025</td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-2 px-4">Webinars on NESA-TV</td>
-                    <td className="py-2 px-4">
-                      October 13 – December 13, 2025
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-2 px-4">"It's In Me" Radio Podcast</td>
-                    <td className="py-2 px-4">From September 2025</td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="py-2 px-4">Award Gala + Recognition</td>
-                    <td className="py-2 px-4">
-                      December 18, 2025 – Muson Centre, Lagos, Nigeria
-                    </td>
-                  </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">Nomination Opens</td>
+                <td className="py-2 px-4">July 15, 2025</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">Nomination Closes</td>
+                <td className="py-2 px-4">November 20, 2025</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">Judges Evaluation Period</td>
+                <td className="py-2 px-4">September – November 20, 2025</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">Webinars on NESA-TV</td>
+                <td className="py-2 px-4">October 13 – December 13, 2025</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">"It's In Me" Radio Podcast</td>
+                <td className="py-2 px-4">From September 2025</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">Award Gala + Recognition</td>
+                <td className="py-2 px-4">December 18, 2025 – Muson Centre, Lagos, Nigeria</td>
+              </tr>
                 </tbody>
               </table>
             </div>
@@ -603,6 +562,8 @@ const SpecialRecognitionPage = () => {
           </div>
         </div>
       </div>
+
+      
     </div>
   );
 };

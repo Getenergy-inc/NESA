@@ -39,10 +39,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       try {
         // Check for token in cookies
         const storedToken = getCookie('token');
-        
+
         if (storedToken) {
           setToken(storedToken);
-          
+
           // Fetch user data
           const userData = await getMe();
           if (userData) {
@@ -59,7 +59,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setIsLoading(false);
       }
     };
-    
+
     checkAuth();
   }, []);
 
@@ -68,14 +68,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true);
     try {
       const response = await loginService({ email, password });
-      
+
       if (response.token && response.user) {
         // Set token in cookie
         document.cookie = `token=${response.token}; path=/; max-age=${60 * 60 * 24 * 7}`; // 7 days
-        
+
         // Store user ID in cookie for API client
         document.cookie = `userId=${response.user.id}; path=/; max-age=${60 * 60 * 24 * 7}`;
-        
+
         setToken(response.token);
         setUser(response.user);
       } else {
@@ -109,7 +109,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Refresh user data
   const refreshUser = async () => {
     if (!token) return;
-    
+
     setIsLoading(true);
     try {
       const userData = await getMe();
@@ -126,7 +126,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Helper function to get cookie value
   const getCookie = (name: string): string | null => {
     if (typeof document === 'undefined') return null;
-    
+
     const cookies = document.cookie.split('; ');
     for (const cookie of cookies) {
       const [key, value] = cookie.split('=');

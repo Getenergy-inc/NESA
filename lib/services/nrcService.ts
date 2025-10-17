@@ -59,16 +59,38 @@ class NRCService {
   // Updated to match the backend route structure
   private baseUrl = '/api/v1/nrc';
 
+  // Helper to make direct fetch calls (bypassing apiClient which points to external backend)
+  private async fetchNRC(endpoint: string, options: RequestInit = {}) {
+    const url = `${this.baseUrl}${endpoint}`;
+    const response = await fetch(url, {
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        ...options.headers,
+      },
+    });
+    
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ message: 'Request failed' }));
+      throw new Error(error.message || `HTTP ${response.status}`);
+    }
+    
+    return response.json();
+  }
+
   // Volunteer Management
   async registerVolunteer(data: NRCVolunteerRegistration): Promise<any> {
     try {
-      const response = await apiClient.post(`${this.baseUrl}/volunteers/register`, data);
+      const response = await this.fetchNRC('/volunteers/register', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      });
       
       // Check if the response indicates success
-      if (response.data.success) {
-        return response.data.data; // Return the volunteer data
+      if (response.success) {
+        return response.data; // Return the volunteer data
       } else {
-        throw new Error(response.data.message || 'Registration failed');
+        throw new Error(response.message || 'Registration failed');
       }
     } catch (error: any) {
       console.error('NRC Registration Error:', error);
@@ -88,23 +110,23 @@ class NRCService {
 
   async getVolunteerById(userId: string): Promise<any> {
     try {
-      const response = await apiClient.get(`${this.baseUrl}/volunteers/check-status`);
-      return response.data.data?.profile || null;
+      const response = await this.fetchNRC(`/volunteers/check-status?userId=${userId}`);
+      return response.data?.profile || null;
     } catch (error: any) {
       // If volunteer not found, return null instead of throwing
-      if (error.response?.status === 404) {
+      if (error.message?.includes('404')) {
         return null;
       }
-      throw new Error(error.response?.data?.message || 'Failed to get volunteer');
+      throw new Error(error.message || 'Failed to get volunteer');
     }
   }
 
   async getVolunteerDashboard(volunteerId: string): Promise<NRCDashboardData> {
     try {
-      const response = await apiClient.get(`${this.baseUrl}/volunteers/${volunteerId}/dashboard`);
-      return response.data.data;
+      const response = await this.fetchNRC(`/volunteers/${volunteerId}/dashboard`);
+      return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to get dashboard data');
+      throw new Error(error.message || 'Failed to get dashboard data');
     }
   }
 
@@ -126,19 +148,22 @@ class NRCService {
         });
       }
       
-      const response = await apiClient.get(`${this.baseUrl}/volunteers?${params}`);
-      return response.data;
+      const response = await this.fetchNRC(`/volunteers?${params}`);
+      return response;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to get volunteers');
+      throw new Error(error.message || 'Failed to get volunteers');
     }
   }
 
   async updateVolunteer(volunteerId: string, data: Partial<NRCVolunteerRegistration>): Promise<ApiResponse<any>> {
     try {
-      const response = await apiClient.put(`${this.baseUrl}/volunteers/${volunteerId}`, data);
-      return response.data;
+      const response = await this.fetchNRC(`/volunteers/${volunteerId}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+      });
+      return response;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to update volunteer');
+      throw new Error(error.message || 'Failed to update volunteer');
     }
   }
 
@@ -156,10 +181,13 @@ class NRCService {
     region?: string;
   }): Promise<NRCTask> {
     try {
-      const response = await apiClient.post(`${this.baseUrl}/tasks`, taskData);
-      return response.data.data;
+      const response = await this.fetchNRC('/tasks', {
+        method: 'POST',
+        body: JSON.stringify(taskData),
+      });
+      return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to create task');
+      throw new Error(error.message || 'Failed to create task');
     }
   }
 
@@ -179,20 +207,21 @@ class NRCService {
         });
       }
       
-      const response = await apiClient.get(`${this.baseUrl}/volunteers/${volunteerId}/tasks?${params}`);
-      return response.data.data?.tasks || [];
+      const response = await this.fetchNRC(`/volunteers/${volunteerId}/tasks?${params}`);
+      return response.data?.tasks || [];
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to get tasks');
+      throw new Error(error.message || 'Failed to get tasks');
     }
   }
 
   async completeTask(taskId: string, completionNotes?: string): Promise<void> {
     try {
-      await apiClient.put(`${this.baseUrl}/tasks/${taskId}/complete`, {
-        completionNotes
+      await this.fetchNRC(`/tasks/${taskId}/complete`, {
+        method: 'PUT',
+        body: JSON.stringify({ completionNotes }),
       });
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to complete task');
+      throw new Error(error.message || 'Failed to complete task');
     }
   }
 
@@ -206,10 +235,13 @@ class NRCService {
     isWithdrawable?: boolean;
   }): Promise<ApiResponse<AGCTransaction>> {
     try {
-      const response = await apiClient.post(`${this.baseUrl}/agc/transactions`, transactionData);
-      return response.data;
+      const response = await this.fetchNRC('/agc/transactions', {
+        method: 'POST',
+        body: JSON.stringify(transactionData),
+      });
+      return response;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to process AGC transaction');
+      throw new Error(error.message || 'Failed to process AGC transaction');
     }
   }
 
@@ -228,40 +260,43 @@ class NRCService {
         });
       }
       
-      const response = await apiClient.get(`${this.baseUrl}/volunteers/${volunteerId}/agc/transactions?${params}`);
-      return response.data.data?.transactions || [];
+      const response = await this.fetchNRC(`/volunteers/${volunteerId}/agc/transactions?${params}`);
+      return response.data?.transactions || [];
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to get AGC transactions');
+      throw new Error(error.message || 'Failed to get AGC transactions');
     }
   }
 
   async withdrawAGC(volunteerId: string, amount: number, walletAddress: string): Promise<void> {
     try {
-      await apiClient.post(`${this.baseUrl}/volunteers/${volunteerId}/agc/withdraw`, {
-        amount,
-        walletAddress
+      await this.fetchNRC(`/volunteers/${volunteerId}/agc/withdraw`, {
+        method: 'POST',
+        body: JSON.stringify({ amount, walletAddress }),
       });
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to withdraw AGC');
+      throw new Error(error.message || 'Failed to withdraw AGC');
     }
   }
 
   // Analytics & Reporting
-  async getLeaderboard(type: 'weekly' | 'monthly' | 'allTime' = 'monthly', limit: number = 10): Promise<any[]> {
+  async getLeaderboard(type: 'uploads' | 'agc' | 'weekly' | 'monthly' | 'allTime' = 'uploads', limit: number = 20): Promise<any[]> {
     try {
-      const response = await apiClient.get(`${this.baseUrl}/leaderboard?type=${type}&limit=${limit}`);
-      return response.data.data || [];
+      const response = await this.fetchNRC(`/leaderboard?type=${type}&limit=${limit}`);
+      return response.data || [];
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to get leaderboard');
+      throw new Error(error.message || 'Failed to get leaderboard');
     }
   }
 
   async generateReport(period: { start: string; end: string }): Promise<ApiResponse<any>> {
     try {
-      const response = await apiClient.post(`${this.baseUrl}/reports/generate`, { period });
-      return response.data;
+      const response = await this.fetchNRC('/reports/generate', {
+        method: 'POST',
+        body: JSON.stringify({ period }),
+      });
+      return response;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to generate report');
+      throw new Error(error.message || 'Failed to generate report');
     }
   }
 
@@ -280,10 +315,10 @@ class NRCService {
         });
       }
       
-      const response = await apiClient.get(`${this.baseUrl}/analytics/dashboard?${params}`);
-      return response.data.data;
+      const response = await this.fetchNRC(`/analytics/dashboard?${params}`);
+      return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to get analytics overview');
+      throw new Error(error.message || 'Failed to get analytics overview');
     }
   }
 
@@ -333,20 +368,25 @@ class NRCService {
   }
 
   // Volunteer Status Check
-  async checkVolunteerStatus(): Promise<any> {
+  async checkVolunteerStatus(userId?: string): Promise<any> {
     try {
-      const response = await apiClient.get(`${this.baseUrl}/volunteers/check-status`);
-      return response.data; // Return the full response including success flag
+      // If userId is provided, pass it as query param
+      const endpoint = userId 
+        ? `/volunteers/check-status?userId=${userId}`
+        : `/volunteers/check-status`;
+        
+      const response = await this.fetchNRC(endpoint);
+      return response; // Return the full response including success flag
     } catch (error: any) {
       // If volunteer not found (404), return a structured response
-      if (error.response?.status === 404) {
+      if (error.message?.includes('404')) {
         return {
           success: false,
           message: 'Volunteer not found',
           data: null
         };
       }
-      throw new Error(error.response?.data?.message || 'Failed to check volunteer status');
+      throw new Error(error.message || 'Failed to check volunteer status');
     }
   }
 
@@ -406,49 +446,140 @@ class NRCService {
         });
       }
       
-      const response = await apiClient.get(`${this.baseUrl}/volunteers/${volunteerId}/nominees?${params}`);
-      return response.data.data?.nominees || [];
+      const response = await this.fetchNRC(`/volunteers/${volunteerId}/nominees?${params}`);
+      return response.data?.nominees || [];
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to get nominees');
+      throw new Error(error.message || 'Failed to get nominees');
     }
   }
 
   async updateNomineeStatus(nomineeId: string, status: string): Promise<void> {
     try {
-      await apiClient.put(`${this.baseUrl}/nominees/${nomineeId}`, { status });
+      await this.fetchNRC(`/nominees/${nomineeId}`, {
+        method: 'PUT',
+        body: JSON.stringify({ status }),
+      });
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to update nominee status');
+      throw new Error(error.message || 'Failed to update nominee status');
     }
   }
 
   async updateNominee(nomineeId: string, data: any): Promise<ApiResponse<any>> {
     try {
-      const response = await apiClient.put(`${this.baseUrl}/nominees/${nomineeId}`, data);
-      return response.data;
+      const response = await this.fetchNRC(`/nominees/${nomineeId}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+      });
+      return response;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to update nominee');
+      throw new Error(error.message || 'Failed to update nominee');
     }
   }
 
   async deleteNominee(nomineeId: string): Promise<ApiResponse<any>> {
     try {
-      const response = await apiClient.delete(`${this.baseUrl}/nominees/${nomineeId}`);
-      return response.data;
+      const response = await this.fetchNRC(`/nominees/${nomineeId}`, {
+        method: 'DELETE',
+      });
+      return response;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to delete nominee');
+      throw new Error(error.message || 'Failed to delete nominee');
     }
   }
 
   async bulkNomineeOperations(operation: string, nomineeIds: string[], data?: any): Promise<ApiResponse<any>> {
     try {
-      const response = await apiClient.post(`${this.baseUrl}/nominees/bulk`, {
-        operation,
-        nomineeIds,
-        data
+      const response = await this.fetchNRC('/nominees/bulk', {
+        method: 'POST',
+        body: JSON.stringify({ operation, nomineeIds, data }),
       });
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message || "");
+    }
+  }
+
+  // Public Nomination Methods
+  async submitPublicNomination(nominationData: {
+    fullName: string;
+    organizationName?: string;
+    country: string;
+    region?: string;
+    email?: string;
+    phone?: string;
+    website?: string;
+    superAwardCategory?: string;
+    awardCategory: string;
+    subcategory: string;
+    achievementSummary: string;
+    whyDeserving?: string;
+    impactDescription?: string;
+    verificationLinks?: string;
+    nominatorName?: string;
+    nominatorEmail: string;
+    nominatorPhone?: string;
+    nominatorRelationship?: string;
+    additionalNotes?: string;
+  }): Promise<ApiResponse<any>> {
+    try {
+      const response = await this.fetchNRC('/public/nominate', {
+        method: 'POST',
+        body: JSON.stringify(nominationData),
+      });
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message || 'Failed to submit public nomination');
+    }
+  }
+
+  async getPublicNominations(filters?: {
+    status?: string;
+    page?: number;
+    limit?: number;
+    search?: string;
+  }): Promise<any> {
+    try {
+      const params = new URLSearchParams();
+      if (filters) {
+        Object.entries(filters).forEach(([key, value]) => {
+          if (value !== undefined) {
+            params.append(key, value.toString());
+          }
+        });
+      }
+      
+      const response = await this.fetchNRC(`/admin/public-nominations?${params}`);
       return response.data;
     } catch (error: any) {
-      throw new Error(error.response?.data?.message || 'Failed to perform bulk nominee operation');
+      throw new Error(error.message || 'Failed to get public nominations');
+    }
+  }
+
+  async updatePublicNomination(
+    nominationId: string, 
+    action: 'APPROVE' | 'REJECT' | 'REQUEST_INFO' | 'UPGRADE',
+    reviewNotes?: string,
+    rejectionReason?: string
+  ): Promise<ApiResponse<any>> {
+    try {
+      const response = await this.fetchNRC(`/admin/public-nominations/${nominationId}`, {
+        method: 'PUT',
+        body: JSON.stringify({ action, reviewNotes, rejectionReason }),
+      });
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message || 'Failed to update public nomination');
+    }
+  }
+
+  async deletePublicNomination(nominationId: string): Promise<ApiResponse<any>> {
+    try {
+      const response = await this.fetchNRC(`/admin/public-nominations/${nominationId}`, {
+        method: 'DELETE',
+      });
+      return response;
+    } catch (error: any) {
+      throw new Error(error.message || 'Failed to delete public nomination');
     }
   }
 }
