@@ -50,6 +50,12 @@ const Page = () => {
         "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
       subCategoryPath: "/nomination/sub-categories/csr-education-africa",
     },
+    {
+      title: "Best Educational-Friendly State in Nigeria (Regional)",
+      description:
+        "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",
+      subCategoryPath: "/nomination/sub-categories/best-educational-state",
+    },
   ];
   const RegionalData = [
     {

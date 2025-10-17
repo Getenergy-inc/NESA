@@ -63,12 +63,6 @@ const Page = () => {
   ];
   const RegionalData = [
     {
-      title: "Best Educational-Friendly State in Nigeria",
-      description:
-        "Awards the tertiary institution that stands out in academic excellence, community engagement, and student support with Library facilities ICT infastructure.",
-      subCategoryPath: "nomination/sub-categories/best-educational-state",
-    },
-    {
       title: "Diaspora Association Educational Impact Award",
       description:
         "Celebrates NGOs that have made significant improvements in educational access, quality, and innovation from 2013-2024.",

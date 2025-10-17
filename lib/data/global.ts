@@ -140,6 +140,11 @@ export const navlinks: NavLink[] = [
         path: "/radio-podcast",
         icon: "Radio",
       },
+      {
+        label: "Edu-Aid Webinars",
+        path: "/webinar",
+        icon: "Camera",
+      },
     ],
   },
   {
