@@ -40,7 +40,8 @@ import {
   Handshake as HandshakeIcon,
   Newspaper as NewspaperIcon,
   Description as DescriptionIcon,
-  Groups as GroupsIcon
+  Groups as GroupsIcon,
+  HowToReg as HowToRegIcon
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
@@ -106,14 +107,15 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   
   const menuItems = [
     { text: 'Dashboard', icon: <DashboardIcon />, path: '/admin/dashboard' },
+    { text: 'Public Nominations', icon: <HowToRegIcon />, path: '/admin/public-nominations' },
+     { text: 'NRC Applications', icon: <DescriptionIcon />, path: '/admin/nrc-applications' },
     { text: 'Sponsors', icon: <BusinessIcon />, path: '/admin/sponsors' },
     { text: 'Endorsements', icon: <HandshakeIcon />, path: '/admin/endorsements' },
-    { text: 'Students', icon: <PeopleIcon />, path: '/admin/students' },
+    // { text: 'Students', icon: <PeopleIcon />, path: '/admin/students' },
     { text: 'Media Partners', icon: <NewspaperIcon />, path: '/admin/media-partners' },
-    { text: 'NRC Applications', icon: <DescriptionIcon />, path: '/admin/nrc-applications' },
     { text: 'Partners', icon: <GroupsIcon />, path: '/admin/partners' },
-    { text: 'Messages', icon: <EmailIcon />, path: '/admin/messages' },
-    { text: 'Settings', icon: <SettingsIcon />, path: '/admin/settings' },
+    // { text: 'Messages', icon: <EmailIcon />, path: '/admin/messages' },
+    // { text: 'Settings', icon: <SettingsIcon />, path: '/admin/settings' },
   ];
   
   return (

@@ -1,7 +1,7 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
 
 export interface INRCNominee extends Document {
-  volunteerId: string;
+  volunteerId?: string;
   
   // Basic Information
   fullName: string;
@@ -22,14 +22,14 @@ export interface INRCNominee extends Document {
   
   // Impact & Achievement
   achievementSummary: string;
-  impactMetrics: string;
+  impactMetrics?: string;
   beneficiariesCount?: string;
   yearsOfImpact?: string;
   
   // Alignment
-  sdgAlignment: string[];
-  agendaAlignment: string;
-  esgAlignment: string;
+  sdgAlignment?: string[];
+  agendaAlignment?: string;
+  esgAlignment?: string;
   
   // Supporting Information
   verificationLinks?: string;
@@ -41,11 +41,18 @@ export interface INRCNominee extends Document {
   supportingDocuments?: string[];
   
   // Status & Workflow
-  status: 'DRAFT' | 'REVIEW' | 'VERIFIED' | 'REJECTED' | 'PUBLISHED';
+  status: 'DRAFT' | 'REVIEW' | 'VERIFIED' | 'REJECTED' | 'PUBLISHED' | 'PUBLIC_NOMINATION';
   reviewedBy?: string;
   reviewDate?: Date;
   reviewNotes?: string;
   rejectionReason?: string;
+  
+  // Public Nomination Fields
+  isPublicSubmission?: boolean;
+  nominatorName?: string;
+  nominatorEmail?: string;
+  nominatorPhone?: string;
+  nominatorRelationship?: string;
   
   // AGC Rewards
   agcAwarded: number;
@@ -67,7 +74,7 @@ export interface INRCNomineeModel extends Model<INRCNominee> {
 const NRCNomineeSchema = new Schema<INRCNominee>({
   volunteerId: {
     type: String,
-    required: true,
+    required: false,
     index: true
   },
   fullName: {
@@ -131,7 +138,7 @@ const NRCNomineeSchema = new Schema<INRCNominee>({
   },
   impactMetrics: {
     type: String,
-    required: true
+    required: false
   },
   beneficiariesCount: {
     type: String,
@@ -147,11 +154,11 @@ const NRCNomineeSchema = new Schema<INRCNominee>({
   }],
   agendaAlignment: {
     type: String,
-    required: true
+    required: false
   },
   esgAlignment: {
     type: String,
-    required: true
+    required: false
   },
   verificationLinks: {
     type: String
@@ -170,9 +177,31 @@ const NRCNomineeSchema = new Schema<INRCNominee>({
   }],
   status: {
     type: String,
-    enum: ['DRAFT', 'REVIEW', 'VERIFIED', 'REJECTED', 'PUBLISHED'],
+    enum: ['DRAFT', 'REVIEW', 'VERIFIED', 'REJECTED', 'PUBLISHED', 'PUBLIC_NOMINATION'],
     default: 'REVIEW',
     index: true
+  },
+  isPublicSubmission: {
+    type: Boolean,
+    default: false,
+    index: true
+  },
+  nominatorName: {
+    type: String,
+    trim: true
+  },
+  nominatorEmail: {
+    type: String,
+    lowercase: true,
+    trim: true
+  },
+  nominatorPhone: {
+    type: String,
+    trim: true
+  },
+  nominatorRelationship: {
+    type: String,
+    trim: true
   },
   reviewedBy: {
     type: String
