@@ -59,7 +59,7 @@ const HeroCenter = () => {
               <p key={id} className={`py-2 sm:py-3 md:py-4 ${styles["head-scroll-text"]}`}>
                 <span className="text-xs sm:text-sm md:text-base uppercase tracking-wide text-white font-medium leading-tight">
                   <span className="font-bold text-[#FFB92E]">🎉 ANNOUNCEMENT –</span>
-                  <span className="ml-2">Nomination Starts from May 1st, 2025, Get ready to nominate your Education Champion!</span>
+                  <span className="ml-2">Nomination Starts from November, 2025, Get ready to nominate your Education Champion!</span>
                 </span>
               </p>
             ))}
