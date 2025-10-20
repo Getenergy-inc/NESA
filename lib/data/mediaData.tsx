@@ -1,18 +1,10 @@
 export const mediaData = [
-    {
-      id: 1,
-      title: "Lorem ipsum dolor sit amet consectetur. Sodales rhoncus placera.",
-      description:
-        "Neque sapien duis auctor in lectus pretium in. Faucibus viverra eu feugiat congue...",
-      videoUrl: "https://www.youtube.com/embed/DDREAU_bmRk",
-    },
-    {
-      id: 2,
-      title: "Another impactful media entry.",
-      description:
-        "Vivamus imperdiet nec est in efficitur. Fusce volutpat, metus at semper...",
-      videoUrl: "https://www.youtube.com/embed/t2IRgGNFyJA?si=pnCMIhwD5BQ1WJi1",
-    },
-    // Add more items here
-  ];
-  
+  {
+    id: 1,
+    title: "Bridging the Education Inequality in Africa.",
+    description:
+      "“Bridging the Education Inequality in Africa” explores practical ways to close the gap in access to quality education across the continent. The seminar brings together educators, policymakers, and innovators to discuss inclusive strategies that ensure equal learning opportunities for all.",
+    videoUrl: "https://www.youtube.com/embed/aP0SskrfioI?si=RrlVoRh5I71FdY3k",
+  },
+  // Add more items here
+];
