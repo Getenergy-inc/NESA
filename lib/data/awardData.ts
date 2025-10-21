@@ -12924,7 +12924,7 @@ export const categories: Category[] = [
             ]
           },
           {
-            title: "The Best STEM Outreach and Community Engagement in Nigeria",
+            title: "The Best STEM Outreach and Community Engagement",
             description:
               "Recognizes educators and institutions employing innovative teaching methods in STEM education",
             nominees: [
