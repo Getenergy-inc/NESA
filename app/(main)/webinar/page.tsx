@@ -46,8 +46,20 @@ const webinars: Webinar[] = [
       "Set a quarterly monitoring cadence (attendance, FLN, transition).",
     ],
   },
+   {
+    date: "Tue Oct 28, 2025",
+    title: "Women & Girls in Education — Removing Barriers",
+    problem:
+      "Safety, menstruation, cost, and limited role-models keep girls from learning and STEM careers.",
+    objectives: [
+      "Sign a Safe-Routes + Hotline MoU (roles, escalation tree, data protection).",
+      "Fund WASH/MHM refills and launch Raising Gentlemen/boys-ally clubs.",
+      "Open a STEM internship pledge window with employer screening protocol.",
+    ],
+  },
+
   {
-    date: "Tue Oct 21, 2025",
+    date: "Tue Nov 11, 2025",
     title: "EdTech for Rural Learning (Offline-first + Solar)",
     problem:
       "Poor connectivity/power, device costs, and low teacher readiness stall digital learning outside cities.",
@@ -57,42 +69,21 @@ const webinars: Webinar[] = [
       "Secure vendor SLAs for uptime, warranty, and local maintenance.",
     ],
   },
-  {
-    date: "Tue Oct 28, 2025",
-    title: "Youth & Education for Sustainability (Green TVET)",
-    problem:
-      "Youth lack certified green skills and safe, paid pathways into local demand sectors.",
-    objectives: [
-      "Table two micro-credentials recognized by employers and TVET bodies.",
-      "Standardize 6-month apprenticeships (stipend, PPE, supervisor ratio, insurance).",
-      "Choose one climate project per 100 schools with cost/KPIs.",
-    ],
-  },
-  {
-    date: "Tue Nov 4, 2025",
-    title: "Diaspora Collaboration for Education Reform",
-    problem:
-      "Diaspora resources are underused due to trust, compliance, and coordination gaps.",
-    objectives: [
-      "Approve a diaspora fund term sheet (escrow, audits, fee stack, dashboard).",
-      "Launch a 1,000 mentor-hours/quarter pipeline with safeguarding.",
-      "Twin two diaspora chapters with two local chapters under a light MoU.",
-    ],
-  },
-  {
-    date: "Tue Nov 11, 2025",
-    title: "Faith-Based Education: Safeguarding, Girls’ Retention, SEN",
-    problem:
-      "Millions in faith-school systems face uneven safeguarding, girls’ retention challenges, and limited SEN support.",
-    objectives: [
-      "Adopt a minimum safeguarding kit (policy, focal point, hotline/redress).",
-      "Finance a dignity-kit/WASH refill model and Boys-as-Allies culture activities.",
-      "Deploy <$10 SEN classroom adaptations with teacher checklists.",
-    ],
-  },
-  {
+  // {
+  //   date: "Tue Oct 28, 2025",
+  //   title: "Youth & Education for Sustainability (Green TVET)",
+  //   problem:
+  //     "Youth lack certified green skills and safe, paid pathways into local demand sectors.",
+  //   objectives: [
+  //     "Table two micro-credentials recognized by employers and TVET bodies.",
+  //     "Standardize 6-month apprenticeships (stipend, PPE, supervisor ratio, insurance).",
+  //     "Choose one climate project per 100 schools with cost/KPIs.",
+  //   ],
+  // },
+
+ {
     date: "Tue Nov 18, 2025",
-    title: "Creative Arts & Media for Educational Change",
+    title: "Social Media & Content as a Driver of Education Standards in Africa",
     problem:
       "Evidence-based messages rarely reach families in local languages at scale.",
     objectives: [
@@ -101,6 +92,7 @@ const webinars: Webinar[] = [
       "Set a 30-day translation/adaptation workflow with rights and safety checks.",
     ],
   },
+
   {
     date: "Tue Nov 25, 2025",
     title: "Financing Education: Public & Private Roles",
@@ -112,39 +104,29 @@ const webinars: Webinar[] = [
       "Agree PPP/procurement model clauses balancing speed and probity.",
     ],
   },
-  {
-    date: "Tue Dec 2, 2025",
-    title: "Women & Girls in Education — Removing Barriers",
-    problem:
-      "Safety, menstruation, cost, and limited role-models keep girls from learning and STEM careers.",
-    objectives: [
-      "Sign a Safe-Routes + Hotline MoU (roles, escalation tree, data protection).",
-      "Fund WASH/MHM refills and launch Raising Gentlemen/boys-ally clubs.",
-      "Open a STEM internship pledge window with employer screening protocol.",
-    ],
-  },
-  {
+   {
     date: "Tue Dec 9, 2025",
-    title: "Curriculum & the Future of Work in Africa",
+    title: "Faith-Based Education: Safeguarding, Girls’ Retention, SEN",
     problem:
-      "Curricula and exams lag employer-verified skills; pathways to jobs are unclear.",
+      "Millions in faith-school systems face uneven safeguarding, girls’ retention challenges, and limited SEN support.",
     objectives: [
-      "Table three micro-credentials for national recognition within the year.",
-      "Secure 1,000 apprenticeship LOIs with placement/retention KPIs.",
-      "Launch a 6-week teacher-to-trainer upskilling sprint with stipend.",
+      "Adopt a minimum safeguarding kit (policy, focal point, hotline/redress).",
+      "Finance a dignity-kit/WASH refill model and Boys-as-Allies culture activities.",
+      "Deploy <$10 SEN classroom adaptations with teacher checklists.",
     ],
   },
-  {
-    date: "Tue Dec 16, 2025",
-    title: "EduAid-Africa Expo (2h30 virtual deal-room)",
-    problem:
-      "Pledges and pilots often stall without a closing room and clear owners.",
-    objectives: [
-      "Convert webinar momentum into signed MoUs and funded pilots.",
-      "Run policy & finance roundtables to match needs → instruments → implementers.",
-      "Publish an outcomes note and Q1 technical workshops calendar.",
-    ],
-  },
+  // {
+  //   date: "Tue Dec 9, 2025",
+  //   title: "Curriculum & the Future of Work in Africa",
+  //   problem:
+  //     "Curricula and exams lag employer-verified skills; pathways to jobs are unclear.",
+  //   objectives: [
+  //     "Table three micro-credentials for national recognition within the year.",
+  //     "Secure 1,000 apprenticeship LOIs with placement/retention KPIs.",
+  //     "Launch a 6-week teacher-to-trainer upskilling sprint with stipend.",
+  //   ],
+  // },
+
   {
     date: "Thu Dec 18, 2025",
     title: "NESA-Africa Awards (online or showcase)",
@@ -156,28 +138,50 @@ const webinars: Webinar[] = [
       "Drive sponsor and chapter renewals linked to 2026 pilots.",
     ],
   },
-  {
-    date: "Tue Jan 6, 2026",
-    title: "Q1 Policy & Finance Summit: Dashboards, Budgets, Transparency",
+      {
+    date: "Tue Jan 6, 2025",
+    title: "Diaspora Contributions to Education in Africa",
     problem:
-      "Education budgets lack public dashboards; trust and oversight are thin.",
+      "Diaspora resources are underused due to trust, compliance, and coordination gaps.",
     objectives: [
-      "Get three ministries to adopt public dashboards and quarterly reviews.",
-      "Align CSO oversight and audit trails with data-sharing agreements.",
-      "Plan Q1–Q2 budget re-allocations toward high-impact, verified programs.",
+      "Approve a diaspora fund term sheet (escrow, audits, fee stack, dashboard).",
+      "Launch a 1,000 mentor-hours/quarter pipeline with safeguarding.",
+      "Twin two diaspora chapters with two local chapters under a light MoU.",
     ],
   },
-  {
-    date: "Tue Jan 13, 2026",
-    title: "Teacher CPD Sprint Kick-off",
+  // {
+  //   date: "Tue Jan 6, 2026",
+  //   title: "Q1 Policy & Finance Summit: Dashboards, Budgets, Transparency",
+  //   problem:
+  //     "Education budgets lack public dashboards; trust and oversight are thin.",
+  //   objectives: [
+  //     "Get three ministries to adopt public dashboards and quarterly reviews.",
+  //     "Align CSO oversight and audit trails with data-sharing agreements.",
+  //     "Plan Q1–Q2 budget re-allocations toward high-impact, verified programs.",
+  //   ],
+  // },
+    {
+    date: "TueJan 13, 2025",
+    title: "Creative Arts & Media for Educational Change",
     problem:
-      "CPD rarely changes classroom practice at scale or speed.",
+      "Evidence-based messages rarely reach families in local languages at scale.",
     objectives: [
-      "Launch 6-week trainer cohorts with micro-credential + stipend.",
-      "Define one practice-change metric per subject and collect evidence.",
-      "Set school-based coaching schedules and observation rubrics.",
+      "Commission a 10-episode edutainment format in two languages with clear KPIs.",
+      "Select one SEL metric tied to attendance/engagement for every episode.",
+      "Set a 30-day translation/adaptation workflow with rights and safety checks.",
     ],
   },
+  // {
+  //   date: "Tue Jan 13, 2026",
+  //   title: "Teacher CPD Sprint Kick-off",
+  //   problem:
+  //     "CPD rarely changes classroom practice at scale or speed.",
+  //   objectives: [
+  //     "Launch 6-week trainer cohorts with micro-credential + stipend.",
+  //     "Define one practice-change metric per subject and collect evidence.",
+  //     "Set school-based coaching schedules and observation rubrics.",
+  //   ],
+  // },
   {
     date: "Tue Jan 20, 2026",
     title: "My Career, My Life (G/C #1): ICT & Green Jobs",
@@ -233,17 +237,28 @@ const webinars: Webinar[] = [
       "Map safe spaces and referral lines; monitor attendance and progression.",
     ],
   },
-  {
-    date: "Tue Feb 24, 2026",
-    title: "Q1 Technical Clinics & Expo 2026 Preview",
+    {
+    date: "Tue Dec 24, 2025",
+    title: "EduAid-Africa Expo Preview & Country Briefing",
     problem:
-      "Post-event follow-through weakens without technical ownership.",
+      "Pledges and pilots often stall without a closing room and clear owners.",
     objectives: [
-      "Book country clinics with owners, timelines, and budgets.",
-      "Match pilots to verification partners and financing instruments.",
-      "Publish the 2026 pipeline and early Expo targets.",
+      "Convert webinar momentum into signed MoUs and funded pilots.",
+      "Run policy & finance roundtables to match needs → instruments → implementers.",
+      "Publish an outcomes note and Q1 technical workshops calendar.",
     ],
   },
+  // {
+  //   date: "Tue Feb 24, 2026",
+  //   title: "Q1 Technical Clinics & Expo 2026 Preview",
+  //   problem:
+  //     "Post-event follow-through weakens without technical ownership.",
+  //   objectives: [
+  //     "Book country clinics with owners, timelines, and budgets.",
+  //     "Match pilots to verification partners and financing instruments.",
+  //     "Publish the 2026 pipeline and early Expo targets.",
+  //   ],
+  // },
 ];
 
 const heroImages = [
