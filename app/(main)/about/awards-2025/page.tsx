@@ -422,10 +422,13 @@ const AboutNESA2025 = () => {
                 { date: "Voting Opens (Gold Category)", event: "October 10, 2025", icon: "🗳️" },
                 { date: "Nomination Closes (Icon & Platinum)", event: "November 20, 2025", icon: "📝" },
                 { date: "Africa Icon Award Selection", event: "Nov 21 – Dec 3, 2025", icon: "🏆" },
-                { date: "NESA-TV Webinars", event: "October 13 – December 13, 2025", icon: "📺" },
-                { date: "EduAid Africa Virtual Expo", event: "December 15, 2025", icon: "🌐" },
+                { date: "NESA-TV Webinars", event: "October 14 – February 24, 2025", icon: "📺" },
+                { date: "EduAid Africa Virtual Expo", event: "February 24, 2025", icon: "🌐" },
                 { date: "Award Gala Night", event: "December 18, 2025 – Muson Centre, Lagos", icon: "🎉" },
-                { date: "\"It's In Me\" Radio Podcast", event: "Launches September 2025", icon: "🎙️" }
+                { date: "\"It's In Me\" Radio Podcast", event: "Launches September 2025", icon: "🎙️" },
+                { date: " Platinum Certificate Online Recognition Show", event: "Dec 18, 2025", icon: "🏆" },
+                { date: " African Blue Garnet Education Awards 2026", event: "Jan 28, 2026 ", icon: "🏆" },
+                { date: "Blue Garnet & Gold Certificate Awards Gala 2026", event: "Feb 26, 2026", icon: "🏆" }
               ].map((item, index) => (
                 <div key={index} className="group bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
                   <div className="text-center space-y-4">
