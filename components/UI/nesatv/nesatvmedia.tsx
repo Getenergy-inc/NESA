@@ -17,8 +17,13 @@ const MediaSection = ({
   setActiveCategory,
   mediaData,
 }: MediaSectionProps) => {
+  const handleClick = (media: any) => {
+    setActiveCategory(media);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <section className="w-full px-6 py-12 bg-[#f5efe6] ">
+    <section className="w-full px-6 py-12 bg-[#f5efe6]">
       {/* Title and "See more" */}
       <div className="flex items-center justify-between mb-10">
         <h2 className="text-lg font-semibold text-black">
@@ -34,7 +39,7 @@ const MediaSection = ({
           <div
             key={idx}
             className="flex flex-col md:flex-row gap-6 md:gap-12 lg:gap-20 items-start cursor-pointer group"
-            onClick={() => setActiveCategory(media)}
+            onClick={() => handleClick(media)}
           >
             {/* Left: Black Card */}
             <div
