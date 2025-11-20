@@ -8,7 +8,7 @@ import VotingOverviewCard from '@/components/Layout/Dashboard/VotingOverviewCard
 import SkeletonLoader from '@/components/UI/SkeletonLoader';
 import { useAuthContext } from '@/lib/context/AuthContext';
 import { useWallet } from '@/lib/hooks/useWallet';
-import { FiAlertCircle, FiCheckCircle, FiX } from 'react-icons/fi';
+import { FiCheckCircle } from 'react-icons/fi';
 import WalletWidget from '@/components/Wallet/WalletWidget';
 
 export default function DashboardPage() {
@@ -16,24 +16,19 @@ export default function DashboardPage() {
   const { user } = useAuthContext();
   const { totalBalance, withdrawableBalance, transactions, loading: walletLoading } = useWallet();
   const [loading, setLoading] = useState(true);
-  const [showNotification, setShowNotification] = useState(true);
-  const [verificationStatus, setVerificationStatus] = useState({
-    emailVerified: false,
-    kycCompleted: false,
-  });
   const [recentActivities, setRecentActivities] = useState<any[]>([]);
+
+  // Get time-based greeting
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return 'Good morning';
+    if (hour < 17) return 'Good afternoon';
+    return 'Good evening';
+  };
 
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        // Set verification status from user data
-        const status = {
-          emailVerified: user?.isVerified || user?.emailVerified || false,
-          kycCompleted: user?.KYC || false,
-        };
-        
-        setVerificationStatus(status);
-
         // Convert wallet transactions to recent activities
         if (transactions && transactions.length > 0) {
           const activities = transactions.slice(0, 4).map((tx: any) => {
@@ -82,18 +77,25 @@ export default function DashboardPage() {
     }
   }, [user, transactions]);
 
-  const needsAttention = !verificationStatus.emailVerified || !verificationStatus.kycCompleted;
+  // Get user's first name from authenticated user data
+  const firstName = user?.firstName || user?.fullName?.split(' ')[0] || user?.name?.split(' ')[0] || 'User';
+  const greeting = getGreeting();
 
-  const handleCompleteVerification = (type: 'email' | 'kyc') => {
-    if (type === 'email') {
-      router.push('/account/verify-email');
-    } else {
-      router.push('/account/complete-kyc');
+  // Debug logging to see what user data we have
+  useEffect(() => {
+    if (user) {
+      console.log('User data in dashboard:', {
+        firstName: user.firstName,
+        fullName: user.fullName,
+        name: user.name,
+        email: user.email,
+        chapter: user.chapter,
+        country: user.country,
+        state: user.state,
+        extractedFirstName: firstName
+      });
     }
-  };
-
-  // Get user's first name
-  const firstName = user?.firstName || user?.fullName?.split(' ')[0] || 'User';
+  }, [user, firstName]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -109,80 +111,44 @@ export default function DashboardPage() {
             <>
               <div className="flex justify-between items-start">
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900">Welcome {firstName},</h1>
+                  <h1 className="text-3xl font-bold text-gray-900">
+                    {greeting}, {firstName}! 
+                  </h1>
                   <p className="mt-2 text-sm text-gray-600">
                     Track your nominations, referrals, and wallet activities
                   </p>
                 </div>
-                {needsAttention && showNotification && (
-                  <button
-                    onClick={() => setShowNotification(false)}
-                    className="text-gray-400 hover:text-gray-500"
-                    aria-label="Dismiss notification"
-                  >
-                    <FiX size={18} />
-                  </button>
-                )}
+
               </div>
 
-              {/* Verification Notification */}
-              {showNotification && needsAttention && (
-                <div className="mt-4 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <FiAlertCircle className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-                    </div>
-                    <div className="ml-3">
-                      <h3 className="text-sm font-medium text-yellow-800">
-                        Account verification needed
-                      </h3>
-                      <div className="mt-2 text-sm text-yellow-700">
-                        <ul className="list-disc pl-5 space-y-1">
-                          {!verificationStatus.emailVerified && (
-                            <li>
-                              <button
-                                className="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 rounded"
-                                onClick={() => handleCompleteVerification('email')}
-                              >
-                                Verify your email address
-                              </button>
-                            </li>
-                          )}
-                          {!verificationStatus.kycCompleted && (
-                            <li>
-                              <button
-                                className="hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 rounded"
-                                onClick={() => handleCompleteVerification('kyc')}
-                              >
-                                Complete KYC verification
-                              </button>
-                            </li>
-                          )}
-                        </ul>
-                      </div>
+              {/* Local Chapter Info */}
+              <div className="mt-4 bg-gradient-to-r from-purple-50 to-blue-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <FiCheckCircle className="h-5 w-5 text-purple-600" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 flex-1">
+                    <h3 className="text-sm font-medium text-purple-900">
+                      Your Local Chapter
+                    </h3>
+                    <div className="mt-2 text-sm text-purple-800">
+                      <p className="font-semibold">
+                        {user?.chapter?.name || `NESA ${user?.country || 'Online'} Chapter`}
+                      </p>
+                      <p className="text-purple-700 mt-1">
+                        📍 {user?.state && user?.country 
+                          ? `${user.state}, ${user.country}` 
+                          : user?.country || 'Online'}
+                      </p>
+                      {user?.chapter?.memberCount && (
+                        <p className="text-purple-600 text-xs mt-1">
+                          {user.chapter.memberCount} members
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
-              )}
-
-              {/* Success notification when all verified */}
-              {!needsAttention && (
-                <div className="mt-4 bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <FiCheckCircle className="h-5 w-5 text-green-400" aria-hidden="true" />
-                    </div>
-                    <div className="ml-3">
-                      <h3 className="text-sm font-medium text-green-800">
-                        Account fully verified
-                      </h3>
-                      <div className="mt-2 text-sm text-green-700">
-                        <p>You have full access to all platform features.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
+              </div>
             </>
           )}
         </div>

@@ -123,8 +123,15 @@ export const useAuth = () => {
       const token = data.token;
       const user = data.user;
 
-      if (token) {
-        setAuthenticationState(user, token);
+      console.log('Login response user data:', user);
+
+      if (token && user) {
+        // Set the full user data from login response
+        setUser(user);
+        setIsAuthenticated(true);
+        setCookie("token", token, 7);
+        setCookie("userId", user.id, 7);
+        setCookie("emailVerified", user.emailVerified ? "true" : "false", 7);
       }
       return data;
     } catch (err: unknown) {

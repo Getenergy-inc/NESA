@@ -97,7 +97,7 @@ const OrganizationInfoStep: React.FC = () => {
     watch,
     setValue,
     trigger,
-    formState: { errors, isValid }
+    formState: { errors, isValid, isSubmitting }
   } = useForm<any>({
     resolver: zodResolver(
       z.object({
@@ -178,12 +178,19 @@ const OrganizationInfoStep: React.FC = () => {
     }
   }, [watchedPassword]);
 
-  const onSubmit = (data: OrganizationInfoFormData) => {
-    updateFormData({
-      ...data,
-      verificationDocument: verificationDocuments[0]?.file
-    });
-    nextStep();
+  const onSubmit = async (data: OrganizationInfoFormData) => {
+    console.log('Organization form submitted:', data);
+    try {
+      // For organizations, set email to contactEmail for backend compatibility
+      updateFormData({
+        ...data,
+        email: data.contactEmail, // Backend expects 'email' field
+        verificationDocument: verificationDocuments[0]?.file
+      });
+      nextStep();
+    } catch (error) {
+      console.error('Error submitting organization form:', error);
+    }
   };
 
   const countryOptions = countries.map(country => ({
@@ -460,8 +467,8 @@ const OrganizationInfoStep: React.FC = () => {
             text="Create Account"
             variant="filled"
             size="medium"
-            disabled={!isValid || isLoading}
-            loading={isLoading}
+            disabled={isLoading || isSubmitting}
+            loading={isLoading || isSubmitting}
             className="px-8 py-3 min-w-[200px]"
           />
         </div>
