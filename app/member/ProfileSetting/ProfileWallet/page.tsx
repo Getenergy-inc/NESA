@@ -1,26 +1,21 @@
 'use client';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import {
-  User,
-  Wallet,
-  Share2,
   ArrowUpRight,
   ArrowDownLeft,
   Clock,
   CheckCircle,
   XCircle,
-  Loader2
+  Loader2,
+  Wallet
 } from 'lucide-react';
-import { IoLogOut } from 'react-icons/io5';
 import { useWallet } from '@/lib/hooks/useWallet';
-import { useAuthContext } from '@/lib/context/AuthContext';
 import WalletBalanceCard from '@/components/Wallet/WalletBalanceCard';
+import { useRouter } from 'next/navigation';
 
 export default function WalletPage() {
   const router = useRouter();
-  const { logout } = useAuthContext();
   const {
     withdrawableBalance,
     lockedBalance,
@@ -33,19 +28,13 @@ export default function WalletPage() {
     fetchTransactions
   } = useWallet();
 
-  const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const [showTransferModal, setShowTransferModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const transactionsPerPage = 10;
 
   useEffect(() => {
     fetchTransactions(currentPage, transactionsPerPage);
-  }, [currentPage]);
-
-  const handleLogout = () => {
-    logout();
-    window.location.href = '/account/login';
-  };
+  }, [currentPage, fetchTransactions]);
 
   const formatAGC = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -108,52 +97,25 @@ export default function WalletPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50 text-white pt-20">
-      {/* Sidebar */}
-      <aside className="w-20 md:w-64 bg-[#151007] p-6 flex pt-[50px] flex-col space-y-6 items-center md:items-start">
-        <div className="flex flex-col gap-5">
-          <button
-            onClick={() => router.push('/member/profile')}
-            className="flex items-center px-2 md:px-4 py-2 rounded text-sm hover:bg-white/10"
-          >
-            <User className="w-5 h-5" />
-            <span className="hidden md:inline ml-2">Profile Settings</span>
-          </button>
-
-          <button className="font-normal px-2 md:px-4 py-2 border bg-white text-black border-white/30 rounded text-sm flex items-center gap-2">
-            <Wallet className="w-5 h-5" />
-            <span className="hidden md:inline ml-2">Wallet</span>
-          </button>
-
-          <button
-            onClick={() => router.push('/member/referrals')}
-            className="flex items-center px-2 md:px-4 py-2 rounded text-sm hover:bg-white/10"
-          >
-            <Share2 className="w-5 h-5" />
-            <span className="hidden md:inline ml-2">Referrals</span>
-          </button>
-
-          {/* Logout Button */}
-          <div className="flex justify-center mt-4 sm:mt-6 mb-8 sm:mb-12">
-            <button
-              onClick={handleLogout}
-              className="px-3 sm:px-4 py-2 rounded-md flex items-center space-x-2 transition-all duration-300 hover:opacity-80 active:transform active:scale-95"
-              style={{ fontSize: '18px', marginBottom: '24px' }}
-            >
-              <IoLogOut size={24} style={{ color: '#CDA292' }} />
-              <span style={{ fontSize: '18px', color: '#CDA292' }}>Log Out</span>
-            </button>
-          </div>
-        </div>
-      </aside>
-
+    <div className="min-h-screen bg-gray-50">
       {/* Main Content */}
-      <main className="flex-1 p-6 md:p-10 space-y-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+        <div className="w-full">
           {/* Page Header */}
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">My Wallet</h1>
-            <p className="text-gray-600">Manage your AGC balance and transactions</p>
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">My Wallet</h1>
+                <p className="text-gray-600">Manage your AGC balance and transactions</p>
+              </div>
+              <button
+                onClick={() => router.push('/member/wallet/purchases')}
+                className="hidden md:flex items-center gap-2 px-4 py-2 text-orange-600 hover:text-orange-700 font-medium transition-colors"
+              >
+                <Clock className="w-4 h-4" />
+                Purchase History
+              </button>
+            </div>
           </div>
 
           {/* Error Display */}
@@ -173,7 +135,7 @@ export default function WalletPage() {
               loading={loading}
               onRefresh={refresh}
               showActions={true}
-              onPurchase={() => setShowPurchaseModal(true)}
+              onPurchase={() => router.push('/member/wallet/purchase')}
               onTransfer={() => setShowTransferModal(true)}
             />
           </div>
@@ -344,21 +306,7 @@ export default function WalletPage() {
         </div>
       </main>
 
-      {/* Modals - To be implemented */}
-      {showPurchaseModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl p-6 max-w-md w-full">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Purchase AGC</h3>
-            <p className="text-gray-600 mb-4">Purchase functionality coming soon!</p>
-            <button
-              onClick={() => setShowPurchaseModal(false)}
-              className="w-full bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-orange-700"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+
 
       {showTransferModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
