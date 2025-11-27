@@ -66,8 +66,11 @@ export function mapFormDataToBackend(frontendData: SignupFormData): any {
   console.log('Country:', frontendData.country);
   console.log('State:', frontendData.state);
   
+  // For organizations, use contactEmail as the primary email if email is not set
+  const primaryEmail = frontendData.email || (frontendData as any).contactEmail;
+  
   const baseData = {
-    email: frontendData.email,
+    email: primaryEmail,
     password: frontendData.password,
     country: frontendData.country,
     state: frontendData.state,

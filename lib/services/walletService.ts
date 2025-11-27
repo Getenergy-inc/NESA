@@ -20,13 +20,19 @@ export interface WalletTransaction {
 }
 
 export interface PurchaseInitiateResponse {
-  success: boolean;
+  success?: boolean;
   message: string;
-  data: {
+  data?: {
     reference: string;
     authorizationUrl: string;
     accessCode: string;
+    amount?: number;
+    currency?: string;
+    agcAmount?: number;
   };
+  // Support both nested and flat response structures
+  authorizationUrl?: string;
+  reference?: string;
 }
 
 export interface PurchaseVerifyResponse {
@@ -108,10 +114,11 @@ class WalletService {
   /**
    * Initiate AGC purchase
    */
-  async initiatePurchase(amountInUSD: number): Promise<PurchaseInitiateResponse> {
+  async initiatePurchase(amount: number, currency: string = 'USD'): Promise<PurchaseInitiateResponse> {
     try {
       const response = await apiClient.post(`${this.baseUrl}/purchase/initiate`, {
-        amount: amountInUSD
+        amount,
+        currency
       });
       return response.data;
     } catch (error: any) {

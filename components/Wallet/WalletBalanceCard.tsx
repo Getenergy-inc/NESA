@@ -80,7 +80,7 @@ export const WalletBalanceCard: React.FC<WalletBalanceCardProps> = ({
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
               <TrendingUp className="w-4 h-4" />
-              <p className="text-sm opacity-90">Withdrawable</p>
+              <p className="text-sm opacity-90">Purchased AGC</p>
             </div>
             <p className="text-xl font-semibold">
               {loading ? (
@@ -94,7 +94,7 @@ export const WalletBalanceCard: React.FC<WalletBalanceCardProps> = ({
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
               <Lock className="w-4 h-4" />
-              <p className="text-sm opacity-90">Locked</p>
+              <p className="text-sm opacity-90">Bonus AGC</p>
             </div>
             <p className="text-xl font-semibold">
               {loading ? (
@@ -130,7 +130,7 @@ export const WalletBalanceCard: React.FC<WalletBalanceCardProps> = ({
 
         {/* Info Text */}
         <p className="text-xs opacity-75 mt-4">
-          Locked balance includes signup bonuses and rewards that will be unlocked based on activity.
+          Bonus AGC includes signup bonuses and rewards. Can be used for voting and platform activities.
         </p>
       </div>
     </motion.div>

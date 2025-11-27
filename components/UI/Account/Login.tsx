@@ -15,18 +15,21 @@ import {
 } from '@mui/material';
 import { Grid } from '@mui/material';
 import Link from 'next/link';
-import { useAuth } from '@/lib/context/auth-context';
+import { useAuthContext } from '@/lib/context/AuthContext';
 
 const LoginPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams?.get('callbackUrl') || (searchParams?.get('redirect') || '/dashboard');
-  const { login } = useAuth();
+  const isVerified = searchParams?.get('verified') === 'true';
+  const { signIn } = useAuthContext();
+  const isFirstLogin = searchParams?.get('firstLogin') === 'true';
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [showVerifiedMessage, setShowVerifiedMessage] = useState(isVerified);
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,14 +45,19 @@ const LoginPage = () => {
       
       console.log('Attempting login with:', { email, callbackUrl });
       
-      // Use the login function from auth context
-      await login(email, password);
+      // Use the signIn function from auth context
+      await signIn({ email, password });
       
-      console.log('Login successful, redirecting to:', callbackUrl);
+      console.log('Login successful');
       
       // Use a slight delay to ensure the auth state is properly set
       setTimeout(() => {
-        router.push(callbackUrl);
+        // Redirect first-time logins to welcome page
+        if (isFirstLogin) {
+          router.push('/member/welcome');
+        } else {
+          router.push(callbackUrl);
+        }
       }, 500);
     } catch (err) {
       // Check if this is an admin login attempt
@@ -85,6 +93,16 @@ const LoginPage = () => {
             )}
           </Box>
           
+          {showVerifiedMessage && (
+            <Alert 
+              severity="success" 
+              sx={{ mb: 3 }}
+              onClose={() => setShowVerifiedMessage(false)}
+            >
+              <strong>Account verified successfully!</strong> You can now log in with your credentials.
+            </Alert>
+          )}
+          
           {error && (
             <Alert severity="error" sx={{ mb: 3 }}>
               {error}
@@ -118,21 +136,34 @@ const LoginPage = () => {
               onChange={(e) => setPassword(e.target.value)}
               disabled={loading}
             />
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
+              <MuiLink component={Link} href="/account/forgot-password" variant="body2">
+                Forgot password?
+              </MuiLink>
+            </Box>
+
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 1, mb: 2 }}
               disabled={loading}
             >
               {loading ? <CircularProgress size={24} /> : 'Sign In'}
             </Button>
             
-            <Grid container justifyContent="center">
-              <Grid size={{xs:12, sm:12}} >
+            <Grid container justifyContent="center" spacing={2}>
+              <Grid size={{xs:12, sm:6}} >
                 <Box textAlign="center">
                   <MuiLink component={Link} href="/" variant="body2">
-                    Return to Home Page
+                    Return to Home
+                  </MuiLink>
+                </Box>
+              </Grid>
+              <Grid size={{xs:12, sm:6}} >
+                <Box textAlign="center">
+                  <MuiLink component={Link} href="/account/signup" variant="body2">
+                    Don't have an account? Sign up
                   </MuiLink>
                 </Box>
               </Grid>

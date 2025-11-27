@@ -60,49 +60,49 @@ const mainMenuConfig: MenuItem[] = [
       }
     ]
   },
-  {
-    label: "Shop",
-    icon: <IoShirtOutline className="h-5 w-5" />,
-    subItems: [
-      {
-        label: "Award Tickets",
-        href: "/member/shop/tickets",
-        icon: <IoDocumentTextOutline className="h-4 w-4" />
-      },
-      {
-        label: "Merchandise",
-        href: "/member/shop/merchandise",
-        icon: <IoShirtOutline className="h-4 w-4" />
-      },
-      {
-        label: "VIP Packages",
-        href: "/member/shop/vip",
-        icon: <IoStarOutline className="h-4 w-4" />
-      }
-    ]
-  }
+  // {
+  //   label: "Shop",
+  //   icon: <IoShirtOutline className="h-5 w-5" />,
+  //   subItems: [
+  //     {
+  //       label: "Award Tickets",
+  //       href: "/member/shop/tickets",
+  //       icon: <IoDocumentTextOutline className="h-4 w-4" />
+  //     },
+  //     {
+  //       label: "Merchandise",
+  //       href: "/member/shop/merchandise",
+  //       icon: <IoShirtOutline className="h-4 w-4" />
+  //     },
+  //     {
+  //       label: "VIP Packages",
+  //       href: "/member/shop/vip",
+  //       icon: <IoStarOutline className="h-4 w-4" />
+  //     }
+  //   ]
+  // }
 ];
 
-const notificationItems = [
-  {
-    label: "New nomination received",
-    href: "/member/notifications",
-    icon: <IoPersonOutline className="h-5 w-5" />,
-    timestamp: "2 hours ago"
-  },
-  {
-    label: "Payment confirmation #12345",
-    href: "/member/notifications",
-    icon: <IoWalletOutline className="h-5 w-5" />,
-    timestamp: "5 hours ago"
-  },
-  {
-    label: "Event reminder: Annual Gala",
-    href: "/member/notifications",
-    icon: <IoCalendarOutline className="h-5 w-5" />,
-    timestamp: "1 day ago"
-  }
-];
+// const notificationItems = [
+//   {
+//     label: "New nomination received",
+//     href: "/member/notifications",
+//     icon: <IoPersonOutline className="h-5 w-5" />,
+//     timestamp: "2 hours ago"
+//   },
+//   {
+//     label: "Payment confirmation #12345",
+//     href: "/member/notifications",
+//     icon: <IoWalletOutline className="h-5 w-5" />,
+//     timestamp: "5 hours ago"
+//   },
+//   {
+//     label: "Event reminder: Annual Gala",
+//     href: "/member/notifications",
+//     icon: <IoCalendarOutline className="h-5 w-5" />,
+//     timestamp: "1 day ago"
+//   }
+// ];
 
 const profileItems = [
   {
@@ -144,22 +144,22 @@ const profileItems = [
 
 // Wallet Info Component
 
-const WalletInfo = () => (
-  <div className="flex items-center space-x-4 bg-[#191307E6] rounded-lg px-6 py-4 shadow-md">
-    {/* Wallet Icon */}
-    <div className="flex items-center justify-center bg-[#f6b146] text-[#191307] rounded-full w-10 h-10">
-       <Zap className="flex items-center"  style={{ color: '#FFF' }} />
-    </div>
+// const WalletInfo = () => (
+//   <div className="flex items-center space-x-4 bg-[#191307E6] rounded-lg px-6 py-4 shadow-md">
+//     {/* Wallet Icon */}
+//     <div className="flex items-center justify-center bg-[#f6b146] text-[#191307] rounded-full w-10 h-10">
+//        <Zap className="flex items-center"  style={{ color: '#FFF' }} />
+//     </div>
 
-    {/* Balance Info */}
-    <div className="flex items-center">
+//     {/* Balance Info */}
+//     <div className="flex items-center">
                
-                <span className="text-2xl font-bold text-white">{balance.toLocaleString()}</span>
-                <span className="ml-1 text-sm text-gray-400">pts</span>
-              </div>
+//                 {/* <span className="text-2xl font-bold text-white">{balance.toLocaleString()}</span> */}
+//                 {/* <span className="ml-1 text-sm text-gray-400">pts</span> */}
+//               </div>
 
-  </div>
-);
+//   </div>
+// );
 
 // Navigation Item Component
 const NavItem = ({ item, mobile = false }: { item: MenuItem; mobile?: boolean }) => {
@@ -544,12 +544,12 @@ export default function MemberLayout({ children }: MemberLayoutProps) {
           {/* Mobile Top Bar Icons */}
 <div className="md:hidden flex items-center space-x-5">
  {/* Mobile Header */}
-<NotificationDropdown
+{/* <NotificationDropdown
   mobile
   icon={<IoNotificationsOutline size={20} />}
   badge={3}
   items={notificationItems}
-/>
+/> */}
   <AccountSettingsDropdown 
     mobile
     icon={<IoSettingsOutline size={20} />}
@@ -567,8 +567,8 @@ export default function MemberLayout({ children }: MemberLayoutProps) {
   </button>
 </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center justify-center flex-1 space-x-4">
             {mainMenuConfig.map((item, index) => (
               item.subItems ? (
                 <NavDropdown key={index} item={item} />
@@ -576,14 +576,18 @@ export default function MemberLayout({ children }: MemberLayoutProps) {
                 <NavItem key={index} item={item} />
               )
             ))}
-            <WalletInfo />
+          </div>
+
+          {/* Desktop Right Side Icons */}
+          <div className="hidden md:flex items-center space-x-2">
+            {/* <WalletInfo /> */}
             {/* Desktop Icons */}
             {/* Desktop Header */}
-<NotificationDropdown
+{/* <NotificationDropdown
   icon={<IoNotificationsOutline size={20} />}
   badge={3}
   items={notificationItems}
-/>
+/> */}
              <AccountSettingsDropdown
     icon={<IoSettingsOutline size={20} />}
     items={[
@@ -609,7 +613,7 @@ export default function MemberLayout({ children }: MemberLayoutProps) {
               )
             ))}
             <div className="pt-2">
-              <WalletInfo />
+              {/* <WalletInfo /> */}
             </div>
           </div>
         )}

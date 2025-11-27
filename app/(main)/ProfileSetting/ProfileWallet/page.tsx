@@ -115,40 +115,66 @@ export default function WalletPage() {
 
           {/* Info Cards */}
           <div className="grid md:grid-cols-2 gap-6 mt-8">
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">About AGC</h3>
+            <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-lg p-6 border border-orange-100">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="p-2 bg-orange-100 rounded-lg">
+                  <Wallet className="w-5 h-5 text-orange-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900">About AGC</h3>
+              </div>
               <p className="text-gray-600 text-sm mb-4">
-                AfriGold Coin (AGC) is NESA's digital currency used for voting, nominations, and rewards.
+                AfriGold Coin (AGC) is NESA's digital currency used for voting, nominations, and platform activities.
               </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-600 mt-1">•</span>
-                  <span>Earn AGC through participation and referrals</span>
+              <ul className="space-y-3 text-sm text-gray-700">
+                <li className="flex items-start gap-3 p-2 bg-white/50 rounded-lg">
+                  <span className="text-orange-600 text-lg">💰</span>
+                  <span>Purchase AGC to support nominees and participate</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-600 mt-1">•</span>
-                  <span>Use AGC to vote for nominees</span>
+                <li className="flex items-start gap-3 p-2 bg-white/50 rounded-lg">
+                  <span className="text-orange-600 text-lg">🎁</span>
+                  <span>Earn bonus AGC through signups and referrals</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-600 mt-1">•</span>
-                  <span>Transfer AGC to other users</span>
+                <li className="flex items-start gap-3 p-2 bg-white/50 rounded-lg">
+                  <span className="text-orange-600 text-lg">🗳️</span>
+                  <span>Use AGC to vote for your favorite nominees</span>
+                </li>
+                <li className="flex items-start gap-3 p-2 bg-white/50 rounded-lg">
+                  <span className="text-orange-600 text-lg">↔️</span>
+                  <span>Transfer AGC to other NESA members</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Balance Types</h3>
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-lg p-6 border border-blue-100">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="p-2 bg-blue-100 rounded-lg">
+                  <Image src="/images/NESA Logo 2.png" alt="AGC" width={20} height={20} className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900">Balance Types</h3>
+              </div>
               <div className="space-y-4">
-                <div>
-                  <p className="font-semibold text-gray-900 mb-1">Withdrawable Balance</p>
+                <div className="p-4 bg-white rounded-xl border border-green-100">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">💳</span>
+                    <p className="font-semibold text-gray-900">Purchased AGC</p>
+                  </div>
                   <p className="text-sm text-gray-600">
-                    AGC that can be transferred, used for voting, or withdrawn.
+                    AGC you've purchased with real money. Can be used for all platform activities including voting, transfers, and donations.
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    💡 Conversion: $1 USD = 20 AGC
                   </p>
                 </div>
-                <div>
-                  <p className="font-semibold text-gray-900 mb-1">Locked Balance</p>
+                <div className="p-4 bg-white rounded-xl border border-yellow-100">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🎁</span>
+                    <p className="font-semibold text-gray-900">Bonus AGC</p>
+                  </div>
                   <p className="text-sm text-gray-600">
-                    Bonus AGC that will be unlocked based on your activity and engagement.
+                    Free AGC earned from signups, referrals, and platform bonuses. Can be used for voting and platform activities.
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    💡 Earn more through referrals and participation
                   </p>
                 </div>
               </div>
