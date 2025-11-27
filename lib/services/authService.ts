@@ -58,18 +58,23 @@ interface ResetPasswordResponse {
 
 export const login = async (credentials: Credentials): Promise<AuthResponse> => {
   try {
-    const response = await apiClient.post('/api/auths/login', credentials);
+    const response = await apiClient.post('/api/v1/auth/login', credentials);
+    
+    console.log('Raw login response:', response.data);
     
     // Handle new unified response format
     if (response.data.success && response.data.data) {
-      return {
+      const transformedData = {
         message: response.data.message,
         token: response.data.data.tokens?.accessToken,
         user: response.data.data.user
       };
+      console.log('Transformed login data:', transformedData);
+      return transformedData;
     }
     
     // Fallback for legacy response format
+    console.log('Using legacy format:', response.data);
     return response.data;
   } catch (error: unknown) {
     const message = extractErrorMessage(error, 'Invalid email or password');
@@ -86,7 +91,7 @@ export const verifyOTP = async (data: OTPData): Promise<AuthResponse> => {
       purpose: 'LOGIN' // Default purpose for login flow
     };
 
-    const response = await apiClient.post('/api/auths/verify-otp', backendData);
+    const response = await apiClient.post('/api/v1/auth/otp/verify', backendData);
 
     // Handle new backend response structure
     if (response.data.success && response.data.data) {
@@ -107,7 +112,7 @@ export const verifyOTP = async (data: OTPData): Promise<AuthResponse> => {
 
 export const signup = async (userData: UserData): Promise<AuthResponse> => {
   try {
-    const response = await apiClient.post('/api/auths/signup', userData);
+    const response = await apiClient.post('/api/v1/auth/register', userData);
 
     // Handle new backend response structure
     if (response.data.success && response.data.data) {

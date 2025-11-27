@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
-import { createNomination } from '../../../lib/services/nominationService';
+import { nominationService } from '../../../lib/services/nominationService';
 import { FiCheckCircle, FiUpload, FiX, FiArrowLeft } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -71,15 +71,16 @@ const NominationPage: React.FC<NominationPageProps> = ({ type, category }) => {
   const handleNominate = async () => {
     setLoading(true);
     try {
-      await createNomination({
-        category: formData.category,
-         categoryType: formData. categoryType,
-        subCategory: formData.subCategory,
-        name: formData.name,
-        linkedinProfile: formData.linkedinProfile,
+      await nominationService.createNomination({
+        fullName: formData.name,
         email: formData.email,
-        achievements: formData.achievements,
-        document: formData.document,
+        phone: '', // Add phone field to form if needed
+        country: '', // Add country field to form if needed
+        stateRegion: '', // Add state/region field to form if needed
+        category: formData.category,
+        subcategory: formData.subCategory,
+        impactSummary: formData.achievements,
+        achievementDescription: formData.achievements,
       });
 
       setShowConfirmation(false);
