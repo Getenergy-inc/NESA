@@ -24,9 +24,12 @@ export default function CookiesPolicyPage(): JSX.Element {
     ads: false,
   });
 
-  localStorage.clear();
-
   useEffect(() => {
+    // Clear localStorage only on client side
+    if (typeof window !== 'undefined') {
+      localStorage.clear();
+    }
+    
     const stored = localStorage.getItem("nesa_cookie_consent");
     if (stored) {
       setConsent(stored);
@@ -396,12 +399,7 @@ export default function CookiesPolicyPage(): JSX.Element {
                     Disabling cookies may affect site functionality.
                   </p>
 
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    <pre className="text-sm overflow-auto text-gray-700">{`// Simple snippet: store user choice
-localStorage.setItem('nesa_cookie_consent','essential'); // or 'all' or 'custom'
-localStorage.setItem('nesa_cookie_prefs', JSON.stringify({ essential: true, analytics: false, ads: false }));
-`}</pre>
-                  </div>
+                
                 </motion.section>
 
                 <motion.section

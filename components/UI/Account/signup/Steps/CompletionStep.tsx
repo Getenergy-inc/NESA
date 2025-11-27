@@ -38,14 +38,10 @@ const CompletionStep: React.FC = () => {
     }
   };
 
-  const handleGoToDashboard = () => {
+  const handleGoToLogin = () => {
     resetForm();
-
-    // Determine appropriate dashboard route based on user role and intents
-    const userRole = mockSignupData.user.role; // This would come from actual signup response
-    const dashboardRoute = getDashboardRoute(userRole, formData.intents);
-
-    router.push(dashboardRoute);
+    // Redirect to login page with firstLogin flag
+    router.push('/account/login?firstLogin=true');
   };
 
   const handleStartApplication = (applicationType: string) => {
@@ -76,11 +72,16 @@ const CompletionStep: React.FC = () => {
           Welcome to NESA-Africa! 🎉
         </h1>
         <p className="text-xl text-gray-600 mb-2">
-          Your account has been created successfully
+          Your account has been created and verified successfully
         </p>
-        <p className="text-lg text-gray-500">
+        <p className="text-lg text-gray-500 mb-3">
           Hello {mockSignupData.user.name}, you're now part of the NESA community!
         </p>
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-md mx-auto">
+          <p className="text-sm text-blue-800">
+            <strong>Next Step:</strong> Log in with your credentials to access your personalized welcome page and dashboard.
+          </p>
+        </div>
       </div>
 
       {/* Account Summary Cards */}
@@ -247,10 +248,10 @@ const CompletionStep: React.FC = () => {
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button
-          text="Go to Dashboard"
+          text="Go to Login"
           variant="filled"
           size="medium"
-          onClick={handleGoToDashboard}
+          onClick={handleGoToLogin}
           icon={<ArrowRight className="w-4 h-4" />}
           iconPosition="right"
           className="px-8 py-3 min-w-[200px]"

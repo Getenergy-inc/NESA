@@ -93,13 +93,29 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   // Calculate progress percentage
   const calculateProgress = (currentStep: SignupStep, completedSteps: SignupStep[]): number => {
-    const currentIndex = STEP_ORDER.indexOf(currentStep);
+    // Handle organization-info step (treat it same as personal-info for progress calculation)
+    let currentIndex = STEP_ORDER.indexOf(currentStep);
+    if (currentIndex === -1 && currentStep === 'organization-info') {
+      currentIndex = STEP_ORDER.indexOf('personal-info');
+    }
     const completedCount = completedSteps.length;
     return Math.round(((completedCount + (currentIndex + 1) * 0.5) / STEP_ORDER.length) * 100);
   };
 
   // Get next step based on form data
   const getNextStep = (currentStep: SignupStep, formData: Partial<SignupFormData>): SignupStep | null => {
+    // Handle organization-info step separately since it's not in STEP_ORDER
+    if (currentStep === 'organization-info') {
+      const roleRequiredIntents = ['Become Ambassador', 'Join NESA Team', 'Apply as Judge', 'Apply as NRC Volunteer'];
+      const hasRoleIntent = formData.intents?.some(intent => roleRequiredIntents.includes(intent));
+
+      if (hasRoleIntent) {
+        return 'role-selection';
+      } else {
+        return 'verification';
+      }
+    }
+
     const currentIndex = STEP_ORDER.indexOf(currentStep);
 
     if (currentIndex === -1 || currentIndex >= STEP_ORDER.length - 1) {
@@ -118,7 +134,7 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
 
     // Handle role-selection step (conditional)
-    if (currentStep === 'personal-info' || currentStep === 'organization-info') {
+    if (currentStep === 'personal-info') {
       const roleRequiredIntents = ['Become Ambassador', 'Join NESA Team', 'Apply as Judge', 'Apply as NRC Volunteer'];
       const hasRoleIntent = formData.intents?.some(intent => roleRequiredIntents.includes(intent));
 

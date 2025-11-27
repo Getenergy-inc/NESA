@@ -33,6 +33,17 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // API rewrites to proxy requests to backend server
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: process.env.NEXT_PUBLIC_API_BASE_URL 
+          ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/:path*`
+          : 'http://localhost:5000/api/:path*',
+      },
+    ];
+  },
   // Reduce bundle size and fix SSR issues
   webpack: (config, { isServer, webpack }) => {
     // Fix case sensitivity warnings

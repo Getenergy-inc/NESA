@@ -53,6 +53,13 @@ const VerificationStep: React.FC = () => {
     ? formData.email 
     : (formData as any)?.contactEmail || formData.email;
 
+  // Debug logging
+  useEffect(() => {
+    console.log('VerificationStep - formData:', formData);
+    console.log('VerificationStep - email:', email);
+    console.log('VerificationStep - accountType:', formData.accountType);
+  }, [formData, email]);
+
   // Call signup flow when component mounts (if not already done)
   useEffect(() => {
     const initiateSignup = async () => {
@@ -250,20 +257,16 @@ const VerificationStep: React.FC = () => {
       const token = response.token || response.data?.token || response.data?.data?.tokens?.accessToken;
       
       if (isSuccess) {
-        // Success - update form data and set authentication state
-        updateFormData({ emailVerified: true });
-
-        // Set authentication state with user data from response
-        const authUserData = {
-          ...formData,
+        // Success - update form data (but don't set authentication state)
+        updateFormData({ 
           emailVerified: true,
-          id: userData?.id || 'verified-user',
-          role: userData?.role || 'FREE_MEMBER',
-          accountType: userData?.accountType || formData.accountType
-        };
+          userId: userData?.id,
+          userRole: userData?.role
+        });
 
-        setAuthenticationState(authUserData, token || 'verified-token');
-
+        // Don't automatically log in - user must login manually
+        // This is more secure and follows best practices
+        
         // Proceed to completion step
         nextStep();
       } else {

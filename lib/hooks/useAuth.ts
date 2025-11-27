@@ -69,6 +69,30 @@ const deleteCookie = (name: string) => {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 };
 
+// Store user data in cookie (stringified JSON)
+const setUserDataCookie = (userData: User) => {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
+  try {
+    const userDataString = JSON.stringify(userData);
+    setCookie("userData", encodeURIComponent(userDataString), 7);
+  } catch (error) {
+    console.error("Failed to store user data in cookie:", error);
+  }
+};
+
+// Get user data from cookie
+const getUserDataCookie = (): User | null => {
+  if (typeof window === "undefined" || typeof document === "undefined") return null;
+  try {
+    const userDataString = getCookie("userData");
+    if (!userDataString) return null;
+    return JSON.parse(decodeURIComponent(userDataString));
+  } catch (error) {
+    console.error("Failed to parse user data from cookie:", error);
+    return null;
+  }
+};
+
 export const useAuth = () => {
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -82,15 +106,39 @@ export const useAuth = () => {
     const token = getCookie("token");
     const userId = getCookie("userId");
     const emailVerified = getCookie("emailVerified");
+    const cachedUserData = getUserDataCookie();
 
     if (token && userId) {
       setIsAuthenticated(true);
-      // Try to get user data from cookie or fetch from API
-      const userData = {
-        id: userId,
-        emailVerified: emailVerified === "true",
-      };
-      setUser(userData as User);
+      
+      // Use cached user data if available
+      if (cachedUserData) {
+        setUser(cachedUserData);
+      } else {
+        // Fallback to minimal user data
+        const userData = {
+          id: userId,
+          emailVerified: emailVerified === "true",
+        };
+        setUser(userData as User);
+        
+        // Fetch full user data in background
+        getMe()
+          .then((data) => {
+            if (data.user) {
+              const enrichedUser = {
+                ...data.user,
+                wallet: data.wallet,
+                chapter: data.chapter,
+              };
+              setUser(enrichedUser);
+              setUserDataCookie(enrichedUser);
+            }
+          })
+          .catch((error) => {
+            console.error("Failed to fetch user data:", error);
+          });
+      }
     }
   }, []);
 
@@ -109,6 +157,7 @@ export const useAuth = () => {
     setCookie("token", token, 7); // 7 days
     setCookie("userId", userData.id, 7);
     setCookie("emailVerified", userData.emailVerified ? "true" : "false", 7);
+    setUserDataCookie(userData); // Store full user data
   };
 
   // Auth functions
@@ -123,8 +172,35 @@ export const useAuth = () => {
       const token = data.token;
       const user = data.user;
 
-      if (token) {
-        setAuthenticationState(user, token);
+      console.log('Login response user data:', user);
+
+      if (token && user) {
+        // Fetch enhanced user data with wallet and chapter info
+        try {
+          const enhancedData = await getMe();
+          const enrichedUser = {
+            ...user,
+            ...enhancedData.user,
+            wallet: enhancedData.wallet,
+            chapter: enhancedData.chapter,
+          };
+          
+          setUser(enrichedUser);
+          setIsAuthenticated(true);
+          setCookie("token", token, 7);
+          setCookie("userId", user.id, 7);
+          setCookie("emailVerified", user.emailVerified ? "true" : "false", 7);
+          setUserDataCookie(enrichedUser); // Store complete user data
+        } catch (meError) {
+          // Fallback to basic user data if /me fails
+          console.error("Failed to fetch enhanced user data:", meError);
+          setUser(user);
+          setIsAuthenticated(true);
+          setCookie("token", token, 7);
+          setCookie("userId", user.id, 7);
+          setCookie("emailVerified", user.emailVerified ? "true" : "false", 7);
+          setUserDataCookie(user);
+        }
       }
       return data;
     } catch (err: unknown) {
@@ -227,13 +303,25 @@ export const useAuth = () => {
     }
   };
 
-  // Get enhanced user profile
+  // Get enhanced user profile and update local state
   const getEnhancedProfile = async () => {
     setIsLoading(true);
     setError(null);
 
     try {
       const data = await getMe();
+      
+      // Update local user state with fresh data
+      if (data.user) {
+        const enrichedUser = {
+          ...data.user,
+          wallet: data.wallet,
+          chapter: data.chapter,
+        };
+        setUser(enrichedUser);
+        setUserDataCookie(enrichedUser); // Update cookie cache
+      }
+      
       return data;
     } catch (err: unknown) {
       const errorMessage =
@@ -272,6 +360,7 @@ export const useAuth = () => {
     deleteCookie("token");
     deleteCookie("userId");
     deleteCookie("emailVerified");
+    deleteCookie("userData"); // Clear cached user data
     deleteCookie("tempToken");
     deleteCookie("tempUserId");
   };
