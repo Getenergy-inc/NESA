@@ -1,9 +1,9 @@
 "use client";
-import React from 'react'
+import React from "react";
 
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import AppCard from "@/components/UI/SuperAdmin/AppCard";
-import { Clock, Gift, Server, Plug, FileSearch } from "lucide-react";
+import { Clock, Gift, Server, Plug, FileSearch, Settings } from "lucide-react";
 import { Button } from "@/components/U-I/button";
 
 const SystemSettingsPanel = () => {
@@ -11,23 +11,26 @@ const SystemSettingsPanel = () => {
     <SuperAdminLayout>
       <div className="space-y-8">
         {/* Title */}
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">System Settings & Integrations</h1>
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">
+          System Settings & Integrations
+        </h1>
 
         {/* Cards Grid */}
         <div className="grid md:grid-cols-2 gap-6">
+
           {/* Voting Period Management */}
           <AppCard
             title="Voting Period Management"
             className="bg-blue-50 border border-blue-200"
           >
             <p className="text-sm text-gray-600 mb-3">
-              Configure start and end dates for all nomination and voting phases.
+              Configure start & end dates for all nomination, review, and voting phases.
             </p>
             <Button
               className="px-3 py-1 text-sm flex items-center justify-center gap-2"
               variant="secondary"
             >
-              <Clock className="w-4 h-4 " /> Manage Voting Periods
+              <Clock className="w-4 h-4" /> Manage Voting Periods
             </Button>
           </AppCard>
 
@@ -37,14 +40,13 @@ const SystemSettingsPanel = () => {
             className="bg-blue-50 border border-blue-200"
           >
             <p className="text-sm text-gray-600 mb-3">
-              Set up referral rewards, bonus AGC campaigns, and engagement
-              incentives.
+              Configure referral rewards, bonus AGC payouts, and engagement incentives.
             </p>
             <Button
               className="px-3 py-1 text-sm flex items-center justify-center gap-2"
               variant="secondary"
             >
-              <Gift className="w-4 h-4 " /> Configure Campaigns
+              <Gift className="w-4 h-4" /> Configure Campaigns
             </Button>
           </AppCard>
 
@@ -54,31 +56,30 @@ const SystemSettingsPanel = () => {
             className="bg-blue-50 border border-blue-200"
           >
             <p className="text-sm text-gray-600 mb-3">
-              Monitor wallet transactions, voting engine API calls, and error
-              reports.
+              Monitor wallet APIs, voting engine calls, settlements, payouts, and system errors.
             </p>
-           <Button
+            <Button
               className="px-3 py-1 text-sm flex items-center justify-center gap-2"
               variant="secondary"
             >
-              <Server className="w-4 h-4 " /> View Logs
+              <Server className="w-4 h-4" /> View Logs
             </Button>
           </AppCard>
 
-          {/* Partner Integrations */}
+          {/* Payment & Partner Integrations */}
           <AppCard
-            title="Partner Integrations"
+            title="Partner & Payment Integrations"
             className="bg-blue-50 border border-blue-200"
           >
             <p className="text-sm text-gray-600 mb-3">
-              Connect to event partners and payment gateways (Eventbrite, LemFi,
-              TapTap, Flutterwave).
+              Connect to Eventbrite, Flutterwave, LemFi, and TapTap Send for payments,
+              donations, and event processing.
             </p>
-             <Button
+            <Button
               className="px-3 py-1 text-sm flex items-center justify-center gap-2"
               variant="secondary"
             >
-              <Plug className="w-4 h-4 " /> Manage Integrations
+              <Plug className="w-4 h-4" /> Manage Integrations
             </Button>
           </AppCard>
 
@@ -88,16 +89,34 @@ const SystemSettingsPanel = () => {
             className="bg-blue-50 border border-blue-200"
           >
             <p className="text-sm text-gray-600 mb-3">
-              View full audit history including changes, approvals, and system
-              logs.
+              Track all system changes, reviewer actions, settlements, API calls, and admin logs.
             </p>
-              <Button
+            <Button
               className="px-3 py-1 text-sm flex items-center justify-center gap-2"
               variant="secondary"
             >
-              <FileSearch className="w-4 h-4 " /> Open Audit Trail
+              <FileSearch className="w-4 h-4" /> Open Audit Trail
             </Button>
           </AppCard>
+
+          {/* 🔴 NEW – Revenue Policy Configurator */}
+          <AppCard
+            title="Revenue Policy Configurator"
+            className="bg-blue-50 border border-blue-200"
+          >
+            <p className="text-sm text-gray-600 mb-3">
+              Adjust platform-wide revenue splits (commissions, chapters, referrals, HQ funds).  
+              <br />
+              <strong>⚠ Requires multi-admin approval before activation.</strong>
+            </p>
+            <Button
+              className="px-3 py-1 text-sm flex items-center justify-center gap-2"
+              variant="secondary"
+            >
+              <Settings className="w-4 h-4" /> Configure Revenue Policy
+            </Button>
+          </AppCard>
+
         </div>
       </div>
     </SuperAdminLayout>

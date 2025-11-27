@@ -6,15 +6,16 @@ import { LucideIcon } from "lucide-react";
 interface AppButtonProps {
   label: string;
   icon?: LucideIcon;
-  variant?: "primary" | "secondary" | "danger";
+  variant?: "primary" | "secondary" | "danger" | "outline";
   size?: "sm" | "md" | "lg";
   onClick?: () => void;
 }
 
 const styles = {
   primary: "bg-blue-600 text-white hover:bg-blue-700",
-  secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
+  secondary: "bg-gray-600 text-white hover:bg-gray-300",
   danger: "bg-red-600 text-white hover:bg-red-700",
+  outline: "border border-gray-400 text-gray-800 hover:bg-gray-100",
 };
 
 const sizes = {
