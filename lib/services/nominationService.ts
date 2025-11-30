@@ -26,17 +26,22 @@ export interface Nomination {
 
 export interface CreateNominationData {
   fullName: string;
-  email: string;
-  phone: string;
+  organizationName?: string;
+  email?: string;
+  phone?: string;
   country: string;
-  stateRegion: string;
-  category: string;
+  region?: string;
+  website?: string;
+  awardCategory: string;
   subcategory: string;
-  impactSummary: string;
-  achievementDescription: string;
-  sdgAlignment?: string[];
-  agendaAlignment?: string;
-  esgAlignment?: string;
+  achievementSummary: string;
+  impactMetrics?: string;
+  verificationLinks?: string;
+  nominatorName: string;
+  nominatorEmail: string;
+  nominatorPhone?: string;
+  nominatorRelationship: string;
+  additionalNotes?: string;
 }
 
 export interface NominationFilters {
@@ -49,6 +54,24 @@ export interface NominationFilters {
 
 class NominationService {
   private baseUrl = '/api/v1/nominations';
+
+  /**
+   * Create a public nomination (authentication required)
+   * NOTE: As of recent changes, creating a public nomination requires the user to be authenticated.
+   */
+  async createPublicNomination(data: CreateNominationData): Promise<{
+    success: boolean;
+    message: string;
+    data: Nomination;
+  }> {
+    try {
+      const response = await apiClient.post(`${this.baseUrl}/public`, data);
+      return response.data;
+    } catch (error: any) {
+      console.error('Failed to create nomination:', error);
+      throw new Error(error.response?.data?.message || 'Failed to create nomination');
+    }
+  }
 
   /**
    * Create a new nomination (requires authentication)

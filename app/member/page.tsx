@@ -180,8 +180,8 @@ export default function DashboardPage() {
             </>
           ) : (
             <>
-              <WalletSummary />
-              <ReferralInfo />
+              {/* <WalletSummary /> */}
+              {/* <ReferralInfo /> */}
             </>
           )}
         </div>

@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import Footer from "@/components/Layout/Footer";
 import { IoNotificationsOutline, IoSettingsOutline, IoWalletOutline, IoShirtOutline, IoVideocamOutline, IoDocumentTextOutline, IoCalendarOutline, IoStarOutline, IoPersonOutline, IoLogOutOutline } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -36,7 +37,7 @@ const mainMenuConfig: MenuItem[] = [
   },
   {
     label: "Nominate",
-    href: "/nomination",
+    href: "/member/nominate",
     icon: <IoPersonOutline className="h-5 w-5" />
   },
   {
@@ -162,15 +163,19 @@ const profileItems = [
 // );
 
 // Navigation Item Component
-const NavItem = ({ item, mobile = false }: { item: MenuItem; mobile?: boolean }) => {
-  const baseClasses = "flex items-center py-2 px-4 rounded-lg transition-colors whitespace-nowrap";
+const NavItem = ({ item, mobile = false, currentPath }: { item: MenuItem; mobile?: boolean; currentPath: string }) => {
+  const isActive = currentPath === item.href || (item.href === '/member' && currentPath === '/member');
+
+  const baseClasses = "flex items-center py-2 px-4 rounded-lg transition-all duration-200 whitespace-nowrap";
   const mobileClasses = mobile ? "block w-full text-left mb-2" : "";
-  const highlightedClasses = item.isHighlighted ? "bg-[#f6b146] text-[#191307]" : "hover:bg-[#f6b146] hover:text-[#191307]";
+  const activeClasses = isActive 
+    ? "bg-[#f6b146] text-[#191307] shadow-md font-semibold" 
+    : "hover:bg-white/10 hover:shadow-sm";
 
   return (
     <Link
       href={item.href || "#"}
-      className={`${baseClasses} ${mobileClasses} ${highlightedClasses}`}
+      className={`${baseClasses} ${mobileClasses} ${activeClasses}`}
     >
       {item.icon && <span className="mr-2">{item.icon}</span>}
       {item.label}
@@ -179,7 +184,7 @@ const NavItem = ({ item, mobile = false }: { item: MenuItem; mobile?: boolean })
 };
 
 // Dropdown Component
-const NavDropdown = ({ item, mobile = false }: { item: MenuItem; mobile?: boolean }) => {
+const NavDropdown = ({ item, mobile = false, currentPath }: { item: MenuItem; mobile?: boolean; currentPath: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -196,13 +201,19 @@ const NavDropdown = ({ item, mobile = false }: { item: MenuItem; mobile?: boolea
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const isActive = item.subItems?.some(subItem => currentPath === subItem.href) || false;
+
   return (
     <div className={`relative ${mobile ? "w-full" : ""}`} ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className={`flex items-center py-2 px-4 rounded-lg transition-colors ${
+        className={`flex items-center py-2 px-4 rounded-lg transition-all duration-200 ${
           mobile ? "w-full justify-start" : ""
-        } hover:bg-[#f6b146] hover:text-[#191307] whitespace-nowrap`}
+        } ${
+          isActive 
+            ? "bg-[#f6b146] text-[#191307] shadow-md font-semibold" 
+            : "hover:bg-white/10 hover:shadow-sm"
+        } whitespace-nowrap`}
       >
         {item.icon && <span className="mr-2">{item.icon}</span>}
         {item.label} <RiArrowDropDownLine className="ml-1" />
@@ -211,13 +222,13 @@ const NavDropdown = ({ item, mobile = false }: { item: MenuItem; mobile?: boolea
         <div
           className={`${
             mobile ? "relative w-full" : "absolute left-0"
-          } bg-[#191307E6] p-2 rounded-lg ${mobile ? "mt-2" : "mt-1"} min-w-[200px] z-50 shadow-xl`}
+          } bg-[#191307E6] p-2 rounded-lg ${mobile ? "mt-2" : "mt-1"} min-w-[200px] z-50 shadow-xl border border-[#f6b146]/20`}
         >
           {item.subItems?.map((subItem, index) => (
             <Link
               key={index}
               href={subItem.href || "#"}
-              className="flex items-center py-2 px-3 hover:bg-[#f6b146] hover:text-[#191307] rounded transition-colors text-sm"
+              className="flex items-center py-2 px-3 hover:bg-[#f6b146] hover:text-[#191307] rounded transition-all duration-200 text-sm"
             >
               {subItem.icon && <span className="mr-2">{subItem.icon}</span>}
               {subItem.label}
@@ -525,6 +536,7 @@ const AccountSettingsDropdown = ({
 export default function MemberLayout({ children }: MemberLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { logout } = useAuthContext();
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -571,9 +583,9 @@ export default function MemberLayout({ children }: MemberLayoutProps) {
           <div className="hidden md:flex items-center justify-center flex-1 space-x-4">
             {mainMenuConfig.map((item, index) => (
               item.subItems ? (
-                <NavDropdown key={index} item={item} />
+                <NavDropdown key={index} item={item} currentPath={pathname} />
               ) : (
-                <NavItem key={index} item={item} />
+                <NavItem key={index} item={item} currentPath={pathname} />
               )
             ))}
           </div>
@@ -607,9 +619,9 @@ export default function MemberLayout({ children }: MemberLayoutProps) {
           <div className="md:hidden bg-[#191307E6] mt-2 p-4 space-y-3 border-t border-[#f6b146]/10">
             {mainMenuConfig.map((item, index) => (
               item.subItems ? (
-                <NavDropdown key={index} item={item} mobile />
+                <NavDropdown key={index} item={item} mobile currentPath={pathname} />
               ) : (
-                <NavItem key={index} item={item} mobile />
+                <NavItem key={index} item={item} mobile currentPath={pathname} />
               )
             ))}
             <div className="pt-2">

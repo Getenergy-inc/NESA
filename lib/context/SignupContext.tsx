@@ -54,6 +54,7 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [stepProgress, setStepProgress] = useState<StepProgress>(initialStepProgress);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [signupResult, setSignupResult] = useState<SignupResponse | null>(null);
 
   // Load form data from localStorage on mount
   useEffect(() => {
@@ -77,7 +78,8 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       const dataToSave = {
         formData,
         stepProgress,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        // Note: signupResult intentionally not persisted to localStorage for privacy
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
     } catch (error) {
@@ -312,6 +314,7 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setStepProgress(initialStepProgress);
     setError(null);
     setIsLoading(false);
+    setSignupResult(null);
     localStorage.removeItem(STORAGE_KEY);
   };
 
@@ -323,6 +326,7 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     setStepProgress(initialStepProgress);
     setError(null);
     setIsLoading(false);
+    setSignupResult(null);
   };
 
   // Submit form
@@ -343,6 +347,8 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       const response = await signupFlow(formData as SignupFormData);
 
       if (response.success) {
+        // Store server response so later steps (completion UI) can use real values
+        setSignupResult(response);
         // Don't move to completion step yet - stay on verification step
         // The verification step will handle moving to completion after OTP verification
         console.log('Signup successful, staying on verification step for OTP entry');
@@ -375,7 +381,8 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     submitForm,
     isLoading,
     error,
-    clearCache
+    clearCache,
+    signupResult
   };
 
   return (

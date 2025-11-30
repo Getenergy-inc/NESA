@@ -2,6 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import PublicNominationForm from '@/components/UI/nomination/PublicNominationForm';
+import ProtectedRoute from '@/components/Common/ProtectedRoute';
 import { motion } from 'framer-motion';
 import { Award, Users, CheckCircle } from 'lucide-react';
 
@@ -69,17 +70,19 @@ const PublicNominatePage = () => {
           </div>
         </motion.div>
 
-        {/* Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <PublicNominationForm
-            initialCategory={category || undefined}
-            initialSubcategory={subcategory || undefined}
-          />
-        </motion.div>
+        {/* Form (requires authentication) */}
+        <ProtectedRoute>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <PublicNominationForm
+              initialCategory={category || undefined}
+              initialSubcategory={subcategory || undefined}
+            />
+          </motion.div>
+        </ProtectedRoute>
 
         {/* FAQ Section */}
         <motion.div
@@ -90,7 +93,7 @@ const PublicNominatePage = () => {
         >
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
           
-          <div className="space-y-4">
+            <div className="space-y-4">
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">Who can nominate?</h3>
               <p className="text-gray-600">
@@ -118,8 +121,7 @@ const PublicNominatePage = () => {
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">Do I need to register?</h3>
               <p className="text-gray-600">
-                No registration required for public nominations. However, if you'd like to become an NRC volunteer
-                and earn AGC rewards for your contributions, you can register separately.
+                Yes — you must be logged in to submit a nomination. Please sign in or create an account to proceed.
               </p>
             </div>
           </div>

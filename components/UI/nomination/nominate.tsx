@@ -71,23 +71,28 @@ const NominationPage: React.FC<NominationPageProps> = ({ type, category }) => {
   const handleNominate = async () => {
     setLoading(true);
     try {
-      await nominationService.createNomination({
+      // Use public nomination endpoint and map our local fields to server expected keys
+      await nominationService.createPublicNomination({
         fullName: formData.name,
+        organizationName: undefined,
+        country: undefined,
+        // server expects `region` (public endpoint)
+        region: undefined,
         email: formData.email,
-        phone: '', // Add phone field to form if needed
-        country: '', // Add country field to form if needed
-        stateRegion: '', // Add state/region field to form if needed
-        category: formData.category,
+        phone: undefined,
+        // map local category/subCategory to server `awardCategory`/`subcategory`
+        awardCategory: formData.category,
         subcategory: formData.subCategory,
-        impactSummary: formData.achievements,
-        achievementDescription: formData.achievements,
+        // server expects `achievementSummary` and `impactMetrics`
+        achievementSummary: formData.achievements,
+        impactMetrics: formData.achievements,
       });
 
       setShowConfirmation(false);
       setShowSuccess(true);
     } catch (error: any) {
-      console.error("Failed to create nomination:", error.message);
-      setErrorMessage(error.response?.data?.error || error.message || "An unexpected error occurred.");
+      console.error('Failed to create nomination:', error.message || error);
+      setErrorMessage(error.response?.data?.message || error.message || 'An unexpected error occurred.');
       setShowConfirmation(false);
     } finally {
       setLoading(false);

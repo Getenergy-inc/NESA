@@ -1,11 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL:
-    process.env.NEXT_PUBLIC_NODE_ENV === "development"
-      ? "http://localhost:3000" // Use Next.js API routes (port 3000)
-      : process.env.NEXT_PUBLIC_API_BASE_URL ||
-        "https://nesa.africa",
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000",
   headers: {
     "Content-Type": "application/json",
   },

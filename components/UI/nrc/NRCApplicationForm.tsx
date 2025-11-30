@@ -27,7 +27,7 @@ const nrcApplicationSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().min(10, 'Please enter a valid phone number'),
   country: z.string().min(2, 'Please select your country of residence'),
-  motivation: z.string().min(50, 'Please provide at least 50 characters explaining your interest'),
+  motivation: z.string().min(10, 'Please provide at least 10 characters explaining your interest'),
   experience: z.string().min(30, 'Please describe your relevant experience'),
   availability: z.string().min(10, 'Please confirm your availability'),
   skills: z.array(z.string()).min(1, 'Please select at least one skill'),
@@ -337,7 +337,7 @@ const NRCApplicationForm: React.FC = () => {
                 {...register('motivation')}
                 rows={4}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ea580c] focus:border-transparent"
-                placeholder="Tell us why you want to join the NESA NRC program (minimum 50 characters)"
+                placeholder="Tell us why you want to join the NESA NRC program (minimum 10 characters)"
               />
               {errors.motivation && (
                 <p className="text-red-500 text-sm mt-1">{errors.motivation.message}</p>

@@ -108,7 +108,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const menuItems = [
     { text: 'Dashboard', icon: <DashboardIcon />, path: '/admin/dashboard' },
     { text: 'Public Nominations', icon: <HowToRegIcon />, path: '/admin/public-nominations' },
-     { text: 'NRC Applications', icon: <DescriptionIcon />, path: '/admin/nrc-applications' },
+     { text: 'NRC Applications', icon: <DescriptionIcon />, path: '/admin/nrc-verification' },
     { text: 'Sponsors', icon: <BusinessIcon />, path: '/admin/sponsors' },
     { text: 'Endorsements', icon: <HandshakeIcon />, path: '/admin/endorsements' },
     // { text: 'Students', icon: <PeopleIcon />, path: '/admin/students' },

@@ -1,6 +1,7 @@
-'use client'
+ 'use client'
 import { useSearchParams } from 'next/navigation'
 import PublicNominationForm from '@/components/UI/nomination/PublicNominationForm';
+import ProtectedRoute from '@/components/Common/ProtectedRoute';
 import { motion } from 'framer-motion';
 import { Award, Users, CheckCircle, ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -103,19 +104,21 @@ export default function NominateFormPage() {
           </motion.div>
         </div>
 
-        {/* Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <PublicNominationForm
-            initialCategory={categoryValue}
-            initialSubcategory={subcategoryValue}
-            categoryTitle={categoryTitle}
-            subcategoryTitle={categoryTitle}
-          />
-        </motion.div>
+        {/* Form (requires authentication) */}
+        <ProtectedRoute>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <PublicNominationForm
+              initialCategory={categoryValue}
+              initialSubcategory={subcategoryValue}
+              categoryTitle={categoryTitle}
+              subcategoryTitle={categoryTitle}
+            />
+          </motion.div>
+        </ProtectedRoute>
       </div>
     </div>
   );

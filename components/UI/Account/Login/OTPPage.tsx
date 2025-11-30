@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { useAuthContext } from "@/lib/context/AuthContext";
+import { resendOtp } from '@/lib/services/authService';
 import { ERROR_MESSAGES, createAuthError } from '@/lib/types/errors';
 import ErrorDisplay, { SuccessMessage } from '@/components/Common/ErrorDisplay';
 
@@ -107,36 +108,39 @@ const OTPPage: React.FC = () => {
   const handleResendOtp = async () => {
     if (timeLeft > 0 && timeLeft < 300) return;
 
+    if (!email) {
+      setError('Email not provided');
+      return;
+    }
+
     setIsResending(true);
     setError("");
     setNetworkError("");
 
     try {
-      // Mock API call - replace with real service
-      await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          // Simulate network errors occasionally
-          if (Math.random() < 0.1) {
-            reject(new Error('Network timeout'));
-          } else {
-            resolve(true);
-          }
-        }, 1500);
-      });
+      // Call real API to resend verification OTP
+      const res = await resendOtp(email, 'VERIFY_EMAIL');
 
-      setTimeLeft(300);
-      setOtp(["", "", "", "", "", ""]);
-      setAttemptCount(0); // Reset attempt count
-      setSuccessMessage("New verification code sent successfully!");
-      inputRefs.current[0]?.focus();
+      if (res && (res.success || res.message)) {
+        setTimeLeft(300);
+        setOtp(["", "", "", "", "", ""]);
+        setAttemptCount(0);
+        setSuccessMessage(res.message || 'New verification code sent successfully!');
+        inputRefs.current[0]?.focus();
 
-      // Clear success message after 3 seconds
-      setTimeout(() => setSuccessMessage(""), 3000);
-    } catch (err: any) {
-      if (err.message?.toLowerCase().includes('network') || err.message?.toLowerCase().includes('timeout')) {
-        setNetworkError(ERROR_MESSAGES.NETWORK_ERROR);
+        setTimeout(() => setSuccessMessage(''), 3000);
       } else {
-        setError("Failed to resend OTP. Please try again.");
+        setError('Failed to resend OTP. Please try again.');
+      }
+    } catch (err: any) {
+      if (err?.response?.status === 429) {
+        setError('Too many requests. Please wait a moment and try again.');
+      } else if (err.message?.toLowerCase().includes('network') || err.message?.toLowerCase().includes('timeout')) {
+        setNetworkError(ERROR_MESSAGES.NETWORK_ERROR);
+      } else if (err.message) {
+        setError(err.message);
+      } else {
+        setError('Failed to resend OTP. Please try again.');
       }
     } finally {
       setIsResending(false);

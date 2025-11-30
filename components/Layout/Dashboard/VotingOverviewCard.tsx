@@ -1,22 +1,29 @@
 // components/Dashboard/VotingOverviewCard.tsx
 'use client';
-import React from 'react';
-import { FiCheckCircle, FiUsers, FiAward, FiClock, FiBarChart2 } from 'react-icons/fi';
+import React, { useEffect, useState } from 'react';
+import { FiCheckCircle, FiUsers, FiAward, FiBarChart2 } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
+import votingService, { GlobalVotingStats } from '@/lib/services/votingService';
 
 const VotingOverviewCard: React.FC = () => {
   const router = useRouter();
-  
-  // Sample data - replace with your actual data
-  const votingStats = {
-    totalNominations: 24,
-    approvedForVoting: 18,
-    votesCast: 156,
-    leadingNominee: {
-      name: "Sarah Johnson",
-      votes: 42
-    },
-    daysRemaining: 7
+  const [votingStats, setVotingStats] = useState<GlobalVotingStats | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadStats();
+  }, []);
+
+  const loadStats = async () => {
+    try {
+      setLoading(true);
+      const stats = await votingService.getGlobalStats();
+      setVotingStats(stats);
+    } catch (error) {
+      console.error('Failed to load voting stats:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,7 +43,9 @@ const VotingOverviewCard: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-400">Total Nominations</p>
-                <p className="text-xl font-semibold text-white">{votingStats.totalNominations}</p>
+                <p className="text-xl font-semibold text-white">
+                  {loading ? '...' : votingStats?.totalNominations || 0}
+                </p>
               </div>
             </div>
           </div>
@@ -49,7 +58,9 @@ const VotingOverviewCard: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-400">Approved for Voting</p>
-                <p className="text-xl font-semibold text-white">{votingStats.approvedForVoting}</p>
+                <p className="text-xl font-semibold text-white">
+                  {loading ? '...' : votingStats?.approvedNominations || 0}
+                </p>
               </div>
             </div>
           </div>
@@ -62,27 +73,16 @@ const VotingOverviewCard: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-400">Votes Cast</p>
-                <p className="text-xl font-semibold text-white">{votingStats.votesCast}</p>
-              </div>
-            </div>
-          </div>
-          
-          {/* Days Remaining */}
-          <div className="bg-[#1E1A0F] p-3 rounded-lg">
-            <div className="flex items-center space-x-3">
-              <div className="p-2 rounded-full bg-amber-500/20 text-amber-400">
-                <FiClock size={18} />
-              </div>
-              <div>
-                <p className="text-sm font-medium text-gray-400">Days Remaining</p>
-                <p className="text-xl font-semibold text-white">{votingStats.daysRemaining}</p>
+                <p className="text-xl font-semibold text-white">
+                  {loading ? '...' : votingStats?.totalVotesCast || 0}
+                </p>
               </div>
             </div>
           </div>
         </div>
         
         {/* Current Leader */}
-        <div className="bg-[#1E1A0F] p-4 rounded-lg mb-4">
+        {/* <div className="bg-[#1E1A0F] p-4 rounded-lg mb-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="p-2 rounded-full bg-indigo-500/20 text-indigo-400">
@@ -97,7 +97,7 @@ const VotingOverviewCard: React.FC = () => {
               {votingStats.leadingNominee.votes} votes
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
       
       {/* Footer Actions */}
@@ -109,11 +109,11 @@ const VotingOverviewCard: React.FC = () => {
           View Voting
         </button>
         <button 
-          onClick={() => router.push('/member/createnominee')}
+          onClick={() => router.push('/member/nominate')}
           className="flex-1 flex items-center justify-center text-black font-semibold py-2 px-4 rounded-full text-sm transition-colors"
           style={{background: 'linear-gradient(90deg, #FFC247 -6.07%, #E48900 156.79%)'}}
         >
-          Create a Nominee
+          Nominate
         </button>
       </div>
     </div>

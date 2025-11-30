@@ -160,7 +160,7 @@ export default function WelcomePage() {
                     </p>
                     <div className="mt-3 bg-green-200/50 rounded-lg p-2">
                       <p className="text-xs text-green-800">
-                        🎁 Use AGC for voting, nominations, and platform activities
+                        🎁 Use AGC for voting, nominations, platform activities and EduAid Donations
                       </p>
                     </div>
                   </div>

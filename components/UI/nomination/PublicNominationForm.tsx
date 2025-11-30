@@ -24,8 +24,8 @@ const publicNominationSchema = z.object({
     subcategory: z.string().min(1, 'Subcategory is required'),
 
     // Achievement
-    achievementSummary: z.string().min(50, 'Please provide at least 50 characters describing their achievement'),
-    whyDeserving: z.string().min(30, 'Please explain why they deserve this award (minimum 30 characters)'),
+    achievementSummary: z.string().min(10, 'Please provide at least 10 characters describing their achievement'),
+    whyDeserving: z.string().min(10, 'Please explain why they deserve this award (minimum 10 characters)'),
     impactDescription: z.string().optional(),
     verificationLinks: z.string().optional(),
 
@@ -131,47 +131,48 @@ const PublicNominationForm: React.FC<PublicNominationFormProps> = ({
     const onSubmit = async (data: PublicNominationData) => {
         console.log('Form submitted, checking image...', { hasImage: !!profileImage });
 
-        // Validate image is uploaded
-        if (!profileImage) {
-            setError('Please upload a profile image in Step 1');
-            setCurrentStep(1); // Go back to step 1 to upload image
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            return;
-        }
-
+        // Image is optional now - backend will handle it
         setLoading(true);
         setError(null);
 
         try {
-            // Create FormData for file upload
-            const formData = new FormData();
+            // Import the nomination service
+            const { default: nominationService } = await import('@/lib/services/nominationService');
 
-            // Add all text fields
-            Object.entries(data).forEach(([key, value]) => {
-                if (value !== undefined && value !== null && key !== 'profileImage') {
-                    formData.append(key, value.toString());
-                }
-            });
+            // Prepare nomination data for backend - public endpoint expects awardCategory and achievementSummary
+            const nominationData = {
+                fullName: data.fullName,
+                organizationName: data.organizationName,
+                country: data.country,
+                // server expects `region` for public nominations
+                region: data.region,
+                email: data.email,
+                phone: data.phone,
+                website: data.website,
+                // server expects `awardCategory` and `subcategory` keys
+                awardCategory: data.awardCategory,
+                subcategory: data.subcategory,
+                // server expects `achievementSummary` and `impactMetrics` (we'll compose impactMetrics from whyDeserving + impactDescription)
+                achievementSummary: data.achievementSummary,
+                impactMetrics: data.whyDeserving + (data.impactDescription ? '\n\n' + data.impactDescription : ''),
+                verificationLinks: data.verificationLinks,
+                nominatorName: data.nominatorName,
+                nominatorEmail: data.nominatorEmail,
+                nominatorPhone: data.nominatorPhone,
+                nominatorRelationship: data.nominatorRelationship,
+                additionalNotes: data.additionalNotes,
+            };
 
-            // Add image if present
-            if (profileImage) {
-                formData.append('profileImage', profileImage);
-            }
+            // Call backend API
+            const result = await nominationService.createPublicNomination(nominationData);
 
-            const response = await fetch('/api/v1/public/nominate', {
-                method: 'POST',
-                body: formData, // Send as FormData, not JSON
-            });
-
-            const result = await response.json();
-
-            if (!response.ok) {
-                throw new Error(result.message || 'Failed to submit nomination');
-            }
+            // TODO: Handle profile image upload separately if needed
+            // You can add image upload logic here using a separate endpoint
 
             setShowSuccess(true);
             if (onSuccess) onSuccess();
         } catch (error: any) {
+            console.error('Nomination submission error:', error);
             setError(error.message || 'Failed to submit nomination. Please try again.');
         } finally {
             setLoading(false);
@@ -500,7 +501,7 @@ const PublicNominationForm: React.FC<PublicNominationFormProps> = ({
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Achievement Summary * (minimum 50 characters)
+                                    Achievement Summary * (minimum 10 characters)
                                 </label>
                                 <textarea
                                     {...register('achievementSummary')}
@@ -515,7 +516,7 @@ const PublicNominationForm: React.FC<PublicNominationFormProps> = ({
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Why do they deserve this award? * (minimum 30 characters)
+                                    Why do they deserve this award? * (minimum 10 characters)
                                 </label>
                                 <textarea
                                     {...register('whyDeserving')}

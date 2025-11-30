@@ -4,39 +4,75 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { CheckCircle, Wallet, Users, Gift, ArrowRight, Home } from 'lucide-react';
 import { useSignup } from '@/lib/context/SignupContext';
+import type { AGCBonus } from '@/lib/types/signup';
 import Button from '@/components/Common/Button';
 import { getPostSignupActions, getDashboardRoute } from '@/lib/utils/signupMapping';
 
 const CompletionStep: React.FC = () => {
-  const { formData, resetForm } = useSignup();
+  const { formData, resetForm, signupResult } = useSignup();
   const router = useRouter();
 
-  // Mock data that would come from the signup response
-  const mockSignupData = {
+  // Build display data from the signup form data (replaces previous mock data)
+  const signupData = {
     user: {
-      id: 'user_123456',
-      name: (formData.accountType === 'Individual'
-        ? (formData as any).fullName
-        : (formData as any).contactPersonName) || 'User',
-      email: (formData.accountType === 'Individual'
-        ? formData.email
-        : (formData as any).contactEmail) || '',
-      role: 'Free Member'
+      id: undefined as string | undefined,
+      name:
+        formData.accountType === 'Individual'
+          ? ((formData as any).fullName as string) || 'User'
+          : ((formData as any).contactPersonName as string) || 'User',
+      email:
+        formData.accountType === 'Individual'
+          ? (formData.email as string) || ''
+          : ((formData as any).contactEmail as string) || '',
+      role: 'Free Member' as const
     },
     chapter: {
-      name: `NESA Online Chapter – ${formData.country || 'Nigeria'} (${formData.state || 'Lagos'})`,
-      memberCount: 247
+      name: `NESA Chapter – ${formData.country || 'Nigeria'}${formData.state ? ` (${formData.state})` : ''}`,
+      memberCount: undefined as number | undefined
     },
     wallet: {
-      id: 'wallet_123456',
-      agcBalance: 3
+      id: undefined as string | undefined,
+      agcBalance: 0
     },
     agcBonus: {
       amount: 3,
-      type: 'non-withdrawable' as const,
+      type: 'non-withdrawable' as AGCBonus['type'],
       reason: 'Welcome bonus for new members'
     }
   };
+
+  // If we have a server-provided signupResult, prefer those values
+  if (signupResult) {
+    const serverUser = signupResult.user;
+    if (serverUser) {
+      signupData.user.id = serverUser.id ?? signupData.user.id;
+      signupData.user.name = (
+        serverUser.accountType === 'Individual'
+          ? ((serverUser as any).fullName as string)
+          : ((serverUser as any).contactPersonName as string)
+      ) || serverUser.email || signupData.user.name;
+      signupData.user.email = serverUser.email || signupData.user.email;
+      signupData.user.role = (serverUser.role as any) || signupData.user.role;
+      signupData.wallet.agcBalance = (serverUser.agcBalance as number) ?? signupData.wallet.agcBalance;
+    }
+
+    if (signupResult.wallet) {
+      signupData.wallet.id = signupResult.wallet.id ?? signupData.wallet.id;
+      // prefer agcBalance from user object if present, else attempt to use wallet fields
+      signupData.wallet.agcBalance = signupData.wallet.agcBalance || (signupResult.wallet.agcWithdrawableBalance ?? 0);
+    }
+
+    if (signupResult.chapter) {
+      signupData.chapter.name = signupResult.chapter.name || signupData.chapter.name;
+      signupData.chapter.memberCount = signupResult.chapter.memberCount ?? signupData.chapter.memberCount;
+    }
+
+    if (signupResult.agcBonus) {
+      signupData.agcBonus.amount = signupResult.agcBonus.amount ?? signupData.agcBonus.amount;
+      signupData.agcBonus.type = signupResult.agcBonus.type || signupData.agcBonus.type;
+      signupData.agcBonus.reason = signupResult.agcBonus.reason || signupData.agcBonus.reason;
+    }
+  }
 
   const handleGoToLogin = () => {
     resetForm();
@@ -75,7 +111,7 @@ const CompletionStep: React.FC = () => {
           Your account has been created and verified successfully
         </p>
         <p className="text-lg text-gray-500 mb-3">
-          Hello {mockSignupData.user.name}, you're now part of the NESA community!
+          Hello {signupData.user.name}, you're now part of the NESA community!
         </p>
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-md mx-auto">
           <p className="text-sm text-blue-800">
@@ -93,8 +129,8 @@ const CompletionStep: React.FC = () => {
           </div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Account Created</h3>
           <p className="text-sm text-gray-600 mb-1">Account Type: {formData.accountType}</p>
-          <p className="text-sm text-gray-600 mb-1">Role: {mockSignupData.user.role}</p>
-          <p className="text-sm text-gray-600">Email: {mockSignupData.user.email}</p>
+          <p className="text-sm text-gray-600 mb-1">Role: {signupData.user.role}</p>
+          <p className="text-sm text-gray-600">Email: {signupData.user.email}</p>
         </div>
 
         {/* Chapter Assignment */}
@@ -103,8 +139,8 @@ const CompletionStep: React.FC = () => {
             <Users className="w-6 h-6 text-purple-600" />
           </div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Chapter Assigned</h3>
-          <p className="text-sm text-gray-600 mb-1 font-medium">{mockSignupData.chapter.name}</p>
-          <p className="text-sm text-gray-600">{mockSignupData.chapter.memberCount} members</p>
+          <p className="text-sm text-gray-600 mb-1 font-medium">{signupData.chapter.name}</p>
+          <p className="text-sm text-gray-600">{signupData.chapter.memberCount ?? '—'} members</p>
         </div>
 
         {/* Wallet & Bonus */}
@@ -113,9 +149,9 @@ const CompletionStep: React.FC = () => {
             <Wallet className="w-6 h-6 text-orange-600" />
           </div>
           <h3 className="text-lg font-semibold text-gray-900 mb-2">GFA Wallet Active</h3>
-          <p className="text-sm text-gray-600 mb-1">
-            <span className="font-semibold text-orange-600">{mockSignupData.wallet.agcBalance} AGC</span> bonus earned
-          </p>
+            <p className="text-sm text-gray-600 mb-1">
+              <span className="font-semibold text-orange-600">{signupData.wallet.agcBalance} AGC</span> bonus earned
+            </p>
           <p className="text-xs text-gray-500">Ready for voting & nominations</p>
         </div>
       </div>
@@ -197,7 +233,7 @@ const CompletionStep: React.FC = () => {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
         <h3 className="text-lg font-semibold text-blue-900 mb-2">📧 Check Your Email</h3>
         <p className="text-blue-800 text-sm">
-          We've sent a verification email to <strong>{mockSignupData.user.email}</strong>. 
+          We've sent a verification email to <strong>{signupData.user.email || 'your email'}</strong>. 
           Please click the verification link to fully activate your account and unlock all features.
         </p>
       </div>

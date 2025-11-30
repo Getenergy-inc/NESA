@@ -235,6 +235,7 @@ export interface SignupContextType {
   goToStep: (step: SignupStep) => void;
   resetForm: () => void;
   submitForm: () => Promise<SignupResponse>;
+  signupResult?: SignupResponse | null;
   isLoading: boolean;
   error: string | null;
   clearCache: () => void;
