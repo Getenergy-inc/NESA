@@ -2,7 +2,8 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/U-I/card";
-import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout"; 
+import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
+// import JudgingAssignmentMatrix from "@/components/UI/SuperAdmin/JudgingAssignmentMatrix";
 import {
   BookOpen,
   CheckCircle,
@@ -10,6 +11,10 @@ import {
   ClipboardList,
   Bell,
   Flag,
+  Users,
+  Scale,
+  Timer,
+  FileCheck,
 } from "lucide-react";
 
 type OverviewCardProps = {
@@ -43,53 +48,90 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 const JudgingArenaPanel = () => {
   return (
     <SuperAdminLayout>
-      <div className="p-4 md:p-6 lg:p-8 space-y-6">
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
-          🧑‍⚖️ Judging Arena Module
-        </h1>
-        <p className="text-gray-600">
-          Manage judge assignments, review progress, scoring, and flags.
-        </p>
+      <div className="space-y-8">
 
-        {/* Summary Grid */}
+        {/* TITLE */}
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-[#f59e0b] to-[#ea580c] bg-clip-text text-transparent">
+           Judging Arena Module
+        </h1>
+        
+
+        {/* SUMMARY GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {/* Judges Assigned */}
           <OverviewCard
-            title="Category Assignments"
-            value="120"
+            title="Judges Assigned to Categories"
+            value="65"
             color="blue"
+            icon={<Users />}
+          />
+
+          {/* Category Assignments */}
+          <OverviewCard
+            title="Active Category Assignments"
+            value="120"
+            color="indigo"
             icon={<BookOpen />}
           />
+
+          {/* Review Progress */}
           <OverviewCard
             title="Review Completion Rate"
             value="85%"
             color="green"
             icon={<CheckCircle />}
           />
+
+          {/* Scores Submitted */}
           <OverviewCard
-            title="Weighted Scoring Panel"
-            value="Active"
+            title="Scores Submitted"
+            value="1,120"
             color="purple"
-            icon={<Activity />}
+            icon={<FileCheck />}
           />
+
+          {/* Comments */}
           <OverviewCard
-            title="Comments per Nominee"
+            title="Reviewer Comments Logged"
             value="450"
             color="yellow"
             icon={<ClipboardList />}
           />
+
+          {/* Pending Reviews */}
           <OverviewCard
-            title="Auto-Notify Incomplete Reviews"
+            title="Pending / Incomplete Reviews"
+            value="48"
+            color="red"
+            icon={<Timer />}
+          />
+
+          {/* Compliance Log */}
+          <OverviewCard
+            title="Compliance Logs (Sponsor-Neutrality)"
+            value="324 Logs"
+            color="orange"
+            icon={<Scale />}
+          />
+
+          {/* Automated Review Reminders */}
+          <OverviewCard
+            title="Auto-Reminders for Incomplete Reviews"
             value="Enabled"
-            color="indigo"
+            color="green"
             icon={<Bell />}
           />
+
+          {/* Judge Flags */}
           <OverviewCard
             title="Judge Flagging System"
             value="12 Flags"
-            color="red"
+            color="rose"
             icon={<Flag />}
           />
         </div>
+        {/* <JudgingAssignmentMatrix /> */}
       </div>
     </SuperAdminLayout>
   );

@@ -17,7 +17,6 @@ export default function SuperAdminLayout({ children }: { children: ReactNode }) 
           <Sidebar />
         </aside>
       )}
-
       <main
         className={`flex-1 p-6 overflow-y-auto ${
           !isLoginPage ? "ml-36" : ""
@@ -28,4 +27,3 @@ export default function SuperAdminLayout({ children }: { children: ReactNode }) 
     </div>
   );
 }
-

@@ -1,6 +1,7 @@
 
 import SuperAdminLayout from "@/components/UI/SuperAdmin/SuperAdminLayout";
 import OverviewCard from "@/components/UI/SuperAdmin/OverviewCard";
+import RevenueDistributionDashboard from "@/components/UI/SuperAdmin/Revenue";
 
 import {
   CheckCircle,
@@ -67,6 +68,11 @@ export default function GlobalOverviewPage() {
             <OverviewCard title="$ (USD)" value="$25,000" color="indigo"/>
             <OverviewCard title="AGC Equivalent" value="8,500 AGC" color="red" icon={<EqualApproximately />}/>
           </div>
+        </section>
+
+       {/* 💰 Revenue Distribution Dashboard */}
+        <section>
+          <RevenueDistributionDashboard />
         </section>
 
         {/* Top Performing */}

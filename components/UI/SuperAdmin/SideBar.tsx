@@ -13,6 +13,7 @@ import {
   ThumbsUp,
   Scale,
   LogOut,
+  ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -27,6 +28,7 @@ const menu = [
   { href: "/super-admin/chapter", label: "Chapter Tracker", icon: Footprints },
   { href: "/super-admin/notification", label: "Notifications", icon: Bell },
   { href: "/super-admin/settings", label: "System Settings", icon: Settings },
+  { href: "/super-admin/security", label: "Security & Compliance", icon: ShieldCheck },
 ];
 
 export default function Sidebar() {
