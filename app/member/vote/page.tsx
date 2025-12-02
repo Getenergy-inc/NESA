@@ -9,7 +9,7 @@ import {
   Loader2,
   AlertCircle
 } from 'lucide-react';
-import VoteButton from '@/components/Voting/VoteButton';
+import VoteButton from '@/components/voting/VoteButton';
 import { useVoting } from '@/lib/hooks/useVoting';
 import { useWallet } from '@/lib/hooks/useWallet';
 import nominationService, { Nomination } from '@/lib/services/nominationService';
