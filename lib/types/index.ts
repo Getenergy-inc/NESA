@@ -7,6 +7,5 @@ export interface Blog {
   image: string;
   author: string;
   date: string;
-  heading: string;
   description: string;
 }
